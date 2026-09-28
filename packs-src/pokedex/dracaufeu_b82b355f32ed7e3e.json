@@ -870,6 +870,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
       }
+    },
+    {
+      "name": "Flammèche",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "feu",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de brûler la cible</p>"
+      },
+      "_id": "528b07fcc39d2f94",
+      "_key": "!actors.items!b82b355f32ed7e3e.528b07fcc39d2f94",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.970a7b2649f0cb78"
+      }
     }
   ],
   "effects": [],
@@ -881,7 +903,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 600,
   "flags": {}
 }

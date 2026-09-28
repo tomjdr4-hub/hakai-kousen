@@ -85,7 +85,7 @@
       "learnset": [
         {
           "source": "level",
-          "level": "Départ /11",
+          "level": "Départ / 11",
           "name": "Choc Mental",
           "type": "psy",
           "uuid": "Compendium.hakai-kousen.capacites.Item.c994eed85ec4d8c7"
@@ -480,6 +480,28 @@
   },
   "items": [
     {
+      "name": "Choc Mental",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de rendre confus la cible</p>"
+      },
+      "_id": "568a9e243d4b8baf",
+      "_key": "!actors.items!573a5a8bf16294b5.568a9e243d4b8baf",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c994eed85ec4d8c7"
+      }
+    },
+    {
       "name": "Tornade",
       "type": "attack",
       "img": "icons/svg/explosion.svg",
@@ -511,7 +533,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 1200,
   "flags": {}
 }

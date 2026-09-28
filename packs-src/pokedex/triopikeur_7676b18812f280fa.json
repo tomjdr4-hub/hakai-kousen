@@ -134,7 +134,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 4",
+          "level": "Départ / 4",
           "name": "Rugissement",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
@@ -155,7 +155,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 12",
+          "level": "Départ / 12",
           "name": "Hâte",
           "type": "psy",
           "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
@@ -709,6 +709,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
       }
+    },
+    {
+      "name": "Rugissement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Force des cibles de 1</p>"
+      },
+      "_id": "d6514b9e0f475488",
+      "_key": "!actors.items!7676b18812f280fa.d6514b9e0f475488",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+      }
+    },
+    {
+      "name": "Hâte",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Dextérité du lanceur de 2.</p>"
+      },
+      "_id": "c121111a6234a171",
+      "_key": "!actors.items!7676b18812f280fa.c121111a6234a171",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+      }
     }
   ],
   "effects": [],
@@ -720,7 +764,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 5100,
   "flags": {}
 }

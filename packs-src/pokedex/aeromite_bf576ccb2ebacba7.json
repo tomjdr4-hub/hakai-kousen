@@ -211,14 +211,14 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 59",
+          "level": "Départ / 59",
           "name": "Bourdon",
           "type": "insecte",
           "uuid": "Compendium.hakai-kousen.capacites.Item.414616009ca87091"
         },
         {
           "source": "level",
-          "level": "Départ /63",
+          "level": "Départ / 63",
           "name": "Papillodanse",
           "type": "insecte",
           "uuid": "Compendium.hakai-kousen.capacites.Item.e92f26e867523fd3"
@@ -716,6 +716,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5988a1e672bd9376"
       }
+    },
+    {
+      "name": "Ultrason",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Sonore",
+        "accuracy": 55,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
+      },
+      "_id": "5c9266abbb69d133",
+      "_key": "!actors.items!bf576ccb2ebacba7.5c9266abbb69d133",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
+      }
+    },
+    {
+      "name": "Bourdon",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "special",
+        "energy": 3,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "9",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de baisser la Volonté de la cible de 1</p>"
+      },
+      "_id": "ba6a38b8e991aea6",
+      "_key": "!actors.items!bf576ccb2ebacba7.ba6a38b8e991aea6",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.414616009ca87091"
+      }
+    },
+    {
+      "name": "Papillodanse",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Concentration, la Volonté et la Dextérité du lanceur de 1</p>"
+      },
+      "_id": "cfb5921347d3a0e2",
+      "_key": "!actors.items!bf576ccb2ebacba7.cfb5921347d3a0e2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e92f26e867523fd3"
+      }
     }
   ],
   "effects": [],
@@ -727,7 +793,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 4900,
   "flags": {}
 }

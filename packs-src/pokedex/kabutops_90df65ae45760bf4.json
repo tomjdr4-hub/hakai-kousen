@@ -125,7 +125,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 11",
+          "level": "Départ / 11",
           "name": "Groz'Yeux",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
@@ -188,7 +188,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 72",
+          "level": "Départ / 72",
           "name": "Tranche-Nuit",
           "type": "tenebres",
           "uuid": "Compendium.hakai-kousen.capacites.Item.e103ddf264a46154"
@@ -697,6 +697,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
       }
+    },
+    {
+      "name": "Vole-Vie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
+      },
+      "_id": "3e10458c779806af",
+      "_key": "!actors.items!90df65ae45760bf4.3e10458c779806af",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+      }
+    },
+    {
+      "name": "Groz'Yeux",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse l'Endurance de la cible de 1</p>"
+      },
+      "_id": "452465395030b49a",
+      "_key": "!actors.items!90df65ae45760bf4.452465395030b49a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
+      }
+    },
+    {
+      "name": "Tranche-Nuit",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "7",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
+      },
+      "_id": "46b1b322be305367",
+      "_key": "!actors.items!90df65ae45760bf4.46b1b322be305367",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e103ddf264a46154"
+      }
     }
   ],
   "effects": [],
@@ -708,7 +774,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 14100,
   "flags": {}
 }

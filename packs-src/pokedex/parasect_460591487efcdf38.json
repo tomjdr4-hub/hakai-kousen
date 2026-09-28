@@ -120,7 +120,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 4",
+          "level": "Départ / 4",
           "name": "Para-Spore",
           "type": "plante",
           "uuid": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
@@ -134,7 +134,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /11",
+          "level": "Départ / 11",
           "name": "Vole-Vie",
           "type": "plante",
           "uuid": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
@@ -699,6 +699,94 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
       }
+    },
+    {
+      "name": "Poudre Dodo",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "status",
+        "energy": 3,
+        "range": "Zone",
+        "accuracy": 75,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Endort les Pokémon de la zone. Ne fonctionne pas si la cible est déjà victime d'un problème de statut majeur ou derrière un clone.</p>"
+      },
+      "_id": "4d343f43aa8c8fe0",
+      "_key": "!actors.items!460591487efcdf38.4d343f43aa8c8fe0",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.92a45dc2084dbd91"
+      }
+    },
+    {
+      "name": "Para-Spore",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "status",
+        "energy": 1,
+        "range": "Zone",
+        "accuracy": 75,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Paralyse les Pokémon de la zone. Ne fonctionne pas si la cible est déjà victime d'un problème de statut majeur</p>"
+      },
+      "_id": "d58c01628cfcd389",
+      "_key": "!actors.items!460591487efcdf38.d58c01628cfcd389",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
+      }
+    },
+    {
+      "name": "Poudre Toxik",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "status",
+        "energy": 1,
+        "range": "Zone",
+        "accuracy": 75,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Empoisonne les Pokémon de la zone s'ils ne sont pas de type Acier ou Poison.</p>"
+      },
+      "_id": "bd0475ab79a8f4a3",
+      "_key": "!actors.items!460591487efcdf38.bd0475ab79a8f4a3",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.1cce78dd59bb0228"
+      }
+    },
+    {
+      "name": "Vole-Vie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
+      },
+      "_id": "3926895e7ad82943",
+      "_key": "!actors.items!460591487efcdf38.3926895e7ad82943",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+      }
     }
   ],
   "effects": [],
@@ -710,7 +798,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 4700,
   "flags": {}
 }

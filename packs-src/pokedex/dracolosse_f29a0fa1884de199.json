@@ -134,7 +134,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 11",
+          "level": "Départ / 11",
           "name": "Ouragan",
           "type": "dragon",
           "uuid": "Compendium.hakai-kousen.capacites.Item.cd5aedd78a01fc32"
@@ -211,7 +211,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 81",
+          "level": "Départ / 81",
           "name": "Vent Violent",
           "type": "vol",
           "uuid": "Compendium.hakai-kousen.capacites.Item.0184878e603affcb"
@@ -897,6 +897,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d0031fb0f0179e0d"
       }
+    },
+    {
+      "name": "Cage Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
+      },
+      "_id": "66d27dd22bffe861",
+      "_key": "!actors.items!f29a0fa1884de199.66d27dd22bffe861",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+      }
+    },
+    {
+      "name": "Ouragan",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "dragon",
+        "category": "special",
+        "energy": 2,
+        "range": "Zone",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 20,
+        "xpCost": 0,
+        "description": "<p>Si Ouragan est utilisé contre un Pokémon situé dans les airs (premier tour de Vol ou Rebond), il inflige 8 sinon 4. 20% de chance d'apeurer la cible</p>"
+      },
+      "_id": "0ce647f46c69f936",
+      "_key": "!actors.items!f29a0fa1884de199.0ce647f46c69f936",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cd5aedd78a01fc32"
+      }
+    },
+    {
+      "name": "Vent Violent",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "vol",
+        "category": "special",
+        "energy": 3,
+        "range": "Zone",
+        "accuracy": 70,
+        "sure": false,
+        "damage": "11",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance de rendre la cible confuse. La précision passe à 100% sous la pluie et à 50% sous le soleil.</p>"
+      },
+      "_id": "920dd3abdce53ec5",
+      "_key": "!actors.items!f29a0fa1884de199.920dd3abdce53ec5",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0184878e603affcb"
+      }
     }
   ],
   "effects": [],
@@ -908,7 +974,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 14900,
   "flags": {}
 }

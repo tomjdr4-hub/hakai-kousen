@@ -92,7 +92,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 3",
+          "level": "Départ / 3",
           "name": "Rugissement",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
@@ -549,6 +549,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
       }
+    },
+    {
+      "name": "Rugissement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Force des cibles de 1</p>"
+      },
+      "_id": "caca3dc1c03ce14a",
+      "_key": "!actors.items!7173cd6e256fe843.caca3dc1c03ce14a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+      }
+    },
+    {
+      "name": "Vampigraine",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Plante une graine qui draine 1/8 de la Vitalité de la cible vers le lanceur chaque tour</p>"
+      },
+      "_id": "a9dc28ea370c8d1b",
+      "_key": "!actors.items!7173cd6e256fe843.a9dc28ea370c8d1b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
+      }
     }
   ],
   "effects": [],
@@ -560,7 +604,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 200,
   "flags": {}
 }

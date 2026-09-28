@@ -831,6 +831,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e9bc0684b53502d7"
       }
+    },
+    {
+      "name": "Armure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "636e2205eb05430c",
+      "_key": "!actors.items!52518a6a60f0aadf.636e2205eb05430c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+      }
+    },
+    {
+      "name": "Morsure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "3dedc8c7635570d2",
+      "_key": "!actors.items!52518a6a60f0aadf.3dedc8c7635570d2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+      }
     }
   ],
   "effects": [],
@@ -842,7 +886,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 8900,
   "flags": {}
 }

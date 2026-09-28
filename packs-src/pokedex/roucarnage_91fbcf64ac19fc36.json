@@ -106,7 +106,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /5",
+          "level": "Départ / 5",
           "name": "Jet de Sable",
           "type": "sol",
           "uuid": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
@@ -120,7 +120,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /13",
+          "level": "Départ / 13",
           "name": "Vive-Attaque",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
@@ -558,6 +558,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.db4d01c5d8b51337"
       }
+    },
+    {
+      "name": "Jet de Sable",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la précision de la cible de 10%</p>"
+      },
+      "_id": "4912238eb0265d44",
+      "_key": "!actors.items!91fbcf64ac19fc36.4912238eb0265d44",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
+      }
+    },
+    {
+      "name": "Tornade",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "vol",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Sa puissance double si l'adversaire est en train d'utiliser Vol ou Rebond.</p>"
+      },
+      "_id": "8f0dd718e4fc7035",
+      "_key": "!actors.items!91fbcf64ac19fc36.8f0dd718e4fc7035",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d02e7d53e5aac22f"
+      }
+    },
+    {
+      "name": "Vive-Attaque",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
+      },
+      "_id": "05e7f0c9df680f40",
+      "_key": "!actors.items!91fbcf64ac19fc36.05e7f0c9df680f40",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+      }
     }
   ],
   "effects": [],
@@ -569,7 +635,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 1800,
   "flags": {}
 }

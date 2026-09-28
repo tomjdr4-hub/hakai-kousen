@@ -642,6 +642,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
       }
+    },
+    {
+      "name": "Vive-Attaque",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
+      },
+      "_id": "4b54aa0a95af73fd",
+      "_key": "!actors.items!67a41b8b69f9fddd.4b54aa0a95af73fd",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+      }
+    },
+    {
+      "name": "Frénésie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Force du lanceur de 1 à chaque coup reçu pendant ce tour</p>"
+      },
+      "_id": "267e2556c7acd312",
+      "_key": "!actors.items!67a41b8b69f9fddd.267e2556c7acd312",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c99ca03000c7b98f"
+      }
     }
   ],
   "effects": [],
@@ -653,7 +697,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 8500,
   "flags": {}
 }

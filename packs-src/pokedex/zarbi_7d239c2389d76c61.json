@@ -1,0 +1,134 @@
+{
+  "_id": "7d239c2389d76c61",
+  "_key": "!actors!7d239c2389d76c61",
+  "name": "Zarbi",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/201.png",
+  "system": {
+    "species": "Zarbi",
+    "number": "201",
+    "types": {
+      "primary": "psy",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 24,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 24,
+      "max": 24
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.5m / 5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Symbolique",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Lévitation",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2052cf416b2a2bfd",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Puissance Cachée",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "special",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le type de la technique est définie la première fois qu'elle est utilisée. Lancer 1d18 et le type est égal au résultat : 1 : Combat ; 2 : Vol ; 3 : Poison ; 4 : Sol ; 5 : Roche ; 6 : Insecte ; 7 : Spectre ; 8 : Acier ; 9 : Feu ; 10 : Eau ; 11 : Plante ; 12 : Electrik ; 13 : Psy ; 14 : Glace ; 15 : Dragon ; 16 : Ténèbres ; 17 : Fée ; 18 : Normal</p>"
+      },
+      "_id": "41d06cd6c38d08c2",
+      "_key": "!actors.items!7d239c2389d76c61.41d06cd6c38d08c2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Zarbi",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/201.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "52f8d8e66b050447",
+  "sort": 20100,
+  "flags": {}
+}

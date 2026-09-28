@@ -202,7 +202,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 65",
+          "level": "Départ / 65",
           "name": "Damoclès",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
@@ -871,6 +871,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c44c3c95ab28c4f6"
       }
+    },
+    {
+      "name": "Damoclès",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Une charge qui retire un dixième de la Vitalité du lanceur à chaque coup infligé en tant que dégâts de recul</p>"
+      },
+      "_id": "523d5ed8ca727904",
+      "_key": "!actors.items!09fdf506d248bb6f.523d5ed8ca727904",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+      }
     }
   ],
   "effects": [],
@@ -882,7 +904,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 11300,
   "flags": {}
 }

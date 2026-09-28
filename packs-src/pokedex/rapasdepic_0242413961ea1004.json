@@ -120,7 +120,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /4",
+          "level": "Départ / 4",
           "name": "Groz'Yeux",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
@@ -637,6 +637,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
       }
+    },
+    {
+      "name": "Groz'Yeux",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse l'Endurance de la cible de 1</p>"
+      },
+      "_id": "084ed630fd73de86",
+      "_key": "!actors.items!0242413961ea1004.084ed630fd73de86",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
+      }
+    },
+    {
+      "name": "Poursuite",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Les dégâts de base de l'attaque sont de 8 si la cible est remplacée par un autre Pokémon durant ce tour, sinon ils sont de 4</p>"
+      },
+      "_id": "8a194352aaca3c8c",
+      "_key": "!actors.items!0242413961ea1004.8a194352aaca3c8c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.318f44fc1e2e14a4"
+      }
     }
   ],
   "effects": [],
@@ -648,7 +692,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 2200,
   "flags": {}
 }

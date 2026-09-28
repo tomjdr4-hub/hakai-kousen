@@ -204,7 +204,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 54",
+          "level": "Départ / 54",
           "name": "Mégafouet",
           "type": "plante",
           "uuid": "Compendium.hakai-kousen.capacites.Item.4fc913908d2390b8"
@@ -906,6 +906,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.beedc62844e9ba4d"
       }
+    },
+    {
+      "name": "Mégafouet",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cibles",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "6fa1e1f8ee84038a",
+      "_key": "!actors.items!6ea2ee1307471212.6fa1e1f8ee84038a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4fc913908d2390b8"
+      }
     }
   ],
   "effects": [],
@@ -917,7 +939,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 7100,
   "flags": {}
 }

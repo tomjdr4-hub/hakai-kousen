@@ -125,7 +125,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 13",
+          "level": "Départ / 13",
           "name": "Pistolet à O",
           "type": "eau",
           "uuid": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
@@ -181,7 +181,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 60",
+          "level": "Départ / 60",
           "name": "Hydrocanon",
           "type": "eau",
           "uuid": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
@@ -570,6 +570,94 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5988a1e672bd9376"
       }
+    },
+    {
+      "name": "Brouillard",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Précision des Pokémon dans la zone de 10%</p>"
+      },
+      "_id": "c84ba26cd5bfb68e",
+      "_key": "!actors.items!dac6285727a58e69.c84ba26cd5bfb68e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.14a1400fc82aa0e6"
+      }
+    },
+    {
+      "name": "Groz'Yeux",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse l'Endurance de la cible de 1</p>"
+      },
+      "_id": "9c0b24e3eb28edd3",
+      "_key": "!actors.items!dac6285727a58e69.9c0b24e3eb28edd3",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
+      }
+    },
+    {
+      "name": "Pistolet à O",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "c93da5471a6cc2b4",
+      "_key": "!actors.items!dac6285727a58e69.c93da5471a6cc2b4",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+      }
+    },
+    {
+      "name": "Hydrocanon",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 6,
+        "range": "Rayon",
+        "accuracy": 80,
+        "sure": false,
+        "damage": "11",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "81efa6ceb57f63d2",
+      "_key": "!actors.items!dac6285727a58e69.81efa6ceb57f63d2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
+      }
     }
   ],
   "effects": [],
@@ -581,7 +669,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 11700,
   "flags": {}
 }

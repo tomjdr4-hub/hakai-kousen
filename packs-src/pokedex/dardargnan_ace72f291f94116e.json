@@ -99,7 +99,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /11",
+          "level": "Départ / 11",
           "name": "Furie",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.88d50d1043a751b4"
@@ -550,6 +550,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.62eb0d91ca03f9c4"
       }
+    },
+    {
+      "name": "Furie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur attaque la cible entre 2 et 5 fois</p>"
+      },
+      "_id": "11dcafddbdb6cd4f",
+      "_key": "!actors.items!ace72f291f94116e.11dcafddbdb6cd4f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.88d50d1043a751b4"
+      }
     }
   ],
   "effects": [],
@@ -561,7 +583,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 1500,
   "flags": {}
 }

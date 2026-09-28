@@ -613,6 +613,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
       }
+    },
+    {
+      "name": "Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de paralyser la cible</p>"
+      },
+      "_id": "a159e8173d678a83",
+      "_key": "!actors.items!d848bfd920575c89.a159e8173d678a83",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+      }
     }
   ],
   "effects": [],
@@ -624,7 +646,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 12500,
   "flags": {}
 }

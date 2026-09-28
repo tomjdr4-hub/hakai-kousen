@@ -118,7 +118,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 11",
+          "level": "Départ / 11",
           "name": "Poudreuse",
           "type": "glace",
           "uuid": "Compendium.hakai-kousen.capacites.Item.63429eaa3f2d7102"
@@ -188,7 +188,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 55",
+          "level": "Départ / 55",
           "name": "Requiem",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.4db66c8f8a51e153"
@@ -737,6 +737,94 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.2e70efbb3932bec6"
       }
+    },
+    {
+      "name": "Léchouille",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "spectre",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance de paralyser la cible</p>"
+      },
+      "_id": "1051aa3858e8334f",
+      "_key": "!actors.items!9f88ce95f9c7a006.1051aa3858e8334f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.98b734dd2f83d890"
+      }
+    },
+    {
+      "name": "Grobisou",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 75,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Endort la cible.</p>"
+      },
+      "_id": "7d922dbb67c28cf5",
+      "_key": "!actors.items!9f88ce95f9c7a006.7d922dbb67c28cf5",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0deeb5e38452fa31"
+      }
+    },
+    {
+      "name": "Poudreuse",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "glace",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de geler la cible</p>"
+      },
+      "_id": "13ef83fea91f1792",
+      "_key": "!actors.items!9f88ce95f9c7a006.13ef83fea91f1792",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.63429eaa3f2d7102"
+      }
+    },
+    {
+      "name": "Requiem",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 6,
+        "range": "Sonore",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur et les Pokémon entendant ce Requiem sont tous mis KO après 3 tours.</p>"
+      },
+      "_id": "19a9d8550e13a8ef",
+      "_key": "!actors.items!9f88ce95f9c7a006.19a9d8550e13a8ef",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4db66c8f8a51e153"
+      }
     }
   ],
   "effects": [],
@@ -748,7 +836,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 12400,
   "flags": {}
 }

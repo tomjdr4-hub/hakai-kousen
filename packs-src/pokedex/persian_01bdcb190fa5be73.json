@@ -202,7 +202,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 47",
+          "level": "Départ / 47",
           "name": "Câlinerie",
           "type": "fee",
           "uuid": "Compendium.hakai-kousen.capacites.Item.4ba2d2021f0e0e15"
@@ -818,6 +818,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
       }
+    },
+    {
+      "name": "Morsure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "28450fd411969820",
+      "_key": "!actors.items!01bdcb190fa5be73.28450fd411969820",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+      }
+    },
+    {
+      "name": "Bluff",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Ne peut être utilisée qu'au tour d'arrivée du lanceur. Initiative de +10 pendant ce tour et apeure la cible</p>"
+      },
+      "_id": "36f850d44e0d41b9",
+      "_key": "!actors.items!01bdcb190fa5be73.36f850d44e0d41b9",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.17db74d1d4ce7acd"
+      }
+    },
+    {
+      "name": "Câlinerie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "fee",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "9",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de baisser la force de la cible de 1</p>"
+      },
+      "_id": "2b8d01c1625c0653",
+      "_key": "!actors.items!01bdcb190fa5be73.2b8d01c1625c0653",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4ba2d2021f0e0e15"
+      }
     }
   ],
   "effects": [],
@@ -829,7 +895,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 5300,
   "flags": {}
 }

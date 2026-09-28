@@ -785,6 +785,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.631ec61909d18819"
       }
+    },
+    {
+      "name": "Dépit",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "spectre",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Retire 4 d'Énergie à la cible.</p>"
+      },
+      "_id": "9ea9132b50e02865",
+      "_key": "!actors.items!1767837fbe6c88d2.9ea9132b50e02865",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ba4710617fcf35c4"
+      }
     }
   ],
   "effects": [],
@@ -796,7 +818,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 9300,
   "flags": {}
 }

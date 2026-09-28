@@ -104,7 +104,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 3",
+          "level": "Départ / 3",
           "name": "Jet de Sable",
           "type": "sol",
           "uuid": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
@@ -625,6 +625,94 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
       }
+    },
+    {
+      "name": "Jet de Sable",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la précision de la cible de 10%</p>"
+      },
+      "_id": "d1d6b04fea9b78db",
+      "_key": "!actors.items!eb868ce0b522a277.d1d6b04fea9b78db",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
+      }
+    },
+    {
+      "name": "Lance-Boue",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "status",
+        "energy": 3,
+        "range": "Zone Alliée",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Les dégâts causés par les attaques de type Électrique sont réduits de moitié</p>"
+      },
+      "_id": "8ef64a25df6ee93f",
+      "_key": "!actors.items!eb868ce0b522a277.8ef64a25df6ee93f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4c60af2787e0bf68"
+      }
+    },
+    {
+      "name": "Patience",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur encaisse des attaques sur 2 tours sans riposter et inflige le double de dégâts à la cible sans tenir compte des types.</p>"
+      },
+      "_id": "8fedb8a70fbf9751",
+      "_key": "!actors.items!eb868ce0b522a277.8fedb8a70fbf9751",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c200cc84b6537a05"
+      }
+    },
+    {
+      "name": "Poliroche",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Dextérité du lanceur de 2</p>"
+      },
+      "_id": "e125d6c95c370c64",
+      "_key": "!actors.items!eb868ce0b522a277.e125d6c95c370c64",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.1e1e3ed61fe3dbb4"
+      }
     }
   ],
   "effects": [],
@@ -636,7 +724,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 7500,
   "flags": {}
 }

@@ -1,0 +1,226 @@
+{
+  "_id": "ed877414c3163d8d",
+  "_key": "!actors!ed877414c3163d8d",
+  "name": "Qulbutoké",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/202.png",
+  "system": {
+    "species": "Qulbutoké",
+    "number": "202",
+    "types": {
+      "primary": "psy",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 95,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 95,
+      "max": 95
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.3m / 28.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Patient",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Okéoké (lv 15)",
+      "talents": [
+        {
+          "name": "Marque Ombre",
+          "uuid": "Compendium.hakai-kousen.talents.Item.65d5fb51e5402506",
+          "hidden": false
+        },
+        {
+          "name": "Télépathe",
+          "uuid": "Compendium.hakai-kousen.talents.Item.1de73c940e27ca7e",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Lien du Destin",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e617271ff689de8c"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Riposte",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cf9e21282634231c"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Voile Miroir",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Lien du Destin",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "spectre",
+        "category": "status",
+        "energy": 6,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Si le lanceur tombe KO pendant ce tour, la cible tombera elle aussi KO</p>"
+      },
+      "_id": "68b7e6801c0c0edc",
+      "_key": "!actors.items!ed877414c3163d8d.68b7e6801c0c0edc",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e617271ff689de8c"
+      }
+    },
+    {
+      "name": "Riposte",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Si le lanceur est touché par une attaque physique ce tour-ci, il inflige deux fois les dégâts subit, sans tenir compte des types.</p>"
+      },
+      "_id": "2bd073e732c69233",
+      "_key": "!actors.items!ed877414c3163d8d.2bd073e732c69233",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cf9e21282634231c"
+      }
+    },
+    {
+      "name": "Rune Protect",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone Alliée",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur et ses alliés sont protégés contre les changements de statut excepté ceux lancés par eux-même.</p>"
+      },
+      "_id": "01b684023f78606a",
+      "_key": "!actors.items!ed877414c3163d8d.01b684023f78606a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+      }
+    },
+    {
+      "name": "Voile Miroir",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Annule une attaque de catégorie spéciale envoyée par la cible et lui inflige le double des dégâts que le lanceur aurait reçu</p>"
+      },
+      "_id": "ccf904d6b0772dd1",
+      "_key": "!actors.items!ed877414c3163d8d.ccf904d6b0772dd1",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Qulbutoké",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/202.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "52f8d8e66b050447",
+  "sort": 20200,
+  "flags": {}
+}

@@ -113,21 +113,21 @@
         },
         {
           "source": "level",
-          "level": "Départ /4",
+          "level": "Départ / 4",
           "name": "Ultrason",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
         },
         {
           "source": "level",
-          "level": "Départ/ 7",
+          "level": "Départ / 7",
           "name": "Constriction",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.313803d942d0109d"
         },
         {
           "source": "level",
-          "level": "Départ/ 10",
+          "level": "Départ / 10",
           "name": "Acide",
           "type": "poison",
           "uuid": "Compendium.hakai-kousen.capacites.Item.68ac134ec6fbac95"
@@ -225,7 +225,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 56",
+          "level": "Départ / 56",
           "name": "Essorage",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.a6b15a03ff00abfa"
@@ -678,6 +678,94 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
       }
+    },
+    {
+      "name": "Ultrason",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Sonore",
+        "accuracy": 55,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
+      },
+      "_id": "f67e9a7e9bcc581e",
+      "_key": "!actors.items!f39d05f831e4bde8.f67e9a7e9bcc581e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
+      }
+    },
+    {
+      "name": "Constriction",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "1",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de baisser la Dextérité de la cible de 1</p>"
+      },
+      "_id": "c7b9642f496b3629",
+      "_key": "!actors.items!f39d05f831e4bde8.c7b9642f496b3629",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.313803d942d0109d"
+      }
+    },
+    {
+      "name": "Acide",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "special",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Volonté de la cible de 1</p>"
+      },
+      "_id": "c18b81d7dd8be0fd",
+      "_key": "!actors.items!f39d05f831e4bde8.c18b81d7dd8be0fd",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.68ac134ec6fbac95"
+      }
+    },
+    {
+      "name": "Essorage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "special",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Les dégâts de base de l'attaque sont de 10 si la cible a plus de la moitié de sa Vitalité maximale, sinon ils sont de 5.</p>"
+      },
+      "_id": "57b646671c7f7d37",
+      "_key": "!actors.items!f39d05f831e4bde8.57b646671c7f7d37",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.a6b15a03ff00abfa"
+      }
     }
   ],
   "effects": [],
@@ -689,7 +777,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 7300,
   "flags": {}
 }

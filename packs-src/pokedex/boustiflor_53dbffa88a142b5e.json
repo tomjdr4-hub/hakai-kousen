@@ -99,7 +99,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /11",
+          "level": "Départ / 11",
           "name": "Ligotage",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
@@ -556,6 +556,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5ad0485f3efe188f"
       }
+    },
+    {
+      "name": "Croissance",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Concentration et la Force du lanceur de 1. En cas d'Ensoleillement 2</p>"
+      },
+      "_id": "411e9d0c36d164a1",
+      "_key": "!actors.items!53dbffa88a142b5e.411e9d0c36d164a1",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
+      }
+    },
+    {
+      "name": "Ligotage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>La technique retire un dixième de la Vitalité maximale de la cible pendant 4 à 5 tours et l'empêche de se déplacer</p>"
+      },
+      "_id": "165a39bf515a9fa2",
+      "_key": "!actors.items!53dbffa88a142b5e.165a39bf515a9fa2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
+      }
     }
   ],
   "effects": [],
@@ -567,7 +611,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 7000,
   "flags": {}
 }

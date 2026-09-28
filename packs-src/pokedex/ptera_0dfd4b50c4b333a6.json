@@ -181,7 +181,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 57",
+          "level": "Départ / 57",
           "name": "Tête de Fer",
           "type": "acier",
           "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
@@ -784,6 +784,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
       }
+    },
+    {
+      "name": "Tête de Fer",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "acier",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "8",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "73d5c313e83cbe14",
+      "_key": "!actors.items!0dfd4b50c4b333a6.73d5c313e83cbe14",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+      }
     }
   ],
   "effects": [],
@@ -795,7 +817,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 14200,
   "flags": {}
 }

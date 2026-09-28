@@ -542,6 +542,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.06a8172db61408b6"
       }
+    },
+    {
+      "name": "Sonic Boom",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Envoie des ondes de choc infligeant 5 PV de dégâts</p>"
+      },
+      "_id": "a776258d75db1724",
+      "_key": "!actors.items!a58eaba7370e3a86.a776258d75db1724",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7db868480eb26e4a"
+      }
+    },
+    {
+      "name": "Ondes Étranges",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Concentration de la cible de 2</p>"
+      },
+      "_id": "02265e92a6aea00b",
+      "_key": "!actors.items!a58eaba7370e3a86.02265e92a6aea00b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7c4154d4ca7f3b5a"
+      }
+    },
+    {
+      "name": "Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de paralyser la cible</p>"
+      },
+      "_id": "d17f3b7ff784567e",
+      "_key": "!actors.items!a58eaba7370e3a86.d17f3b7ff784567e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+      }
     }
   ],
   "effects": [],
@@ -553,7 +619,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 10100,
   "flags": {}
 }

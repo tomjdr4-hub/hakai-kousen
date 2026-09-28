@@ -111,14 +111,14 @@
         },
         {
           "source": "level",
-          "level": "Départ /11",
+          "level": "Départ / 11",
           "name": "Poursuite",
           "type": "tenebres",
           "uuid": "Compendium.hakai-kousen.capacites.Item.318f44fc1e2e14a4"
         },
         {
           "source": "level",
-          "level": "Départ/ 16",
+          "level": "Départ / 16",
           "name": "Mach Punch",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.f3f007b3c4cf2da5"
@@ -202,21 +202,21 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 56",
+          "level": "Départ / 56",
           "name": "Mitra-Poing",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.b4e0c555e6fdee90"
         },
         {
           "source": "level",
-          "level": "Départ /61",
+          "level": "Départ / 61",
           "name": "Riposte",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.cf9e21282634231c"
         },
         {
           "source": "level",
-          "level": "Départ/ 66",
+          "level": "Départ / 66",
           "name": "Close Combat",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
@@ -625,6 +625,138 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48128d6d1304afbc"
       }
+    },
+    {
+      "name": "Hâte",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Dextérité du lanceur de 2.</p>"
+      },
+      "_id": "75c9402065f7a764",
+      "_key": "!actors.items!fa7e810405356e7c.75c9402065f7a764",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+      }
+    },
+    {
+      "name": "Poursuite",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Les dégâts de base de l'attaque sont de 8 si la cible est remplacée par un autre Pokémon durant ce tour, sinon ils sont de 4</p>"
+      },
+      "_id": "9fc8fa2ccb6ded3d",
+      "_key": "!actors.items!fa7e810405356e7c.9fc8fa2ccb6ded3d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.318f44fc1e2e14a4"
+      }
+    },
+    {
+      "name": "Mach Punch",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
+      },
+      "_id": "0c412b3d44f5fe09",
+      "_key": "!actors.items!fa7e810405356e7c.0c412b3d44f5fe09",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f3f007b3c4cf2da5"
+      }
+    },
+    {
+      "name": "Mitra-Poing",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "15",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Si le lanceur est touché par une attaque avant d'utiliser cette technique, il est déconcentré et ne peut pas attaquer</p>"
+      },
+      "_id": "ab9f16b1a7b9734f",
+      "_key": "!actors.items!fa7e810405356e7c.ab9f16b1a7b9734f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b4e0c555e6fdee90"
+      }
+    },
+    {
+      "name": "Riposte",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Si le lanceur est touché par une attaque physique ce tour-ci, il inflige deux fois les dégâts subit, sans tenir compte des types.</p>"
+      },
+      "_id": "1ed7ba8e273ce67e",
+      "_key": "!actors.items!fa7e810405356e7c.1ed7ba8e273ce67e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cf9e21282634231c"
+      }
+    },
+    {
+      "name": "Close Combat",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Volonté et l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "a65e5fec55318ad2",
+      "_key": "!actors.items!fa7e810405356e7c.a65e5fec55318ad2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
+      }
     }
   ],
   "effects": [],
@@ -636,7 +768,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 10700,
   "flags": {}
 }

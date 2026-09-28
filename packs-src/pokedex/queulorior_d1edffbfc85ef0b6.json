@@ -1,0 +1,132 @@
+{
+  "_id": "d1edffbfc85ef0b6",
+  "_key": "!actors!d1edffbfc85ef0b6",
+  "name": "Queulorior",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/235.png",
+  "system": {
+    "species": "Queulorior",
+    "number": "235",
+    "types": {
+      "primary": "normal",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 2,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 2,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 28,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 28,
+      "max": 28
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.2m / 58kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Peintre",
+      "ratio": "4♂:4♀",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Tempo Perso",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4ffbf332a1f55ea4",
+          "hidden": false
+        },
+        {
+          "name": "Lunatique",
+          "uuid": "Compendium.hakai-kousen.talents.Item.9f9d00e431547992",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Gribouille",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2a889e4742605623"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Gribouille",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 0,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Copie la dernière attaque utilisée par la cible et remplace Gribouille dans la liste des attaques du lanceur</p>"
+      },
+      "_id": "12cf25de16df99c6",
+      "_key": "!actors.items!d1edffbfc85ef0b6.12cf25de16df99c6",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.2a889e4742605623"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Queulorior",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/235.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "52f8d8e66b050447",
+  "sort": 23500,
+  "flags": {}
+}

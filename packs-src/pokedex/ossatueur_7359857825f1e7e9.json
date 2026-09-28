@@ -125,7 +125,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 11",
+          "level": "Départ / 11",
           "name": "Coup d'Boule",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.ed397f377fd21210"
@@ -745,6 +745,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
       }
+    },
+    {
+      "name": "Mimi-Queue",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse l'Endurance de la cible de 1</p>"
+      },
+      "_id": "a952d8ec77f7a21b",
+      "_key": "!actors.items!7359857825f1e7e9.a952d8ec77f7a21b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.1f5c125910dfc85c"
+      }
+    },
+    {
+      "name": "Massd'Os",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "7",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance d'apeurer la cible.</p>"
+      },
+      "_id": "6b0b33b25cb0db8c",
+      "_key": "!actors.items!7359857825f1e7e9.6b0b33b25cb0db8c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.fa217ef0798963e3"
+      }
+    },
+    {
+      "name": "Coup d'Boule",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "7",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "100b3a2360d9dc95",
+      "_key": "!actors.items!7359857825f1e7e9.100b3a2360d9dc95",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ed397f377fd21210"
+      }
     }
   ],
   "effects": [],
@@ -756,7 +822,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 10500,
   "flags": {}
 }

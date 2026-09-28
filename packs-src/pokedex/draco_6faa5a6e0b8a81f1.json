@@ -106,7 +106,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 11",
+          "level": "Départ / 11",
           "name": "Ouragan",
           "type": "dragon",
           "uuid": "Compendium.hakai-kousen.capacites.Item.cd5aedd78a01fc32"
@@ -592,6 +592,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
       }
+    },
+    {
+      "name": "Cage Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
+      },
+      "_id": "d795262dfa326c44",
+      "_key": "!actors.items!6faa5a6e0b8a81f1.d795262dfa326c44",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+      }
+    },
+    {
+      "name": "Ouragan",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "dragon",
+        "category": "special",
+        "energy": 2,
+        "range": "Zone",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 20,
+        "xpCost": 0,
+        "description": "<p>Si Ouragan est utilisé contre un Pokémon situé dans les airs (premier tour de Vol ou Rebond), il inflige 8 sinon 4. 20% de chance d'apeurer la cible</p>"
+      },
+      "_id": "97e20b9b47289075",
+      "_key": "!actors.items!6faa5a6e0b8a81f1.97e20b9b47289075",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cd5aedd78a01fc32"
+      }
     }
   ],
   "effects": [],
@@ -603,7 +647,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 14800,
   "flags": {}
 }

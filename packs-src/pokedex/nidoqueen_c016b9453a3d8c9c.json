@@ -155,7 +155,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /58",
+          "level": "Départ / 58",
           "name": "Surpuissance",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
@@ -905,6 +905,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
       }
+    },
+    {
+      "name": "Surpuissance",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Force et l'Endurance du lanceur de 2</p>"
+      },
+      "_id": "ad44f919eaf96833",
+      "_key": "!actors.items!c016b9453a3d8c9c.ad44f919eaf96833",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+      }
     }
   ],
   "effects": [],
@@ -916,7 +938,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 3100,
   "flags": {}
 }

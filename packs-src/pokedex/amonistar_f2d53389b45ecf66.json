@@ -188,7 +188,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 75",
+          "level": "Départ / 75",
           "name": "Hydrocanon",
           "type": "eau",
           "uuid": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
@@ -633,6 +633,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4ae1fadc61a7310e"
       }
+    },
+    {
+      "name": "Morsure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "c5783e865e91342f",
+      "_key": "!actors.items!f2d53389b45ecf66.c5783e865e91342f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+      }
+    },
+    {
+      "name": "Hydrocanon",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 6,
+        "range": "Rayon",
+        "accuracy": 80,
+        "sure": false,
+        "damage": "11",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "2c61d3cb346880cf",
+      "_key": "!actors.items!f2d53389b45ecf66.2c61d3cb346880cf",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
+      }
     }
   ],
   "effects": [],
@@ -644,7 +688,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 13900,
   "flags": {}
 }

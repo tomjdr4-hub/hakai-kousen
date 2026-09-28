@@ -94,7 +94,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 5",
+          "level": "Départ / 5",
           "name": "Doux Parfum",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
@@ -559,6 +559,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
       }
+    },
+    {
+      "name": "Doux Parfum",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone Ennemie",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Dextérité pour l'esquive des Pokémons autour de 2</p>"
+      },
+      "_id": "f497160199a16378",
+      "_key": "!actors.items!64c309496923bd85.f497160199a16378",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+      }
+    },
+    {
+      "name": "Acide",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "special",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Volonté de la cible de 1</p>"
+      },
+      "_id": "d576355de600fa61",
+      "_key": "!actors.items!64c309496923bd85.d576355de600fa61",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.68ac134ec6fbac95"
+      }
     }
   ],
   "effects": [],
@@ -570,7 +614,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 4400,
   "flags": {}
 }

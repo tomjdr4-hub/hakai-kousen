@@ -216,7 +216,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 68",
+          "level": "Départ / 68",
           "name": "Vibra Soin",
           "type": "psy",
           "uuid": "Compendium.hakai-kousen.capacites.Item.e3535a8120149a2b"
@@ -852,6 +852,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4ae1fadc61a7310e"
       }
+    },
+    {
+      "name": "Rugissement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Force des cibles de 1</p>"
+      },
+      "_id": "3c23a8f615dc6d82",
+      "_key": "!actors.items!eb9f7cf3daa62ac8.3c23a8f615dc6d82",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+      }
+    },
+    {
+      "name": "Vibra Soin",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Redonne 50% de ses PVs à la cible</p>"
+      },
+      "_id": "367f3cc3e7840c1b",
+      "_key": "!actors.items!eb9f7cf3daa62ac8.367f3cc3e7840c1b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e3535a8120149a2b"
+      }
     }
   ],
   "effects": [],
@@ -863,7 +907,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 8000,
   "flags": {}
 }

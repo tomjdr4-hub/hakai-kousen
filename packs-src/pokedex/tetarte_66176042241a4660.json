@@ -547,6 +547,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8d726caf0291f3c8"
       }
+    },
+    {
+      "name": "Écras'Face",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "980029d490162778",
+      "_key": "!actors.items!66176042241a4660.980029d490162778",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4194cec0c6a360fa"
+      }
+    },
+    {
+      "name": "Pistolet à O",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "71a3532e2fe5fd78",
+      "_key": "!actors.items!66176042241a4660.71a3532e2fe5fd78",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+      }
+    },
+    {
+      "name": "Hypnose",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 60,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Endors la cible</p>"
+      },
+      "_id": "1ab92341a47dc628",
+      "_key": "!actors.items!66176042241a4660.1ab92341a47dc628",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.33a802343b00f4b6"
+      }
     }
   ],
   "effects": [],
@@ -558,7 +624,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 6100,
   "flags": {}
 }

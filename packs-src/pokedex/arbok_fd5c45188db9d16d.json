@@ -799,6 +799,28 @@
       }
     },
     {
+      "name": "Dard-Venin",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'empoisonner la cible</p>"
+      },
+      "_id": "4fc2f201080fb46c",
+      "_key": "!actors.items!fd5c45188db9d16d.4fc2f201080fb46c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.494ac7385d7ec965"
+      }
+    },
+    {
       "name": "Groz'Yeux",
       "type": "attack",
       "img": "icons/svg/explosion.svg",
@@ -819,6 +841,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
       }
+    },
+    {
+      "name": "Morsure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "187f3f5363484d1a",
+      "_key": "!actors.items!fd5c45188db9d16d.187f3f5363484d1a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+      }
     }
   ],
   "effects": [],
@@ -830,7 +874,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 2400,
   "flags": {}
 }

@@ -97,7 +97,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 5",
+          "level": "Départ / 5",
           "name": "Jet de Sable",
           "type": "sol",
           "uuid": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
@@ -484,6 +484,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
       }
+    },
+    {
+      "name": "Jet de Sable",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la précision de la cible de 10%</p>"
+      },
+      "_id": "5c85898fad515a42",
+      "_key": "!actors.items!5dae99bc0e4ed4e7.5c85898fad515a42",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
+      }
+    },
+    {
+      "name": "Tornade",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "vol",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Sa puissance double si l'adversaire est en train d'utiliser Vol ou Rebond.</p>"
+      },
+      "_id": "53dfbe62e44ce00f",
+      "_key": "!actors.items!5dae99bc0e4ed4e7.53dfbe62e44ce00f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d02e7d53e5aac22f"
+      }
     }
   ],
   "effects": [],
@@ -495,7 +539,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 1700,
   "flags": {}
 }

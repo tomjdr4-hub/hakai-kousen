@@ -104,14 +104,14 @@
         },
         {
           "source": "level",
-          "level": "Départ /13",
+          "level": "Départ / 13",
           "name": "Flash",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.d79dedb522e8bac8"
         },
         {
           "source": "level",
-          "level": "Départ /16",
+          "level": "Départ / 16",
           "name": "Choc Mental",
           "type": "psy",
           "uuid": "Compendium.hakai-kousen.capacites.Item.c994eed85ec4d8c7"
@@ -765,6 +765,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.78e787cfbbf6501d"
       }
+    },
+    {
+      "name": "Flash",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Précision des Pokémon dans la zone de 10%</p>"
+      },
+      "_id": "b1dd6193e8286d5d",
+      "_key": "!actors.items!5fcde208b6c8e5b4.b1dd6193e8286d5d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d79dedb522e8bac8"
+      }
+    },
+    {
+      "name": "Choc Mental",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de rendre confus la cible</p>"
+      },
+      "_id": "d2f29c83d2133d49",
+      "_key": "!actors.items!5fcde208b6c8e5b4.d2f29c83d2133d49",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c994eed85ec4d8c7"
+      }
     }
   ],
   "effects": [],
@@ -776,7 +820,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 6400,
   "flags": {}
 }

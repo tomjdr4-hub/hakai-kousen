@@ -155,7 +155,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /58",
+          "level": "Départ / 58",
           "name": "Mégacorne",
           "type": "insecte",
           "uuid": "Compendium.hakai-kousen.capacites.Item.44f17e805557bdca"
@@ -905,6 +905,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
       }
+    },
+    {
+      "name": "Mégacorne",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "physical",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "6f12783a3609160c",
+      "_key": "!actors.items!8447a62ff755d4fa.6f12783a3609160c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.44f17e805557bdca"
+      }
     }
   ],
   "effects": [],
@@ -916,7 +938,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 3400,
   "flags": {}
 }

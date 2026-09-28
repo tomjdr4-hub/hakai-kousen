@@ -237,7 +237,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 63",
+          "level": "Départ / 63",
           "name": "Élecanon",
           "type": "electrik",
           "uuid": "Compendium.hakai-kousen.capacites.Item.69deff43fbaadba7"
@@ -599,6 +599,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
       }
+    },
+    {
+      "name": "Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de paralyser la cible</p>"
+      },
+      "_id": "e21baa7bf8fbb963",
+      "_key": "!actors.items!c4dc4f6d76524584.e21baa7bf8fbb963",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+      }
+    },
+    {
+      "name": "Cage Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
+      },
+      "_id": "c48625a92d531a1c",
+      "_key": "!actors.items!c4dc4f6d76524584.c48625a92d531a1c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+      }
+    },
+    {
+      "name": "Élecanon",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "special",
+        "energy": 6,
+        "range": "Rayon",
+        "accuracy": 50,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
+      },
+      "_id": "63bfaa13e8d30c33",
+      "_key": "!actors.items!c4dc4f6d76524584.63bfaa13e8d30c33",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.69deff43fbaadba7"
+      }
     }
   ],
   "effects": [],
@@ -610,7 +676,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 8200,
   "flags": {}
 }

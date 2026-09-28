@@ -209,7 +209,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 53",
+          "level": "Départ / 53",
           "name": "Machination",
           "type": "tenebres",
           "uuid": "Compendium.hakai-kousen.capacites.Item.0410c2bfe86667f1"
@@ -230,7 +230,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 61",
+          "level": "Départ / 61",
           "name": "Prescience",
           "type": "psy",
           "uuid": "Compendium.hakai-kousen.capacites.Item.0c1297af43d1ece6"
@@ -838,6 +838,94 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.506057aa4e15529d"
       }
+    },
+    {
+      "name": "Entrave",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Empêche l'ennemi d'employer à nouveau sa dernière attaque. Dure 4 tours. Si la cible n'a pas encore attaqué, Entrave échouera</p>"
+      },
+      "_id": "ab7e88e1c2e82489",
+      "_key": "!actors.items!be5fc524a0b9b06d.ab7e88e1c2e82489",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5988a1e672bd9376"
+      }
+    },
+    {
+      "name": "Choc Mental",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de rendre confus la cible</p>"
+      },
+      "_id": "54d2a9d95bd80ef5",
+      "_key": "!actors.items!be5fc524a0b9b06d.54d2a9d95bd80ef5",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c994eed85ec4d8c7"
+      }
+    },
+    {
+      "name": "Machination",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Concentration du lanceur de 2</p>"
+      },
+      "_id": "74391dd8e00ab68f",
+      "_key": "!actors.items!be5fc524a0b9b06d.74391dd8e00ab68f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0410c2bfe86667f1"
+      }
+    },
+    {
+      "name": "Prescience",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "special",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Frappe l'adversaire à la fin du troisième tour de chargement</p>"
+      },
+      "_id": "c14d910620471634",
+      "_key": "!actors.items!be5fc524a0b9b06d.c14d910620471634",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0c1297af43d1ece6"
+      }
     }
   ],
   "effects": [],
@@ -849,7 +937,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 9700,
   "flags": {}
 }

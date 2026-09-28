@@ -99,7 +99,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 3",
+          "level": "Départ / 3",
           "name": "Rugissement",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
@@ -648,6 +648,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4fc913908d2390b8"
       }
+    },
+    {
+      "name": "Rugissement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Force des cibles de 1</p>"
+      },
+      "_id": "ae8038bc0528ca3e",
+      "_key": "!actors.items!82c2714e55275e50.ae8038bc0528ca3e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+      }
+    },
+    {
+      "name": "Vampigraine",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Plante une graine qui draine 1/8 de la Vitalité de la cible vers le lanceur chaque tour</p>"
+      },
+      "_id": "ddf44bacc18ce679",
+      "_key": "!actors.items!82c2714e55275e50.ddf44bacc18ce679",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
+      }
+    },
+    {
+      "name": "Fouet Lianes",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "physical",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "c6a79d98e8e7c44e",
+      "_key": "!actors.items!82c2714e55275e50.c6a79d98e8e7c44e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5ad0485f3efe188f"
+      }
     }
   ],
   "effects": [],
@@ -659,7 +725,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 300,
   "flags": {}
 }

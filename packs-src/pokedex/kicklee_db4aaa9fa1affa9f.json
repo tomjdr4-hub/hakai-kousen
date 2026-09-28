@@ -118,7 +118,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 13",
+          "level": "Départ / 13",
           "name": "Pied Sauté",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.b257a6d5dad26494"
@@ -188,21 +188,21 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 53",
+          "level": "Départ / 53",
           "name": "Ultimawashi",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.f0594894af7ac099"
         },
         {
           "source": "level",
-          "level": "Départ/ 57",
+          "level": "Départ / 57",
           "name": "Close Combat",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
         },
         {
           "source": "level",
-          "level": "Départ/ 61",
+          "level": "Départ / 61",
           "name": "Contre",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.225ccdcd887056bf"
@@ -591,6 +591,50 @@
       }
     },
     {
+      "name": "Yoga",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Augmente la Force du lanceur de 1.</p>"
+      },
+      "_id": "1eeb3e7805ebd761",
+      "_key": "!actors.items!db4aaa9fa1affa9f.1eeb3e7805ebd761",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.896295ca7d589b5a"
+      }
+    },
+    {
+      "name": "Mawashi Geri",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cibles",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "xpCost": 0,
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "43b1f2d3f4a84dfb",
+      "_key": "!actors.items!db4aaa9fa1affa9f.43b1f2d3f4a84dfb",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8a47568b7b60045d"
+      }
+    },
+    {
       "name": "Double Pied",
       "type": "attack",
       "img": "icons/svg/explosion.svg",
@@ -611,6 +655,94 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.721f0257c6f48e99"
       }
+    },
+    {
+      "name": "Pied Sauté",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "10",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Un coup de pied sauté qui, s'il est raté, fait perdre au lanceur la moitié de sa Vitalité maximale</p>"
+      },
+      "_id": "cec7a9ea082af380",
+      "_key": "!actors.items!db4aaa9fa1affa9f.cec7a9ea082af380",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b257a6d5dad26494"
+      }
+    },
+    {
+      "name": "Ultimawashi",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 75,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": ""
+      },
+      "_id": "b46b7104b1a3440b",
+      "_key": "!actors.items!db4aaa9fa1affa9f.b46b7104b1a3440b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f0594894af7ac099"
+      }
+    },
+    {
+      "name": "Close Combat",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Volonté et l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "fb6a574f4cd43496",
+      "_key": "!actors.items!db4aaa9fa1affa9f.fb6a574f4cd43496",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
+      }
+    },
+    {
+      "name": "Contre",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Si la vitalité du lanceur est supérieure à 70% il inflige 2 dégâts, à 36% 4 ; à 21% 8 ; à 11% 10 ; à 5% 15 et en dessous 20.</p>"
+      },
+      "_id": "8329c2ee95ba9464",
+      "_key": "!actors.items!db4aaa9fa1affa9f.8329c2ee95ba9464",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.225ccdcd887056bf"
+      }
     }
   ],
   "effects": [],
@@ -622,7 +754,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 10600,
   "flags": {}
 }

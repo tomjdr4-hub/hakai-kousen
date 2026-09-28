@@ -153,7 +153,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /10",
+          "level": "Départ / 10",
           "name": "Vive-Attaque",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
@@ -714,6 +714,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
       }
+    },
+    {
+      "name": "Mimi-Queue",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse l'Endurance de la cible de 1</p>"
+      },
+      "_id": "7b5871aef3d079fa",
+      "_key": "!actors.items!32b04d708ea241e3.7b5871aef3d079fa",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.1f5c125910dfc85c"
+      }
+    },
+    {
+      "name": "Flammèche",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "feu",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "xpCost": 0,
+        "description": "<p>10% de chance de brûler la cible</p>"
+      },
+      "_id": "8fc3b7308f373838",
+      "_key": "!actors.items!32b04d708ea241e3.8fc3b7308f373838",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.970a7b2649f0cb78"
+      }
+    },
+    {
+      "name": "Vive-Attaque",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
+      },
+      "_id": "7832dbca48e98f9a",
+      "_key": "!actors.items!32b04d708ea241e3.7832dbca48e98f9a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+      }
     }
   ],
   "effects": [],
@@ -725,7 +791,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 7800,
   "flags": {}
 }

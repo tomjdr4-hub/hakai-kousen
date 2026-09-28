@@ -132,7 +132,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /11",
+          "level": "Départ / 11",
           "name": "Vent Glace",
           "type": "glace",
           "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
@@ -704,6 +704,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.16024f249a3db07f"
       }
+    },
+    {
+      "name": "Rugissement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Force des cibles de 1</p>"
+      },
+      "_id": "fcc897c0a7d9fffe",
+      "_key": "!actors.items!b3bc099a17130a87.fcc897c0a7d9fffe",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+      }
+    },
+    {
+      "name": "Rayon Signal",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "8",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Sur 10 rend la cible confuse.</p>"
+      },
+      "_id": "4591be184b18705f",
+      "_key": "!actors.items!b3bc099a17130a87.4591be184b18705f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+      }
+    },
+    {
+      "name": "Vent Glace",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "glace",
+        "category": "special",
+        "energy": 3,
+        "range": "Zone",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Dextérité des cibles de 1</p>"
+      },
+      "_id": "05ef834b0169e7b7",
+      "_key": "!actors.items!b3bc099a17130a87.05ef834b0169e7b7",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+      }
     }
   ],
   "effects": [],
@@ -715,7 +781,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 8700,
   "flags": {}
 }

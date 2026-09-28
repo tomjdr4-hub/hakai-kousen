@@ -181,7 +181,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 21",
+          "level": "Départ / 21",
           "name": "Balayage",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.5e03b429e44aeb97"
@@ -251,7 +251,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 57",
+          "level": "Départ / 57",
           "name": "Tout ou Rien",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.20a300f913c9346e"
@@ -917,6 +917,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.668e21d201c53e72"
       }
+    },
+    {
+      "name": "Balayage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Si le poids de la cible est inférieur ou égal à 10kg les dégâts sont de 2 ; 25kg = 4 ; 50kg = 6 ; 100kg = 8 ; 200kg = 10 ; plus 12</p>"
+      },
+      "_id": "f74973140312d7ae",
+      "_key": "!actors.items!0e0440782db9fb50.f74973140312d7ae",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5e03b429e44aeb97"
+      }
+    },
+    {
+      "name": "Tout ou Rien",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "special",
+        "energy": 6,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur est mis KO et inflige à son adversaire autant de dégâts que le lanceur avait Vitalité</p>"
+      },
+      "_id": "87e94e4288452595",
+      "_key": "!actors.items!0e0440782db9fb50.87e94e4288452595",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.20a300f913c9346e"
+      }
     }
   ],
   "effects": [],
@@ -928,7 +972,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 5700,
   "flags": {}
 }

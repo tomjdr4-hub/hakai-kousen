@@ -681,6 +681,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f5a6d23f292bb0d1"
       }
+    },
+    {
+      "name": "Purédpois",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "special",
+        "energy": 2,
+        "range": "Zone",
+        "accuracy": 70,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 40,
+        "xpCost": 0,
+        "description": "<p>40% de chance d'empoisonner la cible</p>"
+      },
+      "_id": "1f1eca11119214b6",
+      "_key": "!actors.items!b803ab0695f6c589.1f1eca11119214b6",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.631ec61909d18819"
+      }
+    },
+    {
+      "name": "Brouillard",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Précision des Pokémon dans la zone de 10%</p>"
+      },
+      "_id": "7187e94c532f3d1c",
+      "_key": "!actors.items!b803ab0695f6c589.7187e94c532f3d1c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.14a1400fc82aa0e6"
+      }
     }
   ],
   "effects": [],
@@ -692,7 +736,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 11000,
   "flags": {}
 }

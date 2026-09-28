@@ -132,7 +132,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /4",
+          "level": "Départ / 4",
           "name": "Vive-Attaque",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
@@ -748,6 +748,50 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.1f5c125910dfc85c"
       }
+    },
+    {
+      "name": "Vive-Attaque",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
+      },
+      "_id": "7ee568940dae187f",
+      "_key": "!actors.items!a504b1c10be4e381.7ee568940dae187f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+      }
+    },
+    {
+      "name": "Puissance",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
+      },
+      "_id": "3b68fedabaa746a2",
+      "_key": "!actors.items!a504b1c10be4e381.3b68fedabaa746a2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.668e21d201c53e72"
+      }
     }
   ],
   "effects": [],
@@ -759,7 +803,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 2000,
   "flags": {}
 }

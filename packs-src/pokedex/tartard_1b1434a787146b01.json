@@ -174,7 +174,7 @@
         },
         {
           "source": "level",
-          "level": "Départ /53",
+          "level": "Départ / 53",
           "name": "Projection",
           "type": "combat",
           "uuid": "Compendium.hakai-kousen.capacites.Item.7d72cde64312e353"
@@ -822,6 +822,28 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.72f5b14d92bfe8df"
       }
+    },
+    {
+      "name": "Projection",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Met fin à un combat contre un Pokémon sauvage. Ne fonctionne pas contre une horde. Lors d'un duel remplace le Pokémon adverse par l'un des Pokémon de son équipe.</p>"
+      },
+      "_id": "0f9370dd8e1eb6ab",
+      "_key": "!actors.items!1b1434a787146b01.0f9370dd8e1eb6ab",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7d72cde64312e353"
+      }
     }
   ],
   "effects": [],
@@ -833,7 +855,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 6200,
   "flags": {}
 }

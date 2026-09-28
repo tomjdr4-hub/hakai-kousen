@@ -132,7 +132,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 3",
+          "level": "Départ / 3",
           "name": "Puissance",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.668e21d201c53e72"
@@ -839,6 +839,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cf9e21282634231c"
       }
+    },
+    {
+      "name": "Puissance",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
+      },
+      "_id": "83176cd042176ac3",
+      "_key": "!actors.items!0323484040b541ea.83176cd042176ac3",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.668e21d201c53e72"
+      }
+    },
+    {
+      "name": "Poing Karaté",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
+      },
+      "_id": "3c5c18213bcca6c5",
+      "_key": "!actors.items!0323484040b541ea.3c5c18213bcca6c5",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8943e7506d50f070"
+      }
+    },
+    {
+      "name": "Patience",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur encaisse des attaques sur 2 tours sans riposter et inflige le double de dégâts à la cible sans tenir compte des types.</p>"
+      },
+      "_id": "1076de4c144634dc",
+      "_key": "!actors.items!0323484040b541ea.1076de4c144634dc",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c200cc84b6537a05"
+      }
     }
   ],
   "effects": [],
@@ -850,7 +916,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 6800,
   "flags": {}
 }

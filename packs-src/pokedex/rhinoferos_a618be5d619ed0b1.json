@@ -230,7 +230,7 @@
         },
         {
           "source": "level",
-          "level": "Départ/ 62",
+          "level": "Départ / 62",
           "name": "Empal'Korne",
           "type": "normal",
           "uuid": "Compendium.hakai-kousen.capacites.Item.754df70ba618c413"
@@ -930,6 +930,72 @@
       "_stats": {
         "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cf9e21282634231c"
       }
+    },
+    {
+      "name": "Furie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur attaque la cible entre 2 et 5 fois</p>"
+      },
+      "_id": "fb6eba08ed28f829",
+      "_key": "!actors.items!a618be5d619ed0b1.fb6eba08ed28f829",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.88d50d1043a751b4"
+      }
+    },
+    {
+      "name": "Grimace",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Baisse la Dextérité de la cible de 2</p>"
+      },
+      "_id": "bf64894e1e7d8601",
+      "_key": "!actors.items!a618be5d619ed0b1.bf64894e1e7d8601",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cdc78c5f4b7d2d90"
+      }
+    },
+    {
+      "name": "Empal'Korne",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 6,
+        "range": "Rayon",
+        "accuracy": 30,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>OHKO la cible</p>"
+      },
+      "_id": "8d8ccab60128e4d9",
+      "_key": "!actors.items!a618be5d619ed0b1.8d8ccab60128e4d9",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.754df70ba618c413"
+      }
     }
   ],
   "effects": [],
@@ -941,7 +1007,7 @@
     "actorLink": false,
     "disposition": 0
   },
-  "folder": null,
+  "folder": "e031f51205449f78",
   "sort": 11200,
   "flags": {}
 }

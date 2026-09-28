@@ -1,0 +1,132 @@
+{
+  "_id": "96d20dd0009d1d67",
+  "_key": "!actors!96d20dd0009d1d67",
+  "name": "Métamorph",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/132.png",
+  "system": {
+    "species": "Métamorph",
+    "number": "132",
+    "types": {
+      "primary": "normal",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 24,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 24,
+      "max": 24
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.3m / 4kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Morphing",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Échauffement",
+          "uuid": "Compendium.hakai-kousen.talents.Item.60f7d919637f36ba",
+          "hidden": false
+        },
+        {
+          "name": "Imposteur",
+          "uuid": "Compendium.hakai-kousen.talents.Item.dff54385c3dd8c21",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Morphing",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9cea7baf29c15b83"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Morphing",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "xpCost": 0,
+        "description": "<p>Le lanceur devient une copie quasi parfaite de l'ennemi et obtient la même palette de capacités.</p>"
+      },
+      "_id": "2719cd000ed0986d",
+      "_key": "!actors.items!96d20dd0009d1d67.2719cd000ed0986d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.9cea7baf29c15b83"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Métamorph",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/132.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": null,
+  "sort": 13200,
+  "flags": {}
+}

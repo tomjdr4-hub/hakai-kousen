@@ -207,7 +207,8 @@ export class PokemonSheet extends HKActorSheet {
       rollAttack: PokemonSheet._onRollAttack,
       rollPokeskill: PokemonSheet._onRollPokeskill,
       rollDressage: PokemonSheet._onRollDressage,
-      resetTemp: PokemonSheet._onResetTemp
+      resetTemp: PokemonSheet._onResetTemp,
+      learnFromCompendium: PokemonSheet._onLearnFromCompendium
     }
   };
 
@@ -274,7 +275,26 @@ export class PokemonSheet extends HKActorSheet {
     }));
     context.talents = items.talent;
     context.gear = items.gear;
+
+    // Capacités et Talents de l'espèce, marqués s'ils sont déjà connus.
+    const known = new Set(this.actor.items.map(i => i.name.toLowerCase()));
+    const learnset = system.speciesData.learnset.map(entry => ({
+      ...entry, typeLabel: HK.TYPES[entry.type], known: known.has(entry.name.toLowerCase())
+    }));
+    context.learnByLevel = learnset.filter(e => e.source === "level");
+    context.learnByCT = learnset.filter(e => e.source !== "level");
+    context.speciesTalents = system.speciesData.talents.map(t => ({ ...t, known: known.has(t.name.toLowerCase()) }));
     return context;
+  }
+
+  /** Ajoute à la fiche une Capacité ou un Talent du compendium. */
+  static async _onLearnFromCompendium(event, target) {
+    const source = await fromUuid(target.dataset.uuid);
+    if ( !source ) {
+      ui.notifications.warn(`« ${target.dataset.name} » est introuvable dans les compendiums.`);
+      return;
+    }
+    await this.actor.createEmbeddedDocuments("Item", [game.items.fromCompendium(source)]);
   }
 
   static async _onRollAttack(event, target) {

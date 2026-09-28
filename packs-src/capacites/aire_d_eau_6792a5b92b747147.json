@@ -1,0 +1,19 @@
+{
+  "name": "Aire d'Eau",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "eau",
+    "category": "special",
+    "energy": 3,
+    "range": "Zone",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "xpCost": 0,
+    "description": "<p>Si utilisé dans le même tour qu'Aire d'Herbe : Baisse la Dextérité des adversaires de 1 et inflige 15 de Plante au lieu de 8 d'Eau. Si utilisé dans le même tour qu'Aire de Feu : Double la zone de réussite des effets (confusion, paralysie etc) et inflige 15 au lieu de 8.</p>"
+  },
+  "_id": "6792a5b92b747147",
+  "_key": "!items!6792a5b92b747147"
+}

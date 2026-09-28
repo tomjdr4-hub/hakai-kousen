@@ -103,6 +103,25 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
         likedTaste: new StringField({ required: true, blank: true }),
         dislikedTaste: new StringField({ required: true, blank: true })
       }),
+      // Données d'espèce (Pokédex Hakai Kousen).
+      speciesData: new SchemaField({
+        category: new StringField({ required: true, blank: true }),
+        ratio: new StringField({ required: true, blank: true }),
+        evolutions: new StringField({ required: true, blank: true }),
+        talents: new ArrayField(new SchemaField({
+          name: new StringField({ required: true, blank: false }),
+          uuid: new StringField({ required: true, blank: true }),
+          hidden: new BooleanField()
+        })),
+        // Capacités apprises : par niveau (« Départ », « 7 »…) ou par CT.
+        learnset: new ArrayField(new SchemaField({
+          source: new StringField({ required: true, initial: "level", choices: ["level", "ct", "egg", "tutor", "other"] }),
+          level: new StringField({ required: true, blank: true }),
+          name: new StringField({ required: true, blank: false }),
+          type: new StringField({ required: true, blank: true }),
+          uuid: new StringField({ required: true, blank: true })
+        }))
+      }),
       description: new HTMLField(),
       mechanics: new HTMLField(),
       sessions: new HTMLField(),

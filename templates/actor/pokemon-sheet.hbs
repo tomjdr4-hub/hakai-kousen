@@ -124,6 +124,28 @@
         {{/each}}
       </tbody>
     </table>
+
+    {{#if system.speciesData.learnset.length}}
+    <div class="learnset">
+      <div>
+        <h3>Apprises par niveau</h3>
+        <ul class="item-list">
+          {{#each learnByLevel as |e|}}
+          {{> "hk-learn-row" e editable=@root.editable}}
+          {{/each}}
+        </ul>
+      </div>
+      <div>
+        <h3>Par CT, œuf et tutorat</h3>
+        <ul class="item-list">
+          {{#each learnByCT as |e|}}
+          {{> "hk-learn-row" e editable=@root.editable}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <p class="hint">Les coûts en XP Pokémon sont indiqués sur le site Hakai Kousen.</p>
+    {{/if}}
   </section>
 
   {{!-- Compétences et Talents --}}
@@ -167,6 +189,18 @@
       </li>
       {{/each}}
     </ul>
+    {{#if speciesTalents.length}}
+    <p class="hint">Talents de l'espèce :</p>
+    <ul class="item-list">
+      {{#each speciesTalents as |t|}}
+      <li class="learn {{#if t.known}}known{{/if}}">
+        <span class="item-name">{{t.name}}{{#if t.hidden}} <span class="hint">(caché)</span>{{/if}}</span>
+        {{#if t.known}}<i class="fa-solid fa-check" data-tooltip="Déjà sur la fiche"></i>
+        {{else if @root.editable}}<button type="button" class="icon" data-action="learnFromCompendium" data-uuid="{{t.uuid}}" data-name="{{t.name}}" data-tooltip="Choisir ce Talent"><i class="fa-solid fa-plus"></i></button>{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
 
     <h3>Mécanique spéciale / Forme</h3>
     {{> "hk-editor" field="mechanics" value=system.mechanics enriched=enriched.mechanics editable=editable uuid=actor.uuid}}
@@ -185,6 +219,9 @@
       <label>Objet tenu <input type="text" name="system.details.heldItem" value="{{system.details.heldItem}}"></label>
       <label>Goût préféré <input type="text" name="system.details.likedTaste" value="{{system.details.likedTaste}}"></label>
       <label>Goût détesté <input type="text" name="system.details.dislikedTaste" value="{{system.details.dislikedTaste}}"></label>
+      <label>Catégorie <input type="text" name="system.speciesData.category" value="{{system.speciesData.category}}"></label>
+      <label>Ratio ♂/♀ <input type="text" name="system.speciesData.ratio" value="{{system.speciesData.ratio}}"></label>
+      <label>Évolutions <input type="text" name="system.speciesData.evolutions" value="{{system.speciesData.evolutions}}"></label>
     </div>
 
     {{#if gear.length}}

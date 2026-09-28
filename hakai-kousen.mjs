@@ -51,7 +51,8 @@ Hooks.once("init", () => {
 
   return foundry.applications.handlebars.loadTemplates({
     "hk-domain-row": "systems/hakai-kousen/templates/parts/domain-row.hbs",
-    "hk-editor": "systems/hakai-kousen/templates/parts/editor.hbs"
+    "hk-editor": "systems/hakai-kousen/templates/parts/editor.hbs",
+    "hk-learn-row": "systems/hakai-kousen/templates/parts/learn-row.hbs"
   });
 });
 

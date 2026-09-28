@@ -1,0 +1,19 @@
+{
+  "name": "Aire d'Herbe",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "plante",
+    "category": "special",
+    "energy": 3,
+    "range": "Zone",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "xpCost": 0,
+    "description": "<p>Si utilisé dans le même tour qu'Aire d'Eau : Baisse la Dextérité des adversaires de 1 et inflige 15 au lieu de 8. Si utilisé dans le même tour qu'Aire de Feu : les ennemis dans la zone perdent 1/8 de leur vitalité max et inflige 15 de dégâts de Feu supplémentaire au lieu de 8 de Plante.</p>"
+  },
+  "_id": "309c84a2c6c472af",
+  "_key": "!items!309c84a2c6c472af"
+}

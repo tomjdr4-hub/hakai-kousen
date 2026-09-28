@@ -37,16 +37,30 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 ### Objets
 Capacités, Compétences Pokémon, Talents et Objets d'inventaire.
 
+### Compendiums
+Données issues du site [hakaikousen.fr](https://hakaikousen.fr) (onglet 7G, Système de base), sous licence [CC BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+
+- **Pokédex (1re génération)** : les 151 Pokémon d'origine avec types, statistiques de base, talents, évolutions et capacités de départ. L'onglet Capacités de la fiche liste toute la progression (niveau, CT, œuf, tutorat) : un clic sur « + » ajoute la capacité depuis le compendium.
+- **Capacités** : toutes les capacités apprises par ces 151 Pokémon.
+- **Talents** : tous leurs talents.
+
+Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature, Talent et Dressage.
+
 ## Pas encore automatisé
 
 - Capture en combat (seuil, modificateurs de Ball).
 - Dégâts périodiques (Poison, Toxik, Brûlure), Gel, Sommeil, Confusion : les états existent sur les jetons mais leurs effets de tour sont à gérer à la main.
 - Compétences Augmentation / Résistance de type.
-- Compendiums (espèces, capacités, objets).
+- Pokédex au-delà de la 1re génération, compendiums d'objets (annexes).
 
 ## Développement
 
-Aucune étape de build : les fichiers sont chargés tels quels par Foundry.
+Le code est chargé tel quel par Foundry. Les compendiums sont écrits en JSON dans `packs-src/` et compilés en LevelDB dans `packs/` :
+
+```
+npm install
+npm run build:packs
+```
 
 Pour développer, créez un lien symbolique de ce dépôt vers `Data/systems/hakai-kousen` de votre installation Foundry.
 

@@ -1,0 +1,7 @@
+<li class="learn {{#if known}}known{{/if}}">
+  <span class="learn-level">{{#if (eq source "ct")}}CT {{/if}}{{level}}</span>
+  <span class="item-name">{{name}}</span>
+  {{#if type}}<span class="type-badge type-{{type}}">{{typeLabel}}</span>{{/if}}
+  {{#if known}}<i class="fa-solid fa-check" data-tooltip="Déjà connue"></i>
+  {{else if editable}}<button type="button" class="icon" data-action="learnFromCompendium" data-uuid="{{uuid}}" data-name="{{name}}" data-tooltip="Apprendre"><i class="fa-solid fa-plus"></i></button>{{/if}}
+</li>

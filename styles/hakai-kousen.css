@@ -544,3 +544,30 @@
   cursor: pointer;
   font-size: 0.85em;
 }
+
+/* ---------- Apprentissage ---------- */
+
+.hakai-kousen .learnset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hakai-kousen .learn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--hk-border);
+}
+
+.hakai-kousen .learn.known {
+  opacity: 0.55;
+}
+
+.hakai-kousen .learn-level {
+  width: 56px;
+  flex: none;
+  font-size: 0.85em;
+  color: var(--hk-muted);
+}

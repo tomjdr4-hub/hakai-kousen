@@ -1,0 +1,43 @@
+<div class="hk-sheet">
+  <header class="sheet-header">
+    <img class="portrait small" src="{{item.img}}" alt="{{item.name}}" data-action="editImage" data-edit="img">
+    <input class="actor-name" type="text" name="name" value="{{item.name}}">
+  </header>
+
+  <div class="sheet-body">
+    <div class="details-grid">
+      {{#if isType.attack}}
+      <label>Type <select name="system.type">{{selectOptions config.TYPES selected=system.type}}</select></label>
+      <label>Catégorie <select name="system.category">{{selectOptions categories selected=system.category}}</select></label>
+      <label>Énergie (ENE) <input type="number" name="system.energy" value="{{system.energy}}" min="0"></label>
+      <label>Portée <input type="text" name="system.range" value="{{system.range}}"></label>
+      <label>Précision (%) <input type="number" name="system.accuracy" value="{{system.accuracy}}" min="0"></label>
+      <label class="checkbox"><input type="checkbox" name="system.sure" {{checked system.sure}}> Ne peut pas échouer</label>
+      <label data-tooltip="Formule, STAB inclus : 12, 2d6+4…">Dégâts <input type="text" name="system.damage" value="{{system.damage}}" placeholder="ex. 12 ou 2d6+4"></label>
+      <label>Effet secondaire (%) <input type="number" name="system.effectChance" value="{{system.effectChance}}" min="0" max="100"></label>
+      <label>Coût d'apprentissage (XP) <input type="number" name="system.xpCost" value="{{system.xpCost}}" min="0"></label>
+      {{/if}}
+
+      {{#if isType.pokeskill}}
+      <label>Niveau <input type="number" name="system.level" value="{{system.level}}" min="0"></label>
+      <label>Catégorie <select name="system.category">{{selectOptions categories selected=system.category}}</select></label>
+      <label>Apprentissage (/10) <input type="number" name="system.progress" value="{{system.progress}}" min="0" max="10"></label>
+      <p class="hint">Prochain niveau : {{system.nextCost}} XP Pokémon.</p>
+      {{/if}}
+
+      {{#if isType.talent}}
+      <label class="checkbox"><input type="checkbox" name="system.hidden" {{checked system.hidden}}> Talent caché</label>
+      {{/if}}
+
+      {{#if isType.gear}}
+      <label>Catégorie <select name="system.category">{{selectOptions categories selected=system.category}}</select></label>
+      <label>Quantité <input type="number" name="system.quantity" value="{{system.quantity}}" min="0"></label>
+      <label>Prix (₽) <input type="number" name="system.price" value="{{system.price}}" min="0"></label>
+      <label>Charges <input type="number" name="system.charges" value="{{system.charges}}" min="0"></label>
+      {{/if}}
+    </div>
+
+    <h3>Description</h3>
+    {{> "hk-editor" field="description" value=system.description enriched=enrichedDescription editable=editable uuid=item.uuid}}
+  </div>
+</div>

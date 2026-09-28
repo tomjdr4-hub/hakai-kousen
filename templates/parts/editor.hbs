@@ -1,0 +1,5 @@
+{{#if editable}}
+<prose-mirror name="system.{{field}}" value="{{value}}" toggled="true" data-document-uuid="{{uuid}}">{{{enriched}}}</prose-mirror>
+{{else}}
+<div class="editor-content">{{{enriched}}}</div>
+{{/if}}

@@ -1,0 +1,546 @@
+/* Hakai Kousen — feuilles de personnage et cartes de chat */
+
+.hakai-kousen {
+  --hk-accent: #c0392b;
+  --hk-accent-soft: rgba(192, 57, 43, 0.12);
+  --hk-border: rgba(128, 128, 128, 0.35);
+  --hk-success: #2e7d32;
+  --hk-failure: #c62828;
+  --hk-muted: rgba(128, 128, 128, 0.9);
+}
+
+/* ---------- Structure ---------- */
+
+.hakai-kousen .window-content {
+  padding: 0;
+}
+
+.hakai-kousen .hk-sheet {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.hakai-kousen .sheet-header {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--hk-accent);
+  flex: none;
+}
+
+.hakai-kousen .portrait {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border: 1px solid var(--hk-border);
+  border-radius: 6px;
+  cursor: pointer;
+  flex: none;
+}
+
+.hakai-kousen .portrait.small {
+  width: 56px;
+  height: 56px;
+}
+
+.hakai-kousen .header-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.hakai-kousen .actor-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  height: auto;
+}
+
+.hakai-kousen .header-grid,
+.hakai-kousen .details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 4px 10px;
+}
+
+.hakai-kousen .header-grid label,
+.hakai-kousen .details-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  color: var(--hk-muted);
+  gap: 2px;
+}
+
+.hakai-kousen .details-grid label.checkbox,
+.hakai-kousen label.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  font-size: 0.9em;
+}
+
+.hakai-kousen .details-grid .hint {
+  grid-column: 1 / -1;
+}
+
+.hakai-kousen .resources {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hakai-kousen .resource {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1px solid var(--hk-border);
+  border-radius: 14px;
+}
+
+.hakai-kousen .resource input {
+  width: 52px;
+  text-align: center;
+}
+
+.hakai-kousen .resource .res-label {
+  font-weight: bold;
+}
+
+.hakai-kousen .resource.vit .res-label { color: #2e7d32; }
+.hakai-kousen .resource.ene .res-label { color: #1565c0; }
+.hakai-kousen .resource.weakened { border-color: var(--hk-failure); }
+
+.hakai-kousen .resource button,
+.hakai-kousen .resources > button {
+  flex: none;
+  width: auto;
+  line-height: 1;
+  padding: 4px 8px;
+}
+
+.hakai-kousen .warning {
+  color: var(--hk-failure);
+  font-size: 0.85em;
+  margin: 0;
+}
+
+/* ---------- Onglets ---------- */
+
+.hakai-kousen .sheet-tabs {
+  flex: none;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid var(--hk-border);
+  padding: 4px 0;
+}
+
+.hakai-kousen .sheet-tabs a {
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.hakai-kousen .sheet-tabs a.active {
+  background: var(--hk-accent-soft);
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.hakai-kousen .tab {
+  display: none;
+  padding: 10px 12px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.hakai-kousen .tab.active {
+  display: block;
+}
+
+.hakai-kousen .sheet-body {
+  padding: 10px 12px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.hakai-kousen h3 {
+  border-bottom: 1px solid var(--hk-accent);
+  margin: 12px 0 6px;
+  font-size: 1.1em;
+}
+
+.hakai-kousen .hint {
+  font-size: 0.8em;
+  color: var(--hk-muted);
+  margin: 4px 0;
+}
+
+.hakai-kousen .two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ---------- Tableaux ---------- */
+
+.hakai-kousen .hk-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.hakai-kousen .hk-table th,
+.hakai-kousen .hk-table td {
+  padding: 2px 4px;
+  border-bottom: 1px solid var(--hk-border);
+  text-align: center;
+}
+
+.hakai-kousen .hk-table tbody th {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.hakai-kousen .hk-table thead th {
+  font-size: 0.8em;
+  color: var(--hk-muted);
+  background: none;
+}
+
+.hakai-kousen .hk-table input[type="number"] {
+  width: 48px;
+  text-align: center;
+}
+
+.hakai-kousen .hk-table.domains input[type="text"] {
+  width: 100%;
+}
+
+.hakai-kousen .hk-table .total {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.hakai-kousen .hk-table .total.modified {
+  color: var(--hk-accent);
+}
+
+.hakai-kousen .hk-table .nature {
+  color: var(--hk-muted);
+}
+
+.hakai-kousen button.roll,
+.hakai-kousen button.icon {
+  width: 28px;
+  height: 26px;
+  padding: 0;
+  line-height: 1;
+  flex: none;
+}
+
+.hakai-kousen .stat-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.hakai-kousen .stat-options button {
+  width: auto;
+}
+
+/* ---------- Relation ---------- */
+
+.hakai-kousen .relation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hakai-kousen .relation label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hakai-kousen .relation input {
+  width: 44px;
+  text-align: center;
+}
+
+.hakai-kousen .relation .op {
+  font-weight: bold;
+}
+
+.hakai-kousen .dressage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border: 1px solid var(--hk-failure);
+  border-radius: 14px;
+}
+
+.hakai-kousen .dressage.obeys {
+  border-color: var(--hk-success);
+}
+
+.hakai-kousen .dressage strong {
+  font-size: 1.3em;
+}
+
+.hakai-kousen .relation button {
+  width: auto;
+}
+
+/* ---------- Sensibilités et types ---------- */
+
+.hakai-kousen .sensitivities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 4px;
+}
+
+.hakai-kousen .sensitivity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.hakai-kousen .sensitivity.neutral { opacity: 0.55; }
+.hakai-kousen .sensitivity.weak { background: rgba(198, 40, 40, 0.15); }
+.hakai-kousen .sensitivity.resist { background: rgba(46, 125, 50, 0.15); }
+.hakai-kousen .sensitivity.immune { background: rgba(80, 80, 80, 0.25); }
+
+.type-badge {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  background: #888;
+}
+
+.type-normal { background: #9fa19f; }
+.type-feu { background: #e62829; }
+.type-eau { background: #2980ef; }
+.type-plante { background: #3fa129; }
+.type-electrik { background: #d4a800; }
+.type-glace { background: #3dcef3; }
+.type-combat { background: #ff8000; }
+.type-poison { background: #9141cb; }
+.type-sol { background: #915121; }
+.type-vol { background: #81b9ef; }
+.type-psy { background: #ef4179; }
+.type-insecte { background: #91a119; }
+.type-roche { background: #afa981; }
+.type-spectre { background: #704170; }
+.type-dragon { background: #5060e1; }
+.type-tenebres { background: #624d4e; }
+.type-acier { background: #60a1b8; }
+.type-fee { background: #ef70ef; }
+
+/* ---------- Listes d'objets ---------- */
+
+.hakai-kousen .item-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--hk-accent);
+  margin: 12px 0 6px;
+}
+
+.hakai-kousen .item-group-header h3 {
+  border: none;
+  margin: 0;
+}
+
+.hakai-kousen .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hakai-kousen .item-list .item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--hk-border);
+}
+
+.hakai-kousen .item-list img {
+  width: 24px;
+  height: 24px;
+  border: none;
+}
+
+.hakai-kousen .item-name {
+  flex: 1;
+  cursor: pointer;
+}
+
+.hakai-kousen .hk-table .item-name {
+  display: block;
+  text-align: left;
+}
+
+.hakai-kousen input.qty {
+  width: 52px;
+  flex: none;
+  text-align: center;
+}
+
+/* ---------- Équipe ---------- */
+
+.hakai-kousen .team {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 8px;
+}
+
+.hakai-kousen .team-member {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid var(--hk-border);
+  border-radius: 6px;
+}
+
+.hakai-kousen .team-member img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border: none;
+  cursor: pointer;
+}
+
+.hakai-kousen .member-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85em;
+  min-width: 0;
+}
+
+.hakai-kousen .member-info a {
+  cursor: pointer;
+}
+
+.hakai-kousen .missing {
+  flex: 1;
+  color: var(--hk-failure);
+}
+
+/* ---------- Éditeurs ---------- */
+
+.hakai-kousen prose-mirror,
+.hakai-kousen .editor-content {
+  min-height: 120px;
+}
+
+/* ---------- Cartes de chat ---------- */
+
+.hk-card header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(192, 57, 43, 0.6);
+  margin-bottom: 4px;
+}
+
+.hk-card h3,
+.hk-card h4 {
+  margin: 0;
+  border: none;
+}
+
+.hk-card .subtitle,
+.hk-card .hk-detail {
+  font-size: 0.85em;
+  opacity: 0.8;
+  margin: 2px 0;
+}
+
+.hk-card .hk-target {
+  border-top: 1px dashed rgba(128, 128, 128, 0.4);
+  padding-top: 4px;
+  margin-top: 4px;
+}
+
+.hk-card .hk-dice {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 4px 0;
+}
+
+.hk-card .die {
+  min-width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(128, 128, 128, 0.6);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.hk-card .die.discarded { opacity: 0.35; }
+.hk-card .die.max { color: #2e7d32; border-color: #2e7d32; }
+.hk-card .die.min { color: #c62828; border-color: #c62828; }
+
+.hk-card .hk-outcome {
+  text-align: center;
+  font-weight: bold;
+  padding: 3px;
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+.hk-card .hk-outcome.success { background: rgba(46, 125, 50, 0.2); color: #2e7d32; }
+.hk-card .hk-outcome.failure { background: rgba(198, 40, 40, 0.2); color: #c62828; }
+
+.hk-card .hk-damage {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hk-card .hk-damage .amount {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.hk-card .hk-effectiveness {
+  font-weight: bold;
+  color: #c0392b;
+}
+
+.hk-card .hk-apply {
+  margin-top: 4px;
+}
+
+.hk-card .hk-description summary {
+  cursor: pointer;
+  font-size: 0.85em;
+}

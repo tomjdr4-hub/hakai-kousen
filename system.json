@@ -1,0 +1,38 @@
+{
+  "id": "hakai-kousen",
+  "title": "Hakai Kousen",
+  "description": "Système non officiel pour le jeu de rôle communautaire Hakai Kousen (univers Pokémon). Dresseurs, Pokémon, Table unique, Dressage.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "authors": [
+    { "name": "tomjdr4-hub", "url": "https://github.com/tomjdr4-hub" },
+    { "name": "Kévin Deus (règles Hakai Kousen)" }
+  ],
+  "esmodules": ["hakai-kousen.mjs"],
+  "styles": ["styles/hakai-kousen.css"],
+  "languages": [
+    { "lang": "fr", "name": "Français", "path": "lang/fr.json" },
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "trainer": { "htmlFields": ["biography", "objectives", "notes", "badges"] },
+      "pokemon": { "htmlFields": ["description", "notes", "mechanics", "sessions"] }
+    },
+    "Item": {
+      "attack": { "htmlFields": ["description"] },
+      "pokeskill": { "htmlFields": ["description"] },
+      "talent": { "htmlFields": ["description"] },
+      "gear": { "htmlFields": ["description"] }
+    }
+  },
+  "primaryTokenAttribute": "vit",
+  "secondaryTokenAttribute": "ene",
+  "grid": { "distance": 1, "units": "m" },
+  "url": "https://github.com/tomjdr4-hub/hakai-kousen",
+  "manifest": "https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json",
+  "download": "https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/hakai-kousen.zip"
+}

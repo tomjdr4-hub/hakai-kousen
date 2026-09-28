@@ -1,0 +1,166 @@
+<div class="hk-sheet">
+  {{!-- En-tête --}}
+  <header class="sheet-header">
+    <img class="portrait" src="{{actor.img}}" alt="{{actor.name}}" data-action="editImage" data-edit="img">
+    <div class="header-fields">
+      <input class="actor-name" type="text" name="name" value="{{actor.name}}" placeholder="Nom du Dresseur">
+      <div class="header-grid">
+        <label>Joueur <input type="text" name="system.details.player" value="{{system.details.player}}"></label>
+        <label>Vocation <input type="text" name="system.details.vocation" value="{{system.details.vocation}}"></label>
+        <label>XP Dresseur <input type="number" name="system.xp.value" value="{{system.xp.value}}"></label>
+        <label>Argent (₽) <input type="number" name="system.money" value="{{system.money}}"></label>
+      </div>
+      <div class="resource vit">
+        <span class="res-label">VIT</span>
+        <input type="number" name="system.vit.value" value="{{system.vit.value}}">
+        <span class="sep">/</span>
+        <input type="number" name="system.vit.max" value="{{system.vit.max}}">
+        <button type="button" data-action="longRest" data-tooltip="Repos long : moitié de la VIT max"><i class="fa-solid fa-bed"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs">
+    {{#each tabs as |tab|}}
+    <a data-action="tab" data-group="{{tab.group}}" data-tab="{{tab.id}}" class="{{tab.cssClass}}">{{tab.label}}</a>
+    {{/each}}
+  </nav>
+
+  {{!-- Caractéristiques, Compétences, Connaissances --}}
+  <section class="tab {{tabs.main.cssClass}}" data-group="primary" data-tab="main">
+    <div class="two-columns">
+      <div>
+        <h3>Caractéristiques</h3>
+        <table class="hk-table">
+          <thead><tr><th>Stat</th><th>Base</th><th>Pts</th><th>Total</th><th></th></tr></thead>
+          <tbody>
+            {{#each attributes as |attr|}}
+            <tr>
+              <th data-tooltip="{{attr.label}}">{{attr.abbr}}</th>
+              <td><input type="number" name="system.attributes.{{attr.key}}.base" value="{{attr.base}}"></td>
+              <td><input type="number" name="system.attributes.{{attr.key}}.pts" value="{{attr.pts}}"></td>
+              <td class="total">{{attr.value}}</td>
+              <td><button type="button" class="roll" data-action="rollAttribute" data-attribute="{{attr.key}}" data-tooltip="Test : 1Dx ≤ {{attr.value}}"><i class="fa-solid fa-dice-d6"></i></button></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <p class="hint">Test : résultat ≤ Stat. Améliorer : niveau actuel × 4 XP.</p>
+
+        <h3>Connaissances</h3>
+        <table class="hk-table domains">
+          <thead><tr><th>Domaine</th><th>Niv.</th><th>Spécialisation</th><th></th></tr></thead>
+          <tbody>
+            {{#each knowledges as |d|}}
+            {{> "hk-domain-row" d}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Compétences</h3>
+        <table class="hk-table domains">
+          <thead><tr><th>Domaine</th><th>Niv.</th><th>Spécialisation</th><th></th></tr></thead>
+          <tbody>
+            {{#each skills as |d|}}
+            {{> "hk-domain-row" d}}
+            {{/each}}
+          </tbody>
+        </table>
+        <p class="hint">Niveau = nombre de D10, on garde le meilleur (Niv. 0 : 2D10, le moins bon).
+          Ouvrir : 2 XP — améliorer : niveau actuel × 2 XP.</p>
+      </div>
+    </div>
+  </section>
+
+  {{!-- Équipe --}}
+  <section class="tab {{tabs.team.cssClass}}" data-group="primary" data-tab="team">
+    <h3>Équipe actuelle</h3>
+    <p class="hint">Glissez un Pokémon depuis l'onglet Acteurs pour l'ajouter à l'équipe.</p>
+    <ol class="team">
+      {{#each team as |member|}}
+      <li class="team-member" data-uuid="{{member.uuid}}">
+        {{#if member.missing}}
+        <span class="missing">Pokémon introuvable</span>
+        {{else}}
+        <img src="{{member.pokemon.img}}" alt="{{member.pokemon.name}}" data-action="openMember">
+        <div class="member-info">
+          <a data-action="openMember"><strong>{{member.pokemon.name}}</strong></a>
+          <span class="hint">{{member.pokemon.system.species}} · {{member.types}}</span>
+          <span>VIT {{member.pokemon.system.vit.value}}/{{member.pokemon.system.vit.max}}
+            · ENE {{member.pokemon.system.ene.value}}/{{member.pokemon.system.ene.max}}</span>
+        </div>
+        {{/if}}
+        {{#if @root.editable}}
+        <button type="button" class="icon" data-action="removeMember" data-tooltip="Retirer de l'équipe"><i class="fa-solid fa-xmark"></i></button>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ol>
+
+    <h3>Mécaniques spéciales</h3>
+    <table class="hk-table">
+      <thead><tr><th>Débloquée</th><th>Mécanique</th><th>Objet</th></tr></thead>
+      <tbody>
+        {{#each mechanics as |m|}}
+        <tr>
+          <td><input type="checkbox" name="system.mechanics.{{m.key}}.unlocked" {{checked m.unlocked}}></td>
+          <th>{{m.label}}</th>
+          <td><input type="text" name="system.mechanics.{{m.key}}.item" value="{{m.item}}" placeholder="{{m.item}}"></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <h3>Badges</h3>
+    {{> "hk-editor" field="badges" value=system.badges enriched=enriched.badges editable=editable uuid=actor.uuid}}
+  </section>
+
+  {{!-- Inventaire --}}
+  <section class="tab {{tabs.inventory.cssClass}}" data-group="primary" data-tab="inventory">
+    {{#each inventory as |group|}}
+    <div class="item-group">
+      <header class="item-group-header">
+        <h3>{{group.label}}</h3>
+        {{#if @root.editable}}
+        <button type="button" class="icon" data-action="createItem" data-type="gear" data-category="{{group.key}}" data-tooltip="Ajouter"><i class="fa-solid fa-plus"></i></button>
+        {{/if}}
+      </header>
+      <ul class="item-list">
+        {{#each group.items as |item|}}
+        <li class="item" data-item-id="{{item.id}}">
+          <img src="{{item.img}}" alt="">
+          <a class="item-name" data-action="editItem">{{item.name}}</a>
+          {{#if item.system.charges}}<span class="hint">{{item.system.charges}} ch.</span>{{/if}}
+          <input class="qty" type="number" value="{{item.system.quantity}}" data-item-field="system.quantity" data-tooltip="Quantité">
+          {{#if @root.editable}}
+          <button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/each}}
+  </section>
+
+  {{!-- Background --}}
+  <section class="tab {{tabs.bio.cssClass}}" data-group="primary" data-tab="bio">
+    <h3>Description</h3>
+    <div class="details-grid">
+      <label>Origine <input type="text" name="system.details.origin" value="{{system.details.origin}}"></label>
+      <label>Corpulence <input type="text" name="system.details.build" value="{{system.details.build}}"></label>
+      <label>Peau <input type="text" name="system.details.skin" value="{{system.details.skin}}"></label>
+      <label>Yeux / Cheveux <input type="text" name="system.details.eyesHair" value="{{system.details.eyesHair}}"></label>
+      <label>Taille / Poids <input type="text" name="system.details.heightWeight" value="{{system.details.heightWeight}}"></label>
+      <label>Âge <input type="text" name="system.details.age" value="{{system.details.age}}"></label>
+      <label>Nature <input type="text" name="system.details.nature" value="{{system.details.nature}}"></label>
+      <label>Genre <input type="text" name="system.details.gender" value="{{system.details.gender}}"></label>
+    </div>
+    <h3>Objectifs — personnels & groupe</h3>
+    {{> "hk-editor" field="objectives" value=system.objectives enriched=enriched.objectives editable=editable uuid=actor.uuid}}
+    <h3>Background</h3>
+    {{> "hk-editor" field="biography" value=system.biography enriched=enriched.biography editable=editable uuid=actor.uuid}}
+    <h3>Notes d'aventure</h3>
+    {{> "hk-editor" field="notes" value=system.notes enriched=enriched.notes editable=editable uuid=actor.uuid}}
+  </section>
+</div>

@@ -1,0 +1,211 @@
+<div class="hk-sheet">
+  {{!-- En-tête --}}
+  <header class="sheet-header">
+    <img class="portrait" src="{{actor.img}}" alt="{{actor.name}}" data-action="editImage" data-edit="img">
+    <div class="header-fields">
+      <input class="actor-name" type="text" name="name" value="{{actor.name}}" placeholder="Surnom">
+      <div class="header-grid">
+        <label>Pokémon <input type="text" name="system.species" value="{{system.species}}"></label>
+        <label>N° <input type="text" name="system.number" value="{{system.number}}"></label>
+        <label>Type 1
+          <select name="system.types.primary">{{selectOptions config.TYPES selected=system.types.primary}}</select>
+        </label>
+        <label>Type 2
+          <select name="system.types.secondary">{{selectOptions secondaryTypes selected=system.types.secondary}}</select>
+        </label>
+        <label>Nature
+          <select name="system.nature">{{selectOptions natures selected=system.nature}}</select>
+        </label>
+        <label>XP Pokémon <input type="number" name="system.xp.value" value="{{system.xp.value}}"></label>
+      </div>
+      <div class="resources">
+        <div class="resource vit {{#if weakened}}weakened{{/if}}">
+          <span class="res-label">VIT</span>
+          <input type="number" name="system.vit.value" value="{{system.vit.value}}">
+          <span class="sep">/</span><span class="max">{{system.vit.max}}</span>
+        </div>
+        <div class="resource ene">
+          <span class="res-label">ENE</span>
+          <input type="number" name="system.ene.value" value="{{system.ene.value}}">
+          <span class="sep">/</span><span class="max">{{system.ene.max}}</span>
+        </div>
+        <button type="button" data-action="longRest" data-tooltip="Repos long : moitié de la VIT et de l'ENE max"><i class="fa-solid fa-bed"></i></button>
+        <button type="button" data-action="fullHeal" data-tooltip="Soins complets (Centre Pokémon)"><i class="fa-solid fa-kit-medical"></i></button>
+      </div>
+      {{#if weakened}}<p class="warning">Affaibli (≤ ¼ VIT) : DEX, FOR, CON, END et VOL divisées par 2.</p>{{/if}}
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs">
+    {{#each tabs as |tab|}}
+    <a data-action="tab" data-group="{{tab.group}}" data-tab="{{tab.id}}" class="{{tab.cssClass}}">{{tab.label}}</a>
+    {{/each}}
+  </nav>
+
+  {{!-- Statistiques --}}
+  <section class="tab {{tabs.stats.cssClass}}" data-group="primary" data-tab="stats">
+    <table class="hk-table stats">
+      <thead>
+        <tr>
+          <th>Stat</th><th>Base</th><th>IV</th><th>EV</th><th>Nature</th><th>Total</th>
+          <th data-tooltip="Modification temporaire (−6 à +6)">Temp.</th>
+          <th data-tooltip="Valeur en combat (temp., états, affaiblissement)">Effectif</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each stats as |s|}}
+        <tr>
+          <th data-tooltip="{{s.label}} — +{{s.gain}} par IV / EV">{{s.abbr}}</th>
+          <td><input type="number" name="system.stats.{{s.key}}.base" value="{{s.base}}"></td>
+          <td><input type="number" name="system.stats.{{s.key}}.iv" value="{{s.iv}}"></td>
+          <td><input type="number" name="system.stats.{{s.key}}.ev" value="{{s.ev}}" max="30"></td>
+          <td class="nature">{{#if s.nature}}{{#if (gt s.nature 0)}}+{{/if}}{{s.nature}}{{/if}}</td>
+          <td class="total">{{s.total}}</td>
+          {{#if s.rollable}}
+          <td><input type="number" name="system.stats.{{s.key}}.temp" value="{{s.temp}}" min="-6" max="6"></td>
+          <td class="total {{#if s.modified}}modified{{/if}}">{{s.value}}</td>
+          <td><button type="button" class="roll" data-action="rollAttribute" data-attribute="{{s.key}}" data-tooltip="Test de {{s.label}}"><i class="fa-solid fa-dice-d6"></i></button></td>
+          {{else}}
+          <td></td><td></td><td></td>
+          {{/if}}
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div class="stat-options">
+      <label class="checkbox"><input type="checkbox" name="system.baby" {{checked system.baby}}> Bébé (stats ÷2, ENE inchangée)</label>
+      <button type="button" data-action="resetTemp"><i class="fa-solid fa-rotate-left"></i> Remettre les modifications temporaires à zéro</button>
+    </div>
+    <p class="hint">EV : ouvrir 10 XP — augmenter : EV actuels × 7 XP (max 30). IV : entraînement uniquement.</p>
+
+    <h3>Relation</h3>
+    <div class="relation">
+      <label>Confiance <input type="number" name="system.relation.confidence" value="{{system.relation.confidence}}" min="0" max="9"></label>
+      <span class="op">+</span>
+      <label>Obéissance <input type="number" name="system.relation.obedience" value="{{system.relation.obedience}}" min="0" max="9"></label>
+      <span class="op">=</span>
+      <div class="dressage {{#if obeys}}obeys{{/if}}"><span>Dressage</span><strong>{{dressage}}</strong></div>
+      <button type="button" data-action="rollDressage" data-tooltip="{{#if obeys}}Obéit normalement{{else}}1D8 ≤ Dressage{{/if}}">
+        <i class="fa-solid fa-bullhorn"></i> Donner un ordre</button>
+    </div>
+
+    <h3>Sensibilités</h3>
+    <div class="sensitivities">
+      {{#each sensitivities as |s|}}
+      <div class="sensitivity {{s.cls}}"><span class="type-badge type-{{s.key}}">{{s.label}}</span><span>{{s.text}}</span></div>
+      {{/each}}
+    </div>
+  </section>
+
+  {{!-- Capacités --}}
+  <section class="tab {{tabs.attacks.cssClass}}" data-group="primary" data-tab="attacks">
+    <header class="item-group-header">
+      <h3>Capacités connues</h3>
+      {{#if editable}}
+      <button type="button" class="icon" data-action="createItem" data-type="attack" data-tooltip="Ajouter une capacité"><i class="fa-solid fa-plus"></i></button>
+      {{/if}}
+    </header>
+    <p class="hint">Ciblez un jeton puis cliquez sur le dé : toucher via la Table unique, dégâts (STAB inclus) × efficacité du type.</p>
+    <table class="hk-table attacks">
+      <thead><tr><th></th><th>Nom</th><th>ENE</th><th>Type</th><th>Catégorie</th><th>Portée</th><th>Précision</th><th>Dégâts</th><th></th></tr></thead>
+      <tbody>
+        {{#each attacks as |a|}}
+        <tr class="item" data-item-id="{{a.item.id}}">
+          <td><button type="button" class="roll" data-action="rollAttack" {{#unless a.affordable}}disabled data-tooltip="Pas assez d'Énergie"{{/unless}}><i class="fa-solid fa-dice-d10"></i></button></td>
+          <td><a class="item-name" data-action="editItem">{{a.item.name}}</a></td>
+          <td>{{a.item.system.energy}}</td>
+          <td><span class="type-badge type-{{a.item.system.type}}">{{a.typeLabel}}</span></td>
+          <td>{{a.categoryLabel}}</td>
+          <td>{{a.item.system.range}}</td>
+          <td>{{#if a.item.system.sure}}—{{else}}{{a.item.system.accuracy}} %{{/if}}</td>
+          <td>{{a.item.system.damage}}</td>
+          <td>{{#if @root.editable}}<button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+
+  {{!-- Compétences et Talents --}}
+  <section class="tab {{tabs.skills.cssClass}}" data-group="primary" data-tab="skills">
+    <header class="item-group-header">
+      <h3>Compétences Pokémon</h3>
+      {{#if editable}}
+      <button type="button" class="icon" data-action="createItem" data-type="pokeskill" data-tooltip="Ajouter une Compétence"><i class="fa-solid fa-plus"></i></button>
+      {{/if}}
+    </header>
+    <table class="hk-table">
+      <thead><tr><th></th><th>Compétence</th><th>Niv.</th><th>Catégorie</th><th>Prochain niv.</th><th>Apprentissage</th><th></th></tr></thead>
+      <tbody>
+        {{#each pokeskills as |s|}}
+        <tr class="item" data-item-id="{{s.item.id}}">
+          <td><button type="button" class="roll" data-action="rollPokeskill" data-tooltip="{{s.item.system.level}}D10"><i class="fa-solid fa-dice-d10"></i></button></td>
+          <td><a class="item-name" data-action="editItem">{{s.item.name}}</a></td>
+          <td><input type="number" value="{{s.item.system.level}}" data-item-field="system.level" min="0"></td>
+          <td>{{s.categoryLabel}}</td>
+          <td>{{s.nextCost}} XP</td>
+          <td><input type="number" value="{{s.item.system.progress}}" data-item-field="system.progress" min="0" max="10"> / 10</td>
+          <td>{{#if @root.editable}}<button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <header class="item-group-header">
+      <h3>Talents</h3>
+      {{#if editable}}
+      <button type="button" class="icon" data-action="createItem" data-type="talent" data-tooltip="Ajouter un Talent"><i class="fa-solid fa-plus"></i></button>
+      {{/if}}
+    </header>
+    <ul class="item-list">
+      {{#each talents as |item|}}
+      <li class="item" data-item-id="{{item.id}}">
+        <img src="{{item.img}}" alt="">
+        <a class="item-name" data-action="editItem">{{item.name}}</a>
+        {{#if item.system.hidden}}<span class="hint">Talent caché</span>{{/if}}
+        {{#if @root.editable}}<button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+
+    <h3>Mécanique spéciale / Forme</h3>
+    {{> "hk-editor" field="mechanics" value=system.mechanics enriched=enriched.mechanics editable=editable uuid=actor.uuid}}
+  </section>
+
+  {{!-- Description --}}
+  <section class="tab {{tabs.bio.cssClass}}" data-group="primary" data-tab="bio">
+    <div class="details-grid">
+      <label>Joueur <input type="text" name="system.details.player" value="{{system.details.player}}"></label>
+      <label>Dresseur <input type="text" name="system.details.trainer" value="{{system.details.trainer}}"></label>
+      <label>Provenance <input type="text" name="system.details.provenance" value="{{system.details.provenance}}"></label>
+      <label>Taille / Poids <input type="text" name="system.details.heightWeight" value="{{system.details.heightWeight}}"></label>
+      <label>Famille <input type="text" name="system.details.family" value="{{system.details.family}}"></label>
+      <label>Genre <input type="text" name="system.details.gender" value="{{system.details.gender}}"></label>
+      <label>Ball <input type="text" name="system.details.ball" value="{{system.details.ball}}"></label>
+      <label>Objet tenu <input type="text" name="system.details.heldItem" value="{{system.details.heldItem}}"></label>
+      <label>Goût préféré <input type="text" name="system.details.likedTaste" value="{{system.details.likedTaste}}"></label>
+      <label>Goût détesté <input type="text" name="system.details.dislikedTaste" value="{{system.details.dislikedTaste}}"></label>
+    </div>
+
+    {{#if gear.length}}
+    <h3>Objets</h3>
+    <ul class="item-list">
+      {{#each gear as |item|}}
+      <li class="item" data-item-id="{{item.id}}">
+        <img src="{{item.img}}" alt="">
+        <a class="item-name" data-action="editItem">{{item.name}}</a>
+        <input class="qty" type="number" value="{{item.system.quantity}}" data-item-field="system.quantity">
+        {{#if @root.editable}}<button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
+
+    <h3>Description</h3>
+    {{> "hk-editor" field="description" value=system.description enriched=enriched.description editable=editable uuid=actor.uuid}}
+    <h3>Sessions de jeu</h3>
+    {{> "hk-editor" field="sessions" value=system.sessions enriched=enriched.sessions editable=editable uuid=actor.uuid}}
+    <h3>Notes</h3>
+    {{> "hk-editor" field="notes" value=system.notes enriched=enriched.notes editable=editable uuid=actor.uuid}}
+  </section>
+</div>

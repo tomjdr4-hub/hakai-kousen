@@ -969,3 +969,134 @@
   display: flex;
   gap: 4px;
 }
+
+/* ---------- Panneau : équipes, envoi, remplacements ---------- */
+
+.hk-combat-panel .hk-teams {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hk-combat-panel .hk-team-strip {
+  border: 1px solid var(--hk-border);
+  border-radius: 6px;
+  padding: 4px 6px;
+}
+
+.hk-combat-panel .hk-team-strip.defeated {
+  opacity: 0.55;
+}
+
+.hk-combat-panel .hk-team-owner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.hk-combat-panel .hk-team-owner img {
+  width: 24px;
+  height: 24px;
+  border: none;
+  object-fit: contain;
+}
+
+.hk-combat-panel .hk-team-members {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+
+.hk-combat-panel .hk-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.hk-combat-panel .hk-member.active {
+  border-color: var(--hk-accent);
+  background: var(--hk-accent-soft);
+}
+
+.hk-combat-panel .hk-member.ko img {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+.hk-combat-panel .hk-member > img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border: none;
+}
+
+.hk-combat-panel .hk-member .bar {
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(128, 128, 128, 0.3);
+  overflow: hidden;
+}
+
+.hk-combat-panel .hk-member .bar span {
+  display: block;
+  height: 100%;
+}
+
+.hk-combat-panel .hk-member .bar.vit span { background: #2e7d32; }
+.hk-combat-panel .hk-member .bar.vit.weak span { background: #c62828; }
+.hk-combat-panel .hk-member .bar.ene span { background: #1565c0; }
+
+.hk-combat-panel .hk-member-statuses {
+  display: flex;
+  gap: 1px;
+  min-height: 12px;
+}
+
+.hk-combat-panel .hk-member-statuses img {
+  width: 12px;
+  height: 12px;
+  border: none;
+}
+
+.hk-combat-panel .hk-deploy-status {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  font-size: 0.9em;
+}
+
+.hk-combat-panel .hk-replacement {
+  border-left-color: #ef8c00;
+}
+
+.hk-combat-panel .hk-blocked {
+  color: var(--hk-failure);
+  font-weight: bold;
+}
+
+.hk-combat-panel .hk-order input[type="checkbox"] {
+  flex: none;
+  margin: 0;
+}
+
+.hk-combat-panel .warning {
+  color: var(--hk-failure);
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.hakai-kousen .details-grid label.wide {
+  grid-column: 1 / -1;
+}
+
+.hakai-kousen multi-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}

@@ -1,6 +1,9 @@
 <div class="hk-panel">
   {{#if noCombat}}
   <p class="hk-empty">Aucun combat en cours sur cette scène.</p>
+  {{#if isGM}}
+  <div class="hk-empty"><button type="button" data-action="newCombat"><i class="fa-solid fa-people-arrows"></i> Nouveau combat de Dresseurs</button></div>
+  {{/if}}
   {{else}}
 
   {{!-- En-tête : tour, phase, chrono, contrôles du MJ --}}
@@ -8,6 +11,7 @@
     <div class="hk-panel-title">
       <span class="hk-round">Tour {{round}}</span>
       <span class="hk-phase">{{phaseLabel}}</span>
+      <span class="hk-chip" data-tooltip="{{combatType.hint}}">{{combatType.label}} · {{format}}</span>
       {{#if planning}}<span class="hk-ready-count" data-tooltip="Choix validés">{{readyCount}} / {{activeCount}} prêts</span>{{/if}}
     </div>
     {{#if planning}}
@@ -23,14 +27,62 @@
       <button type="button" data-action="togglePause"><i class="fa-solid {{#if paused}}fa-play{{else}}fa-pause{{/if}}"></i> {{#if paused}}Reprendre{{else}}Pause{{/if}}</button>
       <button type="button" data-action="addTime"><i class="fa-solid fa-plus"></i> 10 s</button>
       <button type="button" data-action="reveal"><i class="fa-solid fa-eye"></i> Révéler maintenant</button>
+      {{else if deploying}}
+      <button type="button" data-action="deployNow"><i class="fa-solid fa-play"></i> Envoyer les Pokémon maintenant</button>
       {{else}}
       <button type="button" data-action="startPlanning"><i class="fa-solid fa-stopwatch"></i> {{#if started}}Relancer la réflexion{{else}}Commencer le combat{{/if}}</button>
       {{/if}}
+      <button type="button" data-action="endCombat" data-tooltip="XP Pokémon aux participants puis fin du combat"><i class="fa-solid fa-flag-checkered"></i> Terminer</button>
     </div>
     {{/if}}
   </header>
 
   <div class="hk-panel-body">
+    {{!-- Envoi des Pokémon de départ --}}
+    {{#if deploying}}
+    {{#each deployCards as |d|}}
+    <section class="hk-choice {{#if d.ready}}ready{{/if}}" data-trainer="{{d.id}}">
+      <header>
+        <img src="{{d.img}}" alt="">
+        <strong>{{d.name}} : Pokémon de départ</strong>
+        <span class="hk-chip">{{d.count}} / {{d.format}}</span>
+        {{#if d.ready}}<span class="hk-chip ok"><i class="fa-solid fa-check"></i> Prêt</span>{{/if}}
+      </header>
+      <div class="hk-options">
+        {{#each d.team as |p|}}
+        <button type="button" class="hk-team {{#if p.selected}}active{{/if}}" data-action="toggleDeploy" data-uuid="{{p.uuid}}"
+          {{#if p.lowObedience}}data-tooltip="Obéissance {{p.obedience}} : il faut 6 avec chacun des deux Pokémon pour les commander en Duo"{{/if}}>
+          <img src="{{p.img}}" alt=""> {{p.name}} <span class="cost">VIT {{p.vit}}/{{p.vitMax}}</span>
+          {{#if p.lowObedience}}<i class="fa-solid fa-triangle-exclamation"></i>{{/if}}
+        </button>
+        {{/each}}
+      </div>
+      <button type="button" class="hk-validate" data-action="validateDeploy" {{#unless d.complete}}disabled{{/unless}}>
+        <i class="fa-solid fa-check"></i> Envoyer ces Pokémon</button>
+    </section>
+    {{/each}}
+    <ul class="hk-deploy-status">
+      {{#each deployStatus as |s|}}
+      <li>{{s.name}} : {{#if s.ready}}<i class="fa-solid fa-check"></i> prêt{{else}}<i class="fa-solid fa-hourglass-half"></i> choisit…{{/if}}</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+
+    {{!-- Remplacement gratuit après un KO --}}
+    {{#each replacements as |r|}}
+    <section class="hk-choice hk-replacement" data-combatant="{{r.combatantId}}">
+      <header><strong>{{r.name}} est KO : {{r.trainer}} envoie…</strong></header>
+      <div class="hk-options">
+        {{#each r.reserve as |p|}}
+        <button type="button" class="hk-team" data-action="replace" data-uuid="{{p.uuid}}">
+          <img src="{{p.img}}" alt=""> {{p.name}} <span class="cost">VIT {{p.vit}}/{{p.vitMax}}</span>
+        </button>
+        {{/each}}
+      </div>
+      <p class="hint">Remplacement gratuit : le nouveau Pokémon lance 1D10 + DEX pour rejoindre l'ordre.</p>
+    </section>
+    {{/each}}
+
     {{!-- Choix des actions --}}
     {{#each mine as |m|}}
     <section class="hk-choice {{#if m.ready}}ready{{/if}}" data-combatant="{{m.id}}">
@@ -47,6 +99,8 @@
       <p class="hk-summary">{{{m.summary}}}</p>
       <button type="button" data-action="editChoice"><i class="fa-solid fa-pen"></i> Modifier</button>
       {{else}}
+      {{#if m.duoWarning}}<p class="warning">Obéissance {{m.obedience}} : il faut 6 avec chacun des deux Pokémon pour les commander correctement en Duo.</p>{{/if}}
+      {{#if m.trainerActionTakenBy}}<p class="hint">Action personnelle du Dresseur déjà choisie pour {{m.trainerActionTakenBy}} (une seule par tour).</p>{{/if}}
       <div class="hk-kinds">
         {{#each m.kinds as |k|}}
         <button type="button" class="{{#if k.active}}active{{/if}}" data-action="selectKind" data-kind="{{k.key}}"><i class="fa-solid {{k.icon}}"></i> {{k.label}}</button>
@@ -93,7 +147,7 @@
         </label>
         <label>Sur
           <select data-draft-field="target">
-            <option value="">—</option>
+            <option value="">Ce Pokémon</option>
             {{#each m.allies as |a|}}<option value="{{a.uuid}}" {{#if a.selected}}selected{{/if}}>{{a.name}}</option>{{/each}}
           </select>
         </label>
@@ -131,14 +185,40 @@
     </section>
     {{/each}}
 
+    {{!-- Équipes --}}
+    {{#if teams.length}}
+    <h3>Équipes</h3>
+    <div class="hk-teams">
+      {{#each teams as |t|}}
+      <div class="hk-team-strip {{#if t.defeated}}defeated{{/if}}">
+        <div class="hk-team-owner"><img src="{{t.img}}" alt=""> <strong>{{t.name}}</strong>
+          <span class="hk-chip">{{t.remaining}} / {{t.members.length}}</span>{{#if t.defeated}} <span class="hk-chip">Vaincu</span>{{/if}}</div>
+        <div class="hk-team-members">
+          {{#each t.members as |m|}}
+          <div class="hk-member {{#if m.ko}}ko{{/if}} {{#if m.active}}active{{/if}}" data-tooltip="{{m.name}}{{#if m.detailed}} · VIT {{m.vit}}/{{m.vitMax}} (¼ : {{m.quarter}}) · ENE {{m.ene}}/{{m.eneMax}}{{/if}}">
+            <img src="{{m.img}}" alt="">
+            <div class="bar vit {{#if m.weakened}}weak{{/if}}"><span style="width:{{m.vitPct}}%"></span></div>
+            {{#if m.detailed}}<div class="bar ene"><span style="width:{{m.enePct}}%"></span></div>{{/if}}
+            <div class="hk-member-statuses">{{#each m.statuses as |s|}}<img src="{{s.img}}" alt="{{s.label}}" data-tooltip="{{s.label}}">{{/each}}</div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
     {{!-- Ordre du tour --}}
     <h3>Ordre du tour</h3>
+    {{#if isGM}}<p class="hint">Meute : cochez des Pokémon semblables puis <a data-action="groupInitiative"><i class="fa-solid fa-link"></i> partagez leur initiative</a>.</p>{{/if}}
     <ol class="hk-order">
       {{#each order as |o|}}
       <li class="{{#if o.current}}current{{/if}} {{#if o.ko}}ko{{/if}} {{#if o.done}}done{{/if}}" data-combatant="{{o.id}}">
+        {{#if @root.isGM}}<input type="checkbox" data-pack="{{o.id}}" data-tooltip="Grouper (meute)">{{/if}}
         <img src="{{o.img}}" alt="">
         <div class="hk-order-info">
           <span class="name">{{o.name}}
+            {{#if o.pack}}<span class="hk-chip" data-tooltip="Initiative partagée (meute)"><i class="fa-solid fa-link"></i></span>{{/if}}
             {{#if (gt o.priority 0)}}<span class="hk-chip prio" data-tooltip="Action prioritaire">⚡</span>{{/if}}
             {{#if (lt o.priority 0)}}<span class="hk-chip" data-tooltip="Agit en dernier">⏳</span>{{/if}}
           </span>

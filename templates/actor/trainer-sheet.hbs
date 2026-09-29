@@ -133,6 +133,7 @@
           <img src="{{item.img}}" alt="">
           <a class="item-name" data-action="editItem">{{item.name}}</a>
           {{#if item.system.charges}}<span class="hint">{{item.system.charges}} ch.</span>{{/if}}
+          {{#if item.system.usable}}<button type="button" class="icon" data-action="useGear" data-tooltip="Utiliser sur un Pokémon"><i class="fa-solid fa-hand-holding-medical"></i></button>{{/if}}
           <input class="qty" type="number" value="{{item.system.quantity}}" data-item-field="system.quantity" data-tooltip="Quantité">
           {{#if @root.editable}}
           <button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>

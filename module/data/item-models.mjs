@@ -8,7 +8,7 @@ const int = (initial = 0, options = {}) => new NumberField({ required: true, nul
 export class AttackData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
-      type: new StringField({ required: true, blank: false, initial: "normal" }),
+      type: new StringField({ required: true, blank: true, initial: "normal" }),
       category: new StringField({ required: true, initial: "physical", choices: Object.keys(ATTACK_CATEGORIES) }),
       energy: int(0, { min: 0 }),
       range: new StringField({ required: true, blank: true }),
@@ -78,7 +78,28 @@ export class GearData extends foundry.abstract.TypeDataModel {
       quantity: int(1, { min: 0 }),
       price: int(0, { min: 0 }),
       charges: int(0, { min: 0 }),
+      // Effet à l'utilisation (objets de soin, Annexe 4).
+      use: new SchemaField({
+        vit: int(0, { min: 0 }),
+        vitFull: new BooleanField(),
+        ene: int(0, { min: 0 }),
+        eneFull: new BooleanField(),
+        cures: new ArrayField(new StringField({ required: true, blank: false })),
+        // Relève un Pokémon KO avec ce pourcentage de sa VIT max (Rappel : 50, Rappel Max : 100).
+        revive: int(0, { min: 0, max: 100 }),
+        // Consommable tenu : utilisable sans consommer l'action du Dresseur (Jus de Baie).
+        free: new BooleanField()
+      }),
+      // Objet tenu qui renforce un Type : +2 dégâts (8.7).
+      boostType: new StringField({ required: true, blank: true }),
+      boost: int(0),
       description: new HTMLField()
     };
+  }
+
+  /** L'objet a un effet d'utilisation automatisable. */
+  get usable() {
+    const u = this.use;
+    return !!(u.vit || u.vitFull || u.ene || u.eneFull || u.cures.length || u.revive);
   }
 }

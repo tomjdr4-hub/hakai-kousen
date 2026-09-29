@@ -50,6 +50,16 @@ Bouton **Panneau de combat** dans le suivi de combat (il s'ouvre aussi tout seul
 
 Réglages : durée de la réflexion, réflexion automatique à chaque tour, ouverture automatique du panneau.
 
+#### Combat de Dresseurs
+- **Nouveau combat de Dresseurs** (panneau, sans combat en cours) : type (officiel, sauvage, mortel), format (simple, Duo, Triple), nombre de Pokémon autorisés, Dresseurs engagés. Chacun choisit en secret son ou ses Pokémon de départ ; ils apparaissent à côté du jeton du Dresseur, l'initiative est lancée et le combat commence.
+- **Équipes** : un bandeau par Dresseur (fiche de suivi du MJ 7.3) avec jauges de VIT/ENE, seuil ¼, états, KO et Pokémon en jeu. Les adversaires ne voient que les jauges.
+- **KO** : le Pokémon est marqué vaincu ; son Dresseur choisit un remplaçant (gratuit, 1D10 + DEX). Un Dresseur sans Pokémon valide est déclaré vaincu. En combat officiel la VIT s'arrête à 0 ; ailleurs elle peut devenir négative (blessure grave, mort à −10, rappel juste à temps pour 1 XP Dresseur).
+- **Duo** : avertissement sous Obéissance 6 ; une seule action personnelle du Dresseur (objet, Ball, fuite) par tour.
+- **Début de tour** automatique : Brûlure, Poison, Toxik (compteur), Malédiction, Vampigraine, blessure grave ; jets de Gel, Paralysie et Confusion ; Apeuré. Un Pokémon empêché d'agir voit son action annulée.
+- **Objets de soin** (VIT, ENE, altérations, Rappel) appliqués automatiquement en combat et depuis l'inventaire du Dresseur ; **Lutte** proposée quand l'ENE manque.
+- **Meute** : le MJ coche des Pokémon semblables pour qu'ils partagent une initiative (MJ 5.9).
+- **Terminer** : XP Pokémon distribuée à chaque participant (montant complet), puis fin du combat.
+
 ### Objets
 Capacités, Compétences Pokémon, Talents et Objets d'inventaire.
 
@@ -65,8 +75,8 @@ Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature
 ## Pas encore automatisé
 
 - Capture : rareté, Aberrant / Dominant et Balls spéciales restent à ajouter par le MJ (rappel sur la carte).
-- Effets des objets utilisés en combat (soins…) : l'objet est décompté, l'effet est à appliquer sur la fiche.
-- Effets de début de tour des états (dégâts de Poison, Toxik, Brûlure ; jets de Paralysie, Gel, Confusion) : à gérer à la main pour l'instant.
+- Objets sans effet de soin renseigné : l'objet est décompté, l'effet est à appliquer sur la fiche.
+- Sommeil : sa règle HK n'est pas dans les manuels, un rappel s'affiche au début du tour.
 - Effets conditionnels des capacités (« si… », « sinon… », Crocs Feu, Triplattaque…) et modifications de Précision : au MJ.
 - Compétences Augmentation / Résistance de type.
 - Pokédex au-delà de la 2e génération, compendiums d'objets (annexes).

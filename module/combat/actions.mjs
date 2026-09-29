@@ -4,7 +4,9 @@
  * changer de Pokémon, utiliser un objet, lancer une Poké Ball, fuir ou abandonner.
  */
 import { rollAttack, rollDressage } from "../dice/rolls.mjs";
-import { handleEffectRequest } from "./effects.mjs";
+import { applyDamage, handleEffectRequest, useItemOn } from "./effects.mjs";
+import { availableReserve, markUsed, storeDeployChoice } from "./setup.mjs";
+import { blockedReason } from "./turn-start.mjs";
 
 const SCOPE = "hakai-kousen";
 const SOCKET = `system.${SCOPE}`;
@@ -17,6 +19,24 @@ export const ACTION_KINDS = {
   flee: { label: "Fuir / abandonner", icon: "fa-person-running" },
   other: { label: "Autre", icon: "fa-comment" }
 };
+
+/** Lutte : connue de tous les Pokémon, utilisable sans Énergie (données du site Hakai Kousen). */
+export const STRUGGLE_ID = "lutte";
+const STRUGGLE = {
+  name: "Lutte",
+  type: "attack",
+  img: "icons/svg/sword.svg",
+  system: {
+    type: "", category: "physical", energy: 0, range: "Cible", accuracy: 100, damage: "5",
+    description: "<p>Coup de base qui fait perdre un dixième de sa Vitalité maximale au lanceur.</p>"
+  }
+};
+
+/** États de combat retirés par un changement de Pokémon (5.13). */
+const SWITCH_CLEARS = ["confusion", "vampigraine", "malediction", "attraction", "peur"];
+
+/** Actions personnelles du Dresseur : une seule par tour, même en Duo (5.4). */
+const TRAINER_ACTIONS = ["item", "ball", "flee"];
 
 /** Altérations d'état qui modifient la capture (5.16). */
 const CAPTURE_STATUSES = ["brulure", "paralysie", "poison", "toxik", "gel", "sommeil"];
@@ -56,29 +76,37 @@ export function getActionOptions(combatant, combat) {
       priority: item.system.priority,
       initiativeBonus: item.system.initiativeBonus
     }));
+    // À court d'Énergie, il reste Lutte (4.17).
+    if ( !options.attacks.some(a => a.affordable) ) {
+      options.attacks.push({ id: STRUGGLE_ID, name: "Lutte", type: "", energy: 0, affordable: true, priority: 0, initiativeBonus: 0 });
+    }
   }
 
   if ( trainer ) {
-    // Changer de Pokémon : membres de l'équipe qui ne sont ni KO ni déjà en combat.
-    const inCombat = new Set(combat.combatants.map(c => c.actorId));
-    options.team = trainer.system.team.map(uuid => fromUuidSync(uuid))
-      .filter(p => p && (p.id !== actor.id) && !inCombat.has(p.id) && (p.system.vit.value > 0))
+    // Changer de Pokémon : réserve valide, dans la limite du règlement.
+    options.team = availableReserve(combat, trainer)
       .map(p => ({ uuid: p.uuid, name: p.name, img: p.img, vit: p.system.vit.value, vitMax: p.system.vit.max }));
     if ( (actor.type === "pokemon") && options.team.length ) kinds.push("switch");
+
+    // Une seule action personnelle du Dresseur par tour : déjà prise par un autre de ses Pokémon ?
+    const taken = combat.combatants.find(c => (c.id !== combatant.id) && (c.trainer?.id === trainer.id)
+      && TRAINER_ACTIONS.includes(c.choice.kind));
+    options.trainerActionTakenBy = taken?.name ?? null;
 
     const gear = trainer.itemTypes.gear.filter(i => i.system.quantity > 0);
     options.items = gear.filter(i => ["consumable", "held", "other"].includes(i.system.category))
       .map(i => ({ id: i.id, name: i.name, quantity: i.system.quantity }));
     options.balls = gear.filter(i => i.system.category === "ball")
       .map(i => ({ id: i.id, name: i.name, quantity: i.system.quantity }));
-    if ( options.items.length ) kinds.push("item");
-    if ( options.balls.length ) kinds.push("ball");
+    if ( options.items.length && !taken ) kinds.push("item");
+    if ( options.balls.length && !taken ) kinds.push("ball");
 
     // Cibles d'un objet : l'équipe du Dresseur (y compris un Pokémon KO à ranimer).
     options.allies = trainer.system.team.map(uuid => fromUuidSync(uuid)).filter(Boolean)
       .map(p => ({ uuid: p.uuid, name: p.name }));
   }
-  kinds.push("flee", "other");
+  if ( !options.trainerActionTakenBy ) kinds.push("flee");
+  kinds.push("other");
 
   // Cibles d'attaque ou de capture : les autres combattants visibles.
   options.targets = combat.combatants
@@ -99,9 +127,9 @@ export function describeChoice(combatant, combat) {
   const names = ids => ids.map(id => resolveCombatant(combat, id)?.name ?? "?").join(", ");
   switch ( choice.kind ) {
     case "attack": {
-      const item = actor?.items.get(choice.itemId);
+      const name = choice.itemId === STRUGGLE_ID ? "Lutte" : actor?.items.get(choice.itemId)?.name;
       const targets = choice.targets.length ? ` → ${names(choice.targets)}` : "";
-      return `${item?.name ?? "Attaque"}${targets}`;
+      return `${name ?? "Attaque"}${targets}`;
     }
     case "switch": return `Rappel, envoie ${fromUuidSync(choice.switchTo)?.name ?? "?"}`;
     case "item": {
@@ -170,12 +198,17 @@ export async function executeChoice(combatant) {
   const trainer = combatant.trainer;
   let advance = true;
 
+  const blocked = blockedReason(combatant);
   if ( combatant.isKO ) {
     await card(actor, combatant.name, `<p>KO : son action est annulée.</p>`);
   }
+  else if ( blocked ) {
+    await card(actor, combatant.name, `<div class="hk-outcome failure">${blocked} : ne peut pas agir ce tour-ci.</div>`);
+  }
   else switch ( choice.kind ) {
     case "attack": {
-      const item = actor.items.get(choice.itemId);
+      const struggle = choice.itemId === STRUGGLE_ID;
+      const item = struggle ? new Item.implementation(STRUGGLE, { parent: actor }) : actor.items.get(choice.itemId);
       if ( !item ) break;
       // Chaque ordre demande un test de Dressage sous 8 (4.11), sauf Pokémon sauvage.
       if ( combatant.hasPlayerOwner && (actor.system.dressage < 8) ) {
@@ -185,6 +218,8 @@ export async function executeChoice(combatant) {
       const targets = choice.targets.map(id => resolveCombatant(combat, id)?.token).filter(Boolean);
       const message = await rollAttack(actor, item, { targets });
       if ( !message ) return false;
+      // Lutte : le lanceur perd 1/10 de sa VIT max.
+      if ( struggle ) await applyDamage(actor, Math.max(Math.floor(actor.system.vit.max / 10), 1));
       break;
     }
     case "switch":
@@ -194,11 +229,19 @@ export async function executeChoice(combatant) {
     case "item": {
       const item = trainer?.items.get(choice.itemId);
       if ( !item ) break;
-      const target = choice.targets[0] ? fromUuidSync(choice.targets[0]) : null;
-      await item.update({ "system.quantity": Math.max(item.system.quantity - 1, 0) });
-      await card(trainer, `${trainer.name} utilise ${item.name}`,
-        `${target ? `<p>Sur <strong>${target.name}</strong>.</p>` : ""}${item.system.description}
-         <p class="hk-detail">Reste : ${item.system.quantity}. Appliquez l'effet de l'objet sur la fiche.</p>`);
+      const target = (choice.targets[0] ? await fromUuid(choice.targets[0]) : null) ?? actor;
+      if ( item.system.usable ) {
+        const result = await useItemOn(item, target);
+        if ( result === null ) return false;
+        await card(trainer, `${trainer.name} utilise ${item.name}`,
+          `<p>Sur <strong>${target.name}</strong> : ${result}</p><p class="hk-detail">Reste : ${item.system.quantity}.</p>`);
+      }
+      else {
+        await item.update({ "system.quantity": Math.max(item.system.quantity - 1, 0) });
+        await card(trainer, `${trainer.name} utilise ${item.name}`,
+          `<p>Sur <strong>${target.name}</strong>.</p>${item.system.description}
+           <p class="hk-detail">Reste : ${item.system.quantity}. Appliquez l'effet de l'objet sur la fiche.</p>`);
+      }
       break;
     }
     case "ball":
@@ -284,17 +327,28 @@ async function throwBall(trainer, ball, target) {
 /*  Changement de Pokémon (5.13)                */
 /* -------------------------------------------- */
 
-async function requestSwitch(combatant, actorUuid) {
-  if ( game.user.isActiveGM ) return performSwitch(combatant, actorUuid);
+async function requestSwitch(combatant, actorUuid, { replacement = false } = {}) {
+  if ( game.user.isActiveGM ) return performSwitch(combatant, actorUuid, { replacement });
   if ( !game.users.activeGM ) return ui.notifications.warn("Un MJ doit être connecté pour changer de Pokémon.");
-  game.socket.emit(SOCKET, { type: "switch", combatId: combatant.combat.id, combatantId: combatant.id, actorUuid, userId: game.user.id });
+  game.socket.emit(SOCKET, {
+    type: "switch", combatId: combatant.combat.id, combatantId: combatant.id, actorUuid, replacement, userId: game.user.id
+  });
+}
+
+/**
+ * Remplacement d'un Pokémon KO : gratuit, le remplaçant lance 1D10 + DEX (5.13).
+ * @param {Combatant} combatant  Combattant KO
+ * @param {string} actorUuid     Remplaçant choisi dans l'équipe
+ */
+export async function requestReplacement(combatant, actorUuid) {
+  return requestSwitch(combatant, actorUuid, { replacement: true });
 }
 
 /**
  * Rappelle le Pokémon et envoie le remplaçant à la même place (MJ).
  * Le switch retire les modifications temporaires et la Confusion ; le nouveau venu lance 1D10 + DEX.
  */
-async function performSwitch(combatant, actorUuid) {
+async function performSwitch(combatant, actorUuid, { replacement = false } = {}) {
   const combat = combatant.combat;
   const oldToken = combatant.token;
   const scene = oldToken?.parent;
@@ -306,7 +360,10 @@ async function performSwitch(combatant, actorUuid) {
     const reset = {};
     for ( const k of Object.keys(outgoing.system.stats) ) reset[`system.stats.${k}.temp`] = 0;
     await outgoing.update(reset);
-    if ( outgoing.statuses.has("confusion") ) await outgoing.toggleStatusEffect("confusion", { active: false });
+    for ( const id of SWITCH_CLEARS ) {
+      if ( outgoing.statuses.has(id) ) await outgoing.toggleStatusEffect(id, { active: false });
+    }
+    if ( outgoing.system.conditions?.confusion ) await outgoing.update({ "system.conditions.confusion": 0 });
   }
 
   const tokenData = (await incoming.getTokenDocument({
@@ -319,10 +376,12 @@ async function performSwitch(combatant, actorUuid) {
 
   // Les attaques qui visaient le Pokémon rappelé visent désormais le remplaçant.
   await combat.setFlag(SCOPE, "replaced", { ...(combat.getFlag(SCOPE, "replaced") ?? {}), [combatant.id]: newCombatant.id });
+  if ( combatant.trainer ) await markUsed(combat, combatant.trainer, incoming.uuid);
+  const title = replacement ? `${combatant.name} est KO` : `${combatant.name}, reviens !`;
   await ChatMessage.implementation.create({
     speaker: { alias: combatant.trainer?.name ?? "Combat" },
-    content: `<div class="hk-card"><header><h3>${combatant.name}, reviens !</h3></header>
-      <p>${combatant.trainer?.name ?? ""} envoie <strong>${incoming.name}</strong>.</p></div>`
+    content: `<div class="hk-card"><header><h3>${title}</h3></header>
+      <p>${combatant.trainer?.name ?? ""} envoie <strong>${incoming.name}</strong>${replacement ? " (remplacement gratuit)" : ""}.</p></div>`
   });
   await combat.deleteEmbeddedDocuments("Combatant", [combatant.id]);
   await scene.deleteEmbeddedDocuments("Token", [oldToken.id]);
@@ -336,13 +395,21 @@ export function registerSocket() {
   game.socket.on(SOCKET, async data => {
     if ( !game.user.isActiveGM ) return;
     // Dégâts et effets demandés depuis une carte de chat par un joueur qui ne possède pas la cible.
-    if ( ["applyDamage", "applyEffect"].includes(data.type) ) return handleEffectRequest(data);
+    if ( ["applyDamage", "applyEffect", "saveFatal"].includes(data.type) ) return handleEffectRequest(data);
+    // Choix des Pokémon de départ d'un Dresseur.
+    if ( data.type === "deploy" ) {
+      const user = game.users.get(data.userId);
+      const trainer = await fromUuid(data.trainerUuid);
+      const combat = game.combats.get(data.combatId);
+      if ( user && combat && trainer?.testUserPermission(user, "OWNER") ) await storeDeployChoice(combat, trainer, data.uuids);
+      return;
+    }
     const user = game.users.get(data.userId);
     const combatant = game.combats.get(data.combatId)?.combatants.get(data.combatantId);
     if ( !user || !combatant?.actor?.testUserPermission(user, "OWNER") ) return;
     if ( data.type === "setChoice" ) await combatant.update({ [`flags.${SCOPE}.choice`]: data.choice });
     if ( data.type === "switch" ) {
-      await performSwitch(combatant, data.actorUuid);
+      await performSwitch(combatant, data.actorUuid, { replacement: data.replacement });
     }
   });
 }

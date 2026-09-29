@@ -190,8 +190,29 @@ export const STATUSES = {
   confusion: { label: "Confusion", img: "icons/svg/daze.svg", major: false, immune: [],
     rule: "Sort sur 10, puis 8-10, puis 6-10, puis fin. Tant que confus, 1-2-3 sur 1D10 : se frappe (1/10 de sa VIT actuelle) et perd son action." },
   peur: { label: "Apeuré", img: "icons/svg/terror.svg", major: false, immune: [],
-    rule: "Ne peut pas agir ce tour-ci." }
+    rule: "Ne peut pas agir ce tour-ci." },
+  attraction: { label: "Attraction", img: "icons/svg/heal.svg", major: false, immune: [],
+    rule: "Interaction affective : suit sa description HK. Ni Total Soin ni Guérison ne la retirent." },
+  vampigraine: { label: "Vampigraine", img: "icons/svg/oak.svg", major: false, immune: ["plante"],
+    rule: "Perd 1/8 de sa VIT max par tour au profit du lanceur. Disparaît au changement de Pokémon." },
+  malediction: { label: "Malédiction", img: "icons/svg/sun.svg", major: false, immune: [],
+    rule: "Perd 1/4 de sa VIT max par tour. Non cumulable, disparaît si le Pokémon maudit est changé." },
+  blessure: { label: "Blessure grave", img: "icons/svg/blood.svg", major: false, immune: [],
+    rule: "Avec une VIT négative, perd 1 VIT par tour jusqu'à stabilisation ou soins. Mort à −10 VIT (humain : −5)." }
 };
+
+/** Nature du combat (Manuel du MJ 5.12). */
+export const COMBAT_TYPES = {
+  officiel: { label: "Officiel", hint: "Arène, Ligue, tournoi : les sécurités arrêtent le Pokémon au KO, sans VIT négative. Seul un Rappel autorisé ramène un Pokémon KO." },
+  sauvage: { label: "Sauvage", hint: "Non encadré : VIT négative et blessures graves possibles. Un soin de VIT réveille un Pokémon KO sans blessure grave." },
+  mortel: { label: "Mortel", hint: "Adversaire qui cherche à tuer : blessures graves et mort à −10 VIT." }
+};
+
+/** Formats de combat : Pokémon en jeu par Dresseur (5.14). */
+export const COMBAT_FORMATS = { 1: "Simple", 2: "Duo", 3: "Triple" };
+
+/** Effets d'utilisation d'un objet de soin (Annexe 4). */
+export const CURABLE = ["brulure", "paralysie", "poison", "toxik", "gel", "sommeil", "confusion"];
 
 /** Réaction d'un Pokémon qui échoue son test de Dressage (4.11). */
 export const DRESSAGE_FAILURES = [
@@ -266,5 +287,5 @@ export function typeEffectiveness(attackType, defenderTypes) {
 export const HK = {
   ATTRIBUTES, POKEMON_STATS, SKILLS, KNOWLEDGES, ATTRIBUTE_DIFFICULTIES, POOL_DIFFICULTIES,
   TYPES, TYPE_CHART, NATURES, ATTACK_CATEGORIES, POKESKILL_CATEGORIES, GEAR_CATEGORIES,
-  STATUSES, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
+  STATUSES, COMBAT_TYPES, COMBAT_FORMATS, CURABLE, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
 };

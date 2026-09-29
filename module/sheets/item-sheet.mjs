@@ -33,6 +33,11 @@ export class HKItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       editable: this.isEditable,
       isType: { [item.type]: true },
       priorities: { 1: "Agit toujours en premier", 0: "Normale", "-1": "Agit en dernier" },
+      boostTypes: { "": "—", ...HK.TYPES },
+      cureChoices: item.type === "gear" ? [
+        { id: "all", label: "Toutes les altérations" },
+        ...HK.CURABLE.map(id => ({ id, label: HK.STATUSES[id].label }))
+      ].map(c => ({ ...c, selected: item.system.use.cures.includes(c.id) })) : [],
       effects: (item.system.effects ?? []).map((e, index) => ({ ...e, index, isStat: e.kind === "stat" })),
       effectChoices: {
         targets: { target: "Cible", self: "Lanceur" },

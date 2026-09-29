@@ -41,6 +41,31 @@
       {{/if}}
     </div>
 
+    {{#if isType.gear}}
+    <h3>Utilisation (soins)</h3>
+    <div class="details-grid">
+      <label>VIT rendue <input type="number" name="system.use.vit" value="{{system.use.vit}}" min="0"></label>
+      <label class="checkbox"><input type="checkbox" name="system.use.vitFull" {{checked system.use.vitFull}}> Toute la VIT</label>
+      <label>ENE rendue <input type="number" name="system.use.ene" value="{{system.use.ene}}" min="0"></label>
+      <label class="checkbox"><input type="checkbox" name="system.use.eneFull" {{checked system.use.eneFull}}> Toute l'ENE</label>
+      <label>Relève un KO (% VIT max) <input type="number" name="system.use.revive" value="{{system.use.revive}}" min="0" max="100"></label>
+      <label class="checkbox" data-tooltip="Consommable tenu (Jus de Baie) : n'utilise pas l'action du Dresseur"><input type="checkbox" name="system.use.free" {{checked system.use.free}}> Tenu, sans action</label>
+      <label class="wide">Guérit
+        <multi-checkbox name="system.use.cures">
+          {{#each cureChoices as |c|}}<option value="{{c.id}}" {{#if c.selected}}selected{{/if}}>{{c.label}}</option>{{/each}}
+        </multi-checkbox>
+      </label>
+    </div>
+    <h3>Objet tenu</h3>
+    <div class="details-grid">
+      <label>Renforce le Type <select name="system.boostType">{{selectOptions boostTypes selected=system.boostType}}</select></label>
+      <label>Bonus de dégâts <input type="number" name="system.boost" value="{{system.boost}}"></label>
+    </div>
+    <p class="hint">Un objet tenu qui renforce un Type donne +2 dégâts aux attaques de ce Type (8.7).</p>
+    {{/if}}
+    <div class="details-grid">
+    </div>
+
     {{#if isType.attack}}
     <header class="item-group-header">
       <h3>Effets quand la capacité touche</h3>

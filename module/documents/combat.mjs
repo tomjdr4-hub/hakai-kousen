@@ -8,6 +8,8 @@
  * - Égalité d'Initiative : la meilleure DEX agit d'abord ; à DEX égale, on relance 1D10.
  */
 import { describeChoice } from "../combat/actions.mjs";
+import { processTurnStart } from "../combat/turn-start.mjs";
+import { availableReserve, getSetup, validTeam } from "../combat/setup.mjs";
 
 export const SCOPE = "hakai-kousen";
 
@@ -195,6 +197,42 @@ export class HKCombat extends Combat {
       content: `<div class="hk-card"><header><h3>Tour ${this.round} : actions annoncées</h3>
         <span class="subtitle">Dans l'ordre de résolution</span></header><ol class="hk-announce">${lines.join("")}</ol></div>`
     });
+    await processTurnStart(this);
+  }
+
+  /** Configuration du combat de Dresseurs (type, format, Dresseurs engagés). */
+  get setup() {
+    return getSetup(this);
+  }
+
+  /** Dresseurs engagés : ceux de la mise en place et ceux des combattants. */
+  get trainers() {
+    const trainers = new Map();
+    for ( const uuid of this.setup.trainers ) {
+      const t = fromUuidSync(uuid);
+      if ( t ) trainers.set(t.id, t);
+    }
+    for ( const c of this.combatants ) {
+      const t = c.trainer;
+      if ( t ) trainers.set(t.id, t);
+    }
+    return [...trainers.values()];
+  }
+
+  /**
+   * Combattants KO dont le Dresseur peut envoyer un remplaçant (gratuit, 5.13).
+   * @returns {{combatant: Combatant, trainer: Actor, reserve: Actor[]}[]}
+   */
+  get pendingReplacements() {
+    return this.combatants.filter(c => c.isKO && c.trainer && (c.actor?.type === "pokemon"))
+      .map(c => ({ combatant: c, trainer: c.trainer, reserve: availableReserve(this, c.trainer) }))
+      .filter(r => r.reserve.length);
+  }
+
+  /** Un Dresseur est vaincu quand aucun de ses Pokémon valides ne reste disponible. */
+  isTrainerDefeated(trainer) {
+    const active = this.combatants.some(c => (c.trainer?.id === trainer.id) && !c.isKO && (c.actor?.type === "pokemon"));
+    return !active && !availableReserve(this, trainer).length;
   }
 
   /* -------------------------------------------- */
@@ -216,6 +254,9 @@ export class HKCombat extends Combat {
     const lines = [];
     for ( const group of groups.values() ) {
       if ( group.length < 2 ) continue;
+      // Meute : initiative partagée volontairement.
+      const pack = group[0].getFlag(SCOPE, "pack");
+      if ( pack && group.every(c => c.getFlag(SCOPE, "pack") === pack) ) continue;
       // Déjà départagés (valeurs toutes différentes) : rien à faire.
       if ( new Set(group.map(c => c.tiebreak)).size === group.length ) continue;
 
@@ -270,12 +311,45 @@ const revealIfReady = foundry.utils.debounce(combat => {
 function onUpdateCombatant(combatant, changed) {
   if ( !game.user.isActiveGM ) return;
   if ( "initiative" in changed ) resolveTiesSoon(combatant.combat);
-  if ( changed.flags?.[SCOPE]?.choice ) revealIfReady(combatant.combat);
+  const choice = changed.flags?.[SCOPE]?.choice;
+  if ( choice ) revealIfReady(combatant.combat);
+  // Participation : une attaque ou une action du Pokémon lui donne droit à l'XP du combat (4.10).
+  if ( choice?.done && ["attack", "other"].includes(combatant.choice.kind) && combatant.actor ) {
+    const actor = combatant.actor;
+    const participants = combatant.combat.getFlag(SCOPE, "participants") ?? {};
+    if ( !participants[actor.id] ) combatant.combat.setFlag(SCOPE, `participants.${actor.id}`, { uuid: actor.uuid, name: actor.name });
+  }
+}
+
+/** KO : le combattant est marqué vaincu ; s'il se relève, il revient (MJ actif). */
+async function onUpdateActor(actor, changed) {
+  if ( !game.user.isActiveGM || !foundry.utils.hasProperty(changed, "system.vit.value") ) return;
+  const ko = actor.system.vit.value <= 0;
+  for ( const combat of game.combats ) {
+    const combatants = combat.combatants.filter(c => c.actor === actor);
+    if ( !combatants.length ) continue;
+    const updates = combatants.filter(c => c.defeated !== ko).map(c => ({ _id: c.id, defeated: ko }));
+    if ( updates.length ) await combat.updateEmbeddedDocuments("Combatant", updates);
+    if ( ko !== actor.statuses.has("dead") ) await actor.toggleStatusEffect("dead", { active: ko, overlay: true });
+    if ( !ko ) continue;
+    const trainer = combatants[0].trainer;
+    if ( trainer && combat.started && combat.isTrainerDefeated(trainer) ) {
+      await ChatMessage.implementation.create({
+        speaker: { alias: "Combat" },
+        content: `<div class="hk-card"><header><h3>${trainer.name} est vaincu</h3></header>
+          <p>Plus aucun Pokémon en état de combattre.</p></div>`
+      });
+    }
+  }
 }
 
 /** Nouveau tour : phase de réflexion automatique, sinon simple remise à zéro des priorités. */
 async function onUpdateCombat(combat, changed) {
-  if ( !("round" in changed) || !game.user.isActiveGM || (combat.round < 1) ) return;
+  if ( !game.user.isActiveGM ) return;
+  if ( ("turn" in changed) && !("round" in changed) && (combat.phase?.state === "resolution") ) {
+    return processTurnStart(combat);
+  }
+  if ( !("round" in changed) || (combat.round < 1) ) return;
   // « Apeuré » ne dure que le tour où il est infligé.
   for ( const c of combat.combatants ) {
     if ( c.actor?.statuses.has("peur") ) await c.actor.toggleStatusEffect("peur", { active: false });
@@ -296,7 +370,7 @@ function onCreateCombatant(combatant, options, userId) {
 function onRenderCombatTracker(app, html) {
   const combat = app.viewed;
   const root = html instanceof HTMLElement ? html : html[0];
-  if ( combat && !root.querySelector(".hk-open-panel") ) {
+  if ( !root.querySelector(".hk-open-panel") ) {
     const open = document.createElement("button");
     open.type = "button";
     open.className = "hk-open-panel";
@@ -358,6 +432,7 @@ export function registerCombatHooks() {
   Hooks.once("ready", watchPlanningTimers);
   Hooks.on("updateCombat", onUpdateCombat);
   Hooks.on("updateCombatant", onUpdateCombatant);
+  Hooks.on("updateActor", onUpdateActor);
   Hooks.on("createCombatant", onCreateCombatant);
   Hooks.on("renderCombatTracker", onRenderCombatTracker);
 }

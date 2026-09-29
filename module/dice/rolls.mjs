@@ -3,7 +3,7 @@ import {
   tableUniqueThreshold, typeEffectiveness
 } from "../config.mjs";
 
-import { applyDamage, applyEffect, effectLabel } from "../combat/effects.mjs";
+import { effectLabel } from "../combat/effects.mjs";
 
 const { DialogV2 } = foundry.applications.api;
 
@@ -316,17 +316,5 @@ function effectButton(actor, name, effect) {
     <i class="fa-solid ${icon}"></i> Appliquer ${effectLabel(effect)} à ${name}</button>`;
 }
 
-/** Branche les boutons des cartes Hakai Kousen. */
-export function onRenderChatMessage(message, html) {
-  html.querySelectorAll("[data-hk-action]").forEach(button => {
-    button.addEventListener("click", async () => {
-      const actor = await fromUuid(button.dataset.uuid);
-      if ( !actor ) return;
-      button.classList.add("applied");
-      if ( button.dataset.hkAction === "applyDamage" ) await applyDamage(actor, Number(button.dataset.amount));
-      else if ( button.dataset.hkAction === "applyEffect" ) {
-        await applyEffect(actor, JSON.parse(decodeURIComponent(button.dataset.effect)));
-      }
-    });
-  });
-}
+/** Boutons des cartes Hakai Kousen : voir combat/effects.mjs. */
+export { onRenderChatMessage } from "../combat/effects.mjs";

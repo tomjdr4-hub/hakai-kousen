@@ -1,6 +1,6 @@
 import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
-import { syncCounters } from "../combat/effects.mjs";
+import { syncCounters, useItemOn } from "../combat/effects.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -140,6 +140,7 @@ export class TrainerSheet extends HKActorSheet {
     classes: ["trainer"],
     actions: {
       rollDomain: TrainerSheet._onRollDomain,
+      useGear: TrainerSheet._onUseGear,
       openMember: TrainerSheet._onOpenMember,
       removeMember: TrainerSheet._onRemoveMember
     }
@@ -213,6 +214,29 @@ export class TrainerSheet extends HKActorSheet {
     const domain = this.actor.system[group][key];
     const label = (group === "skills" ? HK.SKILLS : HK.KNOWLEDGES)[key];
     return rollPool(this.actor, label, domain.level, domain.spec);
+  }
+
+  /** Utilise un objet de soin sur un Pokémon de l'équipe (ou sur le Dresseur). */
+  static async _onUseGear(event, target) {
+    const item = this._getItem(target);
+    if ( !item ) return;
+    const candidates = [this.actor, ...this.actor.system.team.map(u => fromUuidSync(u)).filter(Boolean)];
+    const options = candidates.map((a, i) => `<option value="${i}" ${i === 1 ? "selected" : ""}>${a.name}</option>`).join("");
+    const index = await foundry.applications.api.DialogV2.prompt({
+      window: { title: `Utiliser ${item.name}` },
+      content: `<div class="form-group"><label>Sur</label><div class="form-fields"><select name="target">${options}</select></div></div>`,
+      ok: { label: "Utiliser", callback: (e, button) => Number(button.form.elements.target.value) },
+      rejectClose: false
+    });
+    if ( index === null ) return;
+    const actor = candidates[index];
+    const result = await useItemOn(item, actor);
+    if ( result === null ) return;
+    await ChatMessage.implementation.create({
+      speaker: ChatMessage.implementation.getSpeaker({ actor: this.actor }),
+      content: `<div class="hk-card"><header><h3>${this.actor.name} utilise ${item.name}</h3></header>
+        <p>Sur <strong>${actor.name}</strong> : ${result}</p></div>`
+    });
   }
 
   static async _onOpenMember(event, target) {

@@ -2,7 +2,7 @@
  * Application des dégâts, des modifications de stats et des altérations d'état.
  * Si l'utilisateur ne possède pas la cible, la demande est transmise au MJ actif.
  */
-import { ATTRIBUTES, STATUSES } from "../config.mjs";
+import { ATTRIBUTES, CURABLE, STATUSES } from "../config.mjs";
 
 const SOCKET = "system.hakai-kousen";
 
@@ -25,15 +25,133 @@ function relayToGM(actor, payload) {
   return true;
 }
 
+/** Nature du combat en cours : officiel (par défaut), sauvage ou mortel. */
+export function currentCombatType() {
+  return game.combat?.getFlag("hakai-kousen", "setup")?.type ?? "officiel";
+}
+
+/** VIT à laquelle l'acteur meurt : −10 pour un Pokémon, −5 pour un humain (3.8, 4.16). */
+export function deathThreshold(actor) {
+  return actor.type === "trainer" ? -5 : -10;
+}
+
+/** Dresseur dont l'équipe contient ce Pokémon. */
+export function trainerOf(actor) {
+  if ( actor?.type !== "pokemon" ) return null;
+  const uuid = actor.isToken ? actor.token?.baseActor?.uuid : actor.uuid;
+  return game.actors.find(a => (a.type === "trainer") && a.system.team.includes(uuid)) ?? null;
+}
+
 /**
- * Retire de la VIT.
+ * Retire de la VIT. En combat officiel, la VIT ne descend pas sous 0 ; ailleurs elle peut devenir
+ * négative, avec blessure grave et mort possibles.
  * @param {Actor} actor
  * @param {number} amount
  */
 export async function applyDamage(actor, amount) {
   if ( relayToGM(actor, { type: "applyDamage", uuid: actor.uuid, amount }) ) return;
-  await actor.update({ "system.vit.value": Math.max(actor.system.vit.value - amount, 0) });
+  const before = actor.system.vit.value;
+  const official = currentCombatType() === "officiel";
+  const after = official ? Math.max(before - amount, 0) : before - amount;
+  await actor.update({ "system.vit.value": after });
   ui.notifications.info(`${actor.name} perd ${amount} VIT.`);
+  const fatal = !official && (after <= deathThreshold(actor)) && (before > deathThreshold(actor));
+  if ( ((before > 0) && (after <= 0)) || fatal ) await announceKO(actor, after, official);
+}
+
+/** Carte de KO : blessure grave et coup fatal hors combat officiel (4.16, 3.12). */
+async function announceKO(actor, vit, official) {
+  const fatal = !official && (vit <= deathThreshold(actor));
+  const trainer = trainerOf(actor);
+  const buttons = [];
+  if ( !official && !fatal ) {
+    const effect = encodeURIComponent(JSON.stringify({ kind: "status", status: "blessure" }));
+    buttons.push(`<button type="button" class="hk-apply" data-hk-action="applyEffect" data-uuid="${actor.uuid}"
+      data-effect="${effect}"><i class="fa-solid fa-droplet"></i> Blessure grave</button>`);
+  }
+  if ( fatal && trainer ) {
+    buttons.push(`<button type="button" class="hk-apply" data-hk-action="saveFatal" data-uuid="${actor.uuid}"
+      data-trainer="${trainer.uuid}"><i class="fa-solid fa-life-ring"></i> ${trainer.name} dépense 1 XP Dresseur : rappelé juste à temps</button>`);
+  }
+  let text;
+  if ( fatal ) text = `Coup fatal : ${actor.name} tombe à ${vit} VIT.`;
+  else if ( official ) text = `${actor.name} est KO. Les sécurités du combat officiel empêchent toute blessure grave.`;
+  else text = `${actor.name} est KO (${vit} VIT). Une blessure suffisamment grave peut mettre sa vie en danger.`;
+  await ChatMessage.implementation.create({
+    speaker: { alias: "Combat" },
+    content: `<div class="hk-card"><header><h3>${fatal ? "Coup fatal" : "KO"}</h3></header>
+      <div class="hk-outcome failure">${text}</div>${buttons.join("")}</div>`
+  });
+}
+
+/** Rappel juste à temps : 1 XP Dresseur, le Pokémon survit avec une blessure grave (3.12). */
+export async function saveFromFatal(actor, trainer) {
+  if ( !trainer?.isOwner ) return ui.notifications.warn("Seul le propriétaire du Dresseur peut dépenser son XP.");
+  if ( trainer.system.xp.value < 1 ) return ui.notifications.warn(`${trainer.name} n'a plus d'XP Dresseur.`);
+  await trainer.update({ "system.xp.value": trainer.system.xp.value - 1 });
+  if ( !relayToGM(actor, { type: "saveFatal", uuid: actor.uuid }) ) await survive(actor);
+  await ChatMessage.implementation.create({
+    speaker: { alias: trainer.name },
+    content: `<div class="hk-card"><header><h3>Rappelé juste à temps !</h3></header>
+      <p>${trainer.name} rappelle ${actor.name} dans sa Ball au dernier moment. Blessure grave : soins nécessaires.</p></div>`
+  });
+}
+
+async function survive(actor) {
+  await actor.update({ "system.vit.value": deathThreshold(actor) + 1 });
+  if ( !actor.statuses.has("blessure") ) await actor.toggleStatusEffect("blessure", { active: true });
+}
+
+/**
+ * Utilise un objet de soin sur un acteur (Annexe 4) et décompte l'objet.
+ * Renvoie le texte du résultat, ou null si l'utilisation est refusée.
+ * @param {Item} item
+ * @param {Actor} actor
+ */
+export async function useItemOn(item, actor) {
+  const use = item.system.use;
+  const vit = actor.system.vit;
+  const ene = actor.system.ene;
+  const ko = vit.value <= 0;
+  const lines = [];
+  const updates = {};
+
+  if ( ko && !use.revive ) {
+    if ( !(use.vit || use.vitFull) ) {
+      ui.notifications.warn(`${actor.name} est KO : cet objet ne peut pas le relever.`);
+      return null;
+    }
+    if ( (currentCombatType() === "officiel") && game.combat?.started ) {
+      ui.notifications.warn("En combat officiel, seul un Rappel autorisé ramène un Pokémon KO.");
+      return null;
+    }
+  }
+
+  let newVit = vit.value;
+  if ( use.revive && ko ) newVit = Math.max(Math.floor(vit.max * use.revive / 100), 1);
+  else if ( use.vitFull ) newVit = vit.max;
+  else if ( use.vit ) newVit = Math.min(vit.value + use.vit, vit.max);
+  if ( newVit !== vit.value ) {
+    updates["system.vit.value"] = newVit;
+    lines.push(ko ? `${actor.name} est relevé avec ${newVit} VIT.` : `VIT : ${vit.value} → ${newVit}.`);
+  }
+  if ( ene && (use.ene || use.eneFull) ) {
+    const newEne = use.eneFull ? ene.max : Math.min(ene.value + use.ene, ene.max);
+    updates["system.ene.value"] = newEne;
+    lines.push(`ENE : ${ene.value} → ${newEne}.`);
+  }
+  if ( Object.keys(updates).length ) await actor.update(updates);
+
+  const cures = use.cures.includes("all") ? CURABLE : use.cures;
+  for ( const id of cures ) {
+    if ( !actor.statuses.has(id) ) continue;
+    await actor.toggleStatusEffect(id, { active: false });
+    await syncCounters(actor, id, false);
+    lines.push(`${STATUSES[id]?.label ?? id} guéri.`);
+  }
+  if ( (newVit > 0) && actor.statuses.has("dead") ) await actor.toggleStatusEffect("dead", { active: false });
+  await item.update({ "system.quantity": Math.max(item.system.quantity - 1, 0) });
+  return lines.join(" ") || "Aucun effet.";
 }
 
 /**
@@ -88,4 +206,21 @@ export async function handleEffectRequest(data) {
   if ( !actor ) return;
   if ( data.type === "applyDamage" ) return applyDamage(actor, Number(data.amount));
   if ( data.type === "applyEffect" ) return applyEffect(actor, data.effect);
+  if ( data.type === "saveFatal" ) return survive(actor);
+}
+
+/** Boutons des cartes de chat Hakai Kousen. */
+export function onRenderChatMessage(message, html) {
+  html.querySelectorAll("[data-hk-action]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const actor = await fromUuid(button.dataset.uuid);
+      if ( !actor ) return;
+      button.classList.add("applied");
+      switch ( button.dataset.hkAction ) {
+        case "applyDamage": return applyDamage(actor, Number(button.dataset.amount));
+        case "applyEffect": return applyEffect(actor, JSON.parse(decodeURIComponent(button.dataset.effect)));
+        case "saveFatal": return saveFromFatal(actor, await fromUuid(button.dataset.trainer));
+      }
+    });
+  });
 }

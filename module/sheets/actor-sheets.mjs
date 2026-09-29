@@ -1,6 +1,10 @@
 import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
 import { syncCounters, useItemOn } from "../combat/effects.mjs";
+import {
+  evolve, moveBetweenTeamAndPC, raiseRelation, spendEV, spendPokeskill, spendTrainerXP,
+  toggleDynamax, toggleMega, toggleTera
+} from "../progression.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -141,6 +145,10 @@ export class TrainerSheet extends HKActorSheet {
     actions: {
       rollDomain: TrainerSheet._onRollDomain,
       useGear: TrainerSheet._onUseGear,
+      spendXP: TrainerSheet._onSpendXP,
+      toPC: TrainerSheet._onToPC,
+      toTeam: TrainerSheet._onToTeam,
+      removeFromPC: TrainerSheet._onRemoveFromPC,
       openMember: TrainerSheet._onOpenMember,
       removeMember: TrainerSheet._onRemoveMember
     }
@@ -172,18 +180,25 @@ export class TrainerSheet extends HKActorSheet {
     const context = await super._prepareContext(options);
     const system = this.actor.system;
 
-    context.attributes = Object.entries(HK.ATTRIBUTES).map(([key, cfg]) => ({ key, ...cfg, ...system.attributes[key] }));
-    const domains = (group, labels) => Object.entries(labels).map(([key, label]) => ({
-      key, label, group, ...system[group][key]
+    // Coûts en XP Dresseur : Caractéristique 4 × valeur ; domaine 2 à l'ouverture puis 2 × Niveau (3.12).
+    context.attributes = Object.entries(HK.ATTRIBUTES).map(([key, cfg]) => ({
+      key, ...cfg, ...system.attributes[key], cost: 4 * system.attributes[key].value
     }));
+    const domains = (group, labels) => Object.entries(labels).map(([key, label]) => {
+      const domain = system[group][key];
+      return { key, label, group, ...domain, cost: domain.level ? 2 * domain.level : 2, maxed: domain.level >= 5 };
+    });
     context.skills = domains("skills", HK.SKILLS);
     context.knowledges = domains("knowledges", HK.KNOWLEDGES);
 
-    context.team = system.team.map(uuid => {
+    const member = uuid => {
       const pokemon = fromUuidSync(uuid);
       return pokemon ? { uuid, pokemon, types: [pokemon.system.types?.primary, pokemon.system.types?.secondary]
         .filter(Boolean).map(t => HK.TYPES[t]).join(" / ") } : { uuid, missing: true };
-    });
+    };
+    context.team = system.team.map(member);
+    context.pc = system.pc.map(member);
+    context.pcCost = system.pc.length * 50;
 
     context.mechanics = [
       { key: "mega", label: "Méga-Évolution", item: "Gemme Sésame" },
@@ -248,6 +263,23 @@ export class TrainerSheet extends HKActorSheet {
     const uuid = target.closest("[data-uuid]").dataset.uuid;
     await this.actor.update({ "system.team": this.actor.system.team.filter(u => u !== uuid) });
   }
+
+  static async _onSpendXP(event, target) {
+    return spendTrainerXP(this.actor, target.dataset.group, target.dataset.key);
+  }
+
+  static async _onToPC(event, target) {
+    return moveBetweenTeamAndPC(this.actor, target.closest("[data-uuid]").dataset.uuid, true);
+  }
+
+  static async _onToTeam(event, target) {
+    return moveBetweenTeamAndPC(this.actor, target.closest("[data-uuid]").dataset.uuid, false);
+  }
+
+  static async _onRemoveFromPC(event, target) {
+    const uuid = target.closest("[data-uuid]").dataset.uuid;
+    await this.actor.update({ "system.pc": this.actor.system.pc.filter(u => u !== uuid) });
+  }
 }
 
 /* -------------------------------------------- */
@@ -263,6 +295,13 @@ export class PokemonSheet extends HKActorSheet {
       learnFromCompendium: PokemonSheet._onLearnFromCompendium,
       addPhase: PokemonSheet._onAddPhase,
       removePhase: PokemonSheet._onRemovePhase,
+      spendEV: PokemonSheet._onSpendEV,
+      spendSkill: PokemonSheet._onSpendSkill,
+      raiseRelation: PokemonSheet._onRaiseRelation,
+      evolve: PokemonSheet._onEvolve,
+      toggleMega: PokemonSheet._onToggleMega,
+      toggleDynamax: PokemonSheet._onToggleDynamax,
+      toggleTera: PokemonSheet._onToggleTera,
       syncAttacks: PokemonSheet._onSyncAttacks
     }
   };
@@ -308,7 +347,7 @@ export class PokemonSheet extends HKActorSheet {
     context.weakened = system.weakened;
 
     // Sensibilités : multiplicateur de chaque type d'attaque contre ce Pokémon.
-    const defTypes = [system.types.primary, system.types.secondary].filter(Boolean);
+    const defTypes = system.defensiveTypes;
     context.sensitivities = Object.entries(HK.TYPES).map(([key, label]) => {
       const mult = typeEffectiveness(key, defTypes);
       const text = { 0: "×0", 0.25: "×¼", 0.5: "×½", 1: "", 2: "×2", 4: "×4" }[mult] ?? `×${mult}`;
@@ -342,6 +381,11 @@ export class PokemonSheet extends HKActorSheet {
     context.rarities = Object.fromEntries(Object.entries(HK.RARITIES).map(([k, r]) => [k, `${r.label} (capture ${r.capture ? `+${r.capture}` : "+0"})`]));
     context.vulnerableChoices = { "": "—", ...Object.fromEntries(Object.entries(HK.STATUSES).filter(([k]) => k !== "blessure").map(([k, s]) => [k, s.label])) };
     context.phases = system.boss.phases.map((p, index) => ({ ...p, index }));
+    // Coût du prochain EV : 10 XP à l'ouverture, puis EV actuels × 7 (4.4).
+    for ( const s of context.stats ) s.evCost = s.ev === 0 ? 10 : s.ev * 7;
+    context.teraTypes = { "": "—", ...HK.TYPES, stellaire: "Stellaire" };
+    context.formBonus = Object.entries(system.form.bonus).map(([key, value]) => ({ key, value, abbr: HK.POKEMON_STATS[key].abbr }));
+    context.relationCost = ["semi", "semiFinal"].includes(system.encounter.rarity) ? 2 : 1;
     return context;
   }
 
@@ -358,6 +402,35 @@ export class PokemonSheet extends HKActorSheet {
         this.actor.update({ "system.boss.phases": phases });
       });
     }
+  }
+
+  static async _onSpendEV(event, target) {
+    return spendEV(this.actor, target.dataset.stat);
+  }
+
+  static async _onSpendSkill(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return spendPokeskill(this.actor, item);
+  }
+
+  static async _onRaiseRelation(event, target) {
+    return raiseRelation(this.actor, target.dataset.which);
+  }
+
+  static async _onEvolve() {
+    return evolve(this.actor);
+  }
+
+  static async _onToggleMega() {
+    return toggleMega(this.actor);
+  }
+
+  static async _onToggleDynamax() {
+    return toggleDynamax(this.actor);
+  }
+
+  static async _onToggleTera() {
+    return toggleTera(this.actor);
   }
 
   static async _onAddPhase() {

@@ -33,7 +33,7 @@
       <div>
         <h3>Caractéristiques</h3>
         <table class="hk-table">
-          <thead><tr><th>Stat</th><th>Base</th><th>Pts</th><th>Total</th><th></th></tr></thead>
+          <thead><tr><th>Stat</th><th>Base</th><th>Pts</th><th>Total</th><th></th><th></th></tr></thead>
           <tbody>
             {{#each attributes as |attr|}}
             <tr>
@@ -42,6 +42,7 @@
               <td><input type="number" name="system.attributes.{{attr.key}}.pts" value="{{attr.pts}}"></td>
               <td class="total">{{attr.value}}</td>
               <td><button type="button" class="roll" data-action="rollAttribute" data-attribute="{{attr.key}}" data-tooltip="Test : 1Dx ≤ {{attr.value}}"><i class="fa-solid fa-dice-d6"></i></button></td>
+              <td>{{#if @root.editable}}<button type="button" class="icon xp" data-action="spendXP" data-group="attribute" data-key="{{attr.key}}" data-tooltip="Améliorer : {{attr.cost}} XP Dresseur"><i class="fa-solid fa-plus"></i></button>{{/if}}</td>
             </tr>
             {{/each}}
           </tbody>
@@ -50,10 +51,10 @@
 
         <h3>Connaissances</h3>
         <table class="hk-table domains">
-          <thead><tr><th>Domaine</th><th>Niv.</th><th>Spécialisation</th><th></th></tr></thead>
+          <thead><tr><th>Domaine</th><th>Niv.</th><th>Spécialisation</th><th></th><th></th></tr></thead>
           <tbody>
             {{#each knowledges as |d|}}
-            {{> "hk-domain-row" d}}
+            {{> "hk-domain-row" d editable=@root.editable}}
             {{/each}}
           </tbody>
         </table>
@@ -61,10 +62,10 @@
       <div>
         <h3>Compétences</h3>
         <table class="hk-table domains">
-          <thead><tr><th>Domaine</th><th>Niv.</th><th>Spécialisation</th><th></th></tr></thead>
+          <thead><tr><th>Domaine</th><th>Niv.</th><th>Spécialisation</th><th></th><th></th></tr></thead>
           <tbody>
             {{#each skills as |d|}}
-            {{> "hk-domain-row" d}}
+            {{> "hk-domain-row" d editable=@root.editable}}
             {{/each}}
           </tbody>
         </table>
@@ -93,9 +94,34 @@
         </div>
         {{/if}}
         {{#if @root.editable}}
+        {{#unless member.missing}}<button type="button" class="icon" data-action="toPC" data-tooltip="Envoyer dans la Boîte PC"><i class="fa-solid fa-box-archive"></i></button>{{/unless}}
         <button type="button" class="icon" data-action="removeMember" data-tooltip="Retirer de l'équipe"><i class="fa-solid fa-xmark"></i></button>
         {{/if}}
       </li>
+      {{/each}}
+    </ol>
+
+    <h3>Boîte PC ({{pc.length}} / 30)</h3>
+    <p class="hint">Pension : {{pcCost}} ₽ par jour ({{pc.length}} × 50 ₽). Un Pokémon capturé avec une équipe complète arrive ici.</p>
+    <ol class="team pc">
+      {{#each pc as |member|}}
+      <li class="team-member" data-uuid="{{member.uuid}}">
+        {{#if member.missing}}
+        <span class="missing">Pokémon introuvable</span>
+        {{else}}
+        <img src="{{member.pokemon.img}}" alt="{{member.pokemon.name}}" data-action="openMember">
+        <div class="member-info">
+          <a data-action="openMember"><strong>{{member.pokemon.name}}</strong></a>
+          <span class="hint">{{member.pokemon.system.species}}</span>
+        </div>
+        {{/if}}
+        {{#if @root.editable}}
+        {{#unless member.missing}}<button type="button" class="icon" data-action="toTeam" data-tooltip="Remettre dans l'équipe"><i class="fa-solid fa-arrow-up"></i></button>{{/unless}}
+        <button type="button" class="icon" data-action="removeFromPC" data-tooltip="Retirer de la Boîte"><i class="fa-solid fa-xmark"></i></button>
+        {{/if}}
+      </li>
+      {{else}}
+      <li class="hint">Boîte vide.</li>
       {{/each}}
     </ol>
 

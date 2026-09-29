@@ -15,7 +15,7 @@ export const SCOPE = "hakai-kousen";
 
 /** Choix vide d'un combattant pour le tour. */
 export const EMPTY_CHOICE = Object.freeze({
-  kind: "", itemId: "", targets: [], switchTo: "", note: "", dodge: false, ready: false, done: false
+  kind: "", itemId: "", targets: [], switchTo: "", note: "", dodge: false, zmove: false, ready: false, done: false
 });
 
 export class HKCombatant extends Combatant {
@@ -313,6 +313,10 @@ function onUpdateCombatant(combatant, changed) {
   if ( "initiative" in changed ) resolveTiesSoon(combatant.combat);
   const choice = changed.flags?.[SCOPE]?.choice;
   if ( choice ) revealIfReady(combatant.combat);
+  // Capacité Z : une seule par Dresseur et par combat (5.19.2).
+  if ( choice?.done && combatant.choice.zmove && combatant.trainer ) {
+    combatant.combat.setFlag(SCOPE, `zUsed.${combatant.trainer.id}`, true);
+  }
   // Participation : une attaque ou une action du Pokémon lui donne droit à l'XP du combat (4.10).
   if ( choice?.done && ["attack", "other"].includes(combatant.choice.kind) && combatant.actor ) {
     const actor = combatant.actor;

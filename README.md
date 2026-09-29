@@ -41,6 +41,14 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - « Apeuré » disparaît à chaque nouveau tour de combat.
 - Le bouton ⟳ de l'onglet Capacités met à jour les capacités d'une fiche depuis le compendium.
 
+### Progression
+- **XP Dresseur** : boutons « + » sur les Caractéristiques (4 × valeur) et les Compétences / Connaissances (ouverture 2 XP, puis 2 × Niveau ; Spécialisation signalée au niveau 5).
+- **XP Pokémon** : « + » sur les EV (10 XP à l'ouverture, puis EV × 7 ; max 30) et sur les Compétences Pokémon (Niveau × 10 / 20 / 30).
+- **Relation** : +1 Confiance ou +1 Obéissance pour 1 XP Dresseur, une fois par jour (2 XP pour un semi-légendaire).
+- **Évolution** : vérifie le Dressage requis selon la catégorie (8 à 14), remplace l'espèce par celle du Pokédex et conserve IV, EV, Nature, relation et capacités.
+- **Capture** : le MJ confirme depuis la carte de capture ; le Pokémon rejoint l'équipe (6) ou la **Boîte PC** (30 places, pension de 50 ₽ par jour), avec la relation initiale choisie ; +1 XP Dresseur à la première capture.
+- **Mécaniques régionales** (5.19) : Méga-Évolution (Dressage 18, forme saisie sur la fiche, fin au KO), Dynamax (3 tours, VIT doublée), Téracristallisation (Type Téra en défense), Capacité Z dans le panneau de combat (moitié de l'ENE max, une par Dresseur et par combat).
+
 ### Outils du MJ
 Boutons dans l'onglet Acteurs (MJ) : **Pokémon sauvages** et **Combat de Dresseurs**.
 

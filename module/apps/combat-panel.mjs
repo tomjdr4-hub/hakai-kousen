@@ -227,7 +227,15 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
     const partners = trainer ? combat.combatants.filter(c => (c.trainer?.id === trainer.id) && !c.isKO).length : 0;
     const obedience = combatant.actor.system.relation?.obedience;
     const dodge = dodgeLevel(combatant.actor);
+    // Capacité Z : mécanique débloquée, une par Dresseur et par combat, Pokémon obéissant, ENE ≥ moitié du max.
+    const ene = combatant.actor.system.ene;
+    const zAvailable = !!trainer?.system.mechanics.zmove.unlocked && (combatant.actor.type === "pokemon")
+      && !combat.getFlag(SCOPE, "zUsed")?.[trainer.id] && (combatant.actor.system.dressage >= 8)
+      && (ene.value >= Math.floor(ene.max / 2));
     return {
+      zAvailable,
+      zCost: Math.floor((ene?.max ?? 0) / 2),
+      zmove: choice.zmove,
       dodgeLevel: dodge,
       dodgeCost: dodge ? DODGE_COST[Math.min(dodge, 5)] : 0,
       dodge: choice.dodge,

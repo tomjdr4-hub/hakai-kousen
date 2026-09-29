@@ -42,6 +42,9 @@ export class TrainerData extends foundry.abstract.TypeDataModel {
         gender: new StringField({ required: true, blank: true })
       }),
       team: new ArrayField(new DocumentUUIDField({ type: "Actor" })),
+      // Boîte PC : 30 places, Pokémon hébergés en Pension (7.1).
+      pc: new ArrayField(new DocumentUUIDField({ type: "Actor" })),
+      firstCapture: new BooleanField(),
       mechanics: new SchemaField(Object.fromEntries(["mega", "zmove", "tera", "dynamax"].map(k => [k, new SchemaField({
         unlocked: new BooleanField(),
         item: new StringField({ required: true, blank: true })
@@ -127,6 +130,18 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
           uuid: new StringField({ required: true, blank: true })
         }))
       }),
+      // Mécaniques régionales (5.19) : forme Méga (ou autre forme), Dynamax, Téracristallisation.
+      form: new SchemaField({
+        active: new BooleanField(),
+        name: new StringField({ required: true, blank: true }),
+        primary: new StringField({ required: true, blank: true }),
+        secondary: new StringField({ required: true, blank: true }),
+        bonus: new SchemaField(Object.fromEntries(["dex", "for", "con", "end", "vol"].map(k => [k, int(0)])))
+      }),
+      dynamax: new SchemaField({ active: new BooleanField(), endsRound: int(0) }),
+      tera: new SchemaField({ type: new StringField({ required: true, blank: true }), active: new BooleanField() }),
+      // Jour (temps du monde) de la dernière dépense d'XP Dresseur pour la relation : une par jour (4.13).
+      relationDay: new NumberField({ required: false, nullable: true, integer: true, initial: null }),
       // Rencontre et capture (5.16 ; MJ 4.6, 5.1).
       encounter: new SchemaField({
         rarity: new StringField({ required: true, initial: "commun", choices: ["commun", "rare", "semi", "semiFinal"] }),
@@ -152,6 +167,13 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
     };
   }
 
+  /** Types défensifs actuels : Téracristallisation, puis forme alternative, sinon types d'origine. */
+  get defensiveTypes() {
+    if ( this.tera.active && this.tera.type && (this.tera.type !== "stellaire") ) return [this.tera.type];
+    if ( this.form.active && this.form.primary ) return [this.form.primary, this.form.secondary].filter(Boolean);
+    return [this.types.primary, this.types.secondary].filter(Boolean);
+  }
+
   /** Dressage = Confiance + Obéissance (4.11). */
   get dressage() {
     return this.relation.confidence + this.relation.obedience;
@@ -175,7 +197,12 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
       if ( this.baby && (k !== "ene") ) stat.total = Math.floor(stat.total / 2);
     }
 
-    this.vit.max = this.stats.vit.total;
+    // Forme alternative (Méga-Évolution…) : bonus de statistiques saisis sur la fiche.
+    if ( this.form.active ) {
+      for ( const [k, b] of Object.entries(this.form.bonus) ) this.stats[k].total += b;
+    }
+
+    this.vit.max = this.stats.vit.total * (this.dynamax.active ? 2 : 1);
     this.ene.max = this.stats.ene.total;
     const weakened = this.weakened;
 

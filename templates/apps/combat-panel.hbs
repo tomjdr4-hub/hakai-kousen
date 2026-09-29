@@ -125,6 +125,10 @@
       </div>
       {{> "hk-panel-targets" m}}
       {{#if (lt m.dressage 8)}}<p class="hint">Dressage {{m.dressage}} : un test d'ordre (1D8) sera lancé avant l'attaque.</p>{{/if}}
+      {{#if m.zAvailable}}
+      <label class="checkbox" data-tooltip="Remplace l'attaque normale pour ce tour ; une seule par Dresseur et par combat. Le Pokémon doit tenir le Cristal Z adapté.">
+        <input type="checkbox" data-draft-field="zmove" {{checked m.zmove}}> Capacité Z ({{m.zCost}} ENE, moitié de l'ENE max)</label>
+      {{/if}}
       {{/if}}
 
       {{#if m.is.switch}}

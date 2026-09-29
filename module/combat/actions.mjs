@@ -222,7 +222,7 @@ export async function executeChoice(combatant) {
         if ( roll && (roll.total > actor.system.dressage) ) break;
       }
       const targets = choice.targets.map(id => resolveCombatant(combat, id)?.token).filter(Boolean);
-      const message = await rollAttack(actor, item, { targets });
+      const message = await rollAttack(actor, item, { targets, zMove: choice.zmove && !struggle });
       if ( !message ) return false;
       // Lutte : le lanceur perd 1/10 de sa VIT max.
       if ( struggle ) await applyDamage(actor, Math.max(Math.floor(actor.system.vit.max / 10), 1));
@@ -336,6 +336,8 @@ async function throwBall(trainer, ball, target) {
       ${conditional !== null ? `<p class="hk-detail">${ball.name} : ${ballMod} si « ${condition} » → seuil ${conditional}${roll.total >= conditional ? " : capturé si la condition est remplie" : ""}.</p>` : ""}
       ${demanding && !strongEnough ? `<p class="hk-detail">Dominant ou semi-légendaire au stade final : il faut au moins une Hyper Ball ou une Ball spéciale adaptée.</p>` : ""}
       <div class="hk-outcome ${captured ? "success" : "failure"}">${captured ? "Capturé !" : "Le Pokémon s'échappe"}</div>
+      <button type="button" class="hk-apply" data-hk-capture data-uuid="${actor.uuid}" data-trainer="${trainer.uuid}" data-ball="${ball.name}">
+        <i class="fa-solid fa-circle-dot"></i> ${captured ? "Confirmer la capture" : "Accorder quand même la capture (RP)"}</button>
       <p class="hk-detail">Rareté, Dominant et Aberrant viennent de la fiche du Pokémon (onglet Description).</p></div>`
   };
   ChatMessage.implementation.applyRollMode(data, "blindroll");

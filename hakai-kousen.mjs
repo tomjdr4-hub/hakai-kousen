@@ -13,6 +13,7 @@ import { openCombatPanel, registerCombatPanelHooks } from "./module/apps/combat-
 import { registerSocket } from "./module/combat/actions.mjs";
 import { openSetupDialog } from "./module/combat/setup.mjs";
 import { openWildGenerator } from "./module/apps/wild-generator.mjs";
+import { registerProgressionHooks } from "./module/progression.mjs";
 
 /** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
@@ -80,6 +81,7 @@ Hooks.once("init", () => {
 Hooks.on("renderChatMessageHTML", rolls.onRenderChatMessage);
 registerCombatHooks();
 registerCombatPanelHooks();
+registerProgressionHooks();
 Hooks.once("ready", registerSocket);
 
 /** Onglet Acteurs : outils du MJ (combat de Dresseurs, Pokémon sauvages). */

@@ -1101,6 +1101,63 @@
   gap: 4px 12px;
 }
 
+/* ---------- Progression et mécaniques régionales ---------- */
+
+.hakai-kousen button.icon.xp {
+  width: 20px;
+  height: 20px;
+  font-size: 0.7em;
+  opacity: 0.7;
+}
+
+.hakai-kousen button.icon.xp:hover {
+  opacity: 1;
+}
+
+.hakai-kousen .ev-cell {
+  white-space: nowrap;
+}
+
+.hakai-kousen .relation-xp,
+.hakai-kousen .regional {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.hakai-kousen .relation-xp button,
+.hakai-kousen .regional button {
+  flex: none;
+  width: auto;
+}
+
+.hakai-kousen .regional button.active {
+  background: var(--hk-accent-soft);
+  border-color: var(--hk-accent);
+  font-weight: bold;
+}
+
+.hakai-kousen .regional label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hakai-kousen .form-editor {
+  margin-top: 6px;
+}
+
+.hakai-kousen .form-editor summary {
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.hakai-kousen .team.pc {
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+}
+
 /* ---------- Outils du MJ (onglet Acteurs) ---------- */
 
 .hk-directory-tools {

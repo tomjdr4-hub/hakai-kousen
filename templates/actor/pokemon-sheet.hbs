@@ -59,7 +59,8 @@
           <th data-tooltip="{{s.label}} — +{{s.gain}} par IV / EV">{{s.abbr}}</th>
           <td><input type="number" name="system.stats.{{s.key}}.base" value="{{s.base}}"></td>
           <td><input type="number" name="system.stats.{{s.key}}.iv" value="{{s.iv}}"></td>
-          <td><input type="number" name="system.stats.{{s.key}}.ev" value="{{s.ev}}" max="30"></td>
+          <td class="ev-cell"><input type="number" name="system.stats.{{s.key}}.ev" value="{{s.ev}}" max="30">
+            {{#if @root.editable}}<button type="button" class="icon xp" data-action="spendEV" data-stat="{{s.key}}" data-tooltip="EV suivant : {{s.evCost}} XP Pokémon"><i class="fa-solid fa-plus"></i></button>{{/if}}</td>
           <td class="nature">{{#if s.nature}}{{#if (gt s.nature 0)}}+{{/if}}{{s.nature}}{{/if}}</td>
           <td class="total">{{s.total}}</td>
           {{#if s.rollable}}
@@ -89,6 +90,37 @@
       <button type="button" data-action="rollDressage" data-tooltip="{{#if obeys}}Obéit normalement{{else}}1D8 ≤ Dressage{{/if}}">
         <i class="fa-solid fa-bullhorn"></i> Donner un ordre</button>
     </div>
+    {{#if editable}}
+    <div class="relation-xp">
+      <button type="button" data-action="raiseRelation" data-which="confidence"><i class="fa-solid fa-heart"></i> +1 Confiance</button>
+      <button type="button" data-action="raiseRelation" data-which="obedience"><i class="fa-solid fa-hand"></i> +1 Obéissance</button>
+      <span class="hint">{{relationCost}} XP Dresseur, une fois par jour{{#if (gt relationCost 1)}} (semi-légendaire){{/if}}.</span>
+      <button type="button" data-action="evolve"><i class="fa-solid fa-dna"></i> Évoluer…</button>
+    </div>
+    {{/if}}
+
+    <h3>Mécaniques régionales</h3>
+    <div class="regional">
+      <button type="button" class="{{#if system.form.active}}active{{/if}}" data-action="toggleMega" data-tooltip="Dressage 18, Gemme Sésame et Méga-Gemme. Gratuite, fin au KO.">
+        <i class="fa-solid fa-gem"></i> {{#if system.form.active}}Forme normale{{else}}Méga-Évolution{{/if}}</button>
+      <button type="button" class="{{#if system.dynamax.active}}active{{/if}}" data-action="toggleDynamax" data-tooltip="3 tours : VIT max et actuelle doublées, puis divisées par 2.">
+        <i class="fa-solid fa-up-right-and-down-left-from-center"></i> {{#if system.dynamax.active}}Fin du Dynamax{{else}}Dynamax{{/if}}</button>
+      <button type="button" class="{{#if system.tera.active}}active{{/if}}" data-action="toggleTera" data-tooltip="Le Type Téra remplace les types défensifs.">
+        <i class="fa-solid fa-diamond"></i> {{#if system.tera.active}}Fin de la Téracristallisation{{else}}Téracristallisation{{/if}}</button>
+      <label>Type Téra <select name="system.tera.type">{{selectOptions teraTypes selected=system.tera.type}}</select></label>
+    </div>
+    <details class="form-editor" {{#if system.form.active}}open{{/if}}>
+      <summary>Forme Méga / alternative (données du site Hakai Kousen)</summary>
+      <div class="details-grid">
+        <label>Nom <input type="text" name="system.form.name" value="{{system.form.name}}" placeholder="Méga-Dracaufeu X"></label>
+        <label>Type 1 <select name="system.form.primary">{{selectOptions secondaryTypes selected=system.form.primary}}</select></label>
+        <label>Type 2 <select name="system.form.secondary">{{selectOptions secondaryTypes selected=system.form.secondary}}</select></label>
+        {{#each formBonus as |b|}}
+        <label>{{b.abbr}} <input type="number" name="system.form.bonus.{{b.key}}" value="{{b.value}}"></label>
+        {{/each}}
+      </div>
+      <p class="hint">Bonus ajoutés aux statistiques pendant la forme ; les types remplacent ceux d'origine en défense.</p>
+    </details>
 
     <h3>Sensibilités</h3>
     <div class="sensitivities">
@@ -169,7 +201,7 @@
           <td><a class="item-name" data-action="editItem">{{s.item.name}}</a></td>
           <td><input type="number" value="{{s.item.system.level}}" data-item-field="system.level" min="0"></td>
           <td>{{s.categoryLabel}}</td>
-          <td>{{s.nextCost}} XP</td>
+          <td>{{s.nextCost}} XP {{#if @root.editable}}<button type="button" class="icon xp" data-action="spendSkill" data-tooltip="Niveau suivant : {{s.nextCost}} XP Pokémon"><i class="fa-solid fa-plus"></i></button>{{/if}}</td>
           <td><input type="number" value="{{s.item.system.progress}}" data-item-field="system.progress" min="0" max="10"> / 10</td>
           <td>{{#if @root.editable}}<button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}</td>
         </tr>

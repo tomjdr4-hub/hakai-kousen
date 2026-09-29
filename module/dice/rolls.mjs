@@ -164,7 +164,7 @@ function defenseValue(actor, key) {
 /** Types défensifs d'une cible. */
 function defenderTypes(actor) {
   if ( actor?.type !== "pokemon" ) return [];
-  return [actor.system.types.primary, actor.system.types.secondary].filter(Boolean);
+  return actor.system.defensiveTypes;
 }
 
 /** Chance d'effet secondaire : D10 pour les multiples de 10 %, D100 sinon (5.9). */
@@ -188,8 +188,9 @@ function effectivenessLabel(mult) {
  * @param {Item} item    Capacité
  * @param {object} [options]
  * @param {Array<Token|TokenDocument>} [options.targets]  Cibles ; par défaut les jetons ciblés par l'utilisateur
+ * @param {boolean} [options.zMove]  Capacité Z : coûte la moitié de l'ENE maximale (5.19.2)
  */
-export async function rollAttack(actor, item, { targets } = {}) {
+export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
   const atk = item.system;
   const combat = game.combat?.started ? game.combat : null;
   const readyRound = item.getFlag?.("hakai-kousen", "readyRound");
@@ -197,8 +198,9 @@ export async function rollAttack(actor, item, { targets } = {}) {
     ui.notifications.warn(`${item.name} se recharge : de nouveau disponible au tour ${readyRound}.`);
     return null;
   }
-  if ( actor.system.ene.value < atk.energy ) {
-    ui.notifications.warn(`${actor.name} n'a pas assez d'Énergie pour utiliser ${item.name} (${atk.energy} ENE).`);
+  const energy = zMove ? Math.floor(actor.system.ene.max / 2) : atk.energy;
+  if ( actor.system.ene.value < energy ) {
+    ui.notifications.warn(`${actor.name} n'a pas assez d'Énergie pour utiliser ${item.name} (${energy} ENE).`);
     return null;
   }
 
@@ -320,7 +322,7 @@ export async function rollAttack(actor, item, { targets } = {}) {
     rows.push(`<section class="hk-target"><h4>${actor.name} (lanceur)</h4>${ownEffects.map(e => effectButton(actor, actor.name, e)).join("")}</section>`);
   }
 
-  if ( atk.energy > 0 ) await actor.update({ "system.ene.value": actor.system.ene.value - atk.energy });
+  if ( energy > 0 ) await actor.update({ "system.ene.value": actor.system.ene.value - energy });
 
   // Action de Boss : la recharge est lancée ouvertement pour que les joueurs anticipent (5.20).
   if ( combat && atk.recharge && item.id ) {
@@ -331,10 +333,11 @@ export async function rollAttack(actor, item, { targets } = {}) {
     rows.push(`<p class="hk-detail">Recharge ${atk.recharge} : ${recharge.total} tour(s), de nouveau disponible au tour ${ready}.</p>`);
   }
 
-  const subtitle = [TYPES[atk.type], ATTACK_CATEGORIES[atk.category], atk.energy ? `${atk.energy} ENE` : null, atk.range]
+  const subtitle = [zMove ? "Capacité Z" : null, TYPES[atk.type], ATTACK_CATEGORIES[atk.category], energy ? `${energy} ENE` : null, atk.range]
     .filter(Boolean).join(" · ");
+  const zNote = zMove ? `<p class="hk-detail">Capacité Z : dégâts et effets adaptés de la version officielle et des données HK, à ajuster par le MJ.</p>` : "";
   const description = atk.description ? `<details class="hk-description"><summary>Effet</summary>${atk.description}</details>` : "";
-  return sendCard(actor, { title: item.name, subtitle, body: rows.join("") + description, rolls });
+  return sendCard(actor, { title: zMove ? `${item.name} (Capacité Z)` : item.name, subtitle, body: rows.join("") + zNote + description, rolls });
 }
 
 /* -------------------------------------------- */

@@ -495,6 +495,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de paralyser la cible</p>"
       },
       "_id": "ec75af4b621b116d",
@@ -519,6 +529,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "4ad340dedd9011bb",

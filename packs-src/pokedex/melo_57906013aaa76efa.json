@@ -626,6 +626,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Charme la cible et baisse sa Force de 2.</p>"
       },
       "_id": "f55d85800c36110a",
@@ -650,6 +660,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "32afd07eb64f2e05",

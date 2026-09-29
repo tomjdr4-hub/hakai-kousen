@@ -710,6 +710,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "fb9c6517a638f086",
@@ -734,6 +735,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Soigne le lanceur de 75% des dégâts infligés</p>"
       },
       "_id": "666114ec01e5928d",
@@ -758,6 +760,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance de paralyser la cible</p>"
       },
       "_id": "1051aa3858e8334f",
@@ -782,6 +794,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endort la cible.</p>"
       },
       "_id": "7d922dbb67c28cf5",
@@ -806,6 +828,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "gel",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de geler la cible</p>"
       },
       "_id": "13ef83fea91f1792",
@@ -830,6 +862,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur et les Pokémon entendant ce Requiem sont tous mis KO après 3 tours.</p>"
       },
       "_id": "19a9d8550e13a8ef",

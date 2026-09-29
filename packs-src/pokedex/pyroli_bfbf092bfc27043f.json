@@ -565,6 +565,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "6506c1593dc40dd5",
@@ -589,6 +590,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "brulure",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de brûler la cible</p>"
       },
       "_id": "41f4850cb0be9325",
@@ -613,6 +624,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "b29f4d282a519b49",

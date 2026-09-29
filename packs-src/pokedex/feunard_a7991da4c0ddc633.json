@@ -565,6 +565,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "99619ff2ba96b441",
@@ -589,6 +590,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "brulure",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de brûler la cible</p>"
       },
       "_id": "a79740158f7ca079",
@@ -613,6 +624,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endors la cible</p>"
       },
       "_id": "4ad128142a34c2cf",
@@ -637,6 +658,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "brulure",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de brûler la cible</p>"
       },
       "_id": "f502675d0d726fb3",
@@ -661,6 +692,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "con",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Concentration du lanceur de 2</p>"
       },
       "_id": "fe86d27fdfa5fa7e",
@@ -685,6 +726,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "5143e49663fe38ef",
@@ -709,6 +760,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
         "description": "<p>Inflige une confusion à la cible</p>"
       },
       "_id": "e966b522b064342c",
@@ -733,6 +794,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Empêche les cibles d'utiliser des techniques connues par le lanceur.</p>"
       },
       "_id": "3de73d6c504b7497",
@@ -757,6 +819,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur et ses alliés sont protégés contre les changements de statut excepté ceux lancés par eux-même.</p>"
       },
       "_id": "2e34353bb1be2cd7",
@@ -781,6 +844,7 @@
         "priority": 0,
         "initiativeBonus": 10,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
       },
       "_id": "4959314e55877360",

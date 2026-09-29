@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "vol",
+        "value": -1,
+        "status": "",
+        "secondary": true
+      }
+    ],
     "description": "<p>20% de chance de baisser la Volonté de la cible de 1</p>"
   },
   "_id": "458ca013e391b8ac",

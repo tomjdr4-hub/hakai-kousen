@@ -1,0 +1,14 @@
+<div class="hk-conditions">
+  <span class="hk-conditions-label">États</span>
+  {{#each conditions as |c|}}
+  <button type="button" class="hk-condition {{#if c.active}}active{{/if}} {{#if c.major}}major{{/if}}" data-action="toggleStatus" data-status="{{c.id}}"
+    data-tooltip="{{c.label}}{{#if c.rule}} : {{c.rule}}{{/if}}" {{#unless @root.editable}}disabled{{/unless}}>
+    <img src="{{c.img}}" alt=""> <span>{{c.label}}</span>
+  </button>
+  {{#if c.counter}}
+  <label class="hk-counter" data-tooltip="{{c.counter.tooltip}}">{{c.counter.label}}
+    <input type="number" name="{{c.counter.name}}" value="{{c.counter.value}}" min="0" max="{{c.counter.max}}">
+  </label>
+  {{/if}}
+  {{/each}}
+</div>

@@ -864,6 +864,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "96238972abb8c2c6",
@@ -888,6 +889,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Redirige les attaques vers la cible</p>"
       },
       "_id": "d0b9e8a24a1ce4f9",
@@ -912,6 +914,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Force des cibles de 1</p>"
       },
       "_id": "59fcfcc35c8c910e",
@@ -936,6 +948,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>N'échoue jamais.</p>"
       },
       "_id": "f8d5a0d574800ada",

@@ -570,6 +570,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "vol",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Volonté de la cible de 2</p>"
       },
       "_id": "24088e10570cd9ef",
@@ -594,6 +604,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur imite la dernière attaque utilisée par la cible.</p>"
       },
       "_id": "7fa4a989b847461d",

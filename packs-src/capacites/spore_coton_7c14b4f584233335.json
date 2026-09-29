@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "dex",
+        "value": -2,
+        "status": "",
+        "secondary": false
+      }
+    ],
     "description": "<p>Baisse le Dextérité des Pokémons autour de 2</p>"
   },
   "_id": "7c14b4f584233335",

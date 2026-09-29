@@ -619,6 +619,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -1,
+            "status": "",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de baisser la Dextérité de la cible de 1</p>"
       },
       "_id": "ff3c138055c88908",
@@ -643,6 +653,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Force du lanceur de 2.</p>"
       },
       "_id": "1f257d8e65896dd6",
@@ -667,6 +687,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Augmente la Force du lanceur de 2 si un ennemi est mis K.O. avec cette capacité</p>"
       },
       "_id": "4b8ab42e3296360f",
@@ -691,6 +712,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'empoisonner la cible</p>"
       },
       "_id": "425b659c07e82872",
@@ -715,6 +746,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Baisse la Force, la Concentration et la Dextérité de la cible de 1 si elle est empoisonnée</p>"
       },
       "_id": "434e57f86f503485",
@@ -739,6 +771,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si la cible tient une Baie, le lanceur la vole à la cible bénéficie de ses effets.</p>"
       },
       "_id": "23b67c7d3bea52d4",
@@ -763,6 +796,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
       },
       "_id": "e13b030bacd1dc13",
@@ -787,6 +821,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Dextérité de la cible de 2</p>"
       },
       "_id": "9d27b5ce6d68b28e",
@@ -811,6 +855,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
       },
       "_id": "c23b65ca86248ef4",

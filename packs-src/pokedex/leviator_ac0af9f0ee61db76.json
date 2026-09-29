@@ -579,6 +579,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Une attaque furieuse qui dure de 2 à 3 tours avant de céder à la confusion.</p>"
       },
       "_id": "586f97d715319430",
@@ -603,6 +604,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },
       "_id": "f778a1a064cd19fd",
@@ -627,6 +638,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "14484bd9bbcfda97",

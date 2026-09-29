@@ -528,6 +528,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Empêche pendant 5 tours les Pokémon au sol d'être endormis. Augmente la puissance des Attaques électriques de 50%</p>"
       },
       "_id": "aa5f98402505f4b1",
@@ -552,6 +553,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "cf30709cd13ba843",
@@ -576,6 +578,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>20% d'infliger un statut à la cible. Sur 1d3 si 3 brûle la cible, 2 gèle la cible et sur 1 paralyse la cible</p>"
       },
       "_id": "7901998cc466cdb6",
@@ -600,6 +603,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
         "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
       },
       "_id": "f18b37536259838e",
@@ -624,6 +637,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de paralyser la cible</p>"
       },
       "_id": "e21baa7bf8fbb963",
@@ -648,6 +671,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
         "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
       },
       "_id": "c48625a92d531a1c",
@@ -672,6 +705,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
         "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
       },
       "_id": "63bfaa13e8d30c33",

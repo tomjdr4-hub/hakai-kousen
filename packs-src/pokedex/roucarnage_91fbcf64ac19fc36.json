@@ -509,6 +509,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "brulure",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de brûler la cible</p>"
       },
       "_id": "7da0ccfa5b309dbe",
@@ -533,6 +543,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "a47e9872c25d0b0c",
@@ -557,6 +568,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
         "description": "<p>Le Pokémon s'envole au premier tour et attaque au second. 20% de chance d'apeurer la cible. Ajoute +1 sur le résultat du dé 10 pour cette attaque.</p>"
       },
       "_id": "e50ea253f28ce791",
@@ -581,6 +602,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Baisse la précision de la cible de 10%</p>"
       },
       "_id": "4912238eb0265d44",
@@ -605,6 +627,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Sa puissance double si l'adversaire est en train d'utiliser Vol ou Rebond.</p>"
       },
       "_id": "8f0dd718e4fc7035",
@@ -629,6 +652,7 @@
         "priority": 0,
         "initiativeBonus": 10,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
       },
       "_id": "05e7f0c9df680f40",

@@ -170,6 +170,29 @@ export const GEAR_CATEGORIES = {
   other: "Divers"
 };
 
+/**
+ * Altérations d'état et états de combat (5.9, 5.10).
+ * `major` : un seul problème de statut majeur à la fois. `immune` : types qui ne peuvent pas le subir.
+ */
+export const STATUSES = {
+  brulure: { label: "Brûlure", img: "icons/svg/fire.svg", major: true, immune: ["feu"],
+    rule: "Perd 1/20 de sa VIT max par tour (minimum 1). FOR divisée par 2." },
+  paralysie: { label: "Paralysie", img: "icons/svg/lightning.svg", major: true, immune: ["electrik"],
+    rule: "DEX divisée par 2. Chaque tour, 1-2-3 sur 1D10 : ne peut pas agir." },
+  poison: { label: "Poison", img: "icons/svg/poison.svg", major: true, immune: ["poison", "acier"],
+    rule: "Perd 1/10 de sa VIT max par tour (minimum 1)." },
+  toxik: { label: "Toxik", img: "icons/svg/biohazard.svg", major: true, immune: ["poison", "acier"],
+    rule: "Perd 1/20 de sa VIT max (minimum 1) × le nombre de tours : ×1, ×2, ×3…" },
+  gel: { label: "Gel", img: "icons/svg/frozen.svg", major: true, immune: ["glace"],
+    rule: "Chaque tour, 9-10 sur 1D10 : dégèle. Une attaque Feu adaptée peut aussi le dégeler." },
+  sommeil: { label: "Sommeil", img: "icons/svg/sleep.svg", major: true, immune: [],
+    rule: "Endormi : suit le fonctionnement HK du Sommeil." },
+  confusion: { label: "Confusion", img: "icons/svg/daze.svg", major: false, immune: [],
+    rule: "Sort sur 10, puis 8-10, puis 6-10, puis fin. Tant que confus, 1-2-3 sur 1D10 : se frappe (1/10 de sa VIT actuelle) et perd son action." },
+  peur: { label: "Apeuré", img: "icons/svg/terror.svg", major: false, immune: [],
+    rule: "Ne peut pas agir ce tour-ci." }
+};
+
 /** Réaction d'un Pokémon qui échoue son test de Dressage (4.11). */
 export const DRESSAGE_FAILURES = [
   { max: 2, text: "Cherche à fuir ou peut attaquer son Dresseur." },
@@ -243,5 +266,5 @@ export function typeEffectiveness(attackType, defenderTypes) {
 export const HK = {
   ATTRIBUTES, POKEMON_STATS, SKILLS, KNOWLEDGES, ATTRIBUTE_DIFFICULTIES, POOL_DIFFICULTIES,
   TYPES, TYPE_CHART, NATURES, ATTACK_CATEGORIES, POKESKILL_CATEGORIES, GEAR_CATEGORIES,
-  DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
+  STATUSES, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
 };

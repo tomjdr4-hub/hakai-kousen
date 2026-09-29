@@ -598,6 +598,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },
       "_id": "3853b75aba3912ad",
@@ -622,6 +632,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "daf56bb44da24c86",

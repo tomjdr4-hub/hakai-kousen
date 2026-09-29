@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "gel",
+        "secondary": true
+      }
+    ],
     "description": "<p>10% de chance de geler les cibles. S'il grêle sur le terrain, la précision de l'attaque passe à 100% et a 30% de chance de passer au travers d'Abri ou de Détection</p>"
   },
   "_id": "9e974e9fdd3f7ff0",

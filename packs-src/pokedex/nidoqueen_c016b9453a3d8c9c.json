@@ -768,6 +768,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'empoisonner la cible</p>"
       },
       "_id": "63736d4d8f1eef09",
@@ -792,6 +802,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Frappe la cible deux fois</p>"
       },
       "_id": "41bf1fe847ba223f",
@@ -816,6 +827,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "3e3ad23a6c224700",
@@ -840,6 +852,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "5eacd162d553fbf4",
@@ -864,6 +886,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le lanceur est touché par une attaque physique ce tour-ci, il inflige deux fois les dégâts subit, sans tenir compte des types.</p>"
       },
       "_id": "42967ff8fe172a06",
@@ -888,6 +911,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Force des cibles de 1</p>"
       },
       "_id": "2f0edc1c0508a18c",
@@ -912,6 +945,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
         "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
       },
       "_id": "e36f7134e9819224",
@@ -936,6 +979,24 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Force et l'Endurance du lanceur de 2</p>"
       },
       "_id": "ad44f919eaf96833",

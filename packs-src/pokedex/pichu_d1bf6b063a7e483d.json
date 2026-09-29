@@ -495,6 +495,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Charme la cible et baisse sa Force de 2.</p>"
       },
       "_id": "b89fae38a370a246",
@@ -519,6 +529,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de paralyser la cible</p>"
       },
       "_id": "6124c4923f89c5c6",

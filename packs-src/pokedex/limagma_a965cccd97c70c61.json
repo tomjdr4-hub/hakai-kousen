@@ -521,6 +521,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Fait bâiller la cible qui s'endort au tour suivant.</p>"
       },
       "_id": "52a6c5893cb7eb60",
@@ -545,6 +555,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>40% de chance d'empoisonner la cible</p>"
       },
       "_id": "c537f6bf8320a1da",

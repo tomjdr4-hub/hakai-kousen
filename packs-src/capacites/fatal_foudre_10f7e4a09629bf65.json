@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "paralysie",
+        "secondary": true
+      }
+    ],
     "description": "<p>Dans des conditions normales, la précision est de 70%. Sous la pluie, la précision est de 100%. En plein Soleil la précision est de 50%. 30% de chance de paralyser la cible.</p>"
   },
   "_id": "10f7e4a09629bf65",

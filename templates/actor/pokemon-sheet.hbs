@@ -32,6 +32,7 @@
         <button type="button" data-action="longRest" data-tooltip="Repos long : moitié de la VIT et de l'ENE max"><i class="fa-solid fa-bed"></i></button>
         <button type="button" data-action="fullHeal" data-tooltip="Soins complets (Centre Pokémon)"><i class="fa-solid fa-kit-medical"></i></button>
       </div>
+      {{> "hk-conditions"}}
       {{#if weakened}}<p class="warning">Affaibli (≤ ¼ VIT) : DEX, FOR, CON, END et VOL divisées par 2.</p>{{/if}}
     </div>
   </header>
@@ -102,7 +103,10 @@
     <header class="item-group-header">
       <h3>Capacités connues</h3>
       {{#if editable}}
-      <button type="button" class="icon" data-action="createItem" data-type="attack" data-tooltip="Ajouter une capacité"><i class="fa-solid fa-plus"></i></button>
+      <div class="header-buttons">
+        <button type="button" class="icon" data-action="syncAttacks" data-tooltip="Mettre à jour les capacités depuis le compendium (effets, priorités…)"><i class="fa-solid fa-rotate"></i></button>
+        <button type="button" class="icon" data-action="createItem" data-type="attack" data-tooltip="Ajouter une capacité"><i class="fa-solid fa-plus"></i></button>
+      </div>
       {{/if}}
     </header>
     <p class="hint">Ciblez un jeton puis cliquez sur le dé : toucher via la Table unique, dégâts (STAB inclus) × efficacité du type.</p>

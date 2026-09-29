@@ -567,6 +567,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "1f5090ad158d8710",
@@ -591,6 +601,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },
       "_id": "186342918228d38a",
@@ -615,6 +635,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Dure 5 tours. À chaque tour, retire 1/10 de la Vitalité max à tous les Pokémon sur le terrain qui ne sont pas de type Roche, Sol ou Acier. Augmente de 50% la Volonté des Pokémon de type Roche sous Tempête de Sable</p>"
       },
       "_id": "5b88b7cc35fc9c06",

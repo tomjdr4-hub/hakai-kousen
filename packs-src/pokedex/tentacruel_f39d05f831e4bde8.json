@@ -607,6 +607,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Les modifications de Statistiques sont annulées sur toute la zone concernée</p>"
       },
       "_id": "30332fb21fb71d2b",
@@ -631,6 +632,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur devient du même type que la cible. Copie Type peut traverser Illusion, mais échoue face à un Pokémon possédant Multitype</p>"
       },
       "_id": "2e563c4fbbb6df28",
@@ -655,6 +657,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'empoisonner la cible</p>"
       },
       "_id": "f294e0545552bbd1",
@@ -679,6 +691,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Annule une attaque de catégorie spéciale envoyée par la cible et lui inflige le double des dégâts que le lanceur aurait reçu</p>"
       },
       "_id": "8f0d8cce7cde107b",
@@ -703,6 +716,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
         "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
       },
       "_id": "f67e9a7e9bcc581e",
@@ -727,6 +750,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -1,
+            "status": "",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de baisser la Dextérité de la cible de 1</p>"
       },
       "_id": "c7b9642f496b3629",
@@ -751,6 +784,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "vol",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Volonté de la cible de 1</p>"
       },
       "_id": "c18b81d7dd8be0fd",
@@ -775,6 +818,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Les dégâts de base de l'attaque sont de 10 si la cible a plus de la moitié de sa Vitalité maximale, sinon ils sont de 5.</p>"
       },
       "_id": "57b646671c7f7d37",

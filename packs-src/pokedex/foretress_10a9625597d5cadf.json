@@ -635,6 +635,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Protège de tout effet, direct ou indirect, d'une attaque de la cible. Si réutilisé, 50% de chances de réussite, puis 25% et enfin 12.5%. À la cinquième utilisation successive, Abri échouera systématiquement</p>"
       },
       "_id": "21bafa0f00f1e307",
@@ -659,6 +660,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "dex",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Dextérité du lanceur de 2. Rend le lanceur plus léger de 100kg</p>"
       },
       "_id": "0ba7a843a5633363",
@@ -683,6 +694,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "fd172023ffc07752",
@@ -707,6 +719,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>30% de baisser la Précision de 10%</p>"
       },
       "_id": "da98a8f48964dc12",
@@ -731,6 +744,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": false
+          }
+        ],
         "description": "<p>Empoisonne les Pokémon se déplaçant dans la zone. Si Pics Toxik est lancé 2 fois les empoissonne gravement</p>"
       },
       "_id": "110d88ae3dab11cd",

@@ -817,6 +817,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur se concentre pour être sûr de porter un coup critique au tour suivant</p>"
       },
       "_id": "f0638900f607ab34",
@@ -841,6 +842,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de rendre confus la cible</p>"
       },
       "_id": "9f44a005f90de0cf",
@@ -865,6 +876,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Empêche l'ennemi d'employer à nouveau sa dernière attaque. Dure 4 tours. Si la cible n'a pas encore attaqué, Entrave échouera</p>"
       },
       "_id": "b0b56e050cb9702d",
@@ -889,6 +901,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur et ses alliés sont protégés contre les changements de statut excepté ceux lancés par eux-même.</p>"
       },
       "_id": "439adb8f34b21907",
@@ -913,6 +926,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Inflige des dégâts équivalents au niveau du lanceur/10.</p>"
       },
       "_id": "da99973738877e37",

@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "peur",
+        "secondary": true
+      }
+    ],
     "description": "<p>Si Ouragan est utilisé contre un Pokémon situé dans les airs (premier tour de Vol ou Rebond), il inflige 8 sinon 4. 20% de chance d'apeurer la cible</p>"
   },
   "_id": "cd5aedd78a01fc32",

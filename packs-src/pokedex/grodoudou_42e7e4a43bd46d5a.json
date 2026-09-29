@@ -752,6 +752,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endort les cibles dans la zone</p>"
       },
       "_id": "e4a09269aa65e4fe",
@@ -776,6 +786,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente l'Endurance du lanceur de 2</p>"
       },
       "_id": "4887084a4e05df2a",
@@ -800,6 +820,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de baisser la force de la cible de 1</p>"
       },
       "_id": "02d6baeab5b6c7a9",
@@ -824,6 +854,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Une charge qui retire un dixième de la Vitalité du lanceur à chaque coup infligé en tant que dégâts de recul</p>"
       },
       "_id": "bca7a7dce0cc4373",
@@ -848,6 +879,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "0f0c30a225cdc122",
@@ -872,6 +904,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Empêche l'ennemi d'employer à nouveau sa dernière attaque. Dure 4 tours. Si la cible n'a pas encore attaqué, Entrave échouera</p>"
       },
       "_id": "ac313c5469c6db5f",
@@ -896,6 +929,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "dex",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Divise la taille du lanceur par 2. Augmente la Dextérité du lanceur de +2.</p>"
       },
       "_id": "68eb1480e7f711b1",
@@ -920,6 +963,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur encaisse des attaques sur 2 tours sans riposter et inflige le double de dégâts à la cible sans tenir compte des types.</p>"
       },
       "_id": "d4db52d8c38cc3d0",
@@ -944,6 +988,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur attaque la cible entre 2 et 5 fois.</p>"
       },
       "_id": "7fb43bf4296a6b54",

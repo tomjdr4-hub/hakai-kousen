@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "peur",
+        "secondary": true
+      }
+    ],
     "description": "<p>Ne fonctionne que si le lanceur est endormi. 30% de chance d'apeurer les cibles</p>"
   },
   "_id": "fdf80d39294a5cbd",

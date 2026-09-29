@@ -465,6 +465,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "aa2ee8503560e34f",
@@ -489,6 +490,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "vol",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Double la puissance de l'attaque Electrik lancée au tour suivant. Augmente la Volonté du lanceur de +1.</p>"
       },
       "_id": "7e11f1d723fb8aa5",

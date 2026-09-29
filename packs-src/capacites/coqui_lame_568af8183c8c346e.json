@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "end",
+        "value": -1,
+        "status": "",
+        "secondary": true
+      }
+    ],
     "description": "<p>50% de chance de baisser l'Endurance de 1</p>"
   },
   "_id": "568af8183c8c346e",

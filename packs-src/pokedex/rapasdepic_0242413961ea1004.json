@@ -544,6 +544,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si la cible tient un baie les dégâts sont de 12 et le lanceur vole la Baie de la cible et s'appliquant ses effets. Sinon inflige 6 dégâts à la cible</p>"
       },
       "_id": "60e3660afe4a52f7",
@@ -568,6 +569,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "07005a750237efc7",
@@ -592,6 +594,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
         "description": "<p>Le Pokémon s'envole au premier tour et attaque au second. 20% de chance d'apeurer la cible. Ajoute +1 sur le résultat du dé 10 pour cette attaque.</p>"
       },
       "_id": "f76fc0a0bdb070bd",
@@ -616,6 +628,7 @@
         "priority": 0,
         "initiativeBonus": 10,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
       },
       "_id": "c0bd65f55bdd49c4",
@@ -640,6 +653,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Force des cibles de 1</p>"
       },
       "_id": "c8070b5f46735b92",
@@ -664,6 +687,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "084ed630fd73de86",
@@ -688,6 +721,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Les dégâts de base de l'attaque sont de 8 si la cible est remplacée par un autre Pokémon durant ce tour, sinon ils sont de 4</p>"
       },
       "_id": "8a194352aaca3c8c",

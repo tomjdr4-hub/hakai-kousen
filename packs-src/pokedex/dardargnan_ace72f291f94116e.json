@@ -523,6 +523,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>Le lanceur attaque la cible deux fois. 20% de chance d'empoisonner la cible</p>"
       },
       "_id": "3bd8b97a76055c9b",
@@ -547,6 +557,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "07aff1fade4559c6",
@@ -571,6 +582,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur attaque la cible entre 2 et 5 fois</p>"
       },
       "_id": "11dcafddbdb6cd4f",

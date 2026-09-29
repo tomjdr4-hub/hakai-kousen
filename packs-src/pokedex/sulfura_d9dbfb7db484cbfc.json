@@ -481,6 +481,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "26d1a41fe7dab82d",
@@ -505,6 +506,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "brulure",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de brûler la cible</p>"
       },
       "_id": "61568aaa773b7072",

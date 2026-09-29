@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "poison",
+        "secondary": true
+      }
+    ],
     "description": "<p>10% de chance d'empoisonner la cible. Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
   },
   "_id": "e249231e22c82544",

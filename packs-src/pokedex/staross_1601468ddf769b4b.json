@@ -521,6 +521,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
       },
       "_id": "10bbd622228b5e34",
@@ -545,6 +555,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "efaa1b27359fb6f7",
@@ -569,6 +580,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "4645a34da1caeeaa",
@@ -593,6 +605,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>N'échoue jamais.</p>"
       },
       "_id": "8189cdca33874aed",
@@ -617,6 +630,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "af450beed6383df0",
@@ -641,6 +655,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Redirige les attaques vers la cible</p>"
       },
       "_id": "538236e8728263ed",
@@ -665,6 +680,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Restaure la moitié de la Vitalité maximale du lanceur</p>"
       },
       "_id": "427a4546ce9e6be6",
@@ -689,6 +705,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Annule les effets secondaires des attaques bloquantes, des attaques de pièges et de Vampigraine</p>"
       },
       "_id": "0d31dec35dab9e39",
@@ -713,6 +730,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Inflige des dégâts équivalents au niveau du lanceur/10.</p>"
       },
       "_id": "1eebd77fd5fbed2c",

@@ -3,6 +3,8 @@ import {
   tableUniqueThreshold, typeEffectiveness
 } from "../config.mjs";
 
+import { applyDamage, applyEffect, effectLabel } from "../combat/effects.mjs";
+
 const { DialogV2 } = foundry.applications.api;
 
 /* -------------------------------------------- */
@@ -200,6 +202,10 @@ export async function rollAttack(actor, item, { targets } = {}) {
   const accuracy = atk.sure ? 100 : atk.accuracy;
   const rolls = [];
   const rows = [];
+  const targetEffects = atk.effects.filter(e => e.target === "target");
+  const selfEffects = atk.effects.filter(e => e.target === "self");
+  let anyHit = false;
+  let anySecondary = false;
 
   targets = (targets ?? Array.from(game.user.targets)).filter(t => t.actor);
   for ( const token of (targets.length ? targets : [null]) ) {
@@ -264,14 +270,30 @@ export async function rollAttack(actor, item, { targets } = {}) {
     }
 
     // Effet secondaire.
+    let secondary = true;
     if ( hit && (atk.effectChance > 0) && (atk.effectChance < 100) ) {
       const effect = await rollEffectChance(atk.effectChance);
       rolls.push(effect.roll);
+      secondary = effect.success;
       lines.push(`<p class="hk-detail">Effet secondaire (${atk.effectChance} %) : ${effect.text} → ${effect.roll.total}</p>
         ${outcome(effect.success, effect.success ? "Effet secondaire déclenché" : "Pas d'effet secondaire")}`);
     }
+    if ( hit ) {
+      anyHit = true;
+      anySecondary ||= secondary;
+      // Effets sur la cible : un bouton par effet.
+      const effects = targetEffects.filter(e => !e.secondary || secondary);
+      if ( target ) lines.push(...effects.map(e => effectButton(target, token.name, e)));
+      else if ( effects.length ) lines.push(`<p class="hk-detail">Effets sur la cible : ${effects.map(effectLabel).join(", ")}</p>`);
+    }
 
     rows.push(`<section class="hk-target">${token ? `<h4>${token.name}</h4>` : ""}${lines.join("")}</section>`);
+  }
+
+  // Effets sur le lanceur, une seule fois si l'attaque a touché au moins une cible.
+  const ownEffects = selfEffects.filter(e => anyHit && (!e.secondary || anySecondary));
+  if ( ownEffects.length ) {
+    rows.push(`<section class="hk-target"><h4>${actor.name} (lanceur)</h4>${ownEffects.map(e => effectButton(actor, actor.name, e)).join("")}</section>`);
   }
 
   if ( atk.energy > 0 ) await actor.update({ "system.ene.value": actor.system.ene.value - atk.energy });
@@ -286,21 +308,25 @@ export async function rollAttack(actor, item, { targets } = {}) {
 /*  Actions des cartes de chat                  */
 /* -------------------------------------------- */
 
-async function applyDamage(button) {
-  const actor = await fromUuid(button.dataset.uuid);
-  if ( !actor ) return;
-  if ( !actor.isOwner ) {
-    ui.notifications.warn("Seul le propriétaire de la cible ou le MJ peut appliquer ces dégâts.");
-    return;
-  }
-  const amount = Number(button.dataset.amount);
-  await actor.update({ "system.vit.value": Math.max(actor.system.vit.value - amount, 0) });
-  ui.notifications.info(`${actor.name} perd ${amount} VIT.`);
+/** Bouton d'application d'un effet de capacité sur un acteur. */
+function effectButton(actor, name, effect) {
+  const data = encodeURIComponent(JSON.stringify({ kind: effect.kind, stat: effect.stat, value: effect.value, status: effect.status }));
+  const icon = effect.kind === "status" ? "fa-skull-crossbones" : (effect.value > 0 ? "fa-arrow-up" : "fa-arrow-down");
+  return `<button type="button" class="hk-apply" data-hk-action="applyEffect" data-uuid="${actor.uuid}" data-effect="${data}">
+    <i class="fa-solid ${icon}"></i> Appliquer ${effectLabel(effect)} à ${name}</button>`;
 }
 
 /** Branche les boutons des cartes Hakai Kousen. */
 export function onRenderChatMessage(message, html) {
-  html.querySelectorAll("[data-hk-action=applyDamage]").forEach(button => {
-    button.addEventListener("click", () => applyDamage(button));
+  html.querySelectorAll("[data-hk-action]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const actor = await fromUuid(button.dataset.uuid);
+      if ( !actor ) return;
+      button.classList.add("applied");
+      if ( button.dataset.hkAction === "applyDamage" ) await applyDamage(actor, Number(button.dataset.amount));
+      else if ( button.dataset.hkAction === "applyEffect" ) {
+        await applyEffect(actor, JSON.parse(decodeURIComponent(button.dataset.effect)));
+      }
+    });
   });
 }

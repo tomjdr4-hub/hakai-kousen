@@ -549,6 +549,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Contrecarre une attaque de la cible avec la même attaque.</p>"
       },
       "_id": "79005b4751757e16",
@@ -573,6 +574,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "39d9d489428bf019",
@@ -597,6 +599,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Force des cibles de 1</p>"
       },
       "_id": "acced6073c5c0cf5",
@@ -621,6 +633,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>20% d'infliger un statut à la cible. Sur 1d3 si 3 brûle la cible, 2 gèle la cible et sur 1 paralyse la cible</p>"
       },
       "_id": "7b88e193cbd30551",
@@ -645,6 +658,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
         "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
       },
       "_id": "5973c25e36465ded",
@@ -669,6 +692,7 @@
         "priority": 0,
         "initiativeBonus": 10,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
       },
       "_id": "4b54aa0a95af73fd",
@@ -693,6 +717,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Augmente la Force du lanceur de 1 à chaque coup reçu pendant ce tour</p>"
       },
       "_id": "267e2556c7acd312",

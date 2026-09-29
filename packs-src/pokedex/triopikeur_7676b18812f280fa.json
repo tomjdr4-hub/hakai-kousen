@@ -572,6 +572,24 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "con",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Force et la Concentration des Pokémon de type plante de 1</p>"
       },
       "_id": "869cb65fc92e0dac",
@@ -596,6 +614,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "e6da3c8e2e50496c",
@@ -620,6 +639,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance des cibles de 2</p>"
       },
       "_id": "6f8b0e3b8527cc61",
@@ -644,6 +673,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>L'attaque dure 4 à 5 tours infligeant à la cible et à chaque tour -1/10 de sa Vitalité max.</p>"
       },
       "_id": "b15a8230d4ce0e56",
@@ -668,6 +698,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
       },
       "_id": "214b1caa922617f7",
@@ -692,6 +723,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>20% d'infliger un statut à la cible. Sur 1d3 si 3 brûle la cible, 2 gèle la cible et sur 1 paralyse la cible</p>"
       },
       "_id": "c95b2077d0460619",
@@ -716,6 +748,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Baisse la précision de la cible de 10%</p>"
       },
       "_id": "92fccbad5c9a1039",
@@ -740,6 +773,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Force des cibles de 1</p>"
       },
       "_id": "d6514b9e0f475488",
@@ -764,6 +807,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "dex",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Dextérité du lanceur de 2.</p>"
       },
       "_id": "c121111a6234a171",

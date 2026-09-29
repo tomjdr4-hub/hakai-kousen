@@ -857,6 +857,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente l'Endurance du lanceur de 2</p>"
       },
       "_id": "a008300a950f12ae",
@@ -881,6 +891,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Charme la cible et baisse sa Force de 2.</p>"
       },
       "_id": "d3ab5bda78ecca10",
@@ -905,6 +925,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
         "description": "<p>Inflige une confusion à la cible.</p>"
       },
       "_id": "822ebb1282850d7a",
@@ -929,6 +959,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "9191ebaaf3d5464c",
@@ -953,6 +984,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur vole l'objet de la cible.</p>"
       },
       "_id": "5938b6e271ae46c4",
@@ -977,6 +1009,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "dex",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Divise la taille du lanceur par 2. Augmente la Dextérité du lanceur de +2.</p>"
       },
       "_id": "1dfaea959bc30d9e",
@@ -1001,6 +1043,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur imite la dernière attaque utilisée par la cible.</p>"
       },
       "_id": "447031d05f974772",
@@ -1025,6 +1068,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>N'échoue jamais.</p>"
       },
       "_id": "eb0691c5dca9e239",

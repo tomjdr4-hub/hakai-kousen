@@ -493,6 +493,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "0d9d81e0c7886f01",
@@ -517,6 +518,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "vol",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Double la puissance de l'attaque Electrik lancée au tour suivant. Augmente la Volonté du lanceur de +1.</p>"
       },
       "_id": "111a130f85aac2bc",
@@ -541,6 +552,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Augmente l'Endurance et la Volonté de 1des Pokémon alliés dotés du talent Plus ou du talent Minus</p>"
       },
       "_id": "a529f92f92fb570c",
@@ -565,6 +577,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Envoie des ondes de choc infligeant 5 PV de dégâts</p>"
       },
       "_id": "a776258d75db1724",
@@ -589,6 +602,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "con",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Concentration de la cible de 2</p>"
       },
       "_id": "02265e92a6aea00b",
@@ -613,6 +636,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de paralyser la cible</p>"
       },
       "_id": "d17f3b7ff784567e",

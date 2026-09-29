@@ -34,6 +34,13 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - Compétences Pokémon (Standard / Intermédiaire / Rare, coût du niveau suivant, apprentissage /10), Talents, objets tenus.
 - **Initiative** (5.2, 5.3, 5.13) : 1D10 + DEX effective. À égalité, la meilleure DEX agit d'abord ; à DEX égale, le système relance 1D10 automatiquement et l'annonce dans le chat. Dans le suivi de combat, l'éclair ⚡ marque une action prioritaire pour le tour (switch, capacité prioritaire, Baie Chérim) et le clic droit « agit en dernier » : ces combattants passent avant (ou après) l'ordre normal, départagés entre eux par l'Initiative. Les priorités s'effacent à chaque nouveau tour. Un Pokémon ajouté en cours de combat lance son initiative tout seul.
 
+### États et effets des capacités
+- En-tête des fiches : les **états** (KO, Brûlure, Paralysie, Poison, Toxik, Gel, Sommeil, Confusion, Apeuré) s'activent d'un clic, avec la règle en info-bulle, le **tour de Toxik** et le **stade de Confusion**. Ce sont les mêmes états que sur les jetons.
+- Chaque capacité porte ses **effets** (modification de stat ou altération d'état, sur la cible ou le lanceur, soumis ou non à la chance d'effet secondaire), extraits des descriptions du site et modifiables sur la fiche de la capacité.
+- Quand une capacité touche, la carte de chat propose **Appliquer FOR −1 à …**, **Appliquer Toxik à …**, etc. Les modifications vont dans la colonne « Temp. » (−6 à +6) ; les immunités de type (Poison/Acier, Feu, Électrik, Glace) et la règle d'un seul problème de statut majeur sont vérifiées. Si le joueur ne possède pas la cible, le MJ l'applique automatiquement.
+- « Apeuré » disparaît à chaque nouveau tour de combat.
+- Le bouton ⟳ de l'onglet Capacités met à jour les capacités d'une fiche depuis le compendium.
+
 ### Panneau de combat
 Bouton **Panneau de combat** dans le suivi de combat (il s'ouvre aussi tout seul à chaque tour).
 
@@ -59,7 +66,8 @@ Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature
 
 - Capture : rareté, Aberrant / Dominant et Balls spéciales restent à ajouter par le MJ (rappel sur la carte).
 - Effets des objets utilisés en combat (soins…) : l'objet est décompté, l'effet est à appliquer sur la fiche.
-- Dégâts périodiques (Poison, Toxik, Brûlure), Gel, Sommeil, Confusion : les états existent sur les jetons mais leurs effets de tour sont à gérer à la main.
+- Effets de début de tour des états (dégâts de Poison, Toxik, Brûlure ; jets de Paralysie, Gel, Confusion) : à gérer à la main pour l'instant.
+- Effets conditionnels des capacités (« si… », « sinon… », Crocs Feu, Triplattaque…) et modifications de Précision : au MJ.
 - Compétences Augmentation / Résistance de type.
 - Pokédex au-delà de la 2e génération, compendiums d'objets (annexes).
 

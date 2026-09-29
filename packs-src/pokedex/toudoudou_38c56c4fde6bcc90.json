@@ -584,6 +584,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endort les cibles dans la zone</p>"
       },
       "_id": "cf4936281ec28393",
@@ -608,6 +618,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Charme la cible et baisse sa Force de 2.</p>"
       },
       "_id": "ee9b88ef2267e8d4",

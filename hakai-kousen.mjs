@@ -12,16 +12,10 @@ import * as rolls from "./module/dice/rolls.mjs";
 import { openCombatPanel, registerCombatPanelHooks } from "./module/apps/combat-panel.mjs";
 import { registerSocket } from "./module/combat/actions.mjs";
 
-/** Altérations d'état et états de combat (5.9, 5.10). */
+/** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
   { id: "dead", name: "KO", img: "icons/svg/skull.svg" },
-  { id: "brulure", name: "Brûlure", img: "icons/svg/fire.svg" },
-  { id: "paralysie", name: "Paralysie", img: "icons/svg/lightning.svg" },
-  { id: "poison", name: "Poison", img: "icons/svg/poison.svg" },
-  { id: "toxik", name: "Toxik", img: "icons/svg/biohazard.svg" },
-  { id: "gel", name: "Gel", img: "icons/svg/frozen.svg" },
-  { id: "sommeil", name: "Sommeil", img: "icons/svg/sleep.svg" },
-  { id: "confusion", name: "Confusion", img: "icons/svg/daze.svg" }
+  ...Object.entries(HK.STATUSES).map(([id, s]) => ({ id, name: s.label, img: s.img }))
 ];
 
 Hooks.once("init", () => {
@@ -76,7 +70,8 @@ Hooks.once("init", () => {
     "hk-domain-row": "systems/hakai-kousen/templates/parts/domain-row.hbs",
     "hk-editor": "systems/hakai-kousen/templates/parts/editor.hbs",
     "hk-learn-row": "systems/hakai-kousen/templates/parts/learn-row.hbs",
-    "hk-panel-targets": "systems/hakai-kousen/templates/parts/panel-targets.hbs"
+    "hk-panel-targets": "systems/hakai-kousen/templates/parts/panel-targets.hbs",
+    "hk-conditions": "systems/hakai-kousen/templates/parts/conditions.hbs"
   });
 });
 

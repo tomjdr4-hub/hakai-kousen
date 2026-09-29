@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "end",
+        "value": -2,
+        "status": "",
+        "secondary": false
+      }
+    ],
     "description": "<p>Baisse l'Endurance des cibles de 2</p>"
   },
   "_id": "7fc531c4ce4ae99d",

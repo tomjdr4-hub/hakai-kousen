@@ -593,6 +593,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "4bb211871ee3bdbe",
@@ -617,6 +618,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de rendre confus la cible</p>"
       },
       "_id": "0b9662557737f815",
@@ -641,6 +652,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },
       "_id": "22db6fed73f97ca6",
@@ -665,6 +686,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endors la cible</p>"
       },
       "_id": "642007428ae26616",
@@ -689,6 +720,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "036153a304368be5",
@@ -713,6 +745,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
         "description": "<p>Paralyse les Pokémon de la zone. Ne fonctionne pas si la cible est déjà victime d'un problème de statut majeur</p>"
       },
       "_id": "7425148a8356a859",
@@ -737,6 +779,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur fait 5 attaques sur jusqu'à 5 cibles.</p>"
       },
       "_id": "8e651f7d1f26d215",

@@ -41,6 +41,32 @@
       {{/if}}
     </div>
 
+    {{#if isType.attack}}
+    <header class="item-group-header">
+      <h3>Effets quand la capacité touche</h3>
+      {{#if editable}}<button type="button" class="icon" data-action="addEffect" data-tooltip="Ajouter un effet"><i class="fa-solid fa-plus"></i></button>{{/if}}
+    </header>
+    <ul class="hk-effects">
+      {{#each effects as |e|}}
+      <li data-effect-index="{{e.index}}">
+        <select data-effect-field="target">{{selectOptions @root.effectChoices.targets selected=e.target}}</select>
+        <select data-effect-field="kind">{{selectOptions @root.effectChoices.kinds selected=e.kind}}</select>
+        {{#if e.isStat}}
+        <select data-effect-field="stat">{{selectOptions @root.effectChoices.stats selected=e.stat}}</select>
+        <input type="number" data-effect-field="value" value="{{e.value}}" min="-6" max="6">
+        {{else}}
+        <select data-effect-field="status">{{selectOptions @root.effectChoices.statuses selected=e.status}}</select>
+        {{/if}}
+        <label class="checkbox" data-tooltip="Seulement si le jet d'effet secondaire réussit ({{@root.system.effectChance}} %)">
+          <input type="checkbox" data-effect-field="secondary" {{checked e.secondary}}> Chance</label>
+        {{#if @root.editable}}<button type="button" class="icon" data-action="removeEffect" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}
+      </li>
+      {{else}}
+      <li class="hint">Aucun effet automatique.</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+
     <h3>Description</h3>
     {{> "hk-editor" field="description" value=system.description enriched=enrichedDescription editable=editable uuid=item.uuid}}
   </div>

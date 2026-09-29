@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "brulure",
+        "secondary": true
+      }
+    ],
     "description": "<p>Une charge qui fait perdre un dixième de la Vitalité du lanceur à chaque coup infligé. 10 % de chance de brûler la cible</p>"
   },
   "_id": "acc7f29ca193386e",

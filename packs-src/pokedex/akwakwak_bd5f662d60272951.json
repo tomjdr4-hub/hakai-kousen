@@ -717,6 +717,7 @@
         "priority": 0,
         "initiativeBonus": 10,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
       },
       "_id": "81fd67a0b5f5736f",
@@ -741,6 +742,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Fait bâiller la cible qui s'endort au tour suivant.</p>"
       },
       "_id": "6e15ab6dbc94b358",
@@ -765,6 +776,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Oblige la cible à répéter sa dernière action pendant 3 tours.</p>"
       },
       "_id": "936add98a7d7f549",
@@ -789,6 +801,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "b988ccf478181ee0",
@@ -813,6 +826,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur utilise la technique préparée par la cible et l'utilise avant lui avec des dégâts doublés</p>"
       },
       "_id": "7267fbd70e1c1109",
@@ -837,6 +851,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Réduit de 50% tous les dégâts de type Feu pendant 5 tours</p>"
       },
       "_id": "5c9984c6d5581fae",
@@ -861,6 +876,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "6b7333700309a3c2",
@@ -885,6 +910,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "427f1f62589d083a",

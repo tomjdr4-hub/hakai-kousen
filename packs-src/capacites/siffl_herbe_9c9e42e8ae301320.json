@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "sommeil",
+        "secondary": false
+      }
+    ],
     "description": "<p>Endort la cible</p>"
   },
   "_id": "9c9e42e8ae301320",

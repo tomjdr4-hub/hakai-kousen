@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "sommeil",
+        "secondary": false
+      }
+    ],
     "description": "<p>Endort les cibles dans la zone</p>"
   },
   "_id": "34f162940357430e",

@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "brulure",
+        "secondary": false
+      }
+    ],
     "description": "<p>Lance un bouquet de flammes maléfiques à l'ennemi pour lui infliger une brûlure.</p>"
   },
   "_id": "bae18f42ac954cc7",

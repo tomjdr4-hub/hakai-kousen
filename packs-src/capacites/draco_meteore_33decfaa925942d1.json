@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "con",
+        "value": -2,
+        "status": "",
+        "secondary": false
+      }
+    ],
     "description": "<p>Baisse la Concentration du lanceur de 2</p>"
   },
   "_id": "33decfaa925942d1",

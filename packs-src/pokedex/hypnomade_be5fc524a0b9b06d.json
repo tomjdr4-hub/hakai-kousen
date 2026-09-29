@@ -745,6 +745,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente l'Endurance du lanceur de 2.</p>"
       },
       "_id": "f5591679515e6273",
@@ -769,6 +779,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Retire 1/4 de la Vitalité maximale de la cible si elle est endormie</p>"
       },
       "_id": "1276698d0a491990",
@@ -793,6 +804,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "f17ec97896df2c47",
@@ -817,6 +829,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endors la cible</p>"
       },
       "_id": "d1ca54815d7286f9",
@@ -841,6 +863,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur et la cible échangent leurs objets.</p>"
       },
       "_id": "64f8a38211ca48b0",
@@ -865,6 +888,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Empêche l'ennemi d'employer à nouveau sa dernière attaque. Dure 4 tours. Si la cible n'a pas encore attaqué, Entrave échouera</p>"
       },
       "_id": "ab7e88e1c2e82489",
@@ -889,6 +913,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de rendre confus la cible</p>"
       },
       "_id": "54d2a9d95bd80ef5",
@@ -913,6 +947,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "con",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Concentration du lanceur de 2</p>"
       },
       "_id": "74391dd8e00ab68f",
@@ -937,6 +981,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Frappe l'adversaire à la fin du troisième tour de chargement</p>"
       },
       "_id": "c14d910620471634",

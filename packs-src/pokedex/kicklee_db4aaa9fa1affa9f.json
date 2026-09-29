@@ -584,6 +584,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le lanceur est touché par une attaque avant d'utiliser cette technique, les dégâts de base de l'attaque sont doublés.</p>"
       },
       "_id": "07b5ebe5946fc497",
@@ -608,6 +609,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Force du lanceur de 1.</p>"
       },
       "_id": "1eeb3e7805ebd761",
@@ -632,6 +643,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },
       "_id": "43b1f2d3f4a84dfb",
@@ -656,6 +677,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Frappe la cible deux fois</p>"
       },
       "_id": "c126fef7e444f535",
@@ -680,6 +702,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Un coup de pied sauté qui, s'il est raté, fait perdre au lanceur la moitié de sa Vitalité maximale</p>"
       },
       "_id": "cec7a9ea082af380",
@@ -704,6 +727,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "b46b7104b1a3440b",
@@ -728,6 +752,24 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "vol",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Volonté et l'Endurance du lanceur de 1</p>"
       },
       "_id": "fb6a574f4cd43496",
@@ -752,6 +794,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si la vitalité du lanceur est supérieure à 70% il inflige 2 dégâts, à 36% 4 ; à 21% 8 ; à 11% 10 ; à 5% 15 et en dessous 20.</p>"
       },
       "_id": "8329c2ee95ba9464",

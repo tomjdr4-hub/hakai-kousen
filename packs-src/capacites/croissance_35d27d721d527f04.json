@@ -14,6 +14,24 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "for",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "con",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
     "description": "<p>Augmente la Concentration et la Force du lanceur de 1. En cas d'Ensoleillement 2</p>"
   },
   "_id": "35d27d721d527f04",

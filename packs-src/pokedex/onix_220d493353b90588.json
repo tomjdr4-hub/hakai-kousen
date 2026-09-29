@@ -640,6 +640,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
       },
       "_id": "e9d92f32ff5147cc",
@@ -664,6 +674,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "a1d6bd4f7f5a7761",
@@ -688,6 +699,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>La technique retire 1/16 de la Vitalité maximale de la cible pendant 4 à 5 tours et l'empêche de se déplacer</p>"
       },
       "_id": "a8cd2752aad991b7",
@@ -712,6 +724,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Les dégâts causés par les attaques de type Électrique sont réduits de moitié</p>"
       },
       "_id": "5f59be6bfb7227f7",

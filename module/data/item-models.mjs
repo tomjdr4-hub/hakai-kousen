@@ -1,6 +1,6 @@
 import { ATTACK_CATEGORIES, GEAR_CATEGORIES, POKESKILL_CATEGORIES } from "../config.mjs";
 
-const { BooleanField, HTMLField, NumberField, StringField } = foundry.data.fields;
+const { ArrayField, BooleanField, HTMLField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
 const int = (initial = 0, options = {}) => new NumberField({ required: true, nullable: false, integer: true, initial, ...options });
 
@@ -23,6 +23,16 @@ export class AttackData extends foundry.abstract.TypeDataModel {
       // Bonus d'initiative pour le tour où la capacité est choisie (Vive-Attaque : +10).
       initiativeBonus: int(0),
       xpCost: int(0, { min: 0 }),
+      // Effets appliqués quand la capacité touche : modification de stat ou altération d'état.
+      // `secondary` : soumis au jet de chance d'effet secondaire (effectChance).
+      effects: new ArrayField(new SchemaField({
+        kind: new StringField({ required: true, initial: "stat", choices: ["stat", "status"] }),
+        target: new StringField({ required: true, initial: "target", choices: ["target", "self"] }),
+        stat: new StringField({ required: true, initial: "for", choices: ["dex", "for", "con", "end", "vol"] }),
+        value: int(-1, { min: -6, max: 6 }),
+        status: new StringField({ required: true, blank: true }),
+        secondary: new BooleanField()
+      })),
       description: new HTMLField()
     };
   }

@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "paralysie",
+        "secondary": true
+      }
+    ],
     "description": "<p>Le Pokémon bondit au premier tour, attaque au second. 30% de chance de paralyser la cible</p>"
   },
   "_id": "e62d53f88d10abb0",

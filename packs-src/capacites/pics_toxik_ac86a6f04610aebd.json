@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "poison",
+        "secondary": false
+      }
+    ],
     "description": "<p>Empoisonne les Pokémon se déplaçant dans la zone. Si Pics Toxik est lancé 2 fois les empoissonne gravement</p>"
   },
   "_id": "ac86a6f04610aebd",

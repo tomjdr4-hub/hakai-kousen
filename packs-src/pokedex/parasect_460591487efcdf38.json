@@ -628,6 +628,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "af03515476014381",
@@ -652,6 +653,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance des cibles de 2</p>"
       },
       "_id": "8d60537aeeccaeab",
@@ -676,6 +687,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque. 10% de chance d'empoisonner la cible</p>"
       },
       "_id": "3379a14b318b2856",
@@ -700,6 +721,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Plante une graine qui draine 1/8 de la Vitalité de la cible vers le lanceur chaque tour</p>"
       },
       "_id": "4d8e0bf33f2cc270",
@@ -724,6 +746,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endort les Pokémon de la zone. Ne fonctionne pas si la cible est déjà victime d'un problème de statut majeur ou derrière un clone.</p>"
       },
       "_id": "4d343f43aa8c8fe0",
@@ -748,6 +780,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
         "description": "<p>Paralyse les Pokémon de la zone. Ne fonctionne pas si la cible est déjà victime d'un problème de statut majeur</p>"
       },
       "_id": "d58c01628cfcd389",
@@ -772,6 +814,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": false
+          }
+        ],
         "description": "<p>Empoisonne les Pokémon de la zone s'ils ne sont pas de type Acier ou Poison.</p>"
       },
       "_id": "bd0475ab79a8f4a3",
@@ -796,6 +848,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
       },
       "_id": "3926895e7ad82943",

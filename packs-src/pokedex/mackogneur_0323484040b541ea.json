@@ -724,6 +724,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le poids de la cible est inférieur ou égal à 10kg les dégâts sont de 2 ; 25kg = 4 ; 50kg = 6 ; 100kg = 8 ; 200kg = 10 ; plus 12</p>"
       },
       "_id": "835bcd8576bb0c90",
@@ -748,6 +749,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Oblige la cible à répéter sa dernière action pendant 3 tours.</p>"
       },
       "_id": "57d64924c2e7e102",
@@ -772,6 +774,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur cogne l'ennemi de toutes ses forces.</p>"
       },
       "_id": "ecf75b60ac925a69",
@@ -796,6 +799,7 @@
         "priority": 0,
         "initiativeBonus": 30,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Protège toute l'équipe des attaques ciblant toute l'équipe pour un tour. Au premier tour la Précision est de 100%, au second 50% puis 25% puis 12,5% et échoue au 5ème tour. Le lanceur augmente son Initiative de 30 pendant ce tour.</p>"
       },
       "_id": "6c1ae2c0feb21833",
@@ -820,6 +824,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "51ca84cff6ee10e9",
@@ -844,6 +858,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le lanceur est touché par une attaque physique ce tour-ci, il inflige deux fois les dégâts subit, sans tenir compte des types.</p>"
       },
       "_id": "233193e3ff914020",
@@ -868,6 +883,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
       },
       "_id": "83176cd042176ac3",
@@ -892,6 +908,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
       },
       "_id": "3c5c18213bcca6c5",
@@ -916,6 +933,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur encaisse des attaques sur 2 tours sans riposter et inflige le double de dégâts à la cible sans tenir compte des types.</p>"
       },
       "_id": "1076de4c144634dc",

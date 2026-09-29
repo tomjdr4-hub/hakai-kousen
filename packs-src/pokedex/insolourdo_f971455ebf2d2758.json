@@ -703,6 +703,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente l'Endurance du lanceur de 2</p>"
       },
       "_id": "6ee6ec51fbd463e9",
@@ -727,6 +737,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Augmente la Force du lanceur de 1 à chaque coup reçu pendant ce tour</p>"
       },
       "_id": "4d95eb79614f05de",

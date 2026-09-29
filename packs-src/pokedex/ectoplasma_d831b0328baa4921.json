@@ -791,6 +791,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Les modifications de Statistiques sont annulées sur toute la zone concernée</p>"
       },
       "_id": "fbbf3ac7e1f71251",
@@ -815,6 +816,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Empêche l'ennemi d'employer à nouveau sa dernière attaque. Dure 4 tours. Si la cible n'a pas encore attaqué, Entrave échouera</p>"
       },
       "_id": "b1c2866d2d652f65",
@@ -839,6 +841,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endors la cible</p>"
       },
       "_id": "1262d76142fb7969",
@@ -863,6 +875,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance de paralyser la cible</p>"
       },
       "_id": "bb74d2a466f079fe",
@@ -887,6 +909,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>La technique n'échoue jamais, excepté si la cible est de type Normal ou dans le premier tour d'attaques comme Plongée, Tunnel ou Vol.</p>"
       },
       "_id": "72365c24e5924153",
@@ -911,6 +934,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>40% de chance d'empoisonner la cible</p>"
       },
       "_id": "67fa580abdadc3c3",
@@ -935,6 +968,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Retire 4 d'Énergie à la cible.</p>"
       },
       "_id": "bc3b220532293d0d",

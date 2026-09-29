@@ -1,5 +1,6 @@
 import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
+import { syncCounters } from "../combat/effects.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -19,7 +20,8 @@ class HKActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       editItem: HKActorSheet._onEditItem,
       deleteItem: HKActorSheet._onDeleteItem,
       longRest: HKActorSheet._onLongRest,
-      fullHeal: HKActorSheet._onFullHeal
+      fullHeal: HKActorSheet._onFullHeal,
+      toggleStatus: HKActorSheet._onToggleStatus
     }
   };
 
@@ -36,6 +38,7 @@ class HKActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       config: HK,
       editable: this.isEditable,
       tabs: this._prepareTabs("primary"),
+      conditions: this._prepareConditions(),
       enriched: {}
     });
     for ( const field of this.constructor.HTML_FIELDS ) {
@@ -58,6 +61,25 @@ class HKActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
         const value = input.type === "number" ? Number(input.value) : input.value;
         item?.update({ [input.dataset.itemField]: value });
       });
+    });
+  }
+
+  /** États affichés en en-tête : KO puis altérations et états de combat, avec leurs compteurs. */
+  _prepareConditions() {
+    const actor = this.actor;
+    const conditions = actor.system.conditions;
+    const counters = conditions ? {
+      toxik: { label: "Tour", name: "system.conditions.toxik", value: conditions.toxik, max: 99,
+        tooltip: "Tour de Toxik : dégâts = 1/20 de la VIT max × ce nombre" },
+      confusion: { label: "Stade", name: "system.conditions.confusion", value: conditions.confusion, max: 3,
+        tooltip: "Stade 1 : sort sur 10 · stade 2 : sur 8-10 · stade 3 : sur 6-10, puis fin" }
+    } : {};
+    return [
+      { id: "dead", label: "KO", img: "icons/svg/skull.svg", rule: "0 VIT ou moins." },
+      ...Object.entries(HK.STATUSES).map(([id, s]) => ({ id, ...s }))
+    ].map(c => {
+      const active = actor.statuses.has(c.id);
+      return { ...c, active, counter: active ? counters[c.id] : null };
     });
   }
 
@@ -94,6 +116,12 @@ class HKActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rejectClose: false
     });
     if ( confirmed ) await item.delete();
+  }
+
+  static async _onToggleStatus(event, target) {
+    const id = target.dataset.status;
+    await this.actor.toggleStatusEffect(id);
+    await syncCounters(this.actor, id, this.actor.statuses.has(id));
   }
 
   static async _onLongRest() {
@@ -208,7 +236,8 @@ export class PokemonSheet extends HKActorSheet {
       rollPokeskill: PokemonSheet._onRollPokeskill,
       rollDressage: PokemonSheet._onRollDressage,
       resetTemp: PokemonSheet._onResetTemp,
-      learnFromCompendium: PokemonSheet._onLearnFromCompendium
+      learnFromCompendium: PokemonSheet._onLearnFromCompendium,
+      syncAttacks: PokemonSheet._onSyncAttacks
     }
   };
 
@@ -285,6 +314,27 @@ export class PokemonSheet extends HKActorSheet {
     context.learnByCT = learnset.filter(e => e.source !== "level");
     context.speciesTalents = system.speciesData.talents.map(t => ({ ...t, known: known.has(t.name.toLowerCase()) }));
     return context;
+  }
+
+  /**
+   * Met à jour les capacités de la fiche avec les données du compendium (effets, priorité…),
+   * retrouvées par leur source ou, à défaut, par leur nom.
+   */
+  static async _onSyncAttacks() {
+    const pack = game.packs.get("hakai-kousen.capacites");
+    if ( !pack ) return;
+    const index = await pack.getIndex();
+    const updates = [];
+    for ( const item of this.actor.itemTypes.attack ) {
+      const sourceId = item._stats?.compendiumSource;
+      const entry = sourceId?.startsWith(pack.collection) ? index.get(sourceId.split(".").pop())
+        : index.find(e => e.name.toLowerCase() === item.name.toLowerCase());
+      if ( !entry ) continue;
+      const source = await pack.getDocument(entry._id);
+      updates.push({ _id: item.id, system: source.system.toObject(), "_stats.compendiumSource": source.uuid });
+    }
+    await this.actor.updateEmbeddedDocuments("Item", updates);
+    ui.notifications.info(`${updates.length} capacité(s) mise(s) à jour depuis le compendium.`);
   }
 
   /** Ajoute à la fiche une Capacité ou un Talent du compendium. */

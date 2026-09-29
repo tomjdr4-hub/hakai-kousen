@@ -14,6 +14,24 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "for",
+        "value": 2,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": false
+      }
+    ],
     "description": "<p>Augmente la Force de la cible de 2 et lui inflige une confusion.</p>"
   },
   "_id": "5834a1d734136e59",

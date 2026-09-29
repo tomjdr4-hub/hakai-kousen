@@ -738,6 +738,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Baisse la précision de la cible de 10%</p>"
       },
       "_id": "b2589a694b5a210c",
@@ -762,6 +763,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur se téléporte. Il peut quitter un combat contre un Pokémon Sauvage de cette manière. Face à un dresseur, il échange sa place avec un autre Pokémon de l'équipe</p>"
       },
       "_id": "4a0c14208ae1a58f",
@@ -786,6 +788,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Baisse la Précision des Pokémon dans la zone de 10%</p>"
       },
       "_id": "b1dd6193e8286d5d",
@@ -810,6 +813,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de rendre confus la cible</p>"
       },
       "_id": "d2f29c83d2133d49",

@@ -598,6 +598,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "628aec705940b43b",
@@ -622,6 +623,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
         "description": "<p>30% de chance d'empoisonner la cible</p>"
       },
       "_id": "8089a9c86287e4ff",
@@ -646,6 +657,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Inflige 4 dégâts de type Sol aux Pokémon se déplaçant dans la zone. Si Picots est lancé 2 fois inflige 8, si 3 fois 12 si plus ne fait rien de plus.</p>"
       },
       "_id": "eb376613f21c0d4c",
@@ -670,6 +682,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "2faaa06147f0be29",

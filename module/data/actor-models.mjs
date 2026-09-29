@@ -86,6 +86,11 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
       ene: resource(50, 50),
       xp: new SchemaField({ value: int(0, { min: 0 }), total: int(0, { min: 0 }) }),
       baby: new BooleanField(),
+      // Compteurs d'états : tours de Toxik (×1, ×2…) et stade de sortie de la Confusion.
+      conditions: new SchemaField({
+        toxik: int(0, { min: 0 }),
+        confusion: int(0, { min: 0, max: 3 })
+      }),
       nature: new StringField({ required: true, blank: false, initial: "hardi", choices: Object.keys(NATURES) }),
       relation: new SchemaField({
         confidence: int(4, { min: 0, max: 9 }),

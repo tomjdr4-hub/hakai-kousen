@@ -850,6 +850,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente l'Endurance du lanceur de 2.</p>"
       },
       "_id": "b7d0e97e13c5f891",
@@ -874,6 +884,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Pendant 5 tours, le terrain aux pieds du lanceur se couvre de brume. Les Pokémon au sol (ne possédant ni le type Vol ni le Talent Lévitation) ne peuvent pas subir d'altération de statut. (Divise aussi les dégâts des attaques Dragon par 2).</p>"
       },
       "_id": "8a56aa4a96e5e813",
@@ -898,6 +909,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": true
+          }
+        ],
         "description": "<p>10% de chance de rendre confus la cible</p>"
       },
       "_id": "07e26f6ec2619809",
@@ -922,6 +943,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "b32ad487df0c9b6e",
@@ -946,6 +968,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>N'échoue jamais, sauf face à un adversaire au premier tour de Plongée, Tunnel ou Vol.</p>"
       },
       "_id": "a32a07eff7e9cd9c",
@@ -970,6 +993,7 @@
         "priority": 0,
         "initiativeBonus": 30,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Protège toute l'équipe des attaques ciblant toute l'équipe pour un tour. Au premier tour la Précision est de 100%, au second 50% puis 25% puis 12,5% et échoue au 5ème tour. Le lanceur augmente son Initiative de 30 pendant ce tour.</p>"
       },
       "_id": "de26a4c175c041a4",
@@ -994,6 +1018,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur et la cible échangent leurs modifications de Force et de Concentration.</p>"
       },
       "_id": "f3c3e4d6ed192822",
@@ -1018,6 +1043,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur et la cible échangent leurs modifications d'Endurance et de Volonté</p>"
       },
       "_id": "036d072e285f74fc",
@@ -1042,6 +1068,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Protège toute l'équipe des attaques de priorité. Au premier tour la Précision est de 100%, au second 50% puis 25% puis 12,5% et échoue au 5ème tour</p>"
       },
       "_id": "dbe228a130a71ceb",

@@ -276,6 +276,10 @@ function onUpdateCombatant(combatant, changed) {
 /** Nouveau tour : phase de réflexion automatique, sinon simple remise à zéro des priorités. */
 async function onUpdateCombat(combat, changed) {
   if ( !("round" in changed) || !game.user.isActiveGM || (combat.round < 1) ) return;
+  // « Apeuré » ne dure que le tour où il est infligé.
+  for ( const c of combat.combatants ) {
+    if ( c.actor?.statuses.has("peur") ) await c.actor.toggleStatusEffect("peur", { active: false });
+  }
   if ( game.settings.get(SCOPE, "autoPlanning") ) return combat.startPlanning();
   const updates = combat.combatants.filter(c => c.priority || c.roundBonus)
     .map(c => ({ _id: c.id, [`flags.${SCOPE}.priority`]: 0, [`flags.${SCOPE}.roundBonus`]: 0 }));

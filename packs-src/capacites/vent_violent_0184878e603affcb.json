@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": true
+      }
+    ],
     "description": "<p>30% de chance de rendre la cible confuse. La précision passe à 100% sous la pluie et à 50% sous le soleil.</p>"
   },
   "_id": "0184878e603affcb",

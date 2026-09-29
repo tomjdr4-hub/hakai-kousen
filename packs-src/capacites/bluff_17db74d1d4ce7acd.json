@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 10,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "peur",
+        "secondary": false
+      }
+    ],
     "description": "<p>Ne peut être utilisée qu'au tour d'arrivée du lanceur. Initiative de +10 pendant ce tour et apeure la cible</p>"
   },
   "_id": "17db74d1d4ce7acd",

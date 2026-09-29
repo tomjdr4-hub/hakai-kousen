@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": false
+      }
+    ],
     "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
   },
   "_id": "c97ebd0d0e335a6a",

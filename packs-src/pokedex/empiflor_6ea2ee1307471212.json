@@ -593,6 +593,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "vol",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Volonté de la cible de 1</p>"
       },
       "_id": "cecc612db3151843",
@@ -617,6 +627,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Restaure 25% de la vitalité max du lanceur si Stockage a été lancée 1 fois, 50% si 2, 100% si 3. Après avoir lancé Avale, il faudra à nouveau utiliser Stockage au moins une fois.</p>"
       },
       "_id": "ab3ce60b27e76cd3",
@@ -641,6 +652,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Les changements de stats des cibles sont annulés</p>"
       },
       "_id": "51a89b16c7ef39ec",
@@ -665,6 +677,7 @@
         "priority": 0,
         "initiativeBonus": 10,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>La technique échoue si la cible ne prépare pas d'attaque durant ce tour. Le lanceur augmente son Initiative de 10 pendant ce tour</p>"
       },
       "_id": "b68b2b9c1a2f4f24",
@@ -689,6 +702,24 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "con",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Concentration et la Force du lanceur de 1. En cas d'Ensoleillement 2</p>"
       },
       "_id": "03937a6722f2f6fd",
@@ -713,6 +744,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Augmente la Force du lanceur de 2.</p>"
       },
       "_id": "e26e7c2d87ce4c5c",
@@ -737,6 +778,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse la Dextérité pour l'esquive des Pokémons autour de 2</p>"
       },
       "_id": "2fd19c95115eee34",
@@ -761,6 +812,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "127ce19fd0b0e84f",
@@ -785,6 +837,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>La technique retire un dixième de la Vitalité maximale de la cible pendant 4 à 5 tours et l'empêche de se déplacer</p>"
       },
       "_id": "3d954b8550b0253c",
@@ -809,6 +862,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>30% de chance de baisser la précision de la cible de 10%</p>"
       },
       "_id": "5d6eb383a200f5c7",
@@ -833,6 +887,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Endort les Pokémon de la zone. Ne fonctionne pas si la cible est déjà victime d'un problème de statut majeur ou derrière un clone.</p>"
       },
       "_id": "6a4827768e4fbbc2",
@@ -857,6 +921,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Fonctionne uniquement si Stockage a été utilisé juste avant : 1 fois 10 dégâts ; 2 fois 20 ; 3 fois 30 ; plus 30 Après avoir lancé Relâche, il faudra à nouveau utiliser Stockage au moins une fois</p>"
       },
       "_id": "575f96381eb72aca",
@@ -881,6 +946,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur accumule de l'énergie pour la réutiliser plus tard. Augmente la Volonté et l'Endurance du lanceur de 1 (Si Relâche ou Avale est utilisé, ces modifications s'annule).</p>"
       },
       "_id": "b8f6d538d9ab3ffd",
@@ -905,6 +971,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
       },
       "_id": "1a83636125a0a7a1",
@@ -929,6 +996,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur récupère la moitié de la Vitalité perdue par la cible.</p>"
       },
       "_id": "b9a41aa6d91d4eaa",
@@ -953,6 +1021,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "6fa1e1f8ee84038a",

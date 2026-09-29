@@ -780,6 +780,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le lanceur tient un objet, il le lance sur la cible et lui inflige 10 dégâts si l'objet n'est pas une Baie, sinon ils sont de 5</p>"
       },
       "_id": "3535f6f61c07a5d9",
@@ -804,6 +805,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Oblige la cible à répéter sa dernière action pendant 3 tours.</p>"
       },
       "_id": "ebb427069514f686",
@@ -828,6 +830,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Augmente la Force du lanceur de 1 à chaque coup reçu pendant ce tour</p>"
       },
       "_id": "98c2e36faf20dadb",
@@ -852,6 +855,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "3741c33d12e15aef",
@@ -876,6 +880,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "fc71862ea15cc9c3",
@@ -900,6 +914,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le lanceur est touché par une attaque physique ce tour-ci, il inflige deux fois les dégâts subit, sans tenir compte des types.</p>"
       },
       "_id": "293864b1ade40fe2",
@@ -924,6 +939,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
       },
       "_id": "38cff59afa52d58e",
@@ -948,6 +964,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le poids de la cible est inférieur ou égal à 10kg les dégâts sont de 2 ; 25kg = 4 ; 50kg = 6 ; 100kg = 8 ; 200kg = 10 ; plus 12</p>"
       },
       "_id": "f74973140312d7ae",
@@ -972,6 +989,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Le lanceur est mis KO et inflige à son adversaire autant de dégâts que le lanceur avait Vitalité</p>"
       },
       "_id": "87e94e4288452595",

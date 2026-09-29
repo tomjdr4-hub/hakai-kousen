@@ -668,6 +668,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
         "description": "<p>Fait bâiller la cible qui s'endort au tour suivant.</p>"
       },
       "_id": "f5fc901f90a4e419",
@@ -692,6 +702,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": ""
       },
       "_id": "3e16ba3ef01ff4a3",
@@ -716,6 +727,7 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
+        "effects": [],
         "description": "<p>Si le lanceur est de type spectre, il sacrifie la moitié de sa Vitalité maximale pour maudire une cible qui perd 1/4 de sa Vitalité à chaque tour. Sinon augmente la Force et l'Endurance du lanceur de 1 et baisse sa Dextérité de 1.</p>"
       },
       "_id": "99b2536fcb32b4d2",

@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "dex",
+        "value": -1,
+        "status": "",
+        "secondary": false
+      }
+    ],
     "description": "<p>Baisse la Dextérité de 1 aux Pokémon se déplaçant dans la zone. Si Toile gluante est lancé 2 fois baisse de 2, si 3 fois 3 etc</p>"
   },
   "_id": "9509258f6db6d18d",

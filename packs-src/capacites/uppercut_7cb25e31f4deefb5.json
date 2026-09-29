@@ -14,6 +14,16 @@
     "priority": 0,
     "initiativeBonus": 0,
     "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": true
+      }
+    ],
     "description": "<p>20% de chance de rendre la cible confuse.</p>"
   },
   "_id": "7cb25e31f4deefb5",

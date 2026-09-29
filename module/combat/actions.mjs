@@ -4,6 +4,7 @@
  * changer de Pokémon, utiliser un objet, lancer une Poké Ball, fuir ou abandonner.
  */
 import { rollAttack, rollDressage } from "../dice/rolls.mjs";
+import { handleEffectRequest } from "./effects.mjs";
 
 const SCOPE = "hakai-kousen";
 const SOCKET = `system.${SCOPE}`;
@@ -334,6 +335,8 @@ async function performSwitch(combatant, actorUuid) {
 export function registerSocket() {
   game.socket.on(SOCKET, async data => {
     if ( !game.user.isActiveGM ) return;
+    // Dégâts et effets demandés depuis une carte de chat par un joueur qui ne possède pas la cible.
+    if ( ["applyDamage", "applyEffect"].includes(data.type) ) return handleEffectRequest(data);
     const user = game.users.get(data.userId);
     const combatant = game.combats.get(data.combatId)?.combatants.get(data.combatantId);
     if ( !user || !combatant?.actor?.testUserPermission(user, "OWNER") ) return;

@@ -32,7 +32,7 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - **Sensibilités** calculées à partir des types.
 - Capacités : ciblez un jeton puis lancez. Le système dépense l'ENE, calcule la marge (FOR − END ou CON − VOL), lit le seuil dans la **Table unique**, lance 1D10 (10 naturel = réussite exceptionnelle, dégâts ×2), applique l'efficacité du type et propose un bouton **Appliquer les dégâts**. Les chances d'effet secondaire sont lancées aussi.
 - Compétences Pokémon (Standard / Intermédiaire / Rare, coût du niveau suivant, apprentissage /10), Talents, objets tenus.
-- Initiative : 1D10 + DEX (à égalité, la meilleure DEX agit d'abord).
+- **Initiative** (5.2, 5.3, 5.13) : 1D10 + DEX effective. À égalité, la meilleure DEX agit d'abord ; à DEX égale, le système relance 1D10 automatiquement et l'annonce dans le chat. Dans le suivi de combat, l'éclair ⚡ marque une action prioritaire pour le tour (switch, capacité prioritaire, Baie Chérim) et le clic droit « agit en dernier » : ces combattants passent avant (ou après) l'ordre normal, départagés entre eux par l'Initiative. Les priorités s'effacent à chaque nouveau tour. Un Pokémon ajouté en cours de combat lance son initiative tout seul.
 
 ### Objets
 Capacités, Compétences Pokémon, Talents et Objets d'inventaire.

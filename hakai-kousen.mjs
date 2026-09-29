@@ -5,6 +5,7 @@ import { HK } from "./module/config.mjs";
 import { PokemonData, TrainerData } from "./module/data/actor-models.mjs";
 import { AttackData, GearData, PokeskillData, TalentData } from "./module/data/item-models.mjs";
 import { HKActor } from "./module/documents/actor.mjs";
+import { HKCombat, HKCombatant, registerCombatHooks } from "./module/documents/combat.mjs";
 import { PokemonSheet, TrainerSheet } from "./module/sheets/actor-sheets.mjs";
 import { HKItemSheet } from "./module/sheets/item-sheet.mjs";
 import * as rolls from "./module/dice/rolls.mjs";
@@ -33,8 +34,10 @@ Hooks.once("init", () => {
   };
   CONFIG.Item.dataModels = { attack: AttackData, pokeskill: PokeskillData, talent: TalentData, gear: GearData };
 
-  // Initiative : 1D10 + DEX ; à égalité, la meilleure DEX agit d'abord (5.2).
-  CONFIG.Combat.initiative = { formula: "1d10 + @dex + @dex / 100", decimals: 2 };
+  // Initiative : 1D10 + DEX ; égalités et priorités gérées par HKCombat (5.2).
+  CONFIG.Combat.documentClass = HKCombat;
+  CONFIG.Combatant.documentClass = HKCombatant;
+  CONFIG.Combat.initiative = { formula: "1d10 + @dex", decimals: 0 };
 
   CONFIG.statusEffects = STATUS_EFFECTS;
 
@@ -57,3 +60,4 @@ Hooks.once("init", () => {
 });
 
 Hooks.on("renderChatMessageHTML", rolls.onRenderChatMessage);
+registerCombatHooks();

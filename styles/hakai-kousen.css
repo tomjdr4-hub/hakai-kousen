@@ -571,3 +571,9 @@
   font-size: 0.85em;
   color: var(--hk-muted);
 }
+
+/* ---------- Suivi de combat : priorité ---------- */
+
+.hk-priority.normal { opacity: 0.35; }
+.hk-priority.priority { color: #f5b400; opacity: 1; }
+.hk-priority.last { color: #7e57c2; opacity: 1; }

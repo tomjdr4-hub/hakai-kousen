@@ -302,9 +302,12 @@ async function throwBall(trainer, ball, target) {
   if ( actor.system.baby ) mods.push(["Bébé", -1]);
   const ballName = ball.name.toLowerCase();
   const master = ballName.includes("master");
-  if ( ballName.includes("hyper") ) mods.push(["Hyper Ball", -2]);
-  else if ( ballName.includes("super") ) mods.push(["Super Ball", -1]);
+  // Modificateur de la Ball (Annexe 3) ; une Ball spéciale ne compte que si sa condition est remplie.
+  const ballMod = ball.system.captureMod ?? (ballName.includes("hyper") ? -2 : ballName.includes("super") ? -1 : 0);
+  const condition = ball.system.captureCondition;
+  if ( ballMod && !condition ) mods.push([ball.name, ballMod]);
   const threshold = 6 + mods.reduce((sum, [, v]) => sum + v, 0);
+  const conditional = (ballMod && condition) ? threshold + ballMod : null;
 
   const roll = await new foundry.dice.Roll("1d10").evaluate();
   const captured = master || (roll.total >= threshold);
@@ -316,6 +319,7 @@ async function throwBall(trainer, ball, target) {
       <span class="subtitle">${ball.name}</span></header>
       <p class="hk-detail">Seuil 6</p><ul>${list}</ul>
       <p>Seuil final : <strong>${threshold}</strong>${master ? " (Master Ball : capture automatique)" : ""} · 1D10 : <strong>${roll.total}</strong></p>
+      ${conditional !== null ? `<p class="hk-detail">${ball.name} : ${ballMod} si « ${condition} » → seuil ${conditional}${roll.total >= conditional ? " : capturé si la condition est remplie" : ""}.</p>` : ""}
       <div class="hk-outcome ${captured ? "success" : "failure"}">${captured ? "Capturé !" : "Le Pokémon s'échappe"}</div>
       <p class="hk-detail">À ajouter par le MJ : Rare +1, Semi-légendaire +2 (+3 au stade final), Aberrant +1, Dominant +2, Ball spéciale dont la condition est remplie −3.</p></div>`
   };
@@ -395,7 +399,7 @@ export function registerSocket() {
   game.socket.on(SOCKET, async data => {
     if ( !game.user.isActiveGM ) return;
     // Dégâts et effets demandés depuis une carte de chat par un joueur qui ne possède pas la cible.
-    if ( ["applyDamage", "applyEffect", "saveFatal"].includes(data.type) ) return handleEffectRequest(data);
+    if ( ["applyDamage", "applyEffect", "saveFatal", "spendEnergy"].includes(data.type) ) return handleEffectRequest(data);
     // Choix des Pokémon de départ d'un Dresseur.
     if ( data.type === "deploy" ) {
       const user = game.users.get(data.userId);

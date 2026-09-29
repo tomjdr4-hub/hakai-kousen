@@ -15,7 +15,7 @@ export const SCOPE = "hakai-kousen";
 
 /** Choix vide d'un combattant pour le tour. */
 export const EMPTY_CHOICE = Object.freeze({
-  kind: "", itemId: "", targets: [], switchTo: "", note: "", ready: false, done: false
+  kind: "", itemId: "", targets: [], switchTo: "", note: "", dodge: false, ready: false, done: false
 });
 
 export class HKCombatant extends Combatant {

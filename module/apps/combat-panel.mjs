@@ -8,6 +8,7 @@ import { deploy, endCombatWithXP, getSetup, openSetupDialog, setDeployChoice, va
 import { blockedReason } from "../combat/turn-start.mjs";
 import { EMPTY_CHOICE, SCOPE } from "../documents/combat.mjs";
 import { COMBAT_FORMATS, COMBAT_TYPES, STATUSES, TYPES } from "../config.mjs";
+import { dodgeLevel, DODGE_COST } from "../combat/skills.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 
@@ -225,7 +226,11 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
     const trainer = combatant.trainer;
     const partners = trainer ? combat.combatants.filter(c => (c.trainer?.id === trainer.id) && !c.isKO).length : 0;
     const obedience = combatant.actor.system.relation?.obedience;
+    const dodge = dodgeLevel(combatant.actor);
     return {
+      dodgeLevel: dodge,
+      dodgeCost: dodge ? DODGE_COST[Math.min(dodge, 5)] : 0,
+      dodge: choice.dodge,
       duoWarning: (partners > 1) && Number.isNumeric(obedience) && (obedience < 6),
       obedience,
       trainerActionTakenBy: options.trainerActionTakenBy,
@@ -267,12 +272,13 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
     // Listes déroulantes et texte libre : mise à jour du brouillon.
     for ( const input of this.element.querySelectorAll("[data-draft-field]") ) {
       const id = input.closest("[data-combatant]").dataset.combatant;
-      const event = input.tagName === "SELECT" ? "change" : "input";
+      const event = ((input.tagName === "SELECT") || (input.type === "checkbox")) ? "change" : "input";
       input.addEventListener(event, () => {
         const draft = this.#draft(id);
         if ( input.dataset.draftField === "target" ) draft.targets = input.value ? [input.value] : [];
+        else if ( input.type === "checkbox" ) draft[input.dataset.draftField] = input.checked;
         else draft[input.dataset.draftField] = input.value;
-        if ( input.tagName === "SELECT" ) this.render();
+        if ( (input.tagName === "SELECT") || (input.type === "checkbox") ) this.render();
         else this.element.querySelector(`[data-combatant="${id}"] [data-action=validateChoice]`)
           ?.toggleAttribute("disabled", !isChoiceComplete(draft));
       });

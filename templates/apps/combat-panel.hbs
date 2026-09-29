@@ -177,6 +177,10 @@
       </div>
       {{/if}}
 
+      {{#if m.dodgeLevel}}
+      <label class="checkbox hk-dodge" data-tooltip="Si ce Pokémon est attaqué ce tour-ci, sa DEX remplace END ou VOL quand elle est meilleure. Sans effet contre une attaque infaillible.">
+        <input type="checkbox" data-draft-field="dodge" {{checked m.dodge}}> Esquive prête (niveau {{m.dodgeLevel}}, {{m.dodgeCost}} ENE par esquive)</label>
+      {{/if}}
       {{#if m.kinds.length}}
       <button type="button" class="hk-validate" data-action="validateChoice" {{#unless m.complete}}disabled{{/unless}}>
         <i class="fa-solid fa-check"></i> Valider mon choix</button>

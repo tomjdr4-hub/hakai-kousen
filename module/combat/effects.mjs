@@ -25,6 +25,12 @@ function relayToGM(actor, payload) {
   return true;
 }
 
+/** Dépense de l'ENE (Esquive…), transmise au MJ si nécessaire. */
+export async function spendEnergy(actor, amount) {
+  if ( relayToGM(actor, { type: "spendEnergy", uuid: actor.uuid, amount }) ) return;
+  await actor.update({ "system.ene.value": Math.max(actor.system.ene.value - amount, 0) });
+}
+
 /** Nature du combat en cours : officiel (par défaut), sauvage ou mortel. */
 export function currentCombatType() {
   return game.combat?.getFlag("hakai-kousen", "setup")?.type ?? "officiel";
@@ -207,6 +213,7 @@ export async function handleEffectRequest(data) {
   if ( data.type === "applyDamage" ) return applyDamage(actor, Number(data.amount));
   if ( data.type === "applyEffect" ) return applyEffect(actor, data.effect);
   if ( data.type === "saveFatal" ) return survive(actor);
+  if ( data.type === "spendEnergy" ) return spendEnergy(actor, Number(data.amount));
 }
 
 /** Boutons des cartes de chat Hakai Kousen. */

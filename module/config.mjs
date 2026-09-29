@@ -167,6 +167,7 @@ export const GEAR_CATEGORIES = {
   consumable: "Soins & consommables",
   ball: "Balls & objets libres",
   held: "Objet tenu",
+  ct: "CT",
   other: "Divers"
 };
 

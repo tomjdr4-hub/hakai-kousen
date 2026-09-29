@@ -1,0 +1,31 @@
+{
+  "_id": "2b193749bd3441fe",
+  "_key": "!items!2b193749bd3441fe",
+  "name": "Antidote",
+  "type": "gear",
+  "img": "icons/consumables/potions/potion-bottle-corked-red.webp",
+  "folder": "550199bcf18568a5",
+  "system": {
+    "category": "consumable",
+    "quantity": 1,
+    "price": 200,
+    "charges": 0,
+    "use": {
+      "vit": 0,
+      "vitFull": false,
+      "ene": 0,
+      "eneFull": false,
+      "cures": [
+        "poison",
+        "toxik"
+      ],
+      "revive": 0,
+      "free": false
+    },
+    "captureMod": null,
+    "captureCondition": "",
+    "boostType": "",
+    "boost": 0,
+    "description": "<p>Guérit l’Empoisonnement, y compris sévère</p>"
+  }
+}

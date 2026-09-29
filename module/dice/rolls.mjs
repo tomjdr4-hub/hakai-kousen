@@ -3,7 +3,8 @@ import {
   tableUniqueThreshold, typeEffectiveness
 } from "../config.mjs";
 
-import { effectLabel } from "../combat/effects.mjs";
+import { effectLabel, spendEnergy } from "../combat/effects.mjs";
+import { armorReduction, damageBonuses, dodgeLevel, DODGE_COST, resistanceReduction } from "../combat/skills.mjs";
 
 const { DialogV2 } = foundry.applications.api;
 
@@ -229,14 +230,21 @@ export async function rollAttack(actor, item, { targets } = {}) {
       rolls.push(roll);
       const natural = roll.total;
       crit = natural === 10;
-      const defense = defenseValue(target, defenseKey);
+      let defense = defenseValue(target, defenseKey);
+      let defenseLabel = POKEMON_STATS[defenseKey].abbr;
       let detail;
+      // Esquive préparée : la DEX remplace END ou VOL, pour son coût en ENE (Annexe 1).
+      const dodge = await tryDodge(token, target, atk, defense);
+      if ( dodge ) {
+        defense = dodge.dex;
+        defenseLabel = "DEX (Esquive)";
+      }
       if ( defense !== null ) {
         const margin = offense - defense;
         const threshold = tableUniqueThreshold(margin, accuracy);
         hit = crit || (natural >= threshold);
-        detail = `${POKEMON_STATS[offenseKey].abbr} ${offense} − ${POKEMON_STATS[defenseKey].abbr} ${defense} = marge ${margin >= 0 ? "+" : ""}${margin}
-          · ${accuracy} % → seuil <strong>${threshold}+</strong>`;
+        detail = `${POKEMON_STATS[offenseKey].abbr} ${offense} − ${defenseLabel} ${defense} = marge ${margin >= 0 ? "+" : ""}${margin}
+          · ${accuracy} % → seuil <strong>${threshold}+</strong>${dodge ? ` · Esquive : −${dodge.cost} ENE` : ""}`;
       }
       else detail = `Aucune cible : comparez à la Table unique (${accuracy} %).`;
       lines.push(`<div class="hk-dice">${diceFaces(roll)}</div><p class="hk-detail">${detail}</p>`);
@@ -251,11 +259,21 @@ export async function rollAttack(actor, item, { targets } = {}) {
     if ( hit && atk.isDamaging ) {
       const dmgRoll = await new foundry.dice.Roll(atk.damage, actor.getRollData()).evaluate();
       rolls.push(dmgRoll);
-      const mult = target ? typeEffectiveness(atk.type, defenderTypes(target)) : 1;
-      const amount = Math.floor(dmgRoll.total * (crit ? 2 : 1) * mult);
+      // Ordre (Annexe 1) : dégâts de la capacité (STAB inclus) → Augmentation et objet tenu → critique
+      // → Types (réduits par Résistance) → Blindage naturel sur les dégâts physiques.
+      const bonuses = damageBonuses(actor, item);
+      const base = dmgRoll.total + bonuses.reduce((sum, b) => sum + b.value, 0);
+      const rawMult = target ? typeEffectiveness(atk.type, defenderTypes(target)) : 1;
+      const resist = target ? resistanceReduction(target, atk.type) : 0;
+      const mult = Math.max(rawMult - resist, 0);
+      const armor = (target && (atk.category === "physical")) ? armorReduction(target) : 0;
+      const amount = Math.max(Math.floor(base * (crit ? 2 : 1) * mult) - armor, 0);
       const parts = [`${dmgRoll.formula} = ${dmgRoll.total}`];
+      for ( const b of bonuses ) parts.push(`+${b.value} (${b.label})`);
       if ( crit ) parts.push("×2 (critique)");
+      if ( resist ) parts.push(`×${rawMult} −${resist} (Résistance)`);
       if ( mult !== 1 ) parts.push(`×${mult}`);
+      if ( armor ) parts.push(`−${armor} (Blindage)`);
       const eff = effectivenessLabel(mult);
       lines.push(`<div class="hk-damage">
         <span class="amount">${amount}</span> dégâts
@@ -307,6 +325,22 @@ export async function rollAttack(actor, item, { targets } = {}) {
 /* -------------------------------------------- */
 /*  Actions des cartes de chat                  */
 /* -------------------------------------------- */
+
+/**
+ * Esquive d'une cible qui l'a préparée dans le panneau de combat : seulement si la DEX est meilleure
+ * que la défense normale, si l'attaque peut être esquivée et si l'ENE suffit.
+ */
+async function tryDodge(token, target, atk, defense) {
+  if ( !target || atk.sure || (atk.category === "status") || (defense === null) ) return null;
+  const combatant = game.combat?.combatants.find(c => c.tokenId === (token.document?.id ?? token.id));
+  if ( !combatant?.choice?.dodge ) return null;
+  const lvl = dodgeLevel(target);
+  const cost = DODGE_COST[Math.min(lvl, 5)];
+  const dex = target.system.stats?.dex.value ?? 0;
+  if ( !lvl || (target.system.ene.value < cost) || (dex <= defense) ) return null;
+  await spendEnergy(target, cost);
+  return { dex, cost };
+}
 
 /** Bouton d'application d'un effet de capacité sur un acteur. */
 function effectButton(actor, name, effect) {

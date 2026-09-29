@@ -57,6 +57,8 @@ Réglages : durée de la réflexion, réflexion automatique à chaque tour, ouve
 - **Duo** : avertissement sous Obéissance 6 ; une seule action personnelle du Dresseur (objet, Ball, fuite) par tour.
 - **Début de tour** automatique : Brûlure, Poison, Toxik (compteur), Malédiction, Vampigraine, blessure grave ; jets de Gel, Paralysie et Confusion ; Apeuré. Un Pokémon empêché d'agir voit son action annulée.
 - **Objets de soin** (VIT, ENE, altérations, Rappel) appliqués automatiquement en combat et depuis l'inventaire du Dresseur ; **Lutte** proposée quand l'ENE manque.
+- **Esquive** (Annexe 1) : un Pokémon qui possède la compétence peut la préparer pendant la réflexion ; s'il est attaqué, sa DEX remplace END ou VOL quand elle est meilleure, pour 12 à 2 ENE selon le niveau.
+- **Dégâts** : Augmentation Type/Crocs/Griffes/Poings et objet tenu renforçant le Type ajoutés ; Résistance Type réduit le multiplicateur ; Blindage naturel réduit les dégâts physiques.
 - **Meute** : le MJ coche des Pokémon semblables pour qu'ils partagent une initiative (MJ 5.9).
 - **Terminer** : XP Pokémon distribuée à chaque participant (montant complet), puis fin du combat.
 
@@ -69,16 +71,18 @@ Données issues du site [hakaikousen.fr](https://hakaikousen.fr) (onglet 7G, Sys
 - **Pokédex** : les 251 Pokémon des 1re et 2e générations, rangés par génération, avec types, statistiques de base, talents, évolutions et capacités de départ. L'onglet Capacités de la fiche liste toute la progression (niveau, CT, œuf, tutorat) : un clic sur « + » ajoute la capacité depuis le compendium.
 - **Capacités** : toutes les capacités apprises par ces Pokémon (562).
 - **Talents** : tous leurs talents (131).
+- **Objets** (Recueil des Annexes) : Baies, Poké Balls (modificateur de capture et condition), Soins (effets appliqués automatiquement), 358 CT (liées aux capacités), objets tenus (renforcement de Type), objets d'évolution, équipement, objets rares, entraînement.
+- **Compétences Pokémon** (Annexe 1) : Standard, Intermédiaires et Rares.
 
 Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature, Talent et Dressage.
 
 ## Pas encore automatisé
 
-- Capture : rareté, Aberrant / Dominant et Balls spéciales restent à ajouter par le MJ (rappel sur la carte).
+- Capture : rareté, Aberrant / Dominant restent à ajouter par le MJ ; la condition des Balls spéciales est rappelée avec le seuil correspondant.
+- Objets tenus autres que les renforçateurs de Type (Restes, Orbe Vie, objets Choix…) et Baies de résistance : effets décrits, à appliquer à la main.
 - Objets sans effet de soin renseigné : l'objet est décompté, l'effet est à appliquer sur la fiche.
 - Sommeil : sa règle HK n'est pas dans les manuels, un rappel s'affiche au début du tour.
 - Effets conditionnels des capacités (« si… », « sinon… », Crocs Feu, Triplattaque…) et modifications de Précision : au MJ.
-- Compétences Augmentation / Résistance de type.
 - Pokédex au-delà de la 2e génération, compendiums d'objets (annexes).
 
 ## Développement

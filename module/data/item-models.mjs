@@ -90,6 +90,9 @@ export class GearData extends foundry.abstract.TypeDataModel {
         // Consommable tenu : utilisable sans consommer l'action du Dresseur (Jus de Baie).
         free: new BooleanField()
       }),
+      // Poké Ball : modificateur au seuil de capture (Annexe 3) ; la condition des Balls spéciales reste au MJ.
+      captureMod: new NumberField({ required: false, nullable: true, integer: true, initial: null }),
+      captureCondition: new StringField({ required: true, blank: true }),
       // Objet tenu qui renforce un Type : +2 dégâts (8.7).
       boostType: new StringField({ required: true, blank: true }),
       boost: int(0),

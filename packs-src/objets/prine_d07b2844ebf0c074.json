@@ -1,0 +1,36 @@
+{
+  "_id": "d07b2844ebf0c074",
+  "_key": "!items!d07b2844ebf0c074",
+  "name": "Prine",
+  "type": "gear",
+  "img": "icons/consumables/fruit/berry-red.webp",
+  "folder": "a781dfcb46937d0c",
+  "system": {
+    "category": "consumable",
+    "quantity": 1,
+    "price": 300,
+    "charges": 0,
+    "use": {
+      "vit": 0,
+      "vitFull": false,
+      "ene": 0,
+      "eneFull": false,
+      "cures": [
+        "paralysie",
+        "brulure",
+        "gel",
+        "sommeil",
+        "confusion",
+        "poison",
+        "toxik"
+      ],
+      "revive": 0,
+      "free": true
+    },
+    "captureMod": null,
+    "captureCondition": "",
+    "boostType": "",
+    "boost": 0,
+    "description": "<p>Guérit Paralysie, Sommeil, Poison, Brûlure, Gel ou Confusion. Ne guérit pas l’Attraction.</p><p><strong>Culture</strong> : Spécialisée</p>"
+  }
+}

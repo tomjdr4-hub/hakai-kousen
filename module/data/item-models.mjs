@@ -18,6 +18,10 @@ export class AttackData extends foundry.abstract.TypeDataModel {
       // Dégâts STAB inclus, sous forme de formule (ex. « 12 » ou « 2d6+4 »).
       damage: new StringField({ required: true, blank: true }),
       effectChance: int(0, { min: 0, max: 100 }),
+      // Ordre du tour : 1 = agit toujours en premier, -1 = agit en dernier.
+      priority: int(0, { min: -1, max: 1 }),
+      // Bonus d'initiative pour le tour où la capacité est choisie (Vive-Attaque : +10).
+      initiativeBonus: int(0),
       xpCost: int(0, { min: 0 }),
       description: new HTMLField()
     };

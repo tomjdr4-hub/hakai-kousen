@@ -1,12 +1,20 @@
 /**
- * Initiative Hakai Kousen (Manuel du Joueur 5.2, 5.3, 5.13).
+ * Combat Hakai Kousen (Manuel du Joueur 5.2 à 5.4, 5.13).
  * - Initiative : 1D10 + DEX effective.
- * - Les actions prioritaires, annoncées en début de tour, sont résolues avant l'ordre normal ;
- *   à priorité égale, l'Initiative départage.
+ * - Chaque tour commence par une phase de réflexion chronométrée : chacun choisit son action en secret.
+ *   À la fin du chrono (ou quand tout le monde est prêt), les choix sont révélés et appliquent
+ *   priorités et bonus d'initiative du tour, puis la résolution suit l'ordre.
+ * - Les actions prioritaires passent avant l'ordre normal ; à priorité égale, l'Initiative départage.
  * - Égalité d'Initiative : la meilleure DEX agit d'abord ; à DEX égale, on relance 1D10.
  */
+import { describeChoice } from "../combat/actions.mjs";
 
-const SCOPE = "hakai-kousen";
+export const SCOPE = "hakai-kousen";
+
+/** Choix vide d'un combattant pour le tour. */
+export const EMPTY_CHOICE = Object.freeze({
+  kind: "", itemId: "", targets: [], switchTo: "", note: "", ready: false, done: false
+});
 
 export class HKCombatant extends Combatant {
   /** DEX effective (modifications temporaires, Paralysie, affaiblissement compris). */
@@ -20,9 +28,43 @@ export class HKCombatant extends Combatant {
     return this.getFlag(SCOPE, "priority") ?? 0;
   }
 
+  /** Bonus d'initiative du tour donné par la capacité choisie (Vive-Attaque : +10…). */
+  get roundBonus() {
+    return this.getFlag(SCOPE, "roundBonus") ?? 0;
+  }
+
   /** Relance 1D10 utilisée pour départager une égalité parfaite. */
   get tiebreak() {
     return this.getFlag(SCOPE, "tiebreak") ?? 0;
+  }
+
+  /** Action choisie pour le tour. */
+  get choice() {
+    return { ...EMPTY_CHOICE, ...(this.getFlag(SCOPE, "choice") ?? {}) };
+  }
+
+  /** Initiative du tour, bonus de capacité compris. */
+  get turnInitiative() {
+    return Number.isNumeric(this.initiative) ? this.initiative + this.roundBonus : null;
+  }
+
+  /** KO : VIT à 0 ou moins, ou marqué vaincu. */
+  get isKO() {
+    return this.isDefeated || ((this.actor?.system.vit?.value ?? 1) <= 0);
+  }
+
+  /** Doit choisir une action ce tour-ci. */
+  get needsChoice() {
+    return !this.isKO && !!this.actor;
+  }
+
+  /** Dresseur de ce combattant : lui-même, ou le Dresseur dont l'équipe contient ce Pokémon. */
+  get trainer() {
+    const actor = this.actor;
+    if ( !actor ) return null;
+    if ( actor.type === "trainer" ) return actor;
+    const uuid = `Actor.${this.actorId}`;
+    return game.actors.find(a => (a.type === "trainer") && a.system.team.includes(uuid)) ?? null;
   }
 
   /** Cycle clic gauche : normale <-> prioritaire ; clic droit : normale <-> en dernier. */
@@ -40,8 +82,8 @@ export class HKCombat extends Combat {
    */
   _sortCombatants(a, b) {
     if ( a.priority !== b.priority ) return b.priority - a.priority;
-    const ia = Number.isNumeric(a.initiative) ? a.initiative : -Infinity;
-    const ib = Number.isNumeric(b.initiative) ? b.initiative : -Infinity;
+    const ia = a.turnInitiative ?? -Infinity;
+    const ib = b.turnInitiative ?? -Infinity;
     if ( ia !== ib ) return ib - ia;
     if ( a.dex !== b.dex ) return b.dex - a.dex;
     if ( a.tiebreak !== b.tiebreak ) return b.tiebreak - a.tiebreak;
@@ -49,7 +91,7 @@ export class HKCombat extends Combat {
   }
 
   /**
-   * Recalcule l'ordre quand une priorité ou un départage change.
+   * Recalcule l'ordre quand une priorité, un bonus ou un départage change.
    * @override
    */
   _onUpdateDescendantDocuments(parent, collection, documents, changes, options, userId) {
@@ -58,6 +100,104 @@ export class HKCombat extends Combat {
     this.setupTurns();
     if ( ui.combat?.viewed === this ) ui.combat.render();
   }
+
+  /* -------------------------------------------- */
+  /*  Phases du tour                              */
+  /* -------------------------------------------- */
+
+  /**
+   * Phase courante : { state: "planning" | "resolution", round, endsAt, paused, duration } ou null.
+   * `endsAt` est une heure serveur (ms) ; `paused` est le temps restant (ms) pendant une pause.
+   */
+  get phase() {
+    const phase = this.getFlag(SCOPE, "phase");
+    return phase?.round === this.round ? phase : null;
+  }
+
+  /** Temps restant de réflexion en millisecondes. */
+  get remaining() {
+    const phase = this.phase;
+    if ( phase?.state !== "planning" ) return 0;
+    if ( Number.isNumeric(phase.paused) ) return phase.paused;
+    return Math.max(phase.endsAt - game.time.serverTime, 0);
+  }
+
+  /** Ouvre la phase de réflexion du tour et efface les choix du tour précédent (MJ). */
+  async startPlanning(seconds = game.settings.get(SCOPE, "planningDuration")) {
+    const reset = { [`flags.${SCOPE}.priority`]: 0, [`flags.${SCOPE}.roundBonus`]: 0, [`flags.${SCOPE}.choice`]: { ...EMPTY_CHOICE } };
+    await this.updateEmbeddedDocuments("Combatant", this.combatants.map(c => ({ _id: c.id, ...reset })));
+    await this.setFlag(SCOPE, "phase", {
+      state: "planning",
+      round: this.round,
+      duration: seconds,
+      endsAt: game.time.serverTime + (seconds * 1000),
+      paused: null
+    });
+  }
+
+  async togglePause() {
+    const phase = this.phase;
+    if ( phase?.state !== "planning" ) return;
+    if ( Number.isNumeric(phase.paused) ) {
+      return this.setFlag(SCOPE, "phase", { ...phase, endsAt: game.time.serverTime + phase.paused, paused: null });
+    }
+    return this.setFlag(SCOPE, "phase", { ...phase, paused: this.remaining });
+  }
+
+  async addTime(seconds) {
+    const phase = this.phase;
+    if ( phase?.state !== "planning" ) return;
+    const ms = seconds * 1000;
+    if ( Number.isNumeric(phase.paused) ) return this.setFlag(SCOPE, "phase", { ...phase, paused: phase.paused + ms });
+    return this.setFlag(SCOPE, "phase", { ...phase, endsAt: Math.max(phase.endsAt, game.time.serverTime) + ms });
+  }
+
+  /** Tous les combattants actifs ont validé leur choix. */
+  get allReady() {
+    const active = this.combatants.filter(c => c.needsChoice);
+    return active.length > 0 && active.every(c => c.choice.ready);
+  }
+
+  /**
+   * Révèle les choix (MJ) : applique priorités et bonus d'initiative du tour, annonce les actions
+   * dans l'ordre et démarre la résolution au premier combattant.
+   */
+  async reveal() {
+    const phase = this.phase;
+    if ( phase?.state !== "planning" ) return;
+    await this.setFlag(SCOPE, "phase", { ...phase, state: "resolution", paused: null });
+
+    const updates = [];
+    for ( const c of this.combatants ) {
+      const choice = c.choice;
+      let priority = c.priority;
+      let bonus = 0;
+      if ( choice.kind === "switch" ) priority = 1;
+      if ( choice.kind === "attack" ) {
+        const item = c.actor?.items.get(choice.itemId);
+        if ( item?.system.priority ) priority = item.system.priority;
+        bonus = item?.system.initiativeBonus ?? 0;
+      }
+      updates.push({ _id: c.id, [`flags.${SCOPE}.priority`]: priority, [`flags.${SCOPE}.roundBonus`]: bonus });
+    }
+    await this.updateEmbeddedDocuments("Combatant", updates);
+    this.setupTurns();
+    await this.update({ turn: 0 });
+
+    const lines = this.turns.map(c => {
+      const label = c.isKO ? "<em>KO</em>" : describeChoice(c, this);
+      const init = c.roundBonus ? `${c.initiative} + ${c.roundBonus}` : (c.initiative ?? "—");
+      const prio = c.priority > 0 ? " ⚡" : c.priority < 0 ? " ⏳" : "";
+      return `<li><strong>${c.name}</strong>${prio} <span class="hk-detail">(init. ${init})</span> : ${label}</li>`;
+    });
+    await ChatMessage.implementation.create({
+      speaker: { alias: "Combat" },
+      content: `<div class="hk-card"><header><h3>Tour ${this.round} : actions annoncées</h3>
+        <span class="subtitle">Dans l'ordre de résolution</span></header><ol class="hk-announce">${lines.join("")}</ol></div>`
+    });
+  }
+
+  /* -------------------------------------------- */
 
   /**
    * Relance 1D10 entre combattants à égalité d'Initiative et de DEX, jusqu'à les départager.
@@ -122,16 +262,24 @@ export class HKCombat extends Combat {
 /** Départage les égalités une fois les jets d'initiative terminés (plusieurs jets simultanés). */
 const resolveTiesSoon = foundry.utils.debounce(combat => combat.resolveTies(), 250);
 
+/** Révèle dès que tout le monde est prêt. */
+const revealIfReady = foundry.utils.debounce(combat => {
+  if ( (combat.phase?.state === "planning") && combat.allReady ) combat.reveal();
+}, 300);
+
 function onUpdateCombatant(combatant, changed) {
-  if ( ("initiative" in changed) && game.user.isActiveGM ) resolveTiesSoon(combatant.combat);
+  if ( !game.user.isActiveGM ) return;
+  if ( "initiative" in changed ) resolveTiesSoon(combatant.combat);
+  if ( changed.flags?.[SCOPE]?.choice ) revealIfReady(combatant.combat);
 }
 
-/** Les priorités sont annoncées pour un tour : elles sont effacées au tour suivant. */
-function onUpdateCombat(combat, changed) {
-  if ( !("round" in changed) || !game.user.isActiveGM ) return;
-  const updates = combat.combatants.filter(c => c.priority !== 0)
-    .map(c => ({ _id: c.id, [`flags.${SCOPE}.priority`]: 0 }));
-  if ( updates.length ) combat.updateEmbeddedDocuments("Combatant", updates);
+/** Nouveau tour : phase de réflexion automatique, sinon simple remise à zéro des priorités. */
+async function onUpdateCombat(combat, changed) {
+  if ( !("round" in changed) || !game.user.isActiveGM || (combat.round < 1) ) return;
+  if ( game.settings.get(SCOPE, "autoPlanning") ) return combat.startPlanning();
+  const updates = combat.combatants.filter(c => c.priority || c.roundBonus)
+    .map(c => ({ _id: c.id, [`flags.${SCOPE}.priority`]: 0, [`flags.${SCOPE}.roundBonus`]: 0 }));
+  if ( updates.length ) return combat.updateEmbeddedDocuments("Combatant", updates);
 }
 
 /** Un Pokémon qui entre en cours de combat lance 1D10 + DEX pour rejoindre l'ordre (5.13). */
@@ -140,11 +288,22 @@ function onCreateCombatant(combatant, options, userId) {
   if ( combatant.initiative === null ) combatant.combat.rollInitiative([combatant.id]);
 }
 
-/** Bouton de priorité sur chaque ligne du suivi de combat. */
+/** Bouton de priorité sur chaque ligne du suivi de combat, et accès au panneau de combat. */
 function onRenderCombatTracker(app, html) {
   const combat = app.viewed;
-  if ( !combat ) return;
   const root = html instanceof HTMLElement ? html : html[0];
+  if ( combat && !root.querySelector(".hk-open-panel") ) {
+    const open = document.createElement("button");
+    open.type = "button";
+    open.className = "hk-open-panel";
+    open.innerHTML = `<i class="fa-solid fa-gamepad"></i> Panneau de combat`;
+    open.addEventListener("click", () => game.hakaiKousen.openCombatPanel());
+    const header = root.querySelector(".combat-tracker-header, header");
+    if ( header ) header.append(open);
+    else root.prepend(open);
+  }
+  if ( !combat ) return;
+
   for ( const li of root.querySelectorAll("[data-combatant-id]") ) {
     const combatant = combat.combatants.get(li.dataset.combatantId);
     if ( !combatant ) continue;
@@ -175,7 +334,24 @@ function onRenderCombatTracker(app, html) {
   }
 }
 
+/** Fin du chrono : le MJ actif révèle les choix, que son panneau soit ouvert ou non. */
+function watchPlanningTimers() {
+  const revealed = new Set();
+  setInterval(() => {
+    if ( !game.user.isActiveGM ) return;
+    for ( const combat of game.combats ) {
+      const phase = combat.phase;
+      if ( (phase?.state !== "planning") || Number.isNumeric(phase.paused) || (combat.remaining > 0) ) continue;
+      const key = `${combat.id}-${phase.round}-${phase.endsAt}`;
+      if ( revealed.has(key) ) continue;
+      revealed.add(key);
+      combat.reveal();
+    }
+  }, 500);
+}
+
 export function registerCombatHooks() {
+  Hooks.once("ready", watchPlanningTimers);
   Hooks.on("updateCombat", onUpdateCombat);
   Hooks.on("updateCombatant", onUpdateCombatant);
   Hooks.on("createCombatant", onCreateCombatant);

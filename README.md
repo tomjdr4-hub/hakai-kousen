@@ -34,6 +34,15 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - Compétences Pokémon (Standard / Intermédiaire / Rare, coût du niveau suivant, apprentissage /10), Talents, objets tenus.
 - **Initiative** (5.2, 5.3, 5.13) : 1D10 + DEX effective. À égalité, la meilleure DEX agit d'abord ; à DEX égale, le système relance 1D10 automatiquement et l'annonce dans le chat. Dans le suivi de combat, l'éclair ⚡ marque une action prioritaire pour le tour (switch, capacité prioritaire, Baie Chérim) et le clic droit « agit en dernier » : ces combattants passent avant (ou après) l'ordre normal, départagés entre eux par l'Initiative. Les priorités s'effacent à chaque nouveau tour. Un Pokémon ajouté en cours de combat lance son initiative tout seul.
 
+### Panneau de combat
+Bouton **Panneau de combat** dans le suivi de combat (il s'ouvre aussi tout seul à chaque tour).
+
+1. **Réflexion** (5.3) : au début de chaque tour, un chrono synchronisé (30 s par défaut, réglable) laisse chacun, MJ compris, choisir **en secret** l'action de ses Pokémon : attaque (grisée si l'ENE manque) et cible(s), changer de Pokémon, objet, Poké Ball, fuite, ou action libre. Les autres ne voient que « Prêt » ou « Réfléchit… ». Le MJ peut mettre en pause, ajouter 10 s ou révéler plus tôt ; si tout le monde est prêt, la révélation est immédiate.
+2. **Révélation** : les choix sont annoncés dans le chat, dans l'ordre de résolution. Le switch est prioritaire (5.13), les capacités « agit toujours en premier » ou « en dernier » et les bonus d'initiative du tour (Vive-Attaque +10, Vitesse Extrême +20…) réordonnent le tour.
+3. **Résolution** : au tour de chacun, **Exécuter** lance l'action choisie : test de Dressage si besoin (sous 8), jet de toucher sur la cible, dégâts, ENE ; switch du jeton sur la carte (les attaques visant le Pokémon rappelé touchent le remplaçant) ; objet décompté ; Poké Ball avec test de DEX puis jet de capture secret du MJ. Le tour passe ensuite au suivant.
+
+Réglages : durée de la réflexion, réflexion automatique à chaque tour, ouverture automatique du panneau.
+
 ### Objets
 Capacités, Compétences Pokémon, Talents et Objets d'inventaire.
 
@@ -48,7 +57,8 @@ Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature
 
 ## Pas encore automatisé
 
-- Capture en combat (seuil, modificateurs de Ball).
+- Capture : rareté, Aberrant / Dominant et Balls spéciales restent à ajouter par le MJ (rappel sur la carte).
+- Effets des objets utilisés en combat (soins…) : l'objet est décompté, l'effet est à appliquer sur la fiche.
 - Dégâts périodiques (Poison, Toxik, Brûlure), Gel, Sommeil, Confusion : les états existent sur les jetons mais leurs effets de tour sont à gérer à la main.
 - Compétences Augmentation / Résistance de type.
 - Pokédex au-delà de la 2e génération, compendiums d'objets (annexes).

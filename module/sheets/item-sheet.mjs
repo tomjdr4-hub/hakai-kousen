@@ -28,6 +28,7 @@ export class HKItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       config: HK,
       editable: this.isEditable,
       isType: { [item.type]: true },
+      priorities: { 1: "Agit toujours en premier", 0: "Normale", "-1": "Agit en dernier" },
       categories: {
         attack: HK.ATTACK_CATEGORIES,
         pokeskill: Object.fromEntries(Object.entries(HK.POKESKILL_CATEGORIES).map(([k, c]) => [k, `${c.label} (niveau × ${c.cost} XP)`])),

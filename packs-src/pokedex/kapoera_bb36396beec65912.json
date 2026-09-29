@@ -518,6 +518,8 @@
         "sure": false,
         "damage": "6",
         "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },
@@ -540,6 +542,8 @@
         "sure": false,
         "damage": "6",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>Si le lanceur est touché par une attaque avant d'utiliser cette technique, les dégâts de base de l'attaque sont doublés.</p>"
       },
@@ -562,6 +566,8 @@
         "sure": false,
         "damage": "",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
       },
@@ -584,6 +590,8 @@
         "sure": false,
         "damage": "4",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>Les dégâts de base de l'attaque sont de 8 si la cible est remplacée par un autre Pokémon durant ce tour, sinon ils sont de 4</p>"
       },
@@ -606,6 +614,8 @@
         "sure": false,
         "damage": "4",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 10,
         "xpCost": 0,
         "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
       },
@@ -628,6 +638,8 @@
         "sure": false,
         "damage": "",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>Protège de tout effet, direct ou indirect, d'une attaque de la cible. Si réutilisé, 50% de chances de réussite, puis 25% et enfin 12.5%. À la cinquième utilisation successive, Abri échouera systématiquement</p>"
       },
@@ -650,6 +662,8 @@
         "sure": false,
         "damage": "12",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>Baisse la Volonté et l'Endurance du lanceur de 1</p>"
       },
@@ -672,6 +686,8 @@
         "sure": false,
         "damage": "",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>Réduit la Vitalité de la cible à celle du lanceur. Echoue si le lanceur à plus de Vitalité que la cible.</p>"
       },

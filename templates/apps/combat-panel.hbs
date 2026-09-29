@@ -1,0 +1,159 @@
+<div class="hk-panel">
+  {{#if noCombat}}
+  <p class="hk-empty">Aucun combat en cours sur cette scène.</p>
+  {{else}}
+
+  {{!-- En-tête : tour, phase, chrono, contrôles du MJ --}}
+  <header class="hk-panel-header state-{{state}}">
+    <div class="hk-panel-title">
+      <span class="hk-round">Tour {{round}}</span>
+      <span class="hk-phase">{{phaseLabel}}</span>
+      {{#if planning}}<span class="hk-ready-count" data-tooltip="Choix validés">{{readyCount}} / {{activeCount}} prêts</span>{{/if}}
+    </div>
+    {{#if planning}}
+    <div class="hk-timer {{#if paused}}paused{{/if}}">
+      <div class="hk-timer-fill"></div>
+      <span class="hk-timer-text"></span>
+      {{#if paused}}<span class="hk-timer-paused"><i class="fa-solid fa-pause"></i> En pause</span>{{/if}}
+    </div>
+    {{/if}}
+    {{#if isGM}}
+    <div class="hk-gm-controls">
+      {{#if planning}}
+      <button type="button" data-action="togglePause"><i class="fa-solid {{#if paused}}fa-play{{else}}fa-pause{{/if}}"></i> {{#if paused}}Reprendre{{else}}Pause{{/if}}</button>
+      <button type="button" data-action="addTime"><i class="fa-solid fa-plus"></i> 10 s</button>
+      <button type="button" data-action="reveal"><i class="fa-solid fa-eye"></i> Révéler maintenant</button>
+      {{else}}
+      <button type="button" data-action="startPlanning"><i class="fa-solid fa-stopwatch"></i> {{#if started}}Relancer la réflexion{{else}}Commencer le combat{{/if}}</button>
+      {{/if}}
+    </div>
+    {{/if}}
+  </header>
+
+  <div class="hk-panel-body">
+    {{!-- Choix des actions --}}
+    {{#each mine as |m|}}
+    <section class="hk-choice {{#if m.ready}}ready{{/if}}" data-combatant="{{m.id}}">
+      <header>
+        <img src="{{m.img}}" alt="">
+        <strong>{{m.name}}</strong>
+        {{#if m.ene}}<span class="hk-chip">ENE {{m.ene}}</span>{{/if}}
+        {{#if m.ready}}<span class="hk-chip ok"><i class="fa-solid fa-check"></i> Prêt</span>{{/if}}
+      </header>
+
+      {{#if m.ko}}
+      <p class="hint">KO : pas d'action ce tour.</p>
+      {{else if m.ready}}
+      <p class="hk-summary">{{{m.summary}}}</p>
+      <button type="button" data-action="editChoice"><i class="fa-solid fa-pen"></i> Modifier</button>
+      {{else}}
+      <div class="hk-kinds">
+        {{#each m.kinds as |k|}}
+        <button type="button" class="{{#if k.active}}active{{/if}}" data-action="selectKind" data-kind="{{k.key}}"><i class="fa-solid {{k.icon}}"></i> {{k.label}}</button>
+        {{/each}}
+      </div>
+
+      {{#if m.is.attack}}
+      <div class="hk-options">
+        {{#each m.attacks as |a|}}
+        <button type="button" class="hk-attack {{#if a.selected}}active{{/if}}" data-action="selectAttack" data-item="{{a.id}}"
+          {{#unless a.affordable}}disabled data-tooltip="Pas assez d'Énergie"{{/unless}}>
+          <span class="name">{{a.name}}</span>
+          <span class="type-badge type-{{a.type}}">{{a.typeLabel}}</span>
+          <span class="cost">{{a.energy}} ENE</span>
+          {{#if (gt a.priority 0)}}<span class="hk-chip prio" data-tooltip="Agit toujours en premier">⚡</span>{{/if}}
+          {{#if (lt a.priority 0)}}<span class="hk-chip" data-tooltip="Agit en dernier">⏳</span>{{/if}}
+          {{#if a.initiativeBonus}}<span class="hk-chip prio">Init. +{{a.initiativeBonus}}</span>{{/if}}
+        </button>
+        {{else}}
+        <p class="hint">Aucune capacité sur la fiche.</p>
+        {{/each}}
+      </div>
+      {{> "hk-panel-targets" m}}
+      {{#if (lt m.dressage 8)}}<p class="hint">Dressage {{m.dressage}} : un test d'ordre (1D8) sera lancé avant l'attaque.</p>{{/if}}
+      {{/if}}
+
+      {{#if m.is.switch}}
+      <p class="hint">Action prioritaire : le Pokémon est rappelé avant les autres actions.</p>
+      <div class="hk-options">
+        {{#each m.team as |p|}}
+        <button type="button" class="hk-team {{#if p.selected}}active{{/if}}" data-action="selectSwitch" data-uuid="{{p.uuid}}">
+          <img src="{{p.img}}" alt=""> {{p.name}} <span class="cost">VIT {{p.vit}}/{{p.vitMax}}</span>
+        </button>
+        {{/each}}
+      </div>
+      {{/if}}
+
+      {{#if m.is.item}}
+      <div class="hk-fields">
+        <label>Objet
+          <select data-draft-field="itemId">
+            {{#each m.items as |i|}}<option value="{{i.id}}" {{#if i.selected}}selected{{/if}}>{{i.name}} (×{{i.quantity}})</option>{{/each}}
+          </select>
+        </label>
+        <label>Sur
+          <select data-draft-field="target">
+            <option value="">—</option>
+            {{#each m.allies as |a|}}<option value="{{a.uuid}}" {{#if a.selected}}selected{{/if}}>{{a.name}}</option>{{/each}}
+          </select>
+        </label>
+      </div>
+      {{/if}}
+
+      {{#if m.is.ball}}
+      <div class="hk-fields">
+        <label>Ball
+          <select data-draft-field="itemId">
+            {{#each m.balls as |i|}}<option value="{{i.id}}" {{#if i.selected}}selected{{/if}}>{{i.name}} (×{{i.quantity}})</option>{{/each}}
+          </select>
+        </label>
+      </div>
+      {{> "hk-panel-targets" m label="Pokémon sauvage visé"}}
+      {{/if}}
+
+      {{#if m.is.flee}}
+      <p class="hint">Combat officiel : le Dresseur est déclaré vaincu. Face à un adversaire hostile, abandonner ne l'oblige pas à s'arrêter.</p>
+      {{/if}}
+
+      {{#if m.is.other}}
+      <div class="hk-fields">
+        <label class="wide">Décrivez l'action
+          <input type="text" data-draft-field="note" value="{{m.note}}" placeholder="Protéger le Dresseur, manipuler le décor…">
+        </label>
+      </div>
+      {{/if}}
+
+      {{#if m.kinds.length}}
+      <button type="button" class="hk-validate" data-action="validateChoice" {{#unless m.complete}}disabled{{/unless}}>
+        <i class="fa-solid fa-check"></i> Valider mon choix</button>
+      {{/if}}
+      {{/if}}
+    </section>
+    {{/each}}
+
+    {{!-- Ordre du tour --}}
+    <h3>Ordre du tour</h3>
+    <ol class="hk-order">
+      {{#each order as |o|}}
+      <li class="{{#if o.current}}current{{/if}} {{#if o.ko}}ko{{/if}} {{#if o.done}}done{{/if}}" data-combatant="{{o.id}}">
+        <img src="{{o.img}}" alt="">
+        <div class="hk-order-info">
+          <span class="name">{{o.name}}
+            {{#if (gt o.priority 0)}}<span class="hk-chip prio" data-tooltip="Action prioritaire">⚡</span>{{/if}}
+            {{#if (lt o.priority 0)}}<span class="hk-chip" data-tooltip="Agit en dernier">⏳</span>{{/if}}
+          </span>
+          <span class="status">{{{o.status}}}</span>
+        </div>
+        <span class="hk-init" data-tooltip="Initiative{{#if o.bonus}} (dont +{{o.bonus}} ce tour){{/if}}">{{o.init}}</span>
+        {{#if o.canExecute}}
+        <button type="button" class="hk-execute" data-action="executeChoice"><i class="fa-solid fa-play"></i> Exécuter</button>
+        {{/if}}
+        {{#if o.canSkip}}
+        <button type="button" class="icon" data-action="skipTurn" data-tooltip="Passer au suivant"><i class="fa-solid fa-forward-step"></i></button>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+  {{/if}}
+</div>

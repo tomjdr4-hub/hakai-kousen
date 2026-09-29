@@ -1,0 +1,10 @@
+<div class="hk-targets">
+  <span class="hk-targets-label">{{#if label}}{{label}}{{else}}Cible(s){{/if}} :</span>
+  {{#each targets as |t|}}
+  <button type="button" class="hk-target {{#if t.selected}}active{{/if}} {{#if t.ko}}ko{{/if}}" data-action="toggleTarget" data-target="{{t.id}}">
+    <img src="{{t.img}}" alt=""> {{t.name}}
+  </button>
+  {{else}}
+  <span class="hint">Aucune cible disponible.</span>
+  {{/each}}
+</div>

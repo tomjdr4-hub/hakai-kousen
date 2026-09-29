@@ -679,6 +679,8 @@
         "sure": false,
         "damage": "7",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 10,
         "xpCost": 0,
         "description": "<p>La technique échoue si la cible ne prépare pas d'attaque durant ce tour. Le lanceur augmente son Initiative de 10 pendant ce tour</p>"
       },
@@ -701,6 +703,8 @@
         "sure": false,
         "damage": "7",
         "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>10% de chance d'apeurer la cible si le lanceur attaque en premier, sinon elle est paralysée.</p>"
       },
@@ -723,6 +727,8 @@
         "sure": false,
         "damage": "7",
         "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>10% de chance d'apeurer la cible si le lanceur attaque en premier, sinon elle est brûlée.</p>"
       },
@@ -745,6 +751,8 @@
         "sure": false,
         "damage": "7",
         "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>10% de chance d'apeurer la cible si le lanceur attaque en premier, sinon elle est gelée.</p>"
       },
@@ -767,6 +775,8 @@
         "sure": false,
         "damage": "2",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>La technique retire un dixième de la Vitalité maximale de la cible pendant 4 à 5 tours et l'empêche de se déplacer</p>"
       },
@@ -789,6 +799,8 @@
         "sure": false,
         "damage": "8",
         "effectChance": 20,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>20% de chance de baisser l'Endurance de la cible de 1</p>"
       },
@@ -811,6 +823,8 @@
         "sure": false,
         "damage": "2",
         "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>30% de chance d'empoisonner la cible</p>"
       },
@@ -833,6 +847,8 @@
         "sure": false,
         "damage": "",
         "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
@@ -855,6 +871,8 @@
         "sure": false,
         "damage": "6",
         "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
         "xpCost": 0,
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },

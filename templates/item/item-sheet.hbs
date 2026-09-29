@@ -15,6 +15,10 @@
       <label class="checkbox"><input type="checkbox" name="system.sure" {{checked system.sure}}> Ne peut pas échouer</label>
       <label data-tooltip="Formule, STAB inclus : 12, 2d6+4…">Dégâts <input type="text" name="system.damage" value="{{system.damage}}" placeholder="ex. 12 ou 2d6+4"></label>
       <label>Effet secondaire (%) <input type="number" name="system.effectChance" value="{{system.effectChance}}" min="0" max="100"></label>
+      <label>Priorité
+        <select name="system.priority" data-dtype="Number">{{selectOptions priorities selected=system.priority}}</select>
+      </label>
+      <label data-tooltip="Pour le tour où la capacité est choisie">Bonus d'initiative <input type="number" name="system.initiativeBonus" value="{{system.initiativeBonus}}"></label>
       <label>Coût d'apprentissage (XP) <input type="number" name="system.xpCost" value="{{system.xpCost}}" min="0"></label>
       {{/if}}
 

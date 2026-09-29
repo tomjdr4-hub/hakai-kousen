@@ -183,8 +183,10 @@ function effectivenessLabel(mult) {
  * Utilise une capacité : dépense l'ENE, jette le toucher contre chaque cible puis les dégâts.
  * @param {Actor} actor  Pokémon attaquant
  * @param {Item} item    Capacité
+ * @param {object} [options]
+ * @param {Array<Token|TokenDocument>} [options.targets]  Cibles ; par défaut les jetons ciblés par l'utilisateur
  */
-export async function rollAttack(actor, item) {
+export async function rollAttack(actor, item, { targets } = {}) {
   const atk = item.system;
   if ( actor.system.ene.value < atk.energy ) {
     ui.notifications.warn(`${actor.name} n'a pas assez d'Énergie pour utiliser ${item.name} (${atk.energy} ENE).`);
@@ -199,7 +201,7 @@ export async function rollAttack(actor, item) {
   const rolls = [];
   const rows = [];
 
-  const targets = Array.from(game.user.targets).filter(t => t.actor);
+  targets = (targets ?? Array.from(game.user.targets)).filter(t => t.actor);
   for ( const token of (targets.length ? targets : [null]) ) {
     const target = token?.actor ?? null;
     const lines = [];

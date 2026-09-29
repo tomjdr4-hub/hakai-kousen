@@ -2,7 +2,7 @@
   "id": "hakai-kousen",
   "title": "Hakai Kousen",
   "description": "Système non officiel pour le jeu de rôle communautaire Hakai Kousen (univers Pokémon). Dresseurs, Pokémon, Table unique, Dressage.",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "compatibility": {
     "minimum": "13",
     "verified": "14"
@@ -138,6 +138,17 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "tables",
+      "label": "Tables aléatoires",
+      "path": "packs/tables",
+      "type": "RollTable",
+      "system": "hakai-kousen",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -150,7 +161,8 @@
         "capacites",
         "talents",
         "objets",
-        "competences"
+        "competences",
+        "tables"
       ]
     }
   ],

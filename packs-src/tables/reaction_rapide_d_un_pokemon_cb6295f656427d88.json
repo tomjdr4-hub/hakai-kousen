@@ -1,0 +1,105 @@
+{
+  "_id": "cb6295f656427d88",
+  "_key": "!tables!cb6295f656427d88",
+  "name": "Réaction rapide d’un Pokémon",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Écran du MJ : le comportement doit rester cohérent avec l’espèce, l’environnement et la scène. Cette table sert seulement lorsque le MJ hésite.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "ec6edb662b7da206",
+      "_key": "!tables.results!cb6295f656427d88.ec6edb662b7da206",
+      "type": "text",
+      "name": "Fuit ou se cache",
+      "description": "Fuit ou se cache",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        2
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "3fab8f1e7f0c9b8e",
+      "_key": "!tables.results!cb6295f656427d88.3fab8f1e7f0c9b8e",
+      "type": "text",
+      "name": "Observe avec méfiance",
+      "description": "Observe avec méfiance",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        3,
+        4
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "b77880a7de4e621b",
+      "_key": "!tables.results!cb6295f656427d88.b77880a7de4e621b",
+      "type": "text",
+      "name": "Protège ressource, petit ou territoire",
+      "description": "Protège ressource, petit ou territoire",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        5,
+        6
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "fade66356cafcf74",
+      "_key": "!tables.results!cb6295f656427d88.fade66356cafcf74",
+      "type": "text",
+      "name": "Curieux, approche prudemment",
+      "description": "Curieux, approche prudemment",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        7,
+        8
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "91834112a86e5fed",
+      "_key": "!tables.results!cb6295f656427d88.91834112a86e5fed",
+      "type": "text",
+      "name": "En difficulté, cherche de l’aide",
+      "description": "En difficulté, cherche de l’aide",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "a4fc0d15ee5c9489",
+      "_key": "!tables.results!cb6295f656427d88.a4fc0d15ee5c9489",
+      "type": "text",
+      "name": "Situation particulière liée au lieu",
+      "description": "Situation particulière liée au lieu",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "flags": {}
+}

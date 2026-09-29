@@ -261,6 +261,8 @@ export class PokemonSheet extends HKActorSheet {
       rollDressage: PokemonSheet._onRollDressage,
       resetTemp: PokemonSheet._onResetTemp,
       learnFromCompendium: PokemonSheet._onLearnFromCompendium,
+      addPhase: PokemonSheet._onAddPhase,
+      removePhase: PokemonSheet._onRemovePhase,
       syncAttacks: PokemonSheet._onSyncAttacks
     }
   };
@@ -337,7 +339,35 @@ export class PokemonSheet extends HKActorSheet {
     context.learnByLevel = learnset.filter(e => e.source === "level");
     context.learnByCT = learnset.filter(e => e.source !== "level");
     context.speciesTalents = system.speciesData.talents.map(t => ({ ...t, known: known.has(t.name.toLowerCase()) }));
+    context.rarities = Object.fromEntries(Object.entries(HK.RARITIES).map(([k, r]) => [k, `${r.label} (capture ${r.capture ? `+${r.capture}` : "+0"})`]));
+    context.vulnerableChoices = { "": "—", ...Object.fromEntries(Object.entries(HK.STATUSES).filter(([k]) => k !== "blessure").map(([k, s]) => [k, s.label])) };
+    context.phases = system.boss.phases.map((p, index) => ({ ...p, index }));
     return context;
+  }
+
+  /** @override */
+  _onRender(context, options) {
+    super._onRender(context, options);
+    // Phases de Boss : la liste est enregistrée entière à chaque modification.
+    for ( const input of this.element.querySelectorAll("[data-phase-field]") ) {
+      input.addEventListener("change", event => {
+        event.stopPropagation();
+        const phases = foundry.utils.deepClone(this.actor.system.toObject().boss.phases);
+        const phase = phases[Number(input.closest("[data-phase-index]").dataset.phaseIndex)];
+        phase[input.dataset.phaseField] = input.type === "number" ? Number(input.value) : input.value;
+        this.actor.update({ "system.boss.phases": phases });
+      });
+    }
+  }
+
+  static async _onAddPhase() {
+    const phases = [...this.actor.system.toObject().boss.phases, { threshold: 50, label: "" }];
+    return this.actor.update({ "system.boss.phases": phases });
+  }
+
+  static async _onRemovePhase(event, target) {
+    const index = Number(target.closest("[data-phase-index]").dataset.phaseIndex);
+    return this.actor.update({ "system.boss.phases": this.actor.system.toObject().boss.phases.filter((p, i) => i !== index) });
   }
 
   /**

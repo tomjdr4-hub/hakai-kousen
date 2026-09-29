@@ -1100,3 +1100,16 @@
   flex-wrap: wrap;
   gap: 4px 12px;
 }
+
+/* ---------- Outils du MJ (onglet Acteurs) ---------- */
+
+.hk-directory-tools {
+  display: flex;
+  gap: 4px;
+  padding: 4px 8px;
+}
+
+.hk-directory-tools button {
+  flex: 1;
+  white-space: nowrap;
+}

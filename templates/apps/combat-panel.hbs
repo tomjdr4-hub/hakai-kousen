@@ -111,7 +111,7 @@
       <div class="hk-options">
         {{#each m.attacks as |a|}}
         <button type="button" class="hk-attack {{#if a.selected}}active{{/if}}" data-action="selectAttack" data-item="{{a.id}}"
-          {{#unless a.affordable}}disabled data-tooltip="Pas assez d'Énergie"{{/unless}}>
+          {{#unless a.affordable}}disabled data-tooltip="{{#if a.recharging}}Recharge : disponible au tour {{a.recharging}}{{else}}Pas assez d'Énergie{{/if}}"{{/unless}}>
           <span class="name">{{a.name}}</span>
           <span class="type-badge type-{{a.type}}">{{a.typeLabel}}</span>
           <span class="cost">{{a.energy}} ENE</span>

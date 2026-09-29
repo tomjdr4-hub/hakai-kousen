@@ -127,6 +127,24 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
           uuid: new StringField({ required: true, blank: true })
         }))
       }),
+      // Rencontre et capture (5.16 ; MJ 4.6, 5.1).
+      encounter: new SchemaField({
+        rarity: new StringField({ required: true, initial: "commun", choices: ["commun", "rare", "semi", "semiFinal"] }),
+        dominant: new BooleanField(),
+        aberrant: new BooleanField(),
+        shiny: new BooleanField(),
+        intention: new StringField({ required: true, blank: true }),
+        retreat: new StringField({ required: true, blank: true })
+      }),
+      // Boss (5.20) : immunisé à toutes les altérations sauf une, phases à des seuils de VIT.
+      boss: new SchemaField({
+        enabled: new BooleanField(),
+        vulnerable: new StringField({ required: true, blank: true }),
+        phases: new ArrayField(new SchemaField({
+          threshold: int(50, { min: 0, max: 100 }),
+          label: new StringField({ required: true, blank: true })
+        }))
+      }),
       description: new HTMLField(),
       mechanics: new HTMLField(),
       sessions: new HTMLField(),

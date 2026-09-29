@@ -41,6 +41,14 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - « Apeuré » disparaît à chaque nouveau tour de combat.
 - Le bouton ⟳ de l'onglet Capacités met à jour les capacités d'une fiche depuis le compendium.
 
+### Outils du MJ
+Boutons dans l'onglet Acteurs (MJ) : **Pokémon sauvages** et **Combat de Dresseurs**.
+
+- **Générateur de Pokémon sauvages** (MJ 5.1, 7.4) : espèce du Pokédex, nombre, profil (jeune, ordinaire, membre de meute, expérimenté, dominant), IV répartis au hasard, Nature au D100, Talent de l'espèce, Compétence initiale et attaque inhabituelle (1D10), rareté, Aberrant, chromatique, intention et condition de retrait ; placement sur la scène. Les manuels ne chiffrent pas les profils : les points d'IV proposés sont des valeurs par défaut modifiables.
+- **Rencontre et capture** (fiche Pokémon, onglet Description) : rareté, Dominant, Aberrant et chromatique, utilisés par le jet de capture (Dominant ou semi-légendaire final : Hyper Ball minimum).
+- **Boss** (5.20) : immunisé à toutes les altérations sauf une (l'échec est annoncé clairement aux joueurs), phases annoncées au MJ quand la VIT franchit un seuil, Actions de Boss avec recharge (1d4, 1d6) lancée ouvertement.
+- **Tables aléatoires** : Nature (D100), Compétence initiale, attaque inhabituelle, réaction rapide d'un Pokémon, Minage, et un exemple de table de zone (Grandes Oliveraies) à dupliquer.
+
 ### Panneau de combat
 Bouton **Panneau de combat** dans le suivi de combat (il s'ouvre aussi tout seul à chaque tour).
 

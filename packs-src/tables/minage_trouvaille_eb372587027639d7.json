@@ -1,0 +1,165 @@
+{
+  "_id": "eb372587027639d7",
+  "_key": "!tables!eb372587027639d7",
+  "name": "Minage : trouvaille",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Manuel du Joueur 6.7 : une session demande une demi-journée et produit une seule trouvaille. Niv. 1 : 1D100 · Niv. 2 : minimum 11 · Niv. 3 : 2D100, garder le meilleur · Niv. 4 : 2D100, minimum 21 · Niv. 5 : 3D100, minimum 31.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "bad93e47c8e0a4dc",
+      "_key": "!tables.results!eb372587027639d7.bad93e47c8e0a4dc",
+      "type": "text",
+      "name": "Gravats ou roche sans valeur notable",
+      "description": "Gravats ou roche sans valeur notable",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        10
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "2a56b08d43cb7caa",
+      "_key": "!tables.results!eb372587027639d7.2a56b08d43cb7caa",
+      "type": "text",
+      "name": "Minerais communs",
+      "description": "Minerais communs",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        11,
+        20
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "dad5c7e2aefbcc6b",
+      "_key": "!tables.results!eb372587027639d7.dad5c7e2aefbcc6b",
+      "type": "text",
+      "name": "Quartz, petits cristaux ou minéraux décoratifs",
+      "description": "Quartz, petits cristaux ou minéraux décoratifs",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        21,
+        30
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "02eb3759dee84b31",
+      "_key": "!tables.results!eb372587027639d7.02eb3759dee84b31",
+      "type": "text",
+      "name": "Minerais métalliques exploitables",
+      "description": "Minerais métalliques exploitables",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        31,
+        40
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "f960c3b8a25ca15c",
+      "_key": "!tables.results!eb372587027639d7.f960c3b8a25ca15c",
+      "type": "text",
+      "name": "Minerais ou cristaux de bonne qualité",
+      "description": "Minerais ou cristaux de bonne qualité",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        41,
+        50
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "e8d95507ffdfe690",
+      "_key": "!tables.results!eb372587027639d7.e8d95507ffdfe690",
+      "type": "text",
+      "name": "Matériaux recherchés par certains artisans",
+      "description": "Matériaux recherchés par certains artisans",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        51,
+        60
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "d7ec13ed11fd9202",
+      "_key": "!tables.results!eb372587027639d7.d7ec13ed11fd9202",
+      "type": "text",
+      "name": "Fragment de gemme ou matériau particulièrement intéressant",
+      "description": "Fragment de gemme ou matériau particulièrement intéressant",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        61,
+        69
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "b3d4ebc135ea0123",
+      "_key": "!tables.results!eb372587027639d7.b3d4ebc135ea0123",
+      "type": "text",
+      "name": "Pierre précieuse",
+      "description": "Pierre précieuse",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        70,
+        79
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "d4c9bed40539be45",
+      "_key": "!tables.results!eb372587027639d7.d4c9bed40539be45",
+      "type": "text",
+      "name": "Pierre évolutive brute à raffiner",
+      "description": "Pierre évolutive brute à raffiner",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        80,
+        89
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "5f657af0c79a5b74",
+      "_key": "!tables.results!eb372587027639d7.5f657af0c79a5b74",
+      "type": "text",
+      "name": "Fossile",
+      "description": "Fossile",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        90,
+        100
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "flags": {}
+}

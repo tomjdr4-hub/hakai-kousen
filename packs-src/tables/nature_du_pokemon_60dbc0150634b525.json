@@ -1,0 +1,390 @@
+{
+  "_id": "60dbc0150634b525",
+  "_key": "!tables!60dbc0150634b525",
+  "name": "Nature du Pokémon",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Manuel du Joueur 4.5 : les 25 Natures occupent chacune quatre résultats. +1 à la statistique favorisée, −1 à la défavorisée.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "634c4c19d6ffe007",
+      "_key": "!tables.results!60dbc0150634b525.634c4c19d6ffe007",
+      "type": "text",
+      "name": "Hardi (neutre)",
+      "description": "Hardi (neutre)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        4
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1368709e97871c31",
+      "_key": "!tables.results!60dbc0150634b525.1368709e97871c31",
+      "type": "text",
+      "name": "Solo (+FOR / −END)",
+      "description": "Solo (+FOR / −END)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        5,
+        8
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "7adb4d5d69114b4e",
+      "_key": "!tables.results!60dbc0150634b525.7adb4d5d69114b4e",
+      "type": "text",
+      "name": "Brave (+FOR / −DEX)",
+      "description": "Brave (+FOR / −DEX)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        9,
+        12
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "c665c4055968cb80",
+      "_key": "!tables.results!60dbc0150634b525.c665c4055968cb80",
+      "type": "text",
+      "name": "Rigide (+FOR / −CON)",
+      "description": "Rigide (+FOR / −CON)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        13,
+        16
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "a55ccfc0dd2d30fa",
+      "_key": "!tables.results!60dbc0150634b525.a55ccfc0dd2d30fa",
+      "type": "text",
+      "name": "Mauvais (+FOR / −VOL)",
+      "description": "Mauvais (+FOR / −VOL)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        17,
+        20
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "129750c769bb3a33",
+      "_key": "!tables.results!60dbc0150634b525.129750c769bb3a33",
+      "type": "text",
+      "name": "Assuré (+END / −FOR)",
+      "description": "Assuré (+END / −FOR)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        21,
+        24
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "04ac44d335ba0fbb",
+      "_key": "!tables.results!60dbc0150634b525.04ac44d335ba0fbb",
+      "type": "text",
+      "name": "Docile (neutre)",
+      "description": "Docile (neutre)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        25,
+        28
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "a371ccc1ae2c11be",
+      "_key": "!tables.results!60dbc0150634b525.a371ccc1ae2c11be",
+      "type": "text",
+      "name": "Relax (+END / −DEX)",
+      "description": "Relax (+END / −DEX)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        29,
+        32
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "7491f424c65d1a3b",
+      "_key": "!tables.results!60dbc0150634b525.7491f424c65d1a3b",
+      "type": "text",
+      "name": "Malin (+END / −CON)",
+      "description": "Malin (+END / −CON)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        33,
+        36
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "2b2fceaf573ba465",
+      "_key": "!tables.results!60dbc0150634b525.2b2fceaf573ba465",
+      "type": "text",
+      "name": "Lâche (+END / −VOL)",
+      "description": "Lâche (+END / −VOL)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        37,
+        40
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "f48d0a27dd2d8aff",
+      "_key": "!tables.results!60dbc0150634b525.f48d0a27dd2d8aff",
+      "type": "text",
+      "name": "Timide (+DEX / −FOR)",
+      "description": "Timide (+DEX / −FOR)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        41,
+        44
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1fb32c294d8ffc0a",
+      "_key": "!tables.results!60dbc0150634b525.1fb32c294d8ffc0a",
+      "type": "text",
+      "name": "Pressé (+DEX / −END)",
+      "description": "Pressé (+DEX / −END)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        45,
+        48
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "a394a76c4237a4b6",
+      "_key": "!tables.results!60dbc0150634b525.a394a76c4237a4b6",
+      "type": "text",
+      "name": "Sérieux (neutre)",
+      "description": "Sérieux (neutre)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        49,
+        52
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "f63ccd50bdc56a80",
+      "_key": "!tables.results!60dbc0150634b525.f63ccd50bdc56a80",
+      "type": "text",
+      "name": "Jovial (+DEX / −CON)",
+      "description": "Jovial (+DEX / −CON)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        53,
+        56
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "94386b99578a1e9d",
+      "_key": "!tables.results!60dbc0150634b525.94386b99578a1e9d",
+      "type": "text",
+      "name": "Naïf (+DEX / −VOL)",
+      "description": "Naïf (+DEX / −VOL)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        57,
+        60
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "fd3d13d7d4785ba6",
+      "_key": "!tables.results!60dbc0150634b525.fd3d13d7d4785ba6",
+      "type": "text",
+      "name": "Modeste (+CON / −FOR)",
+      "description": "Modeste (+CON / −FOR)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        61,
+        64
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "d0da334891cafad0",
+      "_key": "!tables.results!60dbc0150634b525.d0da334891cafad0",
+      "type": "text",
+      "name": "Doux (+CON / −END)",
+      "description": "Doux (+CON / −END)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        65,
+        68
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "ec3f564013506ef5",
+      "_key": "!tables.results!60dbc0150634b525.ec3f564013506ef5",
+      "type": "text",
+      "name": "Discret (+CON / −DEX)",
+      "description": "Discret (+CON / −DEX)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        69,
+        72
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "18a5ffdb7ca819ea",
+      "_key": "!tables.results!60dbc0150634b525.18a5ffdb7ca819ea",
+      "type": "text",
+      "name": "Pudique (neutre)",
+      "description": "Pudique (neutre)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        73,
+        76
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "a7a6bf9bf519b43d",
+      "_key": "!tables.results!60dbc0150634b525.a7a6bf9bf519b43d",
+      "type": "text",
+      "name": "Foufou (+CON / −VOL)",
+      "description": "Foufou (+CON / −VOL)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        77,
+        80
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "7b30622f6b743abe",
+      "_key": "!tables.results!60dbc0150634b525.7b30622f6b743abe",
+      "type": "text",
+      "name": "Calme (+VOL / −FOR)",
+      "description": "Calme (+VOL / −FOR)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        81,
+        84
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "2db61a2bb3263691",
+      "_key": "!tables.results!60dbc0150634b525.2db61a2bb3263691",
+      "type": "text",
+      "name": "Gentil (+VOL / −END)",
+      "description": "Gentil (+VOL / −END)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        85,
+        88
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "6031eb87e9fc05f5",
+      "_key": "!tables.results!60dbc0150634b525.6031eb87e9fc05f5",
+      "type": "text",
+      "name": "Malpoli (+VOL / −DEX)",
+      "description": "Malpoli (+VOL / −DEX)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        89,
+        92
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "2cce41de9914617c",
+      "_key": "!tables.results!60dbc0150634b525.2cce41de9914617c",
+      "type": "text",
+      "name": "Prudent (+VOL / −CON)",
+      "description": "Prudent (+VOL / −CON)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        93,
+        96
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "fbc122b0cc96b339",
+      "_key": "!tables.results!60dbc0150634b525.fbc122b0cc96b339",
+      "type": "text",
+      "name": "Bizarre (neutre)",
+      "description": "Bizarre (neutre)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        97,
+        100
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "flags": {}
+}

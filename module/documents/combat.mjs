@@ -321,9 +321,34 @@ function onUpdateCombatant(combatant, changed) {
   }
 }
 
+/** Mémorise la VIT avant modification, pour détecter le franchissement d'un seuil de phase. */
+function onPreUpdateActor(actor, changed, options) {
+  if ( foundry.utils.hasProperty(changed, "system.vit.value") ) options.hkPreviousVit = actor.system.vit.value;
+}
+
+/** Boss : annonce au MJ les phases dont le seuil de VIT vient d'être franchi (5.20). */
+async function announcePhases(actor, previous) {
+  const boss = actor.system.boss;
+  const max = actor.system.vit.max;
+  if ( !boss?.enabled || !max || !Number.isNumeric(previous) ) return;
+  const before = previous / max * 100;
+  const after = actor.system.vit.value / max * 100;
+  for ( const phase of boss.phases ) {
+    if ( (before > phase.threshold) && (after <= phase.threshold) ) {
+      await ChatMessage.implementation.create({
+        speaker: { alias: actor.name },
+        whisper: game.users.filter(u => u.isGM).map(u => u.id),
+        content: `<div class="hk-card"><header><h3>Nouvelle phase : ${actor.name}</h3>
+          <span class="subtitle">VIT ≤ ${phase.threshold} %</span></header><p>${Handlebars.escapeExpression(phase.label)}</p></div>`
+      });
+    }
+  }
+}
+
 /** KO : le combattant est marqué vaincu ; s'il se relève, il revient (MJ actif). */
-async function onUpdateActor(actor, changed) {
+async function onUpdateActor(actor, changed, options) {
   if ( !game.user.isActiveGM || !foundry.utils.hasProperty(changed, "system.vit.value") ) return;
+  await announcePhases(actor, options?.hkPreviousVit);
   const ko = actor.system.vit.value <= 0;
   for ( const combat of game.combats ) {
     const combatants = combat.combatants.filter(c => c.actor === actor);
@@ -432,6 +457,7 @@ export function registerCombatHooks() {
   Hooks.once("ready", watchPlanningTimers);
   Hooks.on("updateCombat", onUpdateCombat);
   Hooks.on("updateCombatant", onUpdateCombatant);
+  Hooks.on("preUpdateActor", onPreUpdateActor);
   Hooks.on("updateActor", onUpdateActor);
   Hooks.on("createCombatant", onCreateCombatant);
   Hooks.on("renderCombatTracker", onRenderCombatTracker);

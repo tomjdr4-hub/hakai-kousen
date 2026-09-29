@@ -242,6 +242,43 @@
     </ul>
     {{/if}}
 
+    <h3>Rencontre et capture</h3>
+    <div class="details-grid">
+      <label>Rareté <select name="system.encounter.rarity">{{selectOptions rarities selected=system.encounter.rarity}}</select></label>
+      <label class="checkbox"><input type="checkbox" name="system.encounter.dominant" {{checked system.encounter.dominant}}> Dominant (capture +2)</label>
+      <label class="checkbox"><input type="checkbox" name="system.encounter.aberrant" {{checked system.encounter.aberrant}}> Aberrant (capture +1)</label>
+      <label class="checkbox"><input type="checkbox" name="system.encounter.shiny" {{checked system.encounter.shiny}}> Chromatique</label>
+      <label class="wide">Intention <input type="text" name="system.encounter.intention" value="{{system.encounter.intention}}" placeholder="Protéger son nid, se nourrir, jouer…"></label>
+      <label class="wide">Condition de retrait <input type="text" name="system.encounter.retreat" value="{{system.encounter.retreat}}" placeholder="Fuit à ¼ de VIT, si le dominant tombe…"></label>
+    </div>
+
+    <h3>Boss</h3>
+    <div class="details-grid">
+      <label class="checkbox"><input type="checkbox" name="system.boss.enabled" {{checked system.boss.enabled}}> Ce Pokémon est un Boss</label>
+      {{#if system.boss.enabled}}
+      <label data-tooltip="Un Boss est immunisé à toutes les Altérations d'état sauf une">Seule altération efficace
+        <select name="system.boss.vulnerable">{{selectOptions vulnerableChoices selected=system.boss.vulnerable}}</select></label>
+      {{/if}}
+    </div>
+    {{#if system.boss.enabled}}
+    <header class="item-group-header">
+      <h3>Phases</h3>
+      {{#if editable}}<button type="button" class="icon" data-action="addPhase" data-tooltip="Ajouter une phase"><i class="fa-solid fa-plus"></i></button>{{/if}}
+    </header>
+    <ul class="hk-effects">
+      {{#each phases as |p|}}
+      <li data-phase-index="{{p.index}}">
+        <label>VIT ≤ <input type="number" data-phase-field="threshold" value="{{p.threshold}}" min="0" max="100"> %</label>
+        <input type="text" data-phase-field="label" value="{{p.label}}" placeholder="Nouveau comportement, terrain, Adds…" style="flex:1">
+        {{#if @root.editable}}<button type="button" class="icon" data-action="removePhase" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}
+      </li>
+      {{else}}
+      <li class="hint">Aucune phase : le MJ est prévenu quand la VIT franchit un seuil.</li>
+      {{/each}}
+    </ul>
+    <p class="hint">Actions de Boss : renseignez une « Recharge » (1d4, 1d6) sur la capacité.</p>
+    {{/if}}
+
     <h3>Description</h3>
     {{> "hk-editor" field="description" value=system.description enriched=enriched.description editable=editable uuid=actor.uuid}}
     <h3>Sessions de jeu</h3>

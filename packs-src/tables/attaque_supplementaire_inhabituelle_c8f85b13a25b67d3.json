@@ -1,0 +1,45 @@
+{
+  "_id": "c8f85b13a25b67d3",
+  "_key": "!tables!c8f85b13a25b67d3",
+  "name": "Attaque supplémentaire inhabituelle",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Manuel du Joueur 4.8.2 : le MJ choisit ensuite la source (CT, reproduction, Maître de Capacités…) puis l’attaque parmi celles compatibles avec l’espèce.</p>",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "c90e0a22612e09f1",
+      "_key": "!tables.results!c8f85b13a25b67d3.c90e0a22612e09f1",
+      "type": "text",
+      "name": "Aucune attaque supplémentaire.",
+      "description": "Aucune attaque supplémentaire.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        7
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "898b6aee7d63c404",
+      "_key": "!tables.results!c8f85b13a25b67d3.898b6aee7d63c404",
+      "type": "text",
+      "name": "Le Pokémon connaît une attaque supplémentaire.",
+      "description": "Le Pokémon connaît une attaque supplémentaire.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        8,
+        10
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "flags": {}
+}

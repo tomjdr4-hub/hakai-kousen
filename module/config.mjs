@@ -202,6 +202,26 @@ export const STATUSES = {
     rule: "Avec une VIT négative, perd 1 VIT par tour jusqu'à stabilisation ou soins. Mort à −10 VIT (humain : −5)." }
 };
 
+/** Rareté d'un Pokémon pour la capture (5.16). */
+export const RARITIES = {
+  commun: { label: "Commun / Peu commun", capture: 0 },
+  rare: { label: "Rare", capture: 1 },
+  semi: { label: "Semi-légendaire", capture: 2 },
+  semiFinal: { label: "Semi-légendaire au stade final", capture: 3 }
+};
+
+/**
+ * Profils du générateur de Pokémon sauvages (Manuel du MJ 5.1, 7.4). Les manuels ne chiffrent pas ces
+ * profils : les points d'IV proposés sont des valeurs par défaut, modifiables à chaque génération.
+ */
+export const WILD_PROFILES = {
+  jeune: { label: "Jeune", iv: 0 },
+  ordinaire: { label: "Ordinaire", iv: 4 },
+  meute: { label: "Membre de meute", iv: 4 },
+  experimente: { label: "Expérimenté", iv: 8 },
+  dominant: { label: "Dominant", iv: 12, dominant: true }
+};
+
 /** Nature du combat (Manuel du MJ 5.12). */
 export const COMBAT_TYPES = {
   officiel: { label: "Officiel", hint: "Arène, Ligue, tournoi : les sécurités arrêtent le Pokémon au KO, sans VIT négative. Seul un Rappel autorisé ramène un Pokémon KO." },
@@ -288,5 +308,5 @@ export function typeEffectiveness(attackType, defenderTypes) {
 export const HK = {
   ATTRIBUTES, POKEMON_STATS, SKILLS, KNOWLEDGES, ATTRIBUTE_DIFFICULTIES, POOL_DIFFICULTIES,
   TYPES, TYPE_CHART, NATURES, ATTACK_CATEGORIES, POKESKILL_CATEGORIES, GEAR_CATEGORIES,
-  STATUSES, COMBAT_TYPES, COMBAT_FORMATS, CURABLE, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
+  STATUSES, COMBAT_TYPES, COMBAT_FORMATS, CURABLE, RARITIES, WILD_PROFILES, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
 };

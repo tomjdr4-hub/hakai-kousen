@@ -22,6 +22,8 @@ export class AttackData extends foundry.abstract.TypeDataModel {
       priority: int(0, { min: -1, max: 1 }),
       // Bonus d'initiative pour le tour où la capacité est choisie (Vive-Attaque : +10).
       initiativeBonus: int(0),
+      // Recharge d'une Action de Boss (« 1d4 », « 1d6 ») : tours avant la prochaine utilisation.
+      recharge: new StringField({ required: true, blank: true }),
       xpCost: int(0, { min: 0 }),
       // Effets appliqués quand la capacité touche : modification de stat ou altération d'état.
       // `secondary` : soumis au jet de chance d'effet secondaire (effectChance).

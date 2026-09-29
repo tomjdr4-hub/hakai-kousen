@@ -11,6 +11,8 @@ import { HKItemSheet } from "./module/sheets/item-sheet.mjs";
 import * as rolls from "./module/dice/rolls.mjs";
 import { openCombatPanel, registerCombatPanelHooks } from "./module/apps/combat-panel.mjs";
 import { registerSocket } from "./module/combat/actions.mjs";
+import { openSetupDialog } from "./module/combat/setup.mjs";
+import { openWildGenerator } from "./module/apps/wild-generator.mjs";
 
 /** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
@@ -19,7 +21,7 @@ const STATUS_EFFECTS = [
 ];
 
 Hooks.once("init", () => {
-  game.hakaiKousen = { config: HK, rolls, openCombatPanel };
+  game.hakaiKousen = { config: HK, rolls, openCombatPanel, openSetupDialog, openWildGenerator };
   CONFIG.HK = HK;
 
   CONFIG.Actor.documentClass = HKActor;
@@ -79,3 +81,19 @@ Hooks.on("renderChatMessageHTML", rolls.onRenderChatMessage);
 registerCombatHooks();
 registerCombatPanelHooks();
 Hooks.once("ready", registerSocket);
+
+/** Onglet Acteurs : outils du MJ (combat de Dresseurs, Pokémon sauvages). */
+Hooks.on("renderActorDirectory", (app, html) => {
+  if ( !game.user.isGM ) return;
+  const root = html instanceof HTMLElement ? html : html[0];
+  if ( root.querySelector(".hk-directory-tools") ) return;
+  const tools = document.createElement("div");
+  tools.className = "hk-directory-tools";
+  tools.innerHTML = `<button type="button" data-hk-tool="wild"><i class="fa-solid fa-paw"></i> Pokémon sauvages</button>
+    <button type="button" data-hk-tool="battle"><i class="fa-solid fa-people-arrows"></i> Combat de Dresseurs</button>`;
+  tools.querySelector("[data-hk-tool=wild]").addEventListener("click", () => openWildGenerator());
+  tools.querySelector("[data-hk-tool=battle]").addEventListener("click", () => openSetupDialog());
+  const header = root.querySelector(".header-actions, .directory-header");
+  if ( header ) header.after(tools);
+  else root.prepend(tools);
+});

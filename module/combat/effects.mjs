@@ -181,6 +181,16 @@ export async function applyEffect(actor, effect) {
   // Altération d'état : immunités de type et un seul problème de statut majeur.
   const status = STATUSES[effect.status];
   if ( !status ) return;
+  // Boss : immunisé à toutes les altérations sauf une, annoncé clairement (5.20).
+  const boss = actor.system.boss;
+  if ( boss?.enabled && (effect.status !== boss.vulnerable) && (effect.status !== "blessure") ) {
+    return ChatMessage.implementation.create({
+      speaker: { alias: "Combat" },
+      content: `<div class="hk-card"><header><h3>${actor.name} est immunisé</h3></header>
+        <div class="hk-outcome failure">${status.label} n'a aucun effet sur ce Boss.</div>
+        <p class="hk-detail">L'action est perdue, mais l'information est fiable : ce n'est pas son point faible.</p></div>`
+    });
+  }
   if ( actor.statuses.has(effect.status) ) return ui.notifications.info(`${actor.name} est déjà atteint : ${status.label}.`);
   const types = [actor.system.types?.primary, actor.system.types?.secondary].filter(Boolean);
   const immune = types.find(t => status.immune.includes(t));

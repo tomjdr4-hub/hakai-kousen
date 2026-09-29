@@ -191,6 +191,12 @@ function effectivenessLabel(mult) {
  */
 export async function rollAttack(actor, item, { targets } = {}) {
   const atk = item.system;
+  const combat = game.combat?.started ? game.combat : null;
+  const readyRound = item.getFlag?.("hakai-kousen", "readyRound");
+  if ( combat && atk.recharge && Number.isNumeric(readyRound) && (readyRound > combat.round) ) {
+    ui.notifications.warn(`${item.name} se recharge : de nouveau disponible au tour ${readyRound}.`);
+    return null;
+  }
   if ( actor.system.ene.value < atk.energy ) {
     ui.notifications.warn(`${actor.name} n'a pas assez d'Énergie pour utiliser ${item.name} (${atk.energy} ENE).`);
     return null;
@@ -315,6 +321,15 @@ export async function rollAttack(actor, item, { targets } = {}) {
   }
 
   if ( atk.energy > 0 ) await actor.update({ "system.ene.value": actor.system.ene.value - atk.energy });
+
+  // Action de Boss : la recharge est lancée ouvertement pour que les joueurs anticipent (5.20).
+  if ( combat && atk.recharge && item.id ) {
+    const recharge = await new foundry.dice.Roll(atk.recharge).evaluate();
+    rolls.push(recharge);
+    const ready = combat.round + recharge.total + 1;
+    await item.setFlag("hakai-kousen", "readyRound", ready);
+    rows.push(`<p class="hk-detail">Recharge ${atk.recharge} : ${recharge.total} tour(s), de nouveau disponible au tour ${ready}.</p>`);
+  }
 
   const subtitle = [TYPES[atk.type], ATTACK_CATEGORIES[atk.category], atk.energy ? `${atk.energy} ENE` : null, atk.range]
     .filter(Boolean).join(" · ");

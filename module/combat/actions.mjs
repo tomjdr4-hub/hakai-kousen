@@ -7,6 +7,7 @@ import { rollAttack, rollDressage } from "../dice/rolls.mjs";
 import { applyDamage, handleEffectRequest, useItemOn } from "./effects.mjs";
 import { availableReserve, markUsed, storeDeployChoice } from "./setup.mjs";
 import { blockedReason } from "./turn-start.mjs";
+import { RARITIES as HK_RARITIES } from "../config.mjs";
 
 const SCOPE = "hakai-kousen";
 const SOCKET = `system.${SCOPE}`;
@@ -67,15 +68,20 @@ export function getActionOptions(combatant, combat) {
 
   if ( actor.type === "pokemon" ) {
     kinds.push("attack");
-    options.attacks = actor.itemTypes.attack.map(item => ({
+    options.attacks = actor.itemTypes.attack.map(item => {
+      const ready = item.getFlag("hakai-kousen", "readyRound");
+      const recharging = item.system.recharge && Number.isNumeric(ready) && (ready > combat.round);
+      return {
       id: item.id,
       name: item.name,
       type: item.system.type,
       energy: item.system.energy,
-      affordable: actor.system.ene.value >= item.system.energy,
+      recharging: recharging ? ready : null,
+      affordable: (actor.system.ene.value >= item.system.energy) && !recharging,
       priority: item.system.priority,
       initiativeBonus: item.system.initiativeBonus
-    }));
+      };
+    });
     // À court d'Énergie, il reste Lutte (4.17).
     if ( !options.attacks.some(a => a.affordable) ) {
       options.attacks.push({ id: STRUGGLE_ID, name: "Lutte", type: "", energy: 0, affordable: true, priority: 0, initiativeBonus: 0 });
@@ -300,6 +306,11 @@ async function throwBall(trainer, ball, target) {
   else mods.push(["Plus de 1/4 de VIT", 4]);
   if ( CAPTURE_STATUSES.some(s => actor.statuses.has(s)) ) mods.push(["Altération d'état", -1]);
   if ( actor.system.baby ) mods.push(["Bébé", -1]);
+  const encounter = actor.system.encounter ?? {};
+  const rarity = HK_RARITIES[encounter.rarity];
+  if ( rarity?.capture ) mods.push([rarity.label, rarity.capture]);
+  if ( encounter.aberrant ) mods.push(["Aberrant", 1]);
+  if ( encounter.dominant ) mods.push(["Dominant", 2]);
   const ballName = ball.name.toLowerCase();
   const master = ballName.includes("master");
   // Modificateur de la Ball (Annexe 3) ; une Ball spéciale ne compte que si sa condition est remplie.
@@ -309,8 +320,11 @@ async function throwBall(trainer, ball, target) {
   const threshold = 6 + mods.reduce((sum, [, v]) => sum + v, 0);
   const conditional = (ballMod && condition) ? threshold + ballMod : null;
 
+  // Dominant ou semi-légendaire au stade final : au minimum une Hyper Ball ou une Ball spéciale adaptée.
+  const demanding = encounter.dominant || (encounter.rarity === "semiFinal");
+  const strongEnough = master || (ballMod <= -2) || !!condition;
   const roll = await new foundry.dice.Roll("1d10").evaluate();
-  const captured = master || (roll.total >= threshold);
+  const captured = master || ((roll.total >= threshold) && (!demanding || strongEnough));
   const list = mods.map(([label, v]) => `<li>${label} : ${v >= 0 ? "+" : ""}${v}</li>`).join("");
   const data = {
     speaker: { alias: "Capture" },
@@ -320,8 +334,9 @@ async function throwBall(trainer, ball, target) {
       <p class="hk-detail">Seuil 6</p><ul>${list}</ul>
       <p>Seuil final : <strong>${threshold}</strong>${master ? " (Master Ball : capture automatique)" : ""} · 1D10 : <strong>${roll.total}</strong></p>
       ${conditional !== null ? `<p class="hk-detail">${ball.name} : ${ballMod} si « ${condition} » → seuil ${conditional}${roll.total >= conditional ? " : capturé si la condition est remplie" : ""}.</p>` : ""}
+      ${demanding && !strongEnough ? `<p class="hk-detail">Dominant ou semi-légendaire au stade final : il faut au moins une Hyper Ball ou une Ball spéciale adaptée.</p>` : ""}
       <div class="hk-outcome ${captured ? "success" : "failure"}">${captured ? "Capturé !" : "Le Pokémon s'échappe"}</div>
-      <p class="hk-detail">À ajouter par le MJ : Rare +1, Semi-légendaire +2 (+3 au stade final), Aberrant +1, Dominant +2, Ball spéciale dont la condition est remplie −3.</p></div>`
+      <p class="hk-detail">Rareté, Dominant et Aberrant viennent de la fiche du Pokémon (onglet Description).</p></div>`
   };
   ChatMessage.implementation.applyRollMode(data, "blindroll");
   await ChatMessage.implementation.create(data);

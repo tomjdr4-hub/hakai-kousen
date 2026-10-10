@@ -2,7 +2,7 @@ import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
 import { syncCounters, useItemOn } from "../combat/effects.mjs";
 import {
-  evolve, moveBetweenTeamAndPC, raiseRelation, spendEV, spendPokeskill, spendTrainerXP,
+  evolve, learnNextAttack, learnsetStatus, moveBetweenTeamAndPC, raiseRelation, spendEV, spendPokeskill, spendTrainerXP,
   toggleDynamax, toggleMega, toggleTera
 } from "../progression.mjs";
 
@@ -293,6 +293,7 @@ export class PokemonSheet extends HKActorSheet {
       rollDressage: PokemonSheet._onRollDressage,
       resetTemp: PokemonSheet._onResetTemp,
       learnFromCompendium: PokemonSheet._onLearnFromCompendium,
+      learnNext: PokemonSheet._onLearnNext,
       addPhase: PokemonSheet._onAddPhase,
       removePhase: PokemonSheet._onRemovePhase,
       spendEV: PokemonSheet._onSpendEV,
@@ -372,11 +373,11 @@ export class PokemonSheet extends HKActorSheet {
 
     // Capacités et Talents de l'espèce, marqués s'ils sont déjà connus.
     const known = new Set(this.actor.items.map(i => i.name.toLowerCase()));
-    const learnset = system.speciesData.learnset.map(entry => ({
+    // Par niveau : coût = niveau en XP Pokémon, dans l'ordre ; CT, œuf et tutorat : ajout direct.
+    context.learnByLevel = learnsetStatus(this.actor).map(e => ({ ...e, typeLabel: HK.TYPES[e.type], byLevel: true }));
+    context.learnByCT = system.speciesData.learnset.filter(e => e.source !== "level").map(entry => ({
       ...entry, typeLabel: HK.TYPES[entry.type], known: known.has(entry.name.toLowerCase())
     }));
-    context.learnByLevel = learnset.filter(e => e.source === "level");
-    context.learnByCT = learnset.filter(e => e.source !== "level");
     context.speciesTalents = system.speciesData.talents.map(t => ({ ...t, known: known.has(t.name.toLowerCase()) }));
     context.rarities = Object.fromEntries(Object.entries(HK.RARITIES).map(([k, r]) => [k, `${r.label} (capture ${r.capture ? `+${r.capture}` : "+0"})`]));
     context.vulnerableChoices = { "": "—", ...Object.fromEntries(Object.entries(HK.STATUSES).filter(([k]) => k !== "blessure").map(([k, s]) => [k, s.label])) };
@@ -462,6 +463,11 @@ export class PokemonSheet extends HKActorSheet {
     }
     await this.actor.updateEmbeddedDocuments("Item", updates);
     ui.notifications.info(`${updates.length} capacité(s) mise(s) à jour depuis le compendium.`);
+  }
+
+  /** Apprend la prochaine attaque par expérience (coût = niveau). */
+  static async _onLearnNext(event, target) {
+    return learnNextAttack(this.actor, Number(target.dataset.index));
   }
 
   /** Ajoute à la fiche une Capacité ou un Talent du compendium. */

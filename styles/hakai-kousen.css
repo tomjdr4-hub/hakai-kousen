@@ -1174,3 +1174,17 @@
 .hk-combat-panel .hk-target.opponent:not(.active) {
   border-color: rgba(198, 40, 40, 0.6);
 }
+
+.hakai-kousen .learn.locked {
+  opacity: 0.45;
+}
+
+.hakai-kousen .learn.next {
+  font-weight: bold;
+}
+
+.hakai-kousen .learn-cost {
+  font-size: 0.8em;
+  color: var(--hk-muted);
+  white-space: nowrap;
+}

@@ -86,6 +86,62 @@ export async function spendPokeskill(pokemon, item) {
 }
 
 /**
+ * Coût en XP Pokémon d'une attaque apprise par expérience : son niveau sur le site Hakai Kousen
+ * (règle confirmée par l'auteur). « Départ » et « Départ / N » sont connues dès le départ : 0 XP.
+ * @param {string} level
+ * @returns {number|null}
+ */
+export function levelCost(level) {
+  const text = String(level ?? "").trim();
+  if ( /^d[ée]part/i.test(text) ) return 0;
+  const n = parseInt(text.replace(/[^\d]/g, ""), 10);
+  return Number.isFinite(n) ? n : null;
+}
+
+/**
+ * État de la progression par expérience (4.7) : les attaques s'apprennent dans l'ordre des niveaux.
+ * Seules les attaques du plus petit niveau encore non appris sont disponibles ; les suivantes sont bloquées.
+ * @param {Actor} pokemon
+ */
+export function learnsetStatus(pokemon) {
+  const known = new Set(pokemon.itemTypes.attack.map(i => i.name.toLowerCase()));
+  const entries = pokemon.system.speciesData.learnset
+    .map((entry, index) => ({ ...entry, index, cost: levelCost(entry.level), known: known.has(entry.name.toLowerCase()) }))
+    .filter(e => e.source === "level");
+  const pending = entries.filter(e => !e.known && (e.cost !== null));
+  const next = pending.length ? Math.min(...pending.map(e => e.cost)) : null;
+  for ( const e of entries ) {
+    if ( e.known ) e.state = "known";
+    else if ( (e.cost === null) || (e.cost === next) ) e.state = "next";
+    else {
+      e.state = "locked";
+      e.blocker = pending.filter(p => p.cost < e.cost).map(p => p.name).slice(0, 3).join(", ");
+    }
+  }
+  return entries;
+}
+
+/**
+ * Apprend la prochaine attaque de la progression par expérience, en payant son niveau en XP Pokémon.
+ * @param {Actor} pokemon
+ * @param {number} index  Position de l'attaque dans la liste de l'espèce
+ */
+export async function learnNextAttack(pokemon, index) {
+  const entry = learnsetStatus(pokemon).find(e => e.index === index);
+  if ( !entry || entry.known ) return;
+  if ( entry.state === "locked" ) return ui.notifications.warn(`Apprenez d'abord : ${entry.blocker}.`);
+  const cost = entry.cost ?? 0;
+  const xp = pokemon.system.xp.value;
+  if ( xp < cost ) return ui.notifications.warn(`${entry.name} coûte ${cost} XP Pokémon (disponible : ${xp}).`);
+  const source = entry.uuid ? await fromUuid(entry.uuid) : null;
+  if ( !source ) return ui.notifications.warn(`« ${entry.name} » est introuvable dans les compendiums.`);
+  if ( cost && !await confirm("Apprendre une attaque", `${pokemon.name} apprend <strong>${entry.name}</strong> pour <strong>${cost} XP Pokémon</strong> ?`) ) return;
+  await pokemon.createEmbeddedDocuments("Item", [game.items.fromCompendium(source)]);
+  if ( cost ) await pokemon.update({ "system.xp.value": xp - cost });
+  return log(pokemon, "Nouvelle attaque", `${pokemon.name} apprend ${entry.name}${cost ? ` (−${cost} XP Pokémon)` : ""}.`);
+}
+
+/**
  * +1 Confiance ou +1 Obéissance pour 1 XP Dresseur, une fois par jour et par Pokémon ;
  * 2 XP pour un semi-légendaire (4.13, 4.15).
  */
@@ -198,6 +254,13 @@ export async function evolve(pokemon) {
   const index = await pack.getIndex();
   const text = pokemon.system.speciesData.evolutions.split("·").find(p => p.includes("Évolutions")) ?? "";
   const suggested = [...text.matchAll(/([^,:()]+?)\s*\(/g)].map(m => m[1].trim()).filter(n => index.find(e => e.name.toLowerCase() === n.toLowerCase()));
+  // Évolution par niveau : le niveau est le coût en XP Pokémon (« Herbizarre (niveau 16) » → 16 XP).
+  const levelXP = name => {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const condition = text.match(new RegExp(`${escaped}\\s*\\(([^)]*)\\)`, "i"))?.[1] ?? "";
+    return /^\s*(niveau|lvl|niv\.?)?\s*\d+\s*$/i.test(condition) ? parseInt(condition.replace(/[^\d]/g, ""), 10) : 0;
+  };
+  const defaultXP = suggested[0] ? levelXP(suggested[0]) : 0;
   const cats = Object.entries(EVOLUTION_CATEGORIES).map(([k, c]) => `<option value="${k}" ${k === "classic3" ? "selected" : ""}>${c.label}</option>`).join("");
   const values = await DialogV2.prompt({
     window: { title: `Évolution de ${pokemon.name}` },
@@ -209,8 +272,8 @@ export async function evolve(pokemon) {
       <div class="form-group"><label>Catégorie</label><div class="form-fields"><select name="category">${cats}</select></div></div>
       <div class="form-group"><label>Évolution</label><div class="form-fields"><select name="stage">
         <option value="first">1re évolution</option><option value="second">2e évolution</option></select></div></div>
-      <div class="form-group"><label>XP Pokémon dépensée</label><div class="form-fields"><input type="number" name="xp" value="0" min="0"></div>
-        <p class="hint">Coût indiqué sur le site Hakai Kousen pour les évolutions par niveau ; 0 pour une pierre, un échange…</p></div>`,
+      <div class="form-group"><label>XP Pokémon dépensée</label><div class="form-fields"><input type="number" name="xp" value="${defaultXP}" min="0"></div>
+        <p class="hint">Évolution par niveau : le niveau est le coût en XP Pokémon. 0 pour une pierre, un échange, le bonheur…</p></div>`,
     ok: { label: "Évoluer", callback: (e, b) => new foundry.applications.ux.FormDataExtended(b.form).object },
     rejectClose: false
   });

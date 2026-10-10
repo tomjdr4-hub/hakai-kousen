@@ -1,0 +1,596 @@
+{
+  "_id": "76868277d4f68e01",
+  "_key": "!actors!76868277d4f68e01",
+  "name": "Oyacata",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/977.png",
+  "system": {
+    "species": "Oyacata",
+    "number": "977",
+    "types": {
+      "primary": "eau",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 75,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 75,
+      "max": 75
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "12m / 220kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Grand Silure",
+      "ratio": "4♂:4♀",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Inconscient",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4599e4c9c7791001",
+          "hidden": false
+        },
+        {
+          "name": "Benêt",
+          "uuid": "Compendium.hakai-kousen.talents.Item.3b4e155497940d4a",
+          "hidden": false
+        },
+        {
+          "name": "Ignifu-Voile",
+          "uuid": "Compendium.hakai-kousen.talents.Item.0b402ccd6dced840",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Ultrason",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Pistolet à O",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+        },
+        {
+          "source": "level",
+          "level": "5",
+          "name": "Chatouille",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2e5ede441180d3c6"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Plongée",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.67a260f6f2d52bea"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Râle Mâle",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e53ce766892a820d"
+        },
+        {
+          "source": "level",
+          "level": "30",
+          "name": "Détrempage",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.543333cc8e9975a6"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Hydro-Queue",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.004bfe912db4dbef"
+        },
+        {
+          "source": "level",
+          "level": "45",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Plat du Jour",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e71b5791f5ab4fd8"
+        },
+        {
+          "source": "level",
+          "level": "55",
+          "name": "Tacle Lourd",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e73b27dec0301d88"
+        },
+        {
+          "source": "level",
+          "level": "60",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "level",
+          "level": "65",
+          "name": "Aquatacle",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.502fb05bc8ccfc14"
+        },
+        {
+          "source": "ct",
+          "level": "1",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Grimace",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cdc78c5f4b7d2d90"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Crocs Givre",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.613cbcf31e398417"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Douche Froide",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.82f95d89caa7e534"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "28",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "46",
+          "name": "Avalanche",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07f33c8c9fbb6e49"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "50",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "59",
+          "name": "Psykoud'Boul",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3dc275b4ddbfed87"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "77",
+          "name": "Cascade",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e84a7ee69a46a29"
+        },
+        {
+          "source": "ct",
+          "level": "84",
+          "name": "Trépignement",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36679d455551223"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "86",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "89",
+          "name": "Big Splash",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.19ca85954c047df6"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "108",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "ct",
+          "level": "110",
+          "name": "Aqua-Brèche",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc73336988b9f739"
+        },
+        {
+          "source": "ct",
+          "level": "121",
+          "name": "Tacle Lourd",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e73b27dec0301d88"
+        },
+        {
+          "source": "ct",
+          "level": "123",
+          "name": "Surf",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb0f90fd8d11d621"
+        },
+        {
+          "source": "ct",
+          "level": "142",
+          "name": "Hydrocanon",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
+        },
+        {
+          "source": "ct",
+          "level": "149",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "ct",
+          "level": "152",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "156",
+          "name": "Colère",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.127bcd846238aa6e"
+        },
+        {
+          "source": "ct",
+          "level": "163",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "171",
+          "name": "Téra-Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ceeab066ce92ebc0"
+        },
+        {
+          "source": "ct",
+          "level": "204",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "ct",
+          "level": "224",
+          "name": "Malédiction",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d25e0f961415259"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Mania",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.132d7c1c84ca7628"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Abîme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4dd4e0db6b762707"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Malédiction",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d25e0f961415259"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Bâillement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff3eb31692a1ffbc"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "8fc0458c72a2ef15",
+      "_key": "!actors.items!76868277d4f68e01.8fc0458c72a2ef15",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Ultrason",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Sonore",
+        "accuracy": 55,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Rend confus les Pokémons entendant les ultrasons</p>"
+      },
+      "_id": "ddd9da50fe9da691",
+      "_key": "!actors.items!76868277d4f68e01.ddd9da50fe9da691",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
+      }
+    },
+    {
+      "name": "Pistolet à O",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "1f89e35e8b1ae686",
+      "_key": "!actors.items!76868277d4f68e01.1f89e35e8b1ae686",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Oyacata",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/977.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 97700,
+  "flags": {}
+}

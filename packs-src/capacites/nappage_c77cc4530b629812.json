@@ -1,0 +1,50 @@
+{
+  "name": "Nappage",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "fee",
+    "category": "status",
+    "energy": 3,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "for",
+        "value": 2,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "con",
+        "value": 2,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente la Force et la Concentration du lanceur de 2.</p>"
+  },
+  "_id": "c77cc4530b629812",
+  "_key": "!items!c77cc4530b629812"
+}

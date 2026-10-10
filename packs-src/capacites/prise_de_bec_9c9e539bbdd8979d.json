@@ -1,0 +1,33 @@
+{
+  "name": "Prise de Bec",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "9",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Puissance doublée si le lanceur a une meilleure initiative que la cible.</p>"
+  },
+  "_id": "9c9e539bbdd8979d",
+  "_key": "!items!9c9e539bbdd8979d"
+}

@@ -1,0 +1,760 @@
+{
+  "_id": "8cf94aa3d3e5e534",
+  "_key": "!actors!8cf94aa3d3e5e534",
+  "name": "Terracool",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/948.png",
+  "system": {
+    "species": "Terracool",
+    "number": "948",
+    "types": {
+      "primary": "plante",
+      "secondary": "sol"
+    },
+    "stats": {
+      "dex": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 20,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 20,
+      "max": 20
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.9m / 33kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Champiméduse",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Terracruel (Niveau 30)",
+      "talents": [
+        {
+          "name": "Force Fongique",
+          "uuid": "Compendium.hakai-kousen.talents.Item.71c431bdd46156d1",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Ligotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
+        },
+        {
+          "source": "level",
+          "level": "4",
+          "name": "Vole-Vie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Para-Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Poudre Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1cce78dd59bb0228"
+        },
+        {
+          "source": "level",
+          "level": "12",
+          "name": "Ultrason",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Méga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39dbe83c4ff69d50"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Grincement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Châtiment",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9f36ad2a4ada2597"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "level",
+          "level": "36",
+          "name": "Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39f944f76a4dd8d9"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Croissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "level",
+          "level": "48",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "level",
+          "level": "52",
+          "name": "Mégafouet",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4fc913908d2390b8"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Ligotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
+        },
+        {
+          "source": "level",
+          "level": "4",
+          "name": "Vole-Vie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Para-Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Poudre Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1cce78dd59bb0228"
+        },
+        {
+          "source": "level",
+          "level": "12",
+          "name": "Ultrason",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Méga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39dbe83c4ff69d50"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Grincement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Châtiment",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9f36ad2a4ada2597"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "level",
+          "level": "36",
+          "name": "Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39f944f76a4dd8d9"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Croissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "level",
+          "level": "48",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "level",
+          "level": "52",
+          "name": "Mégafouet",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4fc913908d2390b8"
+        },
+        {
+          "source": "ct",
+          "level": "5",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Grimace",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cdc78c5f4b7d2d90"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Bombe Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Onde Folie",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.748f9819922a92df"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Désherbaffe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.05d820e63a67eee5"
+        },
+        {
+          "source": "ct",
+          "level": "29",
+          "name": "Châtiment",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9f36ad2a4ada2597"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Météores",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6c23e53f7221c798"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Feuille Magik",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.081ad0424847c4d3"
+        },
+        {
+          "source": "ct",
+          "level": "35",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "50",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "56",
+          "name": "Balle Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a621a562380eaa37"
+        },
+        {
+          "source": "ct",
+          "level": "62",
+          "name": "Tricherie",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.292261cf8660fd22"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "71",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "81",
+          "name": "Noeud Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1191fadeddf19bf0"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Picots",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2683d167fc820c58"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Pics Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac86a6f04610aebd"
+        },
+        {
+          "source": "ct",
+          "level": "93",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "111",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "ct",
+          "level": "119",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "133",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "ct",
+          "level": "137",
+          "name": "Champ Herbu",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4cfa7017f9e016eb"
+        },
+        {
+          "source": "ct",
+          "level": "148",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "159",
+          "name": "Tempête Verte",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.326129902454053b"
+        },
+        {
+          "source": "ct",
+          "level": "161",
+          "name": "Distorsion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bd9bc3f938bb0f2"
+        },
+        {
+          "source": "ct",
+          "level": "168",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "171",
+          "name": "Téra-Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ceeab066ce92ebc0"
+        },
+        {
+          "source": "ct",
+          "level": "175",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "181",
+          "name": "Sabotage",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84bb15506bf8b73f"
+        },
+        {
+          "source": "ct",
+          "level": "185",
+          "name": "Furie-Bond",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.93d9c4080d2549df"
+        },
+        {
+          "source": "ct",
+          "level": "194",
+          "name": "Gliss'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d1316f3ab550b49d"
+        },
+        {
+          "source": "ct",
+          "level": "202",
+          "name": "Balance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.026cd887d79e97fe"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Sabotage",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84bb15506bf8b73f"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Vampigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Voile Miroir",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poudre Fureur",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.45f7f09ac5697c60"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Tour Rapide",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bde285dc4b95bccd"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Chatouille",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2e5ede441180d3c6"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Acupression",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c3dfbd9318e2b0a4"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Coud'Boue",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "accuracy",
+            "target": "target",
+            "stat": "for",
+            "value": -10,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la précision de la cible de 10%</p>"
+      },
+      "_id": "e5c7d10c7215bf62",
+      "_key": "!actors.items!8cf94aa3d3e5e534.e5c7d10c7215bf62",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+      }
+    },
+    {
+      "name": "Ligotage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>La technique retire un dixième de la Vitalité maximale de la cible pendant 4 à 5 tours et l'empêche de se déplacer</p>"
+      },
+      "_id": "7556330710b4670d",
+      "_key": "!actors.items!8cf94aa3d3e5e534.7556330710b4670d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Terracool",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/948.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 94800,
+  "flags": {}
+}

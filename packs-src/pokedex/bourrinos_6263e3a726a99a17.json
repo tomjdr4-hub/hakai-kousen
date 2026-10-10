@@ -1,0 +1,641 @@
+{
+  "_id": "6263e3a726a99a17",
+  "_key": "!actors!6263e3a726a99a17",
+  "name": "Bourrinos",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/750.png",
+  "system": {
+    "species": "Bourrinos",
+    "number": "750",
+    "types": {
+      "primary": "sol",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 50,
+      "max": 50
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "2.5m / 920kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Cheval Trait",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Tiboudet (niveau 30)",
+      "talents": [
+        {
+          "name": "Tempo Perso",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4ffbf332a1f55ea4",
+          "hidden": false
+        },
+        {
+          "name": "Endurance",
+          "uuid": "Compendium.hakai-kousen.talents.Item.ab3fe2b0908029f3",
+          "hidden": false
+        },
+        {
+          "name": "Attention",
+          "uuid": "Compendium.hakai-kousen.talents.Item.133e36e00edd5524",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Lance-Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4c60af2787e0bf68"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Fertilisation",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8ee8ae2063af0732"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Double Pied",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.721f0257c6f48e99"
+        },
+        {
+          "source": "level",
+          "level": "17",
+          "name": "Écrasement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6ca336281faa2882"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Patience",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c200cc84b6537a05"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Cavalerie Lourde",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ef96e2e82dc8fab6"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "level",
+          "level": "34",
+          "name": "Tacle Lourd",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e73b27dec0301d88"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Riposte",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cf9e21282634231c"
+        },
+        {
+          "source": "level",
+          "level": "47",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "level",
+          "level": "60",
+          "name": "Ultimawashi",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f0594894af7ac099"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Surpuissance",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+        },
+        {
+          "source": "ct",
+          "level": "5",
+          "name": "Hurlement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20f285c61ba73967"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "26",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "37",
+          "name": "Tempête de Sable",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84cffef60c852b03"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Tomberoche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3cc0f4e67a1b01b6"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Balayette",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d65404b3571c13b"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "52",
+          "name": "Exploforce",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.458ca013e391b8ac"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "78",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ampleur",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e4df2a84ab6d3983"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Boue-Bombe",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ba82337c13bf5836"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Close Combat",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Coud'Boue",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "accuracy",
+            "target": "target",
+            "stat": "for",
+            "value": -10,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la précision de la cible de 10%</p>"
+      },
+      "_id": "6bc036bc908a6b38",
+      "_key": "!actors.items!6263e3a726a99a17.6bc036bc908a6b38",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+      }
+    },
+    {
+      "name": "Lance-Boue",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "status",
+        "energy": 3,
+        "range": "Zone Alliée",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Les dégâts causés par les attaques de type Électrique sont réduits de moitié</p>"
+      },
+      "_id": "b1fa03940c2d3b12",
+      "_key": "!actors.items!6263e3a726a99a17.b1fa03940c2d3b12",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4c60af2787e0bf68"
+      }
+    },
+    {
+      "name": "Fertilisation",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "con",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente la Force et la Concentration des Pokémon de type plante de 1</p>"
+      },
+      "_id": "c8ff20b22b112506",
+      "_key": "!actors.items!6263e3a726a99a17.c8ff20b22b112506",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8ee8ae2063af0732"
+      }
+    },
+    {
+      "name": "Piétisol",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cibles",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Dextérité de la cible de 1</p>"
+      },
+      "_id": "e2ee4dddd4c7de4c",
+      "_key": "!actors.items!6263e3a726a99a17.e2ee4dddd4c7de4c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+      }
+    },
+    {
+      "name": "Surpuissance",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Force et l'Endurance du lanceur de 2</p>"
+      },
+      "_id": "86cdc4494ed496dd",
+      "_key": "!actors.items!6263e3a726a99a17.86cdc4494ed496dd",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Bourrinos",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/750.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d60ac208992e6f5e",
+  "sort": 75000,
+  "flags": {}
+}

@@ -1,0 +1,261 @@
+{
+  "_id": "168389c7900f8918",
+  "_key": "!actors!168389c7900f8918",
+  "name": "Verpom",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/840.png",
+  "system": {
+    "species": "Verpom",
+    "number": "840",
+    "types": {
+      "primary": "dragon",
+      "secondary": "plante"
+    },
+    "stats": {
+      "dex": {
+        "base": 2,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 20,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 20,
+      "max": 20
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.2m / 0.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Nid Pomme",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Pomdrapi (pomme acidulée), Dratatin (pomme sucrée)",
+      "talents": [
+        {
+          "name": "Mûrissement",
+          "uuid": "Compendium.hakai-kousen.talents.Item.c0a9dcc6a43aab05",
+          "hidden": false
+        },
+        {
+          "name": "Gloutonnerie",
+          "uuid": "Compendium.hakai-kousen.talents.Item.33fd847c2e288d33",
+          "hidden": false
+        },
+        {
+          "name": "Pare-Balles",
+          "uuid": "Compendium.hakai-kousen.talents.Item.825f31e23dc444fa",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Étonnement",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39fac2a2d2151320"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Repli",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4ae1fadc61a7310e"
+        },
+        {
+          "source": "ct",
+          "level": "31",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Roulade",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b8e48db46c02b09"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Boul'Armure",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c44c3c95ab28c4f6"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Recyclage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b1741b17be7bc3b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Coup Bas",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b29cb93051fe05f0"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Draco-Météore",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33decfaa925942d1"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Gliss'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d1316f3ab550b49d"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Étonnement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "spectre",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "c3f78ff1b5894e93",
+      "_key": "!actors.items!168389c7900f8918.c3f78ff1b5894e93",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.39fac2a2d2151320"
+      }
+    },
+    {
+      "name": "Repli",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "6a9d5758c6feb59f",
+      "_key": "!actors.items!168389c7900f8918.6a9d5758c6feb59f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4ae1fadc61a7310e"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Verpom",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/840.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 84000,
+  "flags": {}
+}

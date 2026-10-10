@@ -1,0 +1,655 @@
+{
+  "_id": "8a5ffbc5df827018",
+  "_key": "!actors!8a5ffbc5df827018",
+  "name": "Arboliva",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/930.png",
+  "system": {
+    "species": "Arboliva",
+    "number": "930",
+    "types": {
+      "primary": "normal",
+      "secondary": "plante"
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 11,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 39,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 39,
+      "max": 39
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.4m / 48.2kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Olive",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Olivado (Niveau 35)",
+      "talents": [
+        {
+          "name": "Semencier",
+          "uuid": "Compendium.hakai-kousen.talents.Item.3d3d804a2122d04d",
+          "hidden": false
+        },
+        {
+          "name": "Récolte",
+          "uuid": "Compendium.hakai-kousen.talents.Item.8d450d0cf878ae59",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Voile Miroir",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Doux Parfum",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+        },
+        {
+          "source": "level",
+          "level": "5",
+          "name": "Vole-Vie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Croissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Tranch'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.31276e47df8bb63d"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Coup d'Main",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77d24ff6e7b3c1b5"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Méga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39dbe83c4ff69d50"
+        },
+        {
+          "source": "level",
+          "level": "23",
+          "name": "Champ Herbu",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4cfa7017f9e016eb"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "level",
+          "level": "34",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "level",
+          "level": "39",
+          "name": "Vampigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
+        },
+        {
+          "source": "level",
+          "level": "46",
+          "name": "Champlification",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.21019b1f7bcc4355"
+        },
+        {
+          "source": "level",
+          "level": "52",
+          "name": "Tempête Florale",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac51ac27df986a0d"
+        },
+        {
+          "source": "level",
+          "level": "58",
+          "name": "Danse Fleurs",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9adf74ddd90af832"
+        },
+        {
+          "source": "ct",
+          "level": "2",
+          "name": "Charme",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24aeca4c2c487d47"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Désherbaffe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.05d820e63a67eee5"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Météores",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6c23e53f7221c798"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Feuille Magik",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.081ad0424847c4d3"
+        },
+        {
+          "source": "ct",
+          "level": "43",
+          "name": "Dégommage",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4cc71c597f5635fb"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "49",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "56",
+          "name": "Balle Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a621a562380eaa37"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "71",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Métronome",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.90240ef40b877be1"
+        },
+        {
+          "source": "ct",
+          "level": "81",
+          "name": "Noeud Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1191fadeddf19bf0"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "111",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "ct",
+          "level": "117",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "ct",
+          "level": "119",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "122",
+          "name": "Encore",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24845b5f46799b70"
+        },
+        {
+          "source": "ct",
+          "level": "130",
+          "name": "Coup d'Main",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77d24ff6e7b3c1b5"
+        },
+        {
+          "source": "ct",
+          "level": "131",
+          "name": "Boule Pollen",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3b66e18a1c64a84"
+        },
+        {
+          "source": "ct",
+          "level": "133",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "ct",
+          "level": "137",
+          "name": "Champ Herbu",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4cfa7017f9e016eb"
+        },
+        {
+          "source": "ct",
+          "level": "152",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "159",
+          "name": "Tempête Verte",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.326129902454053b"
+        },
+        {
+          "source": "ct",
+          "level": "163",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "168",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "171",
+          "name": "Téra-Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ceeab066ce92ebc0"
+        },
+        {
+          "source": "ct",
+          "level": "190",
+          "name": "Lame Solaire",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5dfac2ee6055c4c3"
+        },
+        {
+          "source": "ct",
+          "level": "193",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "ct",
+          "level": "203",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "206",
+          "name": "Tempête Florale",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac51ac27df986a0d"
+        },
+        {
+          "source": "ct",
+          "level": "227",
+          "name": "Voix Envoûtante",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ce299dfaab791a65"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Synthèse",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.409b32b95b92290c"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Souvenir",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.34c4576efd3bf89e"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Voile Miroir",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Annule une attaque de catégorie spéciale envoyée par la cible et lui inflige le double des dégâts que le lanceur aurait reçu</p>"
+      },
+      "_id": "bb79bd401ea7e65b",
+      "_key": "!actors.items!8a5ffbc5df827018.bb79bd401ea7e65b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
+      }
+    },
+    {
+      "name": "Rune Protect",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone Alliée",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur et ses alliés sont protégés contre les changements de statut excepté ceux lancés par eux-même.</p>"
+      },
+      "_id": "591414a166923b5f",
+      "_key": "!actors.items!8a5ffbc5df827018.591414a166923b5f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+      }
+    },
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "10572e5244804e5c",
+      "_key": "!actors.items!8a5ffbc5df827018.10572e5244804e5c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Doux Parfum",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone Ennemie",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Dextérité pour l'esquive des Pokémons autour de 2</p>"
+      },
+      "_id": "9ac1061a88676648",
+      "_key": "!actors.items!8a5ffbc5df827018.9ac1061a88676648",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Arboliva",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/930.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 93000,
+  "flags": {}
+}

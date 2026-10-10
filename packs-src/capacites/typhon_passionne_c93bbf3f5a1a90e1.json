@@ -1,0 +1,33 @@
+{
+  "name": "Typhon Passionné",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "fee",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone Ennemie",
+    "accuracy": 80,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 30,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>30% de réduire la Force de 1 des cibles touchées</p>"
+  },
+  "_id": "c93bbf3f5a1a90e1",
+  "_key": "!items!c93bbf3f5a1a90e1"
+}

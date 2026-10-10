@@ -1,0 +1,42 @@
+{
+  "name": "Marteau de Glace",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "glace",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "dex",
+        "value": -1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Baisse la Dextérité du lanceur de 1</p>"
+  },
+  "_id": "b05f5832f626029c",
+  "_key": "!items!b05f5832f626029c"
+}

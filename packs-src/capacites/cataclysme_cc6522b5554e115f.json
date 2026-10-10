@@ -1,0 +1,33 @@
+{
+  "name": "Cataclysme",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "tenebres",
+    "category": "special",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Un cataclysme qui retire la moitié de la Vitalité courante de la cible</p>"
+  },
+  "_id": "cc6522b5554e115f",
+  "_key": "!items!cc6522b5554e115f"
+}

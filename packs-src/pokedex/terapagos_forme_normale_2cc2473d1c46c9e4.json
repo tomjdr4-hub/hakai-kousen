@@ -1,0 +1,692 @@
+{
+  "_id": "2cc2473d1c46c9e4",
+  "_key": "!actors!2cc2473d1c46c9e4",
+  "name": "Terapagos (Forme Normale)",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/1024.png",
+  "system": {
+    "species": "Terapagos (Forme Normale)",
+    "number": "1024",
+    "types": {
+      "primary": "normal",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 45,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 45,
+      "max": 45
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.2m / 6.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Téracristal",
+      "ratio": "4♂:4♀",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Téramorphose",
+          "uuid": "Compendium.hakai-kousen.talents.Item.fe3c7c7d89404acb",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Repli",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4ae1fadc61a7310e"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Triplattaque",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f46123c1448c1b94"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Tour Rapide",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bde285dc4b95bccd"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Pouvoir Antique",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38b859235965efcc"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Coup d'Boule",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ed397f377fd21210"
+        },
+        {
+          "source": "level",
+          "level": "30",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Tacle Lourd",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e73b27dec0301d88"
+        },
+        {
+          "source": "level",
+          "level": "60",
+          "name": "Pluie Térastrale",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.df20b57bbf9e2908"
+        },
+        {
+          "source": "level",
+          "level": "70",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "level",
+          "level": "80",
+          "name": "Poliroche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1e1e3ed61fe3dbb4"
+        },
+        {
+          "source": "level",
+          "level": "90",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "1",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "41",
+          "name": "Force Ajoutée",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2bde0e33a83b9486"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "49",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "50",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "59",
+          "name": "Psykoud'Boul",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3dc275b4ddbfed87"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "86",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "89",
+          "name": "Big Splash",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.19ca85954c047df6"
+        },
+        {
+          "source": "ct",
+          "level": "93",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "94",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "ct",
+          "level": "101",
+          "name": "Rayon Gemme",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.12fb519ecdd2b773"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "108",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "ct",
+          "level": "112",
+          "name": "Aurasphère",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d11dbea0fb11897"
+        },
+        {
+          "source": "ct",
+          "level": "115",
+          "name": "Draco-Choc",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb37897daab8eeb5"
+        },
+        {
+          "source": "ct",
+          "level": "116",
+          "name": "Piège de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d3f50f720c659fa7"
+        },
+        {
+          "source": "ct",
+          "level": "119",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "121",
+          "name": "Tacle Lourd",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e73b27dec0301d88"
+        },
+        {
+          "source": "ct",
+          "level": "123",
+          "name": "Surf",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb0f90fd8d11d621"
+        },
+        {
+          "source": "ct",
+          "level": "124",
+          "name": "Cryo-Pirouette",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4db4c21e76116b28"
+        },
+        {
+          "source": "ct",
+          "level": "125",
+          "name": "Lance-Flammes",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fa018f1ea089d75e"
+        },
+        {
+          "source": "ct",
+          "level": "126",
+          "name": "Tonnerre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.50acc837a4bc6bf5"
+        },
+        {
+          "source": "ct",
+          "level": "129",
+          "name": "Plénitude",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.589ef05475ec84e1"
+        },
+        {
+          "source": "ct",
+          "level": "133",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "ct",
+          "level": "135",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "ct",
+          "level": "147",
+          "name": "Éclair Fou",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.757870359bce05b0"
+        },
+        {
+          "source": "ct",
+          "level": "149",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "ct",
+          "level": "150",
+          "name": "Lame de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6dd10eb62469a53c"
+        },
+        {
+          "source": "ct",
+          "level": "152",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "162",
+          "name": "Bourdon",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.414616009ca87091"
+        },
+        {
+          "source": "ct",
+          "level": "163",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "165",
+          "name": "Boutefeu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.acc7f29ca193386e"
+        },
+        {
+          "source": "ct",
+          "level": "166",
+          "name": "Fatal-Foudre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.10f7e4a09629bf65"
+        },
+        {
+          "source": "ct",
+          "level": "168",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "172",
+          "name": "Hurlement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20f285c61ba73967"
+        },
+        {
+          "source": "ct",
+          "level": "175",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "178",
+          "name": "Gravité",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d2a640a3efd61b94"
+        },
+        {
+          "source": "ct",
+          "level": "180",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "189",
+          "name": "Tacle Feu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dcf578d7d51da264"
+        },
+        {
+          "source": "ct",
+          "level": "193",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "ct",
+          "level": "204",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "ct",
+          "level": "210",
+          "name": "Volt Assaut",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6b51efceb8c89185"
+        },
+        {
+          "source": "ct",
+          "level": "215",
+          "name": "Sable Ardent",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d98732173cd223f1"
+        },
+        {
+          "source": "ct",
+          "level": "220",
+          "name": "Laser Météore",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d2808c469356a7b"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Repli",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "99373000a8d1db13",
+      "_key": "!actors.items!2cc2473d1c46c9e4.99373000a8d1db13",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4ae1fadc61a7310e"
+      }
+    },
+    {
+      "name": "Triplattaque",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "8",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>20% d'infliger un statut à la cible. Sur 1d3 si 3 brûle la cible, 2 gèle la cible et sur 1 paralyse la cible</p>"
+      },
+      "_id": "292dac5e39d87443",
+      "_key": "!actors.items!2cc2473d1c46c9e4.292dac5e39d87443",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f46123c1448c1b94"
+      }
+    },
+    {
+      "name": "Tour Rapide",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cibles",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Annule les effets secondaires des attaques bloquantes, des attaques de pièges et de Vampigraine</p>"
+      },
+      "_id": "eecc6d07f2580162",
+      "_key": "!actors.items!2cc2473d1c46c9e4.eecc6d07f2580162",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.bde285dc4b95bccd"
+      }
+    },
+    {
+      "name": "Pouvoir Antique",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "special",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>10% de chance d'augmenter de 1 toutes les stats du lanceur</p>"
+      },
+      "_id": "699497d80b5bd9bf",
+      "_key": "!actors.items!2cc2473d1c46c9e4.699497d80b5bd9bf",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.38b859235965efcc"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Terapagos (Forme Normale)",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/1024.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 102400,
+  "flags": {}
+}

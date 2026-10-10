@@ -1,0 +1,42 @@
+{
+  "name": "Sable Ardent",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "sol",
+    "category": "special",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "7",
+    "effectChance": 30,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "brulure",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Dégèle le lanceur et la cible. 30% de chance de brûler la cible.</p>"
+  },
+  "_id": "d98732173cd223f1",
+  "_key": "!items!d98732173cd223f1"
+}

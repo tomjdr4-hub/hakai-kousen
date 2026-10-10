@@ -1,0 +1,33 @@
+{
+  "name": "Marteau Mastoc",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "acier",
+    "category": "physical",
+    "energy": 6,
+    "range": "cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "16",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Marteau Mastoc inflige d'importants dégâts, mais en contrepartie, le lanceur ne peut pas l'utiliser deux tours d'affilée.</p>"
+  },
+  "_id": "4f09e8e074b8b9cd",
+  "_key": "!items!4f09e8e074b8b9cd"
+}

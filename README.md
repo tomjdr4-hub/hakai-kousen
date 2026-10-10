@@ -112,9 +112,9 @@ Capacités, Compétences Pokémon, Talents et Objets d'inventaire.
 ### Compendiums
 Données issues du site [hakaikousen.fr](https://hakaikousen.fr) (onglet 7G, Système de base), sous licence [CC BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
-- **Pokédex** : les 721 Pokémon des six premières générations, plus 51 Méga-Évolutions et 51 formes régionales (Alola, Galar, Hisui), rangés par dossier, avec types, statistiques de base, talents, évolutions et capacités de départ. L'onglet Capacités de la fiche liste toute la progression (niveau, CT, œuf, tutorat) : un clic sur « + » ajoute la capacité depuis le compendium.
-- **Capacités** : toutes les capacités apprises par ces Pokémon (667).
-- **Talents** : tous leurs talents (205).
+- **Pokédex** : les 1025 Pokémon des neuf générations, plus 51 Méga-Évolutions et 52 formes régionales (Alola, Galar, Hisui, Paldea), rangés par dossier, avec types, statistiques de base, talents, évolutions et capacités de départ. L'onglet Capacités de la fiche liste toute la progression (niveau, CT, œuf, tutorat) : un clic sur « + » ajoute la capacité depuis le compendium.
+- **Capacités** : toutes les capacités apprises par ces Pokémon (797).
+- **Talents** : tous leurs talents (299).
 - **Objets** (Recueil des Annexes) : Baies, Poké Balls (modificateur de capture et condition), Soins (effets appliqués automatiquement), 358 CT (liées aux capacités), objets tenus (renforcement de Type), objets d'évolution, équipement, objets rares, entraînement.
 - **Compétences Pokémon** (Annexe 1) : Standard, Intermédiaires et Rares.
 
@@ -127,7 +127,6 @@ Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature
 - Objets sans effet de soin renseigné : l'objet est décompté, l'effet est à appliquer sur la fiche.
 - Sommeil : sa règle HK n'est pas dans les manuels, un rappel s'affiche au début du tour.
 - Effets conditionnels des capacités (« si… », « sinon… », Crocs Feu, Triplattaque…) et modifications de Précision : au MJ.
-- Pokédex au-delà de la 6e génération (en cours d'import).
 
 ## Développement
 

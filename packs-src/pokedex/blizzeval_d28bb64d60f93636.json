@@ -1,0 +1,550 @@
+{
+  "_id": "d28bb64d60f93636",
+  "_key": "!actors!d28bb64d60f93636",
+  "name": "Blizzeval",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/896.png",
+  "system": {
+    "species": "Blizzeval",
+    "number": "896",
+    "types": {
+      "primary": "glace",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 15,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 11,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 50,
+      "max": 50
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "2.2m / 800kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Cheval Rétif",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Blanche Ruade",
+          "uuid": "Compendium.hakai-kousen.talents.Item.845b280af613da87",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "6",
+          "name": "Mimi-Queue",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1f5c125910dfc85c"
+        },
+        {
+          "source": "level",
+          "level": "12",
+          "name": "Double Pied",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.721f0257c6f48e99"
+        },
+        {
+          "source": "level",
+          "level": "18",
+          "name": "Avalanche",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07f33c8c9fbb6e49"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Écrasement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6ca336281faa2882"
+        },
+        {
+          "source": "level",
+          "level": "30",
+          "name": "Tourmente",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5b7426a0822ec749"
+        },
+        {
+          "source": "level",
+          "level": "36",
+          "name": "Brume",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3254e6451b7f6ec7"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Chute Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b21ea23062636998"
+        },
+        {
+          "source": "level",
+          "level": "48",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "level",
+          "level": "54",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "level",
+          "level": "60",
+          "name": "Mania",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.132d7c1c84ca7628"
+        },
+        {
+          "source": "level",
+          "level": "66",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "level",
+          "level": "72",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "ct",
+          "level": "8",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "26",
+          "name": "Grimace",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cdc78c5f4b7d2d90"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "ct",
+          "level": "35",
+          "name": "Grêle",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c4ecad46104bed34"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "51",
+          "name": "Stalactite",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.03d4f021d2676e00"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "58",
+          "name": "Assurance",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f636e8cdadfa6d67"
+        },
+        {
+          "source": "ct",
+          "level": "64",
+          "name": "Avalanche",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07f33c8c9fbb6e49"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "81",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Aboiement",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06ae4791b97b969d"
+        },
+        {
+          "source": "ct",
+          "level": "96",
+          "name": "Estocorne",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ae144d6baa81d6d8"
+        },
+        {
+          "source": "ct",
+          "level": "98",
+          "name": "Trépignement",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36679d455551223"
+        },
+        {
+          "source": "other",
+          "level": "0",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "other",
+          "level": "1",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "other",
+          "level": "5",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "other",
+          "level": "6",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "other",
+          "level": "20",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "other",
+          "level": "24",
+          "name": "Colère",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.127bcd846238aa6e"
+        },
+        {
+          "source": "other",
+          "level": "26",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "other",
+          "level": "27",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "other",
+          "level": "28",
+          "name": "Mégacorne",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.44f17e805557bdca"
+        },
+        {
+          "source": "other",
+          "level": "32",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "other",
+          "level": "35",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "other",
+          "level": "37",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "other",
+          "level": "39",
+          "name": "Surpuissance",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+        },
+        {
+          "source": "other",
+          "level": "46",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "other",
+          "level": "53",
+          "name": "Close Combat",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
+        },
+        {
+          "source": "other",
+          "level": "79",
+          "name": "Tacle Lourd",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e73b27dec0301d88"
+        },
+        {
+          "source": "other",
+          "level": "94",
+          "name": "Cavalerie Lourde",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ef96e2e82dc8fab6"
+        },
+        {
+          "source": "other",
+          "level": "95",
+          "name": "Exécu-Son",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29cc02b745d3ebf6"
+        },
+        {
+          "source": "other",
+          "level": "99",
+          "name": "Big Splash",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.19ca85954c047df6"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Cent Rancunes",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a319493c877e3269"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "a132e66cf2a98a71",
+      "_key": "!actors.items!d28bb64d60f93636.a132e66cf2a98a71",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Danse Lames",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente la Force du lanceur de 2.</p>"
+      },
+      "_id": "9012a447493410ff",
+      "_key": "!actors.items!d28bb64d60f93636.9012a447493410ff",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Blizzeval",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/896.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 89600,
+  "flags": {}
+}

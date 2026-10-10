@@ -1,0 +1,58 @@
+{
+  "name": "Griffes Funestes",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "poison",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 50,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "poison",
+        "secondary": true
+      },
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "paralysie",
+        "secondary": true
+      },
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "sommeil",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>50% de chance d'endormir, paralyser ou empoisonner la cible</p>"
+  },
+  "_id": "b171cd7de98daab6",
+  "_key": "!items!b171cd7de98daab6"
+}

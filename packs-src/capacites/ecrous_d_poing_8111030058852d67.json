@@ -1,0 +1,42 @@
+{
+  "name": "Écrous d'Poing",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "acier",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "6",
+    "effectChance": 30,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "peur",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "2",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Touche 2 fois. 30% de chance d'apeurer la cible.</p>"
+  },
+  "_id": "8111030058852d67",
+  "_key": "!items!8111030058852d67"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Monte-Tension",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "special",
+    "energy": 2,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "7",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Puissance doublée si Champ Electrifié actif et cible au sol.</p>"
+  },
+  "_id": "aee725fcfcf87923",
+  "_key": "!items!aee725fcfcf87923"
+}

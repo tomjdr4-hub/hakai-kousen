@@ -1,0 +1,602 @@
+{
+  "_id": "aa9a54220fc7c392",
+  "_key": "!actors!aa9a54220fc7c392",
+  "name": "Têtampoule",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/938.png",
+  "system": {
+    "species": "Têtampoule",
+    "number": "938",
+    "types": {
+      "primary": "electrik",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 31,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 31,
+      "max": 31
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.3m / 0.4kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Électêtard",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Ampibidou (pierre foudre)",
+      "talents": [
+        {
+          "name": "Tempo Perso",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4ffbf332a1f55ea4",
+          "hidden": false
+        },
+        {
+          "name": "Statik",
+          "uuid": "Compendium.hakai-kousen.talents.Item.f77fe95843e4be22",
+          "hidden": false
+        },
+        {
+          "name": "Moiteur",
+          "uuid": "Compendium.hakai-kousen.talents.Item.44081832f3938984",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+        },
+        {
+          "source": "level",
+          "level": "11",
+          "name": "Pistolet à O",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+        },
+        {
+          "source": "level",
+          "level": "17",
+          "name": "Chargeur",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07b17584a71bddad"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Étincelle",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b06621772ad8753d"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Coup d'Jus",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f5fc13ca9d463898"
+        },
+        {
+          "source": "level",
+          "level": "36",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Champ Électrifié",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bd60926af684d356"
+        },
+        {
+          "source": "level",
+          "level": "45",
+          "name": "Coup Bas",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b29cb93051fe05f0"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Élecanon",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.69deff43fbaadba7"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+        },
+        {
+          "source": "level",
+          "level": "11",
+          "name": "Pistolet à O",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+        },
+        {
+          "source": "level",
+          "level": "17",
+          "name": "Chargeur",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07b17584a71bddad"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Étincelle",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b06621772ad8753d"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Coup d'Jus",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f5fc13ca9d463898"
+        },
+        {
+          "source": "level",
+          "level": "36",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Champ Électrifié",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bd60926af684d356"
+        },
+        {
+          "source": "level",
+          "level": "45",
+          "name": "Coup Bas",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b29cb93051fe05f0"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Élecanon",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.69deff43fbaadba7"
+        },
+        {
+          "source": "ct",
+          "level": "5",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Bombe Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Onde Folie",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.748f9819922a92df"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Douche Froide",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.82f95d89caa7e534"
+        },
+        {
+          "source": "ct",
+          "level": "23",
+          "name": "Rayon Chargé",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d0a5a407fb90519"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Météores",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6c23e53f7221c798"
+        },
+        {
+          "source": "ct",
+          "level": "35",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Change Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6578da6e5b0028a5"
+        },
+        {
+          "source": "ct",
+          "level": "50",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "72",
+          "name": "Boule Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d8167dc2b7baffa"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "82",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "96",
+          "name": "Ondes Étranges",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c4154d4ca7f3b5a"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "117",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "ct",
+          "level": "126",
+          "name": "Tonnerre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.50acc837a4bc6bf5"
+        },
+        {
+          "source": "ct",
+          "level": "136",
+          "name": "Champ Électrifié",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bd60926af684d356"
+        },
+        {
+          "source": "ct",
+          "level": "147",
+          "name": "Éclair Fou",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.757870359bce05b0"
+        },
+        {
+          "source": "ct",
+          "level": "166",
+          "name": "Fatal-Foudre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.10f7e4a09629bf65"
+        },
+        {
+          "source": "ct",
+          "level": "171",
+          "name": "Téra-Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ceeab066ce92ebc0"
+        },
+        {
+          "source": "ct",
+          "level": "173",
+          "name": "Chargeur",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07b17584a71bddad"
+        },
+        {
+          "source": "ct",
+          "level": "193",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "ct",
+          "level": "209",
+          "name": "Ocroupi",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3a4ccbe08a150112"
+        },
+        {
+          "source": "ct",
+          "level": "211",
+          "name": "Toile Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b2e744ac5a3faff7"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ocroupi",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3a4ccbe08a150112"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Détrempage",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.543333cc8e9975a6"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Parabocharge",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c085b72df7ab913"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "f8342c0ec05dfe28",
+      "_key": "!actors.items!aa9a54220fc7c392.f8342c0ec05dfe28",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Coud'Boue",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "accuracy",
+            "target": "target",
+            "stat": "for",
+            "value": -10,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la précision de la cible de 10%</p>"
+      },
+      "_id": "a83717084a34fe4c",
+      "_key": "!actors.items!aa9a54220fc7c392.a83717084a34fe4c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Têtampoule",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/938.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 93800,
+  "flags": {}
+}

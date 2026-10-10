@@ -1,0 +1,42 @@
+{
+  "name": "Ballon Brûlant",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "physical",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 10,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "brulure",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>10% de chance de brûler la cible</p>"
+  },
+  "_id": "79fd1fd88d27087d",
+  "_key": "!items!79fd1fd88d27087d"
+}

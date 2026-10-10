@@ -1,0 +1,768 @@
+{
+  "_id": "7040d51d258b3aaa",
+  "_key": "!actors!7040d51d258b3aaa",
+  "name": "Zamazenta (Héros Aguerri)",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/889.png",
+  "system": {
+    "species": "Zamazenta (Héros Aguerri)",
+    "number": "889",
+    "types": {
+      "primary": "combat",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 14,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 46,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 46,
+      "max": 46
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "2.9m / 210kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Valeureux",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Égide Inflexible",
+          "uuid": "Compendium.hakai-kousen.talents.Item.5b5be0f671c8dfbd",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Fulmifer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.61365a8dc5aaf4c9"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Garde Large",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b396ac7705a3adf"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Griffe Acier",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e86fea796cbc3f6"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Grondement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f9132f064fdac85b"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Morsure",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vive-Attaque",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+        },
+        {
+          "source": "level",
+          "level": "11",
+          "name": "Tranche",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1402f0af1eda8d1a"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "level",
+          "level": "33",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Affilage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.16e047af92a7a460"
+        },
+        {
+          "source": "level",
+          "level": "55",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "level",
+          "level": "66",
+          "name": "Pouvoir Lunaire",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e9bc0684b53502d7"
+        },
+        {
+          "source": "level",
+          "level": "77",
+          "name": "Close Combat",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
+        },
+        {
+          "source": "level",
+          "level": "88",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "8",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Tunnel",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.46716254e99dfa8d"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "19",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "26",
+          "name": "Grimace",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cdc78c5f4b7d2d90"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "40",
+          "name": "Météores",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6c23e53f7221c798"
+        },
+        {
+          "source": "ct",
+          "level": "41",
+          "name": "Coup d'Main",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77d24ff6e7b3c1b5"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Vendetta",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48128d6d1304afbc"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Possessif",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7026c410e6ac9943"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "60",
+          "name": "Permuforce",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.78cb58097c7449a3"
+        },
+        {
+          "source": "ct",
+          "level": "61",
+          "name": "Permugarde",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.778fa69be45c089a"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Crocs Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4f52bb4f96dd8c4b"
+        },
+        {
+          "source": "ct",
+          "level": "67",
+          "name": "Crocs Givre",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.613cbcf31e398417"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Crocs Feu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.37c59fa3b43d0eff"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Vengeance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b81a288b1347027"
+        },
+        {
+          "source": "ct",
+          "level": "84",
+          "name": "Plumo-Queue",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bc4927e9095500fb"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Aboiement",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06ae4791b97b969d"
+        },
+        {
+          "source": "other",
+          "level": "12",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "other",
+          "level": "13",
+          "name": "Puissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.668e21d201c53e72"
+        },
+        {
+          "source": "other",
+          "level": "20",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "other",
+          "level": "21",
+          "name": "Contre",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.225ccdcd887056bf"
+        },
+        {
+          "source": "other",
+          "level": "26",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "other",
+          "level": "27",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "other",
+          "level": "31",
+          "name": "Queue de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24fdee332526d283"
+        },
+        {
+          "source": "other",
+          "level": "32",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "other",
+          "level": "42",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "other",
+          "level": "46",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "other",
+          "level": "53",
+          "name": "Close Combat",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb2cd8173a1253b2"
+        },
+        {
+          "source": "other",
+          "level": "64",
+          "name": "Exploforce",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.458ca013e391b8ac"
+        },
+        {
+          "source": "other",
+          "level": "70",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "other",
+          "level": "74",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "other",
+          "level": "85",
+          "name": "Rengorgement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.89edaee5f748dae0"
+        },
+        {
+          "source": "other",
+          "level": "86",
+          "name": "Éclair Fou",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.757870359bce05b0"
+        },
+        {
+          "source": "other",
+          "level": "90",
+          "name": "Câlinerie",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4ba2d2021f0e0e15"
+        },
+        {
+          "source": "other",
+          "level": "92",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "other",
+          "level": "97",
+          "name": "Psycho-Croc",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb863e87e8d66b89"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Métalaser",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b0b41444eb607df0"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Coaching",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d83ace6286e9fe12"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Fulmifer",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "acier",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur attaque le dernier ennemi l'ayant blessé durant le même tour en lui infligeant 1,5 fois les dégâts de l'attaque adverse.</p>"
+      },
+      "_id": "7a8c8c3bfaacb453",
+      "_key": "!actors.items!7040d51d258b3aaa.7a8c8c3bfaacb453",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.61365a8dc5aaf4c9"
+      }
+    },
+    {
+      "name": "Garde Large",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "status",
+        "energy": 3,
+        "range": "Tous les Alliés",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 30,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Protège toute l'équipe des attaques ciblant toute l'équipe pour un tour. Au premier tour la Précision est de 100%, au second 50% puis 25% puis 12,5% et échoue au 5ème tour. Le lanceur augmente son Initiative de 30 pendant ce tour.</p>"
+      },
+      "_id": "c8ea0e91f61e49a6",
+      "_key": "!actors.items!7040d51d258b3aaa.c8ea0e91f61e49a6",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0b396ac7705a3adf"
+      }
+    },
+    {
+      "name": "Griffe Acier",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "acier",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 1,
+            "status": "",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>10% de chance d'augmenter la Force du lanceur de 1</p>"
+      },
+      "_id": "a79d4dfeae90970d",
+      "_key": "!actors.items!7040d51d258b3aaa.a79d4dfeae90970d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.9e86fea796cbc3f6"
+      }
+    },
+    {
+      "name": "Grondement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente la Force du lanceur de 1</p>"
+      },
+      "_id": "5bcab2a0ab793ca5",
+      "_key": "!actors.items!7040d51d258b3aaa.5bcab2a0ab793ca5",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f9132f064fdac85b"
+      }
+    },
+    {
+      "name": "Morsure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "a014207438b2d181",
+      "_key": "!actors.items!7040d51d258b3aaa.a014207438b2d181",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+      }
+    },
+    {
+      "name": "Vive-Attaque",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 10,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
+      },
+      "_id": "5660ff1816cd132f",
+      "_key": "!actors.items!7040d51d258b3aaa.5660ff1816cd132f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Zamazenta (Héros Aguerri)",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/889.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 88900,
+  "flags": {}
+}

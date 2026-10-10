@@ -1,0 +1,33 @@
+{
+  "name": "Vindicte",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "tenebres",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur contre-attaque avec un coup infligeant des dégâts égaux à 1,5 fois ceux de la dernière capacité qui l'a blessé durant le tour en cours, sans tenir compte du type de ce dernier. Echoue si c'est un clone qui a pris les dégâts.</p>"
+  },
+  "_id": "796721b05dfc191f",
+  "_key": "!items!796721b05dfc191f"
+}

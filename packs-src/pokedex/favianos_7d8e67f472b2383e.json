@@ -1,0 +1,697 @@
+{
+  "_id": "7d8e67f472b2383e",
+  "_key": "!actors!7d8e67f472b2383e",
+  "name": "Favianos",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/1016.png",
+  "system": {
+    "species": "Favianos",
+    "number": "1016",
+    "types": {
+      "primary": "fee",
+      "secondary": "poison"
+    },
+    "stats": {
+      "dex": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 44,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 44,
+      "max": 44
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.4m / 30.1kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Serviteur",
+      "ratio": "♂ uniquement",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Chaîne Toxique",
+          "uuid": "Compendium.hakai-kousen.talents.Item.80aa7c47e7836bce",
+          "hidden": false
+        },
+        {
+          "name": "Technicien",
+          "uuid": "Compendium.hakai-kousen.talents.Item.e11a66a59c7920ed",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Double Pied",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.721f0257c6f48e99"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Picpic",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62eb0d91ca03f9c4"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Gaz Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0dc5cbb5a724259a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Voix Enjôleuse",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.577f1e0125f2063a"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Vive-Attaque",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Cru-Ailes",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f0c659ba13a432e8"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Poison Croix",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be7f935df560d09f"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Plumo-Queue",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bc4927e9095500fb"
+        },
+        {
+          "source": "level",
+          "level": "48",
+          "name": "Baston",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.503a833db095769f"
+        },
+        {
+          "source": "level",
+          "level": "56",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "level",
+          "level": "56",
+          "name": "Flatterie",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c3674ee56f50ca09"
+        },
+        {
+          "source": "level",
+          "level": "64",
+          "name": "Atterrissage",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bcaec9bd64bd171"
+        },
+        {
+          "source": "level",
+          "level": "72",
+          "name": "Pouvoir Lunaire",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e9bc0684b53502d7"
+        },
+        {
+          "source": "ct",
+          "level": "1",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "ct",
+          "level": "2",
+          "name": "Charme",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24aeca4c2c487d47"
+        },
+        {
+          "source": "ct",
+          "level": "4",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Bombe Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+        },
+        {
+          "source": "ct",
+          "level": "14",
+          "name": "Acrobatie",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.380b825439a68216"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Larcin",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb080392b1e63836"
+        },
+        {
+          "source": "ct",
+          "level": "19",
+          "name": "Voix Enjôleuse",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.577f1e0125f2063a"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "26",
+          "name": "Queue-Poison",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e249231e22c82544"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Aéropique",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.116ae9d4f0ede305"
+        },
+        {
+          "source": "ct",
+          "level": "29",
+          "name": "Châtiment",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9f36ad2a4ada2597"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Météores",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6c23e53f7221c798"
+        },
+        {
+          "source": "ct",
+          "level": "34",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "ct",
+          "level": "40",
+          "name": "Tranch'Air",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.21bb8516a2701c1c"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "60",
+          "name": "Demi-Tour",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1eb405183278af83"
+        },
+        {
+          "source": "ct",
+          "level": "61",
+          "name": "Griffe Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.435aa01e407c3437"
+        },
+        {
+          "source": "ct",
+          "level": "65",
+          "name": "Lame d'Air",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59baefb7e9eef282"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "83",
+          "name": "Direct Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b0d2285254240f13"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "ct",
+          "level": "94",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "ct",
+          "level": "97",
+          "name": "Vol",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.14142f0af0636c50"
+        },
+        {
+          "source": "ct",
+          "level": "102",
+          "name": "Détricanon",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0dd7018c1860375e"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "113",
+          "name": "Vent Arrière",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.954d50a8fa12ed6a"
+        },
+        {
+          "source": "ct",
+          "level": "114",
+          "name": "Ball'Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e65656cf6846eabd"
+        },
+        {
+          "source": "ct",
+          "level": "118",
+          "name": "Canicule",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c243ff9aaff5ac7"
+        },
+        {
+          "source": "ct",
+          "level": "127",
+          "name": "Câlinerie",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4ba2d2021f0e0e15"
+        },
+        {
+          "source": "ct",
+          "level": "129",
+          "name": "Plénitude",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.589ef05475ec84e1"
+        },
+        {
+          "source": "ct",
+          "level": "140",
+          "name": "Machination",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0410c2bfe86667f1"
+        },
+        {
+          "source": "ct",
+          "level": "148",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "152",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "160",
+          "name": "Vent Violent",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0184878e603affcb"
+        },
+        {
+          "source": "ct",
+          "level": "163",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "164",
+          "name": "Rapace",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.68ac7e01335cfe8b"
+        },
+        {
+          "source": "ct",
+          "level": "171",
+          "name": "Téra-Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ceeab066ce92ebc0"
+        },
+        {
+          "source": "ct",
+          "level": "175",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "177",
+          "name": "Dépit",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ba4710617fcf35c4"
+        },
+        {
+          "source": "ct",
+          "level": "191",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "ct",
+          "level": "197",
+          "name": "Double Volée",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d88849f7e11a300b"
+        },
+        {
+          "source": "ct",
+          "level": "199",
+          "name": "Cent Rancunes",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a319493c877e3269"
+        },
+        {
+          "source": "ct",
+          "level": "227",
+          "name": "Voix Envoûtante",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ce299dfaab791a65"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Double Pied",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "2",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Frappe la cible deux fois</p>"
+      },
+      "_id": "1fc6f57e192f8dfd",
+      "_key": "!actors.items!7d8e67f472b2383e.1fc6f57e192f8dfd",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.721f0257c6f48e99"
+      }
+    },
+    {
+      "name": "Picpic",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "vol",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "5f1b6723a122efd6",
+      "_key": "!actors.items!7d8e67f472b2383e.5f1b6723a122efd6",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.62eb0d91ca03f9c4"
+      }
+    },
+    {
+      "name": "Gaz Toxik",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "status",
+        "energy": 1,
+        "range": "Zone Ennemie",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Empoisonne les Pokémon de la zone</p>"
+      },
+      "_id": "c3bb58e20a20ba3b",
+      "_key": "!actors.items!7d8e67f472b2383e.c3bb58e20a20ba3b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0dc5cbb5a724259a"
+      }
+    },
+    {
+      "name": "Voix Enjôleuse",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "fee",
+        "category": "special",
+        "energy": 3,
+        "range": "Zone Ennemie",
+        "accuracy": 100,
+        "sure": true,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>N'échoue jamais.</p>"
+      },
+      "_id": "4ed77c0ce4b0926c",
+      "_key": "!actors.items!7d8e67f472b2383e.4ed77c0ce4b0926c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.577f1e0125f2063a"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Favianos",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/1016.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 101600,
+  "flags": {}
+}

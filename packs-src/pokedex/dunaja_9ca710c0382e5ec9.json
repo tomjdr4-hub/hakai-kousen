@@ -1,0 +1,462 @@
+{
+  "_id": "9ca710c0382e5ec9",
+  "_key": "!actors!9ca710c0382e5ec9",
+  "name": "Dunaja",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/843.png",
+  "system": {
+    "species": "Dunaja",
+    "number": "843",
+    "types": {
+      "primary": "sol",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 26,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 26,
+      "max": 26
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "2.2m / 7.6kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Serpensable",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Dunaconda (niveau 36)",
+      "talents": [
+        {
+          "name": "Expul'Sable",
+          "uuid": "Compendium.hakai-kousen.talents.Item.6b880ab778b95fc1",
+          "hidden": false
+        },
+        {
+          "name": "Mue",
+          "uuid": "Compendium.hakai-kousen.talents.Item.708bacf7f6506fbc",
+          "hidden": false
+        },
+        {
+          "name": "Voile Sable",
+          "uuid": "Compendium.hakai-kousen.talents.Item.1da282038a315cf6",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Jet de Sable",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Ligotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
+        },
+        {
+          "source": "level",
+          "level": "5",
+          "name": "Lilliput",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0eed5685163dd270"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Centrifugifle",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ad23656c1204cfac"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Coup d'Boule",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ed397f377fd21210"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Regard Médusant",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e94eab896b5b3175"
+        },
+        {
+          "source": "level",
+          "level": "30",
+          "name": "Tunnel",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.46716254e99dfa8d"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Tempête de Sable",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84cffef60c852b03"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Souplesse",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.251bdb8e353f8863"
+        },
+        {
+          "source": "level",
+          "level": "45",
+          "name": "Enroulement",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.141d1d25ff20f85a"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Tourbi-Sable",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6649efe45ab823fa"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Tunnel",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.46716254e99dfa8d"
+        },
+        {
+          "source": "ct",
+          "level": "16",
+          "name": "Grincement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "31",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Tempête de Sable",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84cffef60c852b03"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "49",
+          "name": "Tourbi-Sable",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6649efe45ab823fa"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "81",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "97",
+          "name": "Centrifugifle",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ad23656c1204cfac"
+        },
+        {
+          "source": "other",
+          "level": "10",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "other",
+          "level": "20",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "other",
+          "level": "26",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "other",
+          "level": "27",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "other",
+          "level": "67",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "other",
+          "level": "87",
+          "name": "Tunnelier",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3a7aff921dac5b96"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Draco-Charge",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.55acc172404e348b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Dernier Recours",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b48cbd3e0087d127"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Éructation",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5d4e71aa00974aa9"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Queue-Poison",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e249231e22c82544"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rafale Écailles",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf39acd292803b23"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Sable Ardent",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d98732173cd223f1"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ravage Rampant",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.313679aee06c7dec"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Jet de Sable",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "sol",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "accuracy",
+            "target": "target",
+            "stat": "for",
+            "value": -10,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la précision de la cible de 10%</p>"
+      },
+      "_id": "c72fdf2b57a686ca",
+      "_key": "!actors.items!9ca710c0382e5ec9.c72fdf2b57a686ca",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.3c112bc3310e39e2"
+      }
+    },
+    {
+      "name": "Ligotage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>La technique retire un dixième de la Vitalité maximale de la cible pendant 4 à 5 tours et l'empêche de se déplacer</p>"
+      },
+      "_id": "6a1ac73f85f9817a",
+      "_key": "!actors.items!9ca710c0382e5ec9.6a1ac73f85f9817a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f09b207e4f34fe84"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Dunaja",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/843.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 84300,
+  "flags": {}
+}

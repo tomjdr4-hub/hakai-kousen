@@ -1,0 +1,33 @@
+{
+  "name": "Dissonance Psy",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "psy",
+    "category": "special",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Empêche la cible de récupérer de la Vitalité pendant 2 tours.</p>"
+  },
+  "_id": "87f3c81b8b53acb3",
+  "_key": "!items!87f3c81b8b53acb3"
+}

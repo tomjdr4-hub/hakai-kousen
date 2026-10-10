@@ -1,0 +1,656 @@
+{
+  "_id": "ae27e5554297e040",
+  "_key": "!actors!ae27e5554297e040",
+  "name": "Nigosier",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/845.png",
+  "system": {
+    "species": "Nigosier",
+    "number": "845",
+    "types": {
+      "primary": "eau",
+      "secondary": "vol"
+    },
+    "stats": {
+      "dex": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 35,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 35,
+      "max": 35
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.8m / 18kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Avaltouron",
+      "ratio": "4♂:4♀",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Dégobage",
+          "uuid": "Compendium.hakai-kousen.talents.Item.17e8a6766d4b1558",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Éructation",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5d4e71aa00974aa9"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Stockage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d51ba382f302431"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Avale",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c8dd82e16ecfb5cd"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Relâche",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5e00148e3b147ed4"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Picpic",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62eb0d91ca03f9c4"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Pistolet à O",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+        },
+        {
+          "source": "level",
+          "level": "14",
+          "name": "Furie",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.88d50d1043a751b4"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Picore",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0681225a3175168"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Plongée",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.67a260f6f2d52bea"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Bec Vrille",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.55c8be3d86436957"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Amnésie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f90cef07e024d03c"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Mania",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.132d7c1c84ca7628"
+        },
+        {
+          "source": "level",
+          "level": "56",
+          "name": "Hydrocanon",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Vol",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.14142f0af0636c50"
+        },
+        {
+          "source": "ct",
+          "level": "8",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "23",
+          "name": "Larcin",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb080392b1e63836"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "ct",
+          "level": "30",
+          "name": "Ailes d'Acier",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c699d0cae24c6612"
+        },
+        {
+          "source": "ct",
+          "level": "31",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "36",
+          "name": "Siphon",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb5cbf3437aca070"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Plongée",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.67a260f6f2d52bea"
+        },
+        {
+          "source": "ct",
+          "level": "46",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "ct",
+          "level": "58",
+          "name": "Assurance",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f636e8cdadfa6d67"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "95",
+          "name": "Lame d'Air",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59baefb7e9eef282"
+        },
+        {
+          "source": "other",
+          "level": "3",
+          "name": "Hydrocanon",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
+        },
+        {
+          "source": "other",
+          "level": "4",
+          "name": "Surf",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb0f90fd8d11d621"
+        },
+        {
+          "source": "other",
+          "level": "5",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "other",
+          "level": "6",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "other",
+          "level": "12",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "other",
+          "level": "17",
+          "name": "Amnésie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f90cef07e024d03c"
+        },
+        {
+          "source": "other",
+          "level": "20",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "other",
+          "level": "21",
+          "name": "Contre",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.225ccdcd887056bf"
+        },
+        {
+          "source": "other",
+          "level": "26",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "other",
+          "level": "27",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "other",
+          "level": "35",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "other",
+          "level": "39",
+          "name": "Surpuissance",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+        },
+        {
+          "source": "other",
+          "level": "66",
+          "name": "Rapace",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.68ac7e01335cfe8b"
+        },
+        {
+          "source": "other",
+          "level": "84",
+          "name": "Ébullition",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7b96ba9f323457f4"
+        },
+        {
+          "source": "other",
+          "level": "89",
+          "name": "Vent Violent",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0184878e603affcb"
+        },
+        {
+          "source": "other",
+          "level": "95",
+          "name": "Exécu-Son",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29cc02b745d3ebf6"
+        },
+        {
+          "source": "other",
+          "level": "98",
+          "name": "Aqua-Brèche",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc73336988b9f739"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Anti-Brume",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.98cf36c1ed2a0c58"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Aéropique",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.116ae9d4f0ede305"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Danse Plumes",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5ebb5e523f0607cd"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Anneau Hydro",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.366d8844a5f530ad"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Atterrissage",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bcaec9bd64bd171"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Double Volée",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d88849f7e11a300b"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Éructation",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "special",
+        "energy": 3,
+        "range": "Zone Ennemie",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Ne fonctionne que si le lanceur consomme ou a consommé une baie pendant ce combat</p>"
+      },
+      "_id": "c2d526fd2af723bb",
+      "_key": "!actors.items!ae27e5554297e040.c2d526fd2af723bb",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5d4e71aa00974aa9"
+      }
+    },
+    {
+      "name": "Stockage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur accumule de l'énergie pour la réutiliser plus tard. Augmente la Volonté et l'Endurance du lanceur de 1 (Si Relâche ou Avale est utilisé, ces modifications s'annule).</p>"
+      },
+      "_id": "930630e6a2f78b6b",
+      "_key": "!actors.items!ae27e5554297e040.930630e6a2f78b6b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.1d51ba382f302431"
+      }
+    },
+    {
+      "name": "Avale",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 3,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Restaure 25% de la vitalité max du lanceur si Stockage a été lancée 1 fois, 50% si 2, 100% si 3. Après avoir lancé Avale, il faudra à nouveau utiliser Stockage au moins une fois.</p>"
+      },
+      "_id": "619152bc2b281a90",
+      "_key": "!actors.items!ae27e5554297e040.619152bc2b281a90",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c8dd82e16ecfb5cd"
+      }
+    },
+    {
+      "name": "Relâche",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "10",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Fonctionne uniquement si Stockage a été utilisé juste avant : 1 fois 10 dégâts ; 2 fois 20 ; 3 fois 30 ; plus 30 Après avoir lancé Relâche, il faudra à nouveau utiliser Stockage au moins une fois</p>"
+      },
+      "_id": "d41a7c54ef40f3ae",
+      "_key": "!actors.items!ae27e5554297e040.d41a7c54ef40f3ae",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5e00148e3b147ed4"
+      }
+    },
+    {
+      "name": "Picpic",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "vol",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "d2b46863b71cf1b9",
+      "_key": "!actors.items!ae27e5554297e040.d2b46863b71cf1b9",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.62eb0d91ca03f9c4"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Nigosier",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/845.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 84500,
+  "flags": {}
+}

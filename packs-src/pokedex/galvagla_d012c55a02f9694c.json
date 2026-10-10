@@ -1,0 +1,545 @@
+{
+  "_id": "d012c55a02f9694c",
+  "_key": "!actors!d012c55a02f9694c",
+  "name": "Galvagla",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/881.png",
+  "system": {
+    "species": "Galvagla",
+    "number": "881",
+    "types": {
+      "primary": "electrik",
+      "secondary": "glace"
+    },
+    "stats": {
+      "dex": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 45,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 45,
+      "max": 45
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "2.3m / 150kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Fossile",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Absorb Volt",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4dae8d89f34163ba",
+          "hidden": false
+        },
+        {
+          "name": "Statik",
+          "uuid": "Compendium.hakai-kousen.talents.Item.f77fe95843e4be22",
+          "hidden": false
+        },
+        {
+          "name": "Chasse-Neige",
+          "uuid": "Compendium.hakai-kousen.talents.Item.046c0016336101c7",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Poudreuse",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.63429eaa3f2d7102"
+        },
+        {
+          "source": "level",
+          "level": "14",
+          "name": "Chargeur",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07b17584a71bddad"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Écho",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b82b5917dc58b9ca"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Pouvoir Antique",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38b859235965efcc"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Picore",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0681225a3175168"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Avalanche",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07f33c8c9fbb6e49"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Lyophilisation",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2c0e444d81079051"
+        },
+        {
+          "source": "level",
+          "level": "56",
+          "name": "Souplesse",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.251bdb8e353f8863"
+        },
+        {
+          "source": "level",
+          "level": "63",
+          "name": "Coup d'Jus",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f5fc13ca9d463898"
+        },
+        {
+          "source": "level",
+          "level": "70",
+          "name": "Prise de Bec",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c9e539bbdd8979d"
+        },
+        {
+          "source": "level",
+          "level": "77",
+          "name": "Chute Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b21ea23062636998"
+        },
+        {
+          "source": "level",
+          "level": "77",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "ct",
+          "level": "0",
+          "name": "Ultimapoing",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f15ae523fb4ea2ce"
+        },
+        {
+          "source": "ct",
+          "level": "1",
+          "name": "Ultimawashi",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f0594894af7ac099"
+        },
+        {
+          "source": "ct",
+          "level": "5",
+          "name": "Poing Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.05efd6d1eb00905e"
+        },
+        {
+          "source": "ct",
+          "level": "8",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "14",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "35",
+          "name": "Grêle",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c4ecad46104bed34"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Tomberoche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3cc0f4e67a1b01b6"
+        },
+        {
+          "source": "ct",
+          "level": "51",
+          "name": "Stalactite",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.03d4f021d2676e00"
+        },
+        {
+          "source": "ct",
+          "level": "54",
+          "name": "Boule Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a31afe26311654f6"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "64",
+          "name": "Avalanche",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07f33c8c9fbb6e49"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Crocs Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4f52bb4f96dd8c4b"
+        },
+        {
+          "source": "ct",
+          "level": "67",
+          "name": "Crocs Givre",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.613cbcf31e398417"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "81",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "98",
+          "name": "Trépignement",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36679d455551223"
+        },
+        {
+          "source": "other",
+          "level": "1",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "other",
+          "level": "3",
+          "name": "Hydrocanon",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
+        },
+        {
+          "source": "other",
+          "level": "4",
+          "name": "Surf",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb0f90fd8d11d621"
+        },
+        {
+          "source": "other",
+          "level": "5",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "other",
+          "level": "6",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "other",
+          "level": "7",
+          "name": "Balayage",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5e03b429e44aeb97"
+        },
+        {
+          "source": "other",
+          "level": "8",
+          "name": "Tonnerre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.50acc837a4bc6bf5"
+        },
+        {
+          "source": "other",
+          "level": "9",
+          "name": "Fatal-Foudre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.10f7e4a09629bf65"
+        },
+        {
+          "source": "other",
+          "level": "20",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "other",
+          "level": "26",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "other",
+          "level": "27",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "other",
+          "level": "31",
+          "name": "Queue de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24fdee332526d283"
+        },
+        {
+          "source": "other",
+          "level": "37",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "other",
+          "level": "42",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "other",
+          "level": "75",
+          "name": "Lame de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6dd10eb62469a53c"
+        },
+        {
+          "source": "other",
+          "level": "80",
+          "name": "Boule Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d8167dc2b7baffa"
+        },
+        {
+          "source": "other",
+          "level": "86",
+          "name": "Éclair Fou",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.757870359bce05b0"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Monte-Tension",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.aee725fcfcf87923"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Laser Météore",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d2808c469356a7b"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>10% de chance de paralyser la cible</p>"
+      },
+      "_id": "bae06c0f83612b59",
+      "_key": "!actors.items!d012c55a02f9694c.bae06c0f83612b59",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Galvagla",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/881.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 88100,
+  "flags": {}
+}

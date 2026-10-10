@@ -1,0 +1,33 @@
+{
+  "name": "Voix Envoûtante",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "fee",
+    "category": "special",
+    "energy": 3,
+    "range": "Sonore",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Rend les cibles confuses si elles ont augmenté une Statistique durant le tour</p>"
+  },
+  "_id": "ce299dfaab791a65",
+  "_key": "!items!ce299dfaab791a65"
+}

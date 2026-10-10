@@ -1,0 +1,714 @@
+{
+  "_id": "186470f55e463e2c",
+  "_key": "!actors!186470f55e463e2c",
+  "name": "Floréclat",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/970.png",
+  "system": {
+    "species": "Floréclat",
+    "number": "970",
+    "types": {
+      "primary": "poison",
+      "secondary": "roche"
+    },
+    "stats": {
+      "dex": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 42,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 42,
+      "max": 42
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.5m / 45kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Minerai",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Germéclat (niveau 35)",
+      "talents": [
+        {
+          "name": "Dépôt Toxique",
+          "uuid": "Compendium.hakai-kousen.talents.Item.75c4081bfe02d2dd",
+          "hidden": false
+        },
+        {
+          "name": "Corrosion",
+          "uuid": "Compendium.hakai-kousen.talents.Item.24f53147e9c15e2a",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Toupie Éclat",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.af0f133f28801525"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Pico-Défense",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cffe128f29293190"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Pics Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac86a6f04610aebd"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Anti-Air",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9b47d19818e2b0cf"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Armure",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Jet-Pierres",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.845a0fdad38bc9d8"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Bombe Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+        },
+        {
+          "source": "level",
+          "level": "11",
+          "name": "Pouvoir Antique",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38b859235965efcc"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Poliroche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1e1e3ed61fe3dbb4"
+        },
+        {
+          "source": "level",
+          "level": "18",
+          "name": "Piège de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d3f50f720c659fa7"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "level",
+          "level": "26",
+          "name": "Tempête de Sable",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84cffef60c852b03"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Destruction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1e3b7cb6b44f8538"
+        },
+        {
+          "source": "level",
+          "level": "33",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "level",
+          "level": "39",
+          "name": "Rayon Gemme",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.12fb519ecdd2b773"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Acidarmure",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d5c0794536e0093"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Cradovague",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2634ec09729e249b"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Bombe Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Onde Folie",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.748f9819922a92df"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "35",
+          "name": "Tir de Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4e0f03f383935837"
+        },
+        {
+          "source": "ct",
+          "level": "36",
+          "name": "Tomberoche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3cc0f4e67a1b01b6"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "49",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "50",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "51",
+          "name": "Tempête de Sable",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84cffef60c852b03"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Boule Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a31afe26311654f6"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "86",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Picots",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2683d167fc820c58"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Pics Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac86a6f04610aebd"
+        },
+        {
+          "source": "ct",
+          "level": "93",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "101",
+          "name": "Rayon Gemme",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.12fb519ecdd2b773"
+        },
+        {
+          "source": "ct",
+          "level": "102",
+          "name": "Détricanon",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0dd7018c1860375e"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "104",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "ct",
+          "level": "116",
+          "name": "Piège de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d3f50f720c659fa7"
+        },
+        {
+          "source": "ct",
+          "level": "119",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "133",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "ct",
+          "level": "148",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "150",
+          "name": "Lame de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6dd10eb62469a53c"
+        },
+        {
+          "source": "ct",
+          "level": "152",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "163",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "168",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "171",
+          "name": "Téra-Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ceeab066ce92ebc0"
+        },
+        {
+          "source": "ct",
+          "level": "175",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "176",
+          "name": "Tourbi-Sable",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6649efe45ab823fa"
+        },
+        {
+          "source": "ct",
+          "level": "179",
+          "name": "Anti-Air",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9b47d19818e2b0cf"
+        },
+        {
+          "source": "ct",
+          "level": "214",
+          "name": "Cradovague",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2634ec09729e249b"
+        },
+        {
+          "source": "ct",
+          "level": "220",
+          "name": "Laser Météore",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d2808c469356a7b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9a0726d6f8467c19"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Souvenir",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.34c4576efd3bf89e"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Pico-Défense",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "status",
+        "energy": 3,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Protège des attaques et inflige 1/8 de la Vitalité max aux pokémons entrant en contact avec le lanceur. Si réutilisé, 50% de chances de réussite, puis 25% et enfin 12.5%. À la cinquième utilisation successive, Abri échouera systématiquement</p>"
+      },
+      "_id": "2cf43a02ae2544a9",
+      "_key": "!actors.items!186470f55e463e2c.2cf43a02ae2544a9",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.cffe128f29293190"
+      }
+    },
+    {
+      "name": "Pics Toxik",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone Ennemie",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Empoisonne les Pokémon se déplaçant dans la zone. Si Pics Toxik est lancé 2 fois les empoissonne gravement</p>"
+      },
+      "_id": "daa6b73063c5e069",
+      "_key": "!actors.items!186470f55e463e2c.daa6b73063c5e069",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ac86a6f04610aebd"
+      }
+    },
+    {
+      "name": "Anti-Air",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cibles",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Rend les Pokémon de type vol ainsi que ceux possédant les effets de type vol sensibles aux attaques Sol</p>"
+      },
+      "_id": "f0ee1b61320eef86",
+      "_key": "!actors.items!186470f55e463e2c.f0ee1b61320eef86",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.9b47d19818e2b0cf"
+      }
+    },
+    {
+      "name": "Armure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "031caed4cb9555a7",
+      "_key": "!actors.items!186470f55e463e2c.031caed4cb9555a7",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+      }
+    },
+    {
+      "name": "Jet-Pierres",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "physical",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "5",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "33c56eebf75581a0",
+      "_key": "!actors.items!186470f55e463e2c.33c56eebf75581a0",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.845a0fdad38bc9d8"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Floréclat",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/970.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 97000,
+  "flags": {}
+}

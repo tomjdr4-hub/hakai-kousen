@@ -1,0 +1,33 @@
+{
+  "name": "Charge Glaive",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "dragon",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 10,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Une fois cette capacité utilisée, toute attaque sur le lanceur inflige le double de dégâts et n'échoue jamais. Cet effet dure jusqu'au prochain tour du lanceur</p>"
+  },
+  "_id": "6d4966d4bc0e7944",
+  "_key": "!items!6d4966d4bc0e7944"
+}

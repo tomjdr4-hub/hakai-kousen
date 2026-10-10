@@ -1,0 +1,184 @@
+{
+  "_id": "f717888d6be09732",
+  "_key": "!actors!f717888d6be09732",
+  "name": "Cosmog",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/789.png",
+  "system": {
+    "species": "Cosmog",
+    "number": "789",
+    "types": {
+      "primary": "psy",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 22,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 22,
+      "max": 22
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.2m / 0.1kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Nébuleuse",
+      "ratio": "Asexué",
+      "evolutions": "Évolutions : Cosmovum (Niveau 43)",
+      "talents": [
+        {
+          "name": "Inconscient",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4599e4c9c7791001",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Trempette",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a50c589bbf14d07b"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Téléport",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.78e787cfbbf6501d"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Trempette",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "867820896f858269",
+      "_key": "!actors.items!f717888d6be09732.867820896f858269",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.a50c589bbf14d07b"
+      }
+    },
+    {
+      "name": "Téléport",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur se téléporte. Il peut quitter un combat contre un Pokémon Sauvage de cette manière. Face à un dresseur, il échange sa place avec un autre Pokémon de l'équipe</p>"
+      },
+      "_id": "fe0e65c6e10ec295",
+      "_key": "!actors.items!f717888d6be09732.fe0e65c6e10ec295",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.78e787cfbbf6501d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cosmog",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/789.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d60ac208992e6f5e",
+  "sort": 78900,
+  "flags": {}
+}

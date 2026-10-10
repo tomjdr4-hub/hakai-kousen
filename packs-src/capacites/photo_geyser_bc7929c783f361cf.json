@@ -1,0 +1,33 @@
+{
+  "name": "Photo-Geyser",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "psy",
+    "category": "special",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Utiliser la Stat la plus haute entre la Force et la Concentration pour le jet d'attaque du lanceur.</p>"
+  },
+  "_id": "bc7929c783f361cf",
+  "_key": "!items!bc7929c783f361cf"
+}

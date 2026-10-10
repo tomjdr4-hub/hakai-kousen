@@ -1,0 +1,42 @@
+{
+  "name": "Toupie Éclat",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "poison",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "3",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "poison",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Empoisonne la cible, retire les Entry Hazards dans la Zone Alliée, et retire les effets des capacités bloquantes ou parasytantes.</p>"
+  },
+  "_id": "af0f133f28801525",
+  "_key": "!items!af0f133f28801525"
+}

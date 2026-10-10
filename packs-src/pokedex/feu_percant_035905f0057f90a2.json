@@ -1,0 +1,847 @@
+{
+  "_id": "035905f0057f90a2",
+  "_key": "!actors!035905f0057f90a2",
+  "name": "Feu-Perçant",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/1020.png",
+  "system": {
+    "species": "Feu-Perçant",
+    "number": "1020",
+    "types": {
+      "primary": "dragon",
+      "secondary": "feu"
+    },
+    "stats": {
+      "dex": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 53,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 53,
+      "max": 53
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "3.5m / 590kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Paradoxe",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Paléosynthèse",
+          "uuid": "Compendium.hakai-kousen.talents.Item.a14018115cb61d6e",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Écrasement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6ca336281faa2882"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Groz'Yeux",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Calcination",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5cca1b48ad44b792"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Pouvoir Antique",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38b859235965efcc"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Double Pied",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.721f0257c6f48e99"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Râle Mâle",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e53ce766892a820d"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Crocs Feu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.37c59fa3b43d0eff"
+        },
+        {
+          "source": "level",
+          "level": "14",
+          "name": "Grondement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f9132f064fdac85b"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Morsure",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Draco-Griffe",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.795ae6725dfed02f"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Éclate Griffe",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59322388944c2a78"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Aurore",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2eeb8e7e342c5201"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Rempart Brûlant",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99a6b1e864022f57"
+        },
+        {
+          "source": "level",
+          "level": "56",
+          "name": "Draco-Charge",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.55acc172404e348b"
+        },
+        {
+          "source": "level",
+          "level": "63",
+          "name": "Déflagration",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.97bfaeb3458f3176"
+        },
+        {
+          "source": "level",
+          "level": "70",
+          "name": "Ébullilave",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.643e02ce6ed4ab4a"
+        },
+        {
+          "source": "level",
+          "level": "77",
+          "name": "Colère",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.127bcd846238aa6e"
+        },
+        {
+          "source": "level",
+          "level": "84",
+          "name": "Boutefeu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.acc7f29ca193386e"
+        },
+        {
+          "source": "level",
+          "level": "91",
+          "name": "Grand Courroux",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17899b1aa1e52530"
+        },
+        {
+          "source": "ct",
+          "level": "1",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Grimace",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cdc78c5f4b7d2d90"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "8",
+          "name": "Crocs Feu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.37c59fa3b43d0eff"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Crocs Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4f52bb4f96dd8c4b"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Danse Flammes",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9a2266f47f066686"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "28",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "30",
+          "name": "Aboiement",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06ae4791b97b969d"
+        },
+        {
+          "source": "ct",
+          "level": "38",
+          "name": "Nitrocharge",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a4e30ef3847b368f"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Draco-Queue",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e104e7984845c4ea"
+        },
+        {
+          "source": "ct",
+          "level": "47",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "ct",
+          "level": "49",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Estocorne",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ae144d6baa81d6d8"
+        },
+        {
+          "source": "ct",
+          "level": "63",
+          "name": "Psycho-Croc",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb863e87e8d66b89"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "ct",
+          "level": "70",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "78",
+          "name": "Draco-Griffe",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.795ae6725dfed02f"
+        },
+        {
+          "source": "ct",
+          "level": "84",
+          "name": "Trépignement",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36679d455551223"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "99",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Danse Draco",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1bdc96889d71dd06"
+        },
+        {
+          "source": "ct",
+          "level": "103",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "108",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "ct",
+          "level": "115",
+          "name": "Draco-Choc",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb37897daab8eeb5"
+        },
+        {
+          "source": "ct",
+          "level": "118",
+          "name": "Canicule",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c243ff9aaff5ac7"
+        },
+        {
+          "source": "ct",
+          "level": "125",
+          "name": "Lance-Flammes",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fa018f1ea089d75e"
+        },
+        {
+          "source": "ct",
+          "level": "134",
+          "name": "Contre",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.225ccdcd887056bf"
+        },
+        {
+          "source": "ct",
+          "level": "141",
+          "name": "Déflagration",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.97bfaeb3458f3176"
+        },
+        {
+          "source": "ct",
+          "level": "149",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "ct",
+          "level": "150",
+          "name": "Lame de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6dd10eb62469a53c"
+        },
+        {
+          "source": "ct",
+          "level": "152",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "157",
+          "name": "Surchauffe",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5e2dcc58374aa603"
+        },
+        {
+          "source": "ct",
+          "level": "163",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "165",
+          "name": "Boutefeu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.acc7f29ca193386e"
+        },
+        {
+          "source": "ct",
+          "level": "169",
+          "name": "Draco-Météore",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33decfaa925942d1"
+        },
+        {
+          "source": "ct",
+          "level": "171",
+          "name": "Téra-Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ceeab066ce92ebc0"
+        },
+        {
+          "source": "ct",
+          "level": "172",
+          "name": "Hurlement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20f285c61ba73967"
+        },
+        {
+          "source": "ct",
+          "level": "189",
+          "name": "Tacle Feu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dcf578d7d51da264"
+        },
+        {
+          "source": "ct",
+          "level": "193",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "ct",
+          "level": "200",
+          "name": "Rafale Écailles",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf39acd292803b23"
+        },
+        {
+          "source": "ct",
+          "level": "204",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "ct",
+          "level": "207",
+          "name": "Indignition",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7ef9be5adf056c3c"
+        },
+        {
+          "source": "ct",
+          "level": "215",
+          "name": "Sable Ardent",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d98732173cd223f1"
+        },
+        {
+          "source": "ct",
+          "level": "222",
+          "name": "Abattage",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c212234df8ddd9f0"
+        },
+        {
+          "source": "ct",
+          "level": "226",
+          "name": "Cri Draconique",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9d611b02ceea50ad"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Écrasement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "7",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "1bf0e119f79e6b6b",
+      "_key": "!actors.items!035905f0057f90a2.1bf0e119f79e6b6b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.6ca336281faa2882"
+      }
+    },
+    {
+      "name": "Groz'Yeux",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse l'Endurance de la cible de 1</p>"
+      },
+      "_id": "c8ef10d0c727f0c2",
+      "_key": "!actors.items!035905f0057f90a2.c8ef10d0c727f0c2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ff8c3edb66111bb4"
+      }
+    },
+    {
+      "name": "Calcination",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "feu",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Rend la baie ou le joyau tenue par la cible inutilisable.</p>"
+      },
+      "_id": "c722343f72bf2bb8",
+      "_key": "!actors.items!035905f0057f90a2.c722343f72bf2bb8",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5cca1b48ad44b792"
+      }
+    },
+    {
+      "name": "Zénith",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "feu",
+        "category": "status",
+        "energy": 6,
+        "range": "Zone",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le soleil brille fortement pendant 5 tours. Augmente les dégâts des techniques de type Feu de 50% et baisse ceux du type Eau de 50%</p>"
+      },
+      "_id": "3fc4faca9151cc69",
+      "_key": "!actors.items!035905f0057f90a2.3fc4faca9151cc69",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+      }
+    },
+    {
+      "name": "Pouvoir Antique",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "special",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>10% de chance d'augmenter de 1 toutes les stats du lanceur</p>"
+      },
+      "_id": "569b6f27cf4cb090",
+      "_key": "!actors.items!035905f0057f90a2.569b6f27cf4cb090",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.38b859235965efcc"
+      }
+    },
+    {
+      "name": "Double Pied",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "2",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Frappe la cible deux fois</p>"
+      },
+      "_id": "2593cc8e7af9b906",
+      "_key": "!actors.items!035905f0057f90a2.2593cc8e7af9b906",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.721f0257c6f48e99"
+      }
+    },
+    {
+      "name": "Râle Mâle",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "con",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Force et la Concentration de la cible de 1</p>"
+      },
+      "_id": "3ecbbcc7704a93fd",
+      "_key": "!actors.items!035905f0057f90a2.3ecbbcc7704a93fd",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e53ce766892a820d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Feu-Perçant",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/1020.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "e47b60ddf4489758",
+  "sort": 102000,
+  "flags": {}
+}

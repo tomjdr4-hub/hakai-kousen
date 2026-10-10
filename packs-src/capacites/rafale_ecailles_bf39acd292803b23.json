@@ -1,0 +1,50 @@
+{
+  "name": "Rafale Écailles",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "dragon",
+    "category": "physical",
+    "energy": 2,
+    "range": "Rayon",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "3",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "dex",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "end",
+        "value": -1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "1d4+1",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente la Dextérité du lanceur de 1 mais baisse son Endurance de 1. Touche 2 à 5 fois.</p>"
+  },
+  "_id": "bf39acd292803b23",
+  "_key": "!items!bf39acd292803b23"
+}

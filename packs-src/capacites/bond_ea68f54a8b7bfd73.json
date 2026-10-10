@@ -1,0 +1,33 @@
+{
+  "name": "Bond",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "insecte",
+    "category": "physical",
+    "energy": 2,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "5",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>La cible perd 1 en Dextérité</p>"
+  },
+  "_id": "ea68f54a8b7bfd73",
+  "_key": "!items!ea68f54a8b7bfd73"
+}

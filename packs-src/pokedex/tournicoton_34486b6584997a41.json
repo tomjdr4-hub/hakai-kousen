@@ -1,0 +1,394 @@
+{
+  "_id": "34486b6584997a41",
+  "_key": "!actors!34486b6584997a41",
+  "name": "Tournicoton",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/829.png",
+  "system": {
+    "species": "Tournicoton",
+    "number": "829",
+    "types": {
+      "primary": "plante",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 1,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 20,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 20,
+      "max": 20
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.4m / 2.2kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Chef-Fleur",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Blancoton (niveau 20)",
+      "talents": [
+        {
+          "name": "Effilochage",
+          "uuid": "Compendium.hakai-kousen.talents.Item.d3b51e946ffd863e",
+          "hidden": false
+        },
+        {
+          "name": "Régé-Force",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2cbe7ad3cb4771e2",
+          "hidden": false
+        },
+        {
+          "name": "Pose Spore",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4af1457b8c6b5764",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Normal",
+          "name": "Berceuse",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.34f162940357430e"
+        },
+        {
+          "source": "level",
+          "level": "Plante",
+          "name": "Feuillage",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77125abb38e73bab"
+        },
+        {
+          "source": "level",
+          "level": "Normal",
+          "name": "Tour Rapide",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bde285dc4b95bccd"
+        },
+        {
+          "source": "level",
+          "level": "Normal",
+          "name": "Doux Parfum",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+        },
+        {
+          "source": "level",
+          "level": "Plante",
+          "name": "Tranch'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.31276e47df8bb63d"
+        },
+        {
+          "source": "level",
+          "level": "Normal",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "level",
+          "level": "Plante",
+          "name": "Phytomixeur",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d27bcd9bb41dbf1"
+        },
+        {
+          "source": "level",
+          "level": "Plante",
+          "name": "Synthèse",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.409b32b95b92290c"
+        },
+        {
+          "source": "level",
+          "level": "Normal",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "level",
+          "level": "Plante",
+          "name": "Aromathérapie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fae085287a618200"
+        },
+        {
+          "source": "level",
+          "level": "Plante",
+          "name": "Tempête Verte",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.326129902454053b"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Feuille Magik",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.081ad0424847c4d3"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "28",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "ct",
+          "level": "29",
+          "name": "Charme",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24aeca4c2c487d47"
+        },
+        {
+          "source": "ct",
+          "level": "31",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "34",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "41",
+          "name": "Coup d'Main",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77d24ff6e7b3c1b5"
+        },
+        {
+          "source": "ct",
+          "level": "50",
+          "name": "Balle Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a621a562380eaa37"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Champ Herbu",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4cfa7017f9e016eb"
+        },
+        {
+          "source": "other",
+          "level": "20",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "other",
+          "level": "26",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "other",
+          "level": "27",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "other",
+          "level": "42",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "other",
+          "level": "65",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "other",
+          "level": "71",
+          "name": "Tempête Verte",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.326129902454053b"
+        },
+        {
+          "source": "other",
+          "level": "77",
+          "name": "Noeud Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1191fadeddf19bf0"
+        },
+        {
+          "source": "other",
+          "level": "96",
+          "name": "Boule Pollen",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3b66e18a1c64a84"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Croissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Vampigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Soucigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.402517e6c6ecc1c7"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poudre Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1cce78dd59bb0228"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Para-Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poudre Dodo",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a45dc2084dbd91"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Gliss'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d1316f3ab550b49d"
+        }
+      ]
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Tournicoton",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/829.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 82900,
+  "flags": {}
+}

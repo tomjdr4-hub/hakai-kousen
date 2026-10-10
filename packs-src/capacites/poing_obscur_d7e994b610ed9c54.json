@@ -1,0 +1,33 @@
+{
+  "name": "Poing Obscur",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "tenebres",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Tous les coups sont des coups critiques. Ignore les changements de stats de la cible.</p>"
+  },
+  "_id": "d7e994b610ed9c54",
+  "_key": "!items!d7e994b610ed9c54"
+}

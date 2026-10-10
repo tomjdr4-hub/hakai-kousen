@@ -1,0 +1,42 @@
+{
+  "name": "Goudronnage",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "roche",
+    "category": "status",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "dex",
+        "value": -1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Baisse la Dextérité de la cible de 1 et le rend faible aux attaques de type Feu.</p>"
+  },
+  "_id": "69f8ec841980d552",
+  "_key": "!items!69f8ec841980d552"
+}

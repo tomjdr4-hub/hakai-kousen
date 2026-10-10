@@ -1,0 +1,33 @@
+{
+  "name": "Purification",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "poison",
+    "category": "status",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Soigne le statut de la cible, et soigne la moitié de la Vitalité max du lanceur</p>"
+  },
+  "_id": "3d0adad2fdc7ef05",
+  "_key": "!items!3d0adad2fdc7ef05"
+}

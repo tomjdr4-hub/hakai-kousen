@@ -1,0 +1,33 @@
+{
+  "name": "Prolifération",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "2",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Lance 1d10, multiplié la puissance par le résultat du dé.</p>"
+  },
+  "_id": "23485ae0c51a00a3",
+  "_key": "!items!23485ae0c51a00a3"
+}

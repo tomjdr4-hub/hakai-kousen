@@ -1,0 +1,33 @@
+{
+  "name": "Double Laser",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "psy",
+    "category": "special",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "4",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "2",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Frappe deux fois en un tour</p>"
+  },
+  "_id": "845297647431bca8",
+  "_key": "!items!845297647431bca8"
+}

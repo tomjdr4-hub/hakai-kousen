@@ -1,0 +1,33 @@
+{
+  "name": "Hache de Pierre",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "roche",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "7",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>+1 au dé de lancer. Place les pièges de roc dans la zone ennemie</p>"
+  },
+  "_id": "738e1fc1827d3b28",
+  "_key": "!items!738e1fc1827d3b28"
+}

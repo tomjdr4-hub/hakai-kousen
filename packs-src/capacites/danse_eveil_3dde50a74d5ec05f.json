@@ -1,0 +1,33 @@
+{
+  "name": "Danse Éveil",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "special",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "9",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le type de l'attaque dépend du type de l'utilisateur</p>"
+  },
+  "_id": "3dde50a74d5ec05f",
+  "_key": "!items!3dde50a74d5ec05f"
+}

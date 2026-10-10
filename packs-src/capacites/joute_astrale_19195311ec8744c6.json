@@ -1,0 +1,33 @@
+{
+  "name": "Joute Astrale",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "combat",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "15",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur se repose au tour suivant</p>"
+  },
+  "_id": "19195311ec8744c6",
+  "_key": "!items!19195311ec8744c6"
+}

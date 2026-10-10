@@ -1,0 +1,501 @@
+{
+  "_id": "15ec9949ca98b7bc",
+  "_key": "!actors!15ec9949ca98b7bc",
+  "name": "Toxizap",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/848.png",
+  "system": {
+    "species": "Toxizap",
+    "number": "848",
+    "types": {
+      "primary": "electrik",
+      "secondary": "poison"
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 20,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 20,
+      "max": 20
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.4m / 11kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Poupon",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Salarsen (Forme Aigüe) (niveau 30), Salarsen (Forme Grave) (niveau 30)",
+      "talents": [
+        {
+          "name": "Phobique",
+          "uuid": "Compendium.hakai-kousen.talents.Item.f691cd5b157dcb0a",
+          "hidden": false
+        },
+        {
+          "name": "Statik",
+          "uuid": "Compendium.hakai-kousen.talents.Item.f77fe95843e4be22",
+          "hidden": false
+        },
+        {
+          "name": "Maladresse",
+          "uuid": "Compendium.hakai-kousen.talents.Item.d5c81c5158f1ff9c",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.68ac134ec6fbac95"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Éructation",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5d4e71aa00974aa9"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Frotte-Frimousse",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.88ef18e6e502273d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Larme à l'Oeil",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8286c9e113a9ce98"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Rugissement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "31",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "other",
+          "level": "20",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "other",
+          "level": "26",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "other",
+          "level": "27",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "other",
+          "level": "30",
+          "name": "Encore",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24845b5f46799b70"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Effort",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb9c989812c234d3"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Strido-Son",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d95e816ad89f2096"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poing Boost",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bc0570467dd61e5e"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Acide",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "special",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "vol",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Volonté de la cible de 1</p>"
+      },
+      "_id": "19ca3f5c12007972",
+      "_key": "!actors.items!15ec9949ca98b7bc.19ca3f5c12007972",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.68ac134ec6fbac95"
+      }
+    },
+    {
+      "name": "Éructation",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "special",
+        "energy": 3,
+        "range": "Zone Ennemie",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Ne fonctionne que si le lanceur consomme ou a consommé une baie pendant ce combat</p>"
+      },
+      "_id": "1ad38603d7045e7b",
+      "_key": "!actors.items!15ec9949ca98b7bc.1ad38603d7045e7b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5d4e71aa00974aa9"
+      }
+    },
+    {
+      "name": "Frotte-Frimousse",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Paralyse la cible</p>"
+      },
+      "_id": "6d4198a4261f0313",
+      "_key": "!actors.items!15ec9949ca98b7bc.6d4198a4261f0313",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.88ef18e6e502273d"
+      }
+    },
+    {
+      "name": "Gigotage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Les dégâts de base de l'attaque sont de 5 si le lanceur a plus de la moitié de sa Vitalité, sinon ils sont de 10,</p>"
+      },
+      "_id": "df9c7d5fe31a3da9",
+      "_key": "!actors.items!15ec9949ca98b7bc.df9c7d5fe31a3da9",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+      }
+    },
+    {
+      "name": "Larme à l'Oeil",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          },
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "con",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Force et la Concentration de la cible de 1.</p>"
+      },
+      "_id": "b317b09e73eb9ebb",
+      "_key": "!actors.items!15ec9949ca98b7bc.b317b09e73eb9ebb",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8286c9e113a9ce98"
+      }
+    },
+    {
+      "name": "Rugissement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Force des cibles de 1</p>"
+      },
+      "_id": "3fee95fdaf3d3618",
+      "_key": "!actors.items!15ec9949ca98b7bc.3fee95fdaf3d3618",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Toxizap",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/848.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 84800,
+  "flags": {}
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Caboche-Kaboum",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "special",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "15",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur sacrifie 50% de ses PV, même si elle échoue. Inefficace si moiteur sur le terrain.</p>"
+  },
+  "_id": "9ccca84399a199d0",
+  "_key": "!items!9ccca84399a199d0"
+}

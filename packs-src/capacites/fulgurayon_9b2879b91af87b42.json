@@ -1,0 +1,42 @@
+{
+  "name": "Fulgurayon",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "special",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "13",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "con",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Attaque en 2 tours, le premier il se charge et augmente da Concentration de 1, le second il attaque. Sous la pluie, il n'y a pas de tour de charge</p>"
+  },
+  "_id": "9b2879b91af87b42",
+  "_key": "!items!9b2879b91af87b42"
+}

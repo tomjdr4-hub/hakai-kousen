@@ -1,0 +1,148 @@
+{
+  "_id": "cb12d19d55ce7415",
+  "_key": "!actors!cb12d19d55ce7415",
+  "name": "Cosmovum",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/790.png",
+  "system": {
+    "species": "Cosmovum",
+    "number": "790",
+    "types": {
+      "primary": "psy",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 14,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 14,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 22,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 22,
+      "max": 22
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.1m / 999.9kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Proto-Étoile",
+      "ratio": "Asexué",
+      "evolutions": "Pré-évolution : Cosmog (Niveau 43) · Évolutions : Solgaleo (niveau 53, jour), Lunala (niveau 53, nuit)",
+      "talents": [
+        {
+          "name": "Fermeté",
+          "uuid": "Compendium.hakai-kousen.talents.Item.0300ee6b72294754",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Force Cosmique",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c09d9033b3d47ece"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Téléport",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.78e787cfbbf6501d"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Téléport",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur se téléporte. Il peut quitter un combat contre un Pokémon Sauvage de cette manière. Face à un dresseur, il échange sa place avec un autre Pokémon de l'équipe</p>"
+      },
+      "_id": "2f0d9055f0c9b252",
+      "_key": "!actors.items!cb12d19d55ce7415.2f0d9055f0c9b252",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.78e787cfbbf6501d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cosmovum",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/790.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d60ac208992e6f5e",
+  "sort": 79000,
+  "flags": {}
+}

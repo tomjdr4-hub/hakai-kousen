@@ -1,0 +1,33 @@
+{
+  "name": "Vif Éclair",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "special",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "7",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 10,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>La technique échoue si la cible ne prépare pas d'attaque durant ce tour. Le lanceur augmente son Initiative de 10 pendant ce tour</p>"
+  },
+  "_id": "4a4f921a15e488fd",
+  "_key": "!items!4a4f921a15e488fd"
+}

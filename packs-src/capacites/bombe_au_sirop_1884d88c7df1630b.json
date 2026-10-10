@@ -1,0 +1,42 @@
+{
+  "name": "Bombe au SIrop",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "plante",
+    "category": "special",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 85,
+    "sure": false,
+    "damage": "6",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "dex",
+        "value": -1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Baisse la Dextérité de la cible de 1 pendant 3 tours</p>"
+  },
+  "_id": "1884d88c7df1630b",
+  "_key": "!items!1884d88c7df1630b"
+}

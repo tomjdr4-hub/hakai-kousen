@@ -1,0 +1,33 @@
+{
+  "name": "Tir de Précision",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "eau",
+    "category": "special",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 1,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque. Ignore les capacités et talent détournant les attaques.</p>"
+  },
+  "_id": "3e5acf3b9b4cba61",
+  "_key": "!items!3e5acf3b9b4cba61"
+}

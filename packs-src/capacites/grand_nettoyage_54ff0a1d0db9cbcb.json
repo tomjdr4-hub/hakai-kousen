@@ -1,0 +1,50 @@
+{
+  "name": "Grand Nettoyage",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "status",
+    "energy": 3,
+    "range": "Personnel/Zone",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "for",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "dex",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente la Force et la Dextérité du lanceur de 1. Fait disparaître les Entry Hazard (Picots, Pics Toxics, Piège de Roc) et les clones présents sur le terrain</p>"
+  },
+  "_id": "54ff0a1d0db9cbcb",
+  "_key": "!items!54ff0a1d0db9cbcb"
+}

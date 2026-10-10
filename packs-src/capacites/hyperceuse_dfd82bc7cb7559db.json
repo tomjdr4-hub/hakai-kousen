@@ -1,0 +1,33 @@
+{
+  "name": "Hyperceuse",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Ignore les capacités comme Abri, Détection, Pico-Défense et Piège de Fil sans subir les effets négatifs</p>"
+  },
+  "_id": "dfd82bc7cb7559db",
+  "_key": "!items!dfd82bc7cb7559db"
+}

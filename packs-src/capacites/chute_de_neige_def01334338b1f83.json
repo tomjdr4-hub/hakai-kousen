@@ -1,0 +1,33 @@
+{
+  "name": "Chute de Neige",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "glace",
+    "category": "status",
+    "energy": 3,
+    "range": "Zone",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Invoque une tempête de neige qui dure 5 tours. Les pokémons de type Glace voient leur endurance augmenter de 50%</p>"
+  },
+  "_id": "def01334338b1f83",
+  "_key": "!items!def01334338b1f83"
+}

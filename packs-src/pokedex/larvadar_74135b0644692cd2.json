@@ -1,0 +1,142 @@
+{
+  "_id": "74135b0644692cd2",
+  "_key": "!actors!74135b0644692cd2",
+  "name": "Larvadar",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/824.png",
+  "system": {
+    "species": "Larvadar",
+    "number": "824",
+    "types": {
+      "primary": "insecte",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 2,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 2,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 13,
+      "max": 13
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.4m / 8kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Larve",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Coléodôme (niveau 10)",
+      "talents": [
+        {
+          "name": "Essaim",
+          "uuid": "Compendium.hakai-kousen.talents.Item.48072770a686c860",
+          "hidden": false
+        },
+        {
+          "name": "Œil Composé",
+          "uuid": "Compendium.hakai-kousen.talents.Item.cd5c759348145a25",
+          "hidden": false
+        },
+        {
+          "name": "Télépathe",
+          "uuid": "Compendium.hakai-kousen.talents.Item.1de73c940e27ca7e",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Survinsecte",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d6141207b6c5380"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ultrason",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c97ebd0d0e335a6a"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Toile Gluante",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9509258f6db6d18d"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Harcèlement",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33cd4ada6c0041fb"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Soin",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7ce6fbe698cabe8a"
+        }
+      ]
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Larvadar",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/824.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "b9f28c4e5aee9734",
+  "sort": 82400,
+  "flags": {}
+}

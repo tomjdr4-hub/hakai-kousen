@@ -1,0 +1,33 @@
+{
+  "name": "Lame Puissante",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "roche",
+    "category": "physical",
+    "energy": 6,
+    "range": "CIble",
+    "accuracy": 10,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Ignore les capacités comme Abri, Détection, Pico-Défense et Piège de Fil mais subit les effets négatifs</p>"
+  },
+  "_id": "857be9f2308c720b",
+  "_key": "!items!857be9f2308c720b"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Roue Libre",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "physical",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "11",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente la vitesse du lanceur de 1. Le type (Electrik ou Ténèbres) dépend du talent Déclic Fringale.</p>"
+  },
+  "_id": "2da923534135cc96",
+  "_key": "!items!2da923534135cc96"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Métalliroue",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "acier",
+    "category": "physical",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "13",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Dissipe le champ actif. Echoue si aucun champ actif.</p>"
+  },
+  "_id": "88af0c2aea9f6a28",
+  "_key": "!items!88af0c2aea9f6a28"
+}

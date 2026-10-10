@@ -1,0 +1,33 @@
+{
+  "name": "Bec-Canon",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "vol",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Attaque à la fin du tour, si un adversaire touche physiquement le Pokémon pendant le tour, il devient brûlé</p>"
+  },
+  "_id": "dacffbae1f2db2ae",
+  "_key": "!items!dacffbae1f2db2ae"
+}

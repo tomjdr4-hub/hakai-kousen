@@ -1,0 +1,33 @@
+{
+  "name": "hydrovapeur",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "eau",
+    "category": "special",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente sa puissance de 50% sous le soleil. Le soleil n'affecte pas négativement la puissance de cette attaque. Guérit l'utilisateur du gel.</p>"
+  },
+  "_id": "22d8633396d7f1ef",
+  "_key": "!items!22d8633396d7f1ef"
+}

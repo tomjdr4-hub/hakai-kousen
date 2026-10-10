@@ -1,0 +1,33 @@
+{
+  "name": "Décalquage",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "status",
+    "energy": 3,
+    "range": "Cible/Zone Alliée",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Remplace le talent du lanceur et de ses alliés est remplacé par celui de la cible</p>"
+  },
+  "_id": "2c30deef7184022d",
+  "_key": "!items!2c30deef7184022d"
+}

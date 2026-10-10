@@ -1,0 +1,33 @@
+{
+  "name": "Double Décharge",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Echoue si lancée par un Pokémon qui n'est pas de type Electrik. Une fois utilisée, le lanceur perd son type Electrik</p>"
+  },
+  "_id": "150e239dd0d58348",
+  "_key": "!items!150e239dd0d58348"
+}

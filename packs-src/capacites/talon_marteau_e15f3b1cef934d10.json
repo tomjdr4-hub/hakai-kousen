@@ -1,0 +1,42 @@
+{
+  "name": "Talon-Marteau",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "combat",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 30,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>30% de chance de rendre la cible confuse. SI l'attaque échoue, le lanceur perd la moitié de sa Vitalité max</p>"
+  },
+  "_id": "e15f3b1cef934d10",
+  "_key": "!items!e15f3b1cef934d10"
+}

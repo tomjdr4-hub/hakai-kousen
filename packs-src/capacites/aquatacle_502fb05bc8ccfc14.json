@@ -1,0 +1,33 @@
+{
+  "name": "Aquatacle",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "eau",
+    "category": "physical",
+    "energy": 3,
+    "range": "cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur subit 1/3 des dégâts infligés et sa vitesse augmente de 1.</p>"
+  },
+  "_id": "502fb05bc8ccfc14",
+  "_key": "!items!502fb05bc8ccfc14"
+}

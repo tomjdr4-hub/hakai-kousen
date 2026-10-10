@@ -1,0 +1,33 @@
+{
+  "name": "Queulonage",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "status",
+    "energy": 3,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Sacrifie la moitié de sa Vitalité pour invoquer un clone. Le lanceur est retiré du terrain et un autre pokémon est envoyé à sa place. Le clone adopte les faiblesses, résistances et effet du talent du pokémon rentrant.</p>"
+  },
+  "_id": "f1bd424d10e75bff",
+  "_key": "!items!f1bd424d10e75bff"
+}

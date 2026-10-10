@@ -1,0 +1,33 @@
+{
+  "name": "Hommage Posthume",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "spectre",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "5",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>L'attaque gagne +5 en puissance à chaque allié mis ko près du lanceur</p>"
+  },
+  "_id": "a39ecc6d8f0ad418",
+  "_key": "!items!a39ecc6d8f0ad418"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Poing de Colère",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "spectre",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "5",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>La puissance de cette attaque augmente de 5 pour chaque coup que le lanceur a subi. Chaque coup des capacités touchant plusieurs fois compte comme 1. Maximum +35</p>"
+  },
+  "_id": "d97872ab026a38e6",
+  "_key": "!items!d97872ab026a38e6"
+}

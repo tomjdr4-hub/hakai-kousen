@@ -1287,3 +1287,36 @@
   height: 22px;
   font-size: 0.85em;
 }
+
+/* ---------- Fenêtre de rencontre ---------- */
+
+.hk-steps {
+  margin: 0 0 8px;
+  padding-left: 20px;
+  font-size: 0.9em;
+}
+
+.hk-steps li {
+  margin-bottom: 2px;
+}
+
+.hk-zones {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.hk-zones .hk-zone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hk-zones .hk-zone:hover {
+  background: rgba(192, 57, 43, 0.12);
+}

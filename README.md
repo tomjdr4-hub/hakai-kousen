@@ -66,7 +66,7 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 ### Outils du MJ
 Boutons dans l'onglet Acteurs (MJ) : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Planning en off**.
 
-- **Rencontre en un clic** : tirage sur une table de zone, relance de l'espèce sur un 100 (chromatique), reconnaissance de l'espèce, du nombre (1D4…), d'un Dominant ou d'un Aberrant, puis génération et placement des Pokémon.
+- **Rencontre en un clic** : choix de la zone (tables du monde nommées « Rencontres : … », ou l'exemple du Manuel du MJ ; bouton « Créer une table de zone » à partir de l'exemple), tirage sur sa table, relance de l'espèce sur un 100 (chromatique), reconnaissance de l'espèce, du nombre (1D4…), d'un Dominant ou d'un Aberrant, puis génération et placement des Pokémon.
 - **Retrait** : quand un Pokémon sauvage passe sous ¼ de VIT, le MJ reçoit son intention et sa condition de retrait.
 - **Concours** (aide du MJ) : quatre épreuves notées sur 25 avec les critères du jury, pénalités, classement et départage, annonce dans le chat.
 - **Planning en off** (MJ 6.4) : journal avec une page par Dresseur de joueur, une ligne par demi-journée et le suivi des objectifs.

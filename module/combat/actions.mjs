@@ -115,10 +115,41 @@ export function getActionOptions(combatant, combat) {
   kinds.push("other");
 
   // Cibles d'attaque ou de capture : les autres combattants visibles.
+  const opponents = new Set(opponentsOf(combatant, combat).map(c => c.id));
   options.targets = combat.combatants
     .filter(c => (c.id !== combatant.id) && c.token && (game.user.isGM || !c.hidden))
-    .map(c => ({ id: c.id, name: c.name, img: c.img, wild: !c.trainer && (c.actor?.type === "pokemon"), ko: c.isKO }));
+    .map(c => ({ id: c.id, name: c.name, img: c.img, wild: !c.trainer && (c.actor?.type === "pokemon"), ko: c.isKO, opponent: opponents.has(c.id) }))
+    .sort((a, b) => b.opponent - a.opponent);
   return options;
+}
+
+/**
+ * Adversaires en jeu : combattants non KO d'un autre camp (autre Dresseur, ou jeton de disposition différente).
+ * @param {Combatant} combatant
+ * @param {Combat} combat
+ */
+export function opponentsOf(combatant, combat) {
+  const trainer = combatant.trainer;
+  const disposition = combatant.token?.disposition;
+  return combat.combatants.filter(c => {
+    if ( (c.id === combatant.id) || c.isKO || !c.token ) return false;
+    if ( trainer && (c.trainer?.id === trainer.id) ) return false;
+    if ( trainer && c.trainer ) return true;
+    return c.token.disposition !== disposition;
+  });
+}
+
+/** La capacité vise son lanceur (portée « Personnel ») : pas de cible à choisir. */
+export function isSelfAttack(actor, itemId) {
+  if ( itemId === STRUGGLE_ID ) return false;
+  const range = actor?.items.get(itemId)?.system.range ?? "";
+  return /^personnel/i.test(range.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+}
+
+/** Cible par défaut : l'adversaire s'il n'y en a qu'un. */
+export function defaultTargets(combatant, combat) {
+  const opponents = opponentsOf(combatant, combat);
+  return opponents.length === 1 ? [opponents[0].id] : [];
 }
 
 /* -------------------------------------------- */
@@ -154,9 +185,10 @@ export function describeChoice(combatant, combat) {
 }
 
 /** Le choix est complet et peut être validé. */
-export function isChoiceComplete(choice) {
+export function isChoiceComplete(choice, combatant = null) {
   switch ( choice.kind ) {
-    case "attack": return !!choice.itemId;
+    // Une attaque demande une cible, sauf si elle vise le lanceur.
+    case "attack": return !!choice.itemId && (choice.targets.length > 0 || isSelfAttack(combatant?.actor, choice.itemId));
     case "switch": return !!choice.switchTo;
     case "item": return !!choice.itemId;
     case "ball": return !!choice.itemId && (choice.targets.length === 1);
@@ -221,7 +253,10 @@ export async function executeChoice(combatant) {
         const roll = (await rollDressage(actor))?.rolls?.[0];
         if ( roll && (roll.total > actor.system.dressage) ) break;
       }
-      const targets = choice.targets.map(id => resolveCombatant(combat, id)?.token).filter(Boolean);
+      // Cibles choisies (ou leur remplaçant) ; à défaut, l'adversaire encore en jeu.
+      let ids = choice.targets.map(id => resolveCombatant(combat, id)).filter(c => c && !c.isKO).map(c => c.id);
+      if ( !ids.length && !isSelfAttack(actor, choice.itemId) ) ids = defaultTargets(combatant, combat);
+      const targets = ids.map(id => combat.combatants.get(id)?.token).filter(Boolean);
       const message = await rollAttack(actor, item, { targets, zMove: choice.zmove && !struggle });
       if ( !message ) return false;
       // Lutte : le lanceur perd 1/10 de sa VIT max.

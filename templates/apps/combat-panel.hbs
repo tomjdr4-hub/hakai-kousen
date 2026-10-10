@@ -123,7 +123,9 @@
         <p class="hint">Aucune capacité sur la fiche.</p>
         {{/each}}
       </div>
-      {{> "hk-panel-targets" m}}
+      {{#if m.selfAttack}}<p class="hint">Capacité sur le lanceur : pas de cible à choisir.</p>
+      {{else}}{{> "hk-panel-targets" m}}{{/if}}
+      {{#if m.needsTarget}}<p class="warning"><i class="fa-solid fa-crosshairs"></i> Choisissez une cible pour valider.</p>{{/if}}
       {{#if (lt m.dressage 8)}}<p class="hint">Dressage {{m.dressage}} : un test d'ordre (1D8) sera lancé avant l'attaque.</p>{{/if}}
       {{#if m.zAvailable}}
       <label class="checkbox" data-tooltip="Remplace l'attaque normale pour ce tour ; une seule par Dresseur et par combat. Le Pokémon doit tenir le Cristal Z adapté.">

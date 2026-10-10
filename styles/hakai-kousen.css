@@ -1170,3 +1170,7 @@
   flex: 1;
   white-space: nowrap;
 }
+
+.hk-combat-panel .hk-target.opponent:not(.active) {
+  border-color: rgba(198, 40, 40, 0.6);
+}

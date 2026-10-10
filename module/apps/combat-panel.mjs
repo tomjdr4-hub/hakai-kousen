@@ -2,7 +2,8 @@
  * Panneau de combat : phase de réflexion chronométrée avec choix secrets, puis résolution dans l'ordre.
  */
 import {
-  ACTION_KINDS, describeChoice, executeChoice, getActionOptions, isChoiceComplete, requestReplacement, setChoice
+  ACTION_KINDS, defaultTargets, describeChoice, executeChoice, getActionOptions, isChoiceComplete, isSelfAttack,
+  requestReplacement, setChoice
 } from "../combat/actions.mjs";
 import { deploy, endCombatWithXP, getSetup, openSetupDialog, setDeployChoice, validTeam } from "../combat/setup.mjs";
 import { blockedReason } from "../combat/turn-start.mjs";
@@ -251,7 +252,9 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
       ene: combatant.actor.type === "pokemon" ? `${combatant.actor.system.ene.value} / ${combatant.actor.system.ene.max}` : null,
       dressage: combatant.actor.system.dressage,
       is: { [choice.kind]: true },
-      complete: isChoiceComplete(choice),
+      complete: isChoiceComplete(choice, combatant),
+      needsTarget: (choice.kind === "attack") && !!choice.itemId && !choice.targets.length && !isSelfAttack(combatant.actor, choice.itemId),
+      selfAttack: (choice.kind === "attack") && isSelfAttack(combatant.actor, choice.itemId),
       note: choice.note,
       kinds: options.kinds.map(k => ({ key: k, ...ACTION_KINDS[k], active: choice.kind === k })),
       attacks: options.attacks.map(a => ({ ...a, typeLabel: TYPES[a.type], selected: a.id === choice.itemId })),
@@ -288,7 +291,7 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
         else draft[input.dataset.draftField] = input.value;
         if ( (input.tagName === "SELECT") || (input.type === "checkbox") ) this.render();
         else this.element.querySelector(`[data-combatant="${id}"] [data-action=validateChoice]`)
-          ?.toggleAttribute("disabled", !isChoiceComplete(draft));
+          ?.toggleAttribute("disabled", !isChoiceComplete(draft, this.combat.combatants.get(id)));
       });
     }
     if ( this.#focus ) {
@@ -359,7 +362,13 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   static #onSelectAttack(event, target) {
-    this.#draft(CombatPanel.#combatantId(target)).itemId = target.dataset.item;
+    const id = CombatPanel.#combatantId(target);
+    const draft = this.#draft(id);
+    draft.itemId = target.dataset.item;
+    const combatant = this.combat.combatants.get(id);
+    // Cible automatique s'il n'y a qu'un adversaire ; aucune pour une capacité sur soi.
+    if ( isSelfAttack(combatant?.actor, draft.itemId) ) draft.targets = [];
+    else if ( !draft.targets.length ) draft.targets = defaultTargets(combatant, this.combat);
     this.render();
   }
 
@@ -380,7 +389,7 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
     const id = CombatPanel.#combatantId(target);
     const combatant = this.combat.combatants.get(id);
     const draft = this.#draft(id);
-    if ( !combatant || !isChoiceComplete(draft) ) return;
+    if ( !combatant || !isChoiceComplete(draft, combatant) ) return;
     await setChoice(combatant, { ...draft, ready: true, done: false });
     this.#drafts.delete(id);
   }

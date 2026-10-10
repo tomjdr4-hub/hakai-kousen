@@ -4,6 +4,7 @@
  */
 import { BABY_SPECIES, CURABLE, NATURES } from "./config.mjs";
 import { trainerOf } from "./combat/effects.mjs";
+import { rollPool } from "./dice/rolls.mjs";
 
 const { DialogV2 } = foundry.applications.api;
 const SCOPE = "hakai-kousen";
@@ -206,35 +207,55 @@ export async function hatch(egg) {
 const DIE_LADDER = [4, 6, 8, 10, 12, 20];
 
 /**
- * Pêche : test de FOR pour ramener la prise. La difficulté choisie par le MJ (taille du dé) est réduite
- * d'un cran par niveau de Pêche au-delà du premier et par la canne (Super −1, Méga −2), jusqu'au D4.
+ * Pêche (6.6) : deux actions distinctes, présentées dans la même fenêtre.
+ * 1. Trouver un coin et faire mordre : jet de la Compétence Pêche (réserve de D10).
+ * 2. Ramener la prise : test de FOR ; la difficulté choisie par le MJ (taille du dé) est réduite
+ *    d'un cran par niveau de Pêche au-delà du premier et par la canne (Super −1, Méga −2), jusqu'au D4.
  */
 export async function fish(trainer) {
   const rods = trainer.itemTypes.gear.filter(i => /canne/i.test(i.name) && (i.system.quantity > 0));
-  const level = trainer.system.skills.peche.level;
+  const { level, spec } = trainer.system.skills.peche;
+  const strength = trainer.system.attributes.for.value;
   const rodBonus = rod => /m[ée]ga/i.test(rod) ? 2 : /super/i.test(rod) ? 1 : 0;
-  const data = await DialogV2.prompt({
-    window: { title: "Pêche", icon: "fa-solid fa-fish" },
+  const pool = level > 0 ? `${level}D10, meilleur résultat` : "2D10, moins bon résultat";
+  const result = await DialogV2.wait({
+    window: { title: `Pêche : ${trainer.name}`, icon: "fa-solid fa-fish" },
+    position: { width: 500 },
     content: `
-      <div class="form-group"><label>Difficulté de la prise</label><div class="form-fields"><select name="die">
-        ${[6, 8, 10, 12, 20].map(d => `<option value="${d}">D${d}</option>`).join("")}</select></div></div>
-      <div class="form-group"><label>Canne</label><div class="form-fields"><select name="rod">
-        <option value="">Aucune</option>${rods.map(r => `<option value="${r.name}">${r.name}</option>`).join("")}</select></div></div>
-      <p class="hint">Pêche niveau ${level} : −${Math.max(level - 1, 0)} difficulté. Super Canne −1, Méga Canne −2 (6.6).</p>`,
-    ok: { label: "Ramener la prise", icon: "fa-solid fa-dice-d6", callback: (e, b) => new foundry.applications.ux.FormDataExtended(b.form).object },
+      <fieldset class="hk-fish-step"><legend>1. Trouver un coin et faire mordre</legend>
+        <p>Jet de la <strong>Compétence Pêche</strong> (niveau ${level}${spec ? `, ${spec}` : ""} : ${pool}).
+        Savoir-faire du pêcheur : repérer un bon coin, choisir l'appât, connaître ce qui vit ici, attirer une prise.</p>
+        <p class="hint">Si ça mord, le MJ détermine l'espèce (table de zone aquatique avec le bouton Rencontre, ou Pokémon sauvages).
+        La Compétence Pêche n'augmente pas la rareté des Pokémon rencontrés.</p>
+      </fieldset>
+      <fieldset class="hk-fish-step"><legend>2. Ramener la prise</legend>
+        <p>Test de <strong>Force</strong> : 1D(difficulté) ≤ FOR ${strength}. Effort physique pour sortir la prise de l'eau.</p>
+        <div class="form-group"><label>Difficulté de la prise</label><div class="form-fields"><select name="die">
+          ${[6, 8, 10, 12, 20].map(d => `<option value="${d}">D${d}</option>`).join("")}</select></div></div>
+        <div class="form-group"><label>Canne</label><div class="form-fields"><select name="rod">
+          <option value="">Aucune</option>${rods.map(r => `<option value="${r.name}">${r.name}</option>`).join("")}</select></div></div>
+        <p class="hint">Le dé diminue d'un cran par niveau de Pêche au-delà du premier (−${Math.max(level - 1, 0)} ici),
+        d'un cran avec une Super Canne et de deux avec une Méga Canne. Un autre personnage ou un Pokémon assez puissant
+        peut aider : le MJ baisse alors la difficulté.</p>
+      </fieldset>`,
+    buttons: [
+      { action: "bite", label: "1. Faire mordre", icon: "fa-solid fa-dice-d10", default: true },
+      { action: "reel", label: "2. Ramener la prise", icon: "fa-solid fa-dice-d6",
+        callback: (e, b) => new foundry.applications.ux.FormDataExtended(b.form).object }
+    ],
     rejectClose: false
   });
-  if ( !data ) return;
-  const reduction = Math.max(level - 1, 0) + rodBonus(data.rod ?? "");
-  const start = DIE_LADDER.indexOf(Number(data.die));
+  if ( !result ) return;
+  if ( result === "bite" ) return rollPool(trainer, "Pêche : faire mordre", level, spec);
+
+  const reduction = Math.max(level - 1, 0) + rodBonus(result.rod ?? "");
+  const start = DIE_LADDER.indexOf(Number(result.die));
   const die = DIE_LADDER[Math.max(start - reduction, 0)];
-  const strength = trainer.system.attributes.for.value;
   const r = await roll(`1d${die}`);
   const success = r.total <= strength;
-  return card(trainer, `${trainer.name} pêche`, `
-    <p class="hk-detail">Difficulté D${data.die} − ${reduction} → D${die} · 1D${die} ≤ FOR ${strength} → ${r.total}</p>
-    <div class="hk-outcome ${success ? "success" : "failure"}">${success ? "La prise est ramenée !" : "La prise s'échappe"}</div>
-    <p class="hint">Un autre personnage ou un Pokémon assez puissant peut aider. Pêche n'augmente pas la rareté des Pokémon rencontrés.</p>`, [r]);
+  return card(trainer, `${trainer.name} ramène la prise`, `
+    <p class="hk-detail">Difficulté D${result.die} − ${reduction} → D${die} · 1D${die} ≤ FOR ${strength} → ${r.total}</p>
+    <div class="hk-outcome ${success ? "success" : "failure"}">${success ? "La prise est ramenée !" : "La prise s'échappe"}</div>`, [r]);
 }
 
 const MINING = [

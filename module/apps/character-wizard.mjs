@@ -333,10 +333,30 @@ export class CharacterWizard extends HandlebarsApplicationMixin(ApplicationV2) {
   _onRender(context, options) {
     super._onRender(context, options);
     for ( const input of this.element.querySelectorAll("input, select, textarea") ) {
-      input.addEventListener("change", async event => {
+      // L'élément est mémorisé avant tout await : event.currentTarget est remis à null après l'événement.
+      input.addEventListener("change", async () => {
         this.#readForm();
-        if ( event.currentTarget.name === "starter.species" ) await this.#loadSpecies();
-        if ( event.currentTarget.dataset.rerender !== undefined ) this.render();
+        if ( input.name === "starter.species" ) await this.#loadSpecies();
+        if ( input.dataset.rerender !== undefined ) this.render();
+      });
+    }
+    // Espèce du Starter : validée dès qu'un nom du Pokédex est choisi dans la liste ou tapé en entier, ou avec Entrée.
+    const species = this.element.querySelector("input[name='starter.species']");
+    if ( species ) {
+      const apply = async () => {
+        this.#readForm();
+        await this.#loadSpecies();
+        this.render();
+      };
+      species.addEventListener("input", () => {
+        const name = species.value.trim().toLowerCase();
+        const known = (this.#pokedex ?? []).some(e => e.name.toLowerCase() === name);
+        if ( known && (name !== (this.state.starter.info ? this.state.starter.species.toLowerCase() : "")) ) apply();
+      });
+      species.addEventListener("keydown", event => {
+        if ( event.key !== "Enter" ) return;
+        event.preventDefault();
+        apply();
       });
     }
   }

@@ -195,7 +195,8 @@ export class TrainerSheet extends HKActorSheet {
     }));
     const domains = (group, labels) => Object.entries(labels).map(([key, label]) => {
       const domain = system[group][key];
-      return { key, label, group, ...domain, cost: domain.level ? 2 * domain.level : 2, maxed: domain.level >= 5 };
+      return { key, label, group, ...domain, cost: domain.level ? 2 * domain.level : 2, maxed: domain.level >= 5,
+        suggestions: HK.SPEC_SUGGESTIONS[key] ?? [] };
     });
     context.skills = domains("skills", HK.SKILLS);
     context.knowledges = domains("knowledges", HK.KNOWLEDGES);
@@ -205,7 +206,9 @@ export class TrainerSheet extends HKActorSheet {
       return pokemon ? { uuid, pokemon, types: [pokemon.system.types?.primary, pokemon.system.types?.secondary]
         .filter(Boolean).map(t => HK.TYPES[t]).join(" / ") } : { uuid, missing: true };
     };
-    context.team = system.team.map(member);
+    context.team = system.team.map(member).map(m => ({ ...m, role: m.pokemon ? (system.npc.roles?.[m.pokemon.id] ?? "") : "" }));
+    context.isNPC = !this.actor.hasPlayerOwner;
+    context.npcRoles = HK.NPC_ROLES;
     context.pc = system.pc.map(member);
     context.pcCost = system.pc.length * 50;
 
@@ -315,6 +318,18 @@ export class TrainerSheet extends HKActorSheet {
   static async _onRemoveMember(event, target) {
     const uuid = target.closest("[data-uuid]").dataset.uuid;
     await this.actor.update({ "system.team": this.actor.system.team.filter(u => u !== uuid) });
+  }
+
+  /** @override */
+  _onRender(context, options) {
+    super._onRender(context, options);
+    // Rôle d'un Pokémon de PNJ : enregistré par id d'acteur.
+    for ( const select of this.element.querySelectorAll("select[data-npc-role]") ) {
+      select.addEventListener("change", event => {
+        event.stopPropagation();
+        this.actor.update({ [`system.npc.roles.${select.dataset.npcRole}`]: select.value });
+      });
+    }
   }
 
   static async _onSpendXP(event, target) {

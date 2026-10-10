@@ -1162,6 +1162,7 @@
 
 .hk-directory-tools {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   padding: 4px 8px;
 }
@@ -1250,5 +1251,39 @@
   flex: none;
   width: auto;
   height: 24px;
+  font-size: 0.85em;
+}
+
+/* ---------- Concours ---------- */
+
+.hk-contest .window-content {
+  padding: 0;
+}
+
+.hk-contest .hk-contest-body {
+  padding: 10px 12px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.hk-contest .hk-contest-table input {
+  width: 52px;
+  text-align: center;
+}
+
+.hk-contest .hk-contest-table tr.total td {
+  font-weight: bold;
+}
+
+.hk-contest .hk-ranking img {
+  width: 24px;
+  height: 24px;
+  border: none;
+  vertical-align: middle;
+}
+
+.hakai-kousen .team-member select {
+  margin-top: 2px;
+  height: 22px;
   font-size: 0.85em;
 }

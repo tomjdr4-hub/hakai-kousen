@@ -16,7 +16,8 @@
         <label>Nature
           <select name="system.nature">{{selectOptions natures selected=system.nature}}</select>
         </label>
-        <label>XP Pokémon <input type="number" name="system.xp.value" value="{{system.xp.value}}"></label>
+        <label data-tooltip="XP disponible ; total gagné depuis le début : {{system.xp.total}}">XP Pokémon <span class="hint">(total {{system.xp.total}})</span>
+          <input type="number" name="system.xp.value" value="{{system.xp.value}}"></label>
       </div>
       <div class="resources">
         <div class="resource vit {{#if weakened}}weakened{{/if}}">

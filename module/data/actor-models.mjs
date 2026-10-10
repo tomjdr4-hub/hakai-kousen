@@ -1,4 +1,5 @@
 import { ATTRIBUTES, BABY_SPECIES, POKEMON_STATS, SKILLS, KNOWLEDGES, NATURES } from "../config.mjs";
+import { statTalentMultipliers } from "../combat/talents.mjs";
 
 const {
   ArrayField, BooleanField, DocumentUUIDField, HTMLField, NumberField, SchemaField, StringField
@@ -45,6 +46,13 @@ export class TrainerData extends foundry.abstract.TypeDataModel {
       // Boîte PC : 30 places, Pokémon hébergés en Pension (7.1).
       pc: new ArrayField(new DocumentUUIDField({ type: "Actor" })),
       firstCapture: new BooleanField(),
+      // Dresseur PNJ (MJ 5.6, 5.13) : rôle de chaque Pokémon (clé : id de l'acteur), tactique et retrait.
+      npc: new SchemaField({
+        roles: new foundry.data.fields.ObjectField(),
+        tactic: new StringField({ required: true, blank: true }),
+        change: new StringField({ required: true, blank: true }),
+        retreat: new StringField({ required: true, blank: true })
+      }),
       // Affiche le contrôle des règles de création (3.7 à 3.10).
       creation: new BooleanField(),
       mechanics: new SchemaField(Object.fromEntries(["mega", "zmove", "tera", "dynamax"].map(k => [k, new SchemaField({
@@ -229,6 +237,8 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
     this.vit.max = this.stats.vit.total * (this.dynamax.active ? 2 : 1);
     this.ene.max = this.stats.ene.total;
     const weakened = this.weakened;
+    const talents = (this.parent?.itemTypes?.talent ?? []).map(t => t.name.toLowerCase());
+    const talentMult = statTalentMultipliers(talents, statuses);
 
     // Valeur effective en combat : modifications temporaires d'abord, puis divisions.
     for ( const k of Object.keys(POKEMON_STATS) ) {
@@ -238,9 +248,11 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
         continue;
       }
       let value = stat.total + stat.temp;
-      // Mouchoir Choix : DEX ×1,5 (Annexe 6).
+      // Mouchoir Choix : DEX ×1,5 (Annexe 6) ; Talents chiffrés (Cran, Pied Véloce…).
       if ( (k === "dex") && this.heldNames.includes("mouchoir choix") ) value = Math.floor(value * 1.5);
-      if ( (k === "for") && statuses.has("brulure") ) value = Math.floor(value / 2);
+      if ( talentMult[k] ) value = Math.floor(value * talentMult[k]);
+      // Brûlure : FOR ÷2, sauf avec Cran.
+      if ( (k === "for") && statuses.has("brulure") && !talents.includes("cran") ) value = Math.floor(value / 2);
       if ( (k === "dex") && statuses.has("paralysie") ) value = Math.floor(value / 2);
       if ( weakened ) value = Math.floor(value / 2);
       stat.value = Math.max(value, 0);

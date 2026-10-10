@@ -55,6 +55,38 @@ export const KNOWLEDGES = {
   zoologie: "Zoologie"
 };
 
+/**
+ * Suggestions de Spécialisations, tirées des exemples et des descriptions des domaines (3.9, 3.10).
+ * La Spécialisation reste libre : ses effets sont définis avec le MJ.
+ */
+export const SPEC_SUGGESTIONS = {
+  adresse: ["Crochetage", "Opération minutieuse", "Jonglage"],
+  art: ["Dessin", "Musique", "Danse", "Théâtre", "Photographie"],
+  artisanat: ["Fabrication de Balls", "Forge", "Couture", "Menuiserie"],
+  athletisme: ["Course", "Escalade", "Natation", "Port de charges"],
+  bricolage: ["Mécanique", "Électronique", "Réparation d'appareils"],
+  charisme: ["Persuasion", "Intimidation", "Mensonge", "Séduction", "Commandement"],
+  combat: ["Corps à corps", "Armes", "Arts martiaux", "Défense"],
+  cuisine: ["Recettes aux Baies", "Cuisine de groupe", "Pâtisserie"],
+  detection: ["Traces", "Pièges", "Fouille"],
+  discretion: ["Filature", "Camouflage", "Déplacement silencieux"],
+  minage: ["Fossiles", "Pierres précieuses", "Prospection"],
+  peche: ["Pêche en mer", "Pêche en rivière", "Appâts"],
+  perspicacite: ["Détection du mensonge", "Lecture des émotions"],
+  pilotage: ["Véhicules terrestres", "Bateaux", "Aéronefs", "Engins complexes"],
+  survie: ["Orientation", "Pistage", "Campement", "Milieux hostiles"],
+  chimie: ["Pharmacie", "Poisons et antidotes"],
+  droit: ["Droits des Dresseurs", "Réglementation des Pokémon", "Administration"],
+  economie: ["Négociation", "Estimation", "Contrats"],
+  histoire: ["Pokémon légendaires", "Mythes", "Civilisations anciennes"],
+  informatique: ["Hacking", "Réseaux", "Données"],
+  medecineHumaine: ["Urgences", "Chirurgie", "Médecine de terrain"],
+  medecinePokemon: ["Soins d'urgence", "Maladies", "Rééducation"],
+  nature: ["Culture des Baies", "Botanique", "Météorologie"],
+  technologie: ["Machines régionales", "Énergie", "Appareils Pokémon"],
+  zoologie: ["Élevage", "Comportement", "Habitats", "Identification des traces"]
+};
+
 /** Difficulté d'un test de Caractéristique : taille du dé (2.2). */
 export const ATTRIBUTE_DIFFICULTIES = {
   6: "Normale (D6)",
@@ -229,6 +261,9 @@ export const WILD_PROFILES = {
   dominant: { label: "Dominant", iv: 12, dominant: true }
 };
 
+/** Rôles des Pokémon d'une équipe de PNJ (Manuel du MJ 5.6) : aide à la préparation, pas une règle. */
+export const NPC_ROLES = { "": "—", offensif: "Offensif", resistant: "Résistant", mobile: "Mobile", controle: "Contrôle", soutien: "Soutien", terrain: "Terrain" };
+
 /** Climats et Terrains (5.12) : effets « adaptés HK », à arbitrer par le MJ. */
 export const WEATHERS = { "": "Aucun climat", soleil: "Soleil", pluie: "Pluie", grele: "Grêle", neige: "Neige", sable: "Tempête de sable", brouillard: "Brouillard" };
 export const TERRAINS = { "": "Aucun terrain", electrifie: "Champ Électrifié", herbu: "Champ Herbu", brumeux: "Champ Brumeux", psychique: "Champ Psychique" };
@@ -319,5 +354,5 @@ export function typeEffectiveness(attackType, defenderTypes) {
 export const HK = {
   ATTRIBUTES, POKEMON_STATS, SKILLS, KNOWLEDGES, ATTRIBUTE_DIFFICULTIES, POOL_DIFFICULTIES,
   TYPES, TYPE_CHART, NATURES, ATTACK_CATEGORIES, POKESKILL_CATEGORIES, GEAR_CATEGORIES,
-  STATUSES, WEATHERS, TERRAINS, COMBAT_TYPES, COMBAT_FORMATS, CURABLE, RARITIES, WILD_PROFILES, BABY_SPECIES, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
+  STATUSES, WEATHERS, TERRAINS, SPEC_SUGGESTIONS, NPC_ROLES, COMBAT_TYPES, COMBAT_FORMATS, CURABLE, RARITIES, WILD_PROFILES, BABY_SPECIES, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
 };

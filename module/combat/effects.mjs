@@ -3,6 +3,7 @@
  * Si l'utilisateur ne possède pas la cible, la demande est transmise au MJ actif.
  */
 import { ATTRIBUTES, CURABLE, STATUSES } from "../config.mjs";
+import { statusTalentImmunity } from "./talents.mjs";
 
 const SOCKET = "system.hakai-kousen";
 
@@ -255,6 +256,8 @@ export async function applyEffect(actor, effect) {
   const types = [actor.system.types?.primary, actor.system.types?.secondary].filter(Boolean);
   const immune = types.find(t => status.immune.includes(t));
   if ( immune ) return ui.notifications.warn(`${actor.name} est immunisé : ${status.label} (type ${immune}).`);
+  const talent = statusTalentImmunity(actor, effect.status);
+  if ( talent ) return ui.notifications.warn(`${actor.name} est immunisé : ${status.label} (Talent ${talent}).`);
   if ( status.major ) {
     const current = Object.entries(STATUSES).find(([id, s]) => s.major && actor.statuses.has(id));
     if ( current ) return ui.notifications.warn(`${actor.name} souffre déjà d'un problème de statut majeur : ${current[1].label}.`);

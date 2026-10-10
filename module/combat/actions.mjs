@@ -459,6 +459,10 @@ async function performSwitch(combatant, actorUuid, { replacement = false } = {})
     const reset = {};
     for ( const k of Object.keys(outgoing.system.stats) ) reset[`system.stats.${k}.temp`] = 0;
     reset["system.accuracyMod"] = 0;
+    // Régé-Force : restaure 1/3 de la VIT max quand le Pokémon est retiré du combat.
+    if ( !replacement && outgoing.itemTypes.talent.some(t => t.name.toLowerCase() === "régé-force") ) {
+      reset["system.vit.value"] = Math.min(outgoing.system.vit.value + Math.floor(outgoing.system.vit.max / 3), outgoing.system.vit.max);
+    }
     await outgoing.update(reset);
     for ( const id of SWITCH_CLEARS ) {
       if ( outgoing.statuses.has(id) ) await outgoing.toggleStatusEffect(id, { active: false });

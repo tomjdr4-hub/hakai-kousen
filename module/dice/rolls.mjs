@@ -5,6 +5,7 @@ import {
 
 import { applyDamage, effectLabel, spendEnergy } from "../combat/effects.mjs";
 import { armorReduction, damageBonuses, dodgeLevel, DODGE_COST, resistanceReduction } from "../combat/skills.mjs";
+import { attackerTalentMultipliers, defenderTalentImmunity, talentNames } from "../combat/talents.mjs";
 
 const { DialogV2 } = foundry.applications.api;
 
@@ -246,6 +247,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
     if ( !atk.sure && (atk.accuracy > 0) ) {
       const mods = [[actor.system.accuracyMod ?? 0, "précision"]];
       if ( attackerHeld.includes("loupe") ) mods.push([10, "Loupe"]);
+      if ( talentNames(actor).includes("agitation") ) mods.push([-20, "Agitation"]);
       const targetCombatant = token ? game.combat?.combatants.find(c => c.tokenId === (token.document?.id ?? token.id)) : null;
       if ( attackerHeld.includes("lentille zoom") && targetCombatant?.choice.done ) mods.push([20, "Lentille Zoom"]);
       const targetHeld = held(target);
@@ -307,8 +309,10 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
     if ( hit && (atk.isDamaging || sp.ohko) ) {
       const rawMult = target ? typeEffectiveness(atk.type, defenderTypes(target)) : 1;
       const resist = target ? resistanceReduction(target, atk.type) : 0;
-      const mult = Math.max(rawMult - resist, 0);
-      const parts = [];
+      // Talent de la cible (Lévitation, Torche, Fermeté) : aucun effet.
+      const immuneTalent = target ? defenderTalentImmunity(target, item) : null;
+      const mult = immuneTalent ? 0 : Math.max(rawMult - resist, 0);
+      const parts = immuneTalent ? [`${immuneTalent} : aucun effet`] : [];
       let amount;
       let berry = null;
       if ( sp.ohko ) {
@@ -337,7 +341,10 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         const choice = ((atk.category === "physical") && attackerHeld.includes("bandeau choix"))
           || ((atk.category === "special") && attackerHeld.includes("lunettes choix")) ? 1.5 : 1;
         const base = (dmgRoll.total + bonuses.reduce((sum, b) => sum + b.value, 0)) * hits;
-        amount = Math.floor(base * choice * (crit ? 2 : 1) * mult);
+        // Talents de l'attaquant (Brasier, Torrent… sous 1/3 de VIT, Prognathe, Technicien) : ×1,5.
+        const talentMults = attackerTalentMultipliers(actor, item);
+        const talentMult = talentMults.reduce((m, t) => m * t.mult, 1);
+        amount = Math.floor(base * choice * talentMult * (crit ? 2 : 1) * mult);
         berry = target && (rawMult > 1) ? resistBerry(target, atk.type) : null;
         if ( berry && amount ) amount = Math.max(Math.floor(amount / 2), 1);
         const armor = (target && (atk.category === "physical")) ? armorReduction(target) : 0;
@@ -346,6 +353,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         for ( const b of bonuses ) parts.push(`+${b.value} (${b.label})`);
         if ( hits > 1 ) parts.push(`×${hits} frappes`);
         if ( choice > 1 ) parts.push("×1,5 (Choix)");
+        for ( const t of talentMults ) parts.push(`×1,5 (${t.label})`);
         if ( crit ) parts.push("×2 (critique)");
         if ( resist ) parts.push(`×${rawMult} −${resist} (Résistance)`);
         if ( mult !== 1 ) parts.push(`×${mult}`);

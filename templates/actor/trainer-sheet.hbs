@@ -99,6 +99,7 @@
           <span class="hint">{{member.pokemon.system.species}} · {{member.types}}</span>
           <span>VIT {{member.pokemon.system.vit.value}}/{{member.pokemon.system.vit.max}}
             · ENE {{member.pokemon.system.ene.value}}/{{member.pokemon.system.ene.max}}</span>
+          {{#if @root.isNPC}}<select data-npc-role="{{member.pokemon.id}}" data-tooltip="Rôle dans l'équipe (MJ 5.6)">{{selectOptions @root.npcRoles selected=member.role}}</select>{{/if}}
         </div>
         {{/if}}
         {{#if @root.editable}}
@@ -110,6 +111,16 @@
     </ol>
 
     {{#if editable}}<button type="button" data-action="center"><i class="fa-solid fa-house-medical"></i> Centre Pokémon (50 ₽ par Pokémon)</button>{{/if}}
+
+    {{#if isNPC}}
+    <h3>Tactique du Dresseur (PNJ)</h3>
+    <div class="details-grid">
+      <label class="wide">Tactique <input type="text" name="system.npc.tactic" value="{{system.npc.tactic}}" placeholder="Premier objectif, combinaisons, cible privilégiée…"></label>
+      <label class="wide">Ce qui le pousse à changer <input type="text" name="system.npc.change" value="{{system.npc.change}}" placeholder="Pokémon clé KO, switch adverse…"></label>
+      <label class="wide">Réaction au KO et retrait <input type="text" name="system.npc.retreat" value="{{system.npc.retreat}}" placeholder="Se rend, fuit, appelle des renforts…"></label>
+    </div>
+    <p class="hint">Un adversaire intelligent agit à partir de ce qu'il observe, pas des fiches des personnages (MJ 5.13).</p>
+    {{/if}}
 
     <h3>Boîte PC ({{pc.length}} / 30)</h3>
     <p class="hint">Pension : {{pcCost}} ₽ par jour ({{pc.length}} × 50 ₽). Un Pokémon capturé avec une équipe complète arrive ici.</p>

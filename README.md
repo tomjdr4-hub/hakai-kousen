@@ -57,12 +57,20 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - **Centre Pokémon** (8.9) : soins complets de l'équipe pour 50 ₽ par Pokémon (blessures graves à part).
 - **Boutique et revente** (8.2) : achat au prix de référence depuis le compendium Objets, revente à 50 % (réglage « CT revendables »).
 - **CT** : apprendre une capacité par CT retire la CT de l'inventaire du Dresseur.
+- **Spécialisations** : suggestions dans chaque domaine (exemples des livres), la saisie reste libre.
+- **XP Pokémon** : total gagné affiché à côté de l'XP disponible.
 - **Création** (3.7 à 3.10, 4.1) : case « Création du personnage » sur la fiche Dresseur et « Starter en création » sur la fiche Pokémon, avec la liste des règles respectées ou non.
 - **Formes Méga** : « Remplir depuis le Pokédex » calcule types et bonus à partir de la fiche Méga.
 - **Combat** : climat et terrain affichés dans le panneau (réglés par le MJ).
 
 ### Outils du MJ
-Boutons dans l'onglet Acteurs (MJ) : **Pokémon sauvages** et **Combat de Dresseurs**.
+Boutons dans l'onglet Acteurs (MJ) : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Planning en off**.
+
+- **Rencontre en un clic** : tirage sur une table de zone, relance de l'espèce sur un 100 (chromatique), reconnaissance de l'espèce, du nombre (1D4…), d'un Dominant ou d'un Aberrant, puis génération et placement des Pokémon.
+- **Retrait** : quand un Pokémon sauvage passe sous ¼ de VIT, le MJ reçoit son intention et sa condition de retrait.
+- **Concours** (aide du MJ) : quatre épreuves notées sur 25 avec les critères du jury, pénalités, classement et départage, annonce dans le chat.
+- **Planning en off** (MJ 6.4) : journal avec une page par Dresseur de joueur, une ligne par demi-journée et le suivi des objectifs.
+- **Dresseur PNJ** (MJ 5.6) : rôle de chaque Pokémon (offensif, résistant, contrôle…), tactique, déclencheurs de changement et retrait.
 
 - **Générateur de Pokémon sauvages** (MJ 5.1, 7.4) : espèce du Pokédex, nombre, profil (jeune, ordinaire, membre de meute, expérimenté, dominant), IV répartis au hasard, Nature au D100, Talent de l'espèce, Compétence initiale et attaque inhabituelle (1D10), rareté, Aberrant, chromatique, intention et condition de retrait ; placement sur la scène. Les manuels ne chiffrent pas les profils : les points d'IV proposés sont des valeurs par défaut modifiables.
 - **Rencontre et capture** (fiche Pokémon, onglet Description) : rareté, Dominant, Aberrant et chromatique, utilisés par le jet de capture (Dominant ou semi-légendaire final : Hyper Ball minimum).
@@ -73,6 +81,9 @@ Boutons dans l'onglet Acteurs (MJ) : **Pokémon sauvages** et **Combat de Dresse
 - **Capacités** (extraites des descriptions du site, modifiables sur la fiche) : bonus au dé de toucher (Tranch'Herbe +1), recul (Bélier, Damoclès), drain (Méga-Sangsue, Vampi-Poing), frappes multiples (2 fois, 2 à 5 fois), attaques en deux tours (Lance-Soleil, Tunnel : préparation puis frappe imposée au tour suivant), repos obligatoire (Ultralaser, Hydroblast), KO direct (Abîme), lanceur KO (Explosion), modifications de précision (Jet de Sable, Aiguisage).
 - **Objets tenus** (Annexe 6) : Restes et Boue Noire en fin de tour, Ceinture Force et Bandeau contre le KO, Lentilscope et Griffe Rasoir (critique sur 9-10), Poing Chance et Poireau (8-10), objets Choix ×1,5, Orbe Vie, Bandeau Muscle, Lunettes Sages, Ceinture Pro, Gant de Boxe, Loupe, Lentille Zoom, Poudre Claire. Baies de résistance (dégâts super efficaces ÷2, consommée). Objets tenus utilisables sans action depuis la fiche du Pokémon.
 - **États** : une attaque Feu dégèle ; Malédiction réservée à un lanceur Spectre, qui sacrifie la moitié de sa VIT max ; Attraction : une chance sur deux de ne pas attaquer le Pokémon qui a charmé.
+
+### Talents automatisés
+Seuls les Talents dont la description est chiffrée et sans ambiguïté : Engrais, Brasier, Torrent, Essaim (×1,5 sous 1/3 de VIT), Prognathe, Technicien ; Lévitation, Torche, Fermeté ; Ignifu-Voile, Vaccin, Échauffement, Tempo Perso, Attention, Armumagma ; Cran, Pied Véloce, Écaille Spéciale, Rage Poison, Agitation ; Régé-Force. Les Talents liés au climat ou au combat double restent au MJ.
 
 ### Panneau de combat
 Bouton **Panneau de combat** dans le suivi de combat (il s'ouvre aussi tout seul à chaque tour).

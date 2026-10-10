@@ -1,0 +1,44 @@
+<div class="hk-contest-body">
+  <div class="hk-activities">
+    {{#if isGM}}
+    <button type="button" data-action="addParticipants"><i class="fa-solid fa-user-plus"></i> Inscrire des candidats</button>
+    <button type="button" data-action="announce"><i class="fa-solid fa-bullhorn"></i> Annoncer les résultats</button>
+    <button type="button" data-action="reset"><i class="fa-solid fa-rotate-left"></i> Nouveau concours</button>
+    {{/if}}
+  </div>
+  <p class="hint">Quatre épreuves notées sur 25 par le jury (score commun ou moyenne arrondie à l'inférieur). Aucun point automatique pour un Pokémon rare, chromatique ou évolué ; une idée originale peut être récompensée. Pénalité de 1 à 5 pour conduite dangereuse, maltraitance ou fraude.</p>
+
+  {{#if participants.length}}
+  {{#each events as |ev|}}
+  <h3>{{ev.label}}</h3>
+  <table class="hk-table hk-contest-table">
+    <thead><tr><th>Critère</th><th>Max</th>{{#each @root.participants as |p|}}<th>{{p.name}}</th>{{/each}}</tr></thead>
+    <tbody>
+      {{#each ev.rows as |row|}}
+      <tr>
+        <th>{{row.label}}</th><td>{{row.max}}</td>
+        {{#each row.cells as |c|}}<td><input type="number" data-score="{{row.key}}" data-id="{{c.id}}" value="{{c.value}}" min="0" max="{{row.max}}" {{#unless @root.isGM}}disabled{{/unless}}></td>{{/each}}
+      </tr>
+      {{/each}}
+      <tr class="total"><th>Total de l'épreuve</th><td>25</td>{{#each ev.totals as |t|}}<td>{{t}}</td>{{/each}}</tr>
+    </tbody>
+  </table>
+  {{/each}}
+
+  <h3>Pénalités</h3>
+  <table class="hk-table hk-contest-table">
+    <thead><tr>{{#each participants as |p|}}<th>{{p.name}} {{#if @root.isGM}}<a data-action="removeParticipant" data-id="{{p.id}}" data-tooltip="Retirer"><i class="fa-solid fa-xmark"></i></a>{{/if}}</th>{{/each}}</tr></thead>
+    <tbody><tr>{{#each penalties as |p|}}<td><input type="number" data-penalty="{{p.id}}" value="{{p.value}}" min="0" max="5" {{#unless @root.isGM}}disabled{{/unless}}></td>{{/each}}</tr></tbody>
+  </table>
+
+  <h3>Classement</h3>
+  <ol class="hk-ranking">
+    {{#each ranking as |r|}}
+    <li><img src="{{r.img}}" alt=""> <strong>{{r.name}}</strong> <span class="hk-chip">{{r.total}} / 100</span>
+      <span class="hint">{{#each r.events as |e|}}{{e}}{{#unless @last}} · {{/unless}}{{/each}}{{#if r.penalty}} · −{{r.penalty}}{{/if}}</span></li>
+    {{/each}}
+  </ol>
+  {{else}}
+  <p class="hk-empty">Aucun candidat inscrit.</p>
+  {{/if}}
+</div>

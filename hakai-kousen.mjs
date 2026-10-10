@@ -14,6 +14,9 @@ import { registerSocket } from "./module/combat/actions.mjs";
 import { openSetupDialog } from "./module/combat/setup.mjs";
 import { openWildGenerator } from "./module/apps/wild-generator.mjs";
 import { registerProgressionHooks } from "./module/progression.mjs";
+import { rollEncounter } from "./module/apps/encounter.mjs";
+import { openContest } from "./module/apps/contest.mjs";
+import { openPlanning } from "./module/apps/planning.mjs";
 
 /** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
@@ -22,7 +25,7 @@ const STATUS_EFFECTS = [
 ];
 
 Hooks.once("init", () => {
-  game.hakaiKousen = { config: HK, rolls, openCombatPanel, openSetupDialog, openWildGenerator };
+  game.hakaiKousen = { config: HK, rolls, openCombatPanel, openSetupDialog, openWildGenerator, rollEncounter, openContest, openPlanning };
   CONFIG.HK = HK;
 
   CONFIG.Actor.documentClass = HKActor;
@@ -52,6 +55,7 @@ Hooks.once("init", () => {
     hint: "Lance le chrono et le choix secret des actions dès qu'un nouveau tour de combat commence.",
     scope: "world", config: true, type: Boolean, default: true
   });
+  game.settings.register("hakai-kousen", "contest", { scope: "world", config: false, type: Object, default: {} });
   game.settings.register("hakai-kousen", "ctResale", {
     name: "CT revendables",
     hint: "Manuel du Joueur 8.2 : revente des CT à 50 % (économie plus libre), ou variante « CT non revendables ».",
@@ -96,10 +100,15 @@ Hooks.on("renderActorDirectory", (app, html) => {
   if ( root.querySelector(".hk-directory-tools") ) return;
   const tools = document.createElement("div");
   tools.className = "hk-directory-tools";
-  tools.innerHTML = `<button type="button" data-hk-tool="wild"><i class="fa-solid fa-paw"></i> Pokémon sauvages</button>
-    <button type="button" data-hk-tool="battle"><i class="fa-solid fa-people-arrows"></i> Combat de Dresseurs</button>`;
-  tools.querySelector("[data-hk-tool=wild]").addEventListener("click", () => openWildGenerator());
-  tools.querySelector("[data-hk-tool=battle]").addEventListener("click", () => openSetupDialog());
+  tools.innerHTML = `<button type="button" data-hk-tool="encounter"><i class="fa-solid fa-dice-d20"></i> Rencontre</button>
+    <button type="button" data-hk-tool="wild"><i class="fa-solid fa-paw"></i> Pokémon sauvages</button>
+    <button type="button" data-hk-tool="battle"><i class="fa-solid fa-people-arrows"></i> Combat de Dresseurs</button>
+    <button type="button" data-hk-tool="contest"><i class="fa-solid fa-trophy"></i> Concours</button>
+    <button type="button" data-hk-tool="planning"><i class="fa-solid fa-calendar-days"></i> Planning en off</button>`;
+  const tool = { encounter: rollEncounter, wild: openWildGenerator, battle: openSetupDialog, contest: openContest, planning: openPlanning };
+  for ( const button of tools.querySelectorAll("[data-hk-tool]") ) {
+    button.addEventListener("click", () => tool[button.dataset.hkTool]());
+  }
   const header = root.querySelector(".header-actions, .directory-header");
   if ( header ) header.after(tools);
   else root.prepend(tools);

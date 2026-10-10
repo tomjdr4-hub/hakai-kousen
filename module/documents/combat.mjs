@@ -364,10 +364,30 @@ async function announcePhases(actor, previous) {
   }
 }
 
+/** Pokémon sauvage qui passe sous ¼ de sa VIT : rappel au MJ de son intention et de sa condition de retrait (MJ 5.11). */
+async function remindRetreat(actor, previous) {
+  if ( (actor.type !== "pokemon") || !Number.isNumeric(previous) ) return;
+  const vit = actor.system.vit;
+  const quarter = Math.floor(vit.max / 4);
+  if ( (previous <= quarter) || (vit.value > quarter) || (vit.value <= 0) ) return;
+  const uuid = actor.isToken ? actor.token?.baseActor?.uuid : actor.uuid;
+  if ( game.actors.some(a => (a.type === "trainer") && a.system.team.includes(uuid)) ) return;
+  const enc = actor.system.encounter ?? {};
+  await ChatMessage.implementation.create({
+    speaker: { alias: actor.name },
+    whisper: game.users.filter(u => u.isGM).map(u => u.id),
+    content: `<div class="hk-card"><header><h3>${actor.name} est affaibli</h3><span class="subtitle">¼ de VIT ou moins</span></header>
+      ${enc.intention ? `<p><strong>Intention :</strong> ${Handlebars.escapeExpression(enc.intention)}</p>` : ""}
+      ${enc.retreat ? `<p><strong>Condition de retrait :</strong> ${Handlebars.escapeExpression(enc.retreat)}</p>` : ""}
+      <p class="hk-detail">Un Pokémon sauvage peut fuir s'il est blessé, effrayé ou ne peut plus gagner (5.18) ; une meute rarement jusqu'au dernier (MJ 5.9).</p></div>`
+  });
+}
+
 /** KO : le combattant est marqué vaincu ; s'il se relève, il revient (MJ actif). */
 async function onUpdateActor(actor, changed, options) {
   if ( !game.user.isActiveGM || !foundry.utils.hasProperty(changed, "system.vit.value") ) return;
   await announcePhases(actor, options?.hkPreviousVit);
+  await remindRetreat(actor, options?.hkPreviousVit);
   const ko = actor.system.vit.value <= 0;
   for ( const combat of game.combats ) {
     const combatants = combat.combatants.filter(c => c.actor === actor);

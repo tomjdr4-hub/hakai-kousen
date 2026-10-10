@@ -3,6 +3,7 @@
  * Un Pokémon agit avec une capacité, ou son Dresseur consacre l'action à une action personnelle :
  * changer de Pokémon, utiliser un objet, lancer une Poké Ball, fuir ou abandonner.
  */
+import { createCharacter } from "../apps/character-wizard.mjs";
 import { rollAttack, rollDressage } from "../dice/rolls.mjs";
 import { applyDamage, handleEffectRequest, useItemOn } from "./effects.mjs";
 import { availableReserve, markUsed, storeDeployChoice } from "./setup.mjs";
@@ -500,6 +501,8 @@ export function registerSocket() {
     if ( !game.user.isActiveGM ) return;
     // Dégâts et effets demandés depuis une carte de chat par un joueur qui ne possède pas la cible.
     if ( ["applyDamage", "applyEffect", "saveFatal", "spendEnergy", "heal"].includes(data.type) ) return handleEffectRequest(data);
+    // Dresseur créé avec l'assistant par un joueur qui n'a pas le droit de créer des acteurs.
+    if ( data.type === "createCharacter" ) return createCharacter(data.payload, data.userId, data.requestId);
     // Choix des Pokémon de départ d'un Dresseur.
     if ( data.type === "deploy" ) {
       const user = game.users.get(data.userId);

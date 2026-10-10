@@ -1330,3 +1330,243 @@
 .hk-fish-step p {
   margin: 4px 0;
 }
+
+/* ---------- Assistant de création de Dresseur ---------- */
+
+.hk-directory-tools .hk-create-trainer {
+  flex-basis: 100%;
+  font-weight: bold;
+}
+
+.hk-wizard .window-content {
+  padding: 0;
+}
+
+.hk-wizard-layout {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+}
+
+.hk-wizard-steps {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 6px;
+  border-right: 1px solid var(--hk-border);
+}
+
+.hk-wizard-steps button {
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.hk-wizard-steps button.active {
+  background: var(--hk-accent);
+  color: white;
+}
+
+.hk-wizard-steps button.done:not(.active) i {
+  color: var(--hk-success);
+}
+
+.hk-wizard-body {
+  overflow-y: auto;
+  padding: 8px 12px;
+}
+
+.hk-wizard-body h2 {
+  margin-top: 0;
+  border-bottom: 2px solid var(--hk-accent);
+}
+
+.hk-wizard-body .form-group.stacked {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.hk-wizard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 6px 12px;
+  border-top: 1px solid var(--hk-border);
+}
+
+.hk-wizard-footer button {
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+.hk-wizard-footer label.checkbox {
+  margin-right: auto;
+}
+
+.hk-wizard-footer button.blocked {
+  opacity: 0.6;
+}
+
+.hk-wizard-footer .hk-wizard-create {
+  background: var(--hk-accent);
+  color: white;
+}
+
+.hk-wizard-identity {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.hk-wizard-identity > div {
+  flex: 1;
+}
+
+.hk-wizard-identity img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 1px solid var(--hk-border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hk-wizard-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.hk-wizard-choices button {
+  flex: 0 0 auto;
+  font-size: 0.85em;
+  padding: 2px 8px;
+}
+
+.hk-wizard-choices button.active {
+  background: var(--hk-accent);
+  color: white;
+}
+
+.hk-wizard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 12px;
+}
+
+.hk-wizard-counter {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--hk-accent-soft);
+}
+
+.hk-wizard-counter.complete {
+  background: rgba(46, 125, 50, 0.15);
+}
+
+.hk-wizard-attr {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--hk-border);
+}
+
+.hk-wizard-stepper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+
+.hk-wizard-stepper > strong {
+  width: 36px;
+}
+
+.hk-wizard-stepper button,
+.hk-wizard-domain button {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  line-height: 1;
+}
+
+.hk-wizard-stepper .value,
+.hk-wizard-domain .value {
+  width: 22px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hk-wizard-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hk-wizard-domain {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 0;
+}
+
+.hk-wizard-domain .label {
+  flex: 1;
+}
+
+.hk-wizard-gear {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 12px;
+  margin-bottom: 8px;
+}
+
+.hk-wizard-gear label.checkbox {
+  display: block;
+  font-size: 0.9em;
+}
+
+.hk-wizard-gear .hint {
+  display: block;
+  margin-left: 22px;
+  font-size: 0.85em;
+}
+
+.hk-wizard-gear .suggested i {
+  color: var(--hk-accent);
+}
+
+.hk-wizard-species {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 4px 0 8px;
+}
+
+.hk-wizard-species img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border: none;
+}
+
+.hk-wizard-ivs td,
+.hk-wizard-ivs th {
+  text-align: center;
+}
+
+.hk-wizard-summary th {
+  width: 140px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.hk-wizard-errors {
+  margin-top: 12px;
+}

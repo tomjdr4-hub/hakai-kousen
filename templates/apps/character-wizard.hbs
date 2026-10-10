@@ -1,0 +1,239 @@
+<div class="hk-wizard-layout">
+  <nav class="hk-wizard-steps">
+    {{#each steps as |s|}}
+    <button type="button" class="{{#if s.active}}active{{/if}} {{#if s.done}}done{{/if}}" data-action="goto" data-index="{{s.index}}" {{#unless s.reachable}}disabled{{/unless}}>
+      <i class="fa-solid {{#if s.done}}fa-check{{else}}{{s.icon}}{{/if}}"></i> {{s.label}}
+    </button>
+    {{/each}}
+  </nav>
+
+  <div class="hk-wizard-body">
+    {{!-- 1. Concept et Vocation (3.1, 3.2) --}}
+    {{#if is.concept}}
+    <h2>Concept du personnage</h2>
+    <p class="hint">Avant tout : « Quel type de personnage ai-je envie de jouer ? » Il n'est pas obligé d'être un jeune Dresseur
+      partant conquérir une Ligue. Un bon concept est assez personnel pour donner envie de l'interpréter, et assez cohérent pour trouver sa place dans la campagne (3.1).</p>
+    <div class="hk-wizard-identity">
+      <img src="{{state.img}}" alt="" data-action="pickImage" data-tooltip="Choisir le portrait">
+      <div>
+        <div class="form-group"><label>Nom</label><div class="form-fields"><input type="text" name="name" value="{{state.name}}" placeholder="Nom du personnage" data-rerender></div></div>
+        <div class="form-group stacked"><label>Concept en une phrase</label>
+          <textarea name="concept" rows="2" placeholder="Ex. : une ancienne infirmière qui parcourt la région pour retrouver le Pokémon qui l'a sauvée.">{{state.concept}}</textarea></div>
+      </div>
+    </div>
+    <h3>Vocation</h3>
+    <p class="hint">Le métier, la passion ou la voie du personnage : « Que fait-il, ou que souhaite-t-il devenir ? »
+      Aucun bonus automatique ; elle donne une direction à son Background, ses domaines et son équipement (3.2).</p>
+    <div class="hk-wizard-choices">
+      {{#each vocations as |v|}}
+      <button type="button" class="{{#if v.selected}}active{{/if}}" data-action="pickVocation" data-vocation="{{v.label}}" data-tooltip="{{v.hint}}">{{v.label}}</button>
+      {{/each}}
+    </div>
+    <div class="form-group"><label>Vocation (libre)</label><div class="form-fields"><input type="text" name="vocation" value="{{state.vocation}}" placeholder="Choisissez ci-dessus ou saisissez-en une autre"></div></div>
+    {{/if}}
+
+    {{!-- 2. Histoire, Nature, Objectifs, Apparence (3.3 à 3.6) --}}
+    {{#if is.story}}
+    <h2>Histoire et personnalité</h2>
+    <p class="hint">Quelques réponses cohérentes suffisent : où est-il né ? Comment a-t-il obtenu son premier Pokémon ? A-t-il voyagé, étudié ?
+      Qui connaît-il ? Pourquoi entreprend-il son voyage ? Quels événements ont influencé sa Vocation ? Évitez d'accumuler les événements improbables (3.3).</p>
+    <div class="form-group"><label>Origine</label><div class="form-fields"><input type="text" name="origin" value="{{state.origin}}" placeholder="Ville ou région natale"></div></div>
+    <div class="form-group stacked"><label>Histoire</label><textarea name="background" rows="5">{{state.background}}</textarea></div>
+    <div class="form-group"><label>Nature</label><div class="form-fields"><input type="text" name="personality" value="{{state.personality}}" placeholder="Idéaliste, grincheux, curieux, prudent…"></div></div>
+    <p class="hint">La Nature résume sa psychologie en quelques mots ; elle guide l'interprétation sans bonus ni malus (3.4).</p>
+    <div class="form-group stacked"><label>Objectifs</label>
+      <textarea name="objectives" rows="2" placeholder="Capturer un Pokémon précis, retrouver quelqu'un, devenir Champion, tenir une promesse…">{{state.objectives}}</textarea></div>
+    <h3>Apparence</h3>
+    <div class="hk-wizard-grid">
+      <div class="form-group"><label>Âge</label><div class="form-fields"><input type="text" name="age" value="{{state.age}}"></div></div>
+      <div class="form-group"><label>Genre</label><div class="form-fields"><input type="text" name="gender" value="{{state.gender}}"></div></div>
+      <div class="form-group"><label>Taille / poids</label><div class="form-fields"><input type="text" name="heightWeight" value="{{state.heightWeight}}"></div></div>
+      <div class="form-group"><label>Corpulence</label><div class="form-fields"><input type="text" name="build" value="{{state.build}}"></div></div>
+      <div class="form-group"><label>Yeux / cheveux</label><div class="form-fields"><input type="text" name="eyesHair" value="{{state.eyesHair}}"></div></div>
+      <div class="form-group"><label>Peau</label><div class="form-fields"><input type="text" name="skin" value="{{state.skin}}"></div></div>
+    </div>
+    <div class="form-group stacked"><label>Description</label>
+      <textarea name="appearance" rows="3" placeholder="Vêtements, accessoires, signes particuliers… et comment ses Pokémon l'accompagnent : en Ball, sur l'épaule, derrière lui (3.6).">{{state.appearance}}</textarea></div>
+    {{/if}}
+
+    {{!-- 3. Caractéristiques (3.7) --}}
+    {{#if is.attributes}}
+    <h2>Caractéristiques</h2>
+    <p class="hint">Chaque Caractéristique commence à 1 ; répartissez <strong>10 points</strong>, sans dépasser 5 à la création.
+      Les tests se font sous la Caractéristique avec 1D6 (plus gros dé si c'est difficile). La Vitalité est fixée à 10 (3.8).</p>
+    <p class="hk-wizard-counter {{#if attrLeft}}pending{{else}}complete{{/if}}">Points restants : <strong>{{attrLeft}}</strong> / 10</p>
+    <div class="hk-wizard-attrs">
+      {{#each attributes as |a|}}
+      <div class="hk-wizard-attr">
+        <div class="hk-wizard-stepper">
+          <strong>{{a.abbr}}</strong>
+          <button type="button" data-action="adjust" data-path="attrs.{{a.key}}" data-delta="-1" {{#unless a.canRemove}}disabled{{/unless}}><i class="fa-solid fa-minus"></i></button>
+          <span class="value">{{a.value}}</span>
+          <button type="button" data-action="adjust" data-path="attrs.{{a.key}}" data-delta="1" {{#unless a.canAdd}}disabled{{/unless}}><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div><strong>{{a.label}} — {{a.score}}</strong><br><span class="hint">{{a.text}}</span></div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{!-- 4. Compétences et Connaissances (3.9) --}}
+    {{#if is.domains}}
+    <h2>Compétences et Connaissances</h2>
+    <p class="hint">Les Compétences sont le savoir-faire, les Connaissances ce que le personnage a étudié. Répartissez
+      <strong>5 points en Compétences + 5 en Connaissances + 7 libres = 17</strong>, sans dépasser le Niveau 3. Un test lance autant de D10 que le Niveau
+      et garde le meilleur (au Niveau 0 : 2D10, le moins bon).</p>
+    <p class="hk-wizard-counter {{#if domainLeft}}pending{{else}}complete{{/if}}">
+      Compétences : <strong>{{skillTotal}}</strong> (5 min.) · Connaissances : <strong>{{knowledgeTotal}}</strong> (5 min.) ·
+      Points libres utilisés : <strong>{{freeUsed}}</strong> / 7 · Restants : <strong>{{domainLeft}}</strong></p>
+    <div class="hk-wizard-columns">
+      {{#each domainColumns as |col|}}
+      <div>
+        <h3>{{col.title}}</h3>
+        {{#each col.rows as |d|}}
+        <div class="hk-wizard-domain" data-tooltip="{{d.hint}}">
+          <span class="label">{{d.label}}</span>
+          <button type="button" data-action="adjust" data-path="{{d.group}}.{{d.key}}" data-delta="-1" {{#unless d.canRemove}}disabled{{/unless}}><i class="fa-solid fa-minus"></i></button>
+          <span class="value">{{d.value}}</span>
+          <button type="button" data-action="adjust" data-path="{{d.group}}.{{d.key}}" data-delta="1" {{#unless d.canAdd}}disabled{{/unless}}><i class="fa-solid fa-plus"></i></button>
+        </div>
+        {{/each}}
+      </div>
+      {{/each}}
+    </div>
+    <p class="hint">Survolez un domaine pour voir ce qu'il couvre. Détection trouve une trace, Zoologie l'identifie ; Nature étudie le milieu, Survie permet d'y agir.</p>
+    {{/if}}
+
+    {{!-- 5. Spécialisations (3.10) --}}
+    {{#if is.specs}}
+    <h2>Spécialisations</h2>
+    <p class="hint">Une expertise précise au sein d'un domaine, sans bonus automatique : ses avantages se définissent avec le MJ.
+      À la création, <strong>au plus une Spécialisation de Compétence et une de Connaissance</strong>, sur un domaine au <strong>Niveau 3</strong>. Elles sont facultatives.</p>
+    {{#each specs as |sp|}}
+    <fieldset>
+      <legend>{{sp.title}}</legend>
+      {{#if sp.options.length}}
+      <div class="form-group"><label>Domaine</label><div class="form-fields">
+        <select name="{{sp.field}}.key" data-rerender>
+          <option value="">Aucune</option>
+          {{#each sp.options as |o|}}<option value="{{o.key}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}
+        </select></div></div>
+      {{#if sp.key}}
+      <div class="form-group"><label>Spécialisation</label><div class="form-fields">
+        <input type="text" name="{{sp.field}}.text" value="{{sp.text}}" list="hk-wizard-spec-{{sp.field}}" placeholder="Choisissez ou saisissez">
+        <datalist id="hk-wizard-spec-{{sp.field}}">{{#each sp.suggestions as |x|}}<option value="{{x}}">{{/each}}</datalist></div></div>
+      {{/if}}
+      {{else}}
+      <p class="hk-empty">Aucun domaine au Niveau 3 : pas de Spécialisation possible (revenez à l'étape Compétences pour en monter un).</p>
+      {{/if}}
+    </fieldset>
+    {{/each}}
+    {{/if}}
+
+    {{!-- 6. Équipement (3.11) --}}
+    {{#if is.gear}}
+    <h2>Possessions et équipement</h2>
+    <p class="hint">L'équipement de départ se détermine avec le MJ. L'équipement de base est coché ; celui qui correspond à vos domaines est
+      proposé (<i class="fa-solid fa-star"></i>). Ajustez selon la Vocation et le Background.</p>
+    <div class="hk-wizard-gear">
+      {{#each gear as |g|}}
+      <label class="checkbox {{#if g.suggested}}suggested{{/if}}">
+        <input type="checkbox" name="gear.{{g.key}}" {{#if g.checked}}checked{{/if}}>
+        {{#if g.quantity}}{{g.quantity}} {{/if}}{{g.name}} {{#if g.suggested}}<i class="fa-solid fa-star"></i>{{/if}}
+        <span class="hint">{{g.reason}}</span>
+      </label>
+      {{/each}}
+    </div>
+    <div class="form-group"><label>Objet fétiche</label><div class="form-fields"><input type="text" name="fetish" value="{{state.fetish}}" placeholder="Bijou, photo, instrument, souvenir…"></div></div>
+    <p class="hint">Objet personnel important pour le personnage, sans bonus mécanique, validé par le MJ.</p>
+    <div class="form-group"><label>Argent de départ (₽)</label><div class="form-fields"><input type="number" name="money" value="{{state.money}}" min="0" step="50"></div></div>
+    <p class="hint">1 500 à 2 000 ₽ en général ; le MJ choisit selon le scénario.</p>
+    {{/if}}
+
+    {{!-- 7. Starter (4.1) --}}
+    {{#if is.starter}}
+    <h2>Pokémon de départ</h2>
+    <label class="checkbox hk-wizard-toggle"><input type="checkbox" name="starter.enabled" {{#if state.starter.enabled}}checked{{/if}} data-rerender>
+      Créer le Starter maintenant</label>
+    {{#if state.starter.enabled}}
+    <p class="hint">Son choix se discute avec le MJ, qui peut limiter certaines espèces. Il peut refléter la Vocation (un pompier avec un Pokémon Eau…).
+      Il commence avec <strong>Confiance 4 et Obéissance 4</strong> (Dressage 8) et <strong>10 IV</strong> à répartir, 3 au maximum par statistique.</p>
+    <div class="form-group"><label>Espèce</label><div class="form-fields">
+      <input type="text" name="starter.species" value="{{state.starter.species}}" list="hk-wizard-pokedex" placeholder="Tapez le nom (Salamèche, Grenousse…)" data-rerender>
+      <datalist id="hk-wizard-pokedex">{{#each pokedex as |p|}}<option value="{{p.name}}">{{/each}}</datalist></div></div>
+    {{#if state.starter.info}}
+    {{#with state.starter.info as |info|}}
+    <div class="hk-wizard-species">
+      <img src="{{info.img}}" alt="">
+      <div><strong>n° {{info.number}} · {{info.types}}</strong>{{#if info.category}} · {{info.category}}{{/if}}<br>
+        <span class="hint">Capacités de départ : {{#if info.attacks}}{{info.attacks}}{{else}}aucune{{/if}}</span></div>
+    </div>
+    {{/with}}
+    <div class="hk-wizard-grid">
+      <div class="form-group"><label>Surnom</label><div class="form-fields"><input type="text" name="starter.nickname" value="{{state.starter.nickname}}" placeholder="Facultatif"></div></div>
+      <div class="form-group"><label>Ball</label><div class="form-fields"><input type="text" name="starter.ball" value="{{state.starter.ball}}"></div></div>
+      <div class="form-group"><label>Nature</label><div class="form-fields"><select name="starter.nature">
+        {{#each natures as |n|}}<option value="{{n.key}}" {{#if n.selected}}selected{{/if}}>{{n.label}}</option>{{/each}}</select></div></div>
+      <div class="form-group"><label>Talent</label><div class="form-fields"><select name="starter.talent">
+        {{#each talents as |t|}}<option value="{{t.index}}" {{#if t.selected}}selected{{/if}}>{{t.name}}{{#if t.hidden}} (caché, accord du MJ){{/if}}</option>{{/each}}</select></div></div>
+    </div>
+    <div class="form-group"><label>Provenance</label><div class="form-fields"><input type="text" name="starter.provenance" value="{{state.starter.provenance}}" placeholder="Cadeau du Professeur, trouvé blessé, né à la pension…"></div></div>
+    <h3>IV du Starter</h3>
+    <p class="hk-wizard-counter {{#if ivLeft}}pending{{else}}complete{{/if}}">IV restants : <strong>{{ivLeft}}</strong> / 10</p>
+    <table class="hk-table hk-wizard-ivs">
+      <thead><tr><th>Statistique</th><th>Base</th><th>IV</th><th>Gain par IV</th><th>Total</th></tr></thead>
+      <tbody>
+        {{#each ivs as |v|}}
+        <tr>
+          <th>{{v.label}}</th><td>{{v.base}}</td>
+          <td class="hk-wizard-stepper">
+            <button type="button" data-action="adjust" data-path="starter.iv.{{v.key}}" data-delta="-1" {{#unless v.canRemove}}disabled{{/unless}}><i class="fa-solid fa-minus"></i></button>
+            <span class="value">{{v.iv}}</span>
+            <button type="button" data-action="adjust" data-path="starter.iv.{{v.key}}" data-delta="1" {{#unless v.canAdd}}disabled{{/unless}}><i class="fa-solid fa-plus"></i></button>
+          </td>
+          <td>+{{v.gain}}</td><td><strong>{{v.total}}</strong></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    {{#if state.starter.species}}<p class="hk-empty">« {{state.starter.species}} » n'est pas dans le Pokédex : choisissez un nom de la liste.</p>{{/if}}
+    {{/if}}
+    {{else}}
+    <p class="hint">Pas de Starter pour l'instant : le MJ pourra le remettre en jeu. Glissez ensuite le Pokémon sur la fiche du Dresseur pour l'ajouter à l'équipe.</p>
+    {{/if}}
+    {{/if}}
+
+    {{!-- 8. Récapitulatif --}}
+    {{#if is.summary}}
+    <h2>Récapitulatif</h2>
+    <table class="hk-table hk-wizard-summary">
+      <tbody>{{#each summary as |row|}}<tr><th>{{row.label}}</th><td>{{row.value}}</td></tr>{{/each}}</tbody>
+    </table>
+    {{#if allErrors.length}}
+    <ul class="hk-checklist">{{#each allErrors as |e|}}<li class="ko"><i class="fa-solid fa-xmark"></i> {{e}}</li>{{/each}}</ul>
+    {{else}}
+    <ul class="hk-checklist"><li class="ok"><i class="fa-solid fa-check"></i> Toutes les règles de création sont respectées.</li></ul>
+    {{/if}}
+    <p class="hint">« Créer » ajoute le Dresseur{{#if state.starter.enabled}} et son Starter{{/if}} dans l'onglet Acteurs et ouvre sa fiche.
+      Les points d'XP se dépensent ensuite depuis la fiche.</p>
+    {{/if}}
+
+    {{#if errors.length}}
+    <ul class="hk-checklist hk-wizard-errors">{{#each errors as |e|}}<li class="ko"><i class="fa-solid fa-circle-exclamation"></i> {{e}}</li>{{/each}}</ul>
+    {{/if}}
+  </div>
+
+  <footer class="hk-wizard-footer">
+    {{#if isGM}}
+    <label class="checkbox" data-tooltip="Pour un PNJ ou des règles maison : les limites de points ne bloquent plus.">
+      <input type="checkbox" name="ignoreLimits" {{#if state.ignoreLimits}}checked{{/if}} data-rerender> Ignorer les limites</label>
+    {{/if}}
+    <button type="button" data-action="previous" {{#if first}}disabled{{/if}}><i class="fa-solid fa-arrow-left"></i> Précédent</button>
+    {{#if last}}
+    <button type="button" class="hk-wizard-create" data-action="create" {{#unless canCreate}}disabled{{/unless}}><i class="fa-solid fa-user-check"></i> Créer</button>
+    {{else}}
+    <button type="button" data-action="next" {{#if blocking}}class="blocked" data-tooltip="Corrigez d'abord les points signalés en rouge"{{/if}}>Suivant <i class="fa-solid fa-arrow-right"></i></button>
+    {{/if}}
+  </footer>
+</div>

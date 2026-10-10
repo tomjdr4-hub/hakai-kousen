@@ -17,6 +17,7 @@ import { registerProgressionHooks } from "./module/progression.mjs";
 import { rollEncounter } from "./module/apps/encounter.mjs";
 import { openContest } from "./module/apps/contest.mjs";
 import { openPlanning } from "./module/apps/planning.mjs";
+import { openCharacterWizard } from "./module/apps/character-wizard.mjs";
 
 /** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
@@ -25,7 +26,7 @@ const STATUS_EFFECTS = [
 ];
 
 Hooks.once("init", () => {
-  game.hakaiKousen = { config: HK, rolls, openCombatPanel, openSetupDialog, openWildGenerator, rollEncounter, openContest, openPlanning };
+  game.hakaiKousen = { config: HK, rolls, openCombatPanel, openSetupDialog, openWildGenerator, rollEncounter, openContest, openPlanning, openCharacterWizard };
   CONFIG.HK = HK;
 
   CONFIG.Actor.documentClass = HKActor;
@@ -93,19 +94,19 @@ registerCombatPanelHooks();
 registerProgressionHooks();
 Hooks.once("ready", registerSocket);
 
-/** Onglet Acteurs : outils du MJ (combat de Dresseurs, Pokémon sauvages). */
+/** Onglet Acteurs : création de Dresseur pour tous, outils du MJ (rencontres, combats…). */
 Hooks.on("renderActorDirectory", (app, html) => {
-  if ( !game.user.isGM ) return;
   const root = html instanceof HTMLElement ? html : html[0];
   if ( root.querySelector(".hk-directory-tools") ) return;
   const tools = document.createElement("div");
   tools.className = "hk-directory-tools";
-  tools.innerHTML = `<button type="button" data-hk-tool="encounter" data-tooltip="Tirer une rencontre sur la table d'une zone et générer les Pokémon"><i class="fa-solid fa-dice-d20"></i> Rencontre</button>
+  tools.innerHTML = `<button type="button" class="hk-create-trainer" data-hk-tool="character" data-tooltip="Créer un Dresseur pas à pas selon les règles du chapitre 3, avec son Starter"><i class="fa-solid fa-user-plus"></i> Créer un Dresseur</button>`;
+  if ( game.user.isGM ) tools.innerHTML += `<button type="button" data-hk-tool="encounter" data-tooltip="Tirer une rencontre sur la table d'une zone et générer les Pokémon"><i class="fa-solid fa-dice-d20"></i> Rencontre</button>
     <button type="button" data-hk-tool="wild" data-tooltip="Créer un ou plusieurs Pokémon sauvages d'une espèce du Pokédex"><i class="fa-solid fa-paw"></i> Pokémon sauvages</button>
     <button type="button" data-hk-tool="battle" data-tooltip="Préparer un combat entre Dresseurs (officiel, sauvage ou mortel)"><i class="fa-solid fa-people-arrows"></i> Combat de Dresseurs</button>
     <button type="button" data-hk-tool="contest" data-tooltip="Feuille du jury d'un concours Pokémon (4 épreuves sur 25)"><i class="fa-solid fa-trophy"></i> Concours</button>
     <button type="button" data-hk-tool="planning" data-tooltip="Journal où les joueurs notent les activités de leur Dresseur entre deux aventures"><i class="fa-solid fa-calendar-days"></i> Temps en off</button>`;
-  const tool = { encounter: rollEncounter, wild: openWildGenerator, battle: openSetupDialog, contest: openContest, planning: openPlanning };
+  const tool = { character: openCharacterWizard, encounter: rollEncounter, wild: openWildGenerator, battle: openSetupDialog, contest: openContest, planning: openPlanning };
   for ( const button of tools.querySelectorAll("[data-hk-tool]") ) {
     button.addEventListener("click", () => tool[button.dataset.hkTool]());
   }

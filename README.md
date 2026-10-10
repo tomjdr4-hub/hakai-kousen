@@ -17,6 +17,19 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 
 ## Fonctionnalités
 
+### Création de Dresseur pas à pas
+Bouton **Créer un Dresseur** dans l'onglet Acteurs, pour les joueurs comme pour le MJ. L'assistant suit le chapitre 3 du Manuel du Joueur, étape par étape, avec les explications du livre :
+1. Concept et Vocation (liste des exemples ou saisie libre), portrait.
+2. Histoire, Nature, Objectifs, Apparence.
+3. Caractéristiques : 10 points à répartir, 5 au maximum, avec la signification de chaque score.
+4. Compétences et Connaissances : 5 + 5 + 7 libres = 17 points, Niveau 3 au maximum, définition de chaque domaine au survol.
+5. Spécialisations : une de Compétence et une de Connaissance au plus, sur un domaine au Niveau 3.
+6. Équipement : équipement de base coché, matériel proposé selon les domaines (Canne pour Pêche, Explorakit pour Minage…), objet fétiche, argent de départ.
+7. Starter (facultatif) : espèce du Pokédex, surnom, Nature, Talent, Ball, 10 IV (3 au maximum par statistique), Confiance 4 et Obéissance 4.
+8. Récapitulatif et contrôle des règles, puis création du Dresseur, de son équipement et de son Starter (rattaché à l'équipe).
+
+Le MJ peut ignorer les limites (PNJ, règles maison). Un joueur qui n'a pas le droit de créer des acteurs passe automatiquement par le MJ connecté ; la fiche s'ouvre dès sa création.
+
 ### Fiche Dresseur
 - Caractéristiques DEX, FOR, CON, END, VOL (base + points) et **test de Caractéristique** : 1D6 ≤ Stat, la difficulté agrandit le dé (D8, D10, D12, D20).
 - 15 Compétences et 10 Connaissances avec Niveau et Spécialisation : **réserve de D10**, on garde le meilleur (Niveau 0 : 2D10, on garde le moins bon), réussite et échec critiques.

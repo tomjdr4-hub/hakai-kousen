@@ -522,8 +522,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": ""
       },
       "_id": "f76bc5892f85ec08",
@@ -547,6 +558,7 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -558,6 +570,16 @@
             "secondary": false
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Baisse la Force des cibles de 1</p>"
       },
       "_id": "7b87638b5a5ee43b",
@@ -581,8 +603,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 1,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
       },
       "_id": "d974850ebc4bf985",
@@ -606,6 +639,7 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -617,6 +651,16 @@
             "secondary": false
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Empoisonne les Pokémon de la zone s'ils ne sont pas de type Acier ou Poison.</p>"
       },
       "_id": "baa232224100b9d5",

@@ -487,6 +487,7 @@
         "effectChance": 10,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -498,6 +499,16 @@
             "secondary": true
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>10% de chance de geler la cible</p>"
       },
       "_id": "f06dfb788cb5cee1",
@@ -521,8 +532,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Sa puissance double si l'adversaire est en train d'utiliser Vol ou Rebond.</p>"
       },
       "_id": "042a8e72bc5d792e",

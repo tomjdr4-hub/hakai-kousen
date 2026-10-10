@@ -802,8 +802,19 @@
         "effectChance": 10,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>10% de chance d'apeurer la cible si le lanceur attaque en premier, sinon elle est paralysée.</p>"
       },
       "_id": "92f58ef942a83d2d",
@@ -827,8 +838,19 @@
         "effectChance": 10,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>10% de chance d'apeurer la cible si le lanceur attaque en premier, sinon elle est brûlée.</p>"
       },
       "_id": "2fb8ec924b8d05a5",
@@ -852,8 +874,19 @@
         "effectChance": 10,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>10% de chance d'apeurer la cible si le lanceur attaque en premier, sinon elle est gelée.</p>"
       },
       "_id": "9b95745372111e9a",
@@ -877,6 +910,7 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -888,6 +922,16 @@
             "secondary": false
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Baisse l'Endurance de la cible de 1</p>"
       },
       "_id": "6d09384c62a7e77b",
@@ -911,6 +955,7 @@
         "effectChance": 30,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -922,6 +967,16 @@
             "secondary": true
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>30% de chance d'apeurer la cible</p>"
       },
       "_id": "8aaf5bdf9344a79c",
@@ -945,8 +1000,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Dure 5 tours. À chaque tour, retire 1/10 de la Vitalité max à tous les Pokémon sur le terrain qui ne sont pas de type Roche, Sol ou Acier. Augmente de 50% la Volonté des Pokémon de type Roche sous Tempête de Sable</p>"
       },
       "_id": "503dc7b37131174a",
@@ -970,6 +1036,7 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -981,6 +1048,16 @@
             "secondary": false
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Baisse l'Endurance des cibles de 2</p>"
       },
       "_id": "080f64155d46326e",

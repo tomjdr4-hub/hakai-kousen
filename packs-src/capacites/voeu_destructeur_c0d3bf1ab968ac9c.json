@@ -1,0 +1,33 @@
+{
+  "name": "Voeu Destructeur",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "acier",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "14",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Deux tours après le lancement de Voeu Destructeur, l'adversaire subira des dégâts. Même si Voeu Destructeur est de type Acier, les faiblesses, résistances et immunités seront ignorées par l'attaque.</p>"
+  },
+  "_id": "c0d3bf1ab968ac9c",
+  "_key": "!items!c0d3bf1ab968ac9c"
+}

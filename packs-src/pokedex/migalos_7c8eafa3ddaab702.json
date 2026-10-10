@@ -618,6 +618,7 @@
         "effectChance": 10,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -629,6 +630,16 @@
             "secondary": true
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>10% de chance de baisser la Dextérité de la cible de 1</p>"
       },
       "_id": "ff3c138055c88908",
@@ -652,6 +663,7 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -663,6 +675,16 @@
             "secondary": false
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Augmente la Force du lanceur de 2.</p>"
       },
       "_id": "1f257d8e65896dd6",
@@ -686,8 +708,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Augmente la Force du lanceur de 2 si un ennemi est mis K.O. avec cette capacité</p>"
       },
       "_id": "4b8ab42e3296360f",
@@ -711,6 +744,7 @@
         "effectChance": 30,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -722,6 +756,16 @@
             "secondary": true
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>30% de chance d'empoisonner la cible</p>"
       },
       "_id": "425b659c07e82872",
@@ -745,8 +789,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Baisse la Force, la Concentration et la Dextérité de la cible de 1 si elle est empoisonnée</p>"
       },
       "_id": "434e57f86f503485",
@@ -770,8 +825,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Si la cible tient une Baie, le lanceur la vole à la cible bénéficie de ses effets.</p>"
       },
       "_id": "23b67c7d3bea52d4",
@@ -795,8 +861,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
       },
       "_id": "e13b030bacd1dc13",
@@ -820,6 +897,7 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -831,6 +909,16 @@
             "secondary": false
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Baisse la Dextérité de la cible de 2</p>"
       },
       "_id": "9d27b5ce6d68b28e",
@@ -854,8 +942,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0.5,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
       },
       "_id": "c23b65ca86248ef4",

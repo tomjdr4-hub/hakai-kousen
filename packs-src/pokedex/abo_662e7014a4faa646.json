@@ -611,8 +611,19 @@
         "effectChance": 0,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>La technique retire un dixième de la Vitalité maximale de la cible pendant 4 à 5 tours et l'empêche de se déplacer</p>"
       },
       "_id": "676af81086028a9a",
@@ -636,6 +647,7 @@
         "effectChance": 30,
         "priority": 0,
         "initiativeBonus": 0,
+        "recharge": "",
         "xpCost": 0,
         "effects": [
           {
@@ -647,6 +659,16 @@
             "secondary": true
           }
         ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
         "description": "<p>30% de chance d'empoisonner la cible</p>"
       },
       "_id": "5bdc8f8ab5009424",

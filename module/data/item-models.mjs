@@ -22,16 +22,28 @@ export class AttackData extends foundry.abstract.TypeDataModel {
       priority: int(0, { min: -1, max: 1 }),
       // Bonus d'initiative pour le tour où la capacité est choisie (Vive-Attaque : +10).
       initiativeBonus: int(0),
+      // Mécaniques particulières (descriptions du site) : +X au dé de toucher, recul, drain, frappes multiples,
+      // attaque en deux tours (« charge ») ou repos obligatoire (« rest », « rest-unless-miss »), KO direct, lanceur KO.
+      special: new SchemaField({
+        hitBonus: int(0),
+        recoilDamage: new NumberField({ required: true, nullable: false, initial: 0, min: 0, max: 1 }),
+        recoilVit: new NumberField({ required: true, nullable: false, initial: 0, min: 0, max: 1 }),
+        drain: new NumberField({ required: true, nullable: false, initial: 0, min: 0, max: 1 }),
+        hits: new StringField({ required: true, blank: true }),
+        charge: new StringField({ required: true, blank: true, choices: ["", "charge", "rest", "rest-unless-miss"] }),
+        ohko: new BooleanField(),
+        selfKO: new BooleanField()
+      }),
       // Recharge d'une Action de Boss (« 1d4 », « 1d6 ») : tours avant la prochaine utilisation.
       recharge: new StringField({ required: true, blank: true }),
       xpCost: int(0, { min: 0 }),
       // Effets appliqués quand la capacité touche : modification de stat ou altération d'état.
       // `secondary` : soumis au jet de chance d'effet secondaire (effectChance).
       effects: new ArrayField(new SchemaField({
-        kind: new StringField({ required: true, initial: "stat", choices: ["stat", "status"] }),
+        kind: new StringField({ required: true, initial: "stat", choices: ["stat", "status", "accuracy"] }),
         target: new StringField({ required: true, initial: "target", choices: ["target", "self"] }),
         stat: new StringField({ required: true, initial: "for", choices: ["dex", "for", "con", "end", "vol"] }),
-        value: int(-1, { min: -6, max: 6 }),
+        value: int(-1, { min: -100, max: 100 }),
         status: new StringField({ required: true, blank: true }),
         secondary: new BooleanField()
       })),
@@ -106,5 +118,23 @@ export class GearData extends foundry.abstract.TypeDataModel {
   get usable() {
     const u = this.use;
     return !!(u.vit || u.vitFull || u.ene || u.eneFull || u.cures.length || u.revive);
+  }
+}
+
+/** Œuf (Manuel du Joueur 7.3 à 7.8). */
+export class EggData extends foundry.abstract.TypeDataModel {
+  static defineSchema() {
+    return {
+      // Espèce de la forme de base contenue dans l'Œuf (Pokédex).
+      species: new StringField({ required: true, blank: true }),
+      speciesUuid: new StringField({ required: true, blank: true }),
+      // Stade d'éclosion en % : 0 pour une reproduction ciblée, 1D100 pour un Œuf sauvage.
+      progress: int(0, { min: 0, max: 100 }),
+      origin: new StringField({ required: true, initial: "bred", choices: ["bred", "wild"] }),
+      parents: new ArrayField(new StringField({ required: true, blank: false })),
+      // Niveau d'Élevage de l'Éleveur pour les transmissions (7.7).
+      breeding: int(0, { min: 0, max: 5 }),
+      notes: new HTMLField()
+    };
   }
 }

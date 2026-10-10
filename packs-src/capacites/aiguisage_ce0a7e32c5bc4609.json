@@ -13,8 +13,17 @@
     "effectChance": 0,
     "priority": 0,
     "initiativeBonus": 0,
+    "recharge": "",
     "xpCost": 0,
     "effects": [
+      {
+        "kind": "accuracy",
+        "target": "self",
+        "stat": "for",
+        "value": 10,
+        "status": "",
+        "secondary": false
+      },
       {
         "kind": "stat",
         "target": "self",
@@ -24,6 +33,16 @@
         "secondary": false
       }
     ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
     "description": "<p>Augmente la Force du lanceur de 1 et sa Précision de 10%.</p>"
   },
   "_id": "ce0a7e32c5bc4609",

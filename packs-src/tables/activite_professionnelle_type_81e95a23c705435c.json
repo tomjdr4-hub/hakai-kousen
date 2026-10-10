@@ -1,0 +1,105 @@
+{
+  "_id": "81e95a23c705435c",
+  "_key": "!tables!81e95a23c705435c",
+  "name": "Activité professionnelle : type",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p>Manuel du MJ 6.10 : le joueur peut lancer 1D20 pour sélectionner une proposition. Le personnage reste libre de refuser.</p>",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "7e9711f88afbf5eb",
+      "_key": "!tables.results!81e95a23c705435c.7e9711f88afbf5eb",
+      "type": "text",
+      "name": "Travail courant et relativement sûr.",
+      "description": "Travail courant et relativement sûr.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        5
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "73763c3eb619b643",
+      "_key": "!tables.results!81e95a23c705435c.73763c3eb619b643",
+      "type": "text",
+      "name": "Contrat ordinaire avec difficulté.",
+      "description": "Contrat ordinaire avec difficulté.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        6,
+        10
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "529912370102ce96",
+      "_key": "!tables.results!81e95a23c705435c.529912370102ce96",
+      "type": "text",
+      "name": "Occasion avantageuse ou client important.",
+      "description": "Occasion avantageuse ou client important.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        11,
+        14
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "922e2d1cc288b0fa",
+      "_key": "!tables.results!81e95a23c705435c.922e2d1cc288b0fa",
+      "type": "text",
+      "name": "Complication ou demande inhabituelle.",
+      "description": "Complication ou demande inhabituelle.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        15,
+        17
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "aeadf198a9fd6f8e",
+      "_key": "!tables.results!81e95a23c705435c.aeadf198a9fd6f8e",
+      "type": "text",
+      "name": "Proposition risquée ou douteuse.",
+      "description": "Proposition risquée ou douteuse.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        18,
+        19
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "0ac742936fd9abc4",
+      "_key": "!tables.results!81e95a23c705435c.0ac742936fd9abc4",
+      "type": "text",
+      "name": "Occasion exceptionnelle ou aventure.",
+      "description": "Occasion exceptionnelle ou aventure.",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "flags": {}
+}

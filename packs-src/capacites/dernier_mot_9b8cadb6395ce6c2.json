@@ -1,0 +1,50 @@
+{
+  "name": "Dernier Mot",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "tenebres",
+    "category": "status",
+    "energy": 2,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "for",
+        "value": -1,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "con",
+        "value": -1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Baisse la Force et la Concentration de la cible de 1. Autorise le dresseur du lanceur à changer de Pokémon gratuitement</p>"
+  },
+  "_id": "9b8cadb6395ce6c2",
+  "_key": "!items!9b8cadb6395ce6c2"
+}

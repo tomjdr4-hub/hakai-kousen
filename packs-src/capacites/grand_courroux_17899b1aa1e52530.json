@@ -1,0 +1,42 @@
+{
+  "name": "Grand Courroux",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "self",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>La technique dure pendant 2 à 3 tours et rend le lanceur confus au troisième tour sauf si l'attaque échoue avant ou est interrompue</p>"
+  },
+  "_id": "17899b1aa1e52530",
+  "_key": "!items!17899b1aa1e52530"
+}

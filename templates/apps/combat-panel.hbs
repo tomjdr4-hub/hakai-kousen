@@ -12,6 +12,13 @@
       <span class="hk-round">Tour {{round}}</span>
       <span class="hk-phase">{{phaseLabel}}</span>
       <span class="hk-chip" data-tooltip="{{combatType.hint}}">{{combatType.label}} · {{format}}</span>
+      {{#if isGM}}
+      <select data-field-env="weather" class="hk-env">{{selectOptions weathers selected=weather}}</select>
+      <select data-field-env="terrain" class="hk-env">{{selectOptions terrains selected=terrain}}</select>
+      {{else}}
+      {{#if weather}}<span class="hk-chip"><i class="fa-solid fa-cloud-sun"></i> {{weatherLabel}}</span>{{/if}}
+      {{#if terrain}}<span class="hk-chip"><i class="fa-solid fa-mountain-sun"></i> {{terrainLabel}}</span>{{/if}}
+      {{/if}}
       {{#if planning}}<span class="hk-ready-count" data-tooltip="Choix validés">{{readyCount}} / {{activeCount}} prêts</span>{{/if}}
     </div>
     {{#if planning}}

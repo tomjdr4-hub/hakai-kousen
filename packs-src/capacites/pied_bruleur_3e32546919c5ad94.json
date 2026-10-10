@@ -13,6 +13,7 @@
     "effectChance": 10,
     "priority": 0,
     "initiativeBonus": 0,
+    "recharge": "",
     "xpCost": 0,
     "effects": [
       {
@@ -24,6 +25,16 @@
         "secondary": true
       }
     ],
+    "special": {
+      "hitBonus": 1,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
     "description": "<p>10% de chance de brûler la cible. Ajoute +1 sur le résultat du dé 10 pour cette attaque.</p>"
   },
   "_id": "3e32546919c5ad94",

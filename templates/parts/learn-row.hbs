@@ -7,5 +7,5 @@
   {{else if byLevel}}
     {{#if (eq state "locked")}}<i class="fa-solid fa-lock" data-tooltip="Apprenez d'abord : {{blocker}}"></i>
     {{else if editable}}<button type="button" class="icon" data-action="learnNext" data-index="{{index}}" data-tooltip="Apprendre : {{#if cost}}{{cost}} XP Pokémon{{else}}gratuit{{/if}}"><i class="fa-solid fa-plus"></i></button>{{/if}}
-  {{else if editable}}<button type="button" class="icon" data-action="learnFromCompendium" data-uuid="{{uuid}}" data-name="{{name}}" data-tooltip="Ajouter (CT, œuf, tutorat : selon la fiction)"><i class="fa-solid fa-plus"></i></button>{{/if}}
+  {{else if editable}}<button type="button" class="icon" data-action="learnFromCompendium" data-uuid="{{uuid}}" data-name="{{name}}" data-source="{{source}}" data-tooltip="Ajouter (CT, œuf, tutorat : selon la fiction)"><i class="fa-solid fa-plus"></i></button>{{/if}}
 </li>

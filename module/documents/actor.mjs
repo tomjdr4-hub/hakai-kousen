@@ -34,6 +34,7 @@ export class HKActor extends Actor {
     if ( this.type === "pokemon" ) {
       updates["system.ene.value"] = this.system.ene.max;
       for ( const k of Object.keys(this.system.stats) ) updates[`system.stats.${k}.temp`] = 0;
+      updates["system.accuracyMod"] = 0;
     }
     await this.update(updates);
   }

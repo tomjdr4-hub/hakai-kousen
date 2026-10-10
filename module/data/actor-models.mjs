@@ -1,4 +1,4 @@
-import { ATTRIBUTES, POKEMON_STATS, SKILLS, KNOWLEDGES, NATURES } from "../config.mjs";
+import { ATTRIBUTES, BABY_SPECIES, POKEMON_STATS, SKILLS, KNOWLEDGES, NATURES } from "../config.mjs";
 
 const {
   ArrayField, BooleanField, DocumentUUIDField, HTMLField, NumberField, SchemaField, StringField
@@ -45,6 +45,8 @@ export class TrainerData extends foundry.abstract.TypeDataModel {
       // Boîte PC : 30 places, Pokémon hébergés en Pension (7.1).
       pc: new ArrayField(new DocumentUUIDField({ type: "Actor" })),
       firstCapture: new BooleanField(),
+      // Affiche le contrôle des règles de création (3.7 à 3.10).
+      creation: new BooleanField(),
       mechanics: new SchemaField(Object.fromEntries(["mega", "zmove", "tera", "dynamax"].map(k => [k, new SchemaField({
         unlocked: new BooleanField(),
         item: new StringField({ required: true, blank: true })
@@ -88,7 +90,12 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
       vit: resource(0, 0),
       ene: resource(50, 50),
       xp: new SchemaField({ value: int(0, { min: 0 }), total: int(0, { min: 0 }) }),
+      // Starter en création (4.1) : 10 IV, 3 au maximum par statistique.
+      starter: new BooleanField(),
+      // Nouveau-né (7.8) : caractéristiques et VIT ÷2 jusqu'à 100 XP Pokémon cumulés, XP bloquée jusque-là.
       baby: new BooleanField(),
+      // Modification temporaire de précision (Jet de Sable, Flash…), en points de pourcentage.
+      accuracyMod: int(0, { min: -100, max: 100 }),
       // Compteurs d'états : tours de Toxik (×1, ×2…) et stade de sortie de la Confusion.
       conditions: new SchemaField({
         toxik: int(0, { min: 0 }),
@@ -142,6 +149,8 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
       tera: new SchemaField({ type: new StringField({ required: true, blank: true }), active: new BooleanField() }),
       // Jour (temps du monde) de la dernière dépense d'XP Dresseur pour la relation : une par jour (4.13).
       relationDay: new NumberField({ required: false, nullable: true, integer: true, initial: null }),
+      // Jour de la dernière augmentation : temps du monde, ou date réelle si le MJ ne fait pas avancer le temps.
+      relationKey: new StringField({ required: true, blank: true }),
       // Rencontre et capture (5.16 ; MJ 4.6, 5.1).
       encounter: new SchemaField({
         rarity: new StringField({ required: true, initial: "commun", choices: ["commun", "rare", "semi", "semiFinal"] }),
@@ -179,6 +188,21 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
     return this.relation.confidence + this.relation.obedience;
   }
 
+  /** Nouveau-né encore sous 100 XP Pokémon cumulés (7.8). */
+  get newborn() {
+    return this.baby && (this.xp.total < 100);
+  }
+
+  /** Espèce officiellement Bébé (7.8) : pas de division, mais −1 au seuil de capture. */
+  get babySpecies() {
+    return BABY_SPECIES.includes((this.species || this.parent?.name || "").toLowerCase());
+  }
+
+  /** Objets tenus par le Pokémon (noms en minuscules). */
+  get heldNames() {
+    return (this.parent?.itemTypes?.gear ?? []).filter(i => i.system.category === "held").map(i => i.name.toLowerCase());
+  }
+
   /** À 1/4 de sa VIT max ou moins, le Pokémon est affaibli (5.17). */
   get weakened() {
     return (this.vit.max > 0) && (this.vit.value > 0) && (this.vit.value <= Math.floor(this.vit.max / 4));
@@ -193,8 +217,8 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
       stat.nature = (nature.plus === k ? 1 : 0) - (nature.minus === k ? 1 : 0);
       // Total inscrit sur la fiche : base + IV + EV + Nature.
       stat.total = stat.base + ((stat.iv + stat.ev) * gain) + stat.nature;
-      // Bébé : DEX, FOR, CON, END, VOL et VIT finales divisées par 2 ; ENE inchangée.
-      if ( this.baby && (k !== "ene") ) stat.total = Math.floor(stat.total / 2);
+      // Nouveau-né : DEX, FOR, CON, END, VOL et VIT finales divisées par 2 jusqu'à 100 XP ; ENE inchangée.
+      if ( this.newborn && (k !== "ene") ) stat.total = Math.floor(stat.total / 2);
     }
 
     // Forme alternative (Méga-Évolution…) : bonus de statistiques saisis sur la fiche.
@@ -214,6 +238,8 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
         continue;
       }
       let value = stat.total + stat.temp;
+      // Mouchoir Choix : DEX ×1,5 (Annexe 6).
+      if ( (k === "dex") && this.heldNames.includes("mouchoir choix") ) value = Math.floor(value * 1.5);
       if ( (k === "for") && statuses.has("brulure") ) value = Math.floor(value / 2);
       if ( (k === "dex") && statuses.has("paralysie") ) value = Math.floor(value / 2);
       if ( weakened ) value = Math.floor(value / 2);

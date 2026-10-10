@@ -1,0 +1,42 @@
+{
+  "name": "Psycho-Boost",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "psy",
+    "category": "special",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "14",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "con",
+        "value": -2,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Baisse la Concentration du lanceur de 2</p>"
+  },
+  "_id": "8ef9a7921ebae266",
+  "_key": "!items!8ef9a7921ebae266"
+}

@@ -13,6 +13,7 @@
     "effectChance": 0,
     "priority": 0,
     "initiativeBonus": 0,
+    "recharge": "",
     "xpCost": 0,
     "effects": [
       {
@@ -32,6 +33,16 @@
         "secondary": false
       }
     ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
     "description": "<p>Augmente la Force de la cible de 2 et lui inflige une confusion.</p>"
   },
   "_id": "5834a1d734136e59",

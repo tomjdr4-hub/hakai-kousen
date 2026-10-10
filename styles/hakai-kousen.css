@@ -1188,3 +1188,67 @@
   color: var(--hk-muted);
   white-space: nowrap;
 }
+
+/* ---------- Activités, création, œufs ---------- */
+
+.hakai-kousen .hk-activities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.hakai-kousen .hk-activities button {
+  flex: none;
+  width: auto;
+}
+
+.hakai-kousen .hk-checklist {
+  list-style: none;
+  margin: 4px 0 8px;
+  padding: 6px 8px;
+  border: 1px dashed var(--hk-border);
+  border-radius: 6px;
+  font-size: 0.85em;
+}
+
+.hakai-kousen .hk-checklist .ok { color: var(--hk-success); }
+.hakai-kousen .hk-checklist .ko { color: var(--hk-failure); }
+
+.hakai-kousen .hk-egg-bar {
+  position: relative;
+  width: 120px;
+  height: 14px;
+  border-radius: 7px;
+  background: rgba(128, 128, 128, 0.25);
+  overflow: hidden;
+  flex: none;
+}
+
+.hakai-kousen .hk-egg-bar span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: #f5b400;
+}
+
+.hakai-kousen .hk-egg-bar em {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  font-size: 0.75em;
+  font-style: normal;
+  line-height: 14px;
+}
+
+.hakai-kousen .hk-egg button {
+  flex: none;
+  width: auto;
+}
+
+.hk-combat-panel select.hk-env {
+  flex: none;
+  width: auto;
+  height: 24px;
+  font-size: 0.85em;
+}

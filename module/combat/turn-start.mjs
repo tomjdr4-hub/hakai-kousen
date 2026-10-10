@@ -3,7 +3,7 @@
  * jets de Paralysie, Gel et Confusion, Apeuré, blessure grave. Exécuté par le MJ actif.
  */
 import { STATUSES } from "../config.mjs";
-import { applyDamage, currentCombatType, syncCounters } from "./effects.mjs";
+import { applyDamage, currentCombatType, heal, syncCounters } from "./effects.mjs";
 
 const SCOPE = "hakai-kousen";
 
@@ -138,4 +138,38 @@ async function report(combatant, lines, blocked) {
 export function blockedReason(combatant) {
   const blocked = combatant.getFlag(SCOPE, "blocked");
   return blocked?.round === combatant.combat?.round ? blocked.reason : null;
+}
+
+/**
+ * Fin de tour (Annexe 6) : Restes rend 1/10 de la VIT max ; Boue Noire rend 1/10 à un Pokémon Poison
+ * et retire 1/10 aux autres. Exécuté par le MJ actif à chaque nouveau tour.
+ * @param {Combat} combat
+ */
+export async function processRoundEnd(combat) {
+  const lines = [];
+  for ( const c of combat.combatants ) {
+    const actor = c.actor;
+    if ( (actor?.type !== "pokemon") || c.isKO ) continue;
+    const heldItems = actor.system.heldNames;
+    const tenth = Math.max(Math.floor(actor.system.vit.max / 10), 1);
+    if ( heldItems.includes("restes") && (actor.system.vit.value < actor.system.vit.max) ) {
+      await heal(actor, tenth);
+      lines.push(`${actor.name} : Restes, +${tenth} VIT`);
+    }
+    if ( heldItems.includes("boue noire") ) {
+      if ( actor.system.defensiveTypes.includes("poison") ) {
+        await heal(actor, tenth);
+        lines.push(`${actor.name} : Boue Noire, +${tenth} VIT`);
+      }
+      else {
+        await applyDamage(actor, tenth);
+        lines.push(`${actor.name} : Boue Noire, −${tenth} VIT`);
+      }
+    }
+  }
+  if ( !lines.length ) return;
+  await ChatMessage.implementation.create({
+    speaker: { alias: "Fin du tour" },
+    content: `<div class="hk-card"><header><h3>Fin du tour ${combat.round - 1}</h3></header>${lines.map(l => `<p class="hk-detail">${l}</p>`).join("")}</div>`
+  });
 }

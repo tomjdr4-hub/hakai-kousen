@@ -1,0 +1,33 @@
+{
+  "name": "Hantise",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "spectre",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "9",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "charge",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur disparaît au premier tour, devenant invulnérable, puis frappe au second tour. Cette attaque ignore les protections tel qu’Abri ou Détection.</p>"
+  },
+  "_id": "979216c347839d78",
+  "_key": "!items!979216c347839d78"
+}

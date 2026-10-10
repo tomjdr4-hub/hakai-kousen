@@ -3,7 +3,7 @@
  */
 import { HK } from "./module/config.mjs";
 import { PokemonData, TrainerData } from "./module/data/actor-models.mjs";
-import { AttackData, GearData, PokeskillData, TalentData } from "./module/data/item-models.mjs";
+import { AttackData, EggData, GearData, PokeskillData, TalentData } from "./module/data/item-models.mjs";
 import { HKActor } from "./module/documents/actor.mjs";
 import { HKCombat, HKCombatant, registerCombatHooks } from "./module/documents/combat.mjs";
 import { PokemonSheet, TrainerSheet } from "./module/sheets/actor-sheets.mjs";
@@ -31,7 +31,7 @@ Hooks.once("init", () => {
     trainer: { bar: ["vit"], value: ["xp.value", "money"] },
     pokemon: { bar: ["vit", "ene"], value: ["xp.value"] }
   };
-  CONFIG.Item.dataModels = { attack: AttackData, pokeskill: PokeskillData, talent: TalentData, gear: GearData };
+  CONFIG.Item.dataModels = { attack: AttackData, pokeskill: PokeskillData, talent: TalentData, gear: GearData, egg: EggData };
 
   // Initiative : 1D10 + DEX ; égalités et priorités gérées par HKCombat (5.2).
   CONFIG.Combat.documentClass = HKCombat;
@@ -50,6 +50,11 @@ Hooks.once("init", () => {
   game.settings.register("hakai-kousen", "autoPlanning", {
     name: "Réflexion automatique à chaque tour",
     hint: "Lance le chrono et le choix secret des actions dès qu'un nouveau tour de combat commence.",
+    scope: "world", config: true, type: Boolean, default: true
+  });
+  game.settings.register("hakai-kousen", "ctResale", {
+    name: "CT revendables",
+    hint: "Manuel du Joueur 8.2 : revente des CT à 50 % (économie plus libre), ou variante « CT non revendables ».",
     scope: "world", config: true, type: Boolean, default: true
   });
   game.settings.register("hakai-kousen", "autoOpenPanel", {

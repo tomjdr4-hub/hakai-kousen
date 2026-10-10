@@ -13,6 +13,7 @@
     "effectChance": 0,
     "priority": 0,
     "initiativeBonus": 0,
+    "recharge": "",
     "xpCost": 0,
     "effects": [
       {
@@ -24,6 +25,16 @@
         "secondary": false
       }
     ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
     "description": "<p>Empoisonne les Pokémon de la zone s'ils ne sont pas de type Acier ou Poison.</p>"
   },
   "_id": "1cce78dd59bb0228",

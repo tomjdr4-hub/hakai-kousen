@@ -1,6 +1,7 @@
 import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
 import { syncCounters, useItemOn } from "../combat/effects.mjs";
+import { consumeTM, createEgg, fish, hatch, incubate, mine, pokemonCenter, sell, shop } from "../activities.mjs";
 import {
   evolve, learnNextAttack, learnsetStatus, moveBetweenTeamAndPC, raiseRelation, spendEV, spendPokeskill, spendTrainerXP,
   toggleDynamax, toggleMega, toggleTera
@@ -146,6 +147,14 @@ export class TrainerSheet extends HKActorSheet {
       rollDomain: TrainerSheet._onRollDomain,
       useGear: TrainerSheet._onUseGear,
       spendXP: TrainerSheet._onSpendXP,
+      newEgg: TrainerSheet._onNewEgg,
+      incubate: TrainerSheet._onIncubate,
+      hatch: TrainerSheet._onHatch,
+      fish: TrainerSheet._onFish,
+      mine: TrainerSheet._onMine,
+      center: TrainerSheet._onCenter,
+      shop: TrainerSheet._onShop,
+      sell: TrainerSheet._onSell,
       toPC: TrainerSheet._onToPC,
       toTeam: TrainerSheet._onToTeam,
       removeFromPC: TrainerSheet._onRemoveFromPC,
@@ -211,7 +220,51 @@ export class TrainerSheet extends HKActorSheet {
     context.inventory = Object.entries(HK.GEAR_CATEGORIES).map(([key, label]) => ({
       key, label, items: gear.filter(i => i.system.category === key)
     }));
+    context.eggs = this.actor.itemTypes.egg.map(egg => ({ egg, ready: egg.system.progress >= 100 }));
+    if ( system.creation ) context.creation = this._creationCheck();
     return context;
+  }
+
+  /** Contrôle des règles de création du Dresseur (3.7 à 3.10). */
+  _creationCheck() {
+    const s = this.actor.system;
+    const attrs = Object.values(s.attributes);
+    const pts = attrs.reduce((sum, a) => sum + a.pts, 0);
+    const skills = Object.values(s.skills);
+    const knowledges = Object.values(s.knowledges);
+    const sum = list => list.reduce((t, d) => t + d.level, 0);
+    const specs = list => list.filter(d => d.spec.trim());
+    const ok = (test, label) => ({ ok: test, label });
+    return [
+      ok(pts === 10, `Caractéristiques : ${pts} / 10 points répartis (base 1 partout)`),
+      ok(attrs.every(a => a.value <= 5), "Aucune Caractéristique au-dessus de 5"),
+      ok(sum(skills) >= 5, `Compétences : ${sum(skills)} points (5 minimum)`),
+      ok(sum(knowledges) >= 5, `Connaissances : ${sum(knowledges)} points (5 minimum)`),
+      ok(sum(skills) + sum(knowledges) === 17, `Total : ${sum(skills) + sum(knowledges)} / 17 points`),
+      ok([...skills, ...knowledges].every(d => d.level <= 3), "Aucun domaine au-dessus du Niveau 3"),
+      ok(specs(skills).length <= 1 && specs(knowledges).length <= 1, "Au plus 1 Spécialisation de Compétence et 1 de Connaissance"),
+      ok([...specs(skills), ...specs(knowledges)].every(d => d.level >= 3), "Spécialisations seulement sur un domaine au Niveau 3"),
+      ok(s.vit.max === 10, "VIT 10"),
+      ok(s.money >= 1500 && s.money <= 2000, `Argent : ${s.money} ₽ (1 500 à 2 000 conseillés)`)
+    ];
+  }
+
+  static async _onNewEgg() { return createEgg(this.actor); }
+  static async _onIncubate(event, target) {
+    const egg = this._getItem(target);
+    if ( egg ) return incubate(egg, target.dataset.conditions);
+  }
+  static async _onHatch(event, target) {
+    const egg = this._getItem(target);
+    if ( egg ) return hatch(egg);
+  }
+  static async _onFish() { return fish(this.actor); }
+  static async _onMine() { return mine(this.actor); }
+  static async _onCenter() { return pokemonCenter(this.actor); }
+  static async _onShop() { return shop(this.actor); }
+  static async _onSell(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return sell(this.actor, item);
   }
 
   /** @override */
@@ -294,6 +347,8 @@ export class PokemonSheet extends HKActorSheet {
       resetTemp: PokemonSheet._onResetTemp,
       learnFromCompendium: PokemonSheet._onLearnFromCompendium,
       learnNext: PokemonSheet._onLearnNext,
+      useHeld: PokemonSheet._onUseHeld,
+      megaFromPokedex: PokemonSheet._onMegaFromPokedex,
       addPhase: PokemonSheet._onAddPhase,
       removePhase: PokemonSheet._onRemovePhase,
       spendEV: PokemonSheet._onSpendEV,
@@ -387,6 +442,16 @@ export class PokemonSheet extends HKActorSheet {
     context.teraTypes = { "": "—", ...HK.TYPES, stellaire: "Stellaire" };
     context.formBonus = Object.entries(system.form.bonus).map(([key, value]) => ({ key, value, abbr: HK.POKEMON_STATS[key].abbr }));
     context.relationCost = ["semi", "semiFinal"].includes(system.encounter.rarity) ? 2 : 1;
+    // Starter (4.1) : 10 IV à répartir, 3 au maximum par statistique ; Confiance + Obéissance = 8.
+    if ( system.starter ) {
+      const ivs = Object.values(system.stats).map(st => st.iv);
+      const total = ivs.reduce((a, b) => a + b, 0);
+      context.starterCheck = [
+        { ok: total === 10, label: `IV : ${total} / 10` },
+        { ok: ivs.every(v => v <= 3), label: "3 IV au maximum par statistique" },
+        { ok: system.dressage === 8, label: `Confiance + Obéissance = ${system.dressage} (8 par défaut)` }
+      ];
+    }
     return context;
   }
 
@@ -470,19 +535,64 @@ export class PokemonSheet extends HKActorSheet {
     return learnNextAttack(this.actor, Number(target.dataset.index));
   }
 
-  /** Ajoute à la fiche une Capacité ou un Talent du compendium. */
+  /** Ajoute à la fiche une Capacité ou un Talent du compendium (une CT est retirée de l'inventaire du Dresseur). */
   static async _onLearnFromCompendium(event, target) {
     const source = await fromUuid(target.dataset.uuid);
     if ( !source ) {
       ui.notifications.warn(`« ${target.dataset.name} » est introuvable dans les compendiums.`);
       return;
     }
+    if ( (target.dataset.source === "ct") && !await consumeTM(this.actor, source.name) ) return;
     await this.actor.createEmbeddedDocuments("Item", [game.items.fromCompendium(source)]);
   }
 
   static async _onRollAttack(event, target) {
     const item = this._getItem(target);
-    if ( item ) return rollAttack(this.actor, item);
+    if ( !item ) return;
+    // Chaque ordre demande un test de Dressage sous 8 (4.11), pour un Pokémon de joueur.
+    const actor = this.actor;
+    if ( actor.hasPlayerOwner && (actor.system.dressage < 8) ) {
+      const roll = (await rollDressage(actor))?.rolls?.[0];
+      if ( roll && (roll.total > actor.system.dressage) ) return;
+    }
+    return rollAttack(actor, item);
+  }
+
+  /** Forme Méga : types et bonus calculés à partir de la fiche Méga du Pokédex (écart avec l'espèce). */
+  static async _onMegaFromPokedex() {
+    const pack = game.packs.get("hakai-kousen.pokedex");
+    const index = await pack.getIndex({ fields: ["system.number"] });
+    const megas = [...index].filter(e => (e.system?.number === this.actor.system.number) && /^m[ée]ga/i.test(e.name));
+    if ( !megas.length ) return ui.notifications.warn("Aucune forme Méga dans le Pokédex pour cette espèce.");
+    let entry = megas[0];
+    if ( megas.length > 1 ) {
+      const id = await foundry.applications.api.DialogV2.prompt({
+        window: { title: "Forme Méga" },
+        content: `<select name="mega">${megas.map(m => `<option value="${m._id}">${m.name}</option>`).join("")}</select>`,
+        ok: { label: "Choisir", callback: (e, b) => b.form.elements.mega.value },
+        rejectClose: false
+      });
+      if ( !id ) return;
+      entry = megas.find(m => m._id === id);
+    }
+    const mega = await pack.getDocument(entry._id);
+    const bonus = {};
+    for ( const k of ["dex", "for", "con", "end", "vol"] ) bonus[k] = mega.system.stats[k].base - this.actor.system.stats[k].base;
+    await this.actor.update({ "system.form": { ...this.actor.system.form.toObject?.() ?? this.actor.system.form, name: mega.name,
+      primary: mega.system.types.primary, secondary: mega.system.types.secondary, bonus } });
+    ui.notifications.info(`${mega.name} : types et bonus de statistiques renseignés.`);
+  }
+
+  /** Objet tenu utilisé par le Pokémon lui-même, sans action du Dresseur (Jus de Baie, Baies). */
+  static async _onUseHeld(event, target) {
+    const item = this._getItem(target);
+    if ( !item ) return;
+    const result = await useItemOn(item, this.actor);
+    if ( result === null ) return;
+    await ChatMessage.implementation.create({
+      speaker: ChatMessage.implementation.getSpeaker({ actor: this.actor }),
+      content: `<div class="hk-card"><header><h3>${this.actor.name} utilise ${item.name}</h3></header><p>${result}</p></div>`
+    });
   }
 
   static async _onRollPokeskill(event, target) {
@@ -497,6 +607,7 @@ export class PokemonSheet extends HKActorSheet {
   static async _onResetTemp() {
     const updates = {};
     for ( const k of Object.keys(this.actor.system.stats) ) updates[`system.stats.${k}.temp`] = 0;
+    updates["system.accuracyMod"] = 0;
     return this.actor.update(updates);
   }
 }

@@ -13,8 +13,28 @@
     "effectChance": 0,
     "priority": 0,
     "initiativeBonus": 0,
+    "recharge": "",
     "xpCost": 0,
-    "effects": [],
+    "effects": [
+      {
+        "kind": "accuracy",
+        "target": "target",
+        "stat": "for",
+        "value": -10,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
     "description": "<p>Baisse la Précision des Pokémon dans la zone de 10%</p>"
   },
   "_id": "d79dedb522e8bac8",

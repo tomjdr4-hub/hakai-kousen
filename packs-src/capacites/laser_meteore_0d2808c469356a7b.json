@@ -1,0 +1,42 @@
+{
+  "name": "Laser Météore",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "roche",
+    "category": "special",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "con",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Attaque en 2 tours, au premier le lanceur augmente sa Concentration de 1, au second il attaque.</p>"
+  },
+  "_id": "0d2808c469356a7b",
+  "_key": "!items!0d2808c469356a7b"
+}

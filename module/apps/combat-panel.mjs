@@ -8,7 +8,7 @@ import {
 import { deploy, endCombatWithXP, getSetup, openSetupDialog, setDeployChoice, validTeam } from "../combat/setup.mjs";
 import { blockedReason } from "../combat/turn-start.mjs";
 import { EMPTY_CHOICE, SCOPE } from "../documents/combat.mjs";
-import { COMBAT_FORMATS, COMBAT_TYPES, STATUSES, TYPES } from "../config.mjs";
+import { COMBAT_FORMATS, COMBAT_TYPES, STATUSES, TERRAINS, TYPES, WEATHERS } from "../config.mjs";
 import { dodgeLevel, DODGE_COST } from "../combat/skills.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
@@ -162,6 +162,12 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
       resolution,
       deploying,
       combatType: COMBAT_TYPES[setup.type],
+      weather: combat.getFlag(SCOPE, "weather") ?? "",
+      terrain: combat.getFlag(SCOPE, "terrain") ?? "",
+      weatherLabel: WEATHERS[combat.getFlag(SCOPE, "weather") ?? ""],
+      terrainLabel: TERRAINS[combat.getFlag(SCOPE, "terrain") ?? ""],
+      weathers: WEATHERS,
+      terrains: TERRAINS,
       format: COMBAT_FORMATS[setup.format],
       paused: planning && Number.isNumeric(phase.paused),
       phaseLabel: {
@@ -292,6 +298,16 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
         if ( (input.tagName === "SELECT") || (input.type === "checkbox") ) this.render();
         else this.element.querySelector(`[data-combatant="${id}"] [data-action=validateChoice]`)
           ?.toggleAttribute("disabled", !isChoiceComplete(draft, this.combat.combatants.get(id)));
+      });
+    }
+    // Climat et terrain (MJ) : enregistrés sur le combat et annoncés dans le chat.
+    for ( const select of this.element.querySelectorAll("select[data-field-env]") ) {
+      select.addEventListener("change", async () => {
+        const key = select.dataset.fieldEnv;
+        await this.combat.setFlag(SCOPE, key, select.value);
+        const label = (key === "weather" ? WEATHERS : TERRAINS)[select.value];
+        await ChatMessage.implementation.create({ speaker: { alias: "Combat" },
+          content: `<div class="hk-card"><header><h3>${label}</h3></header><p class="hk-detail">Effets adaptés à Hakai Kousen : voir les descriptions des capacités et talents concernés (5.12).</p></div>` });
       });
     }
     if ( this.#focus ) {

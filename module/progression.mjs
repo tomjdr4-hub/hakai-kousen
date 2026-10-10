@@ -59,8 +59,16 @@ export async function spendTrainerXP(trainer, group, key) {
 /*  XP Pokémon                                  */
 /* -------------------------------------------- */
 
+/** Nouveau-né : l'XP reste bloquée jusqu'à 100 XP cumulés (7.8). */
+function newbornLocked(pokemon) {
+  if ( !pokemon.system.newborn ) return false;
+  ui.notifications.warn(`${pokemon.name} est un Nouveau-né : XP bloquée jusqu'à 100 XP cumulés (${pokemon.system.xp.total} / 100).`);
+  return true;
+}
+
 /** EV : ouverture 10 XP, puis EV actuels × 7 ; maximum 30 par statistique (4.4). */
 export async function spendEV(pokemon, key) {
+  if ( newbornLocked(pokemon) ) return;
   const stat = pokemon.system.stats[key];
   if ( stat.ev >= 30 ) return ui.notifications.info("Maximum de 30 EV atteint pour cette statistique.");
   const cost = stat.ev === 0 ? 10 : stat.ev * 7;
@@ -74,6 +82,7 @@ export async function spendEV(pokemon, key) {
 
 /** Compétence Pokémon : Niveau actuel × 10, 20 ou 30 XP selon la catégorie (4.8). */
 export async function spendPokeskill(pokemon, item) {
+  if ( newbornLocked(pokemon) ) return;
   const cost = item.system.level * (POKESKILL_CATEGORIES[item.system.category]?.cost ?? 10);
   const xp = pokemon.system.xp.value;
   const label = `${item.name} ${item.system.level} → ${item.system.level + 1}`;
@@ -131,6 +140,7 @@ export async function learnNextAttack(pokemon, index) {
   if ( !entry || entry.known ) return;
   if ( entry.state === "locked" ) return ui.notifications.warn(`Apprenez d'abord : ${entry.blocker}.`);
   const cost = entry.cost ?? 0;
+  if ( cost && newbornLocked(pokemon) ) return;
   const xp = pokemon.system.xp.value;
   if ( xp < cost ) return ui.notifications.warn(`${entry.name} coûte ${cost} XP Pokémon (disponible : ${xp}).`);
   const source = entry.uuid ? await fromUuid(entry.uuid) : null;
@@ -151,14 +161,19 @@ export async function raiseRelation(pokemon, which) {
   const current = pokemon.system.relation[which];
   const label = which === "confidence" ? "Confiance" : "Obéissance";
   if ( current >= 9 ) return ui.notifications.info(`${label} au maximum (9).`);
-  const day = Math.floor(game.time.worldTime / 86400);
-  if ( pokemon.system.relationDay === day ) return ui.notifications.warn("Une seule augmentation par jour et par Pokémon.");
+  // Jour de jeu (temps du monde) ; à défaut, si le MJ ne fait pas avancer le temps, la date réelle.
+  const worldDay = Math.floor(game.time.worldTime / 86400);
+  const key = game.time.worldTime > 0 ? `monde-${worldDay}` : `date-${new Date().toISOString().slice(0, 10)}`;
+  if ( pokemon.system.relationKey === key ) {
+    if ( !game.user.isGM ) return ui.notifications.warn("Une seule augmentation par jour et par Pokémon.");
+    if ( !await confirm("Relation", "Ce Pokémon a déjà progressé aujourd'hui. Autoriser une nouvelle augmentation (décision du MJ) ?") ) return;
+  }
   const semi = ["semi", "semiFinal"].includes(pokemon.system.encounter?.rarity);
   const cost = semi ? 2 : 1;
   if ( trainer.system.xp.value < cost ) return ui.notifications.warn(`${trainer.name} n'a pas assez d'XP Dresseur (${cost} nécessaire).`);
   if ( !await confirm("Relation", `+1 ${label} pour ${pokemon.name} contre <strong>${cost} XP Dresseur</strong> de ${trainer.name} ?`) ) return;
   await trainer.update({ "system.xp.value": trainer.system.xp.value - cost });
-  await pokemon.update({ [`system.relation.${which}`]: current + 1, "system.relationDay": day });
+  await pokemon.update({ [`system.relation.${which}`]: current + 1, "system.relationKey": key });
   return log(pokemon, "Relation", `${label} ${current} → ${current + 1} (−${cost} XP Dresseur de ${trainer.name}).`);
 }
 
@@ -191,12 +206,19 @@ export async function confirmCapture(wild, trainer, ballName) {
   data.name = values.name || wild.name;
   data.folder = trainer.folder?.id ?? null;
   data.ownership = foundry.utils.deepClone(trainer.ownership);
-  data.system.relation = { confidence: values.confidence, obedience: values.obedience };
+  // Copain Ball +1 Confiance, Luxe Ball +2 (max 9) ; Soin Ball : soins complets (Annexe 3).
+  const ball = ballName.toLowerCase();
+  const ballBonus = ball.includes("copain") ? 1 : ball.includes("luxe") ? 2 : 0;
+  data.system.relation = { confidence: Math.min(values.confidence + ballBonus, 9), obedience: values.obedience };
+  if ( ball.includes("soin ball") ) {
+    data.system.vit.value = wild.system.vit.max;
+    data.system.ene.value = wild.system.ene.max;
+  }
   data.system.details.trainer = trainer.name;
   data.system.details.ball = ballName;
   data.system.boss = { enabled: false, vulnerable: "", phases: [] };
   data.prototypeToken = { ...data.prototypeToken, name: data.name, actorLink: true, disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY };
-  data.effects = [];
+  data.effects = ball.includes("soin ball") ? [] : (wild.effects.map(e => e.toObject()) ?? []);
   const [pokemon] = await Actor.implementation.createDocuments([data]);
 
   const inTeam = trainer.system.team.length < TEAM_SIZE;
@@ -218,7 +240,7 @@ export async function confirmCapture(wild, trainer, ballName) {
     await token.delete();
   }
   return log(trainer, `${pokemon.name} rejoint ${trainer.name} !`,
-    `Rangé ${inTeam ? "dans l'équipe" : "dans la Boîte PC (équipe complète)"} · ${ballName} · Confiance ${values.confidence}, Obéissance ${values.obedience}.${xpText}`);
+    `Rangé ${inTeam ? "dans l'équipe" : "dans la Boîte PC (équipe complète)"} · ${ballName}${ballBonus ? ` (+${ballBonus} Confiance)` : ""}${ball.includes("soin ball") ? " (soigné)" : ""} · Confiance ${data.system.relation.confidence}, Obéissance ${values.obedience}.${xpText}`);
 }
 
 /** Échange entre l'équipe (6) et la Boîte PC (30). */
@@ -287,6 +309,7 @@ export async function evolve(pokemon) {
     if ( !go ) return;
   }
   const xp = Number(values.xp) || 0;
+  if ( xp && newbornLocked(pokemon) ) return;
   if ( pokemon.system.xp.value < xp ) return ui.notifications.warn(`XP Pokémon insuffisante (${pokemon.system.xp.value} / ${xp}).`);
   const entry = index.find(e => e.name.toLowerCase() === String(values.species).trim().toLowerCase());
   if ( !entry ) return ui.notifications.warn(`Espèce introuvable dans le Pokédex : ${values.species}`);
@@ -312,8 +335,30 @@ export async function evolve(pokemon) {
     update["prototypeToken.name"] = target.name;
   }
   await pokemon.update(update);
+  const talent = await chooseTalent(pokemon, t.speciesData.talents);
   return log(pokemon, `${old} évolue en ${target.name} !`,
-    `Dressage ${pokemon.system.dressage} (requis ${required})${xp ? ` · −${xp} XP Pokémon` : ""}. IV, EV, Nature, relation et capacités sont conservés ; vérifiez le Talent (onglet Compétences).`);
+    `Dressage ${pokemon.system.dressage} (requis ${required})${xp ? ` · −${xp} XP Pokémon` : ""}. IV, EV, Nature, relation et capacités sont conservés${talent ? ` ; Talent : ${talent}` : ""}.`);
+}
+
+/** Choix du Talent parmi ceux de la nouvelle espèce ; remplace le Talent actuel. */
+async function chooseTalent(pokemon, talents) {
+  if ( !talents?.length ) return null;
+  const current = pokemon.itemTypes.talent.map(i => i.name);
+  const options = talents.map((t, i) => `<label class="checkbox"><input type="radio" name="talent" value="${i}"
+    ${current.includes(t.name) || (i === 0) ? "checked" : ""}> ${t.name}${t.hidden ? " (caché)" : ""}</label>`).join("");
+  const index = await DialogV2.prompt({
+    window: { title: "Talent après l'évolution" },
+    content: `<p class="hint">Talent actuel : ${current.join(", ") || "aucun"}.</p>${options}`,
+    ok: { label: "Choisir", callback: (e, b) => Number(b.form.querySelector("input[name=talent]:checked")?.value ?? 0) },
+    rejectClose: false
+  });
+  if ( index === null ) return null;
+  const chosen = talents[index];
+  if ( current.includes(chosen.name) ) return chosen.name;
+  const source = chosen.uuid ? await fromUuid(chosen.uuid) : null;
+  await pokemon.deleteEmbeddedDocuments("Item", pokemon.itemTypes.talent.map(i => i.id));
+  if ( source ) await pokemon.createEmbeddedDocuments("Item", [game.items.fromCompendium(source)]);
+  return chosen.name;
 }
 
 /* -------------------------------------------- */

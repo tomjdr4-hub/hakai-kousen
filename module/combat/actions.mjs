@@ -184,6 +184,19 @@ export function describeChoice(combatant, combat) {
   }
 }
 
+/**
+ * Pose un drapeau de tour sur un combattant (charge, repos) ; passe par le MJ si le joueur ne peut pas.
+ * @param {Combatant} combatant
+ * @param {"charging"|"mustRest"} key
+ * @param {*} value
+ */
+export async function setCombatantFlag(combatant, key, value) {
+  const data = { flags: { [SCOPE]: { [key]: value } } };
+  if ( combatant.canUserModify(game.user, "update", data) ) return combatant.update(data);
+  if ( !game.users.activeGM ) return;
+  game.socket.emit(SOCKET, { type: "combatantFlag", combatId: combatant.combat.id, combatantId: combatant.id, key, value, userId: game.user.id });
+}
+
 /** Le choix est complet et peut être validé. */
 export function isChoiceComplete(choice, combatant = null) {
   switch ( choice.kind ) {
@@ -257,8 +270,36 @@ export async function executeChoice(combatant) {
       let ids = choice.targets.map(id => resolveCombatant(combat, id)).filter(c => c && !c.isKO).map(c => c.id);
       if ( !ids.length && !isSelfAttack(actor, choice.itemId) ) ids = defaultTargets(combatant, combat);
       const targets = ids.map(id => combat.combatants.get(id)?.token).filter(Boolean);
+
+      // Attraction : une chance sur deux de ne pas attaquer le Pokémon qui l'a charmé (5.10).
+      const charmer = actor.statuses.has("attraction") ? actor.getFlag(SCOPE, "attractionSource") : null;
+      if ( charmer && targets.some(t => t.actor?.uuid === charmer) ) {
+        const roll = await new foundry.dice.Roll("1d10").evaluate();
+        if ( roll.total <= 5 ) {
+          await card(actor, combatant.name, `<p class="hk-detail">Attraction : ${roll.total} sur 1D10.</p>
+            <div class="hk-outcome failure">Sous le charme, il n'attaque pas ce Pokémon.</div>`, { rolls: [roll] });
+          break;
+        }
+      }
+
+      // Attaque en deux tours (Lance-Soleil, Tunnel, Vol…) : préparation, puis frappe au tour suivant.
+      const charge = item.system.special?.charge;
+      if ( charge === "charge" ) {
+        const charging = combatant.getFlag(SCOPE, "charging");
+        if ( charging?.itemId !== item.id ) {
+          await setCombatantFlag(combatant, "charging", { itemId: item.id, targets: ids, round: combat.round });
+          await card(actor, `${combatant.name} se prépare`, `<p>${item.name} : ${actor.name} frappera au prochain tour.</p>`);
+          break;
+        }
+        await setCombatantFlag(combatant, "charging", null);
+      }
+
       const message = await rollAttack(actor, item, { targets, zMove: choice.zmove && !struggle });
       if ( !message ) return false;
+      // Repos obligatoire au tour suivant (Ultralaser, Giga Impact ; Hydroblast seulement si l'attaque touche).
+      if ( (charge === "rest") || ((charge === "rest-unless-miss") && message.getFlag(SCOPE, "anyHit")) ) {
+        await setCombatantFlag(combatant, "mustRest", combat.round + 1);
+      }
       // Lutte : le lanceur perd 1/10 de sa VIT max.
       if ( struggle ) await applyDamage(actor, Math.max(Math.floor(actor.system.vit.max / 10), 1));
       break;
@@ -315,7 +356,6 @@ export async function executeChoice(combatant) {
 
 async function throwBall(trainer, ball, target) {
   if ( !trainer || !ball || !target?.actor ) return;
-  await ball.update({ "system.quantity": Math.max(ball.system.quantity - 1, 0) });
 
   // Test de DEX du Dresseur pour atteindre la cible.
   const dex = trainer.system.attributes.dex.value;
@@ -328,9 +368,12 @@ async function throwBall(trainer, ball, target) {
       <span class="subtitle">sur ${target.name}</span></header>
       <p class="hk-detail">Test de DEX : 1D6 ≤ ${dex} → ${throwRoll.total}</p>
       <div class="hk-outcome ${hit ? "success" : "failure"}">${hit ? "La Ball atteint sa cible" : "La Ball manque sa cible"}</div>
-      ${hit ? `<p class="hk-detail">Le MJ effectue le jet de capture en secret.</p>` : ""}</div>`
+      ${hit ? `<p class="hk-detail">Le MJ effectue le jet de capture en secret.</p>`
+        : `<p class="hk-detail">La Ball peut normalement être récupérée si l'environnement le permet (8.4).</p>`}</div>`
   });
   if ( !hit ) return;
+  // La Ball qui touche est consommée en cas d'échec, ou reste liée au Pokémon capturé (8.4).
+  await ball.update({ "system.quantity": Math.max(ball.system.quantity - 1, 0) });
 
   // Seuil de capture : 6 + modificateurs connus ; rareté et Balls spéciales restent au MJ.
   const actor = target.actor;
@@ -340,7 +383,7 @@ async function throwBall(trainer, ball, target) {
   else if ( vit.value <= Math.floor(vit.max / 4) ) mods.push(["1/4 de VIT ou moins", 3]);
   else mods.push(["Plus de 1/4 de VIT", 4]);
   if ( CAPTURE_STATUSES.some(s => actor.statuses.has(s)) ) mods.push(["Altération d'état", -1]);
-  if ( actor.system.baby ) mods.push(["Bébé", -1]);
+  if ( actor.system.babySpecies ) mods.push(["Bébé Pokémon", -1]);
   const encounter = actor.system.encounter ?? {};
   const rarity = HK_RARITIES[encounter.rarity];
   if ( rarity?.capture ) mods.push([rarity.label, rarity.capture]);
@@ -415,6 +458,7 @@ async function performSwitch(combatant, actorUuid, { replacement = false } = {})
   if ( outgoing?.type === "pokemon" ) {
     const reset = {};
     for ( const k of Object.keys(outgoing.system.stats) ) reset[`system.stats.${k}.temp`] = 0;
+    reset["system.accuracyMod"] = 0;
     await outgoing.update(reset);
     for ( const id of SWITCH_CLEARS ) {
       if ( outgoing.statuses.has(id) ) await outgoing.toggleStatusEffect(id, { active: false });
@@ -451,7 +495,7 @@ export function registerSocket() {
   game.socket.on(SOCKET, async data => {
     if ( !game.user.isActiveGM ) return;
     // Dégâts et effets demandés depuis une carte de chat par un joueur qui ne possède pas la cible.
-    if ( ["applyDamage", "applyEffect", "saveFatal", "spendEnergy"].includes(data.type) ) return handleEffectRequest(data);
+    if ( ["applyDamage", "applyEffect", "saveFatal", "spendEnergy", "heal"].includes(data.type) ) return handleEffectRequest(data);
     // Choix des Pokémon de départ d'un Dresseur.
     if ( data.type === "deploy" ) {
       const user = game.users.get(data.userId);
@@ -464,6 +508,9 @@ export function registerSocket() {
     const combatant = game.combats.get(data.combatId)?.combatants.get(data.combatantId);
     if ( !user || !combatant?.actor?.testUserPermission(user, "OWNER") ) return;
     if ( data.type === "setChoice" ) await combatant.update({ [`flags.${SCOPE}.choice`]: data.choice });
+    if ( (data.type === "combatantFlag") && ["charging", "mustRest"].includes(data.key) ) {
+      await combatant.update({ [`flags.${SCOPE}.${data.key}`]: data.value });
+    }
     if ( data.type === "switch" ) {
       await performSwitch(combatant, data.actorUuid, { replacement: data.replacement });
     }

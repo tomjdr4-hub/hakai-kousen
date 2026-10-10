@@ -75,10 +75,15 @@
       </tbody>
     </table>
     <div class="stat-options">
-      <label class="checkbox"><input type="checkbox" name="system.baby" {{checked system.baby}}> Bébé (stats ÷2, ENE inchangée)</label>
+      <label class="checkbox" data-tooltip="Pokémon éclos d'une espèce qui n'est pas un Bébé (7.8) : caractéristiques et VIT ÷2, XP bloquée jusqu'à 100 XP cumulés">
+        <input type="checkbox" name="system.baby" {{checked system.baby}}> Nouveau-né{{#if system.baby}} ({{#if system.newborn}}{{system.xp.total}} / 100 XP{{else}}terminé : 100 XP atteints{{/if}}){{/if}}</label>
+      <label data-tooltip="Modification temporaire de précision (Jet de Sable −10 %…)">Précision
+        <input type="number" name="system.accuracyMod" value="{{system.accuracyMod}}" step="10" style="width:56px"> %</label>
       <button type="button" data-action="resetTemp"><i class="fa-solid fa-rotate-left"></i> Remettre les modifications temporaires à zéro</button>
     </div>
     <p class="hint">EV : ouvrir 10 XP — augmenter : EV actuels × 7 XP (max 30). IV : entraînement uniquement.</p>
+    <label class="checkbox"><input type="checkbox" name="system.starter" {{checked system.starter}}> Starter en création</label>
+    {{#if starterCheck}}<ul class="hk-checklist">{{#each starterCheck as |c|}}<li class="{{#if c.ok}}ok{{else}}ko{{/if}}"><i class="fa-solid {{#if c.ok}}fa-check{{else}}fa-xmark{{/if}}"></i> {{c.label}}</li>{{/each}}</ul>{{/if}}
 
     <h3>Relation</h3>
     <div class="relation">
@@ -111,6 +116,7 @@
     </div>
     <details class="form-editor" {{#if system.form.active}}open{{/if}}>
       <summary>Forme Méga / alternative (données du site Hakai Kousen)</summary>
+      {{#if editable}}<button type="button" data-action="megaFromPokedex"><i class="fa-solid fa-book"></i> Remplir depuis le Pokédex</button>{{/if}}
       <div class="details-grid">
         <label>Nom <input type="text" name="system.form.name" value="{{system.form.name}}" placeholder="Méga-Dracaufeu X"></label>
         <label>Type 1 <select name="system.form.primary">{{selectOptions secondaryTypes selected=system.form.primary}}</select></label>
@@ -267,6 +273,7 @@
       <li class="item" data-item-id="{{item.id}}">
         <img src="{{item.img}}" alt="">
         <a class="item-name" data-action="editItem">{{item.name}}</a>
+        {{#if item.system.usable}}<button type="button" class="icon" data-action="useHeld" data-tooltip="Utiliser (objet tenu : sans action du Dresseur)"><i class="fa-solid fa-hand-holding-medical"></i></button>{{/if}}
         <input class="qty" type="number" value="{{item.system.quantity}}" data-item-field="system.quantity">
         {{#if @root.editable}}<button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>{{/if}}
       </li>

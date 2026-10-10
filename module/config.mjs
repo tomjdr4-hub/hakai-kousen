@@ -202,6 +202,13 @@ export const STATUSES = {
     rule: "Avec une VIT négative, perd 1 VIT par tour jusqu'à stabilisation ou soins. Mort à −10 VIT (humain : −5)." }
 };
 
+/**
+ * Espèces officiellement classées comme Bébés Pokémon (7.8) : fiche normale, sans division par deux,
+ * mais −1 au seuil de capture (5.16).
+ */
+export const BABY_SPECIES = ["pichu", "mélo", "toudoudou", "togepi", "debugant", "lippouti", "élekid", "magby", "azurill",
+  "okéoké", "rozbouton", "korillon", "manzaï", "mime jr.", "ptiravi", "goinfrex", "riolu", "babimanta", "toxizap"];
+
 /** Rareté d'un Pokémon pour la capture (5.16). */
 export const RARITIES = {
   commun: { label: "Commun / Peu commun", capture: 0 },
@@ -221,6 +228,10 @@ export const WILD_PROFILES = {
   experimente: { label: "Expérimenté", iv: 8 },
   dominant: { label: "Dominant", iv: 12, dominant: true }
 };
+
+/** Climats et Terrains (5.12) : effets « adaptés HK », à arbitrer par le MJ. */
+export const WEATHERS = { "": "Aucun climat", soleil: "Soleil", pluie: "Pluie", grele: "Grêle", neige: "Neige", sable: "Tempête de sable", brouillard: "Brouillard" };
+export const TERRAINS = { "": "Aucun terrain", electrifie: "Champ Électrifié", herbu: "Champ Herbu", brumeux: "Champ Brumeux", psychique: "Champ Psychique" };
 
 /** Nature du combat (Manuel du MJ 5.12). */
 export const COMBAT_TYPES = {
@@ -308,5 +319,5 @@ export function typeEffectiveness(attackType, defenderTypes) {
 export const HK = {
   ATTRIBUTES, POKEMON_STATS, SKILLS, KNOWLEDGES, ATTRIBUTE_DIFFICULTIES, POOL_DIFFICULTIES,
   TYPES, TYPE_CHART, NATURES, ATTACK_CATEGORIES, POKESKILL_CATEGORIES, GEAR_CATEGORIES,
-  STATUSES, COMBAT_TYPES, COMBAT_FORMATS, CURABLE, RARITIES, WILD_PROFILES, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
+  STATUSES, WEATHERS, TERRAINS, COMBAT_TYPES, COMBAT_FORMATS, CURABLE, RARITIES, WILD_PROFILES, BABY_SPECIES, DRESSAGE_FAILURES, TABLE_UNIQUE_COLUMNS, TABLE_UNIQUE
 };

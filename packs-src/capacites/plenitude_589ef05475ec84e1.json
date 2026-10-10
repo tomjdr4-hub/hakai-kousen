@@ -13,6 +13,7 @@
     "effectChance": 0,
     "priority": 0,
     "initiativeBonus": 0,
+    "recharge": "",
     "xpCost": 0,
     "effects": [
       {
@@ -32,6 +33,16 @@
         "secondary": false
       }
     ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
     "description": "<p>Augmente la Concentration et la Volonté du lanceur de 1.</p>"
   },
   "_id": "589ef05475ec84e1",

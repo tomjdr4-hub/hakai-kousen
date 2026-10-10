@@ -3,7 +3,7 @@ import {
   tableUniqueThreshold, typeEffectiveness
 } from "../config.mjs";
 
-import { effectLabel, spendEnergy } from "../combat/effects.mjs";
+import { applyDamage, effectLabel, spendEnergy } from "../combat/effects.mjs";
 import { armorReduction, damageBonuses, dodgeLevel, DODGE_COST, resistanceReduction } from "../combat/skills.mjs";
 
 const { DialogV2 } = foundry.applications.api;
@@ -53,7 +53,7 @@ function outcome(success, text) {
   return `<div class="hk-outcome ${success ? "success" : "failure"}">${text}</div>`;
 }
 
-async function sendCard(actor, { title, subtitle = "", body, rolls = [] }) {
+async function sendCard(actor, { title, subtitle = "", body, rolls = [], flags = {} }) {
   const content = `<div class="hk-card">
     <header><h3>${title}</h3>${subtitle ? `<span class="subtitle">${subtitle}</span>` : ""}</header>
     ${body}
@@ -61,7 +61,8 @@ async function sendCard(actor, { title, subtitle = "", body, rolls = [] }) {
   return ChatMessage.implementation.create({
     speaker: ChatMessage.implementation.getSpeaker({ actor }),
     content,
-    rolls
+    rolls,
+    flags: { "hakai-kousen": flags }
   });
 }
 
@@ -167,6 +168,19 @@ function defenderTypes(actor) {
   return actor.system.defensiveTypes;
 }
 
+/** Objets tenus d'un acteur (noms en minuscules). */
+function held(actor) {
+  return actor?.system?.heldNames ?? [];
+}
+
+/** Baie de résistance tenue contre ce Type d'attaque super efficace (Annexe 2) : dégâts finaux ÷2. */
+function resistBerry(actor, attackType) {
+  if ( actor?.type !== "pokemon" ) return null;
+  const label = (TYPES[attackType] ?? "").toLowerCase();
+  return actor.itemTypes.gear.find(i => (i.system.category === "held")
+    && new RegExp(`super efficace de type ${label}(?![a-zà-ÿ])`, "i").test(i.system.description.replace(/<[^>]+>/g, ""))) ?? null;
+}
+
 /** Chance d'effet secondaire : D10 pour les multiples de 10 %, D100 sinon (5.9). */
 async function rollEffectChance(chance) {
   const faces = chance % 10 === 0 ? 10 : 100;
@@ -208,8 +222,11 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
   const offenseKey = special ? "con" : "for";
   const defenseKey = special ? "vol" : "end";
   const offense = actor.system.stats[offenseKey].value;
-  const accuracy = atk.sure ? 100 : atk.accuracy;
+  const sp = atk.special ?? {};
+  const attackerHeld = held(actor);
   const rolls = [];
+  let totalDamage = 0;
+  let damagingHits = 0;
   const rows = [];
   const targetEffects = atk.effects.filter(e => e.target === "target");
   const selfEffects = atk.effects.filter(e => e.target === "self");
@@ -223,20 +240,40 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
     let hit = true;
     let crit = false;
 
+    // Précision : capacité, modification temporaire du lanceur et objets tenus (Annexe 6).
+    let accuracy = atk.sure ? 100 : atk.accuracy;
+    const accNotes = [];
+    if ( !atk.sure && (atk.accuracy > 0) ) {
+      const mods = [[actor.system.accuracyMod ?? 0, "précision"]];
+      if ( attackerHeld.includes("loupe") ) mods.push([10, "Loupe"]);
+      const targetCombatant = token ? game.combat?.combatants.find(c => c.tokenId === (token.document?.id ?? token.id)) : null;
+      if ( attackerHeld.includes("lentille zoom") && targetCombatant?.choice.done ) mods.push([20, "Lentille Zoom"]);
+      const targetHeld = held(target);
+      if ( targetHeld.includes("poudre claire") || targetHeld.includes("encens doux") ) mods.push([-10, "objet de la cible"]);
+      for ( const [v, label] of mods.filter(([v]) => v) ) {
+        accuracy += v;
+        accNotes.push(`${v > 0 ? "+" : ""}${v} % (${label})`);
+      }
+    }
+    const accText = accNotes.length ? ` (${accNotes.join(", ")})` : "";
+
     // Toucher.
     if ( atk.category === "status" ) {
-      // Capacité de statut : D100 contre la précision, sauf si elle ne peut pas échouer.
-      if ( !atk.sure && (atk.accuracy > 0) && (atk.accuracy < 100) ) {
+      // Capacité de statut : D100 contre la précision, sauf si elle ne peut pas échouer (règle confirmée par l'auteur).
+      if ( !atk.sure && (atk.accuracy > 0) && (accuracy < 100) ) {
         const roll = await new foundry.dice.Roll("1d100").evaluate();
         rolls.push(roll);
-        hit = roll.total <= atk.accuracy;
-        lines.push(`<div class="hk-dice">${diceFaces(roll)}</div><p class="hk-detail">1D100 ≤ ${atk.accuracy}</p>`);
+        hit = roll.total <= accuracy;
+        lines.push(`<div class="hk-dice">${diceFaces(roll)}</div><p class="hk-detail">1D100 ≤ ${accuracy}${accText}</p>`);
       }
     }
     else {
       const roll = await new foundry.dice.Roll("1d10").evaluate();
       rolls.push(roll);
       const natural = roll.total;
+      // Critique : 10 naturel ; Lentilscope ou Griffe Rasoir : 9-10 ; Poing Chance ou Poireau : 8-10 (si l'attaque touche).
+      const critMin = (attackerHeld.includes("poing chance") || attackerHeld.includes("poireau")) ? 8
+        : (attackerHeld.includes("lentilscope") || attackerHeld.includes("griffe rasoir")) ? 9 : 10;
       crit = natural === 10;
       let defense = defenseValue(target, defenseKey);
       let defenseLabel = POKEMON_STATS[defenseKey].abbr;
@@ -247,41 +284,76 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         defense = dodge.dex;
         defenseLabel = "DEX (Esquive)";
       }
+      // « Ajoute +1 sur le résultat du dé 10 » (Tranch'Herbe…) : le bonus s'ajoute au dé, le critique reste un 10 naturel.
+      const result = natural + (sp.hitBonus ?? 0);
       if ( defense !== null ) {
         const margin = offense - defense;
         const threshold = tableUniqueThreshold(margin, accuracy);
-        hit = crit || (natural >= threshold);
+        hit = crit || (result >= threshold);
+        if ( hit && (natural >= critMin) ) crit = true;
         detail = `${POKEMON_STATS[offenseKey].abbr} ${offense} − ${defenseLabel} ${defense} = marge ${margin >= 0 ? "+" : ""}${margin}
-          · ${accuracy} % → seuil <strong>${threshold}+</strong>${dodge ? ` · Esquive : −${dodge.cost} ENE` : ""}`;
+          · ${accuracy} %${accText} → seuil <strong>${threshold}+</strong>${sp.hitBonus ? ` · dé +${sp.hitBonus} = ${result}` : ""}${dodge ? ` · Esquive : −${dodge.cost} ENE` : ""}`;
       }
-      else detail = `Aucune cible : comparez à la Table unique (${accuracy} %).`;
+      else detail = `Aucune cible : comparez à la Table unique (${accuracy} %${accText}).`;
       lines.push(`<div class="hk-dice">${diceFaces(roll)}</div><p class="hk-detail">${detail}</p>`);
     }
 
     if ( target || (atk.category === "status") ) {
-      lines.push(outcome(hit, hit ? (crit ? "Touché ! Réussite exceptionnelle (10 naturel)" : "Touché") : "Raté"));
+      lines.push(outcome(hit, hit ? (crit ? "Touché ! Réussite exceptionnelle (critique)" : "Touché") : "Raté"));
     }
     else if ( crit ) lines.push(outcome(true, "10 naturel : réussite exceptionnelle"));
 
     // Dégâts : formule de la capacité (STAB inclus), doublés sur 10 naturel, puis efficacité du type.
-    if ( hit && atk.isDamaging ) {
-      const dmgRoll = await new foundry.dice.Roll(atk.damage, actor.getRollData()).evaluate();
-      rolls.push(dmgRoll);
-      // Ordre (Annexe 1) : dégâts de la capacité (STAB inclus) → Augmentation et objet tenu → critique
-      // → Types (réduits par Résistance) → Blindage naturel sur les dégâts physiques.
-      const bonuses = damageBonuses(actor, item);
-      const base = dmgRoll.total + bonuses.reduce((sum, b) => sum + b.value, 0);
+    if ( hit && (atk.isDamaging || sp.ohko) ) {
       const rawMult = target ? typeEffectiveness(atk.type, defenderTypes(target)) : 1;
       const resist = target ? resistanceReduction(target, atk.type) : 0;
       const mult = Math.max(rawMult - resist, 0);
-      const armor = (target && (atk.category === "physical")) ? armorReduction(target) : 0;
-      const amount = Math.max(Math.floor(base * (crit ? 2 : 1) * mult) - armor, 0);
-      const parts = [`${dmgRoll.formula} = ${dmgRoll.total}`];
-      for ( const b of bonuses ) parts.push(`+${b.value} (${b.label})`);
-      if ( crit ) parts.push("×2 (critique)");
-      if ( resist ) parts.push(`×${rawMult} −${resist} (Résistance)`);
-      if ( mult !== 1 ) parts.push(`×${mult}`);
-      if ( armor ) parts.push(`−${armor} (Blindage)`);
+      const parts = [];
+      let amount;
+      let berry = null;
+      if ( sp.ohko ) {
+        // KO direct (Abîme) : la cible tombe à 0 VIT, sauf immunité de Type.
+        amount = (target && mult > 0) ? Math.max(target.system.vit.value, 0) : 0;
+        parts.push(mult > 0 ? "KO direct" : "Aucun effet");
+      }
+      else {
+        const dmgRoll = await new foundry.dice.Roll(atk.damage, actor.getRollData()).evaluate();
+        rolls.push(dmgRoll);
+        // Frappes multiples : « 2 fois », « 2 à 5 fois » (un seul jet de toucher).
+        let hits = 1;
+        if ( sp.hits ) {
+          const hitsRoll = await new foundry.dice.Roll(sp.hits).evaluate();
+          rolls.push(hitsRoll);
+          hits = Math.max(hitsRoll.total, 1);
+        }
+        // Ordre (Annexes 1 et 6) : dégâts de la capacité (STAB inclus) → Augmentation et objets tenus
+        // → objet Choix ×1,5 → critique → Types (réduits par Résistance) → Baie de résistance ÷2 → Blindage.
+        const bonuses = damageBonuses(actor, item);
+        if ( (atk.category === "physical") && attackerHeld.includes("bandeau muscle") ) bonuses.push({ label: "Bandeau Muscle", value: 1 });
+        if ( (atk.category === "special") && attackerHeld.includes("lunettes sages") ) bonuses.push({ label: "Lunettes Sages", value: 1 });
+        if ( attackerHeld.includes("orbe vie") ) bonuses.push({ label: "Orbe Vie", value: 3 });
+        if ( attackerHeld.includes("gant de boxe") && /poing/i.test(item.name) ) bonuses.push({ label: "Gant de Boxe", value: 2 });
+        if ( attackerHeld.includes("ceinture pro") && (rawMult > 1) ) bonuses.push({ label: "Ceinture Pro", value: 2 });
+        const choice = ((atk.category === "physical") && attackerHeld.includes("bandeau choix"))
+          || ((atk.category === "special") && attackerHeld.includes("lunettes choix")) ? 1.5 : 1;
+        const base = (dmgRoll.total + bonuses.reduce((sum, b) => sum + b.value, 0)) * hits;
+        amount = Math.floor(base * choice * (crit ? 2 : 1) * mult);
+        berry = target && (rawMult > 1) ? resistBerry(target, atk.type) : null;
+        if ( berry && amount ) amount = Math.max(Math.floor(amount / 2), 1);
+        const armor = (target && (atk.category === "physical")) ? armorReduction(target) : 0;
+        amount = Math.max(amount - armor, 0);
+        parts.push(`${dmgRoll.formula} = ${dmgRoll.total}`);
+        for ( const b of bonuses ) parts.push(`+${b.value} (${b.label})`);
+        if ( hits > 1 ) parts.push(`×${hits} frappes`);
+        if ( choice > 1 ) parts.push("×1,5 (Choix)");
+        if ( crit ) parts.push("×2 (critique)");
+        if ( resist ) parts.push(`×${rawMult} −${resist} (Résistance)`);
+        if ( mult !== 1 ) parts.push(`×${mult}`);
+        if ( berry ) parts.push(`÷2 (${berry.name}, consommée)`);
+        if ( armor ) parts.push(`−${armor} (Blindage)`);
+        damagingHits += hits;
+      }
+      totalDamage += amount;
       const eff = effectivenessLabel(mult);
       lines.push(`<div class="hk-damage">
         <span class="amount">${amount}</span> dégâts
@@ -290,7 +362,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
       </div>`);
       if ( target && (amount > 0) ) {
         lines.push(`<button type="button" class="hk-apply" data-hk-action="applyDamage"
-          data-uuid="${target.uuid}" data-amount="${amount}">
+          data-uuid="${target.uuid}" data-amount="${amount}" data-attack-type="${atk.type}" ${berry ? `data-consume="${berry.uuid}"` : ""}>
           <i class="fa-solid fa-heart-crack"></i> Appliquer ${amount} dégâts à ${token.name}</button>`);
       }
     }
@@ -316,11 +388,27 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
     rows.push(`<section class="hk-target">${token ? `<h4>${token.name}</h4>` : ""}${lines.join("")}</section>`);
   }
 
-  // Effets sur le lanceur, une seule fois si l'attaque a touché au moins une cible.
-  const ownEffects = selfEffects.filter(e => anyHit && (!e.secondary || anySecondary));
-  if ( ownEffects.length ) {
-    rows.push(`<section class="hk-target"><h4>${actor.name} (lanceur)</h4>${ownEffects.map(e => effectButton(actor, actor.name, e)).join("")}</section>`);
+  // Lanceur : effets sur lui-même, recul, drain (une seule fois, si l'attaque a touché).
+  const ownLines = selfEffects.filter(e => anyHit && (!e.secondary || anySecondary)).map(e => effectButton(actor, actor.name, e));
+  if ( anyHit && (totalDamage > 0) ) {
+    const vitMax = actor.system.vit.max;
+    let recoil = 0;
+    const why = [];
+    if ( sp.recoilDamage ) { recoil += Math.max(Math.floor(totalDamage * sp.recoilDamage), 1); why.push(`${Math.round(sp.recoilDamage * 100)} % des dégâts`); }
+    if ( sp.recoilVit ) { recoil += Math.max(Math.floor(vitMax * sp.recoilVit), 1) * Math.max(damagingHits, 1); why.push("1/10 de la VIT max par coup"); }
+    if ( attackerHeld.includes("orbe vie") ) { recoil += Math.max(Math.floor(vitMax / 10), 1); why.push("Orbe Vie"); }
+    if ( recoil ) {
+      ownLines.push(`<button type="button" class="hk-apply" data-hk-action="applyDamage" data-uuid="${actor.uuid}" data-amount="${recoil}">
+        <i class="fa-solid fa-person-falling-burst"></i> Recul : ${recoil} dégâts à ${actor.name} (${why.join(", ")})</button>`);
+    }
+    if ( sp.drain ) {
+      const heal = Math.max(Math.floor(totalDamage * sp.drain), 1);
+      ownLines.push(`<button type="button" class="hk-apply" data-hk-action="heal" data-uuid="${actor.uuid}" data-amount="${heal}">
+        <i class="fa-solid fa-heart-circle-plus"></i> Drain : ${actor.name} récupère ${heal} VIT</button>`);
+    }
   }
+  if ( sp.selfKO ) ownLines.push(`<p class="hk-detail">${actor.name} est mis KO par sa propre capacité.</p>`);
+  if ( ownLines.length ) rows.push(`<section class="hk-target"><h4>${actor.name} (lanceur)</h4>${ownLines.join("")}</section>`);
 
   if ( energy > 0 ) await actor.update({ "system.ene.value": actor.system.ene.value - energy });
 
@@ -337,7 +425,13 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
     .filter(Boolean).join(" · ");
   const zNote = zMove ? `<p class="hk-detail">Capacité Z : dégâts et effets adaptés de la version officielle et des données HK, à ajuster par le MJ.</p>` : "";
   const description = atk.description ? `<details class="hk-description"><summary>Effet</summary>${atk.description}</details>` : "";
-  return sendCard(actor, { title: zMove ? `${item.name} (Capacité Z)` : item.name, subtitle, body: rows.join("") + zNote + description, rolls });
+  const message = await sendCard(actor, {
+    title: zMove ? `${item.name} (Capacité Z)` : item.name, subtitle, body: rows.join("") + zNote + description, rolls,
+    flags: { anyHit }
+  });
+  // Explosion, Destruction… : le lanceur tombe KO, que l'attaque touche ou non.
+  if ( sp.selfKO && (actor.system.vit.value > 0) ) await applyDamage(actor, actor.system.vit.value);
+  return message;
 }
 
 /* -------------------------------------------- */

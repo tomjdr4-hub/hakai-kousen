@@ -1,0 +1,33 @@
+{
+  "name": "Téra-Explosion",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "special",
+    "energy": 3,
+    "range": "Zone",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Par défaut cette attaque est spéciale et de type Normal. SI le lanceur est sous Téracristallisation, l'attaque prend son type Téra-Cristal et elle devient physique si sa Force dépasse sa Concentration</p>"
+  },
+  "_id": "ceeab066ce92ebc0",
+  "_key": "!items!ceeab066ce92ebc0"
+}

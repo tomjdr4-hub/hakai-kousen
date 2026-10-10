@@ -1,0 +1,167 @@
+{
+  "_id": "cf19614d7ac7cb9b",
+  "_key": "!actors!cf19614d7ac7cb9b",
+  "name": "Terhal",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/374.png",
+  "system": {
+    "species": "Terhal",
+    "number": "374",
+    "types": {
+      "primary": "acier",
+      "secondary": "psy"
+    },
+    "stats": {
+      "dex": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 20,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 20,
+      "max": 20
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.6m / 95.2kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Boulefer",
+      "ratio": "Asexué",
+      "evolutions": "Évolutions : Métang (niveau 20)",
+      "talents": [
+        {
+          "name": "Corps Sain",
+          "uuid": "Compendium.hakai-kousen.talents.Item.cca6491f323df846",
+          "hidden": false
+        },
+        {
+          "name": "Light Metal",
+          "uuid": "Compendium.hakai-kousen.talents.Item.778afda39e338cdc",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Psykoud'Boul",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3dc275b4ddbfed87"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Bélier",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "9",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0.25,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur subit 1/4 des dégâts infligés en tant que dégâts de recul. Si le lanceur possède Tête de Roc il ne subit pas les dégâts de recul</p>"
+      },
+      "_id": "76dfc36e59d3e55f",
+      "_key": "!actors.items!cf19614d7ac7cb9b.76dfc36e59d3e55f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Terhal",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/374.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "4c3ef646116cbb54",
+  "sort": 37400,
+  "flags": {}
+}

@@ -45,10 +45,21 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - **XP Dresseur** : boutons « + » sur les Caractéristiques (4 × valeur) et les Compétences / Connaissances (ouverture 2 XP, puis 2 × Niveau ; Spécialisation signalée au niveau 5).
 - **XP Pokémon** : « + » sur les EV (10 XP à l'ouverture, puis EV × 7 ; max 30) et sur les Compétences Pokémon (Niveau × 10 / 20 / 30).
 - **Attaques par expérience** : le niveau indiqué sur le site est le coût en XP Pokémon (règle confirmée par l'auteur) ; les attaques s'apprennent dans l'ordre, les suivantes restent bloquées. Les attaques « Départ » sont gratuites. CT, œuf et tutorat restent ajoutés selon la fiction.
-- **Relation** : +1 Confiance ou +1 Obéissance pour 1 XP Dresseur, une fois par jour (2 XP pour un semi-légendaire).
-- **Évolution** : vérifie le Dressage requis selon la catégorie (8 à 14), propose le coût d'une évolution par niveau (niveau = XP), remplace l'espèce par celle du Pokédex et conserve IV, EV, Nature, relation et capacités.
-- **Capture** : le MJ confirme depuis la carte de capture ; le Pokémon rejoint l'équipe (6) ou la **Boîte PC** (30 places, pension de 50 ₽ par jour), avec la relation initiale choisie ; +1 XP Dresseur à la première capture.
+- **Relation** : +1 Confiance ou +1 Obéissance pour 1 XP Dresseur, une fois par jour de jeu (date réelle si le temps du monde n'avance pas ; le MJ peut passer outre), 2 XP pour un semi-légendaire.
+- **Évolution** : vérifie le Dressage requis selon la catégorie (8 à 14), propose le coût d'une évolution par niveau (niveau = XP), fait choisir le nouveau Talent, remplace l'espèce par celle du Pokédex et conserve IV, EV, Nature, relation et capacités.
+- **Capture** : le MJ confirme depuis la carte de capture ; le Pokémon rejoint l'équipe (6) ou la **Boîte PC** (30 places, pension de 50 ₽ par jour), avec la relation initiale choisie (Copain Ball +1 Confiance, Luxe Ball +2, Soin Ball : soigné) ; +1 XP Dresseur à la première capture. Une Ball qui rate sa cible n'est pas consommée.
+- **Nouveau-né** (7.8) : caractéristiques et VIT ÷2 et XP bloquée jusqu'à 100 XP cumulés. Les espèces Bébé (Pichu, Togepi…) gardent leur fiche normale et comptent −1 à la capture.
 - **Mécaniques régionales** (5.19) : Méga-Évolution (Dressage 18, forme saisie sur la fiche, fin au KO), Dynamax (3 tours, VIT doublée), Téracristallisation (Type Téra en défense), Capacité Z dans le panneau de combat (moitié de l'ENE max, une par Dresseur et par combat).
+
+### Vie hors combat
+- **Œufs** (7.3 à 7.8) : onglet Inventaire du Dresseur. Reproduction ciblée (0 %) ou Œuf sauvage (1D100 %), parents, niveau d'Élevage. Journée normale +1D10 %, favorable +2D10 % (automatique avec Corps Ardent / Armurmagma dans l'équipe). À l'éclosion : Nature, Talent selon les parents, attaques et IV transmis selon l'Élevage, Nouveau-né (sauf espèce Bébé), Confiance 4 + Obéissance 4.
+- **Pêche** (6.6) : test de FOR, difficulté réduite par le niveau de Pêche et la canne. **Minage** (6.7) : jet selon le niveau (1D100 à 3D100, minimums) et trouvaille.
+- **Centre Pokémon** (8.9) : soins complets de l'équipe pour 50 ₽ par Pokémon (blessures graves à part).
+- **Boutique et revente** (8.2) : achat au prix de référence depuis le compendium Objets, revente à 50 % (réglage « CT revendables »).
+- **CT** : apprendre une capacité par CT retire la CT de l'inventaire du Dresseur.
+- **Création** (3.7 à 3.10, 4.1) : case « Création du personnage » sur la fiche Dresseur et « Starter en création » sur la fiche Pokémon, avec la liste des règles respectées ou non.
+- **Formes Méga** : « Remplir depuis le Pokédex » calcule types et bonus à partir de la fiche Méga.
+- **Combat** : climat et terrain affichés dans le panneau (réglés par le MJ).
 
 ### Outils du MJ
 Boutons dans l'onglet Acteurs (MJ) : **Pokémon sauvages** et **Combat de Dresseurs**.
@@ -56,7 +67,12 @@ Boutons dans l'onglet Acteurs (MJ) : **Pokémon sauvages** et **Combat de Dresse
 - **Générateur de Pokémon sauvages** (MJ 5.1, 7.4) : espèce du Pokédex, nombre, profil (jeune, ordinaire, membre de meute, expérimenté, dominant), IV répartis au hasard, Nature au D100, Talent de l'espèce, Compétence initiale et attaque inhabituelle (1D10), rareté, Aberrant, chromatique, intention et condition de retrait ; placement sur la scène. Les manuels ne chiffrent pas les profils : les points d'IV proposés sont des valeurs par défaut modifiables.
 - **Rencontre et capture** (fiche Pokémon, onglet Description) : rareté, Dominant, Aberrant et chromatique, utilisés par le jet de capture (Dominant ou semi-légendaire final : Hyper Ball minimum).
 - **Boss** (5.20) : immunisé à toutes les altérations sauf une (l'échec est annoncé clairement aux joueurs), phases annoncées au MJ quand la VIT franchit un seuil, Actions de Boss avec recharge (1d4, 1d6) lancée ouvertement.
-- **Tables aléatoires** : Nature (D100), Compétence initiale, attaque inhabituelle, réaction rapide d'un Pokémon, Minage, et un exemple de table de zone (Grandes Oliveraies) à dupliquer.
+- **Tables aléatoires** : Nature (D100), Compétence initiale, attaque inhabituelle, réaction rapide d'un Pokémon, Minage, activités professionnelles (D20, MJ 6.10), et un exemple de table de zone (Grandes Oliveraies) à dupliquer.
+
+### Mécaniques des capacités et objets tenus
+- **Capacités** (extraites des descriptions du site, modifiables sur la fiche) : bonus au dé de toucher (Tranch'Herbe +1), recul (Bélier, Damoclès), drain (Méga-Sangsue, Vampi-Poing), frappes multiples (2 fois, 2 à 5 fois), attaques en deux tours (Lance-Soleil, Tunnel : préparation puis frappe imposée au tour suivant), repos obligatoire (Ultralaser, Hydroblast), KO direct (Abîme), lanceur KO (Explosion), modifications de précision (Jet de Sable, Aiguisage).
+- **Objets tenus** (Annexe 6) : Restes et Boue Noire en fin de tour, Ceinture Force et Bandeau contre le KO, Lentilscope et Griffe Rasoir (critique sur 9-10), Poing Chance et Poireau (8-10), objets Choix ×1,5, Orbe Vie, Bandeau Muscle, Lunettes Sages, Ceinture Pro, Gant de Boxe, Loupe, Lentille Zoom, Poudre Claire. Baies de résistance (dégâts super efficaces ÷2, consommée). Objets tenus utilisables sans action depuis la fiche du Pokémon.
+- **États** : une attaque Feu dégèle ; Malédiction réservée à un lanceur Spectre, qui sacrifie la moitié de sa VIT max ; Attraction : une chance sur deux de ne pas attaquer le Pokémon qui a charmé.
 
 ### Panneau de combat
 Bouton **Panneau de combat** dans le suivi de combat (il s'ouvre aussi tout seul à chaque tour).
@@ -85,7 +101,7 @@ Capacités, Compétences Pokémon, Talents et Objets d'inventaire.
 ### Compendiums
 Données issues du site [hakaikousen.fr](https://hakaikousen.fr) (onglet 7G, Système de base), sous licence [CC BY-NC-SA 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
-- **Pokédex** : les 251 Pokémon des 1re et 2e générations, rangés par génération, avec types, statistiques de base, talents, évolutions et capacités de départ. L'onglet Capacités de la fiche liste toute la progression (niveau, CT, œuf, tutorat) : un clic sur « + » ajoute la capacité depuis le compendium.
+- **Pokédex** : les 386 Pokémon des trois premières générations, plus 42 Méga-Évolutions et 40 formes régionales (Alola, Galar, Hisui), rangés par dossier, avec types, statistiques de base, talents, évolutions et capacités de départ. L'onglet Capacités de la fiche liste toute la progression (niveau, CT, œuf, tutorat) : un clic sur « + » ajoute la capacité depuis le compendium.
 - **Capacités** : toutes les capacités apprises par ces Pokémon (562).
 - **Talents** : tous leurs talents (131).
 - **Objets** (Recueil des Annexes) : Baies, Poké Balls (modificateur de capture et condition), Soins (effets appliqués automatiquement), 358 CT (liées aux capacités), objets tenus (renforcement de Type), objets d'évolution, équipement, objets rares, entraînement.
@@ -100,11 +116,11 @@ Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature
 - Objets sans effet de soin renseigné : l'objet est décompté, l'effet est à appliquer sur la fiche.
 - Sommeil : sa règle HK n'est pas dans les manuels, un rappel s'affiche au début du tour.
 - Effets conditionnels des capacités (« si… », « sinon… », Crocs Feu, Triplattaque…) et modifications de Précision : au MJ.
-- Pokédex au-delà de la 2e génération, compendiums d'objets (annexes).
+- Pokédex au-delà de la 3e génération (le script `tools/pokedex.py` le permet).
 
 ## Développement
 
-Le code est chargé tel quel par Foundry. Les compendiums sont écrits en JSON dans `packs-src/` et compilés en LevelDB dans `packs/` :
+Le code est chargé tel quel par Foundry. Les compendiums sont écrits en JSON dans `packs-src/` et compilés en LevelDB dans `packs/` (scripts de génération : voir `tools/README.md`) :
 
 ```
 npm install

@@ -9,6 +9,7 @@ const SOCKET = "system.hakai-kousen";
 /** Libellé court d'un effet : « FOR −1 », « Toxik ». */
 export function effectLabel(effect) {
   if ( effect.kind === "status" ) return STATUSES[effect.status]?.label ?? effect.status;
+  if ( effect.kind === "accuracy" ) return `Précision ${effect.value > 0 ? "+" : "−"}${Math.abs(effect.value)} %`;
   const sign = effect.value > 0 ? "+" : "−";
   return `${ATTRIBUTES[effect.stat]?.abbr ?? effect.stat} ${sign}${Math.abs(effect.value)}`;
 }
@@ -54,15 +55,66 @@ export function trainerOf(actor) {
  * @param {Actor} actor
  * @param {number} amount
  */
-export async function applyDamage(actor, amount) {
-  if ( relayToGM(actor, { type: "applyDamage", uuid: actor.uuid, amount }) ) return;
+export async function applyDamage(actor, amount, { attackType = "", consume = "" } = {}) {
+  if ( relayToGM(actor, { type: "applyDamage", uuid: actor.uuid, amount, attackType, consume }) ) return;
   const before = actor.system.vit.value;
   const official = currentCombatType() === "officiel";
-  const after = official ? Math.max(before - amount, 0) : before - amount;
+  let after = official ? Math.max(before - amount, 0) : before - amount;
+  const notes = [];
+
+  // Objets tenus qui évitent le KO (Annexe 6).
+  const heldItems = actor.type === "pokemon" ? actor.itemTypes.gear.filter(i => i.system.category === "held") : [];
+  const sash = heldItems.find(i => i.name.toLowerCase() === "ceinture force");
+  const band = heldItems.find(i => i.name.toLowerCase() === "bandeau");
+  if ( (before > 0) && (after <= 0) ) {
+    if ( sash && (before >= actor.system.vit.max) ) {
+      after = 1;
+      notes.push("Ceinture Force : survit à 1 VIT (consommée)");
+      await consumeItem(sash);
+    }
+    else if ( band ) {
+      const roll = (await new foundry.dice.Roll("1d10").evaluate()).total;
+      if ( roll === 10 ) {
+        after = 1;
+        notes.push(`Bandeau : 10 au D10, survit à 1 VIT`);
+      }
+    }
+  }
   await actor.update({ "system.vit.value": after });
-  ui.notifications.info(`${actor.name} perd ${amount} VIT.`);
+  ui.notifications.info(`${actor.name} perd ${before - after} VIT.`);
+
+  // Baie de résistance consommée ; Gel dégelé par une attaque Feu (5.9).
+  if ( consume ) {
+    const berry = await fromUuid(consume);
+    if ( berry ) await consumeItem(berry);
+  }
+  if ( (attackType === "feu") && actor.statuses.has("gel") ) {
+    await actor.toggleStatusEffect("gel", { active: false });
+    notes.push("l'attaque Feu le dégèle");
+  }
+  if ( notes.length ) {
+    await ChatMessage.implementation.create({
+      speaker: { alias: actor.name },
+      content: `<div class="hk-card"><p>${actor.name} : ${notes.join(" · ")}.</p></div>`
+    });
+  }
   const fatal = !official && (after <= deathThreshold(actor)) && (before > deathThreshold(actor));
   if ( ((before > 0) && (after <= 0)) || fatal ) await announceKO(actor, after, official);
+}
+
+/** Retire une unité d'un objet (supprimé à 0). */
+async function consumeItem(item) {
+  if ( item.system.quantity > 1 ) return item.update({ "system.quantity": item.system.quantity - 1 });
+  return item.delete();
+}
+
+/** Rend de la VIT sans dépasser le maximum (drain, Restes…). */
+export async function heal(actor, amount) {
+  if ( relayToGM(actor, { type: "heal", uuid: actor.uuid, amount }) ) return;
+  const vit = actor.system.vit;
+  const after = Math.min(vit.value + amount, vit.max);
+  if ( after > vit.value ) await actor.update({ "system.vit.value": after });
+  ui.notifications.info(`${actor.name} récupère ${after - vit.value} VIT.`);
 }
 
 /** Carte de KO : blessure grave et coup fatal hors combat officiel (4.16, 3.12). */
@@ -168,6 +220,14 @@ export async function useItemOn(item, actor) {
 export async function applyEffect(actor, effect) {
   if ( relayToGM(actor, { type: "applyEffect", uuid: actor.uuid, effect }) ) return;
 
+  // Modification temporaire de précision (Jet de Sable, Aiguisage…).
+  if ( effect.kind === "accuracy" ) {
+    if ( actor.type !== "pokemon" ) return;
+    const mod = Math.clamp((actor.system.accuracyMod ?? 0) + effect.value, -100, 100);
+    await actor.update({ "system.accuracyMod": mod });
+    return ui.notifications.info(`${actor.name} : précision ${mod > 0 ? "+" : ""}${mod} %.`);
+  }
+
   // Modification temporaire de statistique, limitée de −6 à +6 (5.11).
   if ( effect.kind === "stat" ) {
     const stat = actor.system.stats?.[effect.stat];
@@ -199,9 +259,20 @@ export async function applyEffect(actor, effect) {
     const current = Object.entries(STATUSES).find(([id, s]) => s.major && actor.statuses.has(id));
     if ( current ) return ui.notifications.warn(`${actor.name} souffre déjà d'un problème de statut majeur : ${current[1].label}.`);
   }
+  // Malédiction (5.10) : seulement si le lanceur est de type Spectre, qui sacrifie la moitié de sa VIT max.
+  if ( effect.status === "malediction" ) {
+    const source = effect.source ? await fromUuid(effect.source) : null;
+    const types = source?.system.defensiveTypes ?? [];
+    if ( source && !types.includes("spectre") ) {
+      return ui.notifications.warn(`${source.name} n'est pas de type Spectre : Malédiction ne maudit pas la cible (voir sa description).`);
+    }
+    if ( source ) await applyDamage(source, Math.floor(source.system.vit.max / 2));
+  }
   await actor.toggleStatusEffect(effect.status, { active: true });
-  // Vampigraine : le lanceur récupère la VIT drainée à chaque tour de la cible.
-  if ( (effect.status === "vampigraine") && effect.source ) await actor.setFlag("hakai-kousen", "vampigraineSource", effect.source);
+  // Vampigraine et Attraction : le lanceur est mémorisé (drain, cible de l'attirance).
+  if ( ["vampigraine", "attraction"].includes(effect.status) && effect.source ) {
+    await actor.setFlag("hakai-kousen", `${effect.status}Source`, effect.source);
+  }
   await syncCounters(actor, effect.status, true);
   ui.notifications.info(`${actor.name} : ${status.label}.`);
 }
@@ -222,7 +293,8 @@ export async function syncCounters(actor, statusId, active) {
 export async function handleEffectRequest(data) {
   const actor = await fromUuid(data.uuid);
   if ( !actor ) return;
-  if ( data.type === "applyDamage" ) return applyDamage(actor, Number(data.amount));
+  if ( data.type === "applyDamage" ) return applyDamage(actor, Number(data.amount), { attackType: data.attackType, consume: data.consume });
+  if ( data.type === "heal" ) return heal(actor, Number(data.amount));
   if ( data.type === "applyEffect" ) return applyEffect(actor, data.effect);
   if ( data.type === "saveFatal" ) return survive(actor);
   if ( data.type === "spendEnergy" ) return spendEnergy(actor, Number(data.amount));
@@ -236,7 +308,10 @@ export function onRenderChatMessage(message, html) {
       if ( !actor ) return;
       button.classList.add("applied");
       switch ( button.dataset.hkAction ) {
-        case "applyDamage": return applyDamage(actor, Number(button.dataset.amount));
+        case "applyDamage": return applyDamage(actor, Number(button.dataset.amount), {
+          attackType: button.dataset.attackType ?? "", consume: button.dataset.consume ?? ""
+        });
+        case "heal": return heal(actor, Number(button.dataset.amount));
         case "applyEffect": return applyEffect(actor, JSON.parse(decodeURIComponent(button.dataset.effect)));
         case "saveFatal": return saveFromFatal(actor, await fromUuid(button.dataset.trainer));
       }

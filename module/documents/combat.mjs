@@ -8,7 +8,7 @@
  * - Égalité d'Initiative : la meilleure DEX agit d'abord ; à DEX égale, on relance 1D10.
  */
 import { describeChoice } from "../combat/actions.mjs";
-import { processTurnStart } from "../combat/turn-start.mjs";
+import { processRoundEnd, processTurnStart } from "../combat/turn-start.mjs";
 import { availableReserve, getSetup, validTeam } from "../combat/setup.mjs";
 
 export const SCOPE = "hakai-kousen";
@@ -127,7 +127,22 @@ export class HKCombat extends Combat {
   /** Ouvre la phase de réflexion du tour et efface les choix du tour précédent (MJ). */
   async startPlanning(seconds = game.settings.get(SCOPE, "planningDuration")) {
     const reset = { [`flags.${SCOPE}.priority`]: 0, [`flags.${SCOPE}.roundBonus`]: 0, [`flags.${SCOPE}.choice`]: { ...EMPTY_CHOICE } };
-    await this.updateEmbeddedDocuments("Combatant", this.combatants.map(c => ({ _id: c.id, ...reset })));
+    const updates = this.combatants.map(c => {
+      const update = { _id: c.id, ...reset };
+      // Attaque en deux tours préparée au tour précédent : la frappe est imposée.
+      const charging = c.getFlag(SCOPE, "charging");
+      if ( charging?.round === this.round - 1 ) {
+        update[`flags.${SCOPE}.choice`] = { ...EMPTY_CHOICE, kind: "attack", itemId: charging.itemId, targets: charging.targets ?? [], ready: true };
+      }
+      else if ( charging ) update[`flags.${SCOPE}.charging`] = null;
+      // Repos obligatoire (Ultralaser…) : pas d'action ce tour-ci.
+      if ( c.getFlag(SCOPE, "mustRest") === this.round ) {
+        update[`flags.${SCOPE}.choice`] = { ...EMPTY_CHOICE, kind: "other", note: "Doit se reposer", ready: true };
+        update[`flags.${SCOPE}.blocked`] = { round: this.round, reason: "Doit se reposer" };
+      }
+      return update;
+    });
+    await this.updateEmbeddedDocuments("Combatant", updates);
     await this.setFlag(SCOPE, "phase", {
       state: "planning",
       round: this.round,
@@ -379,6 +394,8 @@ async function onUpdateCombat(combat, changed) {
     return processTurnStart(combat);
   }
   if ( !("round" in changed) || (combat.round < 1) ) return;
+  // Fin du tour précédent : Restes, Boue Noire (Annexe 6).
+  if ( combat.round > 1 ) await processRoundEnd(combat);
   // « Apeuré » ne dure que le tour où il est infligé.
   for ( const c of combat.combatants ) {
     if ( c.actor?.statuses.has("peur") ) await c.actor.toggleStatusEffect("peur", { active: false });

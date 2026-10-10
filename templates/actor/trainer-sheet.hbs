@@ -29,6 +29,14 @@
 
   {{!-- Caractéristiques, Compétences, Connaissances --}}
   <section class="tab {{tabs.main.cssClass}}" data-group="primary" data-tab="main">
+    <div class="hk-activities">
+      <label class="checkbox"><input type="checkbox" name="system.creation" {{checked system.creation}}> Création du personnage</label>
+      {{#if editable}}
+      <button type="button" data-action="fish"><i class="fa-solid fa-fish"></i> Pêcher</button>
+      <button type="button" data-action="mine"><i class="fa-solid fa-gem"></i> Miner</button>
+      {{/if}}
+    </div>
+    {{#if creation}}<ul class="hk-checklist">{{#each creation as |c|}}<li class="{{#if c.ok}}ok{{else}}ko{{/if}}"><i class="fa-solid {{#if c.ok}}fa-check{{else}}fa-xmark{{/if}}"></i> {{c.label}}</li>{{/each}}</ul>{{/if}}
     <div class="two-columns">
       <div>
         <h3>Caractéristiques</h3>
@@ -101,6 +109,8 @@
       {{/each}}
     </ol>
 
+    {{#if editable}}<button type="button" data-action="center"><i class="fa-solid fa-house-medical"></i> Centre Pokémon (50 ₽ par Pokémon)</button>{{/if}}
+
     <h3>Boîte PC ({{pc.length}} / 30)</h3>
     <p class="hint">Pension : {{pcCost}} ₽ par jour ({{pc.length}} × 50 ₽). Un Pokémon capturé avec une équipe complète arrive ici.</p>
     <ol class="team pc">
@@ -145,6 +155,26 @@
 
   {{!-- Inventaire --}}
   <section class="tab {{tabs.inventory.cssClass}}" data-group="primary" data-tab="inventory">
+    {{#if editable}}<div class="hk-activities"><button type="button" data-action="shop"><i class="fa-solid fa-store"></i> Boutique</button>
+      <button type="button" data-action="newEgg"><i class="fa-solid fa-egg"></i> Nouvel Œuf</button></div>{{/if}}
+    {{#if eggs.length}}
+    <h3>Œufs</h3>
+    <ul class="item-list">
+      {{#each eggs as |e|}}
+      <li class="item hk-egg" data-item-id="{{e.egg.id}}">
+        <img src="{{e.egg.img}}" alt="">
+        <a class="item-name" data-action="editItem">{{e.egg.name}}</a>
+        <div class="hk-egg-bar" data-tooltip="Stade d'éclosion"><span style="width:{{e.egg.system.progress}}%"></span><em>{{e.egg.system.progress}} %</em></div>
+        {{#if @root.editable}}
+        {{#if e.ready}}<button type="button" data-action="hatch"><i class="fa-solid fa-egg"></i> Éclore</button>
+        {{else}}
+        <button type="button" class="icon" data-action="incubate" data-conditions="normal" data-tooltip="Journée normale : +1D10 %"><i class="fa-solid fa-sun"></i></button>
+        <button type="button" class="icon" data-action="incubate" data-conditions="favorable" data-tooltip="Journée favorable : +2D10 %"><i class="fa-solid fa-fire"></i></button>
+        {{/if}}{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
     {{#each inventory as |group|}}
     <div class="item-group">
       <header class="item-group-header">
@@ -160,6 +190,7 @@
           <a class="item-name" data-action="editItem">{{item.name}}</a>
           {{#if item.system.charges}}<span class="hint">{{item.system.charges}} ch.</span>{{/if}}
           {{#if item.system.usable}}<button type="button" class="icon" data-action="useGear" data-tooltip="Utiliser sur un Pokémon"><i class="fa-solid fa-hand-holding-medical"></i></button>{{/if}}
+          {{#if @root.editable}}<button type="button" class="icon" data-action="sell" data-tooltip="Revendre (50 % du prix)"><i class="fa-solid fa-coins"></i></button>{{/if}}
           <input class="qty" type="number" value="{{item.system.quantity}}" data-item-field="system.quantity" data-tooltip="Quantité">
           {{#if @root.editable}}
           <button type="button" class="icon" data-action="deleteItem" data-tooltip="Supprimer"><i class="fa-solid fa-trash"></i></button>

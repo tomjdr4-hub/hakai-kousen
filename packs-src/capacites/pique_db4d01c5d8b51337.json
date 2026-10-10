@@ -13,6 +13,7 @@
     "effectChance": 20,
     "priority": 0,
     "initiativeBonus": 0,
+    "recharge": "",
     "xpCost": 0,
     "effects": [
       {
@@ -24,6 +25,16 @@
         "secondary": true
       }
     ],
+    "special": {
+      "hitBonus": 1,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "charge",
+      "ohko": false,
+      "selfKO": false
+    },
     "description": "<p>Le Pokémon s'envole au premier tour et attaque au second. 20% de chance d'apeurer la cible. Ajoute +1 sur le résultat du dé 10 pour cette attaque.</p>"
   },
   "_id": "db4d01c5d8b51337",

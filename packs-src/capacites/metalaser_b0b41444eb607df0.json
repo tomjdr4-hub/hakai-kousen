@@ -1,0 +1,33 @@
+{
+  "name": "Métalaser",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "acier",
+    "category": "special",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 95,
+    "sure": false,
+    "damage": "14",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur sacrifie 50% de ses PV, même si elle échoue</p>"
+  },
+  "_id": "b0b41444eb607df0",
+  "_key": "!items!b0b41444eb607df0"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Vapeur Féérique",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "fee",
+    "category": "special",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 95,
+    "sure": false,
+    "damage": "9",
+    "effectChance": 20,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>20% de chance de rendre la cible confuse.</p>"
+  },
+  "_id": "159434b53a8b90fa",
+  "_key": "!items!159434b53a8b90fa"
+}

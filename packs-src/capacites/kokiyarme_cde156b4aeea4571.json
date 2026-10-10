@@ -1,0 +1,42 @@
+{
+  "name": "Kokiyarme",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "poison",
+    "category": "special",
+    "energy": 3,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "9",
+    "effectChance": 20,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "poison",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>20% de chance d'empoisonner la cible. Prendre la Statistique la plus faible entre l'Endurance, la Volonté et la Dextérité pour le jet de Défense de la cible.</p>"
+  },
+  "_id": "cde156b4aeea4571",
+  "_key": "!items!cde156b4aeea4571"
+}

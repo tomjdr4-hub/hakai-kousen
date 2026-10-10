@@ -34,14 +34,16 @@ export class HKItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       isType: { [item.type]: true },
       priorities: { 1: "Agit toujours en premier", 0: "Normale", "-1": "Agit en dernier" },
       boostTypes: { "": "—", ...HK.TYPES },
+      eggOrigins: { bred: "Reproduction ciblée", wild: "Œuf sauvage" },
       cureChoices: item.type === "gear" ? [
         { id: "all", label: "Toutes les altérations" },
         ...HK.CURABLE.map(id => ({ id, label: HK.STATUSES[id].label }))
       ].map(c => ({ ...c, selected: item.system.use.cures.includes(c.id) })) : [],
-      effects: (item.system.effects ?? []).map((e, index) => ({ ...e, index, isStat: e.kind === "stat" })),
+      effects: (item.system.effects ?? []).map((e, index) => ({ ...e, index, isStat: e.kind === "stat", isAccuracy: e.kind === "accuracy" })),
+      chargeChoices: { "": "—", charge: "Charge au premier tour, frappe au second", rest: "Repos obligatoire au tour suivant", "rest-unless-miss": "Repos au tour suivant, sauf si l'attaque échoue" },
       effectChoices: {
         targets: { target: "Cible", self: "Lanceur" },
-        kinds: { stat: "Statistique", status: "État" },
+        kinds: { stat: "Statistique", status: "État", accuracy: "Précision (%)" },
         stats: Object.fromEntries(Object.entries(HK.ATTRIBUTES).map(([k, a]) => [k, a.abbr])),
         statuses: Object.fromEntries(Object.entries(HK.STATUSES).map(([k, st]) => [k, st.label]))
       },
@@ -50,7 +52,7 @@ export class HKItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         pokeskill: Object.fromEntries(Object.entries(HK.POKESKILL_CATEGORIES).map(([k, c]) => [k, `${c.label} (niveau × ${c.cost} XP)`])),
         gear: HK.GEAR_CATEGORIES
       }[item.type],
-      enrichedDescription: await foundry.applications.ux.TextEditor.implementation.enrichHTML(item.system.description, {
+      enrichedDescription: await foundry.applications.ux.TextEditor.implementation.enrichHTML(item.system.description ?? "", {
         relativeTo: item,
         secrets: item.isOwner
       })

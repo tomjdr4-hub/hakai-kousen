@@ -1,0 +1,33 @@
+{
+  "name": "Explo-Brume",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "fee",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": true
+    },
+    "description": "<p>Le lanceur tombe KO. Si Champ Brumeux actif, la puissance passe à 15. Inefficace si Moiteur sur le Terrain.</p>"
+  },
+  "_id": "da4d02fe66b2ac6f",
+  "_key": "!items!da4d02fe66b2ac6f"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Gaz Corrosif",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "poison",
+    "category": "status",
+    "energy": 1,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Rend inutilisable l'objet tenu par la cible.</p>"
+  },
+  "_id": "8f973ff97d7511fa",
+  "_key": "!items!8f973ff97d7511fa"
+}

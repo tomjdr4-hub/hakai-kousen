@@ -34,6 +34,14 @@
       <label class="checkbox"><input type="checkbox" name="system.hidden" {{checked system.hidden}}> Talent caché</label>
       {{/if}}
 
+      {{#if isType.egg}}
+      <label>Espèce <input type="text" name="system.species" value="{{system.species}}"></label>
+      <label>Éclosion (%) <input type="number" name="system.progress" value="{{system.progress}}" min="0" max="100"></label>
+      <label>Origine <select name="system.origin">{{selectOptions eggOrigins selected=system.origin}}</select></label>
+      <label>Niveau d'Élevage <input type="number" name="system.breeding" value="{{system.breeding}}" min="0" max="5"></label>
+      <p class="hint">+1D10 % par journée normale, +2D10 % favorable ou avec Corps Ardent / Armurmagma dans l'équipe (7.5, 7.6).</p>
+      {{/if}}
+
       {{#if isType.gear}}
       <label>Catégorie <select name="system.category">{{selectOptions categories selected=system.category}}</select></label>
       <label>Quantité <input type="number" name="system.quantity" value="{{system.quantity}}" min="0"></label>
@@ -68,6 +76,17 @@
     </div>
 
     {{#if isType.attack}}
+    <h3>Mécaniques particulières</h3>
+    <div class="details-grid">
+      <label data-tooltip="« Ajoute +1 sur le résultat du dé 10 »">Bonus au dé de toucher <input type="number" name="system.special.hitBonus" value="{{system.special.hitBonus}}"></label>
+      <label data-tooltip="Frappes multiples : 2, ou 1d4+1 pour « 2 à 5 fois »">Frappes <input type="text" name="system.special.hits" value="{{system.special.hits}}" placeholder="2 ou 1d4+1"></label>
+      <label data-tooltip="Part des dégâts infligés subie en recul (0,25 = 1/4)">Recul (dégâts) <input type="number" name="system.special.recoilDamage" value="{{system.special.recoilDamage}}" step="0.05" min="0" max="1"></label>
+      <label data-tooltip="Part de la VIT max du lanceur perdue à chaque coup (0,1 = 1/10)">Recul (VIT max) <input type="number" name="system.special.recoilVit" value="{{system.special.recoilVit}}" step="0.05" min="0" max="1"></label>
+      <label data-tooltip="Part des dégâts récupérée par le lanceur (0,5 = moitié)">Drain <input type="number" name="system.special.drain" value="{{system.special.drain}}" step="0.05" min="0" max="1"></label>
+      <label>Deux tours <select name="system.special.charge">{{selectOptions chargeChoices selected=system.special.charge}}</select></label>
+      <label class="checkbox"><input type="checkbox" name="system.special.ohko" {{checked system.special.ohko}}> KO direct</label>
+      <label class="checkbox"><input type="checkbox" name="system.special.selfKO" {{checked system.special.selfKO}}> Le lanceur tombe KO</label>
+    </div>
     <header class="item-group-header">
       <h3>Effets quand la capacité touche</h3>
       {{#if editable}}<button type="button" class="icon" data-action="addEffect" data-tooltip="Ajouter un effet"><i class="fa-solid fa-plus"></i></button>{{/if}}
@@ -80,6 +99,8 @@
         {{#if e.isStat}}
         <select data-effect-field="stat">{{selectOptions @root.effectChoices.stats selected=e.stat}}</select>
         <input type="number" data-effect-field="value" value="{{e.value}}" min="-6" max="6">
+        {{else if e.isAccuracy}}
+        <input type="number" data-effect-field="value" value="{{e.value}}" step="10"> %
         {{else}}
         <select data-effect-field="status">{{selectOptions @root.effectChoices.statuses selected=e.status}}</select>
         {{/if}}
@@ -93,7 +114,9 @@
     </ul>
     {{/if}}
 
+    {{#unless isType.egg}}
     <h3>Description</h3>
     {{> "hk-editor" field="description" value=system.description enriched=enrichedDescription editable=editable uuid=item.uuid}}
+    {{/unless}}
   </div>
 </div>

@@ -1,0 +1,240 @@
+{
+  "_id": "840ad5752daf3251",
+  "_key": "!actors!840ad5752daf3251",
+  "name": "Crikzik",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/401.png",
+  "system": {
+    "species": "Crikzik",
+    "number": "401",
+    "types": {
+      "primary": "insecte",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 19,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 19,
+      "max": 19
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.3m / 2.2kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Criquet",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Mélokrik (niveau 10)",
+      "talents": [
+        {
+          "name": "Mue",
+          "uuid": "Compendium.hakai-kousen.talents.Item.708bacf7f6506fbc",
+          "hidden": false
+        },
+        {
+          "name": "Fuite",
+          "uuid": "Compendium.hakai-kousen.talents.Item.3af71d380d9c548e",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Patience",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c200cc84b6537a05"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Rugissement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+        },
+        {
+          "source": "level",
+          "level": "6",
+          "name": "Survinsecte",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d6141207b6c5380"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Effort",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb9c989812c234d3"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Patience",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur encaisse des attaques sur 2 tours sans riposter et inflige le double de dégâts à la cible sans tenir compte des types.</p>"
+      },
+      "_id": "bb627e5b5e3596a2",
+      "_key": "!actors.items!840ad5752daf3251.bb627e5b5e3596a2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c200cc84b6537a05"
+      }
+    },
+    {
+      "name": "Rugissement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "for",
+            "value": -1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Force des cibles de 1</p>"
+      },
+      "_id": "806b822eb19b986a",
+      "_key": "!actors.items!840ad5752daf3251.806b822eb19b986a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.15951def709debb2"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Crikzik",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/401.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "a08089b6176f7dee",
+  "sort": 40100,
+  "flags": {}
+}

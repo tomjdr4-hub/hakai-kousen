@@ -1,0 +1,491 @@
+{
+  "_id": "de51bb451f322463",
+  "_key": "!actors!de51bb451f322463",
+  "name": "Rozbouton",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/406.png",
+  "system": {
+    "species": "Rozbouton",
+    "number": "406",
+    "types": {
+      "primary": "plante",
+      "secondary": "poison"
+    },
+    "stats": {
+      "dex": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 20,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 20,
+      "max": 20
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.2m / 1.2kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Bourgeon",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Rosélia (Bonheur, jour)",
+      "talents": [
+        {
+          "name": "Feuille Garde",
+          "uuid": "Compendium.hakai-kousen.talents.Item.81bcc557b184e945",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vole-Vie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+        },
+        {
+          "source": "level",
+          "level": "4",
+          "name": "Croissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Tourniquet",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d726caf0291f3c8"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Para-Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Méga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39dbe83c4ff69d50"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Soucigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.402517e6c6ecc1c7"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "30",
+          "name": "Ball'Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e65656cf6846eabd"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "36",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "ct",
+          "level": "77",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "86",
+          "name": "Noeud Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1191fadeddf19bf0"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "96",
+          "name": "Force Nature",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fee0274f87d89a3d"
+        },
+        {
+          "source": "ct",
+          "level": "99",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Balle Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a621a562380eaa37"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Spore Coton",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c14b4f584233335"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Extrasenseur",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac23017588eb27ae"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Tempête Verte",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.326129902454053b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Lire-Esprit",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7a4404a9c5724b39"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Don Naturel",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a1ef77f5a65e0dff"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Dard-Nuée",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eeb7e02790fef89e"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Mégafouet",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4fc913908d2390b8"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Tranch'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.31276e47df8bb63d"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poudre Dodo",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a45dc2084dbd91"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Picots",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2683d167fc820c58"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Implore",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.90dbf0b539d34ec9"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Synthèse",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.409b32b95b92290c"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Soucigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.402517e6c6ecc1c7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Vole-Vie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0.5,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
+      },
+      "_id": "c65cc2fe4493c8fd",
+      "_key": "!actors.items!de51bb451f322463.c65cc2fe4493c8fd",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Rozbouton",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/406.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "a08089b6176f7dee",
+  "sort": 40600,
+  "flags": {}
+}

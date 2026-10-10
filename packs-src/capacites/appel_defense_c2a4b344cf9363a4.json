@@ -1,0 +1,50 @@
+{
+  "name": "Appel Défense",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "insecte",
+    "category": "status",
+    "energy": 3,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "end",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "vol",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente l'Endurance et la Volonté du lanceur de 1</p>"
+  },
+  "_id": "c2a4b344cf9363a4",
+  "_key": "!items!c2a4b344cf9363a4"
+}

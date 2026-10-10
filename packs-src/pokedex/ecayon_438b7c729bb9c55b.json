@@ -1,0 +1,564 @@
+{
+  "_id": "438b7c729bb9c55b",
+  "_key": "!actors!438b7c729bb9c55b",
+  "name": "Écayon",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/456.png",
+  "system": {
+    "species": "Écayon",
+    "number": "456",
+    "types": {
+      "primary": "eau",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 25,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 25,
+      "max": 25
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.4m / 7kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Poisson Ailé",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Luminéon (niveau 31)",
+      "talents": [
+        {
+          "name": "Lavabo",
+          "uuid": "Compendium.hakai-kousen.talents.Item.1a057f2c0447d267",
+          "hidden": false
+        },
+        {
+          "name": "Glissade",
+          "uuid": "Compendium.hakai-kousen.talents.Item.5e802c50a8289e28",
+          "hidden": false
+        },
+        {
+          "name": "Ignifu-Voile",
+          "uuid": "Compendium.hakai-kousen.talents.Item.0b402ccd6dced840",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Écras'Face",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4194cec0c6a360fa"
+        },
+        {
+          "source": "level",
+          "level": "6",
+          "name": "Pistolet à O",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "level",
+          "level": "17",
+          "name": "Tornade",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d02e7d53e5aac22f"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        },
+        {
+          "source": "level",
+          "level": "26",
+          "name": "Séduction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a9860c9b9c3b4a7a"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "level",
+          "level": "33",
+          "name": "Anneau Hydro",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.366d8844a5f530ad"
+        },
+        {
+          "source": "level",
+          "level": "38",
+          "name": "Siphon",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb5cbf3437aca070"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Demi-Tour",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1eb405183278af83"
+        },
+        {
+          "source": "level",
+          "level": "45",
+          "name": "Rebond",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e62d53f88d10abb0"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Vent Argenté",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1922ce5c6cfe220e"
+        },
+        {
+          "source": "level",
+          "level": "54",
+          "name": "Détrempage",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.543333cc8e9975a6"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Grêle",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c4ecad46104bed34"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "ct",
+          "level": "14",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "55",
+          "name": "Ébullition",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7b96ba9f323457f4"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "77",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "89",
+          "name": "Demi-Tour",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1eb405183278af83"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "94",
+          "name": "Surf",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb0f90fd8d11d621"
+        },
+        {
+          "source": "ct",
+          "level": "96",
+          "name": "Force Nature",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fee0274f87d89a3d"
+        },
+        {
+          "source": "ct",
+          "level": "98",
+          "name": "Cascade",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e84a7ee69a46a29"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Hydro-Queue",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.004bfe912db4dbef"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Onde Boréale",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d405b92cf3445206"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Saumure",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.624c7e0e62528dd5"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Charme",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24aeca4c2c487d47"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Rafale Psy",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f5a6d23f292bb0d1"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Trempette",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a50c589bbf14d07b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Doux Baiser",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beecc09ad8249d8b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Chatouille",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2e5ede441180d3c6"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Onde Folie",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.748f9819922a92df"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Hydro-Queue",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.004bfe912db4dbef"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rebond",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e62d53f88d10abb0"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Anti-Brume",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.98cf36c1ed2a0c58"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Arrière",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.954d50a8fa12ed6a"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Écras'Face",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "71f5189e785ecf39",
+      "_key": "!actors.items!438b7c729bb9c55b.71f5189e785ecf39",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4194cec0c6a360fa"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Écayon",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/456.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "a08089b6176f7dee",
+  "sort": 45600,
+  "flags": {}
+}

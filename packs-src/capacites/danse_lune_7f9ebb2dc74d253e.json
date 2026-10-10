@@ -1,0 +1,33 @@
+{
+  "name": "Danse Lune",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "psy",
+    "category": "status",
+    "energy": 3,
+    "range": "Cible Alliée",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": true
+    },
+    "description": "<p>Le lanceur tombe KO et le pokémon visée est totalement soigné (Condition + Vitalité) s'il est encore conscient.</p>"
+  },
+  "_id": "7f9ebb2dc74d253e",
+  "_key": "!items!7f9ebb2dc74d253e"
+}

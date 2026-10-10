@@ -1,0 +1,33 @@
+{
+  "name": "Revenant",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "spectre",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur disparaît au premier tour le rendant invulnérable et réapparaît au second derrière sa cible. La technique ne peut pas être esquivée ou évitée par les techniques Abri ou Détection.</p>"
+  },
+  "_id": "d4df28f78db49f9a",
+  "_key": "!items!d4df28f78db49f9a"
+}

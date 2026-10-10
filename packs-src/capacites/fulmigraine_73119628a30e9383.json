@@ -1,0 +1,42 @@
+{
+  "name": "Fulmigraine",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "plante",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone",
+    "accuracy": 85,
+    "sure": false,
+    "damage": "12",
+    "effectChance": 40,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "vol",
+        "value": -2,
+        "status": "",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>40% de chance de baisser la Volonté des cibles de 2</p>"
+  },
+  "_id": "73119628a30e9383",
+  "_key": "!items!73119628a30e9383"
+}

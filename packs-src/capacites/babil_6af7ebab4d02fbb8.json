@@ -1,0 +1,42 @@
+{
+  "name": "Babil",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "vol",
+    "category": "special",
+    "energy": 2,
+    "range": "Sonore",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "7",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "confusion",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Rend les cibles confuses.</p>"
+  },
+  "_id": "6af7ebab4d02fbb8",
+  "_key": "!items!6af7ebab4d02fbb8"
+}

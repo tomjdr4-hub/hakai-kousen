@@ -1,0 +1,33 @@
+{
+  "name": "Spatio-Rift",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "dragon",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone",
+    "accuracy": 95,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 1,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
+  },
+  "_id": "0ffbf5a90120c27a",
+  "_key": "!items!0ffbf5a90120c27a"
+}

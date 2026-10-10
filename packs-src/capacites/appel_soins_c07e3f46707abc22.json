@@ -1,0 +1,33 @@
+{
+  "name": "Appel Soins",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "insecte",
+    "category": "status",
+    "energy": 6,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Restaure la moitié de la Vitalité max du lanceur</p>"
+  },
+  "_id": "c07e3f46707abc22",
+  "_key": "!items!c07e3f46707abc22"
+}

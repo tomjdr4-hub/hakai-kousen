@@ -1,0 +1,33 @@
+{
+  "name": "Jugement",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "special",
+    "energy": 3,
+    "range": "Cibles",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le type varie selon la Plaque que tient le lanceur.</p>"
+  },
+  "_id": "ba5b69a16ee58e0d",
+  "_key": "!items!ba5b69a16ee58e0d"
+}

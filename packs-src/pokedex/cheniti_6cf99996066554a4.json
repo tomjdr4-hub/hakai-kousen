@@ -1,0 +1,202 @@
+{
+  "_id": "6cf99996066554a4",
+  "_key": "!actors!6cf99996066554a4",
+  "name": "Cheniti",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/412.png",
+  "system": {
+    "species": "Cheniti",
+    "number": "412",
+    "types": {
+      "primary": "insecte",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 20,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 20,
+      "max": 20
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.2m / 3.4kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Ver Caché",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Cheniselle (Plante) (niveau 20, femelle), Cheniselle (Sable) (niveau 20, femelle), Cheniselle (Déchet) (niveau 20, femelle), Papilord (niveau 20, male)",
+      "talents": [
+        {
+          "name": "Mue",
+          "uuid": "Compendium.hakai-kousen.talents.Item.708bacf7f6506fbc",
+          "hidden": false
+        },
+        {
+          "name": "Envelocape",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4fd90f08c8b5cb13",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Toile Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b2e744ac5a3faff7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Abri",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 6,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Protège de tout effet, direct ou indirect, d'une attaque de la cible. Si réutilisé, 50% de chances de réussite, puis 25% et enfin 12.5%. À la cinquième utilisation successive, Abri échouera systématiquement</p>"
+      },
+      "_id": "4f8d59b032228a38",
+      "_key": "!actors.items!6cf99996066554a4.4f8d59b032228a38",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cheniti",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/412.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "a08089b6176f7dee",
+  "sort": 41200,
+  "flags": {}
+}

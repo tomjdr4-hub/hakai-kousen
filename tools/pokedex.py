@@ -23,7 +23,8 @@ TYPES = {"normal", "feu", "eau", "plante", "electrik", "glace", "combat", "poiso
 CATEGORIES = {"physique": "physical", "speciale": "special", "autre": "status"}
 STATS = ["dex", "for", "con", "end", "vol", "vit"]
 # Générations : (nom du dossier, dernier numéro).
-GENERATIONS = [("1re génération", 151), ("2e génération", 251), ("3e génération", 386), ("4e génération", 493)]
+GENERATIONS = [("1re génération", 151), ("2e génération", 251), ("3e génération", 386), ("4e génération", 493),
+               ("5e génération", 649), ("6e génération", 721), ("7e génération", 809), ("8e génération", 905), ("9e génération", 1025)]
 warnings = []
 
 

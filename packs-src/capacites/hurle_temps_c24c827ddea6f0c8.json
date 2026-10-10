@@ -1,0 +1,33 @@
+{
+  "name": "Hurle-Temps",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "dragon",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "15",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "rest-unless-miss",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur doit se reposer au tour suivant sauf si l'attaque échoue</p>"
+  },
+  "_id": "c24c827ddea6f0c8",
+  "_key": "!items!c24c827ddea6f0c8"
+}

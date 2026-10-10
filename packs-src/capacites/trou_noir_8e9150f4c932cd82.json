@@ -1,0 +1,42 @@
+{
+  "name": "Trou Noir",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "tenebres",
+    "category": "status",
+    "energy": 3,
+    "range": "Zone Ennemie",
+    "accuracy": 50,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "sommeil",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Endort les Pokémon dans la zone</p>"
+  },
+  "_id": "8e9150f4c932cd82",
+  "_key": "!items!8e9150f4c932cd82"
+}

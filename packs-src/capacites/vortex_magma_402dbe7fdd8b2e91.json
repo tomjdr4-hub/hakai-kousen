@@ -1,0 +1,33 @@
+{
+  "name": "Vortex Magma",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "special",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 75,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur encercle la cible dans un tourbillon de flammes et lui retire un dixième de sa Vitalité pendant 5 tours</p>"
+  },
+  "_id": "402dbe7fdd8b2e91",
+  "_key": "!items!402dbe7fdd8b2e91"
+}

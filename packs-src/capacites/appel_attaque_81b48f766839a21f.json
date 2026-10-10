@@ -1,0 +1,33 @@
+{
+  "name": "Appel Attaque",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "insecte",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cibles",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "9",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 1,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
+  },
+  "_id": "81b48f766839a21f",
+  "_key": "!items!81b48f766839a21f"
+}

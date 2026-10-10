@@ -1,0 +1,753 @@
+{
+  "_id": "2c96538c6780aedd",
+  "_key": "!actors!2c96538c6780aedd",
+  "name": "Motisma",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/479.png",
+  "system": {
+    "species": "Motisma",
+    "number": "479",
+    "types": {
+      "primary": "electrik",
+      "secondary": "spectre"
+    },
+    "stats": {
+      "dex": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 25,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 25,
+      "max": 25
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.3m / 0.3kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Plasma",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Lévitation",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2052cf416b2a2bfd",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Étonnement",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39fac2a2d2151320"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Onde Folie",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.748f9819922a92df"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Chargeur",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07b17584a71bddad"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coup d'Jus",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f5fc13ca9d463898"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Tour de Magie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d61926afdc6870a1"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Onde de Choc",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ca02127d0dab7dfd"
+        },
+        {
+          "source": "level",
+          "level": "36",
+          "name": "Vent Mauvais",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff10d5ab780a7666"
+        },
+        {
+          "source": "level",
+          "level": "43",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Boule Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d8167dc2b7baffa"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Châtiment",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9f36ad2a4ada2597"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "16",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Tonnerre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.50acc837a4bc6bf5"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Fatal-Foudre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.10f7e4a09629bf65"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "30",
+          "name": "Ball'Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e65656cf6846eabd"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "46",
+          "name": "Larcin",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb080392b1e63836"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Rayon Chargé",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d0a5a407fb90519"
+        },
+        {
+          "source": "ct",
+          "level": "61",
+          "name": "Feu Follet",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bae18f42ac954cc7"
+        },
+        {
+          "source": "ct",
+          "level": "72",
+          "name": "Change Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6578da6e5b0028a5"
+        },
+        {
+          "source": "ct",
+          "level": "73",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "ct",
+          "level": "77",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Dévorêve",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc9a7f8e5683de7a"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "97",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Anti-Brume",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.98cf36c1ed2a0c58"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Balance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.026cd887d79e97fe"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Dépit",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ba4710617fcf35c4"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Interversion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6bc7117abaf76f1f"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Lévikinésie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2c531d7041a9b066"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Onde de Choc",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ca02127d0dab7dfd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Saisie",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5bb7a07592787bb3"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Toile Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b2e744ac5a3faff7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tour de Magie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d61926afdc6870a1"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tricherie",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.292261cf8660fd22"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Cage Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
+      },
+      "_id": "8adb775698309df2",
+      "_key": "!actors.items!2c96538c6780aedd.8adb775698309df2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+      }
+    },
+    {
+      "name": "Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>10% de chance de paralyser la cible</p>"
+      },
+      "_id": "c88b46d308f7b105",
+      "_key": "!actors.items!2c96538c6780aedd.c88b46d308f7b105",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.72f862d499fd3ccc"
+      }
+    },
+    {
+      "name": "Étonnement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "spectre",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "b29f4fe6333f8e98",
+      "_key": "!actors.items!2c96538c6780aedd.b29f4fe6333f8e98",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.39fac2a2d2151320"
+      }
+    },
+    {
+      "name": "Onde Folie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "spectre",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Inflige une confusion à la cible</p>"
+      },
+      "_id": "6a50d0a1131c5ceb",
+      "_key": "!actors.items!2c96538c6780aedd.6a50d0a1131c5ceb",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.748f9819922a92df"
+      }
+    },
+    {
+      "name": "Chargeur",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "vol",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Double la puissance de l'attaque Electrik lancée au tour suivant. Augmente la Volonté du lanceur de +1.</p>"
+      },
+      "_id": "2b958d75d26c8d4d",
+      "_key": "!actors.items!2c96538c6780aedd.2b958d75d26c8d4d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.07b17584a71bddad"
+      }
+    },
+    {
+      "name": "Coup d'Jus",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "special",
+        "energy": 3,
+        "range": "Zone",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "8",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance de paralyser la cible</p>"
+      },
+      "_id": "7791bcd2ab9fb881",
+      "_key": "!actors.items!2c96538c6780aedd.7791bcd2ab9fb881",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f5fc13ca9d463898"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Motisma",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/479.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "a08089b6176f7dee",
+  "sort": 47900,
+  "flags": {}
+}

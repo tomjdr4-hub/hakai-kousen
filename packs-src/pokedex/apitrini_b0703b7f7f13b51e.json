@@ -1,0 +1,240 @@
+{
+  "_id": "b0703b7f7f13b51e",
+  "_key": "!actors!b0703b7f7f13b51e",
+  "name": "Apitrini",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/415.png",
+  "system": {
+    "species": "Apitrini",
+    "number": "415",
+    "types": {
+      "primary": "insecte",
+      "secondary": "vol"
+    },
+    "stats": {
+      "dex": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 15,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 15,
+      "max": 15
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.3m / 5.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Miniabeille",
+      "ratio": "7♂:1♀",
+      "evolutions": "Évolutions : Apireine (niveau 21, femelle)",
+      "talents": [
+        {
+          "name": "Cherche Miel",
+          "uuid": "Compendium.hakai-kousen.talents.Item.941d97c596339c7b",
+          "hidden": false
+        },
+        {
+          "name": "Agitation",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2a6ec1beabef9d5f",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Doux Parfum",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Tornade",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d02e7d53e5aac22f"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Bourdon",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.414616009ca87091"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Effort",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb9c989812c234d3"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Arrière",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.954d50a8fa12ed6a"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Doux Parfum",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone Ennemie",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Dextérité pour l'esquive des Pokémons autour de 2</p>"
+      },
+      "_id": "79520bcc6c594a16",
+      "_key": "!actors.items!b0703b7f7f13b51e.79520bcc6c594a16",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+      }
+    },
+    {
+      "name": "Tornade",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "vol",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Sa puissance double si l'adversaire est en train d'utiliser Vol ou Rebond.</p>"
+      },
+      "_id": "54c31f179734d760",
+      "_key": "!actors.items!b0703b7f7f13b51e.54c31f179734d760",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d02e7d53e5aac22f"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Apitrini",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/415.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "a08089b6176f7dee",
+  "sort": 41500,
+  "flags": {}
+}

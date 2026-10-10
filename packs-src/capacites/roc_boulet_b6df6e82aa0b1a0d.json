@@ -1,0 +1,33 @@
+{
+  "name": "Roc-Boulet",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "roche",
+    "category": "physical",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "15",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "rest",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur doit se reposer au tour suivant</p>"
+  },
+  "_id": "b6df6e82aa0b1a0d",
+  "_key": "!items!b6df6e82aa0b1a0d"
+}

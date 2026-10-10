@@ -157,10 +157,15 @@ def parse_page(text):
             parts.append(("Pré-évolution" if "pr" in slug(label)[:3] else "Évolutions") + " : " + ", ".join(evos))
     p["evolutions"] = parts
     p["talents"] = []
-    talents_m = re.search(r'<table class="talents">(.*?)</table>', block, re.S)
-    if talents_m:
-        for upper, lower in re.findall(r'<tr class="upper">(.*?)</tr>\s*<tr class="lower">(.*?)</tr>', talents_m.group(1), re.S):
-            p["talents"].append({"name": title(cell(upper, "nom")), "hidden": 'class="accent"' in upper, "description": cell(lower, "description")})
+    # Talents de l'onglet « Système de base » ; certaines pages ne les renseignent que dans l'onglet suivant.
+    sources = [block] + ([text[end_m.start():]] if end_m else [])
+    for source in sources:
+        talents_m = re.search(r'<table class="talents">(.*?)</table>', source, re.S)
+        if talents_m:
+            for upper, lower in re.findall(r'<tr class="upper">(.*?)</tr>\s*<tr class="lower">(.*?)</tr>', talents_m.group(1), re.S):
+                p["talents"].append({"name": title(cell(upper, "nom")), "hidden": 'class="accent"' in upper, "description": cell(lower, "description")})
+        if p["talents"]:
+            break
     m = re.search(r"<strong>Taille</strong>\s*:\s*([^<]+)<strong>Poids</strong>\s*:\s*([^<]+)<", block)
     p["size"] = f"{clean(m.group(1))} / {clean(m.group(2))}" if m else ""
     types_m = re.search(r"<p>Type(.*?)</p>", block, re.S)

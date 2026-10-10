@@ -169,6 +169,40 @@ function defenderTypes(actor) {
   return actor.system.defensiveTypes;
 }
 
+/**
+ * STAB (5.8, 5.19.4) : ×1,5 quand l'attaque est d'un type du lanceur (types de la forme Méga si elle est active).
+ * Téracristallisation : le Type Téra donne aussi ×1,5, ou ×2 s'il est identique à un type d'origine.
+ * Réglage « STAB automatique » désactivé : les dégâts saisis l'incluent déjà (fiche papier).
+ * @returns {number}
+ */
+export function stabMultiplier(actor, type) {
+  const sys = actor?.system;
+  if ( !type || !sys?.types || !game.settings.get("hakai-kousen", "autoStab") ) return 1;
+  const own = (sys.form?.active && sys.form.primary) ? [sys.form.primary, sys.form.secondary] : [sys.types.primary, sys.types.secondary];
+  const owns = own.filter(Boolean).includes(type);
+  const tera = (sys.tera?.active && sys.tera.type && (sys.tera.type !== "stellaire")) ? sys.tera.type : null;
+  if ( tera === type ) return owns ? 2 : 1.5;
+  return owns ? 1.5 : 1;
+}
+
+/**
+ * Dégâts variables (Ampleur, Balayage, Croc Fatal…) : la capacité n'a pas de valeur fixe, le lanceur saisit le montant
+ * selon sa description. Renvoie null si la fenêtre est fermée.
+ */
+async function askVariableDamage(item, target) {
+  const description = (item.system.description ?? "").replace(/<[^>]+>/g, " ").trim();
+  return DialogV2.prompt({
+    window: { title: `Dégâts de ${item.name}`, icon: "fa-solid fa-burst" },
+    content: `<p>${item.name} n'a pas de dégâts fixes : ils dépendent de la situation${target ? ` (cible : ${target.name})` : ""}.</p>
+      ${description ? `<p class="hint">${description}</p>` : ""}
+      <div class="form-group"><label>Dégâts de base</label><div class="form-fields">
+        <input type="text" name="damage" value="" placeholder="Nombre ou formule (2d6+3)" autofocus></div></div>
+      <p class="hint">Saisissez les dégâts avant STAB, critique et efficacité du type : le système les applique ensuite.</p>`,
+    ok: { label: "Valider", callback: (e, b) => b.form.elements.damage.value.trim() || null },
+    rejectClose: false
+  });
+}
+
 /** Objets tenus d'un acteur (noms en minuscules). */
 function held(actor) {
   return actor?.system?.heldNames ?? [];
@@ -305,8 +339,9 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
     }
     else if ( crit ) lines.push(outcome(true, "10 naturel : réussite exceptionnelle"));
 
-    // Dégâts : formule de la capacité (STAB inclus), doublés sur 10 naturel, puis efficacité du type.
-    if ( hit && (atk.isDamaging || sp.ohko) ) {
+    // Dégâts : formule de la capacité, STAB, doublés sur 10 naturel, puis efficacité du type.
+    const variable = (atk.category !== "status") && !atk.damage.trim() && !sp.ohko;
+    if ( hit && (atk.isDamaging || sp.ohko || variable) ) {
       const rawMult = target ? typeEffectiveness(atk.type, defenderTypes(target)) : 1;
       const resist = target ? resistanceReduction(target, atk.type) : 0;
       // Talent de la cible (Lévitation, Torche, Fermeté) : aucun effet.
@@ -321,7 +356,10 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         parts.push(mult > 0 ? "KO direct" : "Aucun effet");
       }
       else {
-        const dmgRoll = await new foundry.dice.Roll(atk.damage, actor.getRollData()).evaluate();
+        const formula = variable ? await askVariableDamage(item, target) : atk.damage;
+        const valid = formula && foundry.dice.Roll.validate(String(formula));
+        if ( variable && !valid ) parts.push("Dégâts variables non saisis");
+        const dmgRoll = await new foundry.dice.Roll(valid ? String(formula) : "0", actor.getRollData()).evaluate();
         rolls.push(dmgRoll);
         // Frappes multiples : « 2 fois », « 2 à 5 fois » (un seul jet de toucher).
         let hits = 1;
@@ -330,8 +368,10 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
           rolls.push(hitsRoll);
           hits = Math.max(hitsRoll.total, 1);
         }
-        // Ordre (Annexes 1 et 6) : dégâts de la capacité (STAB inclus) → Augmentation et objets tenus
+        // Ordre (Annexes 1 et 6) : dégâts de la capacité → STAB → Augmentation et objets tenus
         // → objet Choix ×1,5 → critique → Types (réduits par Résistance) → Baie de résistance ÷2 → Blindage.
+        // Arrondi à l'inférieur après l'ensemble des opérations (2.8).
+        const stab = stabMultiplier(actor, atk.type);
         const bonuses = damageBonuses(actor, item);
         if ( (atk.category === "physical") && attackerHeld.includes("bandeau muscle") ) bonuses.push({ label: "Bandeau Muscle", value: 1 });
         if ( (atk.category === "special") && attackerHeld.includes("lunettes sages") ) bonuses.push({ label: "Lunettes Sages", value: 1 });
@@ -340,7 +380,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         if ( attackerHeld.includes("ceinture pro") && (rawMult > 1) ) bonuses.push({ label: "Ceinture Pro", value: 2 });
         const choice = ((atk.category === "physical") && attackerHeld.includes("bandeau choix"))
           || ((atk.category === "special") && attackerHeld.includes("lunettes choix")) ? 1.5 : 1;
-        const base = (dmgRoll.total + bonuses.reduce((sum, b) => sum + b.value, 0)) * hits;
+        const base = ((dmgRoll.total * stab) + bonuses.reduce((sum, b) => sum + b.value, 0)) * hits;
         // Talents de l'attaquant (Brasier, Torrent… sous 1/3 de VIT, Prognathe, Technicien) : ×1,5.
         const talentMults = attackerTalentMultipliers(actor, item);
         const talentMult = talentMults.reduce((m, t) => m * t.mult, 1);
@@ -350,6 +390,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         const armor = (target && (atk.category === "physical")) ? armorReduction(target) : 0;
         amount = Math.max(amount - armor, 0);
         parts.push(`${dmgRoll.formula} = ${dmgRoll.total}`);
+        if ( stab > 1 ) parts.push(`×${stab === 2 ? 2 : "1,5"} (STAB${stab === 2 ? " Téra" : ""})`);
         for ( const b of bonuses ) parts.push(`+${b.value} (${b.label})`);
         if ( hits > 1 ) parts.push(`×${hits} frappes`);
         if ( choice > 1 ) parts.push("×1,5 (Choix)");

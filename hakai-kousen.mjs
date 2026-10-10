@@ -56,6 +56,11 @@ Hooks.once("init", () => {
     hint: "Lance le chrono et le choix secret des actions dès qu'un nouveau tour de combat commence.",
     scope: "world", config: true, type: Boolean, default: true
   });
+  game.settings.register("hakai-kousen", "autoStab", {
+    name: "STAB automatique",
+    hint: "Applique ×1,5 aux attaques d'un type du lanceur (5.8 ; Téra 5.19.4). Décochez si les dégâts de vos capacités incluent déjà le STAB, comme sur la fiche papier.",
+    scope: "world", config: true, type: Boolean, default: true
+  });
   game.settings.register("hakai-kousen", "contest", { scope: "world", config: false, type: Object, default: {} });
   game.settings.register("hakai-kousen", "ctResale", {
     name: "CT revendables",
@@ -89,6 +94,18 @@ Hooks.once("init", () => {
 });
 
 Hooks.on("renderChatMessageHTML", rolls.onRenderChatMessage);
+
+/** Un Pokémon ne porte qu'un seul objet tenu à la fois (8.7) : un deuxième objet est refusé. */
+Hooks.on("preCreateItem", (item, data, options, userId) => {
+  const pokemon = item.parent;
+  if ( (pokemon?.type !== "pokemon") || (item.type !== "gear") ) return;
+  const current = pokemon.itemTypes.gear.find(i => i.system.quantity > 0);
+  if ( !current ) return;
+  if ( userId === game.user.id ) {
+    ui.notifications.warn(`${pokemon.name} tient déjà ${current.name} : un Pokémon ne porte qu'un objet à la fois (8.7). Retirez-le d'abord.`);
+  }
+  return false;
+});
 registerCombatHooks();
 registerCombatPanelHooks();
 registerProgressionHooks();

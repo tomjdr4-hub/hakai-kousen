@@ -1,6 +1,7 @@
 import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
 import { syncCounters, useItemOn } from "../combat/effects.mjs";
+import { isSelfAttack, opponentsOf } from "../combat/actions.mjs";
 import { consumeTM, createEgg, fish, hatch, incubate, mine, pokemonCenter, sell, shop } from "../activities.mjs";
 import {
   evolve, learnNextAttack, learnsetStatus, moveBetweenTeamAndPC, raiseRelation, spendEV, spendPokeskill, spendTrainerXP,
@@ -564,13 +565,48 @@ export class PokemonSheet extends HKActorSheet {
   static async _onRollAttack(event, target) {
     const item = this._getItem(target);
     if ( !item ) return;
-    // Chaque ordre demande un test de Dressage sous 8 (4.11), pour un Pokémon de joueur.
     const actor = this.actor;
+    const targets = await PokemonSheet.#chooseTargets(actor, item);
+    if ( targets === null ) return;
+    // Chaque ordre demande un test de Dressage sous 8 (4.11), pour un Pokémon de joueur.
     if ( actor.hasPlayerOwner && (actor.system.dressage < 8) ) {
       const roll = (await rollDressage(actor))?.rolls?.[0];
       if ( roll && (roll.total > actor.system.dressage) ) return;
     }
-    return rollAttack(actor, item);
+    return rollAttack(actor, item, { targets });
+  }
+
+  /**
+   * Cibles d'une attaque lancée depuis la fiche : jetons ciblés ; sinon l'adversaire unique du combat ;
+   * sinon choix parmi les jetons de la scène. Renvoie null si le joueur annule.
+   */
+  static async #chooseTargets(actor, item) {
+    const targeted = Array.from(game.user.targets).filter(t => t.actor);
+    if ( targeted.length || isSelfAttack(actor, item.id) || (item.system.range && /^personnel/i.test(item.system.range)) ) return targeted;
+    const combatant = game.combat?.started ? game.combat.combatants.find(c => c.actor?.id === actor.id) : null;
+    let candidates = combatant ? opponentsOf(combatant, game.combat).map(c => c.token) : [];
+    if ( !candidates.length && canvas.ready ) candidates = canvas.tokens.placeables.filter(t => t.actor && (t.actor.id !== actor.id)).map(t => t.document);
+    if ( candidates.length === 1 ) return candidates;
+    if ( !candidates.length ) {
+      ui.notifications.info("Aucune cible sur la scène : l'attaque est lancée sans Table unique.");
+      return [];
+    }
+    const options = candidates.map((t, i) => `<label class="checkbox"><input type="radio" name="target" value="${i}" ${i === 0 ? "checked" : ""}>
+      ${t.name}${t.actor?.system?.vit ? ` <span class="hint">(VIT ${t.actor.system.vit.value}/${t.actor.system.vit.max})</span>` : ""}</label>`).join("");
+    const choice = await foundry.applications.api.DialogV2.wait({
+      window: { title: `${item.name} : choisir la cible`, icon: "fa-solid fa-crosshairs" },
+      content: `<p class="hint">Aucun jeton ciblé. Choisissez la cible : le toucher passe par la Table unique et les dégâts peuvent être appliqués.</p>
+        <fieldset>${options}</fieldset>`,
+      buttons: [
+        { action: "target", label: "Attaquer", icon: "fa-solid fa-crosshairs", default: true,
+          callback: (e, b) => Number(b.form.querySelector("input[name=target]:checked")?.value ?? 0) },
+        { action: "none", label: "Sans cible", icon: "fa-solid fa-ban" }
+      ],
+      rejectClose: false
+    });
+    if ( (choice === null) || (choice === undefined) ) return null;
+    if ( choice === "none" ) return [];
+    return [candidates[choice]];
   }
 
   /** Forme Méga : types et bonus calculés à partir de la fiche Méga du Pokédex (écart avec l'espèce). */

@@ -21,6 +21,16 @@ function findSpecies(text, index) {
   return findAllSpecies(text, index)[0] ?? null;
 }
 
+/** Relance le D100 jusqu'à obtenir une espèce ordinaire (ni événement, ni Dominant, ni Aberrant, ni 100) : MJ 4.5, 4.6. */
+async function drawOrdinary(table, index) {
+  for ( let i = 0; i < 20; i++ ) {
+    const draw = await table.draw({ displayChat: true });
+    const text = resultText(draw.results[0]);
+    if ( (draw.roll?.total !== 100) && !EVENT.test(text) && !/dominant|aberrant|chromatique|t[ée]racristallis/i.test(text) && findSpecies(text, index) ) return text;
+  }
+  return null;
+}
+
 /** Table de zone : son nom commence par « Rencontres » (convention du système). */
 const ZONE_NAME = /^rencontres?\b/i;
 const EXAMPLE = "Rencontres : Grandes Oliveraies (exemple)";
@@ -82,21 +92,27 @@ export async function rollEncounter() {
   const pokedex = game.packs.get("hakai-kousen.pokedex");
   const index = pokedex ? await pokedex.getIndex() : [];
 
-  let draw = await table.draw({ displayChat: true });
+  const draw = await table.draw({ displayChat: true });
   let text = resultText(draw.results[0]);
   let shiny = false;
+  let situation = "";
   // 100 naturel : relancer jusqu'à obtenir une espèce ordinaire.
   if ( (draw.roll?.total === 100) || /chromatique/i.test(text) ) {
     shiny = true;
-    for ( let i = 0; i < 20; i++ ) {
-      draw = await table.draw({ displayChat: true });
-      text = resultText(draw.results[0]);
-      if ( (draw.roll?.total !== 100) && !EVENT.test(text) && !/dominant|aberrant|chromatique/i.test(text) && findSpecies(text, index) ) break;
+    text = await drawOrdinary(table, index) ?? text;
+  }
+  // Événement ou Pokémon Téracristallisé sans espèce précisée (« Pokémon blessé : relancer… ») : l'espèce est relancée.
+  else if ( !findAllSpecies(text, index).length && /pok[ée]mon|relancer/i.test(text) ) {
+    const species = await drawOrdinary(table, index);
+    if ( species ) {
+      situation = text;
+      text = species;
     }
   }
+  const tera = /t[ée]racristallis/i.test(situation);
 
   const found = findAllSpecies(text, index);
-  const event = EVENT.test(text);
+  const event = EVENT.test(text) || EVENT.test(situation);
   if ( !found.length ) {
     // Événement sans espèce, ou espèce absente du Pokédex : le MJ est prévenu clairement.
     const message = event ? "Événement à mettre en scène : aucune espèce à générer."
@@ -115,11 +131,12 @@ export async function rollEncounter() {
   const aberrant = /aberrant/i.test(text);
   const chosenId = await DialogV2.prompt({
     window: { title: "Générer la rencontre" },
-    content: `<p><strong>${text}</strong></p>
+    content: `${situation ? `<p><strong>${situation}</strong></p><p class="hint">Espèce relancée sur la table : ${text}.</p>` : `<p><strong>${text}</strong></p>`}
       <div class="form-group"><label>Espèce</label><div class="form-fields"><select name="species">
         ${found.map(e => `<option value="${e._id}">${e.name}</option>`).join("")}</select></div></div>
       <p>${count} Pokémon${dominant ? " (Dominant)" : ""}${aberrant ? " (Aberrant)" : ""}${shiny ? ", chromatique" : ""}, placés sur la scène.</p>
-      ${event ? `<p class="hint">C'est un événement : le MJ décide si les Pokémon combattent, fuient ou demandent de l'aide.</p>` : ""}`,
+      ${event ? `<p class="hint">C'est un événement : le MJ décide si les Pokémon combattent, fuient ou demandent de l'aide.</p>` : ""}
+      ${tera ? `<p class="hint">Pokémon Téracristallisé : choisissez son Type Téra sur sa fiche (onglet Statistiques).</p>` : ""}`,
     ok: { label: "Générer", callback: (e, b) => b.form.elements.species.value },
     rejectClose: false
   });

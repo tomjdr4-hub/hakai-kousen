@@ -209,7 +209,9 @@ export async function useItemOn(item, actor) {
     lines.push(`${STATUSES[id]?.label ?? id} guéri.`);
   }
   if ( (newVit > 0) && actor.statuses.has("dead") ) await actor.toggleStatusEffect("dead", { active: false });
-  await item.update({ "system.quantity": Math.max(item.system.quantity - 1, 0) });
+  // Objet tenu par un Pokémon : consommé, il libère l'emplacement (8.7) ; dans l'inventaire du Dresseur, la quantité baisse.
+  if ( (item.parent?.type === "pokemon") && (item.system.quantity <= 1) ) await item.delete();
+  else await item.update({ "system.quantity": Math.max(item.system.quantity - 1, 0) });
   return lines.join(" ") || "Aucun effet.";
 }
 

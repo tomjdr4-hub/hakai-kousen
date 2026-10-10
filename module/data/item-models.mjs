@@ -15,7 +15,8 @@ export class AttackData extends foundry.abstract.TypeDataModel {
       accuracy: int(100, { min: 0 }),
       // Attaque qui ne peut pas échouer : colonne 100 %, neutralise Esquive (2.8).
       sure: new BooleanField(),
-      // Dégâts STAB inclus, sous forme de formule (ex. « 12 » ou « 2d6+4 »).
+      // Dégâts de base du site, sans STAB (ajouté au lancer), sous forme de formule (ex. « 12 » ou « 2d6+4 »).
+      // Vide pour une attaque offensive : dégâts variables, saisis au lancer.
       damage: new StringField({ required: true, blank: true }),
       effectChance: int(0, { min: 0, max: 100 }),
       // Ordre du tour : 1 = agit toujours en premier, -1 = agit en dernier.

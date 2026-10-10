@@ -418,7 +418,7 @@ export async function toggleTera(pokemon) {
   await pokemon.update({ "system.tera.active": true });
   const label = tera.type === "stellaire" ? "Stellaire" : TYPES[tera.type];
   return log(pokemon, `${pokemon.name} se téracristallise !`,
-    `Type Téra : ${label}. Défensivement, ${tera.type === "stellaire" ? "il conserve ses types d'origine" : "seul le Type Téra compte"} ; il garde ses STAB d'origine et gagne celui du Type Téra (dégâts à ajuster).`);
+    `Type Téra : ${label}. Défensivement, ${tera.type === "stellaire" ? "il conserve ses types d'origine" : "seul le Type Téra compte"} ; il garde ses STAB d'origine et gagne celui du Type Téra (×2 s'il est identique à un type d'origine).`);
 }
 
 /**

@@ -77,14 +77,14 @@ export async function createEgg(trainer) {
     ? `Œuf sauvage : stade d'éclosion initial ${progress} % (1D100).` : "Reproduction ciblée : stade d'éclosion 0 %."}</p>`, rolls);
 }
 
-/** Un Pokémon de l'équipe possède Corps Ardent ou Armurmagma : progression garantie à +2D10 % (7.6). */
+/** Un Pokémon de l'équipe possède Corps Ardent ou Armumagma (« Armurmagma » dans le livre) : progression garantie à +2D10 % (7.6). */
 function hasIncubator(trainer) {
   return trainer.system.team.map(u => fromUuidSync(u)).filter(Boolean)
-    .some(p => p.itemTypes.talent.some(t => /corps ardent|armurmagma/i.test(t.name)));
+    .some(p => p.itemTypes.talent.some(t => /corps ardent|armu(r)?magma/i.test(t.name)));
 }
 
 /**
- * Une journée d'incubation : +1D10 % (normale), +2D10 % (favorable ou Corps Ardent / Armurmagma).
+ * Une journée d'incubation : +1D10 % (normale), +2D10 % (favorable ou Corps Ardent / Armumagma).
  * @param {Item} egg
  * @param {"normal"|"favorable"} conditions
  */
@@ -94,7 +94,7 @@ export async function incubate(egg, conditions) {
   const r = await roll(boosted ? "2d10" : "1d10");
   const progress = Math.min(egg.system.progress + r.total, 100);
   await egg.update({ "system.progress": progress });
-  const why = conditions === "favorable" ? "conditions favorables" : boosted ? "Corps Ardent / Armurmagma" : "conditions normales";
+  const why = conditions === "favorable" ? "conditions favorables" : boosted ? "Corps Ardent / Armumagma" : "conditions normales";
   return card(trainer, `Incubation : ${egg.name}`,
     `<p>${why} : +${r.total} % → <strong>${progress} %</strong>${progress >= 100 ? " · prêt à éclore !" : ""}</p>`, [r]);
 }
@@ -290,17 +290,18 @@ export async function mine(trainer) {
 export async function pokemonCenter(trainer) {
   const team = trainer.system.team.map(u => fromUuidSync(u)).filter(Boolean);
   if ( !team.length ) return ui.notifications.warn("Aucun Pokémon dans l'équipe.");
-  const cost = team.length * 50;
+  // Une blessure grave relève d'un traitement à part (prix et durée selon le MJ) : ces Pokémon ne sont ni soignés ni facturés ici.
+  const wounded = team.filter(p => p.statuses.has("blessure")).map(p => p.name);
+  const treated = team.filter(p => !p.statuses.has("blessure"));
+  if ( !treated.length ) return ui.notifications.warn(`Blessure grave : ${wounded.join(", ")} demande un traitement à part, au prix fixé par le MJ.`);
+  const cost = treated.length * 50;
   if ( trainer.system.money < cost ) return ui.notifications.warn(`Soins : ${cost} ₽ (disponible : ${trainer.system.money} ₽).`);
   const ok = await DialogV2.confirm({ window: { title: "Centre Pokémon" },
-    content: `<p>Soigner les ${team.length} Pokémon de l'équipe pour <strong>${cost} ₽</strong> (50 ₽ par Pokémon) ?</p>`, rejectClose: false });
+    content: `<p>Soigner ${treated.length} Pokémon pour <strong>${cost} ₽</strong> (50 ₽ par Pokémon) ?</p>
+      ${wounded.length ? `<p class="hint">Blessure grave, non comprise (traitement plus long et plus cher, selon le MJ) : ${wounded.join(", ")}.</p>` : ""}`,
+    rejectClose: false });
   if ( !ok ) return;
-  const wounded = [];
-  for ( const p of team ) {
-    if ( p.statuses.has("blessure") ) {
-      wounded.push(p.name);
-      continue;
-    }
+  for ( const p of treated ) {
     await p.fullHeal();
     for ( const id of [...CURABLE, "dead", "attraction", "vampigraine", "malediction", "peur"] ) {
       if ( p.statuses.has(id) ) await p.toggleStatusEffect(id, { active: false });

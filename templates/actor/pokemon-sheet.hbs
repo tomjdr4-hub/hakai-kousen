@@ -148,7 +148,7 @@
       </div>
       {{/if}}
     </header>
-    <p class="hint">Ciblez un jeton puis cliquez sur le dé : toucher via la Table unique, dégâts (STAB inclus) × efficacité du type.</p>
+    <p class="hint">Ciblez un jeton puis cliquez sur le dé : toucher via la Table unique, dégâts × STAB (×1,5 pour une attaque de son type) × efficacité du type.</p>
     <table class="hk-table attacks">
       <thead><tr><th></th><th>Nom</th><th>ENE</th><th>Type</th><th>Catégorie</th><th>Portée</th><th>Précision</th><th>Dégâts</th><th></th></tr></thead>
       <tbody>
@@ -268,7 +268,8 @@
     </div>
 
     {{#if gear.length}}
-    <h3>Objets</h3>
+    <h3>Objet tenu</h3>
+    <p class="hint">Un seul objet tenu à la fois (8.7). Un consommable utilisé libère l'emplacement.</p>
     <ul class="item-list">
       {{#each gear as |item|}}
       <li class="item" data-item-id="{{item.id}}">

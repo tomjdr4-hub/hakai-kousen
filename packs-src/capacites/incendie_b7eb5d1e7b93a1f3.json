@@ -1,0 +1,42 @@
+{
+  "name": "Incendie",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 30,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "brulure",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>30% de chance de brûler</p>"
+  },
+  "_id": "b7eb5d1e7b93a1f3",
+  "_key": "!items!b7eb5d1e7b93a1f3"
+}

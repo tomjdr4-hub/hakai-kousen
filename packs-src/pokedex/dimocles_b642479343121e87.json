@@ -1,0 +1,572 @@
+{
+  "_id": "b642479343121e87",
+  "_key": "!actors!b642479343121e87",
+  "name": "Dimoclès",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/680.png",
+  "system": {
+    "species": "Dimoclès",
+    "number": "680",
+    "types": {
+      "primary": "acier",
+      "secondary": "spectre"
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 11,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 15,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 30,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 30,
+      "max": 30
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.8m / 4.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Glaive",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Monorpale (niveau 35) · Évolutions : Exagide (Parade) (pierre nuit)",
+      "talents": [
+        {
+          "name": "Annule Garde",
+          "uuid": "Compendium.hakai-kousen.talents.Item.62b488656a25ba86",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Taillade",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.971062c52ee8e597"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Strido-Son",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d95e816ad89f2096"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Poursuite",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.318f44fc1e2e14a4"
+        },
+        {
+          "source": "level",
+          "level": "18",
+          "name": "Allègement",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.462f6226b4d90f64"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Ombre Portée",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0a247e4f0aabfcfb"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Aéropique",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.116ae9d4f0ede305"
+        },
+        {
+          "source": "level",
+          "level": "26",
+          "name": "Vengeance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b81a288b1347027"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Tranche",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1402f0af1eda8d1a"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "level",
+          "level": "36",
+          "name": "Tranche-Nuit",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e103ddf264a46154"
+        },
+        {
+          "source": "level",
+          "level": "41",
+          "name": "Astuce Force",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352fb3c7239565aa"
+        },
+        {
+          "source": "level",
+          "level": "45",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "level",
+          "level": "51",
+          "name": "Lame Sainte",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9f1cad4224f81b3a"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "31",
+          "name": "Casse-Brique",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb3dd63cba13de67"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "40",
+          "name": "Aéropique",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.116ae9d4f0ede305"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "54",
+          "name": "Faux-Chage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.780fba957f66d707"
+        },
+        {
+          "source": "ct",
+          "level": "59",
+          "name": "Centrifugifle",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ad23656c1204cfac"
+        },
+        {
+          "source": "ct",
+          "level": "65",
+          "name": "Griffe Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.435aa01e407c3437"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Garde Large",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b396ac7705a3adf"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ombre Portée",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0a247e4f0aabfcfb"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Lien du Destin",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e617271ff689de8c"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Strido-Son",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d95e816ad89f2096"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Après Vous",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4a5e23a7e5427151"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Affilage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.16e047af92a7a460"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vol Magnétik",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8e2a5a895f3e42eb"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Onde de Choc",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ca02127d0dab7dfd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Dépit",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ba4710617fcf35c4"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "0b917ce3457e2f2d",
+      "_key": "!actors.items!b642479343121e87.0b917ce3457e2f2d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Danse Lames",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "for",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente la Force du lanceur de 2.</p>"
+      },
+      "_id": "c4d080da283a1fae",
+      "_key": "!actors.items!b642479343121e87.c4d080da283a1fae",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+      }
+    },
+    {
+      "name": "Taillade",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>À chaque fois que cette technique est réutilisée par le lanceur, les dégâts de base de la technique sont doublés, jusqu'à atteindre 16. L'effet est annulé si le lanceur rate son attaque ou en utilise une autre.</p>"
+      },
+      "_id": "405733f28dcc1a44",
+      "_key": "!actors.items!b642479343121e87.405733f28dcc1a44",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.971062c52ee8e597"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Dimoclès",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/680.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d0c35dc92fc42a2f",
+  "sort": 68000,
+  "flags": {}
+}

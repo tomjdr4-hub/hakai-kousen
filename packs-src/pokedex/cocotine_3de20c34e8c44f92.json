@@ -1,0 +1,843 @@
+{
+  "_id": "3de20c34e8c44f92",
+  "_key": "!actors!3de20c34e8c44f92",
+  "name": "Cocotine",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/683.png",
+  "system": {
+    "species": "Cocotine",
+    "number": "683",
+    "types": {
+      "primary": "fee",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 51,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 51,
+      "max": 51
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.8m / 15.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Parfum",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Fluvetin (échange avec sachet senteur)",
+      "talents": [
+        {
+          "name": "Cœur Soin",
+          "uuid": "Compendium.hakai-kousen.talents.Item.03ea72781bdd7daf",
+          "hidden": false
+        },
+        {
+          "name": "Aroma-Voile",
+          "uuid": "Compendium.hakai-kousen.talents.Item.71cfbb8a15d788b6",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Brume Capiteuse",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7eb287ee321b4ee7"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Doux Parfum",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vent Féérique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.08f9e3adf134bef1"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vibra Soin",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3535a8120149a2b"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Doux Baiser",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beecc09ad8249d8b"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Flair",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ca3f19a37ecd2acc"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Écho",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b82b5917dc58b9ca"
+        },
+        {
+          "source": "level",
+          "level": "17",
+          "name": "Plénitude",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.589ef05475ec84e1"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Vampibaiser",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2e70efbb3932bec6"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Aromathérapie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fae085287a618200"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "level",
+          "level": "31",
+          "name": "Pouvoir Lunaire",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e9bc0684b53502d7"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Charme",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24aeca4c2c487d47"
+        },
+        {
+          "source": "level",
+          "level": "38",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Champ Brumeux",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d680caa5b7ec2667"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Échange",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59bb139fe13c21ab"
+        },
+        {
+          "source": "level",
+          "level": "48",
+          "name": "Psyko",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb26cc4f3cd3fb84"
+        },
+        {
+          "source": "level",
+          "level": "53",
+          "name": "Voix Enjôleuse",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.577f1e0125f2063a"
+        },
+        {
+          "source": "level",
+          "level": "57",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "level",
+          "level": "64",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "3",
+          "name": "Choc Psy",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e6763d4f788e1a8c"
+        },
+        {
+          "source": "ct",
+          "level": "4",
+          "name": "Plénitude",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.589ef05475ec84e1"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "16",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Tonnerre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.50acc837a4bc6bf5"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Fatal-Foudre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.10f7e4a09629bf65"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "29",
+          "name": "Psyko",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb26cc4f3cd3fb84"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "41",
+          "name": "Tourmente",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5b7426a0822ec749"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "49",
+          "name": "Écho",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b82b5917dc58b9ca"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Rayon Chargé",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d0a5a407fb90519"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "77",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Dévorêve",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc9a7f8e5683de7a"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "92",
+          "name": "Distorsion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bd9bc3f938bb0f2"
+        },
+        {
+          "source": "ct",
+          "level": "99",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Entrave",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5988a1e672bd9376"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Régénération",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.005acbac3a5b41a7"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Séduction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a9860c9b9c3b4a7a"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Voeu",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac8e44313938c8dd"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Machination",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0410c2bfe86667f1"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Après Vous",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4a5e23a7e5427151"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Coup d'Main",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77d24ff6e7b3c1b5"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Échange",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59bb139fe13c21ab"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Effort",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb9c989812c234d3"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Glas de Soin",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8196ea0baf5e88f2"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Implore",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.90dbf0b539d34ec9"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Interversion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6bc7117abaf76f1f"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Lévikinésie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2c531d7041a9b066"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Reflet Magik",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7897bcd1958e3c1e"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vampi-Poing",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.df7e0f178aa26496"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Brume Capiteuse",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "fee",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "vol",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente la Volonté d'un allié de 1</p>"
+      },
+      "_id": "b7c58490c3f8d551",
+      "_key": "!actors.items!3de20c34e8c44f92.b7c58490c3f8d551",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7eb287ee321b4ee7"
+      }
+    },
+    {
+      "name": "Doux Parfum",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 2,
+        "range": "Zone Ennemie",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Dextérité pour l'esquive des Pokémons autour de 2</p>"
+      },
+      "_id": "69cd6f34496fe8a4",
+      "_key": "!actors.items!3de20c34e8c44f92.69cd6f34496fe8a4",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48cb4cffe57448be"
+      }
+    },
+    {
+      "name": "Vent Féérique",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "fee",
+        "category": "special",
+        "energy": 1,
+        "range": "Zone",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "2eed954931b53d92",
+      "_key": "!actors.items!3de20c34e8c44f92.2eed954931b53d92",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.08f9e3adf134bef1"
+      }
+    },
+    {
+      "name": "Vibra Soin",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Redonne 50% de ses PVs à la cible</p>"
+      },
+      "_id": "2161296df8125bca",
+      "_key": "!actors.items!3de20c34e8c44f92.2161296df8125bca",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e3535a8120149a2b"
+      }
+    },
+    {
+      "name": "Doux Baiser",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "fee",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 75,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "confusion",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Inflige une confusion à la cible.</p>"
+      },
+      "_id": "34c81e21ae1a3130",
+      "_key": "!actors.items!3de20c34e8c44f92.34c81e21ae1a3130",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.beecc09ad8249d8b"
+      }
+    },
+    {
+      "name": "Flair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible sauf lanceur",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Permet de toucher un Pokémon Spectre avec n'importe quelle capacité ou de toucher un ennemi insaisissable.</p>"
+      },
+      "_id": "4d2e3b7946c6ed21",
+      "_key": "!actors.items!3de20c34e8c44f92.4d2e3b7946c6ed21",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.ca3f19a37ecd2acc"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cocotine",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/683.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d0c35dc92fc42a2f",
+  "sort": 68300,
+  "flags": {}
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Flying Press",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "combat",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 95,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Une attaque en piqué depuis le ciel, à la fois de type Combat et de type Vol</p>"
+  },
+  "_id": "ad7b690576271973",
+  "_key": "!items!ad7b690576271973"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Chant Antique",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "special",
+    "energy": 3,
+    "range": "Sonore",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "8",
+    "effectChance": 10,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "sommeil",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>10% de chance d'endormir la cible</p>"
+  },
+  "_id": "5672b331fe8641ad",
+  "_key": "!items!5672b331fe8641ad"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Troquenard",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "plante",
+    "category": "physical",
+    "energy": 3,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "4",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Empêche la cible de bouger et lui retire 1/8eme de sa Vitalité max par tours pendant 4 à 5 tours</p>"
+  },
+  "_id": "dcf8c309516816c2",
+  "_key": "!items!dcf8c309516816c2"
+}

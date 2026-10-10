@@ -1,0 +1,33 @@
+{
+  "name": "Esprit Frappeur",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "spectre",
+    "category": "physical",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 90,
+    "sure": false,
+    "damage": "11",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Inefficace si la cible ne porte pas d'objet.</p>"
+  },
+  "_id": "fcd494f9018e8698",
+  "_key": "!items!fcd494f9018e8698"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Engrenage",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "acier",
+    "category": "status",
+    "energy": 2,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "for",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "con",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Change de réglage pour augmenter la Force et la Concentration de 1 des alliés ayant les talents Plus ou Minus</p>"
+  },
+  "_id": "9845931b18d30a3c",
+  "_key": "!items!9845931b18d30a3c"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Flamme Bleue",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "special",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 85,
+    "sure": false,
+    "damage": "13",
+    "effectChance": 20,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "brulure",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>20% de chance de brûler la cible</p>"
+  },
+  "_id": "d1cacd72bea47e10",
+  "_key": "!items!d1cacd72bea47e10"
+}

@@ -1,0 +1,719 @@
+{
+  "_id": "0b14d01b46c6750c",
+  "_key": "!actors!0b14d01b46c6750c",
+  "name": "Cryptéro",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/561.png",
+  "system": {
+    "species": "Cryptéro",
+    "number": "561",
+    "types": {
+      "primary": "psy",
+      "secondary": "vol"
+    },
+    "stats": {
+      "dex": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 11,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 36,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 36,
+      "max": 36
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.4m / 14kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Similoiseau",
+      "ratio": "4♂:4♀",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Peau Miracle",
+          "uuid": "Compendium.hakai-kousen.talents.Item.72cab88c17dd94f5",
+          "hidden": false
+        },
+        {
+          "name": "Garde Magik",
+          "uuid": "Compendium.hakai-kousen.talents.Item.1b32420dac9e5da4",
+          "hidden": false
+        },
+        {
+          "name": "Lentiteintée",
+          "uuid": "Compendium.hakai-kousen.talents.Item.6cffebacdc4be2f5",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Oeil Miracle",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5cd3e2443d20c1b5"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Tornade",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d02e7d53e5aac22f"
+        },
+        {
+          "source": "level",
+          "level": "4",
+          "name": "Hypnose",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33a802343b00f4b6"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Vague Psy",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c2adac276da93a89"
+        },
+        {
+          "source": "level",
+          "level": "11",
+          "name": "Vent Arrière",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.954d50a8fa12ed6a"
+        },
+        {
+          "source": "level",
+          "level": "14",
+          "name": "Cyclone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.387846527a0255c5"
+        },
+        {
+          "source": "level",
+          "level": "18",
+          "name": "Rafale Psy",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f5a6d23f292bb0d1"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Tranch'Air",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.21bb8516a2701c1c"
+        },
+        {
+          "source": "level",
+          "level": "24",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "level",
+          "level": "31",
+          "name": "Synchropeine",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4f71e68e6fe0356e"
+        },
+        {
+          "source": "level",
+          "level": "34",
+          "name": "Mimique",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3a67dc311fc09b0d"
+        },
+        {
+          "source": "level",
+          "level": "38",
+          "name": "Gravité",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d2a640a3efd61b94"
+        },
+        {
+          "source": "level",
+          "level": "41",
+          "name": "Lame d'Air",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59baefb7e9eef282"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Psyko",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb26cc4f3cd3fb84"
+        },
+        {
+          "source": "level",
+          "level": "48",
+          "name": "Force Cosmique",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c09d9033b3d47ece"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Piqué",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db4d01c5d8b51337"
+        },
+        {
+          "source": "ct",
+          "level": "3",
+          "name": "Choc Psy",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e6763d4f788e1a8c"
+        },
+        {
+          "source": "ct",
+          "level": "4",
+          "name": "Plénitude",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.589ef05475ec84e1"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "16",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "19",
+          "name": "Atterrissage",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bcaec9bd64bd171"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "23",
+          "name": "Anti-Air",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9b47d19818e2b0cf"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "29",
+          "name": "Psyko",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb26cc4f3cd3fb84"
+        },
+        {
+          "source": "ct",
+          "level": "30",
+          "name": "Ball'Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e65656cf6846eabd"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "40",
+          "name": "Aéropique",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.116ae9d4f0ede305"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "46",
+          "name": "Larcin",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb080392b1e63836"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "51",
+          "name": "Ailes d'Acier",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c699d0cae24c6612"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Rayon Chargé",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d0a5a407fb90519"
+        },
+        {
+          "source": "ct",
+          "level": "73",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "ct",
+          "level": "76",
+          "name": "Vol",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.14142f0af0636c50"
+        },
+        {
+          "source": "ct",
+          "level": "77",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Dévorêve",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc9a7f8e5683de7a"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "92",
+          "name": "Distorsion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bd9bc3f938bb0f2"
+        },
+        {
+          "source": "ct",
+          "level": "97",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "ct",
+          "level": "99",
+          "name": "Éclat Magique",
+          "type": "fee",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35dae25844777f1c"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Pouvoir Antique",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38b859235965efcc"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Prescience",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0c1297af43d1ece6"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Échange Psy",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.53152cd933fd7231"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Échange",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59bb139fe13c21ab"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Force Ajoutée",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2bde0e33a83b9486"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Anti-Brume",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.98cf36c1ed2a0c58"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Gravité",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d2a640a3efd61b94"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Canicule",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c243ff9aaff5ac7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Reflet Magik",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7897bcd1958e3c1e"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Zone Magique",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.280b4c87039c4813"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Onde de Choc",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ca02127d0dab7dfd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Échange",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59bb139fe13c21ab"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqué",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db4d01c5d8b51337"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Arrière",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.954d50a8fa12ed6a"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Lévikinésie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2c531d7041a9b066"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tour de Magie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d61926afdc6870a1"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Psykoud'Boul",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3dc275b4ddbfed87"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Oeil Miracle",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Supprime l'insensibilité des Pokémon Ténèbres aux attaques Psy et ignore les modifications de l'Esquive de la cible.</p>"
+      },
+      "_id": "50eebd8f0a1f1319",
+      "_key": "!actors.items!0b14d01b46c6750c.50eebd8f0a1f1319",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5cd3e2443d20c1b5"
+      }
+    },
+    {
+      "name": "Tornade",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "vol",
+        "category": "special",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Sa puissance double si l'adversaire est en train d'utiliser Vol ou Rebond.</p>"
+      },
+      "_id": "4fb8259d1cf77f38",
+      "_key": "!actors.items!0b14d01b46c6750c.4fb8259d1cf77f38",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.d02e7d53e5aac22f"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cryptéro",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/561.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 56100,
+  "flags": {}
+}

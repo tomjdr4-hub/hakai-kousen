@@ -1,0 +1,592 @@
+{
+  "_id": "62c51984f92691e5",
+  "_key": "!actors!62c51984f92691e5",
+  "name": "Grindur",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/597.png",
+  "system": {
+    "species": "Grindur",
+    "number": "597",
+    "types": {
+      "primary": "acier",
+      "secondary": "plante"
+    },
+    "stats": {
+      "dex": {
+        "base": 1,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 22,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 22,
+      "max": 22
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.6m / 18.8kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Graine Épine",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Noacier (niveau 40)",
+      "talents": [
+        {
+          "name": "Épine de Fer",
+          "uuid": "Compendium.hakai-kousen.talents.Item.5f2e33e23ea6e7f6",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Armure",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "6",
+          "name": "Roulade",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b8e48db46c02b09"
+        },
+        {
+          "source": "level",
+          "level": "9",
+          "name": "Malédiction",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d25e0f961415259"
+        },
+        {
+          "source": "level",
+          "level": "14",
+          "name": "Griffe Acier",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e86fea796cbc3f6"
+        },
+        {
+          "source": "level",
+          "level": "18",
+          "name": "Dard-Nuée",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eeb7e02790fef89e"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "level",
+          "level": "26",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "level",
+          "level": "30",
+          "name": "Miroi-Tir",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.869566ad6f7dfec0"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Racines",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1713f4bf1a6506a0"
+        },
+        {
+          "source": "level",
+          "level": "38",
+          "name": "Destruction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1e3b7cb6b44f8538"
+        },
+        {
+          "source": "level",
+          "level": "43",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "level",
+          "level": "47",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "level",
+          "level": "52",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "level",
+          "level": "55",
+          "name": "Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9a0726d6f8467c19"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Tonnerre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.50acc837a4bc6bf5"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "64",
+          "name": "Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9a0726d6f8467c19"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "69",
+          "name": "Poliroche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1e1e3ed61fe3dbb4"
+        },
+        {
+          "source": "ct",
+          "level": "73",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "84",
+          "name": "Direct Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b0d2285254240f13"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "96",
+          "name": "Force Nature",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fee0274f87d89a3d"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Bombe Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Balle Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a621a562380eaa37"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Gravité",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d2a640a3efd61b94"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Vampigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Picots",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2683d167fc820c58"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Piège de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d3f50f720c659fa7"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Soucigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.402517e6c6ecc1c7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Effort",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb9c989812c234d3"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Gravité",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d2a640a3efd61b94"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Sabotage",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84bb15506bf8b73f"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vol Magnétik",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8e2a5a895f3e42eb"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piège de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d3f50f720c659fa7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Soucigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.402517e6c6ecc1c7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Armure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "f6192831ec4b0a10",
+      "_key": "!actors.items!62c51984f92691e5.f6192831ec4b0a10",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+      }
+    },
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "ddf9c86f9f4e7c01",
+      "_key": "!actors.items!62c51984f92691e5.ddf9c86f9f4e7c01",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Grindur",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/597.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 59700,
+  "flags": {}
+}

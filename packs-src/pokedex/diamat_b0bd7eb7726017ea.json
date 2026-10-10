@@ -1,0 +1,699 @@
+{
+  "_id": "b0bd7eb7726017ea",
+  "_key": "!actors!b0bd7eb7726017ea",
+  "name": "Diamat",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/634.png",
+  "system": {
+    "species": "Diamat",
+    "number": "634",
+    "types": {
+      "primary": "dragon",
+      "secondary": "tenebres"
+    },
+    "stats": {
+      "dex": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 36,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 36,
+      "max": 36
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.4m / 50kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Violent",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Solochi (niveau 50) · Évolutions : Trioxhydre (niveau 64)",
+      "talents": [
+        {
+          "name": "Agitation",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2a6ec1beabef9d5f",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coup Double",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.46a6e64bb10abcf9"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Draco-Rage",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b57c2b7ca9057b0a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Puissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.668e21d201c53e72"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Morsure",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+        },
+        {
+          "source": "level",
+          "level": "12",
+          "name": "Coup d'Boule",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ed397f377fd21210"
+        },
+        {
+          "source": "level",
+          "level": "17",
+          "name": "Draco-Souffle",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b02289312ca04aa9"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Hurlement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20f285c61ba73967"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Souplesse",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.251bdb8e353f8863"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Draco-Choc",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb37897daab8eeb5"
+        },
+        {
+          "source": "level",
+          "level": "38",
+          "name": "Rengorgement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.89edaee5f748dae0"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Draco-Charge",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.55acc172404e348b"
+        },
+        {
+          "source": "level",
+          "level": "48",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "level",
+          "level": "55",
+          "name": "Grimace",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cdc78c5f4b7d2d90"
+        },
+        {
+          "source": "level",
+          "level": "64",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "level",
+          "level": "71",
+          "name": "Colère",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.127bcd846238aa6e"
+        },
+        {
+          "source": "ct",
+          "level": "1",
+          "name": "Rengorgement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.89edaee5f748dae0"
+        },
+        {
+          "source": "ct",
+          "level": "5",
+          "name": "Hurlement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20f285c61ba73967"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "12",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "41",
+          "name": "Tourmente",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5b7426a0822ec749"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "46",
+          "name": "Larcin",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb080392b1e63836"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "73",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "ct",
+          "level": "77",
+          "name": "Boost",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.003b6b817381bf30"
+        },
+        {
+          "source": "ct",
+          "level": "82",
+          "name": "Draco-Queue",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e104e7984845c4ea"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "97",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Assurance",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f636e8cdadfa6d67"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Étonnement",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39fac2a2d2151320"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Coup Double",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.46a6e64bb10abcf9"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Crocs Feu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.37c59fa3b43d0eff"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Crocs Givre",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.613cbcf31e398417"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Crocs Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4f52bb4f96dd8c4b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Fracass'Tête",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bbc25e75561f213b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Grincement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Éructation",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5d4e71aa00974aa9"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Draco-Météore",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33decfaa925942d1"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Hydro-Queue",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.004bfe912db4dbef"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Draco-Choc",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb37897daab8eeb5"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mégaphone",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8b87e1d0141ced2a"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Colère",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.127bcd846238aa6e"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Onde de Choc",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ca02127d0dab7dfd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Dépit",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ba4710617fcf35c4"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Surpuissance",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Psykoud'Boul",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3dc275b4ddbfed87"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Coup Double",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "2",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Un coup qui frappe la cible deux fois.</p>"
+      },
+      "_id": "ca7865297437103d",
+      "_key": "!actors.items!b0bd7eb7726017ea.ca7865297437103d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.46a6e64bb10abcf9"
+      }
+    },
+    {
+      "name": "Draco-Rage",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "dragon",
+        "category": "special",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "8",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur envoie des ondes de choc retirant 8 points de Vitalité</p>"
+      },
+      "_id": "1cd2665065e9e81a",
+      "_key": "!actors.items!b0bd7eb7726017ea.1cd2665065e9e81a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b57c2b7ca9057b0a"
+      }
+    },
+    {
+      "name": "Puissance",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Ajoute +1 sur le résultat du dé 10 pour la prochaine attaque.</p>"
+      },
+      "_id": "e4ed491d0a53fa78",
+      "_key": "!actors.items!b0bd7eb7726017ea.e4ed491d0a53fa78",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.668e21d201c53e72"
+      }
+    },
+    {
+      "name": "Morsure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "139dfc83c4fac5e1",
+      "_key": "!actors.items!b0bd7eb7726017ea.139dfc83c4fac5e1",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Diamat",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/634.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 63400,
+  "flags": {}
+}

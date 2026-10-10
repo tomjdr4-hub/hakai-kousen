@@ -1,0 +1,273 @@
+{
+  "_id": "91207ea4810cdefc",
+  "_key": "!actors!91207ea4810cdefc",
+  "name": "Anchwatt",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/602.png",
+  "system": {
+    "species": "Anchwatt",
+    "number": "602",
+    "types": {
+      "primary": "electrik",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 18,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 18,
+      "max": 18
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.2m / 0.3kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Électropode",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Lampéroie (niveau 39)",
+      "talents": [
+        {
+          "name": "Lévitation",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2052cf416b2a2bfd",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Étincelle",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b06621772ad8753d"
+        },
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Rayon Chargé",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d0a5a407fb90519"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Rayon Chargé",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d0a5a407fb90519"
+        },
+        {
+          "source": "ct",
+          "level": "73",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vol Magnétik",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8e2a5a895f3e42eb"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Cage Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
+      },
+      "_id": "b0cd53f8d734f4c1",
+      "_key": "!actors.items!91207ea4810cdefc.b0cd53f8d734f4c1",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+      }
+    },
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "e229b4e5da1f97f5",
+      "_key": "!actors.items!91207ea4810cdefc.e229b4e5da1f97f5",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Étincelle",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "7",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance de paralyser la cible</p>"
+      },
+      "_id": "af0d4d0246a9de0a",
+      "_key": "!actors.items!91207ea4810cdefc.af0d4d0246a9de0a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b06621772ad8753d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Anchwatt",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/602.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 60200,
+  "flags": {}
+}

@@ -1,0 +1,592 @@
+{
+  "_id": "7017fc9bfa981b04",
+  "_key": "!actors!7017fc9bfa981b04",
+  "name": "Brocélôme",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/708.png",
+  "system": {
+    "species": "Brocélôme",
+    "number": "708",
+    "types": {
+      "primary": "plante",
+      "secondary": "spectre"
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 22,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 22,
+      "max": 22
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.4m / 7kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Souche",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Desséliande (Échange)",
+      "talents": [
+        {
+          "name": "Médic Nature",
+          "uuid": "Compendium.hakai-kousen.talents.Item.c3243e63c74ac386",
+          "hidden": false
+        },
+        {
+          "name": "Fouille",
+          "uuid": "Compendium.hakai-kousen.talents.Item.0d732359399644ca",
+          "hidden": false
+        },
+        {
+          "name": "Récolte",
+          "uuid": "Compendium.hakai-kousen.talents.Item.8d450d0cf878ae59",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "5",
+          "name": "Onde Folie",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.748f9819922a92df"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Étonnement",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39fac2a2d2151320"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Croissance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.35d27d721d527f04"
+        },
+        {
+          "source": "level",
+          "level": "19",
+          "name": "Racines",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1713f4bf1a6506a0"
+        },
+        {
+          "source": "level",
+          "level": "23",
+          "name": "Feinte",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c1f2d36776b7dba"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Vampigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d30510dee6e7620"
+        },
+        {
+          "source": "level",
+          "level": "31",
+          "name": "Malédiction",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d25e0f961415259"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Feu Follet",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bae18f42ac954cc7"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Maléfice Sylvain",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.165ad738c3525ab8"
+        },
+        {
+          "source": "level",
+          "level": "39",
+          "name": "Lien du Destin",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e617271ff689de8c"
+        },
+        {
+          "source": "level",
+          "level": "45",
+          "name": "Hantise",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.979216c347839d78"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Martobois",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36b9a3c7a30b4f1"
+        },
+        {
+          "source": "level",
+          "level": "54",
+          "name": "Encornebois",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1097ca9299ca0b8b"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "29",
+          "name": "Psyko",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb26cc4f3cd3fb84"
+        },
+        {
+          "source": "ct",
+          "level": "30",
+          "name": "Ball'Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e65656cf6846eabd"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "33",
+          "name": "Protection",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9bf57403179b581f"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "46",
+          "name": "Larcin",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb080392b1e63836"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "61",
+          "name": "Feu Follet",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bae18f42ac954cc7"
+        },
+        {
+          "source": "ct",
+          "level": "65",
+          "name": "Griffe Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.435aa01e407c3437"
+        },
+        {
+          "source": "ct",
+          "level": "78",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "84",
+          "name": "Direct Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b0d2285254240f13"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Dévorêve",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc9a7f8e5683de7a"
+        },
+        {
+          "source": "ct",
+          "level": "86",
+          "name": "Noeud Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1191fadeddf19bf0"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "92",
+          "name": "Distorsion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bd9bc3f938bb0f2"
+        },
+        {
+          "source": "ct",
+          "level": "96",
+          "name": "Force Nature",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fee0274f87d89a3d"
+        },
+        {
+          "source": "ct",
+          "level": "97",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Passe-Cadeau",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.370418520de1f8c3"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Piège de Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eab2bc746680e6c8"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poing Boost",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bc0570467dd61e5e"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Possessif",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7026c410e6ac9943"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Rancune",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2b5be7123558447d"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Interversion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6bc7117abaf76f1f"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tricherie",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.292261cf8660fd22"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Reflet Magik",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7897bcd1958e3c1e"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Balance",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.026cd887d79e97fe"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Imitation",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bffddd8166db9147"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Échange",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59bb139fe13c21ab"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Dépit",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ba4710617fcf35c4"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Lévikinésie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2c531d7041a9b066"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tour de Magie",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d61926afdc6870a1"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Soucigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.402517e6c6ecc1c7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "f8f00db3c44c5b5a",
+      "_key": "!actors.items!7017fc9bfa981b04.f8f00db3c44c5b5a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Brocélôme",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/708.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d0c35dc92fc42a2f",
+  "sort": 70800,
+  "flags": {}
+}

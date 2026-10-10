@@ -1,0 +1,851 @@
+{
+  "_id": "26c088e8b3c1d23a",
+  "_key": "!actors!26c088e8b3c1d23a",
+  "name": "Brutapode",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/545.png",
+  "system": {
+    "species": "Brutapode",
+    "number": "545",
+    "types": {
+      "primary": "insecte",
+      "secondary": "poison"
+    },
+    "stats": {
+      "dex": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 30,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 30,
+      "max": 30
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "2.5m / 200.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Mégalopode",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Scobolide (niveau 30)",
+      "talents": [
+        {
+          "name": "Point Poison",
+          "uuid": "Compendium.hakai-kousen.talents.Item.6d4e0b62cfa8f2fa",
+          "hidden": false
+        },
+        {
+          "name": "Essaim",
+          "uuid": "Compendium.hakai-kousen.talents.Item.48072770a686c860",
+          "hidden": false
+        },
+        {
+          "name": "Turbo",
+          "uuid": "Compendium.hakai-kousen.talents.Item.76148e008a241273",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Relais",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f60c12fc8e0d69b1"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Boul'Armure",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c44c3c95ab28c4f6"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Roulade",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b8e48db46c02b09"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Mégacorne",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.44f17e805557bdca"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Dard-Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.494ac7385d7ec965"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Grincement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+        },
+        {
+          "source": "level",
+          "level": "12",
+          "name": "Poursuite",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.318f44fc1e2e14a4"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "level",
+          "level": "19",
+          "name": "Queue-Poison",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e249231e22c82544"
+        },
+        {
+          "source": "level",
+          "level": "23",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "level",
+          "level": "33",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "level",
+          "level": "39",
+          "name": "Bulldoboule",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.162743525fa51f38"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "level",
+          "level": "47",
+          "name": "Piège de Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eab2bc746680e6c8"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Escalade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6ea605bdccff556a"
+        },
+        {
+          "source": "level",
+          "level": "55",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "26",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "36",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Tomberoche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3cc0f4e67a1b01b6"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "67",
+          "name": "Estocorne",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ae144d6baa81d6d8"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "ct",
+          "level": "78",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "81",
+          "name": "Plaie Croix",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd32493cc68f4446"
+        },
+        {
+          "source": "ct",
+          "level": "83",
+          "name": "Harcèlement",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33cd4ada6c0041fb"
+        },
+        {
+          "source": "ct",
+          "level": "84",
+          "name": "Direct Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b0d2285254240f13"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Dard-Nuée",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eeb7e02790fef89e"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Picots",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2683d167fc820c58"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Pics Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac86a6f04610aebd"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Double Dard",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6a06946c8c3f3ce6"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Hydro-Queue",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.004bfe912db4dbef"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Effort",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb9c989812c234d3"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Queue de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24fdee332526d283"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Saisie",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5bb7a07592787bb3"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Trépignement",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36679d455551223"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Surpuissance",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Exécu-Son",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29cc02b745d3ebf6"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Relais",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Permet d'échanger le lanceur avec un autre Pokémon de l'équipe tout en conservant les changements de Stats</p>"
+      },
+      "_id": "9be775a7bebe3903",
+      "_key": "!actors.items!26c088e8b3c1d23a.9be775a7bebe3903",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f60c12fc8e0d69b1"
+      }
+    },
+    {
+      "name": "Boul'Armure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 2</p>"
+      },
+      "_id": "59514458779e8d1b",
+      "_key": "!actors.items!26c088e8b3c1d23a.59514458779e8d1b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.c44c3c95ab28c4f6"
+      }
+    },
+    {
+      "name": "Mur de Fer",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "acier",
+        "category": "status",
+        "energy": 3,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 2</p>"
+      },
+      "_id": "d9d73dfec360256d",
+      "_key": "!actors.items!26c088e8b3c1d23a.d9d73dfec360256d",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+      }
+    },
+    {
+      "name": "Roulade",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "physical",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Dure cinq tours, doublant sa puissance à chaque tour. (Revient à 3 après les cinq tours, ou si l'attaque échoue). La puissance est doublée si le lanceur a utilisé Boul'Armure précédemment pendant le combat.</p>"
+      },
+      "_id": "6a64fe630b79e3ca",
+      "_key": "!actors.items!26c088e8b3c1d23a.6a64fe630b79e3ca",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0b8e48db46c02b09"
+      }
+    },
+    {
+      "name": "Mégacorne",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "physical",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "5b9a7e1a77435123",
+      "_key": "!actors.items!26c088e8b3c1d23a.5b9a7e1a77435123",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.44f17e805557bdca"
+      }
+    },
+    {
+      "name": "Dard-Venin",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "poison",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance d'empoisonner la cible</p>"
+      },
+      "_id": "c12ddc8ef676f548",
+      "_key": "!actors.items!26c088e8b3c1d23a.c12ddc8ef676f548",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.494ac7385d7ec965"
+      }
+    },
+    {
+      "name": "Grincement",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Sonore",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse l'Endurance des cibles de 2</p>"
+      },
+      "_id": "5ab46ed0742aa020",
+      "_key": "!actors.items!26c088e8b3c1d23a.5ab46ed0742aa020",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Brutapode",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/545.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 54500,
+  "flags": {}
+}

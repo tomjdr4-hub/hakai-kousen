@@ -1,0 +1,245 @@
+{
+  "_id": "8cc00f5dfe8d4e81",
+  "_key": "!actors!8cc00f5dfe8d4e81",
+  "name": "Lépidonille",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/664.png",
+  "system": {
+    "species": "Lépidonille",
+    "number": "664",
+    "types": {
+      "primary": "insecte",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 19,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 19,
+      "max": 19
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.3m / 2.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Exhalécaille",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Pérégrain (niveau 9)",
+      "talents": [
+        {
+          "name": "Œil Composé",
+          "uuid": "Compendium.hakai-kousen.talents.Item.cd5c759348145a25",
+          "hidden": false
+        },
+        {
+          "name": "Écran Poudre",
+          "uuid": "Compendium.hakai-kousen.talents.Item.f3f22c383a7e02ad",
+          "hidden": false
+        },
+        {
+          "name": "Garde Amie",
+          "uuid": "Compendium.hakai-kousen.talents.Item.8e26af787d1b5b5f",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Sécrétion",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.534bf0fcc049f103"
+        },
+        {
+          "source": "level",
+          "level": "6",
+          "name": "Para-Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Para-Spore",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd7871fbe9892534"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poudre Fureur",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.45f7f09ac5697c60"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poudre Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1cce78dd59bb0228"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "0123f4be4fac8e41",
+      "_key": "!actors.items!8cc00f5dfe8d4e81.0123f4be4fac8e41",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Sécrétion",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Dextérité de la cible de 2</p>"
+      },
+      "_id": "d3b4ec0d685ae678",
+      "_key": "!actors.items!8cc00f5dfe8d4e81.d3b4ec0d685ae678",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.534bf0fcc049f103"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Lépidonille",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/664.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d0c35dc92fc42a2f",
+  "sort": 66400,
+  "flags": {}
+}

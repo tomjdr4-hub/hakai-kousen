@@ -1,0 +1,807 @@
+{
+  "_id": "f136efd784573dc7",
+  "_key": "!actors!f136efd784573dc7",
+  "name": "Gamblast",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/693.png",
+  "system": {
+    "species": "Gamblast",
+    "number": "693",
+    "types": {
+      "primary": "eau",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 36,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 36,
+      "max": 36
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.3m / 35.3kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Blaster",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Flingouste (niveau 37)",
+      "talents": [
+        {
+          "name": "Méga Blaster",
+          "uuid": "Compendium.hakai-kousen.talents.Item.1cfb32579aa7cc1d",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Aurasphère",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d11dbea0fb11897"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Draco-Choc",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb37897daab8eeb5"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Pistolet à O",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Trempette",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a50c589bbf14d07b"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vibra Soin",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3535a8120149a2b"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Tourniquet",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d726caf0291f3c8"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Force Poigne",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.010bca79f3674749"
+        },
+        {
+          "source": "level",
+          "level": "12",
+          "name": "Écume",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cabc1e8e783b2ff5"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Gigotage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3b4d0953cbefd69a"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Bulles d'O",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.102544d55849e684"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "level",
+          "level": "30",
+          "name": "Pince-Masse",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c40d1c1b161169ca"
+        },
+        {
+          "source": "level",
+          "level": "34",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Anti-Air",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9b47d19818e2b0cf"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Aqua-Jet",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.44aeeb6d1bcf849a"
+        },
+        {
+          "source": "level",
+          "level": "57",
+          "name": "Ocroupi",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3a4ccbe08a150112"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "23",
+          "name": "Anti-Air",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9b47d19818e2b0cf"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "30",
+          "name": "Ball'Ombre",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e65656cf6846eabd"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "34",
+          "name": "Cradovague",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2634ec09729e249b"
+        },
+        {
+          "source": "ct",
+          "level": "36",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "52",
+          "name": "Exploforce",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.458ca013e391b8ac"
+        },
+        {
+          "source": "ct",
+          "level": "55",
+          "name": "Ébullition",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7b96ba9f323457f4"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "75",
+          "name": "Danse Lames",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.99bb9e919663ca63"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "89",
+          "name": "Demi-Tour",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1eb405183278af83"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "94",
+          "name": "Surf",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb0f90fd8d11d621"
+        },
+        {
+          "source": "ct",
+          "level": "97",
+          "name": "Vibrobscur",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+        },
+        {
+          "source": "ct",
+          "level": "98",
+          "name": "Cascade",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e84a7ee69a46a29"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ten-Danse",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dd36066a71168d6a"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Coup d'Main",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77d24ff6e7b3c1b5"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Aqua-Jet",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.44aeeb6d1bcf849a"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Pince-Masse",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c40d1c1b161169ca"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Hydro-Queue",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.004bfe912db4dbef"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rebond",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e62d53f88d10abb0"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Draco-Choc",
+          "type": "dragon",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bb37897daab8eeb5"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Coup d'Main",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.77d24ff6e7b3c1b5"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Queue de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24fdee332526d283"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Affilage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.16e047af92a7a460"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Aqua-Brèche",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc73336988b9f739"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Draco-Choc",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "dragon",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "9",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Si le lanceur possède le talent Méga Blaster, la puissance de l'attaque est augmentée de 50%</p>"
+      },
+      "_id": "6b9e63c10128dcc2",
+      "_key": "!actors.items!f136efd784573dc7.6b9e63c10128dcc2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.bb37897daab8eeb5"
+      }
+    },
+    {
+      "name": "Pistolet à O",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "b23f2e21cb050ef7",
+      "_key": "!actors.items!f136efd784573dc7.b23f2e21cb050ef7",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.48738704c8e93e34"
+      }
+    },
+    {
+      "name": "Trempette",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "11525044d44214c8",
+      "_key": "!actors.items!f136efd784573dc7.11525044d44214c8",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.a50c589bbf14d07b"
+      }
+    },
+    {
+      "name": "Vibra Soin",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Redonne 50% de ses PVs à la cible</p>"
+      },
+      "_id": "89cc206d8ada1d7e",
+      "_key": "!actors.items!f136efd784573dc7.89cc206d8ada1d7e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e3535a8120149a2b"
+      }
+    },
+    {
+      "name": "Vibrobscur",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "special",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "8",
+        "effectChance": 20,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>20% de chance d'apeurer la cible</p>"
+      },
+      "_id": "df233c53cf6c6eda",
+      "_key": "!actors.items!f136efd784573dc7.df233c53cf6c6eda",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.3d531b3c757b7076"
+      }
+    },
+    {
+      "name": "Tourniquet",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "status",
+        "energy": 3,
+        "range": "Zone Alliée",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Réduit de 50% tous les dégâts de type Feu pendant 5 tours</p>"
+      },
+      "_id": "accd1ce95e75f08e",
+      "_key": "!actors.items!f136efd784573dc7.accd1ce95e75f08e",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.8d726caf0291f3c8"
+      }
+    },
+    {
+      "name": "Force Poigne",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "48c4f7f9fafeaa00",
+      "_key": "!actors.items!f136efd784573dc7.48c4f7f9fafeaa00",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.010bca79f3674749"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Gamblast",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/693.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d0c35dc92fc42a2f",
+  "sort": 69300,
+  "flags": {}
+}

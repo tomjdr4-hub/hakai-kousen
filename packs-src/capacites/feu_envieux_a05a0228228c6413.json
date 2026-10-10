@@ -1,0 +1,42 @@
+{
+  "name": "Feu Envieux",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "special",
+    "energy": 6,
+    "range": "Zone Ennemie",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "7",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "brulure",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Brûle les cibles ayant eu une augmentation de stat durant le tour.</p>"
+  },
+  "_id": "a05a0228228c6413",
+  "_key": "!items!a05a0228228c6413"
+}

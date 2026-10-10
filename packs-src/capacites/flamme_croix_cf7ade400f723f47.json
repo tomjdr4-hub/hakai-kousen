@@ -1,0 +1,33 @@
+{
+  "name": "Flamme Croix",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "feu",
+    "category": "special",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>La puissance de l'attaque est doublé si éclair croix a été utilisé par le lanceur au tour précédent</p>"
+  },
+  "_id": "cf7ade400f723f47",
+  "_key": "!items!cf7ade400f723f47"
+}

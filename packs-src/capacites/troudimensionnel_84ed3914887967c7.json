@@ -1,0 +1,33 @@
+{
+  "name": "TrouDimensionnel",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "psy",
+    "category": "special",
+    "energy": 6,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": true,
+    "damage": "8",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>L'attaque passe à travers les capacités de protection (Détection, Abri, Pico-Défense et Bouclier Royal). N'échoue jamais.</p>"
+  },
+  "_id": "84ed3914887967c7",
+  "_key": "!items!84ed3914887967c7"
+}

@@ -1,0 +1,656 @@
+{
+  "_id": "a1bb13d6c9bdcb57",
+  "_key": "!actors!a1bb13d6c9bdcb57",
+  "name": "Couverdure",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/541.png",
+  "system": {
+    "species": "Couverdure",
+    "number": "541",
+    "types": {
+      "primary": "insecte",
+      "secondary": "plante"
+    },
+    "stats": {
+      "dex": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 28,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 28,
+      "max": 28
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.5m / 7.3kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Capefeuille",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Larveyette (niveau 20) · Évolutions : Manternel (bonheur)",
+      "talents": [
+        {
+          "name": "Feuille Garde",
+          "uuid": "Compendium.hakai-kousen.talents.Item.81bcc557b184e945",
+          "hidden": false
+        },
+        {
+          "name": "Chlorophylle",
+          "uuid": "Compendium.hakai-kousen.talents.Item.f57b70171f1fc160",
+          "hidden": false
+        },
+        {
+          "name": "Envelocape",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4fd90f08c8b5cb13",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Sécrétion",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.534bf0fcc049f103"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Siffl'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c9e42e8ae301320"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Tranch'Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.31276e47df8bb63d"
+        },
+        {
+          "source": "ct",
+          "level": "4",
+          "name": "Plénitude",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.589ef05475ec84e1"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "16",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "66",
+          "name": "Représailles",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6e7f8857531202b3"
+        },
+        {
+          "source": "ct",
+          "level": "85",
+          "name": "Dévorêve",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc9a7f8e5683de7a"
+        },
+        {
+          "source": "ct",
+          "level": "86",
+          "name": "Noeud Herbe",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1191fadeddf19bf0"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "96",
+          "name": "Force Nature",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fee0274f87d89a3d"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Lame d'Air",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.59baefb7e9eef282"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Relais",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f60c12fc8e0d69b1"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Camouflage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5aedc07a8a977480"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Moi d'Abord",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8239cbac1f0122b1"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Lire-Esprit",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7a4404a9c5724b39"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Coupe-Vent",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.18c6a1f0cf941ae0"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Grincement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Vent Argenté",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1922ce5c6cfe220e"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Champ Herbu",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4cfa7017f9e016eb"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Toile Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b2e744ac5a3faff7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Reflet Magik",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7897bcd1958e3c1e"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Canon Graine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cac8bd9845105ccd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Synthèse",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.409b32b95b92290c"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Soucigraine",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.402517e6c6ecc1c7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "71a6671d29052bac",
+      "_key": "!actors.items!a1bb13d6c9bdcb57.71a6671d29052bac",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Piqûre",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Si la cible tient une Baie, le lanceur la vole à la cible bénéficie de ses effets.</p>"
+      },
+      "_id": "527dfc6212365e9f",
+      "_key": "!actors.items!a1bb13d6c9bdcb57.527dfc6212365e9f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+      }
+    },
+    {
+      "name": "Sécrétion",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Dextérité de la cible de 2</p>"
+      },
+      "_id": "e480db30b963aa04",
+      "_key": "!actors.items!a1bb13d6c9bdcb57.e480db30b963aa04",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.534bf0fcc049f103"
+      }
+    },
+    {
+      "name": "Siffl'Herbe",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 55,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "sommeil",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Endort la cible</p>"
+      },
+      "_id": "a21dfbbe406a8cef",
+      "_key": "!actors.items!a1bb13d6c9bdcb57.a21dfbbe406a8cef",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.9c9e42e8ae301320"
+      }
+    },
+    {
+      "name": "Tranch'Herbe",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "physical",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 1,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Ajoute +1 sur le résultat du dé 10 pour cette attaque</p>"
+      },
+      "_id": "0439ac78be1c46c8",
+      "_key": "!actors.items!a1bb13d6c9bdcb57.0439ac78be1c46c8",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.31276e47df8bb63d"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Couverdure",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/541.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 54100,
+  "flags": {}
+}

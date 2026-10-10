@@ -1,0 +1,33 @@
+{
+  "name": "Électrisation",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "status",
+    "energy": 2,
+    "range": "Cible",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Si le lanceur attaque avant l'ennemi, les capacités seront de type électrique jusqu'à la fin du tour</p>"
+  },
+  "_id": "79bf8cb5c28d5ea5",
+  "_key": "!items!79bf8cb5c28d5ea5"
+}

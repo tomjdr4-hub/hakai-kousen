@@ -1,0 +1,42 @@
+{
+  "name": "Charge Foudre",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "physical",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 85,
+    "sure": false,
+    "damage": "13",
+    "effectChance": 20,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "status",
+        "target": "target",
+        "stat": "for",
+        "value": 0,
+        "status": "paralysie",
+        "secondary": true
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>20% de chance de paralyser la cible</p>"
+  },
+  "_id": "6656a1ff1d5c0b5f",
+  "_key": "!items!6656a1ff1d5c0b5f"
+}

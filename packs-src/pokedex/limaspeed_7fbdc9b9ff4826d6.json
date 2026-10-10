@@ -1,0 +1,791 @@
+{
+  "_id": "7fbdc9b9ff4826d6",
+  "_key": "!actors!7fbdc9b9ff4826d6",
+  "name": "Limaspeed",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/617.png",
+  "system": {
+    "species": "Limaspeed",
+    "number": "617",
+    "types": {
+      "primary": "insecte",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 15,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 4,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 40,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 40,
+      "max": 40
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.8m / 23.5kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Exuviateur",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Escargaume (Échange avec Carabing)",
+      "talents": [
+        {
+          "name": "Hydratation",
+          "uuid": "Compendium.hakai-kousen.talents.Item.d0a2b785244ffaee",
+          "hidden": false
+        },
+        {
+          "name": "Glue",
+          "uuid": "Compendium.hakai-kousen.talents.Item.577ef7c015d56649",
+          "hidden": false
+        },
+        {
+          "name": "Délestage",
+          "uuid": "Compendium.hakai-kousen.talents.Item.b44a2e36161d507d",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Sheauriken",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5ad167b069f10190"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vole-Vie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Bombe Acide",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vive-Attaque",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Permuforce",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.78cb58097c7449a3"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Tout ou Rien",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20a300f913c9346e"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Survinsecte",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0d6141207b6c5380"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Méga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39dbe83c4ff69d50"
+        },
+        {
+          "source": "level",
+          "level": "25",
+          "name": "Météores",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6c23e53f7221c798"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Moi d'Abord",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8239cbac1f0122b1"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "level",
+          "level": "37",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Demi-Tour",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1eb405183278af83"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Bourdon",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.414616009ca87091"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Soin",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7ce6fbe698cabe8a"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "9",
+          "name": "Choc Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.021cae73e84c8101"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "28",
+          "name": "Vampirisme",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beedc62844e9ba4d"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "36",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "37",
+          "name": "Tempête de Sable",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84cffef60c852b03"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "52",
+          "name": "Exploforce",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.458ca013e391b8ac"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "83",
+          "name": "Harcèlement",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33cd4ada6c0041fb"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "89",
+          "name": "Demi-Tour",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1eb405183278af83"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Relais",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f60c12fc8e0d69b1"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Encore",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.24845b5f46799b70"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ténacité",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ece157c1ae386f23"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Ruse",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5fdc4d4594d89ca7"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Partage Garde",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6821781b9907afc8"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Lire-Esprit",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7a4404a9c5724b39"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Coud'Boue",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd547a860b523f23"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poursuite",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.318f44fc1e2e14a4"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Picots",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2683d167fc820c58"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Pics Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ac86a6f04610aebd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Suc Digestif",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0819489dfd6c6b15"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Affilage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.16e047af92a7a460"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Sabotage",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84bb15506bf8b73f"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Sheauriken",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 10,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Frappe deux à cinq fois d'affilée en un tour. Le lanceur augmente son Initiative de +10 pendant ce tour</p>"
+      },
+      "_id": "570dba14ed928151",
+      "_key": "!actors.items!7fbdc9b9ff4826d6.570dba14ed928151",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5ad167b069f10190"
+      }
+    },
+    {
+      "name": "Vole-Vie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0.5,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
+      },
+      "_id": "da02a45e2795d15f",
+      "_key": "!actors.items!7fbdc9b9ff4826d6.da02a45e2795d15f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+      }
+    },
+    {
+      "name": "Bombe Acide",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "poison",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "vol",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Volonté de la cible de 2.</p>"
+      },
+      "_id": "80ab99593ca095ab",
+      "_key": "!actors.items!7fbdc9b9ff4826d6.80ab99593ca095ab",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.92a2384b531a4c67"
+      }
+    },
+    {
+      "name": "Reflet",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 3,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "dex",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente la Dextérité pour esquiver du lanceur de 1</p>"
+      },
+      "_id": "a62f290036e01f2c",
+      "_key": "!actors.items!7fbdc9b9ff4826d6.a62f290036e01f2c",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+      }
+    },
+    {
+      "name": "Vive-Attaque",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 10,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur augmente son Initiative de 10 pendant ce tour.</p>"
+      },
+      "_id": "6e469de9ac4f184a",
+      "_key": "!actors.items!7fbdc9b9ff4826d6.6e469de9ac4f184a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.4753fe8d36a4a32a"
+      }
+    },
+    {
+      "name": "Permuforce",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "psy",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur et la cible échangent leurs modifications de Force et de Concentration.</p>"
+      },
+      "_id": "67af2ce867c5cbfd",
+      "_key": "!actors.items!7fbdc9b9ff4826d6.67af2ce867c5cbfd",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.78cb58097c7449a3"
+      }
+    },
+    {
+      "name": "Tout ou Rien",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "combat",
+        "category": "special",
+        "energy": 6,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": true
+        },
+        "description": "<p>Le lanceur est mis KO et inflige à son adversaire autant de dégâts que le lanceur avait Vitalité</p>"
+      },
+      "_id": "dca0e0c9a73b9960",
+      "_key": "!actors.items!7fbdc9b9ff4826d6.dca0e0c9a73b9960",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.20a300f913c9346e"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Limaspeed",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/617.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 61700,
+  "flags": {}
+}

@@ -1,0 +1,896 @@
+{
+  "_id": "d4eb39e828ab9c9c",
+  "_key": "!actors!d4eb39e828ab9c9c",
+  "name": "Séracrawl",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/713.png",
+  "system": {
+    "species": "Séracrawl",
+    "number": "713",
+    "types": {
+      "primary": "glace",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 3,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 19,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 48,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 48,
+      "max": 48
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "2m / 505kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Iceberg",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Grelaçon (niveau 37)",
+      "talents": [
+        {
+          "name": "Tempo Perso",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4ffbf332a1f55ea4",
+          "hidden": false
+        },
+        {
+          "name": "Corps Gel",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4a40fc3c33f2ba8b",
+          "hidden": false
+        },
+        {
+          "name": "Fermeté",
+          "uuid": "Compendium.hakai-kousen.talents.Item.0300ee6b72294754",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Coud'Krâne",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdde731f0b0feb4a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Mâchouille",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Armure",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Charge",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Garde Large",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0b396ac7705a3adf"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Morsure",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Poudreuse",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.63429eaa3f2d7102"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "level",
+          "level": "20",
+          "name": "Affûtage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4725b5c7f14052f0"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Malédiction",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d25e0f961415259"
+        },
+        {
+          "source": "level",
+          "level": "26",
+          "name": "Crocs Givre",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.613cbcf31e398417"
+        },
+        {
+          "source": "level",
+          "level": "30",
+          "name": "Ball'Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be4494e341859a46"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Tour Rapide",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bde285dc4b95bccd"
+        },
+        {
+          "source": "level",
+          "level": "42",
+          "name": "Avalanche",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07f33c8c9fbb6e49"
+        },
+        {
+          "source": "level",
+          "level": "46",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "level",
+          "level": "51",
+          "name": "Soin",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7ce6fbe698cabe8a"
+        },
+        {
+          "source": "level",
+          "level": "56",
+          "name": "Damoclès",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.afefb5eeec61828b"
+        },
+        {
+          "source": "ct",
+          "level": "5",
+          "name": "Hurlement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20f285c61ba73967"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Grêle",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c4ecad46104bed34"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "ct",
+          "level": "14",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "20",
+          "name": "Rune Protect",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a834e01db0d65de0"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "26",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "39",
+          "name": "Tomberoche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3cc0f4e67a1b01b6"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "69",
+          "name": "Poliroche",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1e1e3ed61fe3dbb4"
+        },
+        {
+          "source": "ct",
+          "level": "71",
+          "name": "Lame de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6dd10eb62469a53c"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "78",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Souffle Glacé",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d3b1558c72f7938c"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "94",
+          "name": "Surf",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb0f90fd8d11d621"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Bouclier",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5baf18d479e7cefb"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Brume",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3254e6451b7f6ec7"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Soin",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7ce6fbe698cabe8a"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Voile Miroir",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Après Vous",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4a5e23a7e5427151"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Barrage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1015526d9174b11b"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Tête de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d62299bba462301a"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Trépignement",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36679d455551223"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Surpuissance",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Coud'Krâne",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "13",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "charge",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur se recule au premier tour et frappe la cible au second</p>"
+      },
+      "_id": "830dc95e2ab7d1a2",
+      "_key": "!actors.items!d4eb39e828ab9c9c.830dc95e2ab7d1a2",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.fdde731f0b0feb4a"
+      }
+    },
+    {
+      "name": "Mâchouille",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "8",
+        "effectChance": 20,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "end",
+            "value": -1,
+            "status": "",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>20% de chance de baisser l'Endurance de la cible de 1</p>"
+      },
+      "_id": "26b46d506e43a686",
+      "_key": "!actors.items!d4eb39e828ab9c9c.26b46d506e43a686",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.7bcae277a5a2966a"
+      }
+    },
+    {
+      "name": "Armure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "status",
+        "energy": 1,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 1,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 1</p>"
+      },
+      "_id": "a8337bc688da92f0",
+      "_key": "!actors.items!d4eb39e828ab9c9c.a8337bc688da92f0",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+      }
+    },
+    {
+      "name": "Charge",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 1,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": ""
+      },
+      "_id": "f3333b44b9b1d027",
+      "_key": "!actors.items!d4eb39e828ab9c9c.f3333b44b9b1d027",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.f4b3f1f505c6784d"
+      }
+    },
+    {
+      "name": "Garde Large",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "roche",
+        "category": "status",
+        "energy": 3,
+        "range": "Tous les Alliés",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 30,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Protège toute l'équipe des attaques ciblant toute l'équipe pour un tour. Au premier tour la Précision est de 100%, au second 50% puis 25% puis 12,5% et échoue au 5ème tour. Le lanceur augmente son Initiative de 30 pendant ce tour.</p>"
+      },
+      "_id": "88f05ef02a266e78",
+      "_key": "!actors.items!d4eb39e828ab9c9c.88f05ef02a266e78",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.0b396ac7705a3adf"
+      }
+    },
+    {
+      "name": "Morsure",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "tenebres",
+        "category": "physical",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "6",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "peur",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance d'apeurer la cible</p>"
+      },
+      "_id": "98a6cd1415f3db54",
+      "_key": "!actors.items!d4eb39e828ab9c9c.98a6cd1415f3db54",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.663895aee7f404b4"
+      }
+    },
+    {
+      "name": "Mur de Fer",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "acier",
+        "category": "status",
+        "energy": 3,
+        "range": "Personnel",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "self",
+            "stat": "end",
+            "value": 2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Augmente l'Endurance du lanceur de 2</p>"
+      },
+      "_id": "2c64fbb4f6b3c92b",
+      "_key": "!actors.items!d4eb39e828ab9c9c.2c64fbb4f6b3c92b",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+      }
+    },
+    {
+      "name": "Poudreuse",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "glace",
+        "category": "special",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "4",
+        "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "gel",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>10% de chance de geler la cible</p>"
+      },
+      "_id": "4c6203e6ff21bcfb",
+      "_key": "!actors.items!d4eb39e828ab9c9c.4c6203e6ff21bcfb",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.63429eaa3f2d7102"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Séracrawl",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/713.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d0c35dc92fc42a2f",
+  "sort": 71300,
+  "flags": {}
+}

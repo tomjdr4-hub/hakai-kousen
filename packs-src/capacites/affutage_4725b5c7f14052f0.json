@@ -1,0 +1,50 @@
+{
+  "name": "Affûtage",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "normal",
+    "category": "status",
+    "energy": 1,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "accuracy",
+        "target": "self",
+        "stat": "for",
+        "value": 10,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "for",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente la Force du lanceur de 1 et sa Précision de 10%.</p>"
+  },
+  "_id": "4725b5c7f14052f0",
+  "_key": "!items!4725b5c7f14052f0"
+}

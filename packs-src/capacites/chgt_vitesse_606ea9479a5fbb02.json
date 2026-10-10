@@ -1,0 +1,42 @@
+{
+  "name": "Chgt Vitesse",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "acier",
+    "category": "status",
+    "energy": 3,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "self",
+        "stat": "for",
+        "value": 1,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Augmente la Force de lanceur de 1 et sa Dextérité de 2.</p>"
+  },
+  "_id": "606ea9479a5fbb02",
+  "_key": "!items!606ea9479a5fbb02"
+}

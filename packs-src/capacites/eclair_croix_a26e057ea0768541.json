@@ -1,0 +1,33 @@
+{
+  "name": "Éclair Croix",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "electrik",
+    "category": "physical",
+    "energy": 6,
+    "range": "Rayon",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>La puissance de l'attaque est doublé si Flamme croix a été utilisé par le lanceur au tour précédent.</p>"
+  },
+  "_id": "a26e057ea0768541",
+  "_key": "!items!a26e057ea0768541"
+}

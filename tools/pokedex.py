@@ -69,7 +69,7 @@ def get(path, binary=False):
     os.makedirs(CACHE, exist_ok=True)
     fp = os.path.join(CACHE, cache_key(path))
     if not os.path.exists(fp):
-        url = BASE + urllib.parse.quote(urllib.parse.unquote(path), safe="/%")
+        url = BASE + urllib.parse.quote(urllib.parse.unquote(path), safe="/")
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
             data = r.read()
         with open(fp, "wb") as f:

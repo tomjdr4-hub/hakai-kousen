@@ -1,0 +1,33 @@
+{
+  "name": "Sheauriken",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "eau",
+    "category": "special",
+    "energy": 2,
+    "range": "Cible",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "2",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 10,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Frappe deux à cinq fois d'affilée en un tour. Le lanceur augmente son Initiative de +10 pendant ce tour</p>"
+  },
+  "_id": "5ad167b069f10190",
+  "_key": "!items!5ad167b069f10190"
+}

@@ -1,0 +1,529 @@
+{
+  "_id": "5b1159549ea29ffb",
+  "_key": "!actors!5b1159549ea29ffb",
+  "name": "Sorbébé",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/582.png",
+  "system": {
+    "species": "Sorbébé",
+    "number": "582",
+    "types": {
+      "primary": "glace",
+      "secondary": ""
+    },
+    "stats": {
+      "dex": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 5,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 18,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 18,
+      "max": 18
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.4m / 5.7kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Poudreuse",
+      "ratio": "4♂:4♀",
+      "evolutions": "Évolutions : Sorboul (niveau 35)",
+      "talents": [
+        {
+          "name": "Corps Gel",
+          "uuid": "Compendium.hakai-kousen.talents.Item.4a40fc3c33f2ba8b",
+          "hidden": false
+        },
+        {
+          "name": "Rideau Neige",
+          "uuid": "Compendium.hakai-kousen.talents.Item.a5fb37d234746c07",
+          "hidden": false
+        },
+        {
+          "name": "Armurouillée",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2609cb8cc2f3bfc1",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Stalactite",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.03d4f021d2676e00"
+        },
+        {
+          "source": "level",
+          "level": "4",
+          "name": "Armure",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5f9206b992d41634"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Étonnement",
+          "type": "spectre",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.39fac2a2d2151320"
+        },
+        {
+          "source": "level",
+          "level": "10",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "level",
+          "level": "13",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "level",
+          "level": "16",
+          "name": "Brume",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3254e6451b7f6ec7"
+        },
+        {
+          "source": "level",
+          "level": "19",
+          "name": "Avalanche",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.07f33c8c9fbb6e49"
+        },
+        {
+          "source": "level",
+          "level": "22",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "level",
+          "level": "26",
+          "name": "Miroi-Tir",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.869566ad6f7dfec0"
+        },
+        {
+          "source": "level",
+          "level": "31",
+          "name": "Acidarmure",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d5c0794536e0093"
+        },
+        {
+          "source": "level",
+          "level": "35",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Grêle",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c4ecad46104bed34"
+        },
+        {
+          "source": "level",
+          "level": "44",
+          "name": "Voile Miroir",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c9da55cb9059cf6"
+        },
+        {
+          "source": "level",
+          "level": "49",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "level",
+          "level": "53",
+          "name": "Glaciation",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.16024f249a3db07f"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "7",
+          "name": "Grêle",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c4ecad46104bed34"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "12",
+          "name": "Provoc",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3f9efc344493bb76"
+        },
+        {
+          "source": "ct",
+          "level": "13",
+          "name": "Laser Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.38abfa88c9eb0fa5"
+        },
+        {
+          "source": "ct",
+          "level": "14",
+          "name": "Blizzard",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9e974e9fdd3f7ff0"
+        },
+        {
+          "source": "ct",
+          "level": "16",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "64",
+          "name": "Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9a0726d6f8467c19"
+        },
+        {
+          "source": "ct",
+          "level": "79",
+          "name": "Souffle Glacé",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d3b1558c72f7938c"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Allègement",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.462f6226b4d90f64"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Éclats Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c63e7f8c26151f2"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Possessif",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7026c410e6ac9943"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Vol Magnétik",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8e2a5a895f3e42eb"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Don Naturel",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a1ef77f5a65e0dff"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poudreuse",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.63429eaa3f2d7102"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Interversion",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6bc7117abaf76f1f"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vent Glace",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4344ac76a1fc0b54"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Mur de Fer",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a65a6f82ec5e8275"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Reflet Magik",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7897bcd1958e3c1e"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vol Magnétik",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8e2a5a895f3e42eb"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Brouhaha",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.06d879bbc2323dbf"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Stalactite",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "glace",
+        "category": "physical",
+        "energy": 1,
+        "range": "Cibles",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "3",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur fait 5 attaques sur jusqu'à 5 cibles</p>"
+      },
+      "_id": "b6e1d5ce9b55907a",
+      "_key": "!actors.items!5b1159549ea29ffb.b6e1d5ce9b55907a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.03d4f021d2676e00"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Sorbébé",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/582.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 58200,
+  "flags": {}
+}

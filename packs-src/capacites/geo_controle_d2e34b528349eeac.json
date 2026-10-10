@@ -1,0 +1,58 @@
+{
+  "name": "Géo-Contrôle",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "fee",
+    "category": "status",
+    "energy": 3,
+    "range": "Personnel",
+    "accuracy": 0,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "dex",
+        "value": 2,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "con",
+        "value": 2,
+        "status": "",
+        "secondary": false
+      },
+      {
+        "kind": "stat",
+        "target": "target",
+        "stat": "vol",
+        "value": 2,
+        "status": "",
+        "secondary": false
+      }
+    ],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Le lanceur absorbe de l'énergie au premier tour et augmente sa Concentration, sa Volonté et sa Dextérité de 2 au second tour</p>"
+  },
+  "_id": "d2e34b528349eeac",
+  "_key": "!items!d2e34b528349eeac"
+}

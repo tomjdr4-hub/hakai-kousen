@@ -1,0 +1,644 @@
+{
+  "_id": "6bdacca822367830",
+  "_key": "!actors!6bdacca822367830",
+  "name": "Volcanion",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/721.png",
+  "system": {
+    "species": "Volcanion",
+    "number": "721",
+    "types": {
+      "primary": "eau",
+      "secondary": "feu"
+    },
+    "stats": {
+      "dex": {
+        "base": 7,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 11,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 13,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 12,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 9,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 40,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 40,
+      "max": 40
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "1.7m / 195kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Vapeur",
+      "ratio": "Asexué",
+      "evolutions": "",
+      "talents": [
+        {
+          "name": "Absorb Eau",
+          "uuid": "Compendium.hakai-kousen.talents.Item.10482fdca9fd524a",
+          "hidden": false
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Boutefeu",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.acc7f29ca193386e"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Jet de Vapeur",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1ca943295eb76e2e"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Bélier",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+        },
+        {
+          "source": "level",
+          "level": "8",
+          "name": "Brume",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.3254e6451b7f6ec7"
+        },
+        {
+          "source": "level",
+          "level": "11",
+          "name": "Buée Noire",
+          "type": "glace",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e33719169a65760d"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Nitrocharge",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a4e30ef3847b368f"
+        },
+        {
+          "source": "level",
+          "level": "21",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        },
+        {
+          "source": "level",
+          "level": "28",
+          "name": "Écrasement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6ca336281faa2882"
+        },
+        {
+          "source": "level",
+          "level": "32",
+          "name": "Ébullition",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7b96ba9f323457f4"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Ball'Météo",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be2572c611ebba5b"
+        },
+        {
+          "source": "level",
+          "level": "46",
+          "name": "Plaquage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d59fe81c8ee75cb7"
+        },
+        {
+          "source": "level",
+          "level": "50",
+          "name": "Hydrocanon",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8c7e117cde90b4dd"
+        },
+        {
+          "source": "level",
+          "level": "65",
+          "name": "Surchauffe",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5e2dcc58374aa603"
+        },
+        {
+          "source": "level",
+          "level": "76",
+          "name": "Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9a0726d6f8467c19"
+        },
+        {
+          "source": "ct",
+          "level": "5",
+          "name": "Hurlement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.20f285c61ba73967"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "11",
+          "name": "Zénith",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e0a394cca1397490"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "22",
+          "name": "Lance-Soleil",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c759fd91c41cbfdd"
+        },
+        {
+          "source": "ct",
+          "level": "23",
+          "name": "Anti-Air",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9b47d19818e2b0cf"
+        },
+        {
+          "source": "ct",
+          "level": "26",
+          "name": "Séisme",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bcc571f72950fbdc"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "31",
+          "name": "Casse-Brique",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.cb3dd63cba13de67"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "34",
+          "name": "Cradovague",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.2634ec09729e249b"
+        },
+        {
+          "source": "ct",
+          "level": "35",
+          "name": "Lance-Flammes",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fa018f1ea089d75e"
+        },
+        {
+          "source": "ct",
+          "level": "36",
+          "name": "Bombe Beurk",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c7c7648b64d2c367"
+        },
+        {
+          "source": "ct",
+          "level": "37",
+          "name": "Tempête de Sable",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.84cffef60c852b03"
+        },
+        {
+          "source": "ct",
+          "level": "38",
+          "name": "Déflagration",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.97bfaeb3458f3176"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "43",
+          "name": "Nitrocharge",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a4e30ef3847b368f"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "50",
+          "name": "Surchauffe",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5e2dcc58374aa603"
+        },
+        {
+          "source": "ct",
+          "level": "52",
+          "name": "Exploforce",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.458ca013e391b8ac"
+        },
+        {
+          "source": "ct",
+          "level": "55",
+          "name": "Ébullition",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7b96ba9f323457f4"
+        },
+        {
+          "source": "ct",
+          "level": "56",
+          "name": "Dégommage",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4cc71c597f5635fb"
+        },
+        {
+          "source": "ct",
+          "level": "61",
+          "name": "Feu Follet",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bae18f42ac954cc7"
+        },
+        {
+          "source": "ct",
+          "level": "64",
+          "name": "Explosion",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9a0726d6f8467c19"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "71",
+          "name": "Lame de Roc",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6dd10eb62469a53c"
+        },
+        {
+          "source": "ct",
+          "level": "74",
+          "name": "Gyroballe",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.a5f970259eaa79ad"
+        },
+        {
+          "source": "ct",
+          "level": "78",
+          "name": "Piétisol",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.325d9dc73f3399cd"
+        },
+        {
+          "source": "ct",
+          "level": "80",
+          "name": "Éboulement",
+          "type": "roche",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.86969fc856c1a464"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "91",
+          "name": "Luminocanon",
+          "type": "acier",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1c36a3299ee65768"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Anti-Brume",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.98cf36c1ed2a0c58"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Aqua-Brèche",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.dc73336988b9f739"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Canicule",
+          "type": "feu",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7c243ff9aaff5ac7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Surpuissance",
+          "type": "combat",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.352e11eed8353eb2"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Telluriforce",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.c06ec355de5d11ae"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Trépignement",
+          "type": "sol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d36679d455551223"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vibraqua",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1d27b0b68b545db7"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Boutefeu",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "feu",
+        "category": "physical",
+        "energy": 3,
+        "range": "Rayon",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "12",
+        "effectChance": 10,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "brulure",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0.1,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Une charge qui fait perdre un dixième de la Vitalité du lanceur à chaque coup infligé. 10 % de chance de brûler la cible</p>"
+      },
+      "_id": "40c79928cebfd662",
+      "_key": "!actors.items!6bdacca822367830.40c79928cebfd662",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.acc7f29ca193386e"
+      }
+    },
+    {
+      "name": "Jet de Vapeur",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "eau",
+        "category": "special",
+        "energy": 6,
+        "range": "Cible",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "11",
+        "effectChance": 30,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "brulure",
+            "secondary": true
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>30% de chance de brûler la cible.</p>"
+      },
+      "_id": "69b67efb3b3dd43f",
+      "_key": "!actors.items!6bdacca822367830.69b67efb3b3dd43f",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.1ca943295eb76e2e"
+      }
+    },
+    {
+      "name": "Bélier",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "normal",
+        "category": "physical",
+        "energy": 2,
+        "range": "Rayon",
+        "accuracy": 85,
+        "sure": false,
+        "damage": "9",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0.25,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur subit 1/4 des dégâts infligés en tant que dégâts de recul. Si le lanceur possède Tête de Roc il ne subit pas les dégâts de recul</p>"
+      },
+      "_id": "1729cafefd4f70ec",
+      "_key": "!actors.items!6bdacca822367830.1729cafefd4f70ec",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.092cb133b3fe360e"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Volcanion",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/721.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "d0c35dc92fc42a2f",
+  "sort": 72100,
+  "flags": {}
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Nuée de Poudre",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "insecte",
+    "category": "physical",
+    "energy": 2,
+    "range": "Zone",
+    "accuracy": 100,
+    "sure": false,
+    "damage": "",
+    "effectChance": 0,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>Si un ennemie utilise une capacité de type Feu lors du même tour, le nuage explose et lui inflige 25% de sa Vitalité max.</p>"
+  },
+  "_id": "d01576af0f0ea3c0",
+  "_key": "!items!d01576af0f0ea3c0"
+}

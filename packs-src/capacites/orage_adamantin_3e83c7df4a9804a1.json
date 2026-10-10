@@ -1,0 +1,33 @@
+{
+  "name": "Orage Adamantin",
+  "type": "attack",
+  "img": "icons/svg/explosion.svg",
+  "system": {
+    "type": "roche",
+    "category": "physical",
+    "energy": 6,
+    "range": "Zone",
+    "accuracy": 95,
+    "sure": false,
+    "damage": "10",
+    "effectChance": 10,
+    "priority": 0,
+    "initiativeBonus": 0,
+    "recharge": "",
+    "xpCost": 0,
+    "effects": [],
+    "special": {
+      "hitBonus": 0,
+      "recoilDamage": 0,
+      "recoilVit": 0,
+      "drain": 0,
+      "hits": "",
+      "charge": "",
+      "ohko": false,
+      "selfKO": false
+    },
+    "description": "<p>10% de chance de baisser l'Endurance du lanceur</p>"
+  },
+  "_id": "3e83c7df4a9804a1",
+  "_key": "!items!3e83c7df4a9804a1"
+}

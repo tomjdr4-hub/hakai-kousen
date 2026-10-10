@@ -1,0 +1,732 @@
+{
+  "_id": "a7fc044be5911730",
+  "_key": "!actors!a7fc044be5911730",
+  "name": "Mygavolt",
+  "type": "pokemon",
+  "img": "systems/hakai-kousen/assets/pokemon/596.png",
+  "system": {
+    "species": "Mygavolt",
+    "number": "596",
+    "types": {
+      "primary": "electrik",
+      "secondary": "insecte"
+    },
+    "stats": {
+      "dex": {
+        "base": 11,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "for": {
+        "base": 8,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "con": {
+        "base": 10,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "end": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vol": {
+        "base": 6,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "vit": {
+        "base": 35,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      },
+      "ene": {
+        "base": 50,
+        "iv": 0,
+        "ev": 0,
+        "temp": 0
+      }
+    },
+    "vit": {
+      "value": 35,
+      "max": 35
+    },
+    "ene": {
+      "value": 50,
+      "max": 50
+    },
+    "details": {
+      "heightWeight": "0.8m / 14.3kg"
+    },
+    "speciesData": {
+      "category": "Pokémon Araclectrik",
+      "ratio": "4♂:4♀",
+      "evolutions": "Pré-évolution : Statitik (niveau 36)",
+      "talents": [
+        {
+          "name": "Œil Composé",
+          "uuid": "Compendium.hakai-kousen.talents.Item.cd5c759348145a25",
+          "hidden": false
+        },
+        {
+          "name": "Tension",
+          "uuid": "Compendium.hakai-kousen.talents.Item.2345c7d8f43f2e71",
+          "hidden": false
+        },
+        {
+          "name": "Essaim",
+          "uuid": "Compendium.hakai-kousen.talents.Item.48072770a686c860",
+          "hidden": true
+        }
+      ],
+      "learnset": [
+        {
+          "source": "level",
+          "level": "Évolution",
+          "name": "Toile Gluante",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9509258f6db6d18d"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Sécrétion",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.534bf0fcc049f103"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Toile",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.828667cdccbc02b2"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Vole-Vie",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+        },
+        {
+          "source": "level",
+          "level": "Départ",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "level",
+          "level": "7",
+          "name": "Grincement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7fc531c4ce4ae99d"
+        },
+        {
+          "source": "level",
+          "level": "12",
+          "name": "Taillade",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.971062c52ee8e597"
+        },
+        {
+          "source": "level",
+          "level": "15",
+          "name": "Toile Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b2e744ac5a3faff7"
+        },
+        {
+          "source": "level",
+          "level": "18",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "level",
+          "level": "23",
+          "name": "Suc Digestif",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0819489dfd6c6b15"
+        },
+        {
+          "source": "level",
+          "level": "26",
+          "name": "Tranche",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.1402f0af1eda8d1a"
+        },
+        {
+          "source": "level",
+          "level": "29",
+          "name": "Boule Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d8167dc2b7baffa"
+        },
+        {
+          "source": "level",
+          "level": "34",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "level",
+          "level": "40",
+          "name": "Hâte",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b9c1705cc8fa76c0"
+        },
+        {
+          "source": "level",
+          "level": "46",
+          "name": "Coup Bas",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b29cb93051fe05f0"
+        },
+        {
+          "source": "level",
+          "level": "54",
+          "name": "Coup d'Jus",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f5fc13ca9d463898"
+        },
+        {
+          "source": "level",
+          "level": "60",
+          "name": "Bourdon",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.414616009ca87091"
+        },
+        {
+          "source": "ct",
+          "level": "6",
+          "name": "Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beffccd699ce663f"
+        },
+        {
+          "source": "ct",
+          "level": "10",
+          "name": "Puissance Cachée",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.009199d03d31818a"
+        },
+        {
+          "source": "ct",
+          "level": "15",
+          "name": "Ultralaser",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.db9356073968f021"
+        },
+        {
+          "source": "ct",
+          "level": "16",
+          "name": "Mur Lumière",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ff89a73558e4cce4"
+        },
+        {
+          "source": "ct",
+          "level": "17",
+          "name": "Abri",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d73038a96f056933"
+        },
+        {
+          "source": "ct",
+          "level": "18",
+          "name": "Danse Pluie",
+          "type": "eau",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0935f3c29882698b"
+        },
+        {
+          "source": "ct",
+          "level": "21",
+          "name": "Frustration",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f6c8606da61e00ce"
+        },
+        {
+          "source": "ct",
+          "level": "24",
+          "name": "Tonnerre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.50acc837a4bc6bf5"
+        },
+        {
+          "source": "ct",
+          "level": "25",
+          "name": "Fatal-Foudre",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.10f7e4a09629bf65"
+        },
+        {
+          "source": "ct",
+          "level": "27",
+          "name": "Retour",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d524e7f941bd6a9f"
+        },
+        {
+          "source": "ct",
+          "level": "28",
+          "name": "Vampirisme",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.beedc62844e9ba4d"
+        },
+        {
+          "source": "ct",
+          "level": "32",
+          "name": "Reflet",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e3da59406188e086"
+        },
+        {
+          "source": "ct",
+          "level": "42",
+          "name": "Façade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.17866cab800923b2"
+        },
+        {
+          "source": "ct",
+          "level": "44",
+          "name": "Repos",
+          "type": "psy",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.d46714c9ef6a8e36"
+        },
+        {
+          "source": "ct",
+          "level": "45",
+          "name": "Attraction",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.62629fc27f4f041d"
+        },
+        {
+          "source": "ct",
+          "level": "46",
+          "name": "Larcin",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eb080392b1e63836"
+        },
+        {
+          "source": "ct",
+          "level": "48",
+          "name": "Chant Canon",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8d851d6921616dc3"
+        },
+        {
+          "source": "ct",
+          "level": "53",
+          "name": "Éco-Sphère",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29c75b0df2cd020f"
+        },
+        {
+          "source": "ct",
+          "level": "57",
+          "name": "Rayon Chargé",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.4d0a5a407fb90519"
+        },
+        {
+          "source": "ct",
+          "level": "68",
+          "name": "Giga Impact",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.7d882bb081c56114"
+        },
+        {
+          "source": "ct",
+          "level": "72",
+          "name": "Change Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6578da6e5b0028a5"
+        },
+        {
+          "source": "ct",
+          "level": "73",
+          "name": "Cage Éclair",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+        },
+        {
+          "source": "ct",
+          "level": "81",
+          "name": "Plaie Croix",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fd32493cc68f4446"
+        },
+        {
+          "source": "ct",
+          "level": "83",
+          "name": "Harcèlement",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.33cd4ada6c0041fb"
+        },
+        {
+          "source": "ct",
+          "level": "84",
+          "name": "Direct Toxik",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b0d2285254240f13"
+        },
+        {
+          "source": "ct",
+          "level": "87",
+          "name": "Vantardise",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5834a1d734136e59"
+        },
+        {
+          "source": "ct",
+          "level": "88",
+          "name": "Blabla Dodo",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f4339c3abd7d34b7"
+        },
+        {
+          "source": "ct",
+          "level": "90",
+          "name": "Clonage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.f80c12a14cc90bd4"
+        },
+        {
+          "source": "ct",
+          "level": "93",
+          "name": "Éclair Fou",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.757870359bce05b0"
+        },
+        {
+          "source": "ct",
+          "level": "100",
+          "name": "Confidence",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.40dbb341a8c9b76b"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Camouflage",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5aedc07a8a977480"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poison Croix",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.be7f935df560d09f"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Entrave",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5988a1e672bd9376"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Feinte",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.9c1f2d36776b7dba"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Dard-Nuée",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.eeb7e02790fef89e"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Dard-Venin",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.494ac7385d7ec965"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Escalade",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.6ea605bdccff556a"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Poursuite",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.318f44fc1e2e14a4"
+        },
+        {
+          "source": "egg",
+          "level": "Œuf",
+          "name": "Furie-Bond",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.93d9c4080d2549df"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rebond",
+          "type": "vol",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e62d53f88d10abb0"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Piqûre",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.bf4485e6f12ac826"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Toile Élek",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.b2e744ac5a3faff7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Suc Digestif",
+          "type": "poison",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.0819489dfd6c6b15"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Giga-Sangsue",
+          "type": "plante",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.e7bab6f319ec58a7"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Vol Magnétik",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.8e2a5a895f3e42eb"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Onde de Choc",
+          "type": "electrik",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.ca02127d0dab7dfd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Rayon Signal",
+          "type": "insecte",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.5345176dadcf0214"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Ronflement",
+          "type": "normal",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.fdf80d39294a5cbd"
+        },
+        {
+          "source": "tutor",
+          "level": "Tuteur",
+          "name": "Exécu-Son",
+          "type": "tenebres",
+          "uuid": "Compendium.hakai-kousen.capacites.Item.29cc02b745d3ebf6"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Sécrétion",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "status",
+        "energy": 1,
+        "range": "Cible",
+        "accuracy": 95,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "target",
+            "stat": "dex",
+            "value": -2,
+            "status": "",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Baisse la Dextérité de la cible de 2</p>"
+      },
+      "_id": "9ba380f1aeff88cf",
+      "_key": "!actors.items!a7fc044be5911730.9ba380f1aeff88cf",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.534bf0fcc049f103"
+      }
+    },
+    {
+      "name": "Toile",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "insecte",
+        "category": "status",
+        "energy": 3,
+        "range": "Cible",
+        "accuracy": 0,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Crée une toile empêchant l'adversaire de bouger.</p>"
+      },
+      "_id": "3cfcc92c3c4bf483",
+      "_key": "!actors.items!a7fc044be5911730.3cfcc92c3c4bf483",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.828667cdccbc02b2"
+      }
+    },
+    {
+      "name": "Vole-Vie",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "plante",
+        "category": "special",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 100,
+        "sure": false,
+        "damage": "2",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0.5,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Le lanceur récupère la moitié de la Vitalité qu'a perdu la cible.</p>"
+      },
+      "_id": "16fe45832947c60a",
+      "_key": "!actors.items!a7fc044be5911730.16fe45832947c60a",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.b904b94cf45a053a"
+      }
+    },
+    {
+      "name": "Cage Éclair",
+      "type": "attack",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "type": "electrik",
+        "category": "status",
+        "energy": 2,
+        "range": "Cible",
+        "accuracy": 90,
+        "sure": false,
+        "damage": "",
+        "effectChance": 0,
+        "priority": 0,
+        "initiativeBonus": 0,
+        "recharge": "",
+        "xpCost": 0,
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "paralysie",
+            "secondary": false
+          }
+        ],
+        "special": {
+          "hitBonus": 0,
+          "recoilDamage": 0,
+          "recoilVit": 0,
+          "drain": 0,
+          "hits": "",
+          "charge": "",
+          "ohko": false,
+          "selfKO": false
+        },
+        "description": "<p>Paralyse la cible sauf si celle-ci est déjà victime d'un problème de statut majeur ou si elle se trouve derrière un clone.</p>"
+      },
+      "_id": "1426b571459801a6",
+      "_key": "!actors.items!a7fc044be5911730.1426b571459801a6",
+      "_stats": {
+        "compendiumSource": "Compendium.hakai-kousen.capacites.Item.068e974ee6f2bfed"
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Mygavolt",
+    "texture": {
+      "src": "systems/hakai-kousen/assets/pokemon/596.png"
+    },
+    "actorLink": false,
+    "disposition": 0
+  },
+  "folder": "5a4d01aaf300cef0",
+  "sort": 59600,
+  "flags": {}
+}

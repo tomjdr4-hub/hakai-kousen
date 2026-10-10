@@ -94,6 +94,14 @@ registerCombatPanelHooks();
 registerProgressionHooks();
 Hooks.once("ready", registerSocket);
 
+/** Fiches créées avant le suivi du total d'XP : le total est porté au moins à l'XP disponible. */
+Hooks.once("ready", async () => {
+  if ( !game.user.isActiveGM ) return;
+  const updates = game.actors.filter(a => a.system.xp && (a.system.xp.total < a.system.xp.value))
+    .map(a => ({ _id: a.id, "system.xp.total": a.system.xp.value }));
+  if ( updates.length ) await Actor.implementation.updateDocuments(updates);
+});
+
 /** Onglet Acteurs : création de Dresseur pour tous, outils du MJ (rencontres, combats…). */
 Hooks.on("renderActorDirectory", (app, html) => {
   const root = html instanceof HTMLElement ? html : html[0];

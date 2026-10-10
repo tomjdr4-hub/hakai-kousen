@@ -7,7 +7,8 @@
       <div class="header-grid">
         <label>Joueur <input type="text" name="system.details.player" value="{{system.details.player}}"></label>
         <label>Vocation <input type="text" name="system.details.vocation" value="{{system.details.vocation}}"></label>
-        <label>XP Dresseur <input type="number" name="system.xp.value" value="{{system.xp.value}}"></label>
+        <label data-tooltip="XP disponible ; total gagné depuis le début : {{system.xp.total}}">XP Dresseur <span class="hint">(total {{system.xp.total}})</span>
+          <input type="number" name="system.xp.value" value="{{system.xp.value}}" min="0"></label>
         <label>Argent (₽) <input type="number" name="system.money" value="{{system.money}}"></label>
       </div>
       <div class="resource vit">

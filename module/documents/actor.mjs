@@ -14,6 +14,25 @@ export class HKActor extends Actor {
   }
 
   /**
+   * XP cumulée : toute hausse de l'XP disponible (combat, saisie sur la fiche, récompense) s'ajoute au total ;
+   * une dépense ne le diminue pas. Le total reste au moins égal à l'XP disponible.
+   * @override
+   */
+  async _preUpdate(changes, options, user) {
+    if ( (await super._preUpdate(changes, options, user)) === false ) return false;
+    const get = key => changes[key] ?? foundry.utils.getProperty(changes, key);
+    const value = get("system.xp.value");
+    if ( (value === undefined) || !this.system.xp ) return;
+    const current = this.system.xp;
+    const explicit = get("system.xp.total");
+    let total = explicit ?? current.total;
+    if ( (explicit === undefined) && (value > current.value) ) total += value - current.value;
+    total = Math.max(total, value);
+    if ( "system.xp.value" in changes ) changes["system.xp.total"] = total;
+    else foundry.utils.setProperty(changes, "system.xp.total", total);
+  }
+
+  /**
    * Repos long (4.18) : restaure la moitié de la VIT et de l'ENE maximales.
    */
   async longRest() {

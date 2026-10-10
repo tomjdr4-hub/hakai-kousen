@@ -208,7 +208,7 @@ export async function endCombatWithXP(combat) {
   for ( const uuid of data.uuids ) {
     const actor = await fromUuid(uuid);
     if ( !actor ) continue;
-    await actor.update({ "system.xp.value": actor.system.xp.value + data.amount, "system.xp.total": actor.system.xp.total + data.amount });
+    await actor.update({ "system.xp.value": actor.system.xp.value + data.amount });
     names.push(actor.name);
   }
   await ChatMessage.implementation.create({

@@ -92,6 +92,13 @@ def find_header(table):
     return None, []
 
 
+def is_note(name):
+    """Encadré ou intertitre lu comme une ligne de tableau : titre en capitales, ou phrase entière."""
+    if name.isupper() and len(name) > 3:
+        return True
+    return len(name) > 45 or name.endswith(".") or name[0].islower()
+
+
 def price(text):
     digits = re.sub(r"[^\d]", "", text or "")
     return int(digits) if digits and "₽" in (text or "") else 0
@@ -149,7 +156,7 @@ def main(pdf):
         price_col = next((h for h in header if h in PRICE_COLS), None)
         for row in rows:
             name = row[idx[name_col]].strip() if idx[name_col] < len(row) else ""
-            if not name or len(name) < 3 or (name.isupper() and len(name) > 12):
+            if not name or len(name) < 3 or is_note(name):
                 continue
             effect = row[idx[effect_col]].strip() if effect_col and idx[effect_col] < len(row) else ""
             extras = [f"<strong>{h}</strong> : {html.escape(row[i], quote=False)}" for h, i in idx.items()

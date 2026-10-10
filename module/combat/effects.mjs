@@ -200,6 +200,8 @@ export async function applyEffect(actor, effect) {
     if ( current ) return ui.notifications.warn(`${actor.name} souffre déjà d'un problème de statut majeur : ${current[1].label}.`);
   }
   await actor.toggleStatusEffect(effect.status, { active: true });
+  // Vampigraine : le lanceur récupère la VIT drainée à chaque tour de la cible.
+  if ( (effect.status === "vampigraine") && effect.source ) await actor.setFlag("hakai-kousen", "vampigraineSource", effect.source);
   await syncCounters(actor, effect.status, true);
   ui.notifications.info(`${actor.name} : ${status.label}.`);
 }

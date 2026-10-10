@@ -309,7 +309,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
       anySecondary ||= secondary;
       // Effets sur la cible : un bouton par effet.
       const effects = targetEffects.filter(e => !e.secondary || secondary);
-      if ( target ) lines.push(...effects.map(e => effectButton(target, token.name, e)));
+      if ( target ) lines.push(...effects.map(e => effectButton(target, token.name, e, actor)));
       else if ( effects.length ) lines.push(`<p class="hk-detail">Effets sur la cible : ${effects.map(effectLabel).join(", ")}</p>`);
     }
 
@@ -361,8 +361,11 @@ async function tryDodge(token, target, atk, defense) {
 }
 
 /** Bouton d'application d'un effet de capacité sur un acteur. */
-function effectButton(actor, name, effect) {
-  const data = encodeURIComponent(JSON.stringify({ kind: effect.kind, stat: effect.stat, value: effect.value, status: effect.status }));
+function effectButton(actor, name, effect, source = null) {
+  // Le lanceur est mémorisé pour les états qui lui profitent (Vampigraine).
+  const data = encodeURIComponent(JSON.stringify({
+    kind: effect.kind, stat: effect.stat, value: effect.value, status: effect.status, source: source?.uuid ?? null
+  }));
   const icon = effect.kind === "status" ? "fa-skull-crossbones" : (effect.value > 0 ? "fa-arrow-up" : "fa-arrow-down");
   return `<button type="button" class="hk-apply" data-hk-action="applyEffect" data-uuid="${actor.uuid}" data-effect="${data}">
     <i class="fa-solid ${icon}"></i> Appliquer ${effectLabel(effect)} à ${name}</button>`;

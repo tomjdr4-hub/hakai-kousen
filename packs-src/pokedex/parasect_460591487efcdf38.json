@@ -721,7 +721,16 @@
         "priority": 0,
         "initiativeBonus": 0,
         "xpCost": 0,
-        "effects": [],
+        "effects": [
+          {
+            "kind": "status",
+            "target": "target",
+            "stat": "for",
+            "value": 0,
+            "status": "vampigraine",
+            "secondary": false
+          }
+        ],
         "description": "<p>Plante une graine qui draine 1/8 de la Vitalité de la cible vers le lanceur chaque tour</p>"
       },
       "_id": "4d8e0bf33f2cc270",

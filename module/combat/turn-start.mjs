@@ -53,7 +53,15 @@ export async function processTurnStart(combat) {
   if ( actor.statuses.has("vampigraine") ) {
     const amount = Math.max(Math.floor(max / 8), 1);
     await hurt(amount, "Vampigraine");
-    lines.push(`<em>Le lanceur de Vampigraine récupère ${amount} VIT.</em>`);
+    // Le lanceur, s'il est encore en état de combattre, récupère la VIT drainée (sans dépasser son maximum).
+    const source = await fromUuid(actor.getFlag(SCOPE, "vampigraineSource") ?? "");
+    const vit = source?.system?.vit;
+    if ( vit && (vit.value > 0) ) {
+      const healed = Math.min(vit.value + amount, vit.max);
+      if ( healed > vit.value ) await source.update({ "system.vit.value": healed });
+      lines.push(`${source.name} récupère ${healed - vit.value} VIT (Vampigraine).`);
+    }
+    else lines.push(`<em>Le lanceur de Vampigraine récupère ${amount} VIT.</em>`);
   }
 
   if ( actor.system.vit.value <= 0 ) return report(combatant, lines, "KO");

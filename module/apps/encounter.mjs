@@ -98,7 +98,15 @@ export async function rollEncounter() {
   const found = findAllSpecies(text, index);
   const event = EVENT.test(text);
   if ( !found.length ) {
-    return ui.notifications.info(event ? "Événement : à mettre en scène (aucune espèce à générer)." : "Aucune espèce du Pokédex reconnue dans ce résultat.");
+    // Événement sans espèce, ou espèce absente du Pokédex : le MJ est prévenu clairement.
+    const message = event ? "Événement à mettre en scène : aucune espèce à générer."
+      : `« ${text} » : cette espèce n'est pas dans le compendium Pokédex (${index.size ?? index.length} fiches). Créez-la à la main ou choisissez une autre zone.`;
+    return DialogV2.prompt({
+      window: { title: "Rencontre", icon: "fa-solid fa-dice-d20" },
+      content: `<p><strong>Résultat :</strong> ${text}</p><p>${message}</p>`,
+      ok: { label: "Compris" },
+      rejectClose: false
+    });
   }
   const dice = text.match(/(\d*)\s*d\s*(\d+)/i);
   let count = 1;

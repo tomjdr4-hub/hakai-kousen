@@ -100,11 +100,11 @@ Hooks.on("renderActorDirectory", (app, html) => {
   if ( root.querySelector(".hk-directory-tools") ) return;
   const tools = document.createElement("div");
   tools.className = "hk-directory-tools";
-  tools.innerHTML = `<button type="button" data-hk-tool="encounter"><i class="fa-solid fa-dice-d20"></i> Rencontre</button>
-    <button type="button" data-hk-tool="wild"><i class="fa-solid fa-paw"></i> Pokémon sauvages</button>
-    <button type="button" data-hk-tool="battle"><i class="fa-solid fa-people-arrows"></i> Combat de Dresseurs</button>
-    <button type="button" data-hk-tool="contest"><i class="fa-solid fa-trophy"></i> Concours</button>
-    <button type="button" data-hk-tool="planning"><i class="fa-solid fa-calendar-days"></i> Planning en off</button>`;
+  tools.innerHTML = `<button type="button" data-hk-tool="encounter" data-tooltip="Tirer une rencontre sur la table d'une zone et générer les Pokémon"><i class="fa-solid fa-dice-d20"></i> Rencontre</button>
+    <button type="button" data-hk-tool="wild" data-tooltip="Créer un ou plusieurs Pokémon sauvages d'une espèce du Pokédex"><i class="fa-solid fa-paw"></i> Pokémon sauvages</button>
+    <button type="button" data-hk-tool="battle" data-tooltip="Préparer un combat entre Dresseurs (officiel, sauvage ou mortel)"><i class="fa-solid fa-people-arrows"></i> Combat de Dresseurs</button>
+    <button type="button" data-hk-tool="contest" data-tooltip="Feuille du jury d'un concours Pokémon (4 épreuves sur 25)"><i class="fa-solid fa-trophy"></i> Concours</button>
+    <button type="button" data-hk-tool="planning" data-tooltip="Journal où les joueurs notent les activités de leur Dresseur entre deux aventures"><i class="fa-solid fa-calendar-days"></i> Temps en off</button>`;
   const tool = { encounter: rollEncounter, wild: openWildGenerator, battle: openSetupDialog, contest: openContest, planning: openPlanning };
   for ( const button of tools.querySelectorAll("[data-hk-tool]") ) {
     button.addEventListener("click", () => tool[button.dataset.hkTool]());

@@ -64,12 +64,12 @@ https://github.com/tomjdr4-hub/hakai-kousen/releases/latest/download/system.json
 - **Combat** : climat et terrain affichés dans le panneau (réglés par le MJ).
 
 ### Outils du MJ
-Boutons dans l'onglet Acteurs (MJ) : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Planning en off**.
+Boutons dans l'onglet Acteurs (MJ) : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Temps en off**.
 
 - **Rencontre en un clic** : choix de la zone (tables du monde nommées « Rencontres : … », ou l'exemple du Manuel du MJ ; bouton « Créer une table de zone » à partir de l'exemple), tirage sur sa table, relance de l'espèce sur un 100 (chromatique), reconnaissance de l'espèce, du nombre (1D4…), d'un Dominant ou d'un Aberrant, puis génération et placement des Pokémon.
 - **Retrait** : quand un Pokémon sauvage passe sous ¼ de VIT, le MJ reçoit son intention et sa condition de retrait.
 - **Concours** (aide du MJ) : quatre épreuves notées sur 25 avec les critères du jury, pénalités, classement et départage, annonce dans le chat.
-- **Planning en off** (MJ 6.4) : journal avec une page par Dresseur de joueur, une ligne par demi-journée et le suivi des objectifs.
+- **Temps en off** (MJ 6.4) : journal où les joueurs notent les activités de leur Dresseur entre deux aventures, une page par Dresseur choisi, une ligne par demi-journée et le suivi des objectifs.
 - **Dresseur PNJ** (MJ 5.6) : rôle de chaque Pokémon (offensif, résistant, contrôle…), tactique, déclencheurs de changement et retrait.
 
 - **Générateur de Pokémon sauvages** (MJ 5.1, 7.4) : espèce du Pokédex, nombre, profil (jeune, ordinaire, membre de meute, expérimenté, dominant), IV répartis au hasard, Nature au D100, Talent de l'espèce, Compétence initiale et attaque inhabituelle (1D10), rareté, Aberrant, chromatique, intention et condition de retrait ; placement sur la scène. Les manuels ne chiffrent pas les profils : les points d'IV proposés sont des valeurs par défaut modifiables.

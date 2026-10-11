@@ -1,4 +1,4 @@
-import { ATTRIBUTES, BABY_SPECIES, POKEMON_STATS, SKILLS, KNOWLEDGES, NATURES } from "../config.mjs";
+import { ATTRIBUTES, BABY_SPECIES, POKEMON_STATS, SKILLS, KNOWLEDGES, NATURES, semiLegendaryRarity } from "../config.mjs";
 import { statTalentMultipliers } from "../combat/talents.mjs";
 
 const {
@@ -204,6 +204,19 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
   /** Espèce officiellement Bébé (7.8) : pas de division, mais −1 au seuil de capture. */
   get babySpecies() {
     return BABY_SPECIES.includes((this.species || this.parent?.name || "").toLowerCase());
+  }
+
+  /**
+   * Rareté effective pour la capture et la relation : la famille semi-légendaire de l'espèce (4.15) prime ;
+   * sinon la rareté saisie sur la fiche.
+   */
+  get rarity() {
+    return semiLegendaryRarity(this.species || this.parent?.name) ?? this.encounter.rarity;
+  }
+
+  /** Semi-légendaire (4.15) : Confiance et Obéissance coûtent 2 XP Dresseur. */
+  get semiLegendary() {
+    return ["semi", "semiFinal"].includes(this.rarity);
   }
 
   /** Objets tenus par le Pokémon (noms en minuscules). */

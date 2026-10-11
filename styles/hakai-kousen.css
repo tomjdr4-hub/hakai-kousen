@@ -1570,3 +1570,19 @@
 .hk-wizard-errors {
   margin-top: 12px;
 }
+
+/* ---------- Relance d'un dé (1 XP Dresseur) ---------- */
+
+.hk-card .hk-reroll {
+  display: block;
+  margin: 4px 0 0 auto;
+  width: auto;
+  padding: 0 6px;
+  line-height: 20px;
+  font-size: 0.8em;
+  opacity: 0.75;
+}
+
+.hk-card .hk-reroll:hover {
+  opacity: 1;
+}

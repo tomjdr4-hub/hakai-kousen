@@ -2,7 +2,7 @@
  * Progression : dépense guidée de l'XP (3.12, 4.4, 4.8, 4.13), capture et Boîte PC (5.16, 7.1),
  * évolution (4.14) et mécaniques régionales (5.19).
  */
-import { ATTRIBUTES, KNOWLEDGES, POKEMON_STATS, POKESKILL_CATEGORIES, SKILLS, TYPES } from "./config.mjs";
+import { ATTRIBUTES, KNOWLEDGES, POKEMON_STATS, POKESKILL_CATEGORIES, SKILLS, TYPES, semiLegendaryRarity } from "./config.mjs";
 import { trainerOf } from "./combat/effects.mjs";
 
 const { DialogV2 } = foundry.applications.api;
@@ -168,8 +168,7 @@ export async function raiseRelation(pokemon, which) {
     if ( !game.user.isGM ) return ui.notifications.warn("Une seule augmentation par jour et par Pokémon.");
     if ( !await confirm("Relation", "Ce Pokémon a déjà progressé aujourd'hui. Autoriser une nouvelle augmentation (décision du MJ) ?") ) return;
   }
-  const semi = ["semi", "semiFinal"].includes(pokemon.system.encounter?.rarity);
-  const cost = semi ? 2 : 1;
+  const cost = pokemon.system.semiLegendary ? 2 : 1;
   if ( trainer.system.xp.value < cost ) return ui.notifications.warn(`${trainer.name} n'a pas assez d'XP Dresseur (${cost} nécessaire).`);
   if ( !await confirm("Relation", `+1 ${label} pour ${pokemon.name} contre <strong>${cost} XP Dresseur</strong> de ${trainer.name} ?`) ) return;
   await trainer.update({ "system.xp.value": trainer.system.xp.value - cost });
@@ -273,27 +272,56 @@ const EVOLUTION_CATEGORIES = {
  */
 export async function evolve(pokemon) {
   const pack = game.packs.get("hakai-kousen.pokedex");
-  const index = await pack.getIndex();
-  const text = pokemon.system.speciesData.evolutions.split("·").find(p => p.includes("Évolutions")) ?? "";
-  const suggested = [...text.matchAll(/([^,:()]+?)\s*\(/g)].map(m => m[1].trim()).filter(n => index.find(e => e.name.toLowerCase() === n.toLowerCase()));
-  // Évolution par niveau : le niveau est le coût en XP Pokémon (« Herbizarre (niveau 16) » → 16 XP).
-  const levelXP = name => {
-    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const condition = text.match(new RegExp(`${escaped}\\s*\\(([^)]*)\\)`, "i"))?.[1] ?? "";
-    return /^\s*(niveau|lvl|niv\.?)?\s*\d+\s*$/i.test(condition) ? parseInt(condition.replace(/[^\d]/g, ""), 10) : 0;
-  };
-  const defaultXP = suggested[0] ? levelXP(suggested[0]) : 0;
-  const cats = Object.entries(EVOLUTION_CATEGORIES).map(([k, c]) => `<option value="${k}" ${k === "classic3" ? "selected" : ""}>${c.label}</option>`).join("");
+  const index = await pack.getIndex({ fields: ["system.speciesData.evolutions", "system.types"] });
+  const byName = name => index.find(e => e.name.toLowerCase() === String(name).trim().toLowerCase());
+  // « Pré-évolution : Chenipan (7) · Évolutions : Papilusion (10) » → [{ name, condition }].
+  const links = (text, label) => [...((text ?? "").split("·").find(p => p.includes(label)) ?? "").matchAll(/([^,:()]+?)\s*\(([^()]*(?:\([^()]*\)[^()]*)*)\)/g)]
+    .map(m => ({ name: m[1].trim(), condition: m[2].trim() }))
+    // Une Méga-Évolution n'est pas un stade d'évolution (5.19.1).
+    .filter(l => !/^m[ée]ga[- ]/i.test(l.name));
+  // Niveau d'évolution = coût en XP Pokémon (« 16 », « niveau 16 », « lv 30 », « Niveau 35 »).
+  const levelOf = condition => /^\s*(niveau|niv\.?|lvl?|lv\.?)?\s*\d+\s*$/i.test(condition ?? "") ? parseInt(condition.replace(/[^\d]/g, ""), 10) : 0;
+
+  const text = pokemon.system.speciesData.evolutions;
+  const suggested = links(text, "Évolutions").filter(l => byName(l.name));
+  const defaultXP = suggested[0] ? levelOf(suggested[0].condition) : 0;
+
+  // Lignée (4.14) : pré-évolutions de l'espèce, puis évolution suivante de la cible proposée.
+  const chain = [pokemon.system.species || pokemon.name];
+  let base = { name: chain[0], evolutions: text, types: pokemon.system.types };
+  for ( let i = 0; i < 3; i++ ) {
+    const pre = links(base.evolutions, "Pré-évolution")[0];
+    const entry = pre ? byName(pre.name) : null;
+    if ( !entry ) break;
+    chain.unshift(entry.name);
+    base = { name: entry.name, evolutions: entry.system?.speciesData?.evolutions, types: entry.system?.types };
+  }
+  const preCount = chain.length - 1;
+  const next = suggested[0] ? byName(suggested[0].name) : null;
+  const furtherEvolution = next ? links(next.system?.speciesData?.evolutions, "Évolutions").length > 0 : false;
+  const stages = preCount + 2 + (furtherEvolution ? 1 : 0);
+  const firstLevel = levelOf(links(base.evolutions, "Évolutions")[0]?.condition);
+  const insect = [base.types?.primary, base.types?.secondary, pokemon.system.types.primary, pokemon.system.types.secondary].includes("insecte");
+  let defaultCategory;
+  if ( semiLegendaryRarity(chain[0]) || pokemon.system.semiLegendary ) defaultCategory = "semi";
+  else if ( insect && firstLevel && (firstLevel <= 10) ) defaultCategory = stages >= 3 ? "insect3" : "insect2";
+  else defaultCategory = stages >= 3 ? "classic3" : "classic2";
+  const defaultStage = preCount === 0 ? "first" : "second";
+  const lineage = [...chain, ...(next ? [next.name] : []), ...(furtherEvolution ? ["…"] : [])].join(" → ");
+
+  const cats = Object.entries(EVOLUTION_CATEGORIES).map(([k, c]) => `<option value="${k}" ${k === defaultCategory ? "selected" : ""}>${c.label}</option>`).join("");
   const values = await DialogV2.prompt({
     window: { title: `Évolution de ${pokemon.name}` },
     content: `
       <div class="form-group"><label>Évolue en</label><div class="form-fields">
-        <input type="text" name="species" list="hk-evos" value="${suggested[0] ?? ""}">
+        <input type="text" name="species" list="hk-evos" value="${suggested[0]?.name ?? ""}">
         <datalist id="hk-evos">${index.map(e => `<option value="${e.name}">`).join("")}</datalist></div></div>
       <p class="hint">${pokemon.system.speciesData.evolutions || "Aucune évolution connue."}</p>
       <div class="form-group"><label>Catégorie</label><div class="form-fields"><select name="category">${cats}</select></div></div>
       <div class="form-group"><label>Évolution</label><div class="form-fields"><select name="stage">
-        <option value="first">1re évolution</option><option value="second">2e évolution</option></select></div></div>
+        <option value="first" ${defaultStage === "first" ? "selected" : ""}>1re évolution</option>
+        <option value="second" ${defaultStage === "second" ? "selected" : ""}>2e évolution</option></select></div></div>
+      <p class="hint">Lignée : ${lineage}. Catégorie et stade sont déduits de la lignée (Dressage requis, 4.14) ; modifiables si besoin.</p>
       <div class="form-group"><label>XP Pokémon dépensée</label><div class="form-fields"><input type="number" name="xp" value="${defaultXP}" min="0"></div>
         <p class="hint">Évolution par niveau : le niveau est le coût en XP Pokémon. 0 pour une pierre, un échange, le bonheur…</p></div>`,
     ok: { label: "Évoluer", callback: (e, b) => new foundry.applications.ux.FormDataExtended(b.form).object },

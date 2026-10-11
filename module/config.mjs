@@ -242,6 +242,31 @@ export const BABY_SPECIES = ["pichu", "mélo", "toudoudou", "togepi", "debugant"
   "okéoké", "rozbouton", "korillon", "manzaï", "mime jr.", "ptiravi", "goinfrex", "riolu", "babimanta", "toxizap"];
 
 /** Rareté d'un Pokémon pour la capture (5.16). */
+/**
+ * Familles semi-légendaires (4.15), du premier au dernier stade. Confiance et Obéissance coûtent 2 XP Dresseur ;
+ * capture +2, ou +3 au stade final (5.16).
+ */
+export const SEMI_LEGENDARY = [
+  ["Minidraco", "Draco", "Dracolosse"], ["Embrylex", "Ymphect", "Tyranocif"], ["Draby", "Drackhaus", "Drattak"],
+  ["Terhal", "Métang", "Métalosse"], ["Griknot", "Carmache", "Carchacrok"], ["Solochi", "Diamat", "Trioxhydre"],
+  ["Mucuscule", "Colimucus", "Muplodocus"], ["Bébécaille", "Écaïd", "Ékaïser"], ["Fantyrm", "Dispareptil", "Lanssorien"],
+  ["Frigodo", "Cryodo", "Glaivodo"]
+];
+
+/**
+ * Rareté semi-légendaire d'une espèce d'après sa famille : « semi », « semiFinal » (dernier stade) ou null.
+ * Les formes régionales (« Colimucus de Hisui ») et Méga (« Méga-Tyranocif ») sont reconnues.
+ * @param {string} species
+ */
+export function semiLegendaryRarity(species) {
+  const name = String(species ?? "").replace(/^m[ée]ga-/i, "").replace(/\s+(d'|de |du )\S.*$/i, "").trim().toLowerCase();
+  for ( const family of SEMI_LEGENDARY ) {
+    const index = family.findIndex(n => n.toLowerCase() === name);
+    if ( index >= 0 ) return index === family.length - 1 ? "semiFinal" : "semi";
+  }
+  return null;
+}
+
 export const RARITIES = {
   commun: { label: "Commun / Peu commun", capture: 0 },
   rare: { label: "Rare", capture: 1 },

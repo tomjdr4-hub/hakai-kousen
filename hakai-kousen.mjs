@@ -18,6 +18,7 @@ import { rollEncounter } from "./module/apps/encounter.mjs";
 import { openContest } from "./module/apps/contest.mjs";
 import { openPlanning } from "./module/apps/planning.mjs";
 import { openCharacterWizard } from "./module/apps/character-wizard.mjs";
+import { addRerollButton } from "./module/reroll.mjs";
 
 /** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
@@ -55,6 +56,16 @@ Hooks.once("init", () => {
     name: "Réflexion automatique à chaque tour",
     hint: "Lance le chrono et le choix secret des actions dès qu'un nouveau tour de combat commence.",
     scope: "world", config: true, type: Boolean, default: true
+  });
+  game.settings.register("hakai-kousen", "fatalSave", {
+    name: "Coup fatal : mode de campagne",
+    hint: "Dépenser 1 XP Dresseur pour rappeler un Pokémon juste avant la mort (Manuel du Joueur 3.12).",
+    scope: "world", config: true, type: String, default: "standard",
+    choices: {
+      standard: "Standard : n'importe quel Pokémon du Dresseur",
+      hard: "Difficile : le Starter seulement",
+      none: "Sans protection"
+    }
   });
   game.settings.register("hakai-kousen", "autoStab", {
     name: "STAB automatique",
@@ -94,6 +105,7 @@ Hooks.once("init", () => {
 });
 
 Hooks.on("renderChatMessageHTML", rolls.onRenderChatMessage);
+Hooks.on("renderChatMessageHTML", addRerollButton);
 
 /** Un Pokémon ne porte qu'un seul objet tenu à la fois (8.7) : un deuxième objet est refusé. */
 Hooks.on("preCreateItem", (item, data, options, userId) => {

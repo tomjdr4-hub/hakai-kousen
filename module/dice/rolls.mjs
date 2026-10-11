@@ -88,7 +88,8 @@ export async function rollAttribute(actor, key) {
   const body = `<div class="hk-dice">${diceFaces(roll)}</div>
     <p class="hk-detail">1D${faces} ≤ ${value}</p>
     ${outcome(success, success ? `Réussite (marge ${margin})` : "Échec")}`;
-  return sendCard(actor, { title: `${label} (${value})`, subtitle: ATTRIBUTE_DIFFICULTIES[faces], body, rolls: [roll] });
+  return sendCard(actor, { title: `${label} (${value})`, subtitle: ATTRIBUTE_DIFFICULTIES[faces], body, rolls: [roll],
+    flags: { dice: [{ kind: "attribute", label: `Test de ${label}`, value }] } });
 }
 
 /* -------------------------------------------- */
@@ -127,7 +128,8 @@ export async function rollPool(actor, label, level, spec = "") {
   const body = `<div class="hk-dice">${diceFaces(roll)}</div>
     <p class="hk-detail">${level > 0 ? `${level}D10, meilleur résultat` : "2D10, moins bon résultat"} : <strong>${result}</strong></p>
     ${outcome(success, text)}`;
-  return sendCard(actor, { title: label, subtitle, body, rolls: [roll] });
+  return sendCard(actor, { title: label, subtitle, body, rolls: [roll],
+    flags: { dice: [{ kind: "pool", label, level, threshold }] } });
 }
 
 /* -------------------------------------------- */
@@ -267,6 +269,8 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
   const selfEffects = atk.effects.filter(e => e.target === "self");
   let anyHit = false;
   let anySecondary = false;
+  // Rôle de chaque jet, pour la relance d'un dé contre 1 XP Dresseur (3.12).
+  const diceInfo = [];
 
   targets = (targets ?? Array.from(game.user.targets)).filter(t => t.actor);
   for ( const token of (targets.length ? targets : [null]) ) {
@@ -299,6 +303,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
       if ( !atk.sure && (atk.accuracy > 0) && (accuracy < 100) ) {
         const roll = await new foundry.dice.Roll("1d100").evaluate();
         rolls.push(roll);
+        diceInfo[rolls.length - 1] = { kind: "d100", label: `${item.name}${target ? ` sur ${target.name}` : ""} : 1D100`, max: accuracy };
         hit = roll.total <= accuracy;
         lines.push(`<div class="hk-dice">${diceFaces(roll)}</div><p class="hk-detail">1D100 ≤ ${accuracy}${accText}</p>`);
       }
@@ -332,6 +337,8 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
       }
       else detail = `Aucune cible : comparez à la Table unique (${accuracy} %${accText}).`;
       lines.push(`<div class="hk-dice">${diceFaces(roll)}</div><p class="hk-detail">${detail}</p>`);
+      diceInfo[rolls.indexOf(roll)] = { kind: "hit", label: `Toucher${target ? ` ${target.name}` : ""} (${item.name})`,
+        threshold: (defense !== null) ? tableUniqueThreshold(offense - defense, accuracy) : null, hitBonus: sp.hitBonus ?? 0 };
     }
 
     if ( target || (atk.category === "status") ) {
@@ -476,7 +483,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
   const description = atk.description ? `<details class="hk-description"><summary>Effet</summary>${atk.description}</details>` : "";
   const message = await sendCard(actor, {
     title: zMove ? `${item.name} (Capacité Z)` : item.name, subtitle, body: rows.join("") + zNote + description, rolls,
-    flags: { anyHit }
+    flags: { anyHit, dice: Array.from(diceInfo, d => d ?? null) }
   });
   // Explosion, Destruction… : le lanceur tombe KO, que l'attaque touche ou non.
   if ( sp.selfKO && (actor.system.vit.value > 0) ) await applyDamage(actor, actor.system.vit.value);

@@ -83,7 +83,7 @@
       <button type="button" data-action="resetTemp"><i class="fa-solid fa-rotate-left"></i> Remettre les modifications temporaires à zéro</button>
     </div>
     <p class="hint">EV : ouvrir 10 XP — augmenter : EV actuels × 7 XP (max 30). IV : entraînement uniquement.</p>
-    <label class="checkbox"><input type="checkbox" name="system.starter" {{checked system.starter}}> Starter en création</label>
+    <label class="checkbox" data-tooltip="Premier Pokémon du Dresseur (4.1) : 10 IV à la création ; seul protégé du coup fatal en campagne difficile (3.12)"><input type="checkbox" name="system.starter" {{checked system.starter}}> Starter du Dresseur</label>
     {{#if starterCheck}}<ul class="hk-checklist">{{#each starterCheck as |c|}}<li class="{{#if c.ok}}ok{{else}}ko{{/if}}"><i class="fa-solid {{#if c.ok}}fa-check{{else}}fa-xmark{{/if}}"></i> {{c.label}}</li>{{/each}}</ul>{{/if}}
 
     <h3>Relation</h3>
@@ -285,7 +285,8 @@
 
     <h3>Rencontre et capture</h3>
     <div class="details-grid">
-      <label>Rareté <select name="system.encounter.rarity">{{selectOptions rarities selected=system.encounter.rarity}}</select></label>
+      <label>Rareté <select name="system.encounter.rarity">{{selectOptions rarities selected=system.encounter.rarity}}</select>
+        {{#if autoRarity}}<span class="hint" data-tooltip="Famille semi-légendaire (4.15) : prime sur la rareté saisie pour la capture et la relation">Espèce reconnue : {{autoRarity}}</span>{{/if}}</label>
       <label class="checkbox"><input type="checkbox" name="system.encounter.dominant" {{checked system.encounter.dominant}}> Dominant (capture +2)</label>
       <label class="checkbox"><input type="checkbox" name="system.encounter.aberrant" {{checked system.encounter.aberrant}}> Aberrant (capture +1)</label>
       <label class="checkbox"><input type="checkbox" name="system.encounter.shiny" {{checked system.encounter.shiny}}> Chromatique</label>

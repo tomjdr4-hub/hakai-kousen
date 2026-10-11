@@ -457,9 +457,11 @@ export class PokemonSheet extends HKActorSheet {
     for ( const s of context.stats ) s.evCost = s.ev === 0 ? 10 : s.ev * 7;
     context.teraTypes = { "": "—", ...HK.TYPES, stellaire: "Stellaire" };
     context.formBonus = Object.entries(system.form.bonus).map(([key, value]) => ({ key, value, abbr: HK.POKEMON_STATS[key].abbr }));
-    context.relationCost = ["semi", "semiFinal"].includes(system.encounter.rarity) ? 2 : 1;
+    context.relationCost = system.semiLegendary ? 2 : 1;
+    context.autoRarity = system.rarity !== system.encounter.rarity ? HK.RARITIES[system.rarity]?.label : null;
     // Starter (4.1) : 10 IV à répartir, 3 au maximum par statistique ; Confiance + Obéissance = 8.
-    if ( system.starter ) {
+    // Contrôle affiché pendant la création, tant que le Starter n'a gagné aucune XP.
+    if ( system.starter && (system.xp.total === 0) ) {
       const ivs = Object.values(system.stats).map(st => st.iv);
       const total = ivs.reduce((a, b) => a + b, 0);
       context.starterCheck = [

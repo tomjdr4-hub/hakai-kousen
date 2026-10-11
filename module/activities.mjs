@@ -117,14 +117,41 @@ async function inheritTalent(talents, parents) {
   return inherited[0] ?? random(normal);
 }
 
-/** Transmissions maîtrisées selon le niveau d'Élevage (7.7). */
+/**
+ * Transmissions maîtrisées selon le niveau d'Élevage (7.7) : attaques naturelles (nat), CT (ct), capacités Œuf (egg),
+ * IV choisis parmi ceux des parents et Compétences (niveau 1 ; une Compétence Rare seulement sur un 10 au D10).
+ */
 const BREEDING = {
-  0: { attacks: 0, ivs: 0 }, 1: { attacks: 1, ivs: 0 }, 2: { attacks: 1, ivs: 1 },
-  3: { attacks: 2, ivs: 2 }, 4: { attacks: 3, ivs: 3 }, 5: { attacks: 3, ivs: 4 }
+  0: { nat: 0, ivs: 0, skills: 0, text: "aucune transmission choisie" },
+  1: { nat: 1, ivs: 0, skills: 0, text: "1 attaque naturelle" },
+  2: { nat: 1, ivs: 1, skills: 0, text: "1 attaque naturelle + 1 IV" },
+  3: { nat: 2, ivs: 2, skills: 1, either: true, text: "2 attaques naturelles OU 1 CT OU 1 capacité Œuf, + 2 IV + 1 Compétence" },
+  4: { nat: 3, ivs: 3, skills: 1, ctOrEgg: true, text: "3 attaques naturelles + 1 CT OU 1 capacité Œuf, + 3 IV + 1 Compétence" },
+  5: { nat: 3, ivs: 4, skills: 2, ct: 1, egg: 1, text: "3 attaques naturelles + 1 CT + 1 capacité Œuf, + 4 IV + 2 Compétences" }
 };
 
+/** Vérifie les transmissions choisies ; renvoie la règle enfreinte, ou null. */
+function breedingError(rules, picks) {
+  const nat = picks.nat.length;
+  const ct = picks.ct.length;
+  const egg = picks.egg.length;
+  if ( rules.either ) {
+    if ( [nat, ct, egg].filter(n => n > 0).length > 1 ) return "Élevage 3 : 2 attaques naturelles OU 1 CT OU 1 capacité Œuf, sans les mélanger.";
+    if ( (nat > 2) || (ct > 1) || (egg > 1) ) return "Élevage 3 : au plus 2 attaques naturelles, ou 1 CT, ou 1 capacité Œuf.";
+  }
+  else {
+    if ( nat > rules.nat ) return `Au plus ${rules.nat} attaque(s) naturelle(s).`;
+    if ( rules.ctOrEgg && ((ct + egg) > 1) ) return "Élevage 4 : 1 CT OU 1 capacité Œuf.";
+    if ( !rules.ctOrEgg && (ct > (rules.ct ?? 0)) ) return rules.ct ? `Au plus ${rules.ct} CT.` : "Aucune CT à ce niveau d'Élevage.";
+    if ( !rules.ctOrEgg && (egg > (rules.egg ?? 0)) ) return rules.egg ? `Au plus ${rules.egg} capacité Œuf.` : "Aucune capacité Œuf à ce niveau d'Élevage.";
+  }
+  if ( picks.ivs.length > rules.ivs ) return `Au plus ${rules.ivs} IV transmis.`;
+  if ( picks.skills.length > rules.skills ) return `Au plus ${rules.skills} Compétence(s) transmise(s).`;
+  return null;
+}
+
 /**
- * Éclosion : nouveau Pokémon de la forme de base, Nature au D100, Talent et transmissions des parents,
+ * Éclosion : nouveau Pokémon de la forme de base, Nature au D100 (ou Pierre Stase), Talent et transmissions des parents,
  * Nouveau-né (÷2 jusqu'à 100 XP) sauf espèce Bébé, Confiance 4 + Obéissance 4 envers celui qui s'est occupé de l'Œuf.
  * @param {Item} egg
  */
@@ -134,47 +161,128 @@ export async function hatch(egg) {
   const source = await fromUuid(egg.system.speciesUuid);
   if ( !source ) return ui.notifications.warn(`Espèce introuvable : ${egg.system.species}`);
   const parents = (await Promise.all(egg.system.parents.map(u => fromUuid(u)))).filter(Boolean);
-  const rules = BREEDING[egg.system.breeding] ?? BREEDING[0];
-  const learnable = new Set(source.system.speciesData.learnset.map(e => e.name.toLowerCase()));
-  const parentAttacks = [...new Set(parents.flatMap(p => p.itemTypes.attack.map(a => a.name)))]
-    .filter(n => learnable.has(n.toLowerCase()) && !source.items.some(i => i.name === n));
+  const level = Math.clamp(egg.system.breeding, 0, 5);
+  const rules = BREEDING[level];
+
+  // Attaques des parents, classées selon la façon dont le nouveau-né peut les apprendre.
+  const learnset = source.system.speciesData.learnset;
+  const names = kind => new Set(learnset.filter(e => e.source === kind).map(e => e.name.toLowerCase()));
+  const natural = names("level");
+  const tm = names("ct");
+  const eggMoves = names("egg");
+  const already = new Set(source.items.map(i => i.name.toLowerCase()));
+  const parentAttacks = [...new Map(parents.flatMap(p => p.itemTypes.attack).map(a => [a.name.toLowerCase(), a])).values()]
+    .filter(a => !already.has(a.name.toLowerCase()));
+  const groups = {
+    nat: parentAttacks.filter(a => natural.has(a.name.toLowerCase())),
+    ct: parentAttacks.filter(a => !natural.has(a.name.toLowerCase()) && tm.has(a.name.toLowerCase())),
+    egg: parentAttacks.filter(a => !natural.has(a.name.toLowerCase()) && !tm.has(a.name.toLowerCase()) && eggMoves.has(a.name.toLowerCase()))
+  };
+  const parentSkills = [...new Map(parents.flatMap(p => p.itemTypes.pokeskill).map(s => [s.name.toLowerCase(), s])).values()];
   const bestIV = Object.fromEntries(IV_STATS.map(k => [k, Math.max(0, ...parents.map(p => p.system.stats[k].iv))]));
   const ivChoices = IV_STATS.filter(k => bestIV[k] > 0).sort((a, b) => bestIV[b] - bestIV[a]);
+  const stase = parents.filter(p => p.itemTypes.gear.some(i => /pierre stase/i.test(i.name)));
 
-  let picks = { attacks: [], ivs: [] };
-  if ( parents.length && (rules.attacks || rules.ivs) && (parentAttacks.length || ivChoices.length) ) {
-    const box = (name, value, label, checked) => `<label class="checkbox"><input type="checkbox" name="${name}" value="${value}" ${checked ? "checked" : ""}> ${label}</label>`;
-    picks = await DialogV2.prompt({
-      window: { title: `Éclosion : transmissions (Élevage ${egg.system.breeding})` },
-      content: `
-        <p class="hint">Jusqu'à ${rules.attacks} attaque(s) naturelle(s) et ${rules.ivs} IV choisis parmi ceux des parents (7.7).</p>
-        ${parentAttacks.length && rules.attacks ? `<fieldset><legend>Attaques des parents</legend>${parentAttacks.map((n, i) => box("attack", n, n, i < rules.attacks)).join("")}</fieldset>` : ""}
-        ${ivChoices.length && rules.ivs ? `<fieldset><legend>IV des parents</legend>${ivChoices.map((k, i) => box("iv", k, `${k.toUpperCase()} ${bestIV[k]}`, i < rules.ivs)).join("")}</fieldset>` : ""}`,
+  // Choix des transmissions, recommencé tant qu'une limite du niveau d'Élevage est dépassée.
+  const box = (name, value, label, checked) => `<label class="checkbox"><input type="checkbox" name="${name}" value="${value}" ${checked ? "checked" : ""}> ${label}</label>`;
+  // Groupe affiché si le niveau d'Élevage l'autorise ; « preset » cases pré-cochées, sans enfreindre le « OU » des niveaux 3 et 4.
+  const fieldset = (legend, name, list, label, allowed, preset) => list.length && allowed
+    ? `<fieldset><legend>${legend}</legend>${list.map((x, i) => box(name, i, label(x), i < preset)).join("")}</fieldset>` : "";
+  const ctAllowed = rules.either || rules.ctOrEgg || !!rules.ct;
+  const eggAllowed = rules.either || rules.ctOrEgg || !!rules.egg;
+  const content = `
+    <p><strong>Élevage ${level}</strong> : ${rules.text} (7.7).</p>
+    ${parents.length ? "" : `<p class="hint">Aucun parent connu (Œuf sauvage) : pas de transmission ; ses caractéristiques sont déjà déterminées (7.3).</p>`}
+    ${parents.length ? [
+      fieldset("Attaques naturelles des parents", "nat", groups.nat, a => a.name, rules.nat, rules.nat),
+      fieldset("CT connues des parents", "ct", groups.ct, a => a.name, ctAllowed, (rules.ct || rules.ctOrEgg) ? 1 : 0),
+      fieldset("Capacités Œuf des parents", "egg", groups.egg, a => a.name, eggAllowed, rules.egg ? 1 : 0),
+      fieldset("IV des parents", "iv", ivChoices, k => `${k.toUpperCase()} ${bestIV[k]}`, rules.ivs, rules.ivs),
+      fieldset("Compétences des parents (niveau 1 ; Rare : seulement sur un 10)", "skill", parentSkills,
+        s => `${s.name}${s.system.category === "rare" ? " (Rare)" : ""}`, rules.skills, rules.skills)
+    ].join("") : ""}
+    ${stase.length ? `<p class="hint">Pierre Stase : ${stase.length === 2 ? "les deux parents en portent une, 1D10 décide (1-5 : premier parent, 6-10 : second)" : `${stase[0].name} transmet sa Nature`}.</p>` : ""}
+    <div class="form-group"><label>IV supplémentaires</label><div class="form-fields"><input type="number" name="extraIV" value="0" min="0"></div>
+      <p class="hint">Les IV non transmis sont déterminés normalement (7.7) : nombre d'IV répartis au hasard, au choix du MJ.</p></div>`;
+  let picks;
+  for ( ;; ) {
+    const form = await DialogV2.prompt({
+      window: { title: `Éclosion : ${source.name}`, icon: "fa-solid fa-egg" },
+      position: { width: 480 },
+      content,
       ok: {
         label: "Faire éclore",
-        callback: (e, b) => ({
-          attacks: [...b.form.querySelectorAll("input[name=attack]:checked")].map(i => i.value).slice(0, rules.attacks),
-          ivs: [...b.form.querySelectorAll("input[name=iv]:checked")].map(i => i.value).slice(0, rules.ivs)
-        })
+        icon: "fa-solid fa-egg",
+        callback: (e, b) => {
+          const checked = name => [...b.form.querySelectorAll(`input[name=${name}]:checked`)].map(i => Number(i.value));
+          return { nat: checked("nat"), ct: checked("ct"), egg: checked("egg"), ivs: checked("iv"), skills: checked("skill"),
+            extraIV: Math.max(Number(b.form.elements.extraIV.value) || 0, 0) };
+        }
       },
       rejectClose: false
-    }) ?? picks;
+    });
+    if ( !form ) return;
+    const error = parents.length ? breedingError(rules, form) : null;
+    if ( !error ) {
+      picks = form;
+      break;
+    }
+    ui.notifications.warn(error);
   }
 
+  const rolls = [];
   const data = game.actors.fromCompendium(source);
   const system = data.system;
-  const natureRoll = await roll("1d100");
-  system.nature = NATURE_ORDER[Math.floor((natureRoll.total - 1) / 4)];
-  for ( const k of picks.ivs ) system.stats[k].iv = bestIV[k];
+
+  // Nature : Pierre Stase d'un parent, sinon D100 (chaque Nature occupe quatre résultats).
+  let natureText;
+  if ( stase.length === 1 ) {
+    system.nature = stase[0].system.nature;
+    natureText = `Pierre Stase de ${stase[0].name}`;
+  }
+  else if ( stase.length === 2 ) {
+    const r = await roll("1d10");
+    rolls.push(r);
+    const parent = r.total <= 5 ? stase[0] : stase[1];
+    system.nature = parent.system.nature;
+    natureText = `Pierre Stase, 1D10 = ${r.total} : ${parent.name}`;
+  }
+  else {
+    const r = await roll("1d100");
+    rolls.push(r);
+    system.nature = NATURE_ORDER[Math.floor((r.total - 1) / 4)];
+    natureText = `1D100 = ${r.total}`;
+  }
+
+  // IV transmis, puis IV supplémentaires répartis au hasard.
+  const ivKeys = picks.ivs.map(i => ivChoices[i]);
+  for ( const k of ivKeys ) system.stats[k].iv = bestIV[k];
+  for ( let i = 0; i < picks.extraIV; i++ ) system.stats[IV_STATS[(await roll(`1d${IV_STATS.length}`)).total - 1]].iv += 1;
+
   const talent = await inheritTalent(system.speciesData.talents, parents);
   const items = data.items ?? [];
   if ( talent?.uuid ) {
     const t = await fromUuid(talent.uuid);
     if ( t ) items.push(game.items.fromCompendium(t));
   }
-  for ( const name of picks.attacks ) {
-    const parentItem = parents.flatMap(p => p.itemTypes.attack).find(a => a.name === name);
-    if ( parentItem ) items.push(game.items.fromCompendium(parentItem));
+  const attacks = [...picks.nat.map(i => groups.nat[i]), ...picks.ct.map(i => groups.ct[i]), ...picks.egg.map(i => groups.egg[i])];
+  for ( const attack of attacks ) items.push(game.items.fromCompendium(attack));
+  // Compétences : niveau 1 ; une Compétence Rare n'est transmise que sur un 10 naturel au D10.
+  const skillLines = [];
+  for ( const skill of picks.skills.map(i => parentSkills[i]) ) {
+    if ( skill.system.category === "rare" ) {
+      const r = await roll("1d10");
+      rolls.push(r);
+      if ( r.total !== 10 ) {
+        skillLines.push(`${skill.name} (Rare) : 1D10 = ${r.total}, non transmise`);
+        continue;
+      }
+      skillLines.push(`${skill.name} (Rare) : 10, transmise`);
+    }
+    else skillLines.push(skill.name);
+    const skillData = game.items.fromCompendium(skill);
+    foundry.utils.mergeObject(skillData, { system: { level: 1, progress: 0 } });
+    items.push(skillData);
   }
   data.items = items;
   const baby = BABY_SPECIES.includes(source.name.toLowerCase());
@@ -193,10 +301,17 @@ export async function hatch(egg) {
   const inTeam = trainer.system.team.length < 6;
   await trainer.update(inTeam ? { "system.team": [...trainer.system.team, pokemon.uuid] } : { "system.pc": [...trainer.system.pc, pokemon.uuid] });
   await egg.delete();
+  const transmitted = [
+    attacks.length ? `attaques : ${attacks.map(a => a.name).join(", ")}` : "",
+    ivKeys.length ? `IV : ${ivKeys.map(k => `${k.toUpperCase()} ${bestIV[k]}`).join(", ")}` : "",
+    skillLines.length ? `Compétences : ${skillLines.join(", ")}` : ""
+  ].filter(Boolean);
   return card(trainer, `L'Œuf éclot : ${pokemon.name} !`, `
-    <p>${NATURES[system.nature].label}${talent ? ` · ${talent.name}` : ""}${picks.attacks.length ? ` · attaques transmises : ${picks.attacks.join(", ")}` : ""}${picks.ivs.length ? ` · IV transmis : ${picks.ivs.map(k => k.toUpperCase()).join(", ")}` : ""}.</p>
+    <p>${NATURES[system.nature].label} (${natureText})${talent ? ` · ${talent.name}` : ""}.</p>
+    ${transmitted.length ? `<p class="hk-detail">Transmissions (Élevage ${level}) : ${transmitted.join(" · ")}.</p>` : ""}
+    ${picks.extraIV ? `<p class="hk-detail">${picks.extraIV} IV supplémentaire(s) réparti(s) au hasard.</p>` : ""}
     <p class="hk-detail">${baby ? "Bébé Pokémon : fiche normale." : "Nouveau-né : caractéristiques et VIT ÷2 jusqu'à 100 XP Pokémon."}
-      ${trainer.name} est sa figure parentale : Confiance 4, Obéissance 4. Rangé ${inTeam ? "dans l'équipe" : "dans la Boîte PC"}.</p>`, [natureRoll]);
+      ${trainer.name} est sa figure parentale : Confiance 4, Obéissance 4. Rangé ${inTeam ? "dans l'équipe" : "dans la Boîte PC"}.</p>`, rolls);
 }
 
 /* -------------------------------------------- */

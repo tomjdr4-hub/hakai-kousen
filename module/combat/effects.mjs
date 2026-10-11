@@ -118,6 +118,17 @@ export async function heal(actor, amount) {
   ui.notifications.info(`${actor.name} récupère ${after - vit.value} VIT.`);
 }
 
+/**
+ * Protection contre le coup fatal selon le mode de campagne (3.12) : Standard (tout Pokémon du Dresseur),
+ * Difficile (le Starter seulement) ou Sans protection. Renvoie la raison d'un refus, ou null.
+ */
+export function fatalSaveBlocked(actor) {
+  const mode = game.settings.get("hakai-kousen", "fatalSave");
+  if ( mode === "none" ) return "Campagne sans protection : le rappel juste à temps n'est pas utilisé.";
+  if ( (mode === "hard") && !actor.system.starter ) return "Campagne difficile : seul le Starter peut être rappelé juste à temps.";
+  return null;
+}
+
 /** Carte de KO : blessure grave et coup fatal hors combat officiel (4.16, 3.12). */
 async function announceKO(actor, vit, official) {
   const fatal = !official && (vit <= deathThreshold(actor));
@@ -128,7 +139,9 @@ async function announceKO(actor, vit, official) {
     buttons.push(`<button type="button" class="hk-apply" data-hk-action="applyEffect" data-uuid="${actor.uuid}"
       data-effect="${effect}"><i class="fa-solid fa-droplet"></i> Blessure grave</button>`);
   }
-  if ( fatal && trainer ) {
+  const blocked = fatal && trainer ? fatalSaveBlocked(actor) : null;
+  if ( blocked ) buttons.push(`<p class="hk-detail">${blocked}</p>`);
+  if ( fatal && trainer && !blocked ) {
     buttons.push(`<button type="button" class="hk-apply" data-hk-action="saveFatal" data-uuid="${actor.uuid}"
       data-trainer="${trainer.uuid}"><i class="fa-solid fa-life-ring"></i> ${trainer.name} dépense 1 XP Dresseur : rappelé juste à temps</button>`);
   }
@@ -146,6 +159,8 @@ async function announceKO(actor, vit, official) {
 /** Rappel juste à temps : 1 XP Dresseur, le Pokémon survit avec une blessure grave (3.12). */
 export async function saveFromFatal(actor, trainer) {
   if ( !trainer?.isOwner ) return ui.notifications.warn("Seul le propriétaire du Dresseur peut dépenser son XP.");
+  const blocked = fatalSaveBlocked(actor);
+  if ( blocked ) return ui.notifications.warn(blocked);
   if ( trainer.system.xp.value < 1 ) return ui.notifications.warn(`${trainer.name} n'a plus d'XP Dresseur.`);
   await trainer.update({ "system.xp.value": trainer.system.xp.value - 1 });
   if ( !relayToGM(actor, { type: "saveFatal", uuid: actor.uuid }) ) await survive(actor);

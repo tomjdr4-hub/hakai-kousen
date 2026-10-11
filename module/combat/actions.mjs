@@ -386,7 +386,7 @@ async function throwBall(trainer, ball, target) {
   if ( CAPTURE_STATUSES.some(s => actor.statuses.has(s)) ) mods.push(["Altération d'état", -1]);
   if ( actor.system.babySpecies ) mods.push(["Bébé Pokémon", -1]);
   const encounter = actor.system.encounter ?? {};
-  const rarity = HK_RARITIES[encounter.rarity];
+  const rarity = HK_RARITIES[actor.system.rarity ?? encounter.rarity];
   if ( rarity?.capture ) mods.push([rarity.label, rarity.capture]);
   if ( encounter.aberrant ) mods.push(["Aberrant", 1]);
   if ( encounter.dominant ) mods.push(["Dominant", 2]);
@@ -400,7 +400,7 @@ async function throwBall(trainer, ball, target) {
   const conditional = (ballMod && condition) ? threshold + ballMod : null;
 
   // Dominant ou semi-légendaire au stade final : au minimum une Hyper Ball ou une Ball spéciale adaptée.
-  const demanding = encounter.dominant || (encounter.rarity === "semiFinal");
+  const demanding = encounter.dominant || ((actor.system.rarity ?? encounter.rarity) === "semiFinal");
   const strongEnough = master || (ballMod <= -2) || !!condition;
   const roll = await new foundry.dice.Roll("1d10").evaluate();
   const captured = master || ((roll.total >= threshold) && (!demanding || strongEnough));

@@ -117,7 +117,9 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
       // Compteurs d'états : tours de Toxik (×1, ×2…) et stade de sortie de la Confusion.
       conditions: new SchemaField({
         toxik: int(0, { min: 0 }),
-        confusion: int(0, { min: 0, max: 3 })
+        confusion: int(0, { min: 0, max: 3 }),
+        // Sommeil : seuil de réveil sur 1D10 (6 au départ, −1 par tour endormi et à chaque coup reçu ; 0 : éveillé).
+        sommeil: int(0, { min: 0, max: 10 })
       }),
       nature: new StringField({ required: true, blank: false, initial: "hardi", choices: Object.keys(NATURES) }),
       relation: new SchemaField({
@@ -177,6 +179,8 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
         rarity: new StringField({ required: true, initial: "commun", choices: ["commun", "rare", "semi", "semiFinal"] }),
         dominant: new BooleanField(),
         aberrant: new BooleanField(),
+        // Jeune Pokémon sauvage : −1 au seuil de capture, comme un Bébé ou un Nouveau-né (5.16, précision de l'auteur).
+        young: new BooleanField(),
         shiny: new BooleanField(),
         intention: new StringField({ required: true, blank: true }),
         retreat: new StringField({ required: true, blank: true })
@@ -212,6 +216,14 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
   /** Nouveau-né encore sous 100 XP Pokémon cumulés (7.8). */
   get newborn() {
     return this.baby && (this.xp.total < 100);
+  }
+
+  /** Capture −1 (5.16) : Bébé officiel, Nouveau-né ou jeune Pokémon sauvage (précision de l'auteur : « à tous »). */
+  get captureYoung() {
+    if ( this.babySpecies ) return "Bébé Pokémon";
+    if ( this.newborn ) return "Nouveau-né";
+    if ( this.encounter.young ) return "Jeune Pokémon";
+    return null;
   }
 
   /** Espèce officiellement Bébé (7.8) : pas de division, mais −1 au seuil de capture. */

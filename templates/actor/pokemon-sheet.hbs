@@ -176,6 +176,7 @@
         {{#if autoRarity}}<span class="hint" data-tooltip="Famille semi-légendaire (4.15) : prime sur la rareté saisie pour la capture et la relation">Espèce reconnue : {{autoRarity}}</span>{{/if}}</label>
       <label class="checkbox"><input type="checkbox" name="system.encounter.dominant" {{checked system.encounter.dominant}}> Dominant (capture +2)</label>
       <label class="checkbox"><input type="checkbox" name="system.encounter.aberrant" {{checked system.encounter.aberrant}}> Aberrant (capture +1)</label>
+      <label class="checkbox" data-tooltip="Jeune Pokémon sauvage : −1 au seuil de capture, comme un Bébé officiel ou un Nouveau-né (5.16)"><input type="checkbox" name="system.encounter.young" {{checked system.encounter.young}}> Jeune (capture −1)</label>
       <label class="checkbox"><input type="checkbox" name="system.encounter.shiny" {{checked system.encounter.shiny}}> Chromatique</label>
       <label class="wide">Intention <input type="text" name="system.encounter.intention" value="{{system.encounter.intention}}" placeholder="Protéger son nid, se nourrir, jouer…"></label>
       <label class="wide">Condition de retrait <input type="text" name="system.encounter.retreat" value="{{system.encounter.retreat}}" placeholder="Fuit à ¼ de VIT, si le dominant tombe…"></label>

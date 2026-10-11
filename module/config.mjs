@@ -219,7 +219,7 @@ export const STATUSES = {
   gel: { label: "Gel", img: "icons/svg/frozen.svg", major: true, immune: ["glace"],
     rule: "Chaque tour, 9-10 sur 1D10 : dégèle. Une attaque Feu adaptée peut aussi le dégeler." },
   sommeil: { label: "Sommeil", img: "icons/svg/sleep.svg", major: true, immune: [],
-    rule: "Endormi : suit le fonctionnement HK du Sommeil." },
+    rule: "Chaque tour, 1D10 : réveil sur 6+, puis le seuil baisse de 1 par tour endormi et à chaque coup reçu. Réveillé, il agit aussitôt." },
   confusion: { label: "Confusion", img: "icons/svg/daze.svg", major: false, immune: [],
     rule: "Sort sur 10, puis 8-10, puis 6-10, puis fin. Tant que confus, 1-2-3 sur 1D10 : se frappe (1/10 de sa VIT actuelle) et perd son action." },
   peur: { label: "Apeuré", img: "icons/svg/terror.svg", major: false, immune: [],

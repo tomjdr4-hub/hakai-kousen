@@ -56,8 +56,8 @@ export function trainerOf(actor) {
  * @param {Actor} actor
  * @param {number} amount
  */
-export async function applyDamage(actor, amount, { attackType = "", consume = "" } = {}) {
-  if ( relayToGM(actor, { type: "applyDamage", uuid: actor.uuid, amount, attackType, consume }) ) return;
+export async function applyDamage(actor, amount, { attackType = "", consume = "", hit = false } = {}) {
+  if ( relayToGM(actor, { type: "applyDamage", uuid: actor.uuid, amount, attackType, consume, hit }) ) return;
   const before = actor.system.vit.value;
   const official = currentCombatType() === "officiel";
   let after = official ? Math.max(before - amount, 0) : before - amount;
@@ -88,6 +88,12 @@ export async function applyDamage(actor, amount, { attackType = "", consume = ""
   if ( consume ) {
     const berry = await fromUuid(consume);
     if ( berry ) await consumeItem(berry);
+  }
+  // Sommeil : chaque coup reçu d'une attaque rapproche le réveil (seuil −1, minimum 1).
+  if ( hit && (after > 0) && (after < before) && actor.statuses.has("sommeil") && actor.system.conditions ) {
+    const threshold = Math.max((actor.system.conditions.sommeil || 6) - 1, 1);
+    await actor.update({ "system.conditions.sommeil": threshold });
+    notes.push(`touché pendant son sommeil : réveil sur ${threshold}+`);
   }
   if ( (attackType === "feu") && actor.statuses.has("gel") ) {
     await actor.toggleStatusEffect("gel", { active: false });
@@ -313,13 +319,14 @@ export async function syncCounters(actor, statusId, active) {
   if ( actor.type !== "pokemon" ) return;
   if ( statusId === "toxik" ) await actor.update({ "system.conditions.toxik": active ? 1 : 0 });
   if ( statusId === "confusion" ) await actor.update({ "system.conditions.confusion": active ? 1 : 0 });
+  if ( statusId === "sommeil" ) await actor.update({ "system.conditions.sommeil": active ? 6 : 0 });
 }
 
 /** Traitement des demandes transmises au MJ actif. */
 export async function handleEffectRequest(data) {
   const actor = await fromUuid(data.uuid);
   if ( !actor ) return;
-  if ( data.type === "applyDamage" ) return applyDamage(actor, Number(data.amount), { attackType: data.attackType, consume: data.consume });
+  if ( data.type === "applyDamage" ) return applyDamage(actor, Number(data.amount), { attackType: data.attackType, consume: data.consume, hit: !!data.hit });
   if ( data.type === "heal" ) return heal(actor, Number(data.amount));
   if ( data.type === "applyEffect" ) return applyEffect(actor, data.effect);
   if ( data.type === "saveFatal" ) return survive(actor);
@@ -335,7 +342,7 @@ export function onRenderChatMessage(message, html) {
       button.classList.add("applied");
       switch ( button.dataset.hkAction ) {
         case "applyDamage": return applyDamage(actor, Number(button.dataset.amount), {
-          attackType: button.dataset.attackType ?? "", consume: button.dataset.consume ?? ""
+          attackType: button.dataset.attackType ?? "", consume: button.dataset.consume ?? "", hit: button.dataset.hit === "1"
         });
         case "heal": return heal(actor, Number(button.dataset.amount));
         case "applyEffect": return applyEffect(actor, JSON.parse(decodeURIComponent(button.dataset.effect)));

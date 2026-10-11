@@ -38,7 +38,7 @@ export async function openWildGenerator() {
       <label class="checkbox" data-tooltip="Les membres partagent une même initiative et agissent à la suite, chacun avec ses actions, sa VIT et son ENE (MJ 5.9)"><input type="checkbox" name="pack" checked> Meute : initiative partagée</label></div></div>
     <div class="form-group"><label>Profil</label><div class="form-fields"><select name="profile">${options(WILD_PROFILES)}</select></div></div>
     <div class="form-group"><label>Points d'IV</label><div class="form-fields"><input type="number" name="iv" value="" min="0" placeholder="selon le profil"></div>
-      <p class="hint">Répartis au hasard sur DEX, FOR, CON, END, VOL, VIT et ENE. Les manuels ne chiffrent pas les profils : ajustez librement.</p></div>
+      <p class="hint">Répartis au hasard sur DEX, FOR, CON, END, VOL, VIT et ENE. Le nombre est au choix du MJ (5.2) : les valeurs par profil ne sont qu'un exemple, saisissez le vôtre.</p></div>
     <div class="form-group"><label>Rareté</label><div class="form-fields"><select name="rarity">${options(RARITIES)}</select></div></div>
     <div class="form-group"><label>Particularités</label><div class="form-fields">
       <label class="checkbox"><input type="checkbox" name="aberrant"> Aberrant</label>
@@ -118,6 +118,7 @@ export async function generateWild(source, data) {
       rarity: data.rarity ?? "commun",
       dominant: !!profile.dominant,
       aberrant: !!data.aberrant,
+      young: data.profile === "jeune",
       shiny: !!data.shiny,
       intention: data.intention ?? "",
       retreat: data.retreat ?? ""

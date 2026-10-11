@@ -384,7 +384,7 @@ async function throwBall(trainer, ball, target) {
   else if ( vit.value <= Math.floor(vit.max / 4) ) mods.push(["1/4 de VIT ou moins", 3]);
   else mods.push(["Plus de 1/4 de VIT", 4]);
   if ( CAPTURE_STATUSES.some(s => actor.statuses.has(s)) ) mods.push(["Altération d'état", -1]);
-  if ( actor.system.babySpecies ) mods.push(["Bébé Pokémon", -1]);
+  if ( actor.system.captureYoung ) mods.push([actor.system.captureYoung, -1]);
   const encounter = actor.system.encounter ?? {};
   const rarity = HK_RARITIES[actor.system.rarity ?? encounter.rarity];
   if ( rarity?.capture ) mods.push([rarity.label, rarity.capture]);

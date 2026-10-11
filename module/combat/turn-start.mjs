@@ -82,8 +82,21 @@ export async function processTurnStart(combat) {
       lines.push(`Gel : ${roll} sur 1D10, reste gelé.`);
     }
   }
+  // Sommeil (règle de l'auteur) : 1D10, réveil sur le seuil ou plus (6 au départ) ; sinon le seuil baisse de 1.
   if ( !blocked && actor.statuses.has("sommeil") ) {
-    lines.push(`Sommeil : appliquez la règle HK du Sommeil.`);
+    const threshold = Math.clamp(actor.system.conditions?.sommeil || 6, 1, 10);
+    const roll = await d10();
+    if ( roll >= threshold ) {
+      await actor.toggleStatusEffect("sommeil", { active: false });
+      await syncCounters(actor, "sommeil", false);
+      lines.push(`Sommeil : ${roll} sur 1D10 (${threshold}+), se réveille et agit !`);
+    }
+    else {
+      blocked = "Endormi";
+      const next = Math.max(threshold - 1, 1);
+      if ( actor.system.conditions ) await actor.update({ "system.conditions.sommeil": next });
+      lines.push(`Sommeil : ${roll} sur 1D10 (${threshold}+), reste endormi ; prochain réveil sur ${next}+.`);
+    }
   }
   if ( !blocked && actor.statuses.has("paralysie") ) {
     const roll = await d10();

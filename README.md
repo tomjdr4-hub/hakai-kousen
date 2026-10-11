@@ -50,7 +50,8 @@ Six onglets : **Statistiques** (Base, IV, EV, Nature, modifications temporaires)
 - **Initiative** (5.2, 5.3, 5.13) : 1D10 + DEX effective. À égalité, la meilleure DEX agit d'abord ; à DEX égale, le système relance 1D10 automatiquement et l'annonce dans le chat. Dans le suivi de combat, l'éclair ⚡ marque une action prioritaire pour le tour (switch, capacité prioritaire, Baie Chérim) et le clic droit « agit en dernier » : ces combattants passent avant (ou après) l'ordre normal, départagés entre eux par l'Initiative. Les priorités s'effacent à chaque nouveau tour. Un Pokémon ajouté en cours de combat lance son initiative tout seul.
 
 ### États et effets des capacités
-- En-tête des fiches : les **états** (KO, Brûlure, Paralysie, Poison, Toxik, Gel, Sommeil, Confusion, Apeuré) s'activent d'un clic, avec la règle en info-bulle, le **tour de Toxik** et le **stade de Confusion**. Ce sont les mêmes états que sur les jetons.
+- En-tête des fiches : les **états** (KO, Brûlure, Paralysie, Poison, Toxik, Gel, Sommeil, Confusion, Apeuré) s'activent d'un clic, avec la règle en info-bulle, le **tour de Toxik**, le **stade de Confusion** et le **seuil de réveil** du Sommeil. Ce sont les mêmes états que sur les jetons.
+- **Sommeil** (règle de l'auteur) : au début de chaque tour, 1D10 ; réveil sur 6+, puis le seuil baisse de 1 par tour endormi et à chaque coup d'attaque reçu. Réveillé, le Pokémon agit aussitôt.
 - Chaque capacité porte ses **effets** (modification de stat ou altération d'état, sur la cible ou le lanceur, soumis ou non à la chance d'effet secondaire), extraits des descriptions du site et modifiables sur la fiche de la capacité.
 - Quand une capacité touche, la carte de chat propose **Appliquer FOR −1 à …**, **Appliquer Toxik à …**, etc. Les modifications vont dans la colonne « Temp. » (−6 à +6) ; les immunités de type (Poison/Acier, Feu, Électrik, Glace) et la règle d'un seul problème de statut majeur sont vérifiées. Si le joueur ne possède pas la cible, le MJ l'applique automatiquement.
 - « Apeuré » disparaît à chaque nouveau tour de combat.
@@ -64,7 +65,7 @@ Six onglets : **Statistiques** (Base, IV, EV, Nature, modifications temporaires)
 - **Relation** : +1 Confiance ou +1 Obéissance pour 1 XP Dresseur, une fois par jour de jeu (date réelle si le temps du monde n'avance pas ; le MJ peut passer outre), 2 XP pour un semi-légendaire. Les 10 familles semi-légendaires (4.15) sont reconnues d'après l'espèce, formes régionales et Méga comprises ; elles s'appliquent aussi à la capture (+2, +3 au stade final).
 - **Évolution** : la catégorie (insecte rapide, classique, semi-légendaire, 2 ou 3 stades) et le stade sont déduits de la lignée du Pokédex ; vérifie le Dressage requis (8 à 14), propose le coût d'une évolution par niveau (niveau = XP), fait choisir le nouveau Talent, remplace l'espèce par celle du Pokédex et conserve IV, EV, Nature, relation et capacités.
 - **Capture** : le MJ confirme depuis la carte de capture ; le Pokémon rejoint l'équipe (6) ou la **Boîte PC** (30 places, pension de 50 ₽ par jour), avec la relation initiale choisie (Copain Ball +1 Confiance, Luxe Ball +2, Soin Ball : soigné) ; +1 XP Dresseur à la première capture. Une Ball qui rate sa cible n'est pas consommée.
-- **Nouveau-né** (7.8) : caractéristiques et VIT ÷2 et XP bloquée jusqu'à 100 XP cumulés. Les espèces Bébé (Pichu, Togepi…) gardent leur fiche normale et comptent −1 à la capture.
+- **Nouveau-né** (7.8) : caractéristiques et VIT ÷2 et XP bloquée jusqu'à 100 XP cumulés. Les espèces Bébé (Pichu, Togepi…) gardent leur fiche normale. Capture −1 pour un Bébé officiel, un Nouveau-né ou un jeune Pokémon sauvage (case « Jeune », cochée par le profil Jeune du générateur).
 - **Mécaniques régionales** (5.19) : Méga-Évolution (Dressage 18, forme saisie sur la fiche, fin au KO), Dynamax (3 tours, VIT doublée), Téracristallisation (Type Téra en défense), Capacité Z dans le panneau de combat (moitié de l'ENE max, une par Dresseur et par combat).
 
 ### Vie hors combat
@@ -148,7 +149,6 @@ Glissez un Pokémon du compendium dans l'onglet Acteurs, puis ajoutez IV, Nature
 - Capture : rareté, Aberrant / Dominant restent à ajouter par le MJ ; la condition des Balls spéciales est rappelée avec le seuil correspondant.
 - Objets tenus autres que les renforçateurs de Type (Restes, Orbe Vie, objets Choix…) et Baies de résistance : effets décrits, à appliquer à la main.
 - Objets sans effet de soin renseigné : l'objet est décompté, l'effet est à appliquer sur la fiche.
-- Sommeil : sa règle HK n'est pas dans les manuels, un rappel s'affiche au début du tour.
 - Effets conditionnels des capacités (« si… », « sinon… », Crocs Feu, Triplattaque…) et modifications de Précision : au MJ.
 
 ## Développement

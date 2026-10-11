@@ -617,7 +617,7 @@ export async function pokemonCenter(trainer) {
     for ( const id of [...CURABLE, "dead", "attraction", "vampigraine", "malediction", "peur"] ) {
       if ( p.statuses.has(id) ) await p.toggleStatusEffect(id, { active: false });
     }
-    await p.update({ "system.conditions.toxik": 0, "system.conditions.confusion": 0 });
+    await p.update({ "system.conditions.toxik": 0, "system.conditions.confusion": 0, "system.conditions.sommeil": 0 });
   }
   await trainer.update({ "system.money": trainer.system.money - cost });
   return card(trainer, "Centre Pokémon", `<p>Équipe soignée : VIT, ENE et altérations (−${cost} ₽).</p>

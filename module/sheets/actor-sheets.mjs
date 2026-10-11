@@ -79,7 +79,9 @@ class HKActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       toxik: { label: "Tour", name: "system.conditions.toxik", value: conditions.toxik, max: 99,
         tooltip: "Tour de Toxik : dégâts = 1/20 de la VIT max × ce nombre" },
       confusion: { label: "Stade", name: "system.conditions.confusion", value: conditions.confusion, max: 3,
-        tooltip: "Stade 1 : sort sur 10 · stade 2 : sur 8-10 · stade 3 : sur 6-10, puis fin" }
+        tooltip: "Stade 1 : sort sur 10 · stade 2 : sur 8-10 · stade 3 : sur 6-10, puis fin" },
+      sommeil: { label: "Réveil", name: "system.conditions.sommeil", value: conditions.sommeil, max: 10,
+        tooltip: "Seuil de réveil sur 1D10 : 6+ au départ, −1 par tour endormi et à chaque coup reçu" }
     } : {};
     return [
       { id: "dead", label: "KO", img: "icons/svg/skull.svg", rule: "0 VIT ou moins." },

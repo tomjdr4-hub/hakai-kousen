@@ -441,7 +441,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
       </div>`);
       if ( target && (amount > 0) ) {
         lines.push(`<button type="button" class="hk-apply" data-hk-action="applyDamage"
-          data-uuid="${target.uuid}" data-amount="${amount}" data-attack-type="${atk.type}" ${berry ? `data-consume="${berry.uuid}"` : ""}>
+          data-uuid="${target.uuid}" data-amount="${amount}" data-attack-type="${atk.type}" data-hit="1" ${berry ? `data-consume="${berry.uuid}"` : ""}>
           <i class="fa-solid fa-heart-crack"></i> Appliquer ${amount} dégâts à ${token.name}</button>`);
       }
     }

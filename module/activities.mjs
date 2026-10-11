@@ -315,6 +315,68 @@ export async function hatch(egg) {
 }
 
 /* -------------------------------------------- */
+/*  Objets tenus (8.7)                          */
+/* -------------------------------------------- */
+
+/** Ajoute un objet à l'inventaire du Dresseur, regroupé avec un objet du même nom. */
+async function addToInventory(trainer, data, quantity) {
+  const same = trainer.itemTypes.gear.find(i => i.name === data.name);
+  if ( same ) return same.update({ "system.quantity": same.system.quantity + quantity });
+  const copy = foundry.utils.deepClone(data);
+  delete copy._id;
+  foundry.utils.setProperty(copy, "system.quantity", quantity);
+  return trainer.createEmbeddedDocuments("Item", [copy]);
+}
+
+/**
+ * Donne un objet de l'inventaire à un Pokémon de l'équipe, qui le tient (un seul objet tenu à la fois, 8.7).
+ * Si le Pokémon tient déjà un objet, il est rendu au Dresseur (échange).
+ * @param {Actor} trainer
+ * @param {Item} item
+ */
+export async function giveToPokemon(trainer, item) {
+  const team = trainer.system.team.map(u => fromUuidSync(u)).filter(p => p?.isOwner);
+  if ( !team.length ) return ui.notifications.warn("Aucun Pokémon de l'équipe à qui donner cet objet.");
+  const options = team.map((p, i) => {
+    const held = p.itemTypes.gear.find(g => g.system.quantity > 0);
+    return `<label class="checkbox"><input type="radio" name="pokemon" value="${i}" ${i === 0 ? "checked" : ""}> ${p.name}
+      <span class="hint">${held ? `tient ${held.name} (échange)` : "emplacement libre"}</span></label>`;
+  }).join("");
+  const index = await DialogV2.prompt({
+    window: { title: `Donner ${item.name}`, icon: "fa-solid fa-hand-holding" },
+    content: `<p class="hint">Le Pokémon tient l'objet (une unité). Un objet déjà tenu est rendu au Dresseur.</p><fieldset>${options}</fieldset>`,
+    ok: { label: "Donner", icon: "fa-solid fa-hand-holding", callback: (e, b) => Number(b.form.querySelector("input[name=pokemon]:checked")?.value ?? 0) },
+    rejectClose: false
+  });
+  if ( (index === null) || (index === undefined) ) return;
+  const pokemon = team[index];
+  const lines = [];
+  for ( const held of pokemon.itemTypes.gear ) {
+    if ( held.system.quantity > 0 ) {
+      await addToInventory(trainer, held.toObject(), held.system.quantity);
+      lines.push(`${held.name} revient dans l'inventaire de ${trainer.name}.`);
+    }
+    await held.delete();
+  }
+  const data = item.toObject();
+  delete data._id;
+  data.system.quantity = 1;
+  await pokemon.createEmbeddedDocuments("Item", [data]);
+  if ( item.system.quantity > 1 ) await item.update({ "system.quantity": item.system.quantity - 1 });
+  else await item.delete();
+  return card(trainer, `${pokemon.name} tient ${data.name}`, lines.length ? `<p class="hk-detail">${lines.join(" ")}</p>` : "");
+}
+
+/** Rend l'objet tenu d'un Pokémon à son Dresseur. */
+export async function returnHeld(pokemon, item) {
+  const trainer = trainerOf(pokemon);
+  if ( !trainer?.isOwner ) return ui.notifications.warn("Ce Pokémon n'est dans l'équipe d'aucun de vos Dresseurs.");
+  if ( item.system.quantity > 0 ) await addToInventory(trainer, item.toObject(), item.system.quantity);
+  await item.delete();
+  ui.notifications.info(`${item.name} revient dans l'inventaire de ${trainer.name}.`);
+}
+
+/* -------------------------------------------- */
 /*  Pêche et Minage (6.6, 6.7)                  */
 /* -------------------------------------------- */
 

@@ -1586,3 +1586,67 @@
 .hk-card .hk-reroll:hover {
   opacity: 1;
 }
+
+/* ---------- États des Pokémon dans l'équipe ---------- */
+
+.hakai-kousen .hk-states {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.hakai-kousen .hk-state {
+  padding: 0 6px;
+  border-radius: 8px;
+  font-size: 0.8em;
+  line-height: 16px;
+  background: var(--hk-accent-soft);
+  border: 1px solid var(--hk-border);
+}
+
+.hakai-kousen .hk-state.ko {
+  background: var(--hk-failure);
+  border-color: var(--hk-failure);
+  color: white;
+}
+
+.hakai-kousen .hk-state.info {
+  background: rgba(46, 125, 50, 0.15);
+}
+
+/* ---------- Outils du MJ ---------- */
+
+.hk-directory-tools .hk-create-trainer {
+  flex-basis: auto;
+}
+
+.hk-gm-tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px;
+}
+
+.hk-gm-tools-list .hk-gm-tool {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+  padding: 6px 10px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.hk-gm-tools-list .hk-gm-tool > i {
+  font-size: 1.4em;
+  width: 28px;
+  text-align: center;
+  color: var(--hk-accent);
+}
+
+.hk-gm-tools-list .hk-gm-tool .hint {
+  display: block;
+  font-size: 0.85em;
+  font-weight: normal;
+}

@@ -31,7 +31,7 @@
   {{!-- Caractéristiques, Compétences, Connaissances --}}
   <section class="tab {{tabs.main.cssClass}}" data-group="primary" data-tab="main">
     <div class="hk-activities">
-      <label class="checkbox"><input type="checkbox" name="system.creation" {{checked system.creation}}> Création du personnage</label>
+      <label class="checkbox" data-tooltip="Affiche le contrôle des règles de création (3.7 à 3.10). Pour un nouveau personnage, le bouton « Créer un Dresseur » de l'onglet Acteurs guide pas à pas."><input type="checkbox" name="system.creation" {{checked system.creation}}> Vérifier les règles de création</label>
       {{#if editable}}
       <button type="button" data-action="fish"><i class="fa-solid fa-fish"></i> Pêcher</button>
       <button type="button" data-action="mine"><i class="fa-solid fa-gem"></i> Miner</button>
@@ -99,7 +99,9 @@
           <a data-action="openMember"><strong>{{member.pokemon.name}}</strong></a>
           <span class="hint">{{member.pokemon.system.species}} · {{member.types}}</span>
           <span>VIT {{member.pokemon.system.vit.value}}/{{member.pokemon.system.vit.max}}
-            · ENE {{member.pokemon.system.ene.value}}/{{member.pokemon.system.ene.max}}</span>
+            · ENE {{member.pokemon.system.ene.value}}/{{member.pokemon.system.ene.max}}
+            · Dressage {{member.pokemon.system.dressage}}{{#if member.held}} · <i class="fa-solid fa-hand-holding" data-tooltip="Objet tenu"></i> {{member.held}}{{/if}}</span>
+          {{#if member.states.length}}<span class="hk-states">{{#each member.states as |st|}}<span class="hk-state {{st.cls}}">{{st.label}}</span>{{/each}}</span>{{/if}}
           {{#if @root.isNPC}}<select data-npc-role="{{member.pokemon.id}}" data-tooltip="Rôle dans l'équipe (MJ 5.6)">{{selectOptions @root.npcRoles selected=member.role}}</select>{{/if}}
         </div>
         {{/if}}
@@ -202,6 +204,7 @@
           <a class="item-name" data-action="editItem">{{item.name}}</a>
           {{#if item.system.charges}}<span class="hint">{{item.system.charges}} ch.</span>{{/if}}
           {{#if item.system.usable}}<button type="button" class="icon" data-action="useGear" data-tooltip="Utiliser sur un Pokémon"><i class="fa-solid fa-hand-holding-medical"></i></button>{{/if}}
+          {{#if @root.editable}}<button type="button" class="icon" data-action="giveItem" data-tooltip="Donner à un Pokémon de l'équipe (objet tenu)"><i class="fa-solid fa-hand-holding"></i></button>{{/if}}
           {{#if @root.editable}}<button type="button" class="icon" data-action="sell" data-tooltip="Revendre (50 % du prix)"><i class="fa-solid fa-coins"></i></button>{{/if}}
           <input class="qty" type="number" value="{{item.system.quantity}}" data-item-field="system.quantity" data-tooltip="Quantité">
           {{#if @root.editable}}

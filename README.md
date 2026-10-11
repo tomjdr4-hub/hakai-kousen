@@ -34,14 +34,16 @@ Le MJ peut ignorer les limites (PNJ, règles maison). Un joueur qui n'a pas le d
 - Caractéristiques DEX, FOR, CON, END, VOL (base + points) et **test de Caractéristique** : 1D6 ≤ Stat, la difficulté agrandit le dé (D8, D10, D12, D20).
 - 15 Compétences et 10 Connaissances avec Niveau et Spécialisation : **réserve de D10**, on garde le meilleur (Niveau 0 : 2D10, on garde le moins bon), réussite et échec critiques.
 - VIT, XP Dresseur, Pokédollars, repos long.
-- Équipe : glisser-déposer des acteurs Pokémon (6 max).
+- Équipe : glisser-déposer des acteurs Pokémon (6 max). Chaque Pokémon affiche VIT, ENE, Dressage, objet tenu et ses états (KO, altérations, affaibli, Nouveau-né).
+- Objets : le bouton « Donner » fait tenir un objet de l'inventaire à un Pokémon de l'équipe (échange si l'emplacement est pris) ; « Rendre », sur la fiche du Pokémon, le remet dans l'inventaire.
 - Mécaniques spéciales (Méga-Évolution, Capacité Z, Téracristallisation, Dynamax), badges.
 - Inventaire classé comme sur la fiche papier.
 
 ### Fiche Pokémon
+Six onglets : **Statistiques** (Base, IV, EV, Nature, modifications temporaires), **Progression** (relation, ordres, XP de relation, évolution, Starter), **Combat** (objet tenu, mécaniques régionales, sensibilités, rencontre et capture, Boss), **Capacités**, **Compétences** et **Description**.
 - Statistiques Base / IV / EV / Nature → Total, avec les gains par IV/EV (+1, VIT +2, ENE +3) et les 25 Natures.
 - Valeur **effective en combat** : modifications temporaires (−6 à +6), puis Brûlure (FOR ÷2), Paralysie (DEX ÷2), affaiblissement à ¼ de VIT (÷2), Bébé.
-- Confiance + Obéissance = **Dressage**, et jet d'ordre (1D8 ≤ Dressage sous 8, avec la réaction en cas d'échec).
+- Confiance + Obéissance = **Dressage**, et jet d'ordre (1D8 ≤ Dressage sous 8, avec la réaction en cas d'échec ; de 5 à 7, bouton « Tirer une attaque au hasard » puis « Lancer »).
 - **Sensibilités** calculées à partir des types.
 - Capacités : ciblez un jeton puis lancez. Le système dépense l'ENE, calcule la marge (FOR − END ou CON − VOL), lit le seuil dans la **Table unique**, lance 1D10 (10 naturel = réussite exceptionnelle, dégâts ×2), applique le **STAB** (×1,5 pour une attaque d'un type du lanceur, forme Méga et Type Téra compris ; réglage désactivable) et l'efficacité du type. Les capacités à dégâts variables (Ampleur, Balayage, Croc Fatal…) demandent le montant au lancer et propose un bouton **Appliquer les dégâts**. Les chances d'effet secondaire sont lancées aussi.
 - Compétences Pokémon (Standard / Intermédiaire / Rare, coût du niveau suivant, apprentissage /10), Talents, objets tenus.
@@ -78,7 +80,7 @@ Le MJ peut ignorer les limites (PNJ, règles maison). Un joueur qui n'a pas le d
 - **Combat** : climat et terrain affichés dans le panneau (réglés par le MJ).
 
 ### Outils du MJ
-Boutons dans l'onglet Acteurs (MJ) : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Temps en off**.
+Bouton **Outils du MJ** dans l'onglet Acteurs : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Temps en off**, chacun décrit dans la fenêtre.
 
 - **Rencontre en un clic** : choix de la zone (tables du monde nommées « Rencontres : … », ou l'exemple du Manuel du MJ ; bouton « Créer une table de zone » à partir de l'exemple), tirage sur sa table, relance de l'espèce sur un 100 (chromatique), reconnaissance de l'espèce, du nombre (1D4…), d'un Dominant ou d'un Aberrant, puis génération et placement des Pokémon. Un événement qui ne précise pas l'espèce (« Pokémon blessé : relancer… », « Pokémon Téracristallisé ») relance le D100 jusqu'à une espèce ordinaire (MJ 4.6).
 - **Retrait** : quand un Pokémon sauvage passe sous ¼ de VIT, le MJ reçoit son intention et sa condition de retrait.

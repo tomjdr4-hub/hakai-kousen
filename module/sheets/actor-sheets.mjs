@@ -2,7 +2,7 @@ import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
 import { syncCounters, useItemOn } from "../combat/effects.mjs";
 import { isSelfAttack, opponentsOf } from "../combat/actions.mjs";
-import { consumeTM, createEgg, fish, hatch, incubate, mine, pokemonCenter, sell, shop } from "../activities.mjs";
+import { consumeTM, createEgg, fish, giveToPokemon, hatch, incubate, mine, pokemonCenter, returnHeld, sell, shop } from "../activities.mjs";
 import {
   evolve, learnNextAttack, learnsetStatus, moveBetweenTeamAndPC, raiseRelation, spendEV, spendPokeskill, spendTrainerXP,
   toggleDynamax, toggleMega, toggleTera
@@ -156,6 +156,7 @@ export class TrainerSheet extends HKActorSheet {
       center: TrainerSheet._onCenter,
       shop: TrainerSheet._onShop,
       sell: TrainerSheet._onSell,
+      giveItem: TrainerSheet._onGiveItem,
       toPC: TrainerSheet._onToPC,
       toTeam: TrainerSheet._onToTeam,
       removeFromPC: TrainerSheet._onRemoveFromPC,
@@ -204,8 +205,17 @@ export class TrainerSheet extends HKActorSheet {
 
     const member = uuid => {
       const pokemon = fromUuidSync(uuid);
-      return pokemon ? { uuid, pokemon, types: [pokemon.system.types?.primary, pokemon.system.types?.secondary]
-        .filter(Boolean).map(t => HK.TYPES[t]).join(" / ") } : { uuid, missing: true };
+      if ( !pokemon ) return { uuid, missing: true };
+      const sys = pokemon.system;
+      // États visibles d'un coup d'œil : KO, altérations et états de combat, affaiblissement, Nouveau-né, objet tenu.
+      const states = [];
+      if ( sys.vit?.value <= 0 ) states.push({ label: "KO", cls: "ko" });
+      for ( const id of pokemon.statuses ) if ( HK.STATUSES[id] ) states.push({ label: HK.STATUSES[id].label, cls: "status" });
+      if ( sys.weakened ) states.push({ label: "Affaibli", cls: "status" });
+      if ( sys.newborn ) states.push({ label: `Nouveau-né ${sys.xp.total}/100`, cls: "info" });
+      const held = pokemon.itemTypes.gear.find(i => i.system.quantity > 0);
+      return { uuid, pokemon, states, held: held?.name,
+        types: [sys.types?.primary, sys.types?.secondary].filter(Boolean).map(t => HK.TYPES[t]).join(" / ") };
     };
     context.team = system.team.map(member).map(m => ({ ...m, role: m.pokemon ? (system.npc.roles?.[m.pokemon.id] ?? "") : "" }));
     context.isNPC = !this.actor.hasPlayerOwner;
@@ -261,6 +271,10 @@ export class TrainerSheet extends HKActorSheet {
   static async _onHatch(event, target) {
     const egg = this._getItem(target);
     if ( egg ) return hatch(egg);
+  }
+  static async _onGiveItem(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return giveToPokemon(this.actor, item);
   }
   static async _onFish() { return fish(this.actor); }
   static async _onMine() { return mine(this.actor); }
@@ -364,6 +378,7 @@ export class PokemonSheet extends HKActorSheet {
       learnFromCompendium: PokemonSheet._onLearnFromCompendium,
       learnNext: PokemonSheet._onLearnNext,
       useHeld: PokemonSheet._onUseHeld,
+      returnHeld: PokemonSheet._onReturnHeld,
       megaFromPokedex: PokemonSheet._onMegaFromPokedex,
       addPhase: PokemonSheet._onAddPhase,
       removePhase: PokemonSheet._onRemovePhase,
@@ -389,6 +404,8 @@ export class PokemonSheet extends HKActorSheet {
     primary: {
       tabs: [
         { id: "stats", label: "Statistiques" },
+        { id: "progression", label: "Progression" },
+        { id: "combat", label: "Combat" },
         { id: "attacks", label: "Capacités" },
         { id: "skills", label: "Compétences" },
         { id: "bio", label: "Description" }
@@ -646,6 +663,11 @@ export class PokemonSheet extends HKActorSheet {
       speaker: ChatMessage.implementation.getSpeaker({ actor: this.actor }),
       content: `<div class="hk-card"><header><h3>${this.actor.name} utilise ${item.name}</h3></header><p>${result}</p></div>`
     });
+  }
+
+  static async _onReturnHeld(event, target) {
+    const item = this._getItem(target);
+    if ( item ) return returnHeld(this.actor, item);
   }
 
   static async _onRollPokeskill(event, target) {

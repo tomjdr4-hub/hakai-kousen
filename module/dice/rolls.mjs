@@ -3,7 +3,7 @@ import {
   tableUniqueThreshold, typeEffectiveness
 } from "../config.mjs";
 
-import { applyDamage, effectLabel, spendEnergy } from "../combat/effects.mjs";
+import { applyDamage, effectLabel, onRenderChatMessage as onRenderEffects, spendEnergy } from "../combat/effects.mjs";
 import { armorReduction, damageBonuses, dodgeLevel, DODGE_COST, resistanceReduction } from "../combat/skills.mjs";
 import { attackerTalentMultipliers, defenderTalentImmunity, talentNames } from "../combat/talents.mjs";
 
@@ -150,8 +150,31 @@ export async function rollDressage(actor) {
   const failure = DRESSAGE_FAILURES.find(f => dressage <= f.max)?.text;
   const body = `<div class="hk-dice">${diceFaces(roll)}</div>
     <p class="hk-detail">1D8 ≤ ${dressage}</p>
-    ${outcome(success, success ? "Le Pokémon obéit." : `Désobéit : ${failure}`)}`;
+    ${outcome(success, success ? "Le Pokémon obéit." : `Désobéit : ${failure}`)}
+    ${!success && (dressage >= 5) ? `<button type="button" class="hk-apply" data-hk-dressage="random" data-uuid="${actor.uuid}">
+      <i class="fa-solid fa-shuffle"></i> Tirer une attaque au hasard (décision du MJ)</button>` : ""}`;
   return sendCard(actor, { title: "Ordre", subtitle: `Dressage ${dressage}`, body, rolls: [roll] });
+}
+
+/**
+ * Échec d'ordre à Dressage 5-7 (4.11) : le Pokémon peut utiliser une attaque au hasard de sa liste.
+ * Tire une attaque qu'il peut payer en ENE et propose de la lancer.
+ */
+async function randomAttack(actor) {
+  const attacks = actor.itemTypes.attack.filter(a => actor.system.ene.value >= a.system.energy);
+  if ( !attacks.length ) return ui.notifications.warn(`${actor.name} n'a aucune attaque utilisable (ENE).`);
+  const roll = await new foundry.dice.Roll(`1d${attacks.length}`).evaluate();
+  const attack = attacks[roll.total - 1];
+  return sendCard(actor, {
+    title: "Attaque au hasard",
+    subtitle: `1D${attacks.length} parmi les attaques utilisables`,
+    body: `<div class="hk-dice">${diceFaces(roll)}</div>
+      <p><strong>${attack.name}</strong> (${attack.system.energy} ENE)</p>
+      <p class="hint">Ciblez un jeton avant de lancer ; sans cible, le toucher n'est pas comparé à la Table unique.</p>
+      <button type="button" class="hk-apply" data-hk-dressage="launch" data-uuid="${actor.uuid}" data-item="${attack.id}">
+        <i class="fa-solid fa-dice-d10"></i> Lancer ${attack.name}</button>`,
+    rolls: [roll]
+  });
 }
 
 /* -------------------------------------------- */
@@ -521,5 +544,17 @@ function effectButton(actor, name, effect, source = null) {
     <i class="fa-solid ${icon}"></i> Appliquer ${effectLabel(effect)} à ${name}</button>`;
 }
 
-/** Boutons des cartes Hakai Kousen : voir combat/effects.mjs. */
-export { onRenderChatMessage } from "../combat/effects.mjs";
+/** Boutons des cartes Hakai Kousen : effets (combat/effects.mjs) et ordres désobéis (attaque au hasard). */
+export function onRenderChatMessage(message, html) {
+  onRenderEffects(message, html);
+  html.querySelectorAll("[data-hk-dressage]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const actor = await fromUuid(button.dataset.uuid);
+      if ( !actor?.isOwner ) return ui.notifications.warn("Seul le propriétaire du Pokémon peut faire cette action.");
+      button.classList.add("applied");
+      if ( button.dataset.hkDressage === "random" ) return randomAttack(actor);
+      const item = actor.items.get(button.dataset.item);
+      if ( item ) return rollAttack(actor, item);
+    });
+  });
+}

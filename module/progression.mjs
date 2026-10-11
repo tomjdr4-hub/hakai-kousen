@@ -36,8 +36,8 @@ export async function spendTrainerXP(trainer, group, key) {
   let cost, label, update, after;
   if ( group === "attribute" ) {
     const attr = trainer.system.attributes[key];
-    cost = 4 * attr.value;
-    label = `${ATTRIBUTES[key].label} ${attr.value} → ${attr.value + 1}`;
+    cost = 4 * attr.total;
+    label = `${ATTRIBUTES[key].label} ${attr.total} → ${attr.total + 1}`;
     update = { [`system.attributes.${key}.pts`]: attr.pts + 1 };
   }
   else {

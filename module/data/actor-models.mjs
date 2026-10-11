@@ -67,7 +67,17 @@ export class TrainerData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    for ( const attr of Object.values(this.attributes) ) attr.value = attr.base + attr.pts;
+    // Score (base + points) pour la progression ; valeur effective pour les jets, après les altérations
+    // (Paralysie : DEX ÷2 ; Brûlure : FOR ÷2), appliquées au Dresseur comme aux Pokémon (5.9).
+    const statuses = this.parent?.statuses ?? new Set();
+    for ( const [k, attr] of Object.entries(this.attributes) ) {
+      attr.total = attr.base + attr.pts;
+      let value = attr.total;
+      if ( (k === "dex") && statuses.has("paralysie") ) value = Math.floor(value / 2);
+      if ( (k === "for") && statuses.has("brulure") ) value = Math.floor(value / 2);
+      attr.value = value;
+      attr.modified = value !== attr.total;
+    }
   }
 
   getRollData() {

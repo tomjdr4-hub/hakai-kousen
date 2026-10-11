@@ -50,7 +50,7 @@
               <th data-tooltip="{{attr.label}}">{{attr.abbr}}</th>
               <td><input type="number" name="system.attributes.{{attr.key}}.base" value="{{attr.base}}"></td>
               <td><input type="number" name="system.attributes.{{attr.key}}.pts" value="{{attr.pts}}"></td>
-              <td class="total">{{attr.value}}</td>
+              <td class="total {{#if attr.modified}}modified{{/if}}" {{#if attr.modified}}data-tooltip="Score {{attr.total}}, réduit par une altération (Paralysie : DEX ÷2, Brûlure : FOR ÷2)"{{/if}}>{{attr.value}}</td>
               <td><button type="button" class="roll" data-action="rollAttribute" data-attribute="{{attr.key}}" data-tooltip="Test : 1Dx ≤ {{attr.value}}"><i class="fa-solid fa-dice-d6"></i></button></td>
               <td>{{#if @root.editable}}<button type="button" class="icon xp" data-action="spendXP" data-group="attribute" data-key="{{attr.key}}" data-tooltip="Améliorer : {{attr.cost}} XP Dresseur"><i class="fa-solid fa-plus"></i></button>{{/if}}</td>
             </tr>

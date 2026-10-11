@@ -196,7 +196,7 @@ export class TrainerSheet extends HKActorSheet {
 
     // Coûts en XP Dresseur : Caractéristique 4 × valeur ; domaine 2 à l'ouverture puis 2 × Niveau (3.12).
     context.attributes = Object.entries(HK.ATTRIBUTES).map(([key, cfg]) => ({
-      key, ...cfg, ...system.attributes[key], cost: 4 * system.attributes[key].value
+      key, ...cfg, ...system.attributes[key], cost: 4 * system.attributes[key].total
     }));
     const domains = (group, labels) => Object.entries(labels).map(([key, label]) => {
       const domain = system[group][key];
@@ -254,7 +254,7 @@ export class TrainerSheet extends HKActorSheet {
     const ok = (test, label) => ({ ok: test, label });
     return [
       ok(pts === 10, `Caractéristiques : ${pts} / 10 points répartis (base 1 partout)`),
-      ok(attrs.every(a => a.value <= 5), "Aucune Caractéristique au-dessus de 5"),
+      ok(attrs.every(a => a.total <= 5), "Aucune Caractéristique au-dessus de 5"),
       ok(sum(skills) >= 5, `Compétences : ${sum(skills)} points (5 minimum)`),
       ok(sum(knowledges) >= 5, `Connaissances : ${sum(knowledges)} points (5 minimum)`),
       ok(sum(skills) + sum(knowledges) === 17, `Total : ${sum(skills) + sum(knowledges)} / 17 points`),

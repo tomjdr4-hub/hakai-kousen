@@ -2,7 +2,8 @@ import { HK, typeEffectiveness } from "../config.mjs";
 import { rollAttack, rollAttribute, rollDressage, rollPool } from "../dice/rolls.mjs";
 import { syncCounters, useItemOn } from "../combat/effects.mjs";
 import { isSelfAttack, opponentsOf } from "../combat/actions.mjs";
-import { consumeTM, createEgg, fish, giveToPokemon, hatch, incubate, mine, pokemonCenter, returnHeld, sell, shop } from "../activities.mjs";
+import { openPretires } from "../apps/pretires.mjs";
+import { consumeTM, createEgg, fish, giveToPokemon, hatch, incubate, mine, pokemonCenter, returnHeld, sell, shop, work } from "../activities.mjs";
 import {
   evolve, learnNextAttack, learnsetStatus, moveBetweenTeamAndPC, raiseRelation, spendEV, spendPokeskill, spendTrainerXP,
   toggleDynamax, toggleMega, toggleTera
@@ -152,6 +153,8 @@ export class TrainerSheet extends HKActorSheet {
       incubate: TrainerSheet._onIncubate,
       hatch: TrainerSheet._onHatch,
       fish: TrainerSheet._onFish,
+      work: TrainerSheet._onWork,
+      pretires: TrainerSheet._onPretires,
       mine: TrainerSheet._onMine,
       center: TrainerSheet._onCenter,
       shop: TrainerSheet._onShop,
@@ -277,6 +280,11 @@ export class TrainerSheet extends HKActorSheet {
     if ( item ) return giveToPokemon(this.actor, item);
   }
   static async _onFish() { return fish(this.actor); }
+  static async _onWork() { return work(this.actor); }
+  static async _onPretires() {
+    const pokemon = this.actor.system.team.map(u => fromUuidSync(u)).filter(Boolean);
+    return openPretires({ pokemon, title: `équipe de ${this.actor.name}` });
+  }
   static async _onMine() { return mine(this.actor); }
   static async _onCenter() { return pokemonCenter(this.actor); }
   static async _onShop() { return shop(this.actor); }
@@ -431,6 +439,8 @@ export class PokemonSheet extends HKActorSheet {
       return [k, n.label + mods];
     }));
     context.secondaryTypes = { "": "—", ...HK.TYPES };
+    // Effet HK optionnel de la Nature (4.5), au choix du MJ.
+    context.natureEffect = HK.NATURES[system.nature]?.hk ?? null;
     context.dressage = system.dressage;
     context.obeys = system.dressage >= 8;
     context.weakened = system.weakened;
@@ -648,9 +658,11 @@ export class PokemonSheet extends HKActorSheet {
     const mega = await pack.getDocument(entry._id);
     const bonus = {};
     for ( const k of ["dex", "for", "con", "end", "vol"] ) bonus[k] = mega.system.stats[k].base - this.actor.system.stats[k].base;
+    const talent = mega.system.speciesData.talents[0] ?? null;
     await this.actor.update({ "system.form": { ...this.actor.system.form.toObject?.() ?? this.actor.system.form, name: mega.name,
-      primary: mega.system.types.primary, secondary: mega.system.types.secondary, bonus } });
-    ui.notifications.info(`${mega.name} : types et bonus de statistiques renseignés.`);
+      primary: mega.system.types.primary, secondary: mega.system.types.secondary, bonus,
+      talent: talent?.name ?? "", talentUuid: talent?.uuid ?? "" } });
+    ui.notifications.info(`${mega.name} : types, bonus de statistiques${talent ? ` et Talent (${talent.name})` : ""} renseignés.`);
   }
 
   /** Objet tenu utilisé par le Pokémon lui-même, sans action du Dresseur (Jus de Baie, Baies). */

@@ -20,6 +20,7 @@ import { openPlanning } from "./module/apps/planning.mjs";
 import { openCharacterWizard } from "./module/apps/character-wizard.mjs";
 import { addRerollButton } from "./module/reroll.mjs";
 import { openGMTools } from "./module/apps/gm-tools.mjs";
+import { chargePension } from "./module/activities.mjs";
 
 /** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
@@ -56,6 +57,11 @@ Hooks.once("init", () => {
   game.settings.register("hakai-kousen", "autoPlanning", {
     name: "Réflexion automatique à chaque tour",
     hint: "Lance le chrono et le choix secret des actions dès qu'un nouveau tour de combat commence.",
+    scope: "world", config: true, type: Boolean, default: true
+  });
+  game.settings.register("hakai-kousen", "pension", {
+    name: "Pension de la Boîte PC",
+    hint: "Quand le temps du monde avance d'un ou plusieurs jours, chaque Dresseur paie 50 ₽ par Pokémon de sa Boîte PC et par jour (7.1).",
     scope: "world", config: true, type: Boolean, default: true
   });
   game.settings.register("hakai-kousen", "fatalSave", {
@@ -117,6 +123,7 @@ function refreshTrainerSheets(pokemon) {
   }
 }
 Hooks.on("updateActor", actor => refreshTrainerSheets(actor));
+Hooks.on("updateWorldTime", (worldTime, delta) => chargePension(worldTime, delta));
 for ( const hook of ["createActiveEffect", "deleteActiveEffect", "createItem", "updateItem", "deleteItem"] ) {
   Hooks.on(hook, doc => refreshTrainerSheets(doc.parent));
 }
@@ -152,7 +159,7 @@ Hooks.on("renderActorDirectory", (app, html) => {
   const tools = document.createElement("div");
   tools.className = "hk-directory-tools";
   tools.innerHTML = `<button type="button" class="hk-create-trainer" data-hk-tool="character" data-tooltip="Créer un Dresseur pas à pas selon les règles du chapitre 3, avec son Starter"><i class="fa-solid fa-user-plus"></i> Créer un Dresseur</button>`;
-  if ( game.user.isGM ) tools.innerHTML += `<button type="button" data-hk-tool="gm" data-tooltip="Rencontre, Pokémon sauvages, Combat de Dresseurs, Concours, Temps en off"><i class="fa-solid fa-toolbox"></i> Outils du MJ</button>`;
+  if ( game.user.isGM ) tools.innerHTML += `<button type="button" data-hk-tool="gm" data-tooltip="Rencontre, Pokémon sauvages, Combat de Dresseurs, Concours, Temps en off, Test en opposition, Pokémon pré-tirés"><i class="fa-solid fa-toolbox"></i> Outils du MJ</button>`;
   const tool = { character: openCharacterWizard, gm: openGMTools };
   for ( const button of tools.querySelectorAll("[data-hk-tool]") ) {
     button.addEventListener("click", () => tool[button.dataset.hkTool]());

@@ -1,0 +1,330 @@
+{
+  "_id": "6121df5aecbdcdea",
+  "_key": "!tables!6121df5aecbdcdea",
+  "name": "Rencontres : Zone Ouest n°1 — Grotte",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p><strong>Zone Ouest n°1</strong> — Galeries sombres, cavités chaudes et veines cristallines. C’est ici que la piste des Ténéfix et le SITE S-04 prend tout son sens.</p><p>Aide du MJ « Voyage de Sévaro à Porto Marinada ». Sur un 100 : Pokémon chromatique, relancer pour l’espèce.</p><p><strong>Notes MJ</strong></p><p></p><p>Cristaux vivants : 4 braconniers chassent les Ténéfix pour leurs fragments (1 500 ₽ pièce), butin 1d4+1 fragments, 900 ₽, 2</p><p>Hyper Balls, carte « SITE S-04 ».</p><p></p><p>Ténéfixite : ne pas la donner automatiquement. Elle peut être offerte si les PJ libèrent/restituent les cristaux et gagnent la</p><p>confiance de la colonie.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "f994a928a1eb0d26",
+      "_key": "!tables.results!6121df5aecbdcdea.f994a928a1eb0d26",
+      "type": "text",
+      "name": "Ténéfix",
+      "description": "Ténéfix",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        15
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "e039c8cb531d213d",
+      "_key": "!tables.results!6121df5aecbdcdea.e039c8cb531d213d",
+      "type": "text",
+      "name": "EVENT - galerie instable",
+      "description": "EVENT - galerie instable",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        16,
+        18
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "64c5e274892e6db5",
+      "_key": "!tables.results!6121df5aecbdcdea.64c5e274892e6db5",
+      "type": "text",
+      "name": "Fantominus",
+      "description": "Fantominus",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        19,
+        31
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "2ba9b4ed5a6a8f7b",
+      "_key": "!tables.results!6121df5aecbdcdea.2ba9b4ed5a6a8f7b",
+      "type": "text",
+      "name": "EVENT - Pokémon poursuivi dans les tunnels",
+      "description": "EVENT - Pokémon poursuivi dans les tunnels",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        32,
+        33
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "871d3ef6b163a948",
+      "_key": "!tables.results!6121df5aecbdcdea.871d3ef6b163a948",
+      "type": "text",
+      "name": "BRACONNIERS - Cristaux vivants",
+      "description": "BRACONNIERS - Cristaux vivants",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        34,
+        36
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "a6ee06b2dfe58edb",
+      "_key": "!tables.results!6121df5aecbdcdea.a6ee06b2dfe58edb",
+      "type": "text",
+      "name": "Tritox",
+      "description": "Tritox",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        37,
+        47
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "49453792dacf9a36",
+      "_key": "!tables.results!6121df5aecbdcdea.49453792dacf9a36",
+      "type": "text",
+      "name": "HORDE - Fantominus",
+      "description": "HORDE - Fantominus",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        48,
+        49
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "bc499620de111cf4",
+      "_key": "!tables.results!6121df5aecbdcdea.bc499620de111cf4",
+      "type": "text",
+      "name": "Griknot",
+      "description": "Griknot",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        50,
+        59
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "95969eae6a214336",
+      "_key": "!tables.results!6121df5aecbdcdea.95969eae6a214336",
+      "type": "text",
+      "name": "NID - Griknot",
+      "description": "NID - Griknot",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        60,
+        61
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "ad23e87953c59195",
+      "_key": "!tables.results!6121df5aecbdcdea.ad23e87953c59195",
+      "type": "text",
+      "name": "NID ANCESTRAL - SITE S-04, colonie de Ténéfix",
+      "description": "NID ANCESTRAL - SITE S-04, colonie de Ténéfix",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        62,
+        64
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "3c25b1e9364be16c",
+      "_key": "!tables.results!6121df5aecbdcdea.3c25b1e9364be16c",
+      "type": "text",
+      "name": "Charbambin",
+      "description": "Charbambin",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        65,
+        73
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "12e9bd645d6ee852",
+      "_key": "!tables.results!6121df5aecbdcdea.12e9bd645d6ee852",
+      "type": "text",
+      "name": "TRÉSOR - veine minérale / CT / pierre",
+      "description": "TRÉSOR - veine minérale / CT / pierre",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        74,
+        75
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "efb3827b2163a00e",
+      "_key": "!tables.results!6121df5aecbdcdea.efb3827b2163a00e",
+      "type": "text",
+      "name": "Selutin",
+      "description": "Selutin",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        76,
+        82
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1f55e990e5e3b30a",
+      "_key": "!tables.results!6121df5aecbdcdea.1f55e990e5e3b30a",
+      "type": "text",
+      "name": "DOMINANT - Ténéfix ancien gardant le cœur cristallin",
+      "description": "DOMINANT - Ténéfix ancien gardant le cœur cristallin",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        83,
+        84
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "af2736218df4ed98",
+      "_key": "!tables.results!6121df5aecbdcdea.af2736218df4ed98",
+      "type": "text",
+      "name": "Insolourdo",
+      "description": "Insolourdo",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        85,
+        89
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "9ba0fd1ac0c62d2f",
+      "_key": "!tables.results!6121df5aecbdcdea.9ba0fd1ac0c62d2f",
+      "type": "text",
+      "name": "ABERRANT - Charbambin à la flamme blanche",
+      "description": "ABERRANT - Charbambin à la flamme blanche",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        90,
+        91
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "807a743d195465b5",
+      "_key": "!tables.results!6121df5aecbdcdea.807a743d195465b5",
+      "type": "text",
+      "name": "Coupenotte",
+      "description": "Coupenotte",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        92,
+        94
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "e5333ed6abff4235",
+      "_key": "!tables.results!6121df5aecbdcdea.e5333ed6abff4235",
+      "type": "text",
+      "name": "Pokémon Téracristallisé",
+      "description": "Pokémon Téracristallisé",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        95,
+        96
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "9a3ff3e6eb1e1a22",
+      "_key": "!tables.results!6121df5aecbdcdea.9a3ff3e6eb1e1a22",
+      "type": "text",
+      "name": "Ténéfixite visible au fond du SITE S-04",
+      "description": "Ténéfixite visible au fond du SITE S-04",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        97,
+        98
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "15b71d91ea0b2bda",
+      "_key": "!tables.results!6121df5aecbdcdea.15b71d91ea0b2bda",
+      "type": "text",
+      "name": "Ténéfix couvert de fragments brillants",
+      "description": "Ténéfix couvert de fragments brillants",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        99,
+        99
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "852b3916b53ada3a",
+      "_key": "!tables.results!6121df5aecbdcdea.852b3916b53ada3a",
+      "type": "text",
+      "name": "CHROMATIQUE - relancer sur la même table jusqu’à obtenir une espèce Pokémon ordinaire",
+      "description": "CHROMATIQUE - relancer sur la même table jusqu’à obtenir une espèce Pokémon ordinaire",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": "2351ba5aeb6ed4dd",
+  "sort": 0,
+  "flags": {}
+}

@@ -35,6 +35,7 @@
       {{#if editable}}
       <button type="button" data-action="fish"><i class="fa-solid fa-fish"></i> Pêcher</button>
       <button type="button" data-action="mine"><i class="fa-solid fa-gem"></i> Miner</button>
+      <button type="button" data-action="work" data-tooltip="Activité de Vocation : type d'activité, test éventuel et paiement (MJ 6.9, 6.10)"><i class="fa-solid fa-briefcase"></i> Travailler</button>
       {{/if}}
     </div>
     {{#if creation}}<ul class="hk-checklist">{{#each creation as |c|}}<li class="{{#if c.ok}}ok{{else}}ko{{/if}}"><i class="fa-solid {{#if c.ok}}fa-check{{else}}fa-xmark{{/if}}"></i> {{c.label}}</li>{{/each}}</ul>{{/if}}
@@ -123,6 +124,7 @@
       <label class="wide">Réaction au KO et retrait <input type="text" name="system.npc.retreat" value="{{system.npc.retreat}}" placeholder="Se rend, fuit, appelle des renforts…"></label>
     </div>
     <p class="hint">Un adversaire intelligent agit à partir de ce qu'il observe, pas des fiches des personnages (MJ 5.13).</p>
+    <button type="button" data-action="pretires"><i class="fa-solid fa-print"></i> Fiche pré-tirés de l'équipe</button>
     {{/if}}
 
     <h3>Boîte PC ({{pc.length}} / 30)</h3>

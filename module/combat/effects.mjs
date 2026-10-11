@@ -224,6 +224,12 @@ export async function useItemOn(item, actor) {
     lines.push(`${STATUSES[id]?.label ?? id} guéri.`);
   }
   if ( (newVit > 0) && actor.statuses.has("dead") ) await actor.toggleStatusEffect("dead", { active: false });
+  // Herbes médicinales amères (8.3) : après plusieurs utilisations, le MJ peut retirer 1 point de Confiance.
+  if ( (actor.type === "pokemon") && /^(poudre soin|poudre énergie|racine énergie|herbe rappel)$/i.test(item.name) ) {
+    const count = (actor.getFlag("hakai-kousen", "bitter") ?? 0) + 1;
+    await actor.setFlag("hakai-kousen", "bitter", count);
+    lines.push(`Remède amer (${count}e utilisation) : après plusieurs prises, le MJ peut retirer 1 Confiance, sauf si ${actor.name} s'y est habitué (8.3).`);
+  }
   // Objet tenu par un Pokémon : consommé, il libère l'emplacement (8.7) ; dans l'inventaire du Dresseur, la quantité baisse.
   if ( (item.parent?.type === "pokemon") && (item.system.quantity <= 1) ) await item.delete();
   else await item.update({ "system.quantity": Math.max(item.system.quantity - 1, 0) });

@@ -151,6 +151,9 @@ export class PokemonData extends foundry.abstract.TypeDataModel {
         name: new StringField({ required: true, blank: true }),
         primary: new StringField({ required: true, blank: true }),
         secondary: new StringField({ required: true, blank: true }),
+        // Talent de la forme (Méga) : remplace le Talent du Pokémon pendant la forme (5.19.1).
+        talent: new StringField({ required: true, blank: true }),
+        talentUuid: new StringField({ required: true, blank: true }),
         bonus: new SchemaField(Object.fromEntries(["dex", "for", "con", "end", "vol"].map(k => [k, int(0)])))
       }),
       dynamax: new SchemaField({ active: new BooleanField(), endsRound: int(0) }),

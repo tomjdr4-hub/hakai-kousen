@@ -34,7 +34,8 @@ export async function openWildGenerator() {
       <input type="text" name="species" list="hk-species" placeholder="Nom ou numéro" required>
       <datalist id="hk-species">${species.map(s => `<option value="${s.name}">${s.system?.number ?? ""}</option>`).join("")}</datalist>
     </div></div>
-    <div class="form-group"><label>Nombre</label><div class="form-fields"><input type="number" name="count" value="1" min="1" max="12"></div></div>
+    <div class="form-group"><label>Nombre</label><div class="form-fields"><input type="number" name="count" value="1" min="1" max="12">
+      <label class="checkbox" data-tooltip="Les membres partagent une même initiative et agissent à la suite, chacun avec ses actions, sa VIT et son ENE (MJ 5.9)"><input type="checkbox" name="pack" checked> Meute : initiative partagée</label></div></div>
     <div class="form-group"><label>Profil</label><div class="form-fields"><select name="profile">${options(WILD_PROFILES)}</select></div></div>
     <div class="form-group"><label>Points d'IV</label><div class="form-fields"><input type="number" name="iv" value="" min="0" placeholder="selon le profil"></div>
       <p class="hint">Répartis au hasard sur DEX, FOR, CON, END, VOL, VIT et ENE. Les manuels ne chiffrent pas les profils : ajustez librement.</p></div>
@@ -81,6 +82,8 @@ export async function generateWild(source, data) {
   const ivPoints = Number.isNumeric(data.iv) ? Number(data.iv) : profile.iv;
   const count = Math.clamp(Number(data.count) || 1, 1, 12);
   const folder = await wildFolder();
+  // Meute (MJ 5.9) : plusieurs Pokémon semblables partagent une même initiative.
+  const pack = (count > 1) && (data.pack ?? true) ? foundry.utils.randomID() : null;
   const created = [];
   const lines = [];
 
@@ -134,6 +137,7 @@ export async function generateWild(source, data) {
 
     actorData.name = count > 1 ? `${source.name} ${n}` : source.name;
     actorData.folder = folder.id;
+    if ( pack ) foundry.utils.setProperty(actorData, "flags.hakai-kousen.pack", pack);
     actorData.prototypeToken = { ...(actorData.prototypeToken ?? {}), name: actorData.name, actorLink: false,
       disposition: CONST.TOKEN_DISPOSITIONS.HOSTILE };
     created.push(actorData);

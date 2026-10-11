@@ -1,9 +1,9 @@
 """Compendium de tables aléatoires (Manuel du Joueur 4.5, 4.8, 6.7 ; Manuel du MJ 4.5 ; écran du MJ).
 
-Usage : python tools/tables.py
-Écrit packs-src/tables.
+Usage : python tools/tables.py [--voyage <Aide_MJ_Voyage_Sevaro_Porto_Marinada.pdf>]
+Écrit packs-src/tables. Avec --voyage, ajoute les tables D100 des sous-zones de l'aide de voyage (dossier dédié).
 """
-import glob, hashlib, json, os, re, unicodedata
+import glob, hashlib, html, json, os, re, sys, unicodedata
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "packs-src", "tables")
 
@@ -68,6 +68,76 @@ OLIVERAIES = """01–08|Olivini - 1D4 près d’une exploitation
 100|Pokémon chromatique : relancer jusqu’à obtenir une espèce ordinaire"""
 
 
+VOYAGE_FOLDER = "Voyage Sévaro → Porto Marinada"
+RANGE = re.compile(r"^(\d{1,3})(?:\s*[–-]\s*(\d{1,3}))?$")
+NOISE = re.compile(r"^(=== p\d+|HAKAI KOUSEN\s+•|© 20\d\d)")
+
+
+def zone_title(text):
+    """« ZONE SUD N°2 » → « Zone Sud n°2 » ; « DÉSERT RÔTISSABLE » → « Désert Rôtissable »."""
+    words = text.strip().title().split()
+    return " ".join(w.replace("N°", "n°") for w in words)
+
+
+def voyage_tables(pdf):
+    """Tables D100 de l'aide « Voyage de Sévaro à Porto Marinada » : une table par sous-zone (A., B., C.…)."""
+    import fitz
+    lines = []
+    for page in fitz.open(pdf):
+        lines += [l.strip() for l in page.get_text().splitlines()]
+    lines = [l for l in lines if l and not NOISE.match(l)]
+    tables, zone, i = [], "", 0
+    while i < len(lines):
+        line = lines[i]
+        m = re.match(r"^FICHE \d+\s*[—-]\s*(.+)$", line)
+        if m:
+            zone = zone_title(m.group(1))
+            i += 1
+            continue
+        m = re.match(r"^([A-H])\.\s+(.+)$", line)
+        if not (m and zone):
+            i += 1
+            continue
+        sub = m.group(2).strip()
+        i += 1
+        intro = []
+        while i < len(lines) and lines[i].lower() != "d100":
+            intro.append(lines[i])
+            i += 1
+        i += 2  # « d100 » puis « RENCONTRE / ÉVÉNEMENT »
+        rows = []
+        while i < len(lines):
+            r = RANGE.match(lines[i])
+            if not r:
+                break
+            lo = int(r.group(1))
+            hi = int(r.group(2) or lo)
+            i += 1
+            text = []
+            while i < len(lines) and not RANGE.match(lines[i]) and lines[i] != "Notes MJ"                     and not re.match(r"^([A-H])\.\s+", lines[i]) and not lines[i].startswith("FICHE "):
+                text.append(lines[i])
+                i += 1
+            label = " ".join(text).replace(" — ", " - ")
+            rows.append((lo, hi, label))
+            if hi >= 100:
+                break
+        notes = []
+        if i < len(lines) and lines[i] == "Notes MJ":
+            i += 1
+            while i < len(lines) and not re.match(r"^([A-H])\.\s+", lines[i]) and not lines[i].startswith("FICHE "):
+                notes.append(lines[i])
+                i += 1
+        if not rows or rows[-1][1] != 100:
+            print(f"  table incomplète ignorée : {zone} / {sub}")
+            continue
+        description = f"<p><strong>{html.escape(zone)}</strong> — {html.escape(' '.join(intro))}</p>"
+        description += "<p>Aide du MJ « Voyage de Sévaro à Porto Marinada ». Sur un 100 : Pokémon chromatique, relancer pour l’espèce.</p>"
+        if notes:
+            description += "<p><strong>Notes MJ</strong></p>" + "".join(f"<p>{html.escape(n)}</p>" for n in notes)
+        tables.append(table(f"Rencontres : {zone} — {sub}", "1d100", description, rows))
+    return tables
+
+
 def ranges(text):
     rows = []
     for line in text.splitlines():
@@ -127,6 +197,16 @@ def main():
                   ("Fausse annonce, piège ou escroquerie", "8", "0 ₽, sauf récupération"), ("Capture douteuse d’une espèce protégée", "8", "jusqu’à 1 500 ₽"),
                   ("Tournoi local avec prix", "variable", "jusqu’à 1 500 ₽"), ("Pokémon affolé menaçant des habitants", "8 à 10", "1 000–2 000 ₽ ou autre")])]),
     ]
+    if "--voyage" in sys.argv:
+        pdf = sys.argv[sys.argv.index("--voyage") + 1]
+        fid = make_id("dossier-tables", VOYAGE_FOLDER)
+        folder = {"_id": fid, "_key": f"!folders!{fid}", "name": VOYAGE_FOLDER, "type": "RollTable", "sorting": "a",
+                  "sort": 0, "color": None, "folder": None, "description": "", "flags": {}}
+        with open(os.path.join(OUT, f"dossier_voyage_{fid}.json"), "w", encoding="utf8") as f:
+            json.dump(folder, f, ensure_ascii=False, indent=2)
+        for t in voyage_tables(pdf):
+            t["folder"] = fid
+            tables.append(t)
     for t in tables:
         with open(os.path.join(OUT, f"{slug(t['name'])}_{t['_id']}.json"), "w", encoding="utf8") as f:
             json.dump(t, f, ensure_ascii=False, indent=2)

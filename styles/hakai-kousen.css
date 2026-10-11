@@ -1304,7 +1304,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  max-height: 260px;
+  max-height: 380px;
   overflow-y: auto;
 }
 
@@ -1649,4 +1649,11 @@
   display: block;
   font-size: 0.85em;
   font-weight: normal;
+}
+
+.hk-zones .hk-zone-group {
+  margin: 6px 0 2px;
+  font-weight: bold;
+  font-size: 0.85em;
+  color: var(--hk-accent);
 }

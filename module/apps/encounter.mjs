@@ -5,16 +5,29 @@
 import { generateWild } from "./wild-generator.mjs";
 
 const { DialogV2 } = foundry.applications.api;
-const EVENT = /^(ÉVÉNEMENT|EVENEMENT|HORDE|NID|BRACONNIERS)\b/i;
+const EVENT = /^(ÉVÉNEMENT|EVENEMENT|EVENT|HORDE|NID|BRACONNIERS|TRÉSOR|INDICE|MÉTÉO|RENCONTRE)\b/i;
 
 function resultText(result) {
   return (result?.name || result?.description || result?.text || "").replace(/<[^>]+>/g, "").trim();
 }
 
-/** Espèces du Pokédex citées dans le texte (« Pichu ou Toudoudou » : les deux). */
+/** Le nom d'espèce est cité tel quel dans le texte (en minuscules). */
+function cites(lower, name) {
+  return new RegExp(`(^|[^a-zà-ÿ])${name.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-zà-ÿ]|$)`).test(lower);
+}
+
+/**
+ * Espèces du Pokédex citées dans le texte (« Pichu ou Toudoudou » : les deux). Un nom sans précision retrouve
+ * les fiches à forme entre parenthèses (« Fragroin » → « Fragroin (Mâle) » et « Fragroin (Femelle) »).
+ */
 function findAllSpecies(text, index) {
   const lower = text.toLowerCase();
-  return [...index].filter(e => new RegExp(`(^|[^a-zà-ÿ])${e.name.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-zà-ÿ]|$)`).test(lower));
+  const entries = [...index];
+  const exact = entries.filter(e => cites(lower, e.name));
+  const base = name => name.replace(/\s*\(.+\)$/, "");
+  const forms = entries.filter(e => (base(e.name) !== e.name) && !exact.includes(e) && cites(lower, base(e.name))
+    && !exact.some(x => x.name.toLowerCase() === base(e.name).toLowerCase()));
+  return [...exact, ...forms];
 }
 
 function findSpecies(text, index) {
@@ -64,11 +77,25 @@ export async function createZoneTable() {
  */
 export async function rollEncounter() {
   const pack = game.packs.get("hakai-kousen.tables");
-  const example = pack ? [...await pack.getIndex()].find(e => e.name === EXAMPLE) : null;
-  const zones = game.tables.filter(t => ZONE_NAME.test(t.name)).map(t => ({ uuid: t.uuid, name: t.name.replace(/^rencontres?\s*:?\s*/i, "") }));
-  if ( example ) zones.push({ uuid: example.uuid, name: "Grandes Oliveraies (exemple du Manuel du MJ)" });
+  const short = name => name.replace(/^rencontres?\s*:?\s*/i, "");
+  // Zones : tables du monde, puis tables du compendium rangées par dossier (exemple du Manuel du MJ, aide de voyage…).
+  const groups = [{ label: "Vos zones", zones: game.tables.filter(t => ZONE_NAME.test(t.name)).map(t => ({ uuid: t.uuid, name: short(t.name) })) }];
+  if ( pack ) {
+    const index = [...await pack.getIndex({ fields: ["folder"] })].filter(e => ZONE_NAME.test(e.name));
+    const byFolder = new Map();
+    for ( const e of index ) {
+      const label = pack.folders.get(e.folder)?.name ?? "Exemple du Manuel du MJ";
+      if ( !byFolder.has(label) ) byFolder.set(label, []);
+      byFolder.get(label).push({ uuid: e.uuid, name: e.name === EXAMPLE ? "Grandes Oliveraies (exemple)" : short(e.name) });
+    }
+    for ( const [label, zones] of byFolder ) groups.push({ label: `Compendium : ${label}`, zones: zones.sort((a, b) => a.name.localeCompare(b.name, "fr")) });
+  }
+  const zones = groups.flatMap(g => g.zones);
+  const last = game.user.getFlag("hakai-kousen", "lastZone");
+  const checked = zones.some(z => z.uuid === last) ? last : zones[0]?.uuid;
 
-  const list = zones.map((z, i) => `<label class="hk-zone"><input type="radio" name="zone" value="${z.uuid}" ${i === 0 ? "checked" : ""}> ${z.name}</label>`).join("");
+  const list = groups.filter(g => g.zones.length).map(g => `<p class="hk-zone-group">${g.label}</p>` + g.zones.map(z =>
+    `<label class="hk-zone"><input type="radio" name="zone" value="${z.uuid}" ${z.uuid === checked ? "checked" : ""}> ${z.name}</label>`).join("")).join("");
   const action = await DialogV2.wait({
     window: { title: "Rencontre aléatoire", icon: "fa-solid fa-dice-d20" },
     position: { width: 460 },
@@ -78,7 +105,7 @@ export async function rollEncounter() {
         <li>Vous <strong>validez</strong> les Pokémon générés et placés sur la scène.</li>
       </ol>
       <fieldset class="hk-zones"><legend>Zone</legend>${list || "<p class='hint'>Aucune zone pour l'instant.</p>"}</fieldset>
-      <p class="hint">Vos zones sont les tables du monde dont le nom commence par « Rencontres ».</p>`,
+      <p class="hint">Vos zones sont les tables du monde dont le nom commence par « Rencontres ». Les tables du compendium s'utilisent directement.</p>`,
     buttons: [
       { action: "roll", label: "Tirer la rencontre", icon: "fa-solid fa-dice-d20", default: true, disabled: !zones.length,
         callback: (e, b) => b.form.querySelector("input[name=zone]:checked")?.value ?? null },
@@ -88,6 +115,7 @@ export async function rollEncounter() {
   });
   if ( action === "create" ) return createZoneTable();
   if ( !action || (action === "roll") ) return;
+  await game.user.setFlag("hakai-kousen", "lastZone", action);
   const table = await fromUuid(action);
   const pokedex = game.packs.get("hakai-kousen.pokedex");
   const index = pokedex ? await pokedex.getIndex() : [];

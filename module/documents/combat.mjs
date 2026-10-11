@@ -79,6 +79,42 @@ export class HKCombatant extends Combatant {
 
 export class HKCombat extends Combat {
   /**
+   * Meute (MJ 5.9) : les Pokémon semblables générés ensemble partagent une même initiative. Un seul jet par meute,
+   * recopié sur ses autres membres ; ils agissent à la suite et gardent leurs actions, leur VIT et leur ENE.
+   * @override
+   */
+  async rollInitiative(ids, options = {}) {
+    ids = typeof ids === "string" ? [ids] : Array.from(ids);
+    const packOf = id => this.combatants.get(id)?.actor?.getFlag("hakai-kousen", "pack") ?? null;
+    const leaders = new Map();
+    const followers = [];
+    for ( const id of ids ) {
+      const pack = packOf(id);
+      if ( !pack ) continue;
+      // Une meute déjà engagée garde l'initiative de ses membres présents.
+      const rolled = this.combatants.find(c => (c.id !== id) && (packOf(c.id) === pack) && (c.initiative !== null) && !ids.includes(c.id));
+      if ( rolled || leaders.has(pack) ) followers.push({ id, pack, from: rolled?.id });
+      else leaders.set(pack, id);
+    }
+    const followerIds = new Set(followers.map(f => f.id));
+    const result = await super.rollInitiative(ids.filter(id => !followerIds.has(id)), options);
+    // Même marquage que le regroupement manuel du panneau de combat : le départage des égalités ignore la meute.
+    const updates = [];
+    for ( const [pack, leaderId] of leaders ) {
+      const members = [leaderId, ...followers.filter(f => f.pack === pack).map(f => f.id)];
+      const initiative = this.combatants.get(leaderId)?.initiative ?? null;
+      if ( initiative === null ) continue;
+      members.forEach((id, i) => updates.push({ _id: id, initiative, [`flags.${SCOPE}.pack`]: pack, [`flags.${SCOPE}.tiebreak`]: 1000 - i }));
+    }
+    for ( const f of followers.filter(f => f.from) ) {
+      const source = this.combatants.get(f.from);
+      updates.push({ _id: f.id, initiative: source.initiative, [`flags.${SCOPE}.pack`]: f.pack, [`flags.${SCOPE}.tiebreak`]: 0 });
+    }
+    if ( updates.length ) await this.updateEmbeddedDocuments("Combatant", updates);
+    return result;
+  }
+
+  /**
    * Ordre des tours. Appelée sans liaison à l'instance par Combat#setupTurns.
    * @override
    */

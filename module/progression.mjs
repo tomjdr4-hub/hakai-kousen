@@ -402,19 +402,53 @@ function mechanicUnlocked(pokemon, key, label) {
   return trainer;
 }
 
+/**
+ * Talent de la forme Méga (5.19.1) : à l'activation, il remplace le Talent du Pokémon, gardé en mémoire ;
+ * à la fin de la forme (manuelle ou au KO), le Talent d'origine revient.
+ */
+async function swapFormTalent(pokemon, active) {
+  if ( active ) {
+    const form = pokemon.system.form;
+    let source = form.talentUuid ? await fromUuid(form.talentUuid) : null;
+    // Talent saisi à la main : retrouvé par son nom dans le compendium des Talents.
+    if ( !source && form.talent.trim() ) {
+      const pack = game.packs.get("hakai-kousen.talents");
+      const entry = pack ? [...await pack.getIndex()].find(e => e.name.toLowerCase() === form.talent.trim().toLowerCase()) : null;
+      source = entry ? await pack.getDocument(entry._id) : null;
+    }
+    if ( !source ) return null;
+    const original = pokemon.itemTypes.talent.map(t => t.toObject());
+    await pokemon.setFlag("hakai-kousen", "baseTalents", original);
+    await pokemon.deleteEmbeddedDocuments("Item", pokemon.itemTypes.talent.map(t => t.id));
+    const data = game.items.fromCompendium(source);
+    foundry.utils.setProperty(data, "flags.hakai-kousen.formTalent", true);
+    await pokemon.createEmbeddedDocuments("Item", [data]);
+    return source.name;
+  }
+  const original = pokemon.getFlag("hakai-kousen", "baseTalents");
+  if ( !original ) return null;
+  const formTalents = pokemon.itemTypes.talent.filter(t => t.getFlag("hakai-kousen", "formTalent"));
+  await pokemon.deleteEmbeddedDocuments("Item", formTalents.map(t => t.id));
+  await pokemon.createEmbeddedDocuments("Item", original.map(t => { delete t._id; return t; }));
+  await pokemon.unsetFlag("hakai-kousen", "baseTalents");
+  return original.map(t => t.name).join(", ");
+}
+
 /** Méga-Évolution : Dressage 18, gratuite ; la forme se termine au KO. */
 export async function toggleMega(pokemon) {
   const form = pokemon.system.form;
   if ( form.active ) {
     await pokemon.update({ "system.form.active": false });
-    return log(pokemon, `${pokemon.name} reprend sa forme normale`, "");
+    const restored = await swapFormTalent(pokemon, false);
+    return log(pokemon, `${pokemon.name} reprend sa forme normale`, restored ? `Talent d'origine : ${restored}.` : "");
   }
   const trainer = mechanicUnlocked(pokemon, "mega", "Méga-Évolution");
   if ( !trainer ) return;
   if ( pokemon.system.dressage < 18 ) return ui.notifications.warn(`Méga-Évolution : Dressage 18 requis (actuel : ${pokemon.system.dressage}).`);
   await pokemon.update({ "system.form.active": true });
+  const talent = await swapFormTalent(pokemon, true);
   return log(pokemon, `${pokemon.name} méga-évolue !`,
-    `${form.name || "Forme Méga"}${form.primary ? ` · ${[TYPES[form.primary], TYPES[form.secondary]].filter(Boolean).join(" / ")}` : ""}. Activation gratuite, sans consommer l'action. Fin au KO.`);
+    `${form.name || "Forme Méga"}${form.primary ? ` · ${[TYPES[form.primary], TYPES[form.secondary]].filter(Boolean).join(" / ")}` : ""}${talent ? ` · Talent : ${talent}` : ""}. Activation gratuite, sans consommer l'action. Fin au KO.`);
 }
 
 /** Dynamax : 3 tours, VIT max et VIT actuelle doublées, puis divisées par 2. */
@@ -457,9 +491,11 @@ export async function toggleTera(pokemon) {
  */
 export async function resetBattleForms(pokemon, endOfBattle = false) {
   const update = {};
-  if ( pokemon.system.form?.active ) update["system.form.active"] = false;
+  const megaEnds = !!pokemon.system.form?.active;
+  if ( megaEnds ) update["system.form.active"] = false;
   if ( endOfBattle && pokemon.system.tera?.active ) update["system.tera.active"] = false;
   if ( Object.keys(update).length ) await pokemon.update(update);
+  if ( megaEnds ) await swapFormTalent(pokemon, false);
   if ( pokemon.system.dynamax?.active ) {
     if ( pokemon.system.vit.value <= 0 ) await pokemon.update({ "system.dynamax.active": false });
     else await endDynamax(pokemon);

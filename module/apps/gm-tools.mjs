@@ -5,6 +5,8 @@ import { openSetupDialog } from "../combat/setup.mjs";
 import { openContest } from "./contest.mjs";
 import { rollEncounter } from "./encounter.mjs";
 import { openPlanning } from "./planning.mjs";
+import { openPretires } from "./pretires.mjs";
+import { openOpposition } from "./opposition.mjs";
 import { openWildGenerator } from "./wild-generator.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
@@ -19,7 +21,11 @@ const TOOLS = [
   { key: "contest", label: "Concours", icon: "fa-trophy", run: openContest,
     hint: "Feuille du jury d'un concours Pokémon : quatre épreuves notées sur 25, pénalités et classement." },
   { key: "planning", label: "Temps en off", icon: "fa-calendar-days", run: openPlanning,
-    hint: "Journal où chaque joueur note les activités de son Dresseur entre deux aventures, demi-journée par demi-journée (MJ 6.4)." }
+    hint: "Journal où chaque joueur note les activités de son Dresseur entre deux aventures, demi-journée par demi-journée (MJ 6.4)." },
+  { key: "opposition", label: "Test en opposition", icon: "fa-scale-balanced", run: openOpposition,
+    hint: "Deux personnages ou Pokémon s'affrontent sur une Caractéristique (marges) ou une Compétence (meilleur dé, puis le suivant) (2.6)." },
+  { key: "pretires", label: "Pokémon pré-tirés", icon: "fa-print", run: () => openPretires(),
+    hint: "Fiche rapide imprimable des Pokémon d'une scène : types, Talent, objet, statistiques maximales et attaques (aide du MJ)." }
 ];
 
 export class GMToolsApp extends HandlebarsApplicationMixin(ApplicationV2) {

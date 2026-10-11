@@ -70,19 +70,26 @@ Six onglets : **Statistiques** (Base, IV, EV, Nature, modifications temporaires)
 ### Vie hors combat
 - **Œufs** (7.3 à 7.8) : onglet Inventaire du Dresseur. Reproduction ciblée (0 %) ou Œuf sauvage (1D100 %), parents, niveau d'Élevage. Journée normale +1D10 %, favorable +2D10 % (automatique avec Corps Ardent / Armumagma dans l'équipe). À l'éclosion : Nature (Pierre Stase d'un parent, 1D10 si les deux en portent, sinon D100), Talent selon les parents, transmissions selon l'Élevage avec leurs limites (attaques naturelles, CT, capacités Œuf, IV, Compétences au niveau 1, Rare seulement sur un 10), IV supplémentaires au hasard, Nouveau-né (sauf espèce Bébé), Confiance 4 + Obéissance 4.
 - **Pêche** (6.6) : test de FOR, difficulté réduite par le niveau de Pêche et la canne. **Minage** (6.7) : jet selon le niveau (1D100 à 3D100, minimums) et trouvaille.
+- **Travailler** (MJ 6.9, 6.10) : activité de Vocation (petit service, journée, intervention, contrat) avec son gain conseillé, type d'activité tiré sur 1D20, test du domaine utilisé si l'issue est incertaine, puis gain brut moins les frais ajouté à l'argent.
+- **Pension de la Boîte PC** (7.1) : quand le temps du monde avance d'un jour ou plus, 50 ₽ par Pokémon stocké et par jour sont prélevés (réglage désactivable) ; un impayé est signalé.
+- **Herbes amères** (8.3) : Poudre Soin, Poudre Énergie, Racine Énergie et Herbe Rappel sont comptées sur le Pokémon ; le MJ peut retirer 1 Confiance après plusieurs prises.
 - **Centre Pokémon** (8.9) : soins complets de l'équipe pour 50 ₽ par Pokémon (blessures graves à part).
 - **Boutique et revente** (8.2) : achat au prix de référence depuis le compendium Objets, revente à 50 % (réglage « CT revendables »).
 - **CT** : apprendre une capacité par CT retire la CT de l'inventaire du Dresseur.
 - **Spécialisations** : suggestions dans chaque domaine (exemples des livres), la saisie reste libre.
 - **XP Pokémon** : total gagné affiché à côté de l'XP disponible.
 - **Création** (3.7 à 3.10, 4.1) : case « Création du personnage » sur la fiche Dresseur et « Starter en création » sur la fiche Pokémon, avec la liste des règles respectées ou non.
-- **Formes Méga** : « Remplir depuis le Pokédex » calcule types et bonus à partir de la fiche Méga.
+- **Formes Méga** : « Remplir depuis le Pokédex » calcule types, bonus et Talent à partir de la fiche Méga. Pendant la Méga-Évolution, le Talent de la forme remplace celui du Pokémon, qui revient à la fin (KO compris).
+- **Natures** : l'effet HK optionnel (Docile, Discret, Brave, Timide, Malin, Jovial, Prudent ; 4.5) est rappelé sur la fiche.
 - **Combat** : climat et terrain affichés dans le panneau (réglés par le MJ).
 
 ### Outils du MJ
-Bouton **Outils du MJ** dans l'onglet Acteurs : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Temps en off**, chacun décrit dans la fenêtre.
+Bouton **Outils du MJ** dans l'onglet Acteurs : **Rencontre**, **Pokémon sauvages**, **Combat de Dresseurs**, **Concours**, **Temps en off**, **Test en opposition**, **Pokémon pré-tirés**, chacun décrit dans la fenêtre.
+- **Test en opposition** (2.6) : Caractéristiques (réussite, puis meilleure marge) ou Compétences / Connaissances (meilleur dé, puis le deuxième…).
+- **Pokémon pré-tirés** : journal imprimable des Pokémon d'une scène (types, Talent, objet, note, statistiques maximales, ¼ VIT, 5 attaques). Aussi depuis la fiche d'un Dresseur PNJ (« Fiche pré-tirés de l'équipe »).
+- **Meute** (MJ 5.9) : des Pokémon générés ensemble partagent une même initiative et agissent à la suite (case « Meute » du générateur) ; le panneau de combat permet aussi de grouper à la main.
 
-- **Rencontre en un clic** : choix de la zone (tables du monde nommées « Rencontres : … », ou l'exemple du Manuel du MJ ; bouton « Créer une table de zone » à partir de l'exemple), tirage sur sa table, relance de l'espèce sur un 100 (chromatique), reconnaissance de l'espèce, du nombre (1D4…), d'un Dominant ou d'un Aberrant, puis génération et placement des Pokémon. Un événement qui ne précise pas l'espèce (« Pokémon blessé : relancer… », « Pokémon Téracristallisé ») relance le D100 jusqu'à une espèce ordinaire (MJ 4.6).
+- **Rencontre en un clic** : choix de la zone (tables du monde nommées « Rencontres : … », ou celles du compendium : l'exemple du Manuel du MJ et les **21 tables de sous-zones** de l'aide « Voyage de Sévaro à Porto Marinada », avec leurs notes MJ ; la dernière zone est retenue ; bouton « Créer une table de zone » à partir de l'exemple), tirage sur sa table, relance de l'espèce sur un 100 (chromatique), reconnaissance de l'espèce, du nombre (1D4…), d'un Dominant ou d'un Aberrant, puis génération et placement des Pokémon. Un événement qui ne précise pas l'espèce (« Pokémon blessé : relancer… », « Pokémon Téracristallisé ») relance le D100 jusqu'à une espèce ordinaire (MJ 4.6).
 - **Retrait** : quand un Pokémon sauvage passe sous ¼ de VIT, le MJ reçoit son intention et sa condition de retrait.
 - **Concours** (aide du MJ) : quatre épreuves notées sur 25 avec les critères du jury, pénalités, classement et départage, annonce dans le chat.
 - **Temps en off** (MJ 6.4) : journal où les joueurs notent les activités de leur Dresseur entre deux aventures, une page par Dresseur choisi, une ligne par demi-journée et le suivi des objectifs.

@@ -315,6 +315,140 @@ export async function hatch(egg) {
 }
 
 /* -------------------------------------------- */
+/*  Vocation et revenus (MJ 6.9, 6.10)          */
+/* -------------------------------------------- */
+
+/** Activités professionnelles : durée indicative et gain brut conseillé (MJ 6.9). */
+const WORK = {
+  service: { label: "Petit service (quelques heures)", min: 100, max: 300 },
+  day: { label: "Journée ordinaire", min: 300, max: 600 },
+  specialist: { label: "Intervention spécialisée (une journée)", min: 600, max: 1000 },
+  contract: { label: "Contrat important (plusieurs jours)", min: 1000, max: 3000 }
+};
+
+/** Type d'activité proposé sur 1D20 (MJ 6.10). */
+const WORK_TYPES = [
+  [5, "Travail courant et relativement sûr."], [10, "Contrat ordinaire avec difficulté."],
+  [14, "Occasion avantageuse ou client important."], [17, "Complication ou demande inhabituelle."],
+  [19, "Proposition risquée ou douteuse."], [20, "Occasion exceptionnelle ou aventure."]
+];
+
+/**
+ * Travailler selon sa Vocation : type d'activité (1D20), test du domaine utilisé si l'issue est incertaine,
+ * puis gain brut moins les frais, ajouté à l'argent du Dresseur. Aucun revenu automatique : le montant est validé.
+ * @param {Actor} trainer
+ */
+export async function work(trainer) {
+  const { SKILLS, KNOWLEDGES } = CONFIG.HK;
+  const domain = (group, labels) => Object.entries(labels).map(([k, label]) => {
+    const d = trainer.system[group][k];
+    return `<option value="${group}.${k}">${label} (niv. ${d.level}${d.spec ? `, ${d.spec}` : ""})</option>`;
+  }).join("");
+  const data = await DialogV2.prompt({
+    window: { title: `Travailler : ${trainer.name}`, icon: "fa-solid fa-briefcase" },
+    position: { width: 480 },
+    content: `
+      <p>Vocation : <strong>${trainer.system.details.vocation || "non renseignée"}</strong>. Une Vocation ne produit pas de salaire automatique :
+        il faut du temps, une activité, les compétences, le matériel et parfois une autorisation (MJ 6.9).</p>
+      <div class="form-group"><label>Activité</label><div class="form-fields"><select name="duration">
+        ${Object.entries(WORK).map(([k, w]) => `<option value="${k}" ${k === "day" ? "selected" : ""}>${w.label} : ${w.min}–${w.max} ₽</option>`).join("")}
+      </select></div></div>
+      <label class="checkbox"><input type="checkbox" name="drawType" checked> Tirer le type d'activité proposé (1D20, MJ 6.10)</label>
+      <div class="form-group"><label>Test</label><div class="form-fields"><select name="domain">
+        <option value="">Aucun test (issue certaine)</option>
+        <optgroup label="Compétences">${domain("skills", SKILLS)}</optgroup>
+        <optgroup label="Connaissances">${domain("knowledges", KNOWLEDGES)}</optgroup>
+      </select></div></div>
+      <p class="hint">Un test seulement s'il y a une vraie incertitude (MJ 6.6). Échec : résultat incomplet ou coût ; réussite nette : qualité, économie ou contact, pas un salaire doublé.</p>`,
+    ok: { label: "Commencer", icon: "fa-solid fa-briefcase", callback: (e, b) => new foundry.applications.ux.FormDataExtended(b.form).object },
+    rejectClose: false
+  });
+  if ( !data ) return;
+  const job = WORK[data.duration] ?? WORK.day;
+  let type = "";
+  if ( data.drawType ) {
+    const r = await roll("1d20");
+    type = `1D20 = ${r.total} : ${WORK_TYPES.find(([max]) => r.total <= max)[1]}`;
+    await card(trainer, `${trainer.name} cherche du travail`, `<p class="hk-detail">${job.label}</p><p>${type}</p>`, [r]);
+  }
+
+  // Test du domaine utilisé : la carte de jet indique la réussite.
+  let result = null;
+  if ( data.domain ) {
+    const [group, key] = data.domain.split(".");
+    const d = trainer.system[group][key];
+    const message = await rollPool(trainer, (group === "skills" ? SKILLS : KNOWLEDGES)[key], d.level, d.spec);
+    if ( !message ) return;
+    const total = message.rolls[0]?.total ?? 0;
+    const threshold = message.getFlag("hakai-kousen", "dice")?.[0]?.threshold;
+    result = total === 1 ? "critical" : (threshold ? (total >= threshold ? "success" : "failure") : "unknown");
+  }
+
+  const middle = Math.round(((job.min + job.max) / 2) / 50) * 50;
+  const advice = {
+    failure: "Échec : résultat incomplet, délai ou coût (le gain peut être réduit ou nul).",
+    critical: "Échec critique : complication en plus (MJ 6.11).",
+    success: "Réussite : le paiement est obtenu.",
+    unknown: "Le MJ juge le résultat du test."
+  }[result] ?? "Issue certaine : le paiement est obtenu.";
+  const failed = ["failure", "critical"].includes(result);
+  const pay = await DialogV2.prompt({
+    window: { title: "Paiement", icon: "fa-solid fa-coins" },
+    content: `<p>${advice}</p>
+      <div class="form-group"><label>Gain brut (₽)</label><div class="form-fields"><input type="number" name="gross" value="${failed ? 0 : middle}" min="0" step="50"></div>
+        <p class="hint">Conseillé : ${job.min} à ${job.max} ₽ selon difficulté, responsabilité, réputation, urgence et client.</p></div>
+      <div class="form-group"><label>Frais (₽)</label><div class="form-fields"><input type="number" name="costs" value="0" min="0" step="50"></div>
+        <p class="hint">Matériaux, transports, réparations, commissions.</p></div>`,
+    ok: {
+      label: "Encaisser",
+      icon: "fa-solid fa-coins",
+      callback: (e, b) => ({
+        gross: Math.max(Number(b.form.elements.gross.value) || 0, 0),
+        costs: Math.max(Number(b.form.elements.costs.value) || 0, 0)
+      })
+    },
+    rejectClose: false
+  });
+  if ( !pay ) return;
+  const net = pay.gross - pay.costs;
+  const money = Math.max(trainer.system.money + net, 0);
+  await trainer.update({ "system.money": money });
+  return card(trainer, `${trainer.name} travaille`, `
+    <p class="hk-detail">${job.label}${type ? ` · ${type}` : ""}</p>
+    <p>Gain brut ${pay.gross} ₽ − frais ${pay.costs} ₽ = <strong>${net >= 0 ? "+" : ""}${net} ₽</strong> (argent : ${money} ₽).</p>`);
+}
+
+/* -------------------------------------------- */
+/*  Pension de la Boîte PC (7.1, 8.9)           */
+/* -------------------------------------------- */
+
+/**
+ * Quand le temps du monde avance d'un ou plusieurs jours, chaque Dresseur paie la pension de sa Boîte PC :
+ * 50 ₽ par Pokémon et par jour. Exécuté par le MJ actif.
+ * @param {number} worldTime
+ * @param {number} delta
+ */
+export async function chargePension(worldTime, delta) {
+  if ( !game.user.isActiveGM || !game.settings.get("hakai-kousen", "pension") || !(delta > 0) ) return;
+  const days = Math.floor(worldTime / 86400) - Math.floor((worldTime - delta) / 86400);
+  if ( days <= 0 ) return;
+  const lines = [];
+  for ( const trainer of game.actors.filter(a => (a.type === "trainer") && a.system.pc.length) ) {
+    const due = trainer.system.pc.length * 50 * days;
+    const paid = Math.min(due, trainer.system.money);
+    await trainer.update({ "system.money": trainer.system.money - paid });
+    lines.push(`${trainer.name} : ${trainer.system.pc.length} Pokémon × ${days} jour(s) = ${due} ₽`
+      + `${paid < due ? ` — <strong>impayé : ${due - paid} ₽</strong>` : ""}`);
+  }
+  if ( !lines.length ) return;
+  return ChatMessage.implementation.create({
+    speaker: { alias: "Boîte PC" },
+    content: `<div class="hk-card"><header><h3>Pension de la Boîte PC</h3><span class="subtitle">50 ₽ par Pokémon et par jour</span></header>
+      ${lines.map(l => `<p class="hk-detail">${l}</p>`).join("")}</div>`
+  });
+}
+
+/* -------------------------------------------- */
 /*  Objets tenus (8.7)                          */
 /* -------------------------------------------- */
 

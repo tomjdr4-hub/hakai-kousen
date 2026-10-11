@@ -83,6 +83,7 @@
       <button type="button" data-action="resetTemp"><i class="fa-solid fa-rotate-left"></i> Remettre les modifications temporaires à zéro</button>
     </div>
     <p class="hint">EV : ouvrir 10 XP — augmenter : EV actuels × 7 XP (max 30). IV : entraînement uniquement.</p>
+    {{#if natureEffect}}<p class="hint"><strong>Nature {{lookup (lookup config.NATURES system.nature) "label"}}</strong> (effet HK optionnel, 4.5) : {{natureEffect}}</p>{{/if}}
   </section>
 
   {{!-- Progression : relation, ordres, évolution --}}
@@ -154,6 +155,7 @@
         <label>Nom <input type="text" name="system.form.name" value="{{system.form.name}}" placeholder="Méga-Dracaufeu X"></label>
         <label>Type 1 <select name="system.form.primary">{{selectOptions secondaryTypes selected=system.form.primary}}</select></label>
         <label>Type 2 <select name="system.form.secondary">{{selectOptions secondaryTypes selected=system.form.secondary}}</select></label>
+        <label>Talent <input type="text" name="system.form.talent" value="{{system.form.talent}}" placeholder="Talent de la forme"></label>
         {{#each formBonus as |b|}}
         <label>{{b.abbr}} <input type="number" name="system.form.bonus.{{b.key}}" value="{{b.value}}"></label>
         {{/each}}

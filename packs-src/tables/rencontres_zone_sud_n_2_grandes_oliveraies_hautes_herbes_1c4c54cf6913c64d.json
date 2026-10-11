@@ -1,0 +1,465 @@
+{
+  "_id": "1c4c54cf6913c64d",
+  "_key": "!tables!1c4c54cf6913c64d",
+  "name": "Rencontres : Zone Sud n°2 — Grandes Oliveraies / hautes herbes",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p><strong>Zone Sud n°2</strong> — Champs, herbes sèches, vieux oliviers et chemins agricoles. Table construite à partir des espèces indiquées en hautes herbes dans la zone.</p><p>Aide du MJ « Voyage de Sévaro à Porto Marinada ». Sur un 100 : Pokémon chromatique, relancer pour l’espèce.</p><p><strong>Notes MJ</strong></p><p></p><p>La Reine volée : 3 braconniers, 1d3+1 Gelées royales (2 000 ₽/fiole), 600 ₽, 2 Super Balls, filet électrique.</p><p></p><p>La Ruche ancienne : 8–15 Apitrini + 1 Apireine ; Miel ×1d4, Baies, objet perdu ; interaction pacifique possible.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "a9c81c4927a9814c",
+      "_key": "!tables.results!1c4c54cf6913c64d.a9c81c4927a9814c",
+      "type": "text",
+      "name": "Olivini - 1d4 près d’une exploitation",
+      "description": "Olivini - 1d4 près d’une exploitation",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        7
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "f013ee116b08b8ac",
+      "_key": "!tables.results!1c4c54cf6913c64d.f013ee116b08b8ac",
+      "type": "text",
+      "name": "Granivol - 1d4 portés par le vent",
+      "description": "Granivol - 1d4 portés par le vent",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        8,
+        14
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "e230cd5c7993357d",
+      "_key": "!tables.results!1c4c54cf6913c64d.e230cd5c7993357d",
+      "type": "text",
+      "name": "EVENT - Pokémon blessé : relancer jusqu’à obtenir une rencontre Pokémon",
+      "description": "EVENT - Pokémon blessé : relancer jusqu’à obtenir une rencontre Pokémon",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        15,
+        19
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "ceb6de822b953efb",
+      "_key": "!tables.results!1c4c54cf6913c64d.ceb6de822b953efb",
+      "type": "text",
+      "name": "Pâtachiot",
+      "description": "Pâtachiot",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        20,
+        25
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "6ba65671c622f36b",
+      "_key": "!tables.results!1c4c54cf6913c64d.6ba65671c622f36b",
+      "type": "text",
+      "name": "EVENT - Pokémon affamé qui suit le groupe",
+      "description": "EVENT - Pokémon affamé qui suit le groupe",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        26,
+        28
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "4ca6ecb5ce835849",
+      "_key": "!tables.results!1c4c54cf6913c64d.4ca6ecb5ce835849",
+      "type": "text",
+      "name": "Pohm",
+      "description": "Pohm",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        29,
+        34
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1700b96ad175ed23",
+      "_key": "!tables.results!1c4c54cf6913c64d.1700b96ad175ed23",
+      "type": "text",
+      "name": "Rongourmand",
+      "description": "Rongourmand",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        35,
+        40
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "ab3952f1d38ba514",
+      "_key": "!tables.results!1c4c54cf6913c64d.ab3952f1d38ba514",
+      "type": "text",
+      "name": "BRACONNIERS - La Reine volée : Apireine capturée pour sa Gelée royale",
+      "description": "BRACONNIERS - La Reine volée : Apireine capturée pour sa Gelée royale",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        41,
+        43
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "4987d56b59873390",
+      "_key": "!tables.results!1c4c54cf6913c64d.4987d56b59873390",
+      "type": "text",
+      "name": "Manglouton",
+      "description": "Manglouton",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        44,
+        49
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "cf4127ba1d57c579",
+      "_key": "!tables.results!1c4c54cf6913c64d.cf4127ba1d57c579",
+      "type": "text",
+      "name": "Wattouat - petit troupeau",
+      "description": "Wattouat - petit troupeau",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        50,
+        54
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "4a2772ed29e7f9aa",
+      "_key": "!tables.results!1c4c54cf6913c64d.4a2772ed29e7f9aa",
+      "type": "text",
+      "name": "HORDE - Wattouat traversant un chemin agricole",
+      "description": "HORDE - Wattouat traversant un chemin agricole",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        55,
+        56
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "f6f76fdc84efcd80",
+      "_key": "!tables.results!1c4c54cf6913c64d.f6f76fdc84efcd80",
+      "type": "text",
+      "name": "Passerouge",
+      "description": "Passerouge",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        57,
+        61
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "81472fcfbec90e53",
+      "_key": "!tables.results!1c4c54cf6913c64d.81472fcfbec90e53",
+      "type": "text",
+      "name": "Étourmi",
+      "description": "Étourmi",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        62,
+        66
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "349ab45f6adc1d9d",
+      "_key": "!tables.results!1c4c54cf6913c64d.349ab45f6adc1d9d",
+      "type": "text",
+      "name": "HORDE - Apitrini en panique",
+      "description": "HORDE - Apitrini en panique",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        67,
+        68
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "4f49f368925ec189",
+      "_key": "!tables.results!1c4c54cf6913c64d.4f49f368925ec189",
+      "type": "text",
+      "name": "Crikzik",
+      "description": "Crikzik",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        69,
+        72
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "c2af10d8b8d6d8f9",
+      "_key": "!tables.results!1c4c54cf6913c64d.c2af10d8b8d6d8f9",
+      "type": "text",
+      "name": "NID - Ruche ancienne dans un olivier creux",
+      "description": "NID - Ruche ancienne dans un olivier creux",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        73,
+        74
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "9785d745a431bd84",
+      "_key": "!tables.results!1c4c54cf6913c64d.9785d745a431bd84",
+      "type": "text",
+      "name": "Tournegrin",
+      "description": "Tournegrin",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        75,
+        78
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "f0ddaf64f70d87e7",
+      "_key": "!tables.results!1c4c54cf6913c64d.f0ddaf64f70d87e7",
+      "type": "text",
+      "name": "Apitrini",
+      "description": "Apitrini",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        79,
+        81
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "b8e1a18f463893b7",
+      "_key": "!tables.results!1c4c54cf6913c64d.b8e1a18f463893b7",
+      "type": "text",
+      "name": "NID - Terrier de Rocabot en lisière rocheuse",
+      "description": "NID - Terrier de Rocabot en lisière rocheuse",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        82,
+        83
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "f06e8e1bbcc8c45d",
+      "_key": "!tables.results!1c4c54cf6913c64d.f06e8e1bbcc8c45d",
+      "type": "text",
+      "name": "Grondogue",
+      "description": "Grondogue",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        84,
+        85
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "4a08b12616d6d6a2",
+      "_key": "!tables.results!1c4c54cf6913c64d.4a08b12616d6d6a2",
+      "type": "text",
+      "name": "Makuhita",
+      "description": "Makuhita",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        86,
+        87
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "5291120bdec4d406",
+      "_key": "!tables.results!1c4c54cf6913c64d.5291120bdec4d406",
+      "type": "text",
+      "name": "DOMINANT - Apireine des Grandes Oliveraies",
+      "description": "DOMINANT - Apireine des Grandes Oliveraies",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        88,
+        89
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "3f002686e7d217f8",
+      "_key": "!tables.results!1c4c54cf6913c64d.3f002686e7d217f8",
+      "type": "text",
+      "name": "Pichu / Toudoudou",
+      "description": "Pichu / Toudoudou",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        90,
+        91
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "2dc740ba2584f233",
+      "_key": "!tables.results!1c4c54cf6913c64d.2dc740ba2584f233",
+      "type": "text",
+      "name": "Pikachu",
+      "description": "Pikachu",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        92,
+        92
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "98b0e61c0f73d1a5",
+      "_key": "!tables.results!1c4c54cf6913c64d.98b0e61c0f73d1a5",
+      "type": "text",
+      "name": "ABERRANT - Gribouraigne aux pigments instables (rencontre de campagne)",
+      "description": "ABERRANT - Gribouraigne aux pigments instables (rencontre de campagne)",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        93,
+        94
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "4e5510e4fddda1c9",
+      "_key": "!tables.results!1c4c54cf6913c64d.4e5510e4fddda1c9",
+      "type": "text",
+      "name": "Ptiravi",
+      "description": "Ptiravi",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        95,
+        95
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "5f7a1173d013b43d",
+      "_key": "!tables.results!1c4c54cf6913c64d.5f7a1173d013b43d",
+      "type": "text",
+      "name": "Pokémon Téracristallisé / rencontre exceptionnelle",
+      "description": "Pokémon Téracristallisé / rencontre exceptionnelle",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        96,
+        97
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "e4d892ac10738bca",
+      "_key": "!tables.results!1c4c54cf6913c64d.e4d892ac10738bca",
+      "type": "text",
+      "name": "Apireine",
+      "description": "Apireine",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        98,
+        98
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "d138903feeffd881",
+      "_key": "!tables.results!1c4c54cf6913c64d.d138903feeffd881",
+      "type": "text",
+      "name": "Évoli - très rare",
+      "description": "Évoli - très rare",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        99,
+        99
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "e8e6ff9faeefddf6",
+      "_key": "!tables.results!1c4c54cf6913c64d.e8e6ff9faeefddf6",
+      "type": "text",
+      "name": "CHROMATIQUE - relancer sur la même table jusqu’à obtenir une espèce Pokémon ordinaire",
+      "description": "CHROMATIQUE - relancer sur la même table jusqu’à obtenir une espèce Pokémon ordinaire",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": "2351ba5aeb6ed4dd",
+  "sort": 0,
+  "flags": {}
+}

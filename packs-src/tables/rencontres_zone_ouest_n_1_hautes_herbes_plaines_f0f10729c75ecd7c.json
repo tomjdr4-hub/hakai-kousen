@@ -1,0 +1,420 @@
+{
+  "_id": "f0f10729c75ecd7c",
+  "_key": "!tables!f0f10729c75ecd7c",
+  "name": "Rencontres : Zone Ouest n°1 — Hautes herbes / plaines",
+  "img": "icons/svg/d20-black.svg",
+  "description": "<p><strong>Zone Ouest n°1</strong> — Plaine sauvage ponctuée de pentes et de chemins. Les Pokémon communs occupent les premiers résultats ; les espèces plus rares apparaissent en fin de table.</p><p>Aide du MJ « Voyage de Sévaro à Porto Marinada ». Sur un 100 : Pokémon chromatique, relancer pour l’espèce.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "_id": "dcb38774e00fa261",
+      "_key": "!tables.results!f0f10729c75ecd7c.dcb38774e00fa261",
+      "type": "text",
+      "name": "Tiboudet",
+      "description": "Tiboudet",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        7
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "ba8605bd7d4fc4eb",
+      "_key": "!tables.results!f0f10729c75ecd7c.ba8605bd7d4fc4eb",
+      "type": "text",
+      "name": "EVENT - Pokémon poursuivi",
+      "description": "EVENT - Pokémon poursuivi",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        8,
+        12
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1f302f57603f8446",
+      "_key": "!tables.results!f0f10729c75ecd7c.1f302f57603f8446",
+      "type": "text",
+      "name": "Cabriolaine",
+      "description": "Cabriolaine",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        13,
+        19
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "ea9c868ab79515fb",
+      "_key": "!tables.results!f0f10729c75ecd7c.ea9c868ab79515fb",
+      "type": "text",
+      "name": "EVENT - Guerre de territoire Tiboudet/Cabriolaine",
+      "description": "EVENT - Guerre de territoire Tiboudet/Cabriolaine",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        20,
+        21
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "940ffc20e172396c",
+      "_key": "!tables.results!f0f10729c75ecd7c.940ffc20e172396c",
+      "type": "text",
+      "name": "Selutin",
+      "description": "Selutin",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        22,
+        27
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "70ebb334086fec36",
+      "_key": "!tables.results!f0f10729c75ecd7c.70ebb334086fec36",
+      "type": "text",
+      "name": "Makuhita",
+      "description": "Makuhita",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        28,
+        33
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "be425444f4fbb3ba",
+      "_key": "!tables.results!f0f10729c75ecd7c.be425444f4fbb3ba",
+      "type": "text",
+      "name": "HORDE - Tiboudet",
+      "description": "HORDE - Tiboudet",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        34,
+        36
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "608c9ccf7c507805",
+      "_key": "!tables.results!f0f10729c75ecd7c.608c9ccf7c507805",
+      "type": "text",
+      "name": "Férosinge",
+      "description": "Férosinge",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        37,
+        42
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "501c36de86032e70",
+      "_key": "!tables.results!f0f10729c75ecd7c.501c36de86032e70",
+      "type": "text",
+      "name": "HORDE - Lilliterelle",
+      "description": "HORDE - Lilliterelle",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        43,
+        44
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "3bcce608fa4b0a5b",
+      "_key": "!tables.results!f0f10729c75ecd7c.3bcce608fa4b0a5b",
+      "type": "text",
+      "name": "Rocabot",
+      "description": "Rocabot",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        45,
+        50
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "9060c8dfca3bcb7d",
+      "_key": "!tables.results!f0f10729c75ecd7c.9060c8dfca3bcb7d",
+      "type": "text",
+      "name": "NID - Rocabot",
+      "description": "NID - Rocabot",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        51,
+        52
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "43fce6bddfd39ecd",
+      "_key": "!tables.results!f0f10729c75ecd7c.43fce6bddfd39ecd",
+      "type": "text",
+      "name": "Lilliterelle",
+      "description": "Lilliterelle",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        53,
+        58
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "761a501e92730276",
+      "_key": "!tables.results!f0f10729c75ecd7c.761a501e92730276",
+      "type": "text",
+      "name": "Pohmotte",
+      "description": "Pohmotte",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        59,
+        64
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "7a80018ac21eb4f0",
+      "_key": "!tables.results!f0f10729c75ecd7c.7a80018ac21eb4f0",
+      "type": "text",
+      "name": "NID - Griknot",
+      "description": "NID - Griknot",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        65,
+        66
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "7a69cf0bd9d26249",
+      "_key": "!tables.results!f0f10729c75ecd7c.7a69cf0bd9d26249",
+      "type": "text",
+      "name": "Charbambin",
+      "description": "Charbambin",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        67,
+        71
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "7dc1366ef6a31840",
+      "_key": "!tables.results!f0f10729c75ecd7c.7dc1366ef6a31840",
+      "type": "text",
+      "name": "EVENT - Dresseur voyageur / campement",
+      "description": "EVENT - Dresseur voyageur / campement",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        72,
+        73
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "68fb688bf90ec4b4",
+      "_key": "!tables.results!f0f10729c75ecd7c.68fb688bf90ec4b4",
+      "type": "text",
+      "name": "Crabagarre",
+      "description": "Crabagarre",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        74,
+        77
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "3b2dea0dac4bd94c",
+      "_key": "!tables.results!f0f10729c75ecd7c.3b2dea0dac4bd94c",
+      "type": "text",
+      "name": "DOMINANT - Colossinge du col",
+      "description": "DOMINANT - Colossinge du col",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        78,
+        79
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "090c943c071f1be9",
+      "_key": "!tables.results!f0f10729c75ecd7c.090c943c071f1be9",
+      "type": "text",
+      "name": "Tritox",
+      "description": "Tritox",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        80,
+        83
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1a693f8d4a7ac70e",
+      "_key": "!tables.results!f0f10729c75ecd7c.1a693f8d4a7ac70e",
+      "type": "text",
+      "name": "ABERRANT - Charbambin à la flamme blanche",
+      "description": "ABERRANT - Charbambin à la flamme blanche",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        84,
+        85
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "13eeb1dd71987ad4",
+      "_key": "!tables.results!f0f10729c75ecd7c.13eeb1dd71987ad4",
+      "type": "text",
+      "name": "Forgerette",
+      "description": "Forgerette",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        86,
+        88
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1a66b6e670688d6b",
+      "_key": "!tables.results!f0f10729c75ecd7c.1a66b6e670688d6b",
+      "type": "text",
+      "name": "Pokémon Téracristallisé",
+      "description": "Pokémon Téracristallisé",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        89,
+        90
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "5e4a99852a820466",
+      "_key": "!tables.results!f0f10729c75ecd7c.5e4a99852a820466",
+      "type": "text",
+      "name": "Griknot",
+      "description": "Griknot",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        91,
+        93
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "87c470edceae7360",
+      "_key": "!tables.results!f0f10729c75ecd7c.87c470edceae7360",
+      "type": "text",
+      "name": "Coupenotte",
+      "description": "Coupenotte",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        94,
+        96
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "92a5344be7a2519a",
+      "_key": "!tables.results!f0f10729c75ecd7c.92a5344be7a2519a",
+      "type": "text",
+      "name": "Rencontre exceptionnelle",
+      "description": "Rencontre exceptionnelle",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        97,
+        97
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "1f7bc9d636800a90",
+      "_key": "!tables.results!f0f10729c75ecd7c.1f7bc9d636800a90",
+      "type": "text",
+      "name": "Lestombaile",
+      "description": "Lestombaile",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        98,
+        99
+      ],
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "_id": "221014b70368b1c5",
+      "_key": "!tables.results!f0f10729c75ecd7c.221014b70368b1c5",
+      "type": "text",
+      "name": "CHROMATIQUE - relancer sur la même table jusqu’à obtenir une espèce Pokémon ordinaire",
+      "description": "CHROMATIQUE - relancer sur la même table jusqu’à obtenir une espèce Pokémon ordinaire",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "folder": "2351ba5aeb6ed4dd",
+  "sort": 0,
+  "flags": {}
+}

@@ -1657,3 +1657,40 @@
   font-size: 0.85em;
   color: var(--hk-accent);
 }
+
+/* ---------- Camps d'un combat de Dresseurs ---------- */
+
+.hk-combat-panel .hk-camp-title {
+  margin: 6px 0 2px;
+  font-weight: bold;
+  color: var(--hk-accent);
+}
+
+.hk-combat-panel .hk-camp-title.defeated {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.hk-side-names {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 10px;
+}
+
+.hk-side-names label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.hk-side-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.hk-side-row select {
+  flex: 0 0 100px;
+}

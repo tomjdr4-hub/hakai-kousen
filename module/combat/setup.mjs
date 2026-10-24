@@ -8,10 +8,45 @@ const SCOPE = "hakai-kousen";
 const SOCKET = `system.${SCOPE}`;
 const { DialogV2 } = foundry.applications.api;
 
-/** Configuration du combat : { type, format, maxTeam, trainers: [uuid], deploy: {id: [uuid]}, used: {id: [uuid]} }. */
+/**
+ * Configuration du combat : { type, format, maxTeam, trainers: [uuid], sides: {id: camp}, sideNames: {camp: nom},
+ * deploy: {id: [uuid]}, used: {id: [uuid]} }.
+ */
 export function getSetup(combat) {
-  return foundry.utils.mergeObject({ type: "officiel", format: 1, maxTeam: 0, trainers: [], deploy: {}, used: {} },
+  return foundry.utils.mergeObject({ type: "officiel", format: 1, maxTeam: 0, trainers: [], sides: {}, sideNames: {}, deploy: {}, used: {} },
     combat?.getFlag(SCOPE, "setup") ?? {}, { inplace: false });
+}
+
+/** Nombre de camps proposés à la mise en place. */
+const SIDE_COUNT = 4;
+
+/**
+ * Camp d'un Dresseur : les Dresseurs d'un même camp combattent ensemble (alliés).
+ * Sans camp défini (anciens combats), chaque Dresseur forme son propre camp.
+ */
+export function sideOf(combat, trainer) {
+  if ( !trainer ) return null;
+  return getSetup(combat).sides[trainer.id] ?? `solo-${trainer.id}`;
+}
+
+/** Nom affiché d'un camp. */
+export function sideLabel(combat, side) {
+  const setup = getSetup(combat);
+  if ( String(side).startsWith("solo-") ) return null;
+  return setup.sideNames[side] || `Camp ${side}`;
+}
+
+/** Dresseurs de la mise en place, regroupés par camp dans l'ordre des camps. */
+export function trainersBySide(combat) {
+  const groups = new Map();
+  for ( const uuid of getSetup(combat).trainers ) {
+    const trainer = fromUuidSync(uuid);
+    if ( !trainer ) continue;
+    const side = sideOf(combat, trainer);
+    if ( !groups.has(side) ) groups.set(side, []);
+    groups.get(side).push(trainer);
+  }
+  return [...groups].sort(([a], [b]) => String(a).localeCompare(String(b), "fr", { numeric: true }));
 }
 
 /** Pokémon valides d'un Dresseur : dans son équipe, pas KO. */
@@ -49,9 +84,16 @@ export async function openSetupDialog() {
     <div class="form-group"><label>Pokémon autorisés par Dresseur</label>
       <div class="form-fields"><input type="number" name="maxTeam" value="0" min="0" max="6"></div>
       <p class="hint">0 = toute l'équipe.</p></div>
+    <fieldset><legend>Camps</legend>
+      <p class="hint">Les Dresseurs d'un même camp combattent ensemble. Exemple : trois PNJ au camp 1 contre la Team Rocket au camp 2.</p>
+      <div class="hk-side-names">${Array.from({ length: SIDE_COUNT }, (_, i) => `<label>Camp ${i + 1}
+        <input type="text" name="sideName${i + 1}" placeholder="${["Héros", "Adversaires", "", ""][i]}"></label>`).join("")}</div>
+    </fieldset>
     <fieldset><legend>Dresseurs</legend>
-      ${trainers.map(t => `<label class="checkbox"><input type="checkbox" name="trainer" value="${t.uuid}">
-        ${t.name} <span class="hint">(${t.system.team.length} Pokémon)</span></label>`).join("")}
+      ${trainers.map(t => `<div class="hk-side-row"><label class="checkbox"><input type="checkbox" name="trainer" value="${t.uuid}">
+        ${t.name} <span class="hint">(${t.system.team.length} Pokémon)</span></label>
+        <select name="side-${t.id}" data-tooltip="Camp de ce Dresseur">${Array.from({ length: SIDE_COUNT }, (_, i) =>
+          `<option value="${i + 1}" ${(t.hasPlayerOwner ? 1 : 2) === i + 1 ? "selected" : ""}>Camp ${i + 1}</option>`).join("")}</select></div>`).join("")}
     </fieldset>`;
   const data = await DialogV2.prompt({
     window: { title: "Nouveau combat de Dresseurs", icon: "fa-solid fa-people-arrows" },
@@ -60,11 +102,24 @@ export async function openSetupDialog() {
       label: "Préparer le combat",
       callback: (event, button) => {
         const form = button.form;
+        const trainersChosen = [...form.querySelectorAll("input[name=trainer]:checked")].map(i => i.value);
+        const sides = {};
+        for ( const uuid of trainersChosen ) {
+          const id = fromUuidSync(uuid)?.id;
+          if ( id ) sides[id] = form.elements[`side-${id}`]?.value ?? "1";
+        }
+        const sideNames = {};
+        for ( let i = 1; i <= SIDE_COUNT; i++ ) {
+          const name = form.elements[`sideName${i}`]?.value.trim();
+          if ( name ) sideNames[i] = name;
+        }
         return {
           type: form.elements.type.value,
           format: Number(form.elements.format.value),
           maxTeam: Number(form.elements.maxTeam.value) || 0,
-          trainers: [...form.querySelectorAll("input[name=trainer]:checked")].map(i => i.value)
+          trainers: trainersChosen,
+          sides,
+          sideNames
         };
       }
     },
@@ -81,10 +136,11 @@ export async function openSetupDialog() {
       phase: { state: "deploy", round: 0 }
     } }
   });
+  const camps = trainersBySide(combat).map(([side, list]) => `<strong>${sideLabel(combat, side)}</strong> : ${list.map(t => t.name).join(", ")}`);
   await ChatMessage.implementation.create({
     speaker: { alias: "Combat" },
     content: `<div class="hk-card"><header><h3>Combat ${COMBAT_TYPES[data.type].label.toLowerCase()} (${COMBAT_FORMATS[data.format]})</h3></header>
-      <p>${data.trainers.map(u => fromUuidSync(u)?.name).join(" contre ")}</p>
+      <p>${camps.join("<br>contre<br>")}</p>
       <p class="hk-detail">Chaque Dresseur choisit son ou ses Pokémon de départ dans le panneau de combat.</p></div>`
   });
   return combat;
@@ -126,21 +182,25 @@ export async function deploy(combat) {
   const tokens = [];
   const used = {};
 
-  for ( const [k, uuid] of setup.trainers.entries() ) {
-    const trainer = await fromUuid(uuid);
-    if ( !trainer ) continue;
-    const chosen = (setup.deploy[trainer.id] ?? []).map(u => fromUuidSync(u)).filter(Boolean);
-    used[trainer.id] = chosen.map(p => p.uuid);
-    const trainerToken = scene.tokens.find(t => t.actorId === trainer.id);
-    // Camp de gauche (Dresseurs pairs) et de droite (impairs), faute de jeton Dresseur.
-    const direction = (k % 2) ? -1 : 1;
-    const origin = trainerToken
-      ? { x: trainerToken.x, y: trainerToken.y }
-      : { x: rect.x + (rect.width / 2) - (direction * size * 3), y: rect.y + (rect.height / 2) + (Math.floor(k / 2) * size * 2) };
-    const disposition = trainer.hasPlayerOwner ? CONST.TOKEN_DISPOSITIONS.FRIENDLY : CONST.TOKEN_DISPOSITIONS.HOSTILE;
-    for ( const [i, pokemon] of chosen.entries() ) {
-      const doc = await pokemon.getTokenDocument({ ...place(origin, i, direction), actorLink: true, disposition });
-      tokens.push(doc.toObject());
+  // Camps : le premier à gauche, le deuxième à droite, les suivants en dessous ; un camp avec des joueurs est allié.
+  const camps = trainersBySide(combat);
+  const friendlyCamp = camps.find(([, list]) => list.some(t => t.hasPlayerOwner))?.[0] ?? camps[0]?.[0];
+  for ( const [c, [side, list]] of camps.entries() ) {
+    // Faute de jeton Dresseur : chaque camp de son côté de la scène, ses Dresseurs les uns sous les autres.
+    const direction = (c % 2) ? -1 : 1;
+    const disposition = side === friendlyCamp ? CONST.TOKEN_DISPOSITIONS.FRIENDLY : CONST.TOKEN_DISPOSITIONS.HOSTILE;
+    for ( const [k, trainer] of list.entries() ) {
+      const chosen = (setup.deploy[trainer.id] ?? []).map(u => fromUuidSync(u)).filter(Boolean);
+      used[trainer.id] = chosen.map(p => p.uuid);
+      const trainerToken = scene.tokens.find(t => t.actorId === trainer.id);
+      const row = (Math.floor(c / 2) * list.length) + k;
+      const origin = trainerToken
+        ? { x: trainerToken.x, y: trainerToken.y }
+        : { x: rect.x + (rect.width / 2) - (direction * size * 3), y: rect.y + (rect.height / 2) + (row * size * 2) };
+      for ( const [i, pokemon] of chosen.entries() ) {
+        const doc = await pokemon.getTokenDocument({ ...place(origin, i, direction), actorLink: true, disposition });
+        tokens.push(doc.toObject());
+      }
     }
   }
 

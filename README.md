@@ -119,8 +119,9 @@ Bouton **Panneau de combat** dans le suivi de combat (il s'ouvre aussi tout seul
 Réglages : durée de la réflexion, réflexion automatique à chaque tour, ouverture automatique du panneau.
 
 #### Combat de Dresseurs
-- **Nouveau combat de Dresseurs** (panneau, sans combat en cours) : type (officiel, sauvage, mortel), format (simple, Duo, Triple), nombre de Pokémon autorisés, Dresseurs engagés. Chacun choisit en secret son ou ses Pokémon de départ ; ils apparaissent à côté du jeton du Dresseur, l'initiative est lancée et le combat commence.
-- **Équipes** : un bandeau par Dresseur (fiche de suivi du MJ 7.3) avec jauges de VIT/ENE, seuil ¼, états, KO et Pokémon en jeu. Les adversaires ne voient que les jauges.
+- **Nouveau combat de Dresseurs** (panneau, sans combat en cours) : type (officiel, sauvage, mortel), format (simple, Duo, Triple), nombre de Pokémon autorisés, Dresseurs engagés et leur **camp**. Chacun choisit en secret son ou ses Pokémon de départ ; ils apparaissent à côté du jeton du Dresseur, l'initiative est lancée et le combat commence.
+- **Camps** : jusqu'à 4 camps, nommables (« Team Rocket »…). Les Dresseurs d'un même camp combattent ensemble : leurs Pokémon sont alliés (ciblables pour les soutiens, jamais proposés comme adversaires). Exemple : trois PNJ au camp 1 contre la Team Rocket au camp 2. Chaque camp se déploie de son côté de la scène ; le camp est déclaré vaincu quand tous ses Dresseurs le sont.
+- **Équipes** : un bandeau par Dresseur, regroupés par camp (fiche de suivi du MJ 7.3) avec jauges de VIT/ENE, seuil ¼, états, KO et Pokémon en jeu. Les adversaires ne voient que les jauges.
 - **KO** : le Pokémon est marqué vaincu ; son Dresseur choisit un remplaçant (gratuit, 1D10 + DEX). Un Dresseur sans Pokémon valide est déclaré vaincu. En combat officiel la VIT s'arrête à 0 ; ailleurs elle peut devenir négative (blessure grave, mort à −10, rappel juste à temps pour 1 XP Dresseur selon le mode de campagne réglé : Standard, Difficile (Starter seulement) ou Sans protection).
 - **Duo** : avertissement sous Obéissance 6 ; une seule action personnelle du Dresseur (objet, Ball, fuite) par tour.
 - **Début de tour** automatique : Brûlure, Poison, Toxik (compteur), Malédiction, Vampigraine, blessure grave ; jets de Gel, Paralysie et Confusion ; Apeuré. Un Pokémon empêché d'agir voit son action annulée.

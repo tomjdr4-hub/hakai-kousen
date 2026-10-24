@@ -9,7 +9,7 @@
  */
 import { describeChoice } from "../combat/actions.mjs";
 import { processRoundEnd, processTurnStart } from "../combat/turn-start.mjs";
-import { availableReserve, getSetup, validTeam } from "../combat/setup.mjs";
+import { availableReserve, getSetup, sideLabel, sideOf, validTeam } from "../combat/setup.mjs";
 
 export const SCOPE = "hakai-kousen";
 
@@ -439,6 +439,17 @@ async function onUpdateActor(actor, changed, options) {
         content: `<div class="hk-card"><header><h3>${trainer.name} est vaincu</h3></header>
           <p>Plus aucun Pokémon en état de combattre.</p></div>`
       });
+      // Camp de plusieurs Dresseurs : vaincu quand tous ses Dresseurs le sont.
+      const side = sideOf(combat, trainer);
+      const allies = combat.trainers.filter(t => sideOf(combat, t) === side);
+      const label = sideLabel(combat, side);
+      if ( label && (allies.length > 1) && allies.every(t => combat.isTrainerDefeated(t)) ) {
+        await ChatMessage.implementation.create({
+          speaker: { alias: "Combat" },
+          content: `<div class="hk-card"><header><h3>${label} est vaincu</h3></header>
+            <div class="hk-outcome failure">${allies.map(t => t.name).join(", ")} n'ont plus aucun Pokémon en état de combattre.</div></div>`
+        });
+      }
     }
   }
 }

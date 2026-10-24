@@ -6,7 +6,7 @@
 import { createCharacter } from "../apps/character-wizard.mjs";
 import { rollAttack, rollDressage } from "../dice/rolls.mjs";
 import { applyDamage, handleEffectRequest, useItemOn } from "./effects.mjs";
-import { availableReserve, markUsed, storeDeployChoice } from "./setup.mjs";
+import { availableReserve, markUsed, sideOf, storeDeployChoice } from "./setup.mjs";
 import { blockedReason } from "./turn-start.mjs";
 import { RARITIES as HK_RARITIES } from "../config.mjs";
 
@@ -125,7 +125,7 @@ export function getActionOptions(combatant, combat) {
 }
 
 /**
- * Adversaires en jeu : combattants non KO d'un autre camp (autre Dresseur, ou jeton de disposition différente).
+ * Adversaires en jeu : combattants non KO d'un autre camp (Dresseur d'un autre camp, ou jeton de disposition différente).
  * @param {Combatant} combatant
  * @param {Combat} combat
  */
@@ -135,7 +135,8 @@ export function opponentsOf(combatant, combat) {
   return combat.combatants.filter(c => {
     if ( (c.id === combatant.id) || c.isKO || !c.token ) return false;
     if ( trainer && (c.trainer?.id === trainer.id) ) return false;
-    if ( trainer && c.trainer ) return true;
+    // Deux Dresseurs : adversaires seulement s'ils sont de camps différents (alliés d'un même camp).
+    if ( trainer && c.trainer ) return sideOf(combat, trainer) !== sideOf(combat, c.trainer);
     return c.token.disposition !== disposition;
   });
 }

@@ -203,10 +203,12 @@
     {{/each}}
 
     {{!-- Équipes --}}
-    {{#if teams.length}}
+    {{#if camps.length}}
     <h3>Équipes</h3>
+    {{#each camps as |camp|}}
+    {{#if camp.label}}<p class="hk-camp-title {{#if camp.defeated}}defeated{{/if}}"><i class="fa-solid fa-flag"></i> {{camp.label}}{{#if camp.defeated}} <span class="hk-chip">Vaincu</span>{{/if}}</p>{{/if}}
     <div class="hk-teams">
-      {{#each teams as |t|}}
+      {{#each camp.teams as |t|}}
       <div class="hk-team-strip {{#if t.defeated}}defeated{{/if}}">
         <div class="hk-team-owner"><img src="{{t.img}}" alt=""> <strong>{{t.name}}</strong>
           <span class="hk-chip">{{t.remaining}} / {{t.members.length}}</span>{{#if t.defeated}} <span class="hk-chip">Vaincu</span>{{/if}}</div>
@@ -223,6 +225,7 @@
       </div>
       {{/each}}
     </div>
+    {{/each}}
     {{/if}}
 
     {{!-- Ordre du tour --}}

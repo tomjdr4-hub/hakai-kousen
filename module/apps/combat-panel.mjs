@@ -5,7 +5,7 @@ import {
   ACTION_KINDS, defaultTargets, describeChoice, executeChoice, getActionOptions, isChoiceComplete, isSelfAttack,
   requestReplacement, setChoice
 } from "../combat/actions.mjs";
-import { deploy, endCombatWithXP, getSetup, openSetupDialog, setDeployChoice, validTeam } from "../combat/setup.mjs";
+import { deploy, endCombatWithXP, getSetup, openSetupDialog, setDeployChoice, sideLabel, sideOf, validTeam } from "../combat/setup.mjs";
 import { blockedReason } from "../combat/turn-start.mjs";
 import { EMPTY_CHOICE, SCOPE } from "../documents/combat.mjs";
 import { COMBAT_FORMATS, COMBAT_TYPES, STATUSES, TERRAINS, TYPES, WEATHERS } from "../config.mjs";
@@ -180,11 +180,26 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
       replacements,
       deployCards,
       deployStatus,
-      teams: this.#prepareTeams(combat, isGM),
+      camps: this.#prepareCamps(combat, isGM),
       readyCount: combat.combatants.filter(c => c.needsChoice && c.choice.ready).length,
       activeCount: combat.combatants.filter(c => c.needsChoice).length,
       order
     };
+  }
+
+  /** Bandeaux d'équipe regroupés par camp ; sans camps définis, un seul groupe sans titre. */
+  #prepareCamps(combat, isGM) {
+    const teams = this.#prepareTeams(combat, isGM);
+    const camps = new Map();
+    for ( const team of teams ) {
+      const side = sideOf(combat, team.trainer);
+      if ( !camps.has(side) ) camps.set(side, { label: sideLabel(combat, side), teams: [] });
+      camps.get(side).teams.push(team);
+    }
+    const list = [...camps].sort(([a], [b]) => String(a).localeCompare(String(b), "fr", { numeric: true })).map(([, c]) => c);
+    for ( const c of list ) c.defeated = c.teams.length && c.teams.every(t => t.defeated);
+    // Camps à un seul Dresseur sans nom (anciens combats) : affichés à la suite, sans titre.
+    return list.map(c => ({ ...c, label: (c.teams.length > 1) || c.label ? c.label : null }));
   }
 
   /**
@@ -214,6 +229,7 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
         };
       });
       return {
+        trainer,
         name: trainer.name,
         img: trainer.img,
         members,

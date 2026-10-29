@@ -1694,3 +1694,14 @@
 .hk-side-row select {
   flex: 0 0 100px;
 }
+
+/* ---------- Total d'XP corrigeable par le MJ ---------- */
+
+.hakai-kousen .hk-xp-total {
+  font-size: 0.85em;
+  color: var(--hk-muted);
+}
+
+.hakai-kousen .hk-xp-total input {
+  width: 56px;
+}

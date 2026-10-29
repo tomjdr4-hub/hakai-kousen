@@ -409,6 +409,8 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         if ( (atk.category === "physical") && attackerHeld.includes("bandeau muscle") ) bonuses.push({ label: "Bandeau Muscle", value: 1 });
         if ( (atk.category === "special") && attackerHeld.includes("lunettes sages") ) bonuses.push({ label: "Lunettes Sages", value: 1 });
         if ( attackerHeld.includes("orbe vie") ) bonuses.push({ label: "Orbe Vie", value: 3 });
+        // Joyau : +5 une seule fois pour l'attaque, même à frappes multiples (Annexe 6).
+        let gemBonus = 0;
         if ( gem ) {
           // Une seule décision par attaque, même avec plusieurs cibles.
           if ( useGem === null ) useGem = await DialogV2.confirm({
@@ -417,13 +419,13 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
               <p class="hint">Le Joyau est utilisé avant le jet de dégâts, puis disparaît (Annexe 6).</p>`,
             rejectClose: false
           }) ?? false;
-          if ( useGem ) bonuses.push({ label: `${gem.name}, consommé`, value: gem.system.boost || 5 });
+          if ( useGem ) gemBonus = gem.system.boost || 5;
         }
         if ( attackerHeld.includes("gant de boxe") && /poing/i.test(item.name) ) bonuses.push({ label: "Gant de Boxe", value: 2 });
         if ( attackerHeld.includes("ceinture pro") && (rawMult > 1) ) bonuses.push({ label: "Ceinture Pro", value: 2 });
         const choice = ((atk.category === "physical") && attackerHeld.includes("bandeau choix"))
           || ((atk.category === "special") && attackerHeld.includes("lunettes choix")) ? 1.5 : 1;
-        const base = ((dmgRoll.total * stab) + bonuses.reduce((sum, b) => sum + b.value, 0)) * hits;
+        const base = (((dmgRoll.total * stab) + bonuses.reduce((sum, b) => sum + b.value, 0)) * hits) + gemBonus;
         // Talents de l'attaquant (Brasier, Torrent… sous 1/3 de VIT, Prognathe, Technicien) : ×1,5.
         const talentMults = attackerTalentMultipliers(actor, item);
         const talentMult = talentMults.reduce((m, t) => m * t.mult, 1);
@@ -436,6 +438,7 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         if ( stab > 1 ) parts.push(`×${stab === 2 ? 2 : "1,5"} (STAB${stab === 2 ? " Téra" : ""})`);
         for ( const b of bonuses ) parts.push(`+${b.value} (${b.label})`);
         if ( hits > 1 ) parts.push(`×${hits} frappes`);
+        if ( gemBonus ) parts.push(`+${gemBonus} (${gem.name}, consommé)`);
         if ( choice > 1 ) parts.push("×1,5 (Choix)");
         for ( const t of talentMults ) parts.push(`×1,5 (${t.label})`);
         if ( crit ) parts.push("×2 (critique)");

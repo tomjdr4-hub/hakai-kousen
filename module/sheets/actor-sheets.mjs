@@ -44,6 +44,7 @@ class HKActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       system: actor.system,
       config: HK,
       editable: this.isEditable,
+      isGM: game.user.isGM,
       tabs: this._prepareTabs("primary"),
       conditions: this._prepareConditions(),
       enriched: {}

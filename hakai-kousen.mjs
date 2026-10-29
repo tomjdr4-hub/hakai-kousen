@@ -21,6 +21,7 @@ import { openCharacterWizard } from "./module/apps/character-wizard.mjs";
 import { addRerollButton } from "./module/reroll.mjs";
 import { openGMTools } from "./module/apps/gm-tools.mjs";
 import { chargePension } from "./module/activities.mjs";
+import { syncCounters } from "./module/combat/effects.mjs";
 
 /** États des jetons : KO puis les altérations et états de combat (5.9, 5.10). */
 const STATUS_EFFECTS = [
@@ -126,6 +127,22 @@ Hooks.on("updateActor", actor => refreshTrainerSheets(actor));
 Hooks.on("updateWorldTime", (worldTime, delta) => chargePension(worldTime, delta));
 for ( const hook of ["createActiveEffect", "deleteActiveEffect", "createItem", "updateItem", "deleteItem"] ) {
   Hooks.on(hook, doc => refreshTrainerSheets(doc.parent));
+}
+
+/**
+ * Compteurs d'état (tour de Toxik, stade de Confusion, seuil de réveil du Sommeil) : initialisés ou remis à zéro
+ * quel que soit le moyen de poser l'état (fiche, attaque ou HUD du jeton).
+ */
+for ( const [hook, active] of [["createActiveEffect", true], ["deleteActiveEffect", false]] ) {
+  Hooks.on(hook, (effect, options, userId) => {
+    const actor = effect.parent;
+    if ( (userId !== game.user.id) || (actor?.type !== "pokemon") ) return;
+    for ( const id of effect.statuses ?? [] ) {
+      if ( !["toxik", "confusion", "sommeil"].includes(id) ) continue;
+      const current = actor.system.conditions?.[id] ?? 0;
+      if ( active ? (current === 0) : (current !== 0) ) syncCounters(actor, id, active);
+    }
+  });
 }
 
 /** Un Pokémon ne porte qu'un seul objet tenu à la fois (8.7) : un deuxième objet est refusé. */

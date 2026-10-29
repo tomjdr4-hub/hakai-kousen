@@ -22,7 +22,16 @@ export class HKActor extends Actor {
     if ( (await super._preUpdate(changes, options, user)) === false ) return false;
     const get = key => changes[key] ?? foundry.utils.getProperty(changes, key);
     const value = get("system.xp.value");
-    if ( (value === undefined) || !this.system.xp ) return;
+    if ( !this.system.xp ) return;
+    // Correction du total par le MJ, seule : jamais sous l'XP disponible.
+    if ( value === undefined ) {
+      const total = get("system.xp.total");
+      if ( (total !== undefined) && (total < this.system.xp.value) ) {
+        if ( "system.xp.total" in changes ) changes["system.xp.total"] = this.system.xp.value;
+        else foundry.utils.setProperty(changes, "system.xp.total", this.system.xp.value);
+      }
+      return;
+    }
     const current = this.system.xp;
     const explicit = get("system.xp.total");
     let total = explicit ?? current.total;

@@ -294,6 +294,9 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
   let anySecondary = false;
   // Rôle de chaque jet, pour la relance d'un dé contre 1 XP Dresseur (3.12).
   const diceInfo = [];
+  // Joyau de Type tenu (Annexe 6) : après une attaque réussie de son Type, le joueur peut le consommer pour +5 dégâts.
+  const gem = actor.itemTypes?.gear?.find(g => /^joyau\s/i.test(g.name) && (g.system.boostType === atk.type) && (g.system.quantity > 0)) ?? null;
+  let useGem = null;
 
   targets = (targets ?? Array.from(game.user.targets)).filter(t => t.actor);
   for ( const token of (targets.length ? targets : [null]) ) {
@@ -406,6 +409,16 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
         if ( (atk.category === "physical") && attackerHeld.includes("bandeau muscle") ) bonuses.push({ label: "Bandeau Muscle", value: 1 });
         if ( (atk.category === "special") && attackerHeld.includes("lunettes sages") ) bonuses.push({ label: "Lunettes Sages", value: 1 });
         if ( attackerHeld.includes("orbe vie") ) bonuses.push({ label: "Orbe Vie", value: 3 });
+        if ( gem ) {
+          // Une seule décision par attaque, même avec plusieurs cibles.
+          if ( useGem === null ) useGem = await DialogV2.confirm({
+            window: { title: gem.name, icon: "fa-solid fa-gem" },
+            content: `<p>${item.name} touche. Consommer <strong>${gem.name}</strong> pour <strong>+${gem.system.boost || 5} dégâts</strong> ?</p>
+              <p class="hint">Le Joyau est utilisé avant le jet de dégâts, puis disparaît (Annexe 6).</p>`,
+            rejectClose: false
+          }) ?? false;
+          if ( useGem ) bonuses.push({ label: `${gem.name}, consommé`, value: gem.system.boost || 5 });
+        }
         if ( attackerHeld.includes("gant de boxe") && /poing/i.test(item.name) ) bonuses.push({ label: "Gant de Boxe", value: 2 });
         if ( attackerHeld.includes("ceinture pro") && (rawMult > 1) ) bonuses.push({ label: "Ceinture Pro", value: 2 });
         const choice = ((atk.category === "physical") && attackerHeld.includes("bandeau choix"))
@@ -504,6 +517,11 @@ export async function rollAttack(actor, item, { targets, zMove = false } = {}) {
     .filter(Boolean).join(" · ");
   const zNote = zMove ? `<p class="hk-detail">Capacité Z : dégâts et effets adaptés de la version officielle et des données HK, à ajuster par le MJ.</p>` : "";
   const description = atk.description ? `<details class="hk-description"><summary>Effet</summary>${atk.description}</details>` : "";
+  // Joyau consommé : l'emplacement d'objet tenu se libère (8.7).
+  if ( useGem && gem ) {
+    if ( gem.system.quantity > 1 ) await gem.update({ "system.quantity": gem.system.quantity - 1 });
+    else await gem.delete();
+  }
   const message = await sendCard(actor, {
     title: zMove ? `${item.name} (Capacité Z)` : item.name, subtitle, body: rows.join("") + zNote + description, rolls,
     flags: { anyHit, dice: Array.from(diceInfo, d => d ?? null) }

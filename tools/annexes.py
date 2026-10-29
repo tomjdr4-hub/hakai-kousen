@@ -42,6 +42,14 @@ IMG = {"Baies": "icons/consumables/fruit/berry-red.webp", "Poké Balls": "icons/
        "Entraînement": "icons/svg/upgrade.svg"}
 
 
+# Plaques d'Arceus et leur Type (Annexe 6) : il n'existe aucune Plaque Normal.
+PLATES = [("Plaque Flamme", "feu"), ("Plaque Hydro", "eau"), ("Plaque Volt", "electrik"), ("Plaque Herbe", "plante"),
+          ("Plaque Glace", "glace"), ("Plaque Poing", "combat"), ("Plaque Toxique", "poison"), ("Plaque Terre", "sol"),
+          ("Plaque Ciel", "vol"), ("Plaque Esprit", "psy"), ("Plaque Insecte", "insecte"), ("Plaque Roc", "roche"),
+          ("Plaque Fantôme", "spectre"), ("Plaque Draco", "dragon"), ("Plaque Ombre", "tenebres"), ("Plaque Fer", "acier"),
+          ("Plaque Pixie", "fee")]
+
+
 def slug(text):
     text = unicodedata.normalize("NFD", text)
     return "".join(c for c in text if unicodedata.category(c) != "Mn").lower().strip()
@@ -194,6 +202,20 @@ def main(pdf):
             items[uid] = {"_id": uid, "_key": f"!items!{uid}", "name": name, "type": "gear",
                           "img": IMG.get(folder, "icons/svg/item-bag.svg"), "folder": folders[folder],
                           "system": {**system, "description": description}}
+
+    # Plaques d'Arceus : citées dans une phrase de l'Annexe 6 (« +2 dégâts au Type correspondant, non commercialisées »).
+    for name, type_key in PLATES:
+        uid = make_id("objet", slug(name))
+        if uid in items:
+            continue
+        folders.setdefault("Objets tenus", make_id("dossier-objets", "Objets tenus"))
+        items[uid] = {"_id": uid, "_key": f"!items!{uid}", "name": name, "type": "gear", "img": IMG["Objets tenus"],
+                      "folder": folders["Objets tenus"],
+                      "system": {"category": "held", "quantity": 1, "price": 0, "charges": 0,
+                                 "use": use_effects(""), "captureMod": None, "captureCondition": "",
+                                 "boostType": type_key, "boost": 2,
+                                 "description": para("Plaque d'Arceus : +2 dégâts aux attaques du Type correspondant, distinct du STAB. "
+                                                     "Non commercialisée (Annexe 6).")}}
 
     for i, (name, fid) in enumerate(folders.items()):
         write(os.path.join(SRC, "objets"), {"_id": fid, "_key": f"!folders!{fid}", "name": name, "type": "Item", "sorting": "a",

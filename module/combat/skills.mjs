@@ -44,7 +44,9 @@ export function damageBonuses(actor, item) {
     if ( lvl && pattern.test(name) ) bonuses.push({ label, value: lvl });
   }
   // Un seul objet renforçant le Type de l'attaque (8.7).
-  const held = actor?.itemTypes?.gear?.filter(g => (g.system.category === "held") && g.system.boostType && (g.system.boostType === type)) ?? [];
+  // Renforçateurs permanents (+2, Annexe 6) ; les Joyaux, consommés au choix du joueur, sont traités au lancer.
+  const held = actor?.itemTypes?.gear?.filter(g => (g.system.category === "held") && g.system.boostType && (g.system.boostType === type)
+    && !/^joyau\s/i.test(g.name)) ?? [];
   const best = held.sort((a, b) => b.system.boost - a.system.boost)[0];
   if ( best?.system.boost ) bonuses.push({ label: best.name, value: best.system.boost });
   return bonuses;

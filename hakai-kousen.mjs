@@ -124,6 +124,38 @@ function refreshTrainerSheets(pokemon) {
   }
 }
 Hooks.on("updateActor", actor => refreshTrainerSheets(actor));
+
+/**
+ * Les joueurs d'un Dresseur possèdent aussi les Pokémon de son équipe et de sa Boîte PC : sans cela, ils ne peuvent
+ * ni choisir leurs actions dans le panneau de combat, ni lancer leurs attaques (MJ actif).
+ */
+async function shareTeamOwnership(trainer) {
+  if ( !game.user.isActiveGM || (trainer?.type !== "trainer") ) return;
+  const OWNER = CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
+  const owners = Object.entries(trainer.ownership)
+    .filter(([id, level]) => (id !== "default") && (level >= OWNER) && game.users.get(id) && !game.users.get(id).isGM)
+    .map(([id]) => id);
+  if ( !owners.length ) return;
+  const updates = [];
+  for ( const uuid of [...trainer.system.team, ...trainer.system.pc] ) {
+    const pokemon = fromUuidSync(uuid);
+    if ( !pokemon || pokemon.isToken || pokemon.pack || !game.actors.has(pokemon.id) ) continue;
+    const missing = owners.filter(id => (pokemon.ownership[id] ?? 0) < OWNER);
+    if ( missing.length ) updates.push({ _id: pokemon.id, ...Object.fromEntries(missing.map(id => [`ownership.${id}`, OWNER])) });
+  }
+  if ( !updates.length ) return;
+  await Actor.implementation.updateDocuments(updates);
+  ui.notifications.info(`${trainer.name} : les joueurs deviennent propriétaires de ${updates.length} Pokémon de son équipe.`);
+}
+Hooks.on("updateActor", (actor, changed) => {
+  if ( actor.type !== "trainer" ) return;
+  if ( foundry.utils.hasProperty(changed, "system.team") || foundry.utils.hasProperty(changed, "system.pc") || ("ownership" in changed) ) {
+    shareTeamOwnership(actor);
+  }
+});
+Hooks.once("ready", async () => {
+  for ( const trainer of game.actors.filter(a => a.type === "trainer") ) await shareTeamOwnership(trainer);
+});
 Hooks.on("updateWorldTime", (worldTime, delta) => chargePension(worldTime, delta));
 for ( const hook of ["createActiveEffect", "deleteActiveEffect", "createItem", "updateItem", "deleteItem"] ) {
   Hooks.on(hook, doc => refreshTrainerSheets(doc.parent));

@@ -42,6 +42,11 @@
       <button type="button" data-action="endCombat" data-tooltip="XP Pokémon aux participants puis fin du combat"><i class="fa-solid fa-flag-checkered"></i> Terminer</button>
     </div>
     {{/if}}
+    {{#if notOwned.length}}
+    <p class="hk-warning"><i class="fa-solid fa-triangle-exclamation"></i> Vous dirigez le Dresseur de <strong>{{#each notOwned}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</strong>,
+      mais pas encore la fiche de ce Pokémon : vous ne pouvez pas choisir son action. Un MJ connecté vous en donne la propriété automatiquement ;
+      sinon, il peut le faire depuis les droits de la fiche du Pokémon.</p>
+    {{/if}}
   </header>
 
   <div class="hk-panel-body">

@@ -87,6 +87,8 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
     // Combattants que cet utilisateur dirige : les siens (joueur) ou ceux sans joueur (MJ).
     const mine = combat.combatants.filter(c => c.actor && (isGM ? !c.hasPlayerOwner : c.isOwner))
       .map(c => this.#prepareChoice(c, combat));
+    // Pokémon d'un de mes Dresseurs dont je ne possède pas encore la fiche : je ne peux pas le commander.
+    const notOwned = isGM ? [] : combat.combatants.filter(c => c.actor && !c.isOwner && c.trainer?.isOwner).map(c => c.name);
 
     const order = combat.turns.filter(c => isGM || !c.hidden).map(c => {
       const choice = c.choice;
@@ -178,6 +180,7 @@ export class CombatPanel extends HandlebarsApplicationMixin(ApplicationV2) {
       }[state],
       mine: planning ? mine : [],
       replacements,
+      notOwned,
       deployCards,
       deployStatus,
       camps: this.#prepareCamps(combat, isGM),

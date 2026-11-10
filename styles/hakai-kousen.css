@@ -1705,3 +1705,14 @@
 .hakai-kousen .hk-xp-total input {
   width: 56px;
 }
+
+/* ---------- Avertissement : Pokémon non possédé ---------- */
+
+.hk-combat-panel .hk-warning {
+  margin: 6px 0 0;
+  padding: 4px 8px;
+  border: 1px solid var(--hk-failure);
+  border-radius: 4px;
+  background: rgba(198, 40, 40, 0.12);
+  font-size: 0.9em;
+}

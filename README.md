@@ -34,7 +34,7 @@ Le MJ peut ignorer les limites (PNJ, règles maison). Un joueur qui n'a pas le d
 - Caractéristiques DEX, FOR, CON, END, VOL (base + points) et **test de Caractéristique** : 1D6 ≤ Stat, la difficulté agrandit le dé (D8, D10, D12, D20).
 - 15 Compétences et 10 Connaissances avec Niveau et Spécialisation : **réserve de D10**, on garde le meilleur (Niveau 0 : 2D10, on garde le moins bon), réussite et échec critiques.
 - VIT, XP Dresseur, Pokédollars, repos long.
-- Équipe : glisser-déposer des acteurs Pokémon (6 max). Chaque Pokémon affiche VIT, ENE, Dressage, objet tenu et ses états (KO, altérations, affaibli, Nouveau-né).
+- Équipe : glisser-déposer des acteurs Pokémon (6 max). Les joueurs du Dresseur deviennent automatiquement propriétaires des Pokémon de son équipe et de sa Boîte PC (nécessaire pour choisir leurs actions en combat). Chaque Pokémon affiche VIT, ENE, Dressage, objet tenu et ses états (KO, altérations, affaibli, Nouveau-né).
 - Objets : le bouton « Donner » fait tenir un objet de l'inventaire à un Pokémon de l'équipe (échange si l'emplacement est pris) ; « Rendre », sur la fiche du Pokémon, le remet dans l'inventaire.
 - Mécaniques spéciales (Méga-Évolution, Capacité Z, Téracristallisation, Dynamax), badges.
 - Inventaire classé comme sur la fiche papier.
